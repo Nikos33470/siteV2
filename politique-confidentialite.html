@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — L'Atelier · Marchand de couleurs</title>
+<meta name="description" content="Politique de confidentialité et de protection des données personnelles du site www.latelier33.fr — RGPD, cookies, vos droits.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #1F3A5F; --bleu-fonce: #15273F; --bleu-clair: #2D4E7A; --bleu-pale: #E8EEF5;
+    --orange: #F07F2C; --orange-fonce: #D86618; --orange-clair: #FFA968;
+    --vert-eco: #4A8B5C; --beige: #F5F0E8;
+    --blanc: #FFFFFF; --gris-clair: #F8F7F4; --gris: #5F5F5F; --gris-fonce: #2C2C2C;
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
+
+  /* HEADER */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(31,58,95,0.08); transition: all 0.4s var(--transition); }
+  .header-inner { max-width: 1440px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; transition: padding 0.4s var(--transition); }
+  .header.is-scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(31,58,95,0.08); }
+  .header.is-scrolled .header-inner { padding: 10px 48px; }
+  .header.is-scrolled .logo-symbol { width: 70px; height: 86px; }
+  .header.is-scrolled .logo-text { font-size: 36px; }
+  .header.is-scrolled .logo-baseline { font-size: 12px; }
+  .header.is-scrolled .logo-since { display: none; }
+  .logo-symbol, .logo-text, .logo-baseline { transition: all 0.4s var(--transition); }
+  .logo { display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--bleu); }
+  .logo-symbol { width: 105px; height: 130px; flex-shrink: 0; }
+  .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text { font-family: var(--sans); font-weight: 700; font-size: 48px; color: var(--bleu); letter-spacing: -0.8px; }
+  .logo-baseline { font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--orange); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
+  .logo-since { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 14px; color: var(--bleu); margin-top: 6px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; opacity: 0.85; }
+  .logo-since-dash { display: inline-block; width: 18px; height: 1px; background: var(--orange); }
+  .nav { display: flex; align-items: center; gap: 22px; }
+  .nav a { font-size: 13.5px; font-weight: 500; color: var(--bleu); text-decoration: none; transition: color 0.3s; position: relative; white-space: nowrap; }
+  .nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s var(--transition); }
+  .nav a:hover::after { width: 100%; }
+  .nav a:hover { color: var(--orange); }
+  .nav-cta { background: var(--bleu); color: var(--blanc) !important; padding: 10px 22px; border-radius: 50px; transition: all 0.3s; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--orange); transform: translateY(-2px); }
+  .nav-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; margin-left: 48px; }
+  .nav-search { position: relative; display: flex; align-items: center; width: 280px; }
+  .nav-search-icon { position: absolute; left: 12px; width: 15px; height: 15px; color: var(--bleu); opacity: 0.55; pointer-events: none; }
+  .nav-search-input { width: 100%; padding: 8px 14px 8px 34px; font-family: var(--sans); font-size: 13px; color: var(--bleu-fonce); background: rgba(31,58,95,0.04); border: 1px solid rgba(31,58,95,0.12); border-radius: 50px; outline: none; transition: all 0.3s var(--transition); }
+  .nav-search-input::placeholder { color: var(--gris); opacity: 0.7; }
+  .nav-search-input:focus { background: var(--blanc); border-color: var(--orange); box-shadow: 0 0 0 3px rgba(240,127,44,0.15); }
+
+  /* HERO */
+  .legal-hero { padding: 200px 48px 60px; background: var(--bleu); color: var(--blanc); }
+  .legal-hero-inner { max-width: 900px; margin: 0 auto; }
+  .legal-eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--orange-clair); margin-bottom: 24px; }
+  .legal-title { font-family: var(--display); font-weight: 300; font-size: clamp(42px, 6vw, 72px); line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 24px; }
+  .legal-title em { color: var(--orange-clair); font-style: italic; font-weight: 400; }
+  .legal-subtitle { font-size: 17px; line-height: 1.6; opacity: 0.85; max-width: 640px; font-weight: 300; }
+
+  /* BREADCRUMB */
+  .breadcrumb-bar { background: var(--gris-clair); border-bottom: 1px solid rgba(31,58,95,0.08); padding: 18px 48px; }
+  .breadcrumb { max-width: 1440px; margin: 0 auto; font-size: 13px; color: var(--gris); }
+  .breadcrumb a { color: var(--bleu); text-decoration: none; transition: color 0.3s; }
+  .breadcrumb a:hover { color: var(--orange); }
+  .breadcrumb-sep { margin: 0 10px; opacity: 0.4; }
+  .breadcrumb-current { color: var(--gris-fonce); font-weight: 500; }
+
+  /* CONTENT */
+  .legal-content { max-width: 880px; margin: 0 auto; padding: 80px 48px 100px; }
+  .legal-section { margin-bottom: 56px; }
+  .legal-section:last-child { margin-bottom: 0; }
+  .legal-section h2 { font-family: var(--display); font-weight: 400; font-size: 30px; line-height: 1.2; letter-spacing: -0.5px; color: var(--bleu); margin-bottom: 8px; display: flex; align-items: baseline; gap: 16px; }
+  .legal-section h2 .num { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 2px; color: var(--orange); flex-shrink: 0; }
+  .legal-section h2 em { font-style: italic; color: var(--orange-fonce); }
+  .legal-section-rule { width: 48px; height: 2px; background: var(--orange); margin: 18px 0 24px; }
+  .legal-section h3 { font-family: var(--sans); font-weight: 600; font-size: 16px; color: var(--bleu); margin: 28px 0 12px; letter-spacing: 0.2px; }
+  .legal-section p { font-size: 15.5px; line-height: 1.75; color: var(--gris-fonce); margin-bottom: 16px; }
+  .legal-section p:last-child { margin-bottom: 0; }
+  .legal-section a { color: var(--bleu); text-decoration: underline; text-decoration-color: rgba(31,58,95,0.3); text-underline-offset: 3px; transition: all 0.3s; }
+  .legal-section a:hover { color: var(--orange); text-decoration-color: var(--orange); }
+  .legal-section strong { color: var(--bleu-fonce); font-weight: 600; }
+  .legal-section ul { margin: 0 0 16px 0; padding-left: 24px; }
+  .legal-section ul li { font-size: 15.5px; line-height: 1.75; color: var(--gris-fonce); margin-bottom: 8px; }
+  .legal-section ul li::marker { color: var(--orange); }
+
+  /* TABLE */
+  .data-table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 14.5px; }
+  .data-table thead th { background: var(--bleu); color: var(--blanc); text-align: left; padding: 14px 18px; font-weight: 600; font-size: 12.5px; letter-spacing: 1.2px; text-transform: uppercase; }
+  .data-table tbody td { padding: 14px 18px; border-bottom: 1px solid rgba(31,58,95,0.08); vertical-align: top; color: var(--gris-fonce); }
+  .data-table tbody tr:last-child td { border-bottom: none; }
+  .data-table tbody tr:nth-child(even) { background: var(--gris-clair); }
+
+  /* INFO CARD */
+  .info-card { background: var(--gris-clair); border-left: 3px solid var(--orange); padding: 24px 28px; border-radius: 4px; margin: 8px 0; }
+  .info-card p { font-size: 14.5px; margin-bottom: 8px; }
+  .info-card p:last-child { margin-bottom: 0; }
+
+  /* FOOTER */
+  footer { background: var(--bleu-fonce); color: var(--blanc); padding: 80px 48px 40px; }
+  .footer-inner { max-width: 1440px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-brand-text { font-family: var(--display); font-size: 32px; line-height: 1.2; margin-bottom: 24px; color: var(--blanc); font-weight: 300; }
+  .footer-brand-text em { color: var(--orange); font-style: italic; }
+  .footer-desc { font-size: 14px; opacity: 0.7; line-height: 1.6; max-width: 380px; font-weight: 300; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
+  .footer-col ul { list-style: none; padding-left: 0; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom { padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; opacity: 0.6; }
+  .footer-bottom a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--orange); }
+  .footer-theolaur { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: 1.5px; opacity: 1; color: rgba(255,255,255,0.8); }
+  .footer-theolaur-logo { height: 32px; width: auto; background: #fff; padding: 4px 8px; border-radius: 6px; display: inline-block; vertical-align: middle; }
+
+  @media (max-width: 1024px) {
+    .nav { display: none; }
+    .nav-search { width: 200px; }
+  }
+  @media (max-width: 768px) {
+    .header-inner { padding: 14px 20px; }
+    .legal-hero { padding: 160px 20px 40px; }
+    .legal-content { padding: 60px 20px 80px; }
+    .data-table { font-size: 13px; }
+    .data-table thead th, .data-table tbody td { padding: 10px 12px; }
+    footer { padding: 60px 20px 30px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .breadcrumb-bar { padding: 14px 20px; }
+  }
+  @media (max-width: 600px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .data-table thead { display: none; }
+    .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; }
+    .data-table tr { margin-bottom: 16px; border: 1px solid rgba(31,58,95,0.1); border-radius: 4px; }
+    .data-table tbody tr:nth-child(even) { background: var(--gris-clair); }
+    .data-table td { border-bottom: 1px solid rgba(31,58,95,0.06); }
+    .data-table td::before { content: attr(data-label); display: block; font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
+        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
+        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
+        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
+              font-size="82" font-weight="900" fill="#FFFFFF"
+              text-anchor="middle" letter-spacing="-3">a</text>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-text">l'atelier</span>
+        <span class="logo-baseline">MARCHAND DE COULEURS</span>
+        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+      </div>
+    </a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="gammes.html">Nos gammes peintures</a>
+        <a href="nuanciers.html">Nuanciers</a>
+        <a href="index.html#eco">Engagement éco</a>
+        <a href="revetement-mural.html">Revêtement mural</a>
+        <a href="revetement-sol.html">Revêtement de sol</a>
+        <a href="documents.html">Documents techniques</a>
+        <a href="index.html#equipe">L'équipe L'ATELIER</a>
+        <a href="#" class="nav-cta">Espace pro</a>
+      </nav>
+      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <span class="legal-eyebrow">Vos données &middot; Vos droits</span>
+    <h1 class="legal-title">Politique de <em>confidentialité</em>.</h1>
+    <p class="legal-subtitle">L'Atelier s'engage à protéger vos données personnelles. Cette page explique quelles données nous collectons, pourquoi, combien de temps nous les conservons, et comment vous pouvez exercer vos droits, conformément au RGPD et à la loi Informatique et Libertés.</p>
+  </div>
+</section>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="breadcrumb-bar">
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-current">Politique de confidentialité</span>
+  </nav>
+</div>
+
+<!-- ============ CONTENT ============ -->
+<main class="legal-content">
+
+  <section class="legal-section">
+    <h2><span class="num">01</span>Responsable <em>du traitement</em></h2>
+    <div class="legal-section-rule"></div>
+    <p>Le responsable du traitement des données personnelles collectées via le site <strong>www.latelier33.fr</strong> est&nbsp;:</p>
+    <div class="info-card">
+      <p><strong>L'ATELIER</strong>, SAS au capital de 40 000 €</p>
+      <p>Siège social&nbsp;: 1111 avenue du Parc des Expositions, Résidence du Parc, 33260 La Teste-de-Buch</p>
+      <p>SIREN 534 092 721 — RCS Bordeaux</p>
+      <p>Contact&nbsp;: <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></p>
+    </div>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">02</span>Données <em>collectées</em></h2>
+    <div class="legal-section-rule"></div>
+    <p>Le site www.latelier33.fr est un site vitrine institutionnel. Il ne propose pas de vente en ligne, ne dispose pas d'espace client public et ne nécessite pas la création d'un compte pour être consulté.</p>
+    <p>Des données personnelles peuvent toutefois être collectées dans les cas suivants&nbsp;:</p>
+
+    <h3>2.1 — Lors d'un contact direct</h3>
+    <p>Si vous nous écrivez à <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a> ou nous téléphonez, nous traitons les informations que vous nous communiquez (nom, prénom, coordonnées, contenu du message, éventuelles pièces jointes) afin de répondre à votre demande.</p>
+
+    <h3>2.2 — Lors de la consultation du site</h3>
+    <p>L'hébergement du site sur GitHub Pages peut entraîner la collecte automatique de données techniques par notre hébergeur (adresse IP, type de navigateur, système d'exploitation, pages consultées, dates et heures de connexion), à des fins de sécurité et de bon fonctionnement du service. Ces données sont traitées par GitHub, Inc. dans le cadre de sa propre politique de confidentialité.</p>
+
+    <h3>2.3 — Récapitulatif</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Finalité</th>
+          <th>Données concernées</th>
+          <th>Base légale</th>
+          <th>Conservation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Finalité">Répondre à une demande de contact ou de devis</td>
+          <td data-label="Données">Nom, prénom, e-mail, téléphone, contenu du message</td>
+          <td data-label="Base légale">Mesures précontractuelles à votre demande (art. 6.1.b RGPD)</td>
+          <td data-label="Conservation">3 ans après le dernier contact</td>
+        </tr>
+        <tr>
+          <td data-label="Finalité">Gestion de la relation commerciale (clients pros)</td>
+          <td data-label="Données">Coordonnées professionnelles, n° SIRET, historique des échanges</td>
+          <td data-label="Base légale">Exécution du contrat (art. 6.1.b RGPD)</td>
+          <td data-label="Conservation">Durée de la relation + 5 ans (prescription commerciale)</td>
+        </tr>
+        <tr>
+          <td data-label="Finalité">Obligations comptables et fiscales</td>
+          <td data-label="Données">Factures et données associées</td>
+          <td data-label="Base légale">Obligation légale (art. 6.1.c RGPD)</td>
+          <td data-label="Conservation">10 ans (art. L.123-22 Code de commerce)</td>
+        </tr>
+        <tr>
+          <td data-label="Finalité">Sécurité technique du site (logs serveur)</td>
+          <td data-label="Données">Adresse IP, user-agent, horodatage</td>
+          <td data-label="Base légale">Intérêt légitime (art. 6.1.f RGPD)</td>
+          <td data-label="Conservation">12 mois maximum</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">03</span>Cookies <em>et traceurs</em></h2>
+    <div class="legal-section-rule"></div>
+    <p>Le site www.latelier33.fr <strong>n'utilise pas de cookies publicitaires, de cookies de mesure d'audience tiers ni d'outils de tracking comportemental</strong>. Aucun consentement n'est donc requis à ce titre.</p>
+    <p>Seuls peuvent être déposés des cookies strictement nécessaires au bon fonctionnement du site (par exemple, mémorisation de votre choix de langue ou d'affichage). Ces cookies sont exemptés de consentement en application de l'article 82 de la loi Informatique et Libertés, conformément à la doctrine de la CNIL.</p>
+    <p>Le site charge également des polices de caractères hébergées par <strong>Google Fonts</strong> (Fraunces, Inter), ce qui peut entraîner la communication de votre adresse IP à Google le temps du chargement de la page. Si vous ne souhaitez pas que cette communication ait lieu, vous pouvez bloquer le chargement de ces ressources via les paramètres de votre navigateur ou une extension dédiée.</p>
+    <p>Vous pouvez à tout moment configurer votre navigateur pour bloquer ou supprimer les cookies, notamment&nbsp;:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-ordinateur" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
+      <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+    </ul>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">04</span>Destinataires <em>des données</em></h2>
+    <div class="legal-section-rule"></div>
+    <p>Les données collectées sont destinées exclusivement aux personnels habilités de L'ATELIER (équipe commerciale, comptabilité, direction).</p>
+    <p>Elles peuvent être communiquées à&nbsp;:</p>
+    <ul>
+      <li>nos sous-traitants techniques (hébergeur, fournisseur de messagerie professionnelle), dans le cadre strict de leurs missions et sous contrat de sous-traitance conforme à l'article 28 du RGPD ;</li>
+      <li>les autorités administratives ou judiciaires, en cas d'obligation légale.</li>
+    </ul>
+    <p>Aucune donnée personnelle n'est cédée, louée ou vendue à des tiers à des fins commerciales.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">05</span>Transfert hors <em>Union européenne</em></h2>
+    <div class="legal-section-rule"></div>
+    <p>Le site étant hébergé sur GitHub Pages, service fourni par GitHub, Inc. (groupe Microsoft) basé aux États-Unis, certaines données techniques (logs de connexion) peuvent transiter ou être stockées hors de l'Union européenne. Ces transferts sont encadrés par les <strong>clauses contractuelles types</strong> de la Commission européenne et par l'adhésion de Microsoft / GitHub au <strong>Data Privacy Framework (DPF)</strong>, offrant un niveau de protection adéquat au sens de la décision d'adéquation UE-USA du 10 juillet 2023.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">06</span>Vos <em>droits</em></h2>
+    <div class="legal-section-rule"></div>
+    <p>Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi n° 78-17 du 6 janvier 1978 modifiée, vous disposez des droits suivants sur vos données personnelles&nbsp;:</p>
+    <ul>
+      <li><strong>Droit d'accès</strong> — obtenir confirmation que vos données sont ou non traitées, et en recevoir une copie ;</li>
+      <li><strong>Droit de rectification</strong> — corriger des données inexactes ou compléter des données incomplètes ;</li>
+      <li><strong>Droit à l'effacement</strong> (« droit à l'oubli ») — sous certaines conditions, demander la suppression de vos données ;</li>
+      <li><strong>Droit à la limitation</strong> du traitement ;</li>
+      <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré et lisible par machine ;</li>
+      <li><strong>Droit d'opposition</strong> — vous opposer à tout moment à un traitement fondé sur l'intérêt légitime ;</li>
+      <li><strong>Droit de définir des directives</strong> relatives au sort de vos données après votre décès ;</li>
+      <li><strong>Droit de retirer votre consentement</strong> à tout moment lorsque le traitement repose sur celui-ci.</li>
+    </ul>
+    <p>Pour exercer ces droits, écrivez-nous&nbsp;:</p>
+    <div class="info-card">
+      <p>par e-mail&nbsp;: <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></p>
+      <p>par courrier&nbsp;: L'ATELIER — 1111 avenue du Parc des Expositions, Résidence du Parc, 33260 La Teste-de-Buch</p>
+    </div>
+    <p>Nous nous engageons à répondre à toute demande dans un délai d'un mois, qui peut être prolongé de deux mois en cas de demande complexe. Une preuve d'identité pourra vous être demandée en cas de doute raisonnable sur votre identité.</p>
+    <p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés)&nbsp;:</p>
+    <ul>
+      <li>en ligne sur <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">www.cnil.fr/fr/plaintes</a> ;</li>
+      <li>par courrier&nbsp;: CNIL, 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.</li>
+    </ul>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">07</span>Sécurité <em>des données</em></h2>
+    <div class="legal-section-rule"></div>
+    <p>L'ATELIER met en œuvre des mesures techniques et organisationnelles adaptées pour protéger vos données contre la perte, l'accès non autorisé, la divulgation, l'altération ou la destruction&nbsp;: connexions chiffrées (HTTPS / TLS), accès aux outils internes par authentification, sensibilisation des collaborateurs.</p>
+    <p>Aucun système n'étant infaillible à 100 %, en cas de violation de données susceptible d'engendrer un risque pour vos droits et libertés, nous nous engageons à en informer la CNIL dans un délai de 72 heures et, le cas échéant, les personnes concernées.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">08</span>Mise à <em>jour</em></h2>
+    <div class="legal-section-rule"></div>
+    <p>La présente politique de confidentialité peut être amenée à évoluer pour tenir compte des évolutions légales, réglementaires ou techniques. Toute modification sera publiée sur cette page avec une nouvelle date de mise à jour.</p>
+    <p><strong>Dernière mise à jour&nbsp;:</strong> mai 2026.</p>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
+        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos gammes</h4>
+        <ul>
+          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
+          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
+          <li><a href="revetement-mural.html">Revêtement mural</a></li>
+          <li><a href="revetement-sol.html">Revêtement de sol</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Le groupe</h4>
+        <ul>
+          <li><a href="#">Notre histoire</a></li>
+          <li><a href="#">Nos magasins</a></li>
+          <li><a href="#">L'Établi · location</a></li>
+          <li><a href="#">Espace pro</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a></div>
+      <div class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  });
+</script>
+
+</body>
+</html>
