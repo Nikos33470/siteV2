@@ -508,6 +508,104 @@
     .logo-text { font-size: 32px; }
     .logo-baseline { font-size: 11px; }
   }
+
+  /* ========== MENU BURGER MOBILE (ajout : n'affecte pas le PC) ========== */
+  .nav-burger {
+    display: none;
+    background: transparent;
+    border: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .nav-burger-bar {
+    position: absolute;
+    left: 9px;
+    right: 9px;
+    height: 2px;
+    background: var(--bleu);
+    border-radius: 2px;
+    transition: transform 0.35s ease, top 0.35s ease, opacity 0.25s;
+  }
+  .nav-burger-bar:nth-child(1) { top: 14px; }
+  .nav-burger-bar:nth-child(2) { top: 21px; }
+  .nav-burger-bar:nth-child(3) { top: 28px; }
+  body.menu-open .nav-burger-bar:nth-child(1) { top: 21px; transform: rotate(45deg); }
+  body.menu-open .nav-burger-bar:nth-child(2) { opacity: 0; }
+  body.menu-open .nav-burger-bar:nth-child(3) { top: 21px; transform: rotate(-45deg); }
+  body.menu-open { overflow: hidden; }
+
+  .nav-overlay-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(21,39,63,0.45);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  body.menu-open .nav-overlay-backdrop { display: block; opacity: 1; pointer-events: auto; }
+
+  @media (max-width: 1024px) {
+    .nav-burger { display: block !important; }
+    .nav-wrap {
+      display: flex !important;
+      position: fixed !important;
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      left: auto !important;
+      width: min(360px, 88vw) !important;
+      height: 100vh !important;
+      background: var(--blanc) !important;
+      padding: 96px 28px 40px !important;
+      box-shadow: -20px 0 60px -20px rgba(31,58,95,0.25) !important;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+      z-index: 1001 !important;
+      margin-left: 0 !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 14px !important;
+      overflow-y: auto !important;
+    }
+    body.menu-open .nav-wrap { transform: translateX(0) !important; }
+
+    .nav {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 0 !important;
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
+    }
+    .nav a {
+      font-size: 16px !important;
+      padding: 14px 0 !important;
+      border-bottom: 1px solid rgba(31,58,95,0.08) !important;
+      white-space: normal !important;
+      width: 100% !important;
+    }
+    .nav a::after { display: none !important; }
+    .nav a.nav-cta {
+      margin-top: 16px !important;
+      text-align: center !important;
+      padding: 14px 22px !important;
+      border-bottom: 0 !important;
+      align-self: stretch !important;
+      background: var(--bleu) !important;
+      color: var(--blanc) !important;
+    }
+    .nav-search { width: 100% !important; max-width: none !important; margin-top: 8px !important; }
+  }
+  /* ========== FIN MENU BURGER MOBILE ========== */
+
 </style>
 </head>
 <body>
@@ -531,6 +629,12 @@
         <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
       </div>
     </a>
+    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-burger-bar"></span>
+      <span class="nav-burger-bar"></span>
+      <span class="nav-burger-bar"></span>
+    </button>
+    <div class="nav-overlay-backdrop" aria-hidden="true"></div>
     <div class="nav-wrap">
       <nav class="nav">
         <a href="gammes.html">Nos gammes peintures</a>
@@ -1642,6 +1746,34 @@
 })();
 </script>
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Fin ============ -->
+
+
+<script>
+  // ===== MENU BURGER MOBILE =====
+  (function () {
+    const burger = document.querySelector('.nav-burger');
+    const navWrap = document.querySelector('.nav-wrap');
+    const backdrop = document.querySelector('.nav-overlay-backdrop');
+    if (!burger || !navWrap) return;
+    const navLinks = navWrap.querySelectorAll('.nav a');
+
+    function setOpen(open) {
+      document.body.classList.toggle('menu-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    burger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!document.body.classList.contains('menu-open'));
+    });
+    navLinks.forEach(a => a.addEventListener('click', () => setOpen(false)));
+    if (backdrop) backdrop.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setOpen(false);
+    });
+    const mq = window.matchMedia('(min-width: 1025px)');
+    mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
+  })();
+</script>
 
 </body>
 </html>
