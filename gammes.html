@@ -727,8 +727,8 @@
 
 
   /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
-  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
-     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  /* Reprend la typo italique des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE hydro doivent avoir un rendu identique partout. */
   .brand-45,
   .brand-titane {
     font-style: italic;
@@ -738,11 +738,20 @@
     font-weight: 700;
     letter-spacing: 0px;
   }
+  /* Le chiffre "45" est plus gros que le reste du nom — comme sur l'étiquette */
+  .brand-45 .brand-45-fig {
+    font-size: 1.35em;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    vertical-align: baseline;
+    line-height: 0.9;
+  }
   .brand-titane {
+    /* PAS de text-transform: uppercase ici. Le HTML écrit "TITANE" en majuscules et "hydro" en minuscules pour respecter l'étiquette. */
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
   }
   /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
      (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
@@ -755,15 +764,21 @@
     font-weight: 700 !important;
     letter-spacing: 0 !important;
   }
+  /* "45" agrandi dans la carte index */
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-size: 1.35em !important;
+    font-weight: 800 !important;
+    line-height: 0.85;
+    vertical-align: baseline;
+  }
   .gamme-card.gamme-titane .gamme-name,
   .gamme-card.gamme-titane .gamme-name-accent {
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
     font-style: italic !important;
     font-weight: 700 !important;
-    text-transform: uppercase !important;
     letter-spacing: 0.3px !important;
+    /* PAS d'uppercase forcé : le HTML écrit déjà "TITANE" et "hydro" avec les bonnes casses */
   }
-  /* on garde la couleur d'accent orange/bleu déjà définie */
 
   /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
   .badge-cov .pot-badge-label,
@@ -789,6 +804,14 @@
     font-style: italic !important;
     font-weight: 700 !important;
   }
+  /* "45" agrandi dans les titres de la gamme 45 */
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name em {
+    font-size: 1.35em !important;
+    font-weight: 800 !important;
+    line-height: 0.85;
+    vertical-align: baseline;
+  }
   [data-gamme-section="titane"] .gamme-banner-title,
   [data-gamme-section="titane"] .gamme-banner-title em,
   [data-gamme-section="titane"] .product-name,
@@ -798,12 +821,6 @@
     font-weight: 700 !important;
     letter-spacing: 0.3px;
   }
-  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
-     on neutralise juste son italique déjà présent (héritage cohérent) */
-
-  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
-  /* déjà couverts par les <span class="brand-..."> wrappés */
-
   /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
@@ -870,14 +887,14 @@
 <div class="gamme-tabs" role="tablist">
 <button aria-selected="true" class="gamme-tab is-active" data-gamme="45" role="tab">
 <span class="gamme-tab-info">
-<span class="gamme-tab-name"><span class="brand-45">L'Atelier 45</span></span>
+<span class="gamme-tab-name"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span>
 <span class="gamme-tab-sub">Acrylique &amp; glycéro · France</span>
 </span>
 <span class="gamme-tab-count">6</span>
 </button>
 <button aria-selected="false" class="gamme-tab" data-gamme="titane" role="tab">
 <span class="gamme-tab-info">
-<span class="gamme-tab-name"><span class="brand-titane">Titane Hydro</span></span>
+<span class="gamme-tab-name"><span class="brand-titane">TITANE hydro</span></span>
 <span class="gamme-tab-sub">Biosourcée · bas carbone</span>
 </span>
 <span class="gamme-tab-count">4</span>
@@ -927,7 +944,7 @@
 <span class="sidebar-feature-dot"></span>
 <span class="sidebar-feature-body">
 <span class="sidebar-feature-label">Biosourcé &amp; bas carbone</span>
-<span class="sidebar-feature-desc">La gamme <span class="brand-titane">Titane Hydro</span> est formulée à base de résines végétales. Moins d'énergie fossile, bilan carbone réduit, sans compromis sur la tenue et l'adhérence.</span>
+<span class="sidebar-feature-desc">La gamme <span class="brand-titane">TITANE hydro</span> est formulée à base de résines végétales. Moins d'énergie fossile, bilan carbone réduit, sans compromis sur la tenue et l'adhérence.</span>
 </span>
 </div>
 <div class="sidebar-feature">
@@ -1009,7 +1026,7 @@
 <span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"></path></svg></span><span class="picto-label">Outils</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Impression</div>
+<div class="product-gamme"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> · Impression</div>
 <h3 class="product-name">Impress <em>45</em></h3>
 <div class="product-subtitle">Impression acrylique blanche · phase aqueuse</div>
 <p class="product-description">Sous-couche acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong> et classée A+. Fabriquée en France, conditionnée en fût recyclé, FDES vérifiée Inies — compatible RE 2020. Préparation universelle de tous les supports traditionnels du bâtiment, aspect mat en finition, anti-flash rust.</p>
@@ -1044,7 +1061,7 @@
 <span class="picto is-bleuclair" title="+130 m²"><span class="picto-icon is-text-xs">130m²</span><span class="picto-label">+130m²</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Impression</div>
+<div class="product-gamme"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> · Impression</div>
 <h3 class="product-name">Impress 45 <em>Grands Travaux</em></h3>
 <div class="product-subtitle">Impression acrylique blanche · Grands chantiers</div>
 <p class="product-description">Sous-couche acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong>, classée A+ et fabriquée en France. <strong>Rendement +130 m² au seau</strong>, fût recyclé, FDES vérifiée Inies, RE 2020. Excellent garnissant et fort pouvoir opacifiant, formulée pour les grands chantiers à fort engagement environnemental.</p>
@@ -1079,7 +1096,7 @@
 <span class="picto is-orange" title="2 en 1"><span class="picto-icon is-text-sm">2en1</span><span class="picto-label">2 en 1</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Mat</div>
+<div class="product-gamme"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> · Mat</div>
 <h3 class="product-name">Mat <em>45</em></h3>
 <div class="product-subtitle">Impression &amp; finition · 2 en 1</div>
 <p class="product-description">Peinture acrylique 2 en 1 (impression + finition) en phase aqueuse. <strong>COV &lt; 1 g/L</strong>, classée A+, fabriquée en France, fût recyclé. FDES vérifiée Inies, compatible RE 2020. Aspect mat profond, anti-flash rust : un produit unique pour murs et plafonds.</p>
@@ -1113,7 +1130,7 @@
 <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Velours</div>
+<div class="product-gamme"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> · Velours</div>
 <h3 class="product-name">Velours <em>45</em></h3>
 <div class="product-subtitle">Acrylique veloutée garnissante pochée</div>
 <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Conditionnée en fût recyclé, FDES vérifiée Inies, compatible RE 2020. Aspect mat velouté élégant, très bon pouvoir <strong>garnissant</strong> pour murs et plafonds intérieurs.</p>
@@ -1148,7 +1165,7 @@
 <span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18l-2 14H5L3 6z"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span><span class="picto-label">Lessiv.</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Satin</div>
+<div class="product-gamme"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> · Satin</div>
 <h3 class="product-name">Satin <em>45</em></h3>
 <div class="product-subtitle">Acrylique satinée garnissante pochée</div>
 <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Fût recyclé, FDES vérifiée Inies, compatible RE 2020. Aspect satiné élégant et <strong>lessivable</strong>, taillée pour les pièces de passage et les supports demandant une protection accrue.</p>
@@ -1182,7 +1199,7 @@
 <span class="picto is-orange" title="Boiseries"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="1" width="18" x="3" y="3"></rect><path d="M3 8h18M3 14h18M9 3v18M15 3v18"></path></svg></span><span class="picto-label">Bois</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Satin glycéro</div>
+<div class="product-gamme"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> · Satin glycéro</div>
 <h3 class="product-name">Glycéro <em>45</em></h3>
 <div class="product-subtitle">Glycérophtalique satinée garnissante</div>
 <p class="product-description">Peinture glycérophtalique en phase solvant, fabriquée en France. FDES vérifiée Inies, compatible RE 2020. Aspect satin velours pour la protection durable et la décoration des boiseries, applicable en intérieur comme en extérieur.</p>
@@ -1197,13 +1214,13 @@
 </article>
 </div>
 </section>
- ============ GAMME <span class="brand-titane">TITANE HYDRO</span> ============ 
+ ============ GAMME <span class="brand-titane">TITANE hydro</span> ============ 
 <section class="gamme-section" data-gamme-section="titane" id="gamme-titane">
 <div class="gamme-banner is-titane has-re2020">
 <div class="gamme-banner-num">T</div>
 <div class="gamme-banner-content">
 <span class="gamme-banner-tag">Gamme biosourcée</span>
-<h2 class="gamme-banner-title">Titane <em>Hydro</em></h2>
+<h2 class="gamme-banner-title">TITANE <em>hydro</em></h2>
 <p class="gamme-banner-desc">Formulations à base de résines végétales en phase aqueuse, COV ultra-réduits. Pour les chantiers à fort engagement environnemental.</p>
 </div>
 <div aria-hidden="true" class="banner-re2020-stage">
@@ -1228,7 +1245,7 @@
 </div>
 </div>
 <div class="products-grid" id="grid-titane">
- 1. <span class="brand-titane">TITANE HYDRO</span> PRIM - IMPRESSION 
+ 1. <span class="brand-titane">TITANE hydro</span> PRIM - IMPRESSION 
 <article class="product-card reveal" data-brillance="1" data-finition="impression" id="p-titane-prim">
 <div class="product-finition-bar"></div>
 <span class="product-finition-tag">Impression</span>
@@ -1249,8 +1266,8 @@
 <span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"></path></svg></span><span class="picto-label">Outils</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-titane">Titane Hydro</span> · Impression</div>
-<h3 class="product-name"><span class="brand-titane">Titane hydro</span> <em>Prim</em></h3>
+<div class="product-gamme"><span class="brand-titane">TITANE hydro</span> · Impression</div>
+<h3 class="product-name"><span class="brand-titane">TITANE hydro</span> <em>Prim</em></h3>
 <div class="product-subtitle">Impression acrylique en phase aqueuse</div>
 <p class="product-description">Sous-couche d'accrochage en phase aqueuse, classée A+ pour la qualité de l'air intérieur. Faiblement émissive en COV, conditionnée en fût recyclé. FDES vérifiée Inies pour des chantiers RE 2020. Excellente adhérence sur tous supports traditionnels, aspect mat profond, fort pouvoir opacifiant.</p>
 <div class="product-footer">
@@ -1262,7 +1279,7 @@
 </div>
 </div>
 </article>
- 2. <span class="brand-titane">TITANE HYDRO</span> MAT - MAT acrylique biosourcé 
+ 2. <span class="brand-titane">TITANE hydro</span> MAT - MAT acrylique biosourcé 
 <article class="product-card reveal" data-brillance="2" data-finition="mat" id="p-titane-mat">
 <div class="product-finition-bar"></div>
 <span class="product-finition-tag">Mat</span>
@@ -1283,8 +1300,8 @@
 <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-titane">Titane Hydro</span> · Mat</div>
-<h3 class="product-name"><span class="brand-titane">Titane hydro</span> <em>Mat</em></h3>
+<div class="product-gamme"><span class="brand-titane">TITANE hydro</span> · Mat</div>
+<h3 class="product-name"><span class="brand-titane">TITANE hydro</span> <em>Mat</em></h3>
 <div class="product-subtitle">Acrylique garnissante pochée · phase aqueuse</div>
 <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Fût recyclé, FDES vérifiée Inies, compatible chantiers RE 2020. Très couvrante avec une grande blancheur, aspect mat profond. Garnissante, idéale pour murs et plafonds des projets à fort engagement environnemental.</p>
 <div class="product-footer">
@@ -1296,7 +1313,7 @@
 </div>
 </div>
 </article>
- 3. <span class="brand-titane">TITANE HYDRO</span> MV evo - MAT VELOUTÉ alkyde émulsion 
+ 3. <span class="brand-titane">TITANE hydro</span> MV evo - MAT VELOUTÉ alkyde émulsion 
 <article class="product-card reveal" data-brillance="3" data-finition="mat-veloute" id="p-titane-mv">
 <div class="product-finition-bar"></div>
 <span class="product-finition-tag">Mat velouté</span>
@@ -1319,8 +1336,8 @@
 <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-titane">Titane Hydro</span> · Mat velouté</div>
-<h3 class="product-name"><span class="brand-titane">Titane hydro</span> <em>MV</em></h3>
+<div class="product-gamme"><span class="brand-titane">TITANE hydro</span> · Mat velouté</div>
+<h3 class="product-name"><span class="brand-titane">TITANE hydro</span> <em>MV</em></h3>
 <div class="product-subtitle">Alkyde biosourcée en émulsion · 2 en 1</div>
 <p class="product-description">Le fer de lance écoresponsable de la gamme : <strong>31,5 % de matières premières biosourcées</strong>, <strong>COV &lt; 1 g/L</strong> et alkyde en émulsion aqueuse. Classée A+, FDES vérifiée Inies, fût recyclé, fabrication française — taillée pour les chantiers RE 2020 les plus exigeants. Impression et finition réunies, grande blancheur et aspect mat velouté élégant.</p>
 <div class="product-footer">
@@ -1332,7 +1349,7 @@
 </div>
 </div>
 </article>
- 4. <span class="brand-titane">TITANE HYDRO</span> VELOURS 
+ 4. <span class="brand-titane">TITANE hydro</span> VELOURS 
 <article class="product-card reveal" data-brillance="4" data-finition="velours" id="p-titane-velours">
 <div class="product-finition-bar"></div>
 <span class="product-finition-tag">Velours</span>
@@ -1355,8 +1372,8 @@
 <span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18l-2 14H5L3 6z"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span><span class="picto-label">Lessiv.</span></span>
 </div>
 <div class="product-info">
-<div class="product-gamme"><span class="brand-titane">Titane Hydro</span> · Velours</div>
-<h3 class="product-name"><span class="brand-titane">Titane hydro</span> <em>Velours</em></h3>
+<div class="product-gamme"><span class="brand-titane">TITANE hydro</span> · Velours</div>
+<h3 class="product-name"><span class="brand-titane">TITANE hydro</span> <em>Velours</em></h3>
 <div class="product-subtitle">Acrylique garnissante pochée · phase aqueuse</div>
 <p class="product-description">Peinture acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong> et classée A+. Conditionnée en fût recyclé, FDES vérifiée Inies, compatible RE 2020. Excellent couvrant, très garnissante et <strong>lessivable</strong>, aspect velours subtil. Le bon compromis esthétique et résistance pour les pièces de vie et de passage.</p>
 <div class="product-footer">
@@ -1412,13 +1429,13 @@
 <div class="footer-top">
 <div>
 <div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
-<p>Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+<p>Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
 </div>
 <div class="footer-col">
 <h4>Nos gammes</h4>
 <ul>
-<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
-<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">TITANE hydro</span></a></li>
 <li><a href="nuanciers.html">Colorimétrie</a></li>
 <li><a href="index.html#eco">Engagement éco</a></li>
 </ul>

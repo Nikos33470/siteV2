@@ -609,8 +609,8 @@
 
 
   /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
-  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
-     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  /* Reprend la typo italique des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE hydro doivent avoir un rendu identique partout. */
   .brand-45,
   .brand-titane {
     font-style: italic;
@@ -620,11 +620,20 @@
     font-weight: 700;
     letter-spacing: 0px;
   }
+  /* Le chiffre "45" est plus gros que le reste du nom — comme sur l'étiquette */
+  .brand-45 .brand-45-fig {
+    font-size: 1.35em;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    vertical-align: baseline;
+    line-height: 0.9;
+  }
   .brand-titane {
+    /* PAS de text-transform: uppercase ici. Le HTML écrit "TITANE" en majuscules et "hydro" en minuscules pour respecter l'étiquette. */
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
   }
   /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
      (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
@@ -637,15 +646,21 @@
     font-weight: 700 !important;
     letter-spacing: 0 !important;
   }
+  /* "45" agrandi dans la carte index */
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-size: 1.35em !important;
+    font-weight: 800 !important;
+    line-height: 0.85;
+    vertical-align: baseline;
+  }
   .gamme-card.gamme-titane .gamme-name,
   .gamme-card.gamme-titane .gamme-name-accent {
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
     font-style: italic !important;
     font-weight: 700 !important;
-    text-transform: uppercase !important;
     letter-spacing: 0.3px !important;
+    /* PAS d'uppercase forcé : le HTML écrit déjà "TITANE" et "hydro" avec les bonnes casses */
   }
-  /* on garde la couleur d'accent orange/bleu déjà définie */
 
   /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
   .badge-cov .pot-badge-label,
@@ -671,6 +686,14 @@
     font-style: italic !important;
     font-weight: 700 !important;
   }
+  /* "45" agrandi dans les titres de la gamme 45 */
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name em {
+    font-size: 1.35em !important;
+    font-weight: 800 !important;
+    line-height: 0.85;
+    vertical-align: baseline;
+  }
   [data-gamme-section="titane"] .gamme-banner-title,
   [data-gamme-section="titane"] .gamme-banner-title em,
   [data-gamme-section="titane"] .product-name,
@@ -680,12 +703,6 @@
     font-weight: 700 !important;
     letter-spacing: 0.3px;
   }
-  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
-     on neutralise juste son italique déjà présent (héritage cohérent) */
-
-  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
-  /* déjà couverts par les <span class="brand-..."> wrappés */
-
   /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
@@ -768,8 +785,8 @@
 <div aria-label="Filtrer par gamme" class="filters-group" role="group">
 <span class="filters-label">Filtrer par gamme</span>
 <button class="filter-btn is-active" data-filter="all">Toutes <span class="count"></span></button>
-<button class="filter-btn" data-filter="atelier45"><span class="brand-45">L'Atelier 45</span> <span class="count"></span></button>
-<button class="filter-btn" data-filter="titane"><span class="brand-titane">Titane Hydro</span> <span class="count"></span></button>
+<button class="filter-btn" data-filter="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> <span class="count"></span></button>
+<button class="filter-btn" data-filter="titane"><span class="brand-titane">TITANE hydro</span> <span class="count"></span></button>
 <button class="filter-btn" data-filter="nuanciers">Nuanciers <span class="count"></span></button>
 <button class="filter-btn" data-filter="partenaires">Partenaires <span class="count"></span></button>
 </div>
@@ -812,8 +829,8 @@
 <div aria-label="Filtrer FT par gamme" class="doc-subfilters" role="group">
 <span class="doc-subfilters-label">Gamme</span>
 <button class="doc-subfilter is-active" data-sub-filter="all">Toutes</button>
-<button class="doc-subfilter" data-sub-filter="atelier45"><span class="brand-45">L'Atelier 45</span></button>
-<button class="doc-subfilter" data-sub-filter="titane"><span class="brand-titane">Titane Hydro</span></button>
+<button class="doc-subfilter" data-sub-filter="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></button>
+<button class="doc-subfilter" data-sub-filter="titane"><span class="brand-titane">TITANE hydro</span></button>
 </div>
 <ul class="doc-list">
 <li class="doc-item" data-gamme="atelier45" data-search="impress 45">
@@ -821,7 +838,7 @@
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
 <div class="doc-title">FT Impress 45 EVO</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Impression universelle</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Impression universelle</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -831,7 +848,7 @@
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
 <div class="doc-title">FT Impress 45 Grands Travaux</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Impression chantiers neufs</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Impression chantiers neufs</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -841,7 +858,7 @@
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
 <div class="doc-title">FT Mat 45</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Finition mate biosourcée</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Finition mate biosourcée</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -851,7 +868,7 @@
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
 <div class="doc-title">FT Velours 45</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Finition velours intérieure</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Finition velours intérieure</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -861,7 +878,7 @@
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
 <div class="doc-title">FT Satin 45</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Finition satinée lessivable</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Finition satinée lessivable</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -871,7 +888,7 @@
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
 <div class="doc-title">FT Glycéro 45</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Émail glycérophtalique</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Émail glycérophtalique</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -880,8 +897,8 @@
 <a class="doc-link" href="documents/ft/FT_TITANE_HYDRO_PRIM.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
-<div class="doc-title">FT <span class="brand-titane">Titane Hydro</span> Prim</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Impression bas carbone</div>
+<div class="doc-title">FT <span class="brand-titane">TITANE hydro</span> Prim</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Impression bas carbone</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -890,8 +907,8 @@
 <a class="doc-link" href="documents/ft/FT_TITANE_HYDRO_MAT.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
-<div class="doc-title">FT <span class="brand-titane">Titane Hydro</span> Mat</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Finition mate haute opacité</div>
+<div class="doc-title">FT <span class="brand-titane">TITANE hydro</span> Mat</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Finition mate haute opacité</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -900,8 +917,8 @@
 <a class="doc-link" href="documents/ft/FT_TITANE_hydro_MV_.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
-<div class="doc-title">FT <span class="brand-titane">Titane Hydro</span> MV</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Mat velouté lessivable</div>
+<div class="doc-title">FT <span class="brand-titane">TITANE hydro</span> MV</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Mat velouté lessivable</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -910,8 +927,8 @@
 <a class="doc-link" href="documents/ft/FT_TITANE_HYDRO_VELOURS.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FT</span></div>
 <div class="doc-content">
-<div class="doc-title">FT <span class="brand-titane">Titane Hydro</span> Velours</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Finition velours premium</div>
+<div class="doc-title">FT <span class="brand-titane">TITANE hydro</span> Velours</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Finition velours premium</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -937,8 +954,8 @@
 <div aria-label="Filtrer FDES par gamme" class="doc-subfilters" role="group">
 <span class="doc-subfilters-label">Gamme</span>
 <button class="doc-subfilter is-active" data-sub-filter="all">Toutes</button>
-<button class="doc-subfilter" data-sub-filter="atelier45"><span class="brand-45">L'Atelier 45</span></button>
-<button class="doc-subfilter" data-sub-filter="titane"><span class="brand-titane">Titane Hydro</span></button>
+<button class="doc-subfilter" data-sub-filter="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></button>
+<button class="doc-subfilter" data-sub-filter="titane"><span class="brand-titane">TITANE hydro</span></button>
 </div>
 <ul class="doc-list">
 <!-- FDES mutualisée pour les 3 impressions -->
@@ -946,19 +963,19 @@
 <a class="doc-link" href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FDES</span></div>
 <div class="doc-content">
-<div class="doc-title">FDES Impressions <span class="brand-45">L'Atelier 45</span> &amp; <span class="brand-titane">Titane Hydro</span> Prim</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Impress 45 EVO · Impress 45 Grands Travaux · <span class="brand-titane">Titane Hydro</span> Prim</div>
+<div class="doc-title">FDES Impressions <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> &amp; <span class="brand-titane">TITANE hydro</span> Prim</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Impress 45 EVO · Impress 45 Grands Travaux · <span class="brand-titane">TITANE hydro</span> Prim</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
 </li>
- <span class="brand-45">L'Atelier 45</span> - finitions individuelles 
+<span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> - finitions individuelles 
 <li class="doc-item" data-gamme="atelier45" data-search="fdes mat 45 atelier finition mate">
 <a class="doc-link" href="documents/fdes/FDES_45_MAT.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FDES</span></div>
 <div class="doc-content">
 <div class="doc-title">FDES Mat 45</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Finition mate biosourcée</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Finition mate biosourcée</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -968,7 +985,7 @@
 <div aria-hidden="true" class="doc-icon"><span>FDES</span></div>
 <div class="doc-content">
 <div class="doc-title">FDES Velours 45</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Finition velours intérieure</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Finition velours intérieure</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -978,7 +995,7 @@
 <div aria-hidden="true" class="doc-icon"><span>FDES</span></div>
 <div class="doc-content">
 <div class="doc-title">FDES Satin 45</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Finition satinée lessivable</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Finition satinée lessivable</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -988,18 +1005,18 @@
 <div aria-hidden="true" class="doc-icon"><span>FDES</span></div>
 <div class="doc-content">
 <div class="doc-title">FDES Glycéro 45 Satin</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Glycérophtalique satinée — phase solvant</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Glycérophtalique satinée — phase solvant</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
 </li>
- <span class="brand-titane">Titane Hydro</span> - finitions individuelles 
+<span class="brand-titane">TITANE hydro</span> - finitions individuelles 
 <li class="doc-item" data-gamme="titane" data-search="fdes titane hydro mat finition mate">
 <a class="doc-link" href="documents/fdes/FDES_titane_hydro_mat.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FDES</span></div>
 <div class="doc-content">
-<div class="doc-title">FDES <span class="brand-titane">Titane Hydro</span> Mat</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Finition mate haute opacité</div>
+<div class="doc-title">FDES <span class="brand-titane">TITANE hydro</span> Mat</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Finition mate haute opacité</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -1008,8 +1025,8 @@
 <a class="doc-link" href="documents/fdes/FDES_titane_hydro_Mat_Veloute_MV.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FDES</span></div>
 <div class="doc-content">
-<div class="doc-title">FDES <span class="brand-titane">Titane Hydro</span> MV</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Mat velouté lessivable</div>
+<div class="doc-title">FDES <span class="brand-titane">TITANE hydro</span> MV</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Mat velouté lessivable</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -1018,8 +1035,8 @@
 <a class="doc-link" href="documents/fdes/FDES_Titane_hydro_Velours.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>FDES</span></div>
 <div class="doc-content">
-<div class="doc-title">FDES <span class="brand-titane">Titane Hydro</span> Velours</div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Finition velours premium</div>
+<div class="doc-title">FDES <span class="brand-titane">TITANE hydro</span> Velours</div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Finition velours premium</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -1175,8 +1192,8 @@
 <div aria-label="Filtrer plaquettes par gamme" class="doc-subfilters" role="group">
 <span class="doc-subfilters-label">Gamme</span>
 <button class="doc-subfilter is-active" data-sub-filter="all">Toutes</button>
-<button class="doc-subfilter" data-sub-filter="atelier45"><span class="brand-45">L'Atelier 45</span></button>
-<button class="doc-subfilter" data-sub-filter="titane"><span class="brand-titane">Titane Hydro</span></button>
+<button class="doc-subfilter" data-sub-filter="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></button>
+<button class="doc-subfilter" data-sub-filter="titane"><span class="brand-titane">TITANE hydro</span></button>
 <button class="doc-subfilter" data-sub-filter="partenaires">Partenaires</button>
 </div>
 <ul class="doc-list">
@@ -1184,8 +1201,8 @@
 <a class="doc-link" href="documents/plaquettes/Plaquette-Atelier-45.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>PLQ</span></div>
 <div class="doc-content">
-<div class="doc-title">Plaquette gamme <span class="brand-45">L'Atelier 45</span></div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier 45</span></span> Présentation commerciale complète</div>
+<div class="doc-title">Plaquette gamme <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></span> Présentation commerciale complète</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -1194,8 +1211,8 @@
 <a class="doc-link" href="documents/plaquettes/Plaquette-Titane-Hydro.pdf" rel="noopener" target="_blank">
 <div aria-hidden="true" class="doc-icon"><span>PLQ</span></div>
 <div class="doc-content">
-<div class="doc-title">Plaquette gamme <span class="brand-titane">Titane Hydro</span></div>
-<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">Titane Hydro</span></span> Argumentaire bas carbone</div>
+<div class="doc-title">Plaquette gamme <span class="brand-titane">TITANE hydro</span></div>
+<div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane"><span class="brand-titane">TITANE hydro</span></span> Argumentaire bas carbone</div>
 </div>
 <span class="doc-action">PDF <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></span>
 </a>
@@ -1275,13 +1292,13 @@
 <div class="footer-top">
 <div>
 <div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
-<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
 </div>
 <div class="footer-col">
 <h4>Nos gammes</h4>
 <ul>
-<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
-<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">TITANE hydro</span></a></li>
 <li><a href="nuanciers.html">Colorimétrie</a></li>
 <li><a href="index.html#eco">Engagement éco</a></li>
 </ul>

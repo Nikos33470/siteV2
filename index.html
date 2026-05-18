@@ -779,8 +779,8 @@
 
 
   /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
-  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
-     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  /* Reprend la typo italique des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE hydro doivent avoir un rendu identique partout. */
   .brand-45,
   .brand-titane {
     font-style: italic;
@@ -790,11 +790,20 @@
     font-weight: 700;
     letter-spacing: 0px;
   }
+  /* Le chiffre "45" est plus gros que le reste du nom — comme sur l'étiquette */
+  .brand-45 .brand-45-fig {
+    font-size: 1.35em;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    vertical-align: baseline;
+    line-height: 0.9;
+  }
   .brand-titane {
+    /* PAS de text-transform: uppercase ici. Le HTML écrit "TITANE" en majuscules et "hydro" en minuscules pour respecter l'étiquette. */
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
   }
   /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
      (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
@@ -807,15 +816,21 @@
     font-weight: 700 !important;
     letter-spacing: 0 !important;
   }
+  /* "45" agrandi dans la carte index */
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-size: 1.35em !important;
+    font-weight: 800 !important;
+    line-height: 0.85;
+    vertical-align: baseline;
+  }
   .gamme-card.gamme-titane .gamme-name,
   .gamme-card.gamme-titane .gamme-name-accent {
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
     font-style: italic !important;
     font-weight: 700 !important;
-    text-transform: uppercase !important;
     letter-spacing: 0.3px !important;
+    /* PAS d'uppercase forcé : le HTML écrit déjà "TITANE" et "hydro" avec les bonnes casses */
   }
-  /* on garde la couleur d'accent orange/bleu déjà définie */
 
   /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
   .badge-cov .pot-badge-label,
@@ -841,6 +856,14 @@
     font-style: italic !important;
     font-weight: 700 !important;
   }
+  /* "45" agrandi dans les titres de la gamme 45 */
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name em {
+    font-size: 1.35em !important;
+    font-weight: 800 !important;
+    line-height: 0.85;
+    vertical-align: baseline;
+  }
   [data-gamme-section="titane"] .gamme-banner-title,
   [data-gamme-section="titane"] .gamme-banner-title em,
   [data-gamme-section="titane"] .product-name,
@@ -850,12 +873,6 @@
     font-weight: 700 !important;
     letter-spacing: 0.3px;
   }
-  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
-     on neutralise juste son italique déjà présent (héritage cohérent) */
-
-  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
-  /* déjà couverts par les <span class="brand-..."> wrappés */
-
   /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
@@ -917,7 +934,7 @@
 <span class="hero-title-accent">en France.</span>
 </h1>
 <p class="hero-subtitle">
-        L'Atelier est marchand de couleurs en Gironde. Nous concevons nos propres gammes — <strong><span class="brand-45">L'Atelier 45</span></strong> et <strong><span class="brand-titane">Titane Hydro</span></strong> — et distribuons les meilleures peintures techniques et bas carbone du marché. Deux magasins, une passion : la couleur qui dure.
+        L'Atelier est marchand de couleurs en Gironde. Nous concevons nos propres gammes — <strong><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></strong> et <strong><span class="brand-titane">TITANE hydro</span></strong> — et distribuons les meilleures peintures techniques et bas carbone du marché. Deux magasins, une passion : la couleur qui dure.
       </p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="gammes.html">Découvrir nos gammes<span class="btn-arrow">→</span></a>
@@ -1006,7 +1023,7 @@
 <h2 class="section-title">Deux gammes,<br/><em>une signature</em></h2>
 </div>
 <p class="section-intro">
-      Conçues avec notre partenaire fabricant français Théolaur, nos gammes <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span> combinent performance professionnelle, respect de l'environnement et identité visuelle forte. Chaque produit pensé pour le quotidien des artisans.
+      Conçues avec notre partenaire fabricant français Théolaur, nos gammes <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span> combinent performance professionnelle, respect de l'environnement et identité visuelle forte. Chaque produit pensé pour le quotidien des artisans.
     </p>
 </div>
 <div class="gammes-grid">
@@ -1039,13 +1056,13 @@
 </div>
 <div class="gamme-card-content">
 <span class="gamme-tag">Gamme premium éco</span>
-<h3 class="gamme-name">titane <span class="gamme-name-accent">hydro</span></h3>
+<h3 class="gamme-name">TITANE <span class="gamme-name-accent">hydro</span></h3>
 <p class="gamme-description">Notre gamme technique haut de gamme, dont la <strong>Titane MV evo biosourcée à 31,5%</strong>. Excellence d'application, faible COV, conformité RE2020.</p>
 <div class="gamme-products">
-<a class="gamme-product-chip" href="gammes.html#p-titane-prim"><span class="brand-titane">Titane Hydro</span> Prim</a>
-<a class="gamme-product-chip" href="gammes.html#p-titane-mat"><span class="brand-titane">Titane Hydro</span> Mat</a>
-<a class="gamme-product-chip" href="gammes.html#p-titane-velours"><span class="brand-titane">Titane Hydro</span> Velours</a>
-<a class="gamme-product-chip" href="gammes.html#p-titane-mv"><span class="brand-titane">Titane Hydro</span> MV evo</a>
+<a class="gamme-product-chip" href="gammes.html#p-titane-prim"><span class="brand-titane">TITANE hydro</span> Prim</a>
+<a class="gamme-product-chip" href="gammes.html#p-titane-mat"><span class="brand-titane">TITANE hydro</span> Mat</a>
+<a class="gamme-product-chip" href="gammes.html#p-titane-velours"><span class="brand-titane">TITANE hydro</span> Velours</a>
+<a class="gamme-product-chip" href="gammes.html#p-titane-mv"><span class="brand-titane">TITANE hydro</span> MV evo</a>
 </div>
 </div>
 <a class="gamme-cta" href="gammes.html#gamme-titane">Voir les 4 produits<span>→</span></a>
@@ -1237,7 +1254,7 @@
 <a class="marque-card reveal" href="gammes.html" style="background:linear-gradient(135deg, #1F3A5F 0%, #2D4E7A 100%); color:white; border:none;">
 <div class="marque-logo" style="color:#FFA968;">+ vos gammes</div>
 <span class="marque-tag" style="background:rgba(240,127,44,0.2); color:#FFA968;">★ L'Atelier</span>
-<p class="marque-description" style="color:rgba(255,255,255,0.7);"><span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span> : nos 10 produits de fabrication française, conçus pour les professionnels exigeants.</p>
+<p class="marque-description" style="color:rgba(255,255,255,0.7);"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span> : nos 10 produits de fabrication française, conçus pour les professionnels exigeants.</p>
 </a>
 </div>
 </section>
@@ -1338,7 +1355,7 @@
 <div class="avis-card-meta"><div class="avis-card-name">Nadia T.</div><div class="avis-card-date">il y a 5 jours</div></div>
 </div>
 <div class="avis-card-stars">★★★★★</div>
-<p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme <span class="brand-titane">Titane Hydro</span> biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
+<p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme <span class="brand-titane">TITANE hydro</span> biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
 <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
 </div>
 <!-- Bloc 2 : duplication pour boucle infinie -->
@@ -1393,7 +1410,7 @@
 <div class="avis-card-meta"><div class="avis-card-name">Nadia T.</div><div class="avis-card-date">il y a 5 jours</div></div>
 </div>
 <div class="avis-card-stars">★★★★★</div>
-<p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme <span class="brand-titane">Titane Hydro</span> biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
+<p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme <span class="brand-titane">TITANE hydro</span> biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
 <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
 </div>
 </div>
@@ -1494,13 +1511,13 @@
 <div class="footer-top">
 <div>
 <div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
-<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
 </div>
 <div class="footer-col">
 <h4>Nos gammes</h4>
 <ul>
-<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
-<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">TITANE hydro</span></a></li>
 <li><a href="nuanciers.html">Colorimétrie</a></li>
 <li><a href="#">Engagement éco</a></li>
 </ul>

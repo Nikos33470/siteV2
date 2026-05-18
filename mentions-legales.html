@@ -234,8 +234,8 @@
 
 
   /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
-  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
-     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  /* Reprend la typo italique des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE hydro doivent avoir un rendu identique partout. */
   .brand-45,
   .brand-titane {
     font-style: italic;
@@ -245,11 +245,20 @@
     font-weight: 700;
     letter-spacing: 0px;
   }
+  /* Le chiffre "45" est plus gros que le reste du nom — comme sur l'étiquette */
+  .brand-45 .brand-45-fig {
+    font-size: 1.35em;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    vertical-align: baseline;
+    line-height: 0.9;
+  }
   .brand-titane {
+    /* PAS de text-transform: uppercase ici. Le HTML écrit "TITANE" en majuscules et "hydro" en minuscules pour respecter l'étiquette. */
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
   }
   /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
      (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
@@ -262,15 +271,21 @@
     font-weight: 700 !important;
     letter-spacing: 0 !important;
   }
+  /* "45" agrandi dans la carte index */
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-size: 1.35em !important;
+    font-weight: 800 !important;
+    line-height: 0.85;
+    vertical-align: baseline;
+  }
   .gamme-card.gamme-titane .gamme-name,
   .gamme-card.gamme-titane .gamme-name-accent {
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
     font-style: italic !important;
     font-weight: 700 !important;
-    text-transform: uppercase !important;
     letter-spacing: 0.3px !important;
+    /* PAS d'uppercase forcé : le HTML écrit déjà "TITANE" et "hydro" avec les bonnes casses */
   }
-  /* on garde la couleur d'accent orange/bleu déjà définie */
 
   /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
   .badge-cov .pot-badge-label,
@@ -296,6 +311,14 @@
     font-style: italic !important;
     font-weight: 700 !important;
   }
+  /* "45" agrandi dans les titres de la gamme 45 */
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name em {
+    font-size: 1.35em !important;
+    font-weight: 800 !important;
+    line-height: 0.85;
+    vertical-align: baseline;
+  }
   [data-gamme-section="titane"] .gamme-banner-title,
   [data-gamme-section="titane"] .gamme-banner-title em,
   [data-gamme-section="titane"] .product-name,
@@ -305,12 +328,6 @@
     font-weight: 700 !important;
     letter-spacing: 0.3px;
   }
-  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
-     on neutralise juste son italique déjà présent (héritage cohérent) */
-
-  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
-  /* déjà couverts par les <span class="brand-..."> wrappés */
-
   /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
@@ -412,7 +429,7 @@
 <h2><span class="num">03</span>Propriété <em>intellectuelle</em></h2>
 <div class="legal-section-rule"></div>
 <p>L'ensemble des éléments présents sur le site www.latelier33.fr — textes, photographies, illustrations, logos, marques, vidéos, sons, mises en page, chartes graphiques, bases de données et code source — est protégé par le droit de la propriété intellectuelle et reste la propriété exclusive de L'ATELIER ou de ses partenaires.</p>
-<p>Les marques <strong><span class="brand-45">L'Atelier 45</span></strong> et <strong><span class="brand-titane">Titane Hydro</span></strong> sont des marques de la société L'ATELIER. Les autres marques citées sur le site (Théolaur, KEIM, Chromatic, Polycrom, Panaget, Kährs, Bauwerk, Forbo, Gerflor, Tarkett, Amtico, Moduleo, Interface, Polyflor, IVC, Boen, Haro, BerryAlloc, Design Parquet, Parqueterie Berrichonne…) demeurent la propriété de leurs détenteurs respectifs.</p>
+<p>Les marques <strong><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></strong> et <strong><span class="brand-titane">TITANE hydro</span></strong> sont des marques de la société L'ATELIER. Les autres marques citées sur le site (Théolaur, KEIM, Chromatic, Polycrom, Panaget, Kährs, Bauwerk, Forbo, Gerflor, Tarkett, Amtico, Moduleo, Interface, Polyflor, IVC, Boen, Haro, BerryAlloc, Design Parquet, Parqueterie Berrichonne…) demeurent la propriété de leurs détenteurs respectifs.</p>
 <p>Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit, et sur quelque support que ce soit, est interdite sans l'autorisation écrite préalable de L'ATELIER. Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie au titre des articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
 </section>
 <section class="legal-section">
@@ -450,13 +467,13 @@
 <div class="footer-top">
 <div>
 <div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
-<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
 </div>
 <div class="footer-col">
 <h4>Nos gammes</h4>
 <ul>
-<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
-<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">TITANE hydro</span></a></li>
 <li><a href="revetement-mural.html">Revêtement mural</a></li>
 <li><a href="revetement-sol.html">Revêtement de sol</a></li>
 </ul>
