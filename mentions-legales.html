@@ -35,7 +35,7 @@
   .header.is-scrolled .logo-since { display: none; }
   .logo-symbol, .logo-text, .logo-baseline { transition: all 0.4s var(--transition); }
   .logo { display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--bleu); }
-  .logo-symbol { width: 105px; height: 130px; flex-shrink: 0; }
+  .logo-symbol { width: 105px; height: 130px; flex-shrink: 0;  object-fit: contain; }
   .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
   .logo-text { font-family: var(--sans); font-weight: 700; font-size: 48px; color: var(--bleu); letter-spacing: -0.8px; }
   .logo-baseline { font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--orange); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
@@ -336,11 +336,7 @@
 <header class="header">
 <div class="header-inner">
 <a class="logo" href="index.html">
-<svg aria-label="Logo L'Atelier" class="logo-symbol" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#1F3A5F" height="92" width="68" x="20" y="18"></rect>
-<path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"></path>
-<text fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3" text-anchor="middle" x="54" y="94">a</text>
-</svg>
+<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png">
 <div class="logo-text-wrap">
 <span class="logo-text">l'atelier</span>
 <span class="logo-baseline">MARCHAND DE COULEURS</span>
