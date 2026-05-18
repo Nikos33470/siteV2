@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Nos gammes de peinture — L'Atelier 45 &amp; Titane Hydro · Peintures fabriquées en France</title>
 <meta content="Découvrez nos gammes de peintures professionnelles fabriquées en France : L'Atelier 45 (acrylique &amp; glycéro) et Titane Hydro biosourcée. Impressions, mats, velours et satins." name="description"/>
-<meta name="keywords" content="peinture, marchand de couleurs, peinture professionnelle, peinture biosourcée, Mérignac, La Teste-de-Buch, Bassin d'Arcachon, Gironde, L'Atelier 45, Titane Hydro"/>
 <meta name="author" content="L'Atelier — Marchand de couleurs"/>
 <meta name="geo.region" content="FR-33"/>
 <meta name="geo.placename" content="Mérignac, La Teste-de-Buch"/>
@@ -70,6 +69,11 @@
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
+
+  /* Sécurité ratio : préserve l'aspect ratio des images quand le CSS ne fixe que width ou height.
+     Indispensable quand width/height sont définis en attributs HTML (anti-CLS). */
+  img { max-width: 100%; height: auto; }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
@@ -881,7 +885,7 @@
 <header class="header">
 <div class="header-inner">
 <a class="logo" href="index.html">
-<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png">
+<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png" width="309" height="378" decoding="async">
 <div class="logo-text-wrap">
 <span class="logo-text">l'atelier</span>
 <span class="logo-baseline">MARCHAND DE COULEURS</span>
@@ -1059,14 +1063,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="L'Atelier 45 Impress evo - Impression acrylique blanche" class="product-image" loading="lazy" src="images/produits/45_impress_.webp"/>
+<img alt="L'Atelier 45 Impress evo - Impression acrylique blanche" class="product-image" src="images/produits/45_impress_.webp" width="379" height="454" fetchpriority="high"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
 <span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"></path></svg></span><span class="picto-label">Outils</span></span>
 </div>
@@ -1094,14 +1098,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="L'Atelier 45 Grands Travaux - Impression acrylique" class="product-image" loading="lazy" src="images/produits/45_impress_GT.webp"/>
+<img alt="L'Atelier 45 Grands Travaux - Impression acrylique" class="product-image" loading="lazy" src="images/produits/45_impress_GT.webp" width="752" height="913" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
 <span class="picto is-bleuclair" title="+130 m²"><span class="picto-icon is-text-xs">130m²</span><span class="picto-label">+130m²</span></span>
 </div>
@@ -1129,14 +1133,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="L'Atelier 45 Mat - Peinture décorative impression et finition" class="product-image" loading="lazy" src="images/produits/45_Mat_2en1.webp"/>
+<img alt="L'Atelier 45 Mat - Peinture décorative impression et finition" class="product-image" loading="lazy" src="images/produits/45_Mat_2en1.webp" width="360" height="454" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
 <span class="picto is-orange" title="2 en 1"><span class="picto-icon is-text-sm">2en1</span><span class="picto-label">2 en 1</span></span>
 </div>
@@ -1164,14 +1168,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="L'Atelier 45 Velours - Peinture acrylique veloutée" class="product-image" loading="lazy" src="images/produits/45_velours.webp"/>
+<img alt="L'Atelier 45 Velours - Peinture acrylique veloutée" class="product-image" loading="lazy" src="images/produits/45_velours.webp" width="767" height="962" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
 </div>
 <div class="product-info">
@@ -1198,14 +1202,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="L'Atelier 45 Satin - Peinture acrylique satinée" class="product-image" loading="lazy" src="images/produits/45_satin.webp"/>
+<img alt="L'Atelier 45 Satin - Peinture acrylique satinée" class="product-image" loading="lazy" src="images/produits/45_satin.webp" width="746" height="925" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
 <span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18l-2 14H5L3 6z"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span><span class="picto-label">Lessiv.</span></span>
 </div>
@@ -1233,14 +1237,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="L'Atelier 45 Glycéro - Peinture glycérophtalique satinée" class="product-image" loading="lazy" src="images/produits/45_glycero_satin.webp"/>
+<img alt="L'Atelier 45 Glycéro - Peinture glycérophtalique satinée" class="product-image" loading="lazy" src="images/produits/45_glycero_satin.webp" width="795" height="782" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-cclass" title="Classe C - Émissions dans l'air intérieur"><span class="picto-icon"><img alt="C" src="images/pictos/cclass-emissions.svg"/></span><span class="picto-label">C air int.</span></span>
+<span class="picto is-cclass" title="Classe C - Émissions dans l'air intérieur"><span class="picto-icon"><img alt="C" src="images/pictos/cclass-emissions.svg" loading="lazy" decoding="async"/></span><span class="picto-label">C air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-gris" title="Phase solvant"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M9 2h6v3H9zM7 5h10l-1 16H8L7 5z"></path><path d="M10 12h4"></path></svg></span><span class="picto-label">Solvant</span></span>
 <span class="picto is-bleu" title="Int / Ext"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><circle cx="12" cy="15" r="2"></circle></svg></span><span class="picto-label">Int/Ext</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-orange" title="Boiseries"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="1" width="18" x="3" y="3"></rect><path d="M3 8h18M3 14h18M9 3v18M15 3v18"></path></svg></span><span class="picto-label">Bois</span></span>
 </div>
 <div class="product-info">
@@ -1300,14 +1304,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="Titane Hydro Prim - Impression biosourcée" class="product-image" loading="lazy" src="images/produits/titane_hydro_prim.webp"/>
+<img alt="Titane Hydro Prim - Impression biosourcée" class="product-image" loading="lazy" src="images/produits/titane_hydro_prim.webp" width="734" height="902" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"></path></svg></span><span class="picto-label">Outils</span></span>
 </div>
 <div class="product-info">
@@ -1334,14 +1338,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="Titane Hydro Mat - Peinture acrylique biosourcée mate" class="product-image" loading="lazy" src="images/produits/titane_hydro_mat.webp"/>
+<img alt="Titane Hydro Mat - Peinture acrylique biosourcée mate" class="product-image" loading="lazy" src="images/produits/titane_hydro_mat.webp" width="734" height="902" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
 </div>
 <div class="product-info">
@@ -1368,14 +1372,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="Titane Hydro MV evo - Peinture alkyde mat velouté biosourcée" class="product-image" loading="lazy" src="images/produits/titane_hydro_mat_veloute.webp"/>
+<img alt="Titane Hydro MV evo - Peinture alkyde mat velouté biosourcée" class="product-image" loading="lazy" src="images/produits/titane_hydro_mat_veloute.webp" width="338" height="436" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-vertfonce" title="31,5 % biosourcé"><span class="picto-icon is-text-xs">31,5%</span><span class="picto-label">Biosourcé</span></span>
 <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
 <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
@@ -1404,14 +1408,14 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
-<img alt="Titane Hydro Velours - Peinture acrylique biosourcée velours" class="product-image" loading="lazy" src="images/produits/titane_hydro_velours.webp"/>
+<img alt="Titane Hydro Velours - Peinture acrylique biosourcée velours" class="product-image" loading="lazy" src="images/produits/titane_hydro_velours.webp" width="738" height="922" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
 <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
 <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
 <span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18l-2 14H5L3 6z"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span><span class="picto-label">Lessiv.</span></span>
@@ -1504,7 +1508,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png" width="252" height="252" loading="lazy" decoding="async"/></a></span></div>
 </div>
 </div>
 </footer>

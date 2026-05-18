@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Revêtements muraux — Papiers peints haut de gamme &amp; revêtements pros | L'Atelier</title>
 <meta content="L'Atelier distribue les plus belles maisons de papiers peints (Élitis, Pierre Frey, Casamance, Isidore Leroy, Nobilis…) et les revêtements muraux professionnels. 2 showrooms en Gironde." name="description"/>
-<meta name="keywords" content="peinture, marchand de couleurs, peinture professionnelle, peinture biosourcée, Mérignac, La Teste-de-Buch, Bassin d'Arcachon, Gironde, L'Atelier 45, Titane Hydro"/>
 <meta name="author" content="L'Atelier — Marchand de couleurs"/>
 <meta name="geo.region" content="FR-33"/>
 <meta name="geo.placename" content="Mérignac, La Teste-de-Buch"/>
@@ -67,6 +66,11 @@
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
+
+  /* Sécurité ratio : préserve l'aspect ratio des images quand le CSS ne fixe que width ou height.
+     Indispensable quand width/height sont définis en attributs HTML (anti-CLS). */
+  img { max-width: 100%; height: auto; }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
@@ -622,7 +626,7 @@
 <header class="header">
 <div class="header-inner">
 <a class="logo" href="index.html">
-<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png">
+<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png" width="309" height="378" decoding="async">
 <div class="logo-text-wrap">
 <span class="logo-text">l'atelier</span>
 <span class="logo-baseline">MARCHAND DE COULEURS</span>
@@ -715,12 +719,12 @@
 </header>
 <!-- Galerie panoramiques et papiers peints haut de gamme : visuels officiels éditeurs (Isidore Leroy, Pierre Frey) -->
 <div class="gallery gallery-mural reveal">
-<div class="gallery-item"><img alt="Papier peint panoramique Forêt - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_FORET.jpg?v=1770376883"/><div class="gallery-caption"><div class="gallery-caption-style">Panoramique Forêt</div><div class="gallery-caption-text">Isidore Leroy — Paris, 1842</div></div></div>
-<div class="gallery-item"><img alt="Papier peint panoramique Aube Heure Dorée - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_AUBE_HEURE_DOREE.jpg?v=1777360599"/><div class="gallery-caption"><div class="gallery-caption-style">Bord de mer</div><div class="gallery-caption-text">Aube heure dorée, Isidore Leroy</div></div></div>
-<div class="gallery-item"><img alt="Papier peint panoramique Amazone tropical - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_AMAZONE_0adff836-cfba-4a7f-85d4-559ddaa4c10d.jpg?v=1743779309"/><div class="gallery-caption"><div class="gallery-caption-style">Panoramique tropical</div><div class="gallery-caption-text">Amazone, Isidore Leroy</div></div></div>
-<div class="gallery-item"><img alt="Papier peint Art Déco Cyprins ambre - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/251119_SITUATION_CYPRINS_AMBRE_SDB_FENETRE_14085725_14085775_HouseOfPictures_1251X1799PX.jpg?v=1763972312"/><div class="gallery-caption"><div class="gallery-caption-style">Art Déco</div><div class="gallery-caption-text">Cyprins ambre, Isidore Leroy</div></div></div>
-<div class="gallery-item"><img alt="Papier peint Champs fleuris bois de rose - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/251127_SITUTAION_CHAMPS_FLEURIS_BOIS_DE_ROSE_13759344_13759397_HOUSEOFPICTURES_1251X1799PX.jpg?v=1766499747"/><div class="gallery-caption"><div class="gallery-caption-style">Floral</div><div class="gallery-caption-text">Champs fleuris, Isidore Leroy</div></div></div>
-<div class="gallery-item"><img alt="Papier peint panoramique Brésil bleu paon - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_LE_BRESIL_BLEU_PAON.jpg?v=1768558736"/><div class="gallery-caption"><div class="gallery-caption-style">Forêt panoramique</div><div class="gallery-caption-text">Le Brésil bleu paon, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint panoramique Forêt - Isidore Leroy" src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_FORET.jpg?v=1770376883" fetchpriority="high"/><div class="gallery-caption"><div class="gallery-caption-style">Panoramique Forêt</div><div class="gallery-caption-text">Isidore Leroy — Paris, 1842</div></div></div>
+<div class="gallery-item"><img alt="Papier peint panoramique Aube Heure Dorée - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_AUBE_HEURE_DOREE.jpg?v=1777360599" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Bord de mer</div><div class="gallery-caption-text">Aube heure dorée, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint panoramique Amazone tropical - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_AMAZONE_0adff836-cfba-4a7f-85d4-559ddaa4c10d.jpg?v=1743779309" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Panoramique tropical</div><div class="gallery-caption-text">Amazone, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint Art Déco Cyprins ambre - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/251119_SITUATION_CYPRINS_AMBRE_SDB_FENETRE_14085725_14085775_HouseOfPictures_1251X1799PX.jpg?v=1763972312" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Art Déco</div><div class="gallery-caption-text">Cyprins ambre, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint Champs fleuris bois de rose - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/251127_SITUTAION_CHAMPS_FLEURIS_BOIS_DE_ROSE_13759344_13759397_HOUSEOFPICTURES_1251X1799PX.jpg?v=1766499747" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Floral</div><div class="gallery-caption-text">Champs fleuris, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint panoramique Brésil bleu paon - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_LE_BRESIL_BLEU_PAON.jpg?v=1768558736" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Forêt panoramique</div><div class="gallery-caption-text">Le Brésil bleu paon, Isidore Leroy</div></div></div>
 </div>
 <!-- Liste des fournisseurs -->
 <div class="brands-list reveal">
@@ -771,10 +775,10 @@
 </header>
 <!-- Galerie pros — visuels officiels Vescom (revêtements muraux textiles & vinyles techniques contract) -->
 <div class="gallery gallery-pros reveal">
-<div class="gallery-item"><img alt="Revêtement mural textile Morris en situation salon - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/morris/vescom---textile-wallcovering---morris-7.jpg/4160c2b5f4cb495eaceddb9025f16f8b/vescom---textile-wallcovering---morris-7.webp"/><div class="gallery-caption"><div class="gallery-caption-style">Textile tissé</div><div class="gallery-caption-text">Morris — Vescom</div></div></div>
-<div class="gallery-item"><img alt="Revêtement mural Fraser opaque tissage architectural - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/fraser/vescom---textile-wallcovering---fraser-13.jpg/7422ce1e295b36e4542921b33b4a53c5/vescom---textile-wallcovering---fraser-13.webp"/><div class="gallery-caption"><div class="gallery-caption-style">Tissage 3D</div><div class="gallery-caption-text">Fraser — Vescom</div></div></div>
-<div class="gallery-item"><img alt="Revêtement vinyle recyclé Luxor mat &amp; métallique - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/vinyl_wallcovering/luxor/vescom---recycled-vinyl-wallcovering---luxor-11.jpg/91aa0e299e9b68776f3f9a8d8511f80a/vescom---recycled-vinyl-wallcovering---luxor-11.webp"/><div class="gallery-caption"><div class="gallery-caption-style">Vinyle recyclé</div><div class="gallery-caption-text">Luxor — Vescom</div></div></div>
-<div class="gallery-item"><img alt="Revêtement Sinkiang 100% soie en intérieur - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/sinkiang/vescom---textile-wallcovering---sinkiang-1.jpg/662443cb806b83976bf6b59930cc6377/vescom---textile-wallcovering---sinkiang-1.webp"/><div class="gallery-caption"><div class="gallery-caption-style">100% soie</div><div class="gallery-caption-text">Sinkiang — Vescom</div></div></div>
+<div class="gallery-item"><img alt="Revêtement mural textile Morris en situation salon - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/morris/vescom---textile-wallcovering---morris-7.jpg/4160c2b5f4cb495eaceddb9025f16f8b/vescom---textile-wallcovering---morris-7.webp" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Textile tissé</div><div class="gallery-caption-text">Morris — Vescom</div></div></div>
+<div class="gallery-item"><img alt="Revêtement mural Fraser opaque tissage architectural - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/fraser/vescom---textile-wallcovering---fraser-13.jpg/7422ce1e295b36e4542921b33b4a53c5/vescom---textile-wallcovering---fraser-13.webp" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Tissage 3D</div><div class="gallery-caption-text">Fraser — Vescom</div></div></div>
+<div class="gallery-item"><img alt="Revêtement vinyle recyclé Luxor mat &amp; métallique - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/vinyl_wallcovering/luxor/vescom---recycled-vinyl-wallcovering---luxor-11.jpg/91aa0e299e9b68776f3f9a8d8511f80a/vescom---recycled-vinyl-wallcovering---luxor-11.webp" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Vinyle recyclé</div><div class="gallery-caption-text">Luxor — Vescom</div></div></div>
+<div class="gallery-item"><img alt="Revêtement Sinkiang 100% soie en intérieur - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/sinkiang/vescom---textile-wallcovering---sinkiang-1.jpg/662443cb806b83976bf6b59930cc6377/vescom---textile-wallcovering---sinkiang-1.webp" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">100% soie</div><div class="gallery-caption-text">Sinkiang — Vescom</div></div></div>
 </div>
 <!-- Liste fournisseurs pros -->
 <div class="brands-list reveal">
@@ -857,7 +861,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png" width="252" height="252" loading="lazy" decoding="async"/></a></span></div>
 </div>
 </div>
 </footer>

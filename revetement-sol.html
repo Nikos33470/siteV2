@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Revêtements de sol — Parquets &amp; sols souples LVT | L'Atelier</title>
 <meta content="L'Atelier distribue les plus belles fabriques de parquets (Panaget, Design Parquet, Kährs, Bauwerk…) et les sols souples LVT (Gerflor Creation, Tarkett iD, Forbo Allura, Amtico, Moduleo, Interface, Polyflor, IVC)." name="description"/>
-<meta name="keywords" content="peinture, marchand de couleurs, peinture professionnelle, peinture biosourcée, Mérignac, La Teste-de-Buch, Bassin d'Arcachon, Gironde, L'Atelier 45, Titane Hydro"/>
 <meta name="author" content="L'Atelier — Marchand de couleurs"/>
 <meta name="geo.region" content="FR-33"/>
 <meta name="geo.placename" content="Mérignac, La Teste-de-Buch"/>
@@ -58,6 +57,11 @@
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
+
+  /* Sécurité ratio : préserve l'aspect ratio des images quand le CSS ne fixe que width ou height.
+     Indispensable quand width/height sont définis en attributs HTML (anti-CLS). */
+  img { max-width: 100%; height: auto; }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
@@ -561,7 +565,7 @@
 <header class="header">
 <div class="header-inner">
 <a class="logo" href="index.html">
-<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png">
+<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png" width="309" height="378" decoding="async">
 <div class="logo-text-wrap">
 <span class="logo-text">l'atelier</span>
 <span class="logo-baseline">MARCHAND DE COULEURS</span>
@@ -654,13 +658,13 @@
 </header>
 <!-- Galerie parquet — visuels officiels fabricants (Panaget, Kährs, Design Parquet) -->
 <div class="gallery gallery-parquet reveal">
-<div class="gallery-item"><img alt="Parquet chêne Zénitude noisette Diva 184 - Panaget" loading="lazy" src="https://panaget.com/content/uploads/2024/01/chene_zenitude_noisette_diva184-2-e1704817829703.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne large lame</div><div class="gallery-caption-text">Diva 184 Zénitude — Panaget</div></div></div>
-<div class="gallery-item"><img alt="Parquet point de Hongrie chêne classic topaze - Panaget" loading="lazy" src="https://panaget.com/content/uploads/2024/01/chene_classic_topaze_point-de-hongire90_zoom-e1704904546436.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Point de Hongrie</div><div class="gallery-caption-text">Classic topaze — Panaget</div></div></div>
-<div class="gallery-item"><img alt="Parquet chêne Kalmar - Kährs" loading="lazy" src="https://info-kahrs.ch/wp-content/uploads/2023/10/kalmar-scaled.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Contrecollé scandinave</div><div class="gallery-caption-text">Kalmar — Kährs</div></div></div>
-<div class="gallery-item"><img alt="Parquet chêne massif Opera - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/opera-2-r-3-scaled-e1679480552132.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Massif premium</div><div class="gallery-caption-text">Opera — Design Parquet</div></div></div>
-<div class="gallery-item"><img alt="Parquet chêne Expresso brun fumé thermo - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/dp-chene-expresso-lp-ru-ca-16x180-2ch-teinte-ver-mat.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne thermo</div><div class="gallery-caption-text">Expresso fumé — Design Parquet</div></div></div>
-<div class="gallery-item"><img alt="Parquet chêne Carbone noir verni - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/carbone-1-scaled.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Noir verni</div><div class="gallery-caption-text">Carbone — Design Parquet</div></div></div>
-<div class="gallery-item"><img alt="Parquet chêne naturel - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/naturel.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne naturel</div><div class="gallery-caption-text">Gamme Naturel — Design Parquet</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne Zénitude noisette Diva 184 - Panaget" src="https://panaget.com/content/uploads/2024/01/chene_zenitude_noisette_diva184-2-e1704817829703.jpg" fetchpriority="high"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne large lame</div><div class="gallery-caption-text">Diva 184 Zénitude — Panaget</div></div></div>
+<div class="gallery-item"><img alt="Parquet point de Hongrie chêne classic topaze - Panaget" loading="lazy" src="https://panaget.com/content/uploads/2024/01/chene_classic_topaze_point-de-hongire90_zoom-e1704904546436.jpg" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Point de Hongrie</div><div class="gallery-caption-text">Classic topaze — Panaget</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne Kalmar - Kährs" loading="lazy" src="https://info-kahrs.ch/wp-content/uploads/2023/10/kalmar-scaled.jpg" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Contrecollé scandinave</div><div class="gallery-caption-text">Kalmar — Kährs</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne massif Opera - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/opera-2-r-3-scaled-e1679480552132.jpg" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Massif premium</div><div class="gallery-caption-text">Opera — Design Parquet</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne Expresso brun fumé thermo - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/dp-chene-expresso-lp-ru-ca-16x180-2ch-teinte-ver-mat.jpg" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne thermo</div><div class="gallery-caption-text">Expresso fumé — Design Parquet</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne Carbone noir verni - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/carbone-1-scaled.jpg" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Noir verni</div><div class="gallery-caption-text">Carbone — Design Parquet</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne naturel - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/naturel.jpg" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne naturel</div><div class="gallery-caption-text">Gamme Naturel — Design Parquet</div></div></div>
 </div>
 <!-- Liste des fabricants -->
 <div class="brands-list reveal">
@@ -703,10 +707,10 @@
 </header>
 <!-- Galerie LVT — visuels officiels Forbo (Allura LVT) & Gerflor (Creation) en situation -->
 <div class="gallery gallery-lvt reveal">
-<div class="gallery-item"><img alt="Sol LVT Allura chêne géant clair en situation - Forbo" loading="lazy" src="https://forbo.azureedge.net/forboimages/1495632/Allura_60288-light-giant-oak_60284-natural-giant-oak.webp"/><div class="gallery-caption"><div class="gallery-caption-style">LVT chêne XXL</div><div class="gallery-caption-text">Allura Dryback — Forbo</div></div></div>
-<div class="gallery-item"><img alt="Sol LVT Creation 70 Chips Amber sur rue urbaine - Gerflor" loading="lazy" src="https://cdn.gerflor.com/media/1642426083/1/62086.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">LVT urbain</div><div class="gallery-caption-text">Creation 70 — Gerflor</div></div></div>
-<div class="gallery-item"><img alt="Sol LVT Allura combinaison bois &amp; matière - Forbo" loading="lazy" src="https://forbo.azureedge.net/forboimages/1495612/Allura_63666_63749_60084.webp"/><div class="gallery-caption"><div class="gallery-caption-style">Mix bois &amp; matière</div><div class="gallery-caption-text">Allura — Forbo</div></div></div>
-<div class="gallery-item"><img alt="Sol LVT Creation 55 Tamo Clear en situation salon - Gerflor" loading="lazy" src="https://cdn.gerflor.com/media/1642426083/1/62082.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">LVT clair</div><div class="gallery-caption-text">Creation 55 — Gerflor</div></div></div>
+<div class="gallery-item"><img alt="Sol LVT Allura chêne géant clair en situation - Forbo" loading="lazy" src="https://forbo.azureedge.net/forboimages/1495632/Allura_60288-light-giant-oak_60284-natural-giant-oak.webp" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">LVT chêne XXL</div><div class="gallery-caption-text">Allura Dryback — Forbo</div></div></div>
+<div class="gallery-item"><img alt="Sol LVT Creation 70 Chips Amber sur rue urbaine - Gerflor" loading="lazy" src="https://cdn.gerflor.com/media/1642426083/1/62086.jpg" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">LVT urbain</div><div class="gallery-caption-text">Creation 70 — Gerflor</div></div></div>
+<div class="gallery-item"><img alt="Sol LVT Allura combinaison bois &amp; matière - Forbo" loading="lazy" src="https://forbo.azureedge.net/forboimages/1495612/Allura_63666_63749_60084.webp" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">Mix bois &amp; matière</div><div class="gallery-caption-text">Allura — Forbo</div></div></div>
+<div class="gallery-item"><img alt="Sol LVT Creation 55 Tamo Clear en situation salon - Gerflor" loading="lazy" src="https://cdn.gerflor.com/media/1642426083/1/62082.jpg" decoding="async"/><div class="gallery-caption"><div class="gallery-caption-style">LVT clair</div><div class="gallery-caption-text">Creation 55 — Gerflor</div></div></div>
 </div>
 <!-- Liste des marques LVT -->
 <div class="brands-list reveal">
@@ -793,7 +797,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png" width="252" height="252" loading="lazy" decoding="async"/></a></span></div>
 </div>
 </div>
 </footer>

@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Politique de confidentialité — L'Atelier · Marchand de couleurs</title>
 <meta content="Politique de confidentialité et de protection des données personnelles du site www.latelier33.fr — RGPD, cookies, vos droits." name="description"/>
-<meta name="keywords" content="peinture, marchand de couleurs, peinture professionnelle, peinture biosourcée, Mérignac, La Teste-de-Buch, Bassin d'Arcachon, Gironde, L'Atelier 45, Titane Hydro"/>
 <meta name="author" content="L'Atelier — Marchand de couleurs"/>
 <meta name="geo.region" content="FR-33"/>
 <meta name="geo.placename" content="Mérignac, La Teste-de-Buch"/>
@@ -45,7 +44,6 @@
   ]
 }
 </script>
-<meta content="index, follow" name="robots"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -59,6 +57,11 @@
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
+
+  /* Sécurité ratio : préserve l'aspect ratio des images quand le CSS ne fixe que width ou height.
+     Indispensable quand width/height sont définis en attributs HTML (anti-CLS). */
+  img { max-width: 100%; height: auto; }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
@@ -388,7 +391,7 @@
 <header class="header">
 <div class="header-inner">
 <a class="logo" href="index.html">
-<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png">
+<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png" width="309" height="378" decoding="async">
 <div class="logo-text-wrap">
 <span class="logo-text">l'atelier</span>
 <span class="logo-baseline">MARCHAND DE COULEURS</span>
@@ -603,7 +606,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png" width="252" height="252" loading="lazy" decoding="async"/></a></span></div>
 </div>
 </div>
 </footer>

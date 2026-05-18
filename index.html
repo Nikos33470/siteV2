@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>L'Atelier — Marchand de couleurs · Peintures fabriquées en France · Mérignac &amp; Bassin d'Arcachon</title>
 <meta content="L'Atelier, marchand de couleurs en Gironde. Fabricant de peintures professionnelles. Gammes L'Atelier 45 et Titane Hydro biosourcées. 2 magasins : Mérignac et La Teste-de-Buch." name="description"/>
-<meta name="keywords" content="peinture, marchand de couleurs, peinture professionnelle, peinture biosourcée, Mérignac, La Teste-de-Buch, Bassin d'Arcachon, Gironde, L'Atelier 45, Titane Hydro, peinture fabriquée en France, RE2020"/>
 <meta name="author" content="L'Atelier — Marchand de couleurs"/>
 <meta name="robots" content="index, follow"/>
 <meta name="geo.region" content="FR-33"/>
@@ -161,6 +160,11 @@
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
+
+  /* Sécurité ratio : préserve l'aspect ratio des images quand le CSS ne fixe que width ou height.
+     Indispensable quand width/height sont définis en attributs HTML (anti-CLS). */
+  img { max-width: 100%; height: auto; }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
@@ -1010,7 +1014,7 @@
 <header class="header">
 <div class="header-inner">
 <a class="logo" href="#">
-<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png">
+<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png" width="309" height="378" decoding="async">
 <div class="logo-text-wrap">
 <span class="logo-text">l'atelier</span>
 <span class="logo-baseline">MARCHAND DE COULEURS</span>
@@ -1083,10 +1087,10 @@
 <!-- Badge RE2020 déplacé vers la section "Nos gammes propres" -->
 <div class="pots-stack">
 <!-- Vraies photos détourées des pots -->
-<img alt="Pot L'Atelier 45 MAT 16L - Peinture acrylique" class="pot-3d pot-45-mat" src="images/pot-atelier-45-mat.webp"/>
-<img alt="Pot TITANE Hydro MV evo 15L - L'Atelier" class="pot-3d pot-titane-mv" src="images/pot-titane-hydro-mv.webp"/>
-<img alt="Pot Comus IZI R Velours - Peinture éco-respectueuse" class="pot-3d pot-izi-r" src="images/pot-comus-izi-r.webp"/>
-<img alt="Pot Algo Pro Velours 10L - Peinture biosourcée aux algues" class="pot-3d pot-algo" src="images/pot-algo-pro-velours.webp"/>
+<img alt="Pot L'Atelier 45 MAT 16L - Peinture acrylique" class="pot-3d pot-45-mat" src="images/pot-atelier-45-mat.webp" width="334" height="405" fetchpriority="high"/>
+<img alt="Pot TITANE Hydro MV evo 15L - L'Atelier" class="pot-3d pot-titane-mv" src="images/pot-titane-hydro-mv.webp" width="332" height="406" loading="lazy" decoding="async"/>
+<img alt="Pot Comus IZI R Velours - Peinture éco-respectueuse" class="pot-3d pot-izi-r" src="images/pot-comus-izi-r.webp" width="370" height="345" loading="lazy" decoding="async"/>
+<img alt="Pot Algo Pro Velours 10L - Peinture biosourcée aux algues" class="pot-3d pot-algo" src="images/pot-algo-pro-velours.webp" width="307" height="331" loading="lazy" decoding="async"/>
 </div>
 </div>
 </div>
@@ -1333,43 +1337,43 @@
 <div class="marques-grid">
 <a class="marque-card has-real-logo marque-eco reveal" href="https://comus.fr" rel="noopener" target="_blank">
 <div class="marque-logo logo-black-bg">
-<img alt="Logo Comus" class="marque-logo-img" src="images/marques/logo-comus.webp"/>
+<img alt="Logo Comus" class="marque-logo-img" src="images/marques/logo-comus.webp" width="666" height="200" loading="lazy" decoding="async"/>
 </div>
 <span class="marque-tag">♻️ IZI R Recyclée 56%</span>
 </a>
 <a class="marque-card has-real-logo marque-eco reveal" href="https://www.dragopaint.be" rel="noopener" target="_blank">
 <div class="marque-logo logo-black-bg">
-<img alt="Logo Dragopaint Belgium" class="marque-logo-img" src="images/marques/logo-dragopaint.webp"/>
+<img alt="Logo Dragopaint Belgium" class="marque-logo-img" src="images/marques/logo-dragopaint.webp" width="328" height="200" loading="lazy" decoding="async"/>
 </div>
 <span class="marque-tag">🌱 Bas carbone</span>
 </a>
 <a class="marque-card has-real-logo reveal" href="https://www.keim.com/fr-fr/" rel="noopener" target="_blank">
 <div class="marque-logo">
-<img alt="Logo Keim" class="marque-logo-img" src="images/marques/logo-keim.webp"/>
+<img alt="Logo Keim" class="marque-logo-img" src="images/marques/logo-keim.webp" width="194" height="200" loading="lazy" decoding="async"/>
 </div>
 <span class="marque-tag">Peintures minérales</span>
 </a>
 <a class="marque-card has-real-logo reveal" href="https://sigmacoatings.fr" rel="noopener" target="_blank">
 <div class="marque-logo">
-<img alt="Logo Sigma Coatings" class="marque-logo-img" src="images/marques/logo-sigma.webp"/>
+<img alt="Logo Sigma Coatings" class="marque-logo-img" src="images/marques/logo-sigma.webp" width="731" height="200" loading="lazy" decoding="async"/>
 </div>
 <span class="marque-tag">Pro technique</span>
 </a>
 <a class="marque-card has-real-logo marque-eco reveal" href="https://sofec.net/" rel="noopener" target="_blank">
 <div class="marque-logo">
-<img alt="Logo Sofec" class="marque-logo-img" src="images/marques/logo-sofec.webp"/>
+<img alt="Logo Sofec" class="marque-logo-img" src="images/marques/logo-sofec.webp" width="919" height="200" loading="lazy" decoding="async"/>
 </div>
 <span class="marque-tag">Enduits + peintures</span>
 </a>
 <a class="marque-card has-real-logo marque-eco reveal" href="https://www.soframap.com/" rel="noopener" target="_blank">
 <div class="marque-logo">
-<img alt="Logo Soframap" class="marque-logo-img" src="images/marques/logo-soframap.webp"/>
+<img alt="Logo Soframap" class="marque-logo-img" src="images/marques/logo-soframap.webp" width="640" height="200" loading="lazy" decoding="async"/>
 </div>
 <span class="marque-tag">Fabricant français</span>
 </a>
 <a class="marque-card has-real-logo reveal" href="https://www.theolaur.com/" rel="noopener" target="_blank">
 <div class="marque-logo">
-<img alt="Logo Théolaur" class="marque-logo-img" src="images/marques/logo-theolaur.webp"/>
+<img alt="Logo Théolaur" class="marque-logo-img" src="images/marques/logo-theolaur.webp" width="494" height="200" loading="lazy" decoding="async"/>
 </div>
 <span class="marque-tag">Fabricant partenaire</span>
 </a>
@@ -1549,7 +1553,7 @@
 <div class="magasins-grid">
 <article class="magasin-card reveal">
 <div class="magasin-image">
-<img alt="Façade du magasin L'Atelier à Mérignac" src="images/magasin-merignac.webp"/>
+<img alt="Façade du magasin L'Atelier à Mérignac" src="images/magasin-merignac.webp" width="1591" height="1023" loading="lazy" decoding="async"/>
 <span class="magasin-badge">Mérignac · CUB</span>
 </div>
 <div class="magasin-body">
@@ -1573,7 +1577,7 @@
 </article>
 <article class="magasin-card reveal">
 <div class="magasin-image">
-<img alt="Façade du magasin L'Atelier au Bassin d'Arcachon (La Teste-de-Buch)" src="images/magasin-la-teste.webp"/>
+<img alt="Façade du magasin L'Atelier au Bassin d'Arcachon (La Teste-de-Buch)" src="images/magasin-la-teste.webp" width="1600" height="595" loading="lazy" decoding="async"/>
 <span class="magasin-badge">Bassin d'Arcachon</span>
 </div>
 <div class="magasin-body">
@@ -1663,7 +1667,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png" width="252" height="252" loading="lazy" decoding="async"/></a></span></div>
 </div>
 </div>
 </footer>
