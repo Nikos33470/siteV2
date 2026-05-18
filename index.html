@@ -560,8 +560,11 @@
   .footer-bottom { padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.5); flex-wrap: wrap; gap: 16px; }
   .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 12px; transition: color 0.3s; }
   .footer-bottom a:hover { color: var(--blanc); }
-  .footer-theolaur { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: 1.5px; opacity: 1; color: rgba(255,255,255,0.8); }
-  .footer-theolaur-logo { height: 32px; width: auto; background: #fff; padding: 4px 8px; border-radius: 6px; display: inline-block; vertical-align: middle; }
+  .footer-theolaur { display: inline-flex; align-items: center; gap: 14px; font-size: 13px; font-weight: 600; letter-spacing: 1.8px; color: rgba(255,255,255,0.95); }
+  .footer-theolaur a { display: inline-flex; align-items: center; transition: transform 0.3s var(--transition); }
+  .footer-theolaur a:hover { transform: translateY(-2px); }
+  .footer-theolaur-logo { height: 44px; width: auto; background: #fff; padding: 6px 12px; border-radius: 8px; display: inline-block; vertical-align: middle; transition: box-shadow 0.3s var(--transition); }
+  .footer-theolaur a:hover .footer-theolaur-logo { box-shadow: 0 4px 14px rgba(240,127,44,0.25); }
   /* ===== SECTION AVIS GOOGLE ===== */
   .avis { background: var(--bleu-pale); padding: 50px 48px; max-width: none; margin: 0; width: 100%; }
   .avis-inner { max-width: 1440px; margin: 0 auto; }
@@ -1343,8 +1346,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a></div>
-      <div class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></div>
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a href="https://www.agir-peinture.com/" target="_blank" rel="noopener noreferrer" aria-label="Site du réseau Agir Peinture"><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></a></span></div>
     </div>
   </div>
 </footer>
