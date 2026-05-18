@@ -337,6 +337,9 @@
   .footer-bottom a { color: rgba(255,255,255,0.7); text-decoration: none; }
   .footer-bottom a:hover { color: var(--orange); }
   .footer-theolaur { font-size: 11px; letter-spacing: 2px; }
+  .footer-theolaur { display: inline-flex; align-items: center; gap: 12px; }
+  .footer-theolaur-logo { height: 32px; width: auto; background: #fff; padding: 4px 8px; border-radius: 6px; display: inline-block; vertical-align: middle; }
+
 
   /* ============ REVEAL ============ */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--transition), transform 0.7s var(--transition); }
@@ -385,10 +388,15 @@
 <header class="header">
   <div class="header-inner">
     <a href="index.html" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120">
-        <rect x="20" y="20" width="65" height="80" fill="#1F3A5F" rx="2"/>
-        <path d="M 8 5 L 18 5 L 22 30 L 12 30 Z" fill="#F07F2C"/>
-        <text x="52" y="80" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">a</text>
+      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
+        <!-- Carre bleu marine principal occupant la majorite de l'espace -->
+        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
+        <!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
+        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
+        <!-- Lettre 'a' minuscule blanche occupant le carre -->
+        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
+              font-size="82" font-weight="900" fill="#FFFFFF"
+              text-anchor="middle" letter-spacing="-3">a</text>
       </svg>
       <div class="logo-text-wrap">
         <span class="logo-text">l'atelier</span>
@@ -497,22 +505,22 @@
         <span class="brands-list-label-detail">Éditeurs français et internationaux, sélectionnés pour leur exigence créative et la qualité de leurs produits.</span>
       </div>
       <div class="brands-grid-names">
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">É</span><span class="brand-item-name">Élitis</span><span class="brand-item-meta">Toulouse · 1988</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">C</span><span class="brand-item-name">Casamance</span><span class="brand-item-meta">Paris · 2000</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Papiers de Paris</span><span class="brand-item-meta">Paris</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Little Cabari</span><span class="brand-item-meta">Bordeaux</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Ananbô</span><span class="brand-item-meta">France · Panoramiques</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Le Grand Siècle</span><span class="brand-item-meta">France</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">I</span><span class="brand-item-name">Isidore Leroy</span><span class="brand-item-meta">Paris · 1842</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">Bien Fait Paris</span><span class="brand-item-meta">Paris · Design</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">N</span><span class="brand-item-name">Nobilis</span><span class="brand-item-meta">Paris · 1928</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Pierre Frey</span><span class="brand-item-meta">Paris · 1935</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Lé Papiers de Ninon</span><span class="brand-item-meta">France</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Atelier d'Offard</span><span class="brand-item-meta">Tours · Artisanat</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Muraem</span><span class="brand-item-meta">Sur mesure</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">W</span><span class="brand-item-name">Wall&decò France</span><span class="brand-item-meta">Italie · Design</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Au fil des Couleurs</span><span class="brand-item-meta">Paris</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">Bien Fait Paris</span><span class="brand-item-meta">Paris · Design</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">C</span><span class="brand-item-name">Casamance</span><span class="brand-item-meta">Paris · 2000</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">E</span><span class="brand-item-name">Élitis</span><span class="brand-item-meta">Toulouse · 1988</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">I</span><span class="brand-item-name">Isidore Leroy</span><span class="brand-item-meta">Paris · 1842</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Le Grand Siècle</span><span class="brand-item-meta">France</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Lé Papiers de Ninon</span><span class="brand-item-meta">France</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Little Cabari</span><span class="brand-item-meta">Bordeaux</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Muraem</span><span class="brand-item-meta">Sur mesure</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">N</span><span class="brand-item-name">Nobilis</span><span class="brand-item-meta">Paris · 1928</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Papiers de Paris</span><span class="brand-item-meta">Paris</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Pierre Frey</span><span class="brand-item-meta">Paris · 1935</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Texdecor</span><span class="brand-item-meta">Tourcoing</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">W</span><span class="brand-item-name">Wall&decò France</span><span class="brand-item-meta">Italie · Design</span></div>
       </div>
     </div>
   </div>
@@ -555,10 +563,10 @@
         <span class="brands-list-label-detail">Vinyles techniques pour les projets exigeants : feu M1, lessivable, anti-microbien, acoustique.</span>
       </div>
       <div class="brands-grid-names">
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Muraspec</span><span class="brand-item-meta">UK · PVC technique</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">V</span><span class="brand-item-name">Vescom</span><span class="brand-item-meta">Pays-Bas · Hospitality</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Lutèce</span><span class="brand-item-meta">Semi-pro · Résidentiel</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Muraspec</span><span class="brand-item-meta">UK · PVC technique</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Texdecor Contract</span><span class="brand-item-meta">Vinacoustic · Polyform</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">V</span><span class="brand-item-name">Vescom</span><span class="brand-item-meta">Pays-Bas · Hospitality</span></div>
       </div>
     </div>
   </div>
@@ -581,7 +589,7 @@
       <div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEURS_ATELIER_CUB_V2.jpeg');"></div>
       <div class="showroom-card-name">L'Atelier <em>CUB</em></div>
       <div class="showroom-card-sub">Mérignac</div>
-      <div class="showroom-card-addr">7 av. de la grande semaine<br>Rue Vert Castel<br>33700 Mérignac</div>
+      <div class="showroom-card-addr">7 av. de la grande semaine<br>33700 Mérignac</div>
       <a href="tel:0556288944" class="showroom-card-tel">05 56 28 89 44 →</a>
     </div>
     <div class="showroom-card">
@@ -630,8 +638,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Politique de confidentialité</a></div>
-      <div class="footer-theolaur">MEMBRE DU RÉSEAU AGIR · GROUPE THÉOLAUR</div>
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="#">Politique de confidentialité</a></div>
+      <div class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></div>
     </div>
   </div>
 </footer>
@@ -847,7 +855,7 @@
     { t: "Colorimétrie & nuanciers en magasin", d: "Plus de 80 000 teintes — Polycrom, Colorimix, RAL, NCS", u: "index.html#nuanciers", k: "colorimétrie teinte mise machine polycrom colorimix", g: "À propos" },
 
     // ---- MAGASINS ----
-    { t: "L'Atelier CUB — Mérignac", d: "7 av. de la grande semaine, Rue Vert Castel, 33700 Mérignac · 05 56 28 89 44", u: "index.html#magasins", k: "magasin merignac mérignac cub bordeaux 33700 adresse", g: "Magasins" },
+    { t: "L'Atelier CUB — Mérignac", d: "7 av. de la grande semaine, 33700 Mérignac · 05 56 28 89 44", u: "index.html#magasins", k: "magasin merignac mérignac cub bordeaux 33700 adresse", g: "Magasins" },
     { t: "L'Atelier Bassin — La Teste-de-Buch", d: "1111 av. du Parc des Expositions, 33260 La Teste-de-Buch · 05 57 52 64 77", u: "index.html#magasins", k: "magasin teste bassin arcachon 33260 la-teste adresse", g: "Magasins" },
 
     // ---- CONTACT ----

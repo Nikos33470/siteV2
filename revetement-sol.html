@@ -276,6 +276,9 @@
   .footer-bottom a { color: rgba(255,255,255,0.7); text-decoration: none; }
   .footer-bottom a:hover { color: var(--orange); }
   .footer-theolaur { font-size: 11px; letter-spacing: 2px; }
+  .footer-theolaur { display: inline-flex; align-items: center; gap: 12px; }
+  .footer-theolaur-logo { height: 32px; width: auto; background: #fff; padding: 4px 8px; border-radius: 6px; display: inline-block; vertical-align: middle; }
+
 
   /* REVEAL */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--transition), transform 0.7s var(--transition); }
@@ -324,10 +327,15 @@
 <header class="header">
   <div class="header-inner">
     <a href="index.html" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120">
-        <rect x="20" y="20" width="65" height="80" fill="#1F3A5F" rx="2"/>
-        <path d="M 8 5 L 18 5 L 22 30 L 12 30 Z" fill="#F07F2C"/>
-        <text x="52" y="80" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">a</text>
+      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
+        <!-- Carre bleu marine principal occupant la majorite de l'espace -->
+        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
+        <!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
+        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
+        <!-- Lettre 'a' minuscule blanche occupant le carre -->
+        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
+              font-size="82" font-weight="900" fill="#FFFFFF"
+              text-anchor="middle" letter-spacing="-3">a</text>
       </svg>
       <div class="logo-text-wrap">
         <span class="logo-text">l'atelier</span>
@@ -437,14 +445,14 @@
         <span class="brands-list-label-detail">Fabricants français et européens reconnus pour leur traçabilité et la qualité de leur bois sourcé.</span>
       </div>
       <div class="brands-grid-names">
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Panaget</span><span class="brand-item-meta">France · 1929</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">D</span><span class="brand-item-name">Design Parquet</span><span class="brand-item-meta">France · Chêne</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Parqueterie Berrichonne</span><span class="brand-item-meta">France · Berry</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">H</span><span class="brand-item-name">Haro</span><span class="brand-item-meta">Allemagne · 1866</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">Bauwerk</span><span class="brand-item-meta">Suisse</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">BerryAlloc</span><span class="brand-item-meta">Belgique-Norvège</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">Boen</span><span class="brand-item-meta">Norvège</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">D</span><span class="brand-item-name">Design Parquet</span><span class="brand-item-meta">France · Chêne</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">H</span><span class="brand-item-name">Haro</span><span class="brand-item-meta">Allemagne · 1866</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">K</span><span class="brand-item-name">Kährs</span><span class="brand-item-meta">Suède · 1857</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Panaget</span><span class="brand-item-meta">France · 1929</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Parqueterie Berrichonne</span><span class="brand-item-meta">France · Berry</span></div>
       </div>
     </div>
   </div>
@@ -487,14 +495,14 @@
         <span class="brands-list-label-detail">Marques de référence du LVT et du sol souple, pour le résidentiel comme pour les chantiers contract.</span>
       </div>
       <div class="brands-grid-names">
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">G</span><span class="brand-item-name">Gerflor</span><span class="brand-item-meta">Creation · Lyon</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Tarkett</span><span class="brand-item-meta">iD Inspiration</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">F</span><span class="brand-item-name">Forbo</span><span class="brand-item-meta">Allura · Suisse</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Amtico</span><span class="brand-item-meta">UK · Luxe</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Moduleo</span><span class="brand-item-meta">Pays-Bas</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">F</span><span class="brand-item-name">Forbo</span><span class="brand-item-meta">Allura · Suisse</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">G</span><span class="brand-item-name">Gerflor</span><span class="brand-item-meta">Creation · Lyon</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">I</span><span class="brand-item-name">Interface</span><span class="brand-item-meta">USA · Dalles moquette</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Polyflor</span><span class="brand-item-meta">UK · Contract</span></div>
         <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">I</span><span class="brand-item-name">IVC</span><span class="brand-item-meta">Belgique</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Moduleo</span><span class="brand-item-meta">Pays-Bas</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Polyflor</span><span class="brand-item-meta">UK · Contract</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Tarkett</span><span class="brand-item-meta">iD Inspiration</span></div>
       </div>
     </div>
   </div>
@@ -517,7 +525,7 @@
       <div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEURS_ATELIER_CUB_V2.jpeg');"></div>
       <div class="showroom-card-name">L'Atelier <em>CUB</em></div>
       <div class="showroom-card-sub">Mérignac</div>
-      <div class="showroom-card-addr">7 av. de la grande semaine<br>Rue Vert Castel<br>33700 Mérignac</div>
+      <div class="showroom-card-addr">7 av. de la grande semaine<br>33700 Mérignac</div>
       <a href="tel:0556288944" class="showroom-card-tel">05 56 28 89 44 →</a>
     </div>
     <div class="showroom-card">
@@ -566,8 +574,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Politique de confidentialité</a></div>
-      <div class="footer-theolaur">MEMBRE DU RÉSEAU AGIR · GROUPE THÉOLAUR</div>
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="#">Politique de confidentialité</a></div>
+      <div class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></div>
     </div>
   </div>
 </footer>
@@ -783,7 +791,7 @@
     { t: "Colorimétrie & nuanciers en magasin", d: "Plus de 80 000 teintes — Polycrom, Colorimix, RAL, NCS", u: "index.html#nuanciers", k: "colorimétrie teinte mise machine polycrom colorimix", g: "À propos" },
 
     // ---- MAGASINS ----
-    { t: "L'Atelier CUB — Mérignac", d: "7 av. de la grande semaine, Rue Vert Castel, 33700 Mérignac · 05 56 28 89 44", u: "index.html#magasins", k: "magasin merignac mérignac cub bordeaux 33700 adresse", g: "Magasins" },
+    { t: "L'Atelier CUB — Mérignac", d: "7 av. de la grande semaine, 33700 Mérignac · 05 56 28 89 44", u: "index.html#magasins", k: "magasin merignac mérignac cub bordeaux 33700 adresse", g: "Magasins" },
     { t: "L'Atelier Bassin — La Teste-de-Buch", d: "1111 av. du Parc des Expositions, 33260 La Teste-de-Buch · 05 57 52 64 77", u: "index.html#magasins", k: "magasin teste bassin arcachon 33260 la-teste adresse", g: "Magasins" },
 
     // ---- CONTACT ----
