@@ -1,0 +1,8 @@
+# robots.txt — L'Atelier Marchand de couleurs
+# Autorise tous les robots à explorer l'intégralité du site
+
+User-agent: *
+Allow: /
+
+# Localisation du sitemap
+Sitemap: https://www.latelier33.fr/sitemap.xml
