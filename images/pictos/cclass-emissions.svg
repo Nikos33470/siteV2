@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 360">
+  <!-- Bandeau titre noir en haut -->
+  <rect width="690" height="50" fill="#000"/>
+  <text x="345" y="35" font-family="Arial Black, Arial, sans-serif" font-size="32" font-weight="900" fill="#fff" text-anchor="middle">ÉMISSIONS DANS L'AIR INTÉRIEUR*</text>
+
+  <!-- Cadre noir global sous le bandeau -->
+  <rect x="0" y="50" width="690" height="310" fill="#fff" stroke="#000" stroke-width="6"/>
+
+  <!-- ============ ZONE GAUCHE : maison + personnages ============ -->
+  <rect x="6" y="56" width="290" height="298" fill="#e8e8e8"/>
+
+  <!-- Toit de la maison (triangle noir) -->
+  <polygon points="60,170 152,90 244,170" fill="none" stroke="#000" stroke-width="6"/>
+  <!-- Murs maison (rectangle) -->
+  <rect x="80" y="170" width="144" height="170" fill="none" stroke="#000" stroke-width="6"/>
+
+  <!-- Nuage de particules dans la maison -->
+  <g fill="#bdbdbd">
+    <ellipse cx="120" cy="180" rx="32" ry="18"/>
+    <ellipse cx="155" cy="170" rx="38" ry="22"/>
+    <ellipse cx="195" cy="180" rx="30" ry="18"/>
+    <ellipse cx="135" cy="200" rx="42" ry="20"/>
+    <ellipse cx="180" cy="205" rx="35" ry="18"/>
+  </g>
+  <!-- Petites particules (étoiles/points) sur le nuage -->
+  <g fill="#000">
+    <circle cx="115" cy="175" r="3"/>
+    <circle cx="135" cy="185" r="3"/>
+    <circle cx="160" cy="170" r="3"/>
+    <circle cx="180" cy="180" r="3"/>
+    <circle cx="200" cy="195" r="3"/>
+    <circle cx="145" cy="200" r="3"/>
+    <circle cx="175" cy="210" r="3"/>
+    <circle cx="125" cy="210" r="3"/>
+    <circle cx="195" cy="175" r="3"/>
+  </g>
+
+  <!-- Personnage adulte -->
+  <g fill="#000">
+    <circle cx="125" cy="248" r="14"/>
+    <rect x="113" y="262" width="24" height="50"/>
+    <rect x="108" y="275" width="34" height="40"/>
+    <rect x="113" y="315" width="10" height="25"/>
+    <rect x="127" y="315" width="10" height="25"/>
+  </g>
+  <!-- Personnage enfant -->
+  <g fill="#000">
+    <circle cx="160" cy="270" r="11"/>
+    <rect x="150" y="282" width="20" height="38"/>
+    <rect x="146" y="292" width="28" height="30"/>
+    <rect x="150" y="320" width="8" height="20"/>
+    <rect x="162" y="320" width="8" height="20"/>
+  </g>
+
+  <!-- ============ ZONE DROITE : lettre principale + échelle ============ -->
+  <rect x="296" y="56" width="388" height="298" fill="#fff"/>
+
+  <!-- Grande lettre C rouge centrée -->
+  <text x="490" y="260" font-family="Arial Black, Arial, sans-serif" font-size="240" font-weight="900" fill="#d62828" text-anchor="middle">C</text>
+
+  <!-- Échelle de classes en bas à droite : A+ A B C (4 segments) -->
+  <!-- A+ vert -->
+  <rect x="320" y="290" width="80" height="55" fill="#2d8c3a"/>
+  <text x="360" y="328" font-family="Arial Black, Arial, sans-serif" font-size="28" font-weight="900" fill="#fff" text-anchor="middle">A+</text>
+  <!-- A vert clair -->
+  <rect x="408" y="290" width="80" height="55" fill="#7cb83a"/>
+  <text x="448" y="328" font-family="Arial Black, Arial, sans-serif" font-size="28" font-weight="900" fill="#fff" text-anchor="middle">A</text>
+  <!-- B jaune-orange -->
+  <rect x="496" y="290" width="80" height="55" fill="#f5b224"/>
+  <text x="536" y="328" font-family="Arial Black, Arial, sans-serif" font-size="28" font-weight="900" fill="#fff" text-anchor="middle">B</text>
+  <!-- C rouge (classe active, encadrée pour la mettre en avant) -->
+  <rect x="584" y="290" width="80" height="55" fill="#d62828" stroke="#000" stroke-width="3"/>
+  <text x="624" y="328" font-family="Arial Black, Arial, sans-serif" font-size="28" font-weight="900" fill="#fff" text-anchor="middle">C</text>
+</svg>
