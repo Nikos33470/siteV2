@@ -796,6 +796,19 @@
   }
 
   /* --- PAGE GAMMES : bandeaux de section et titres produits --- */
+  /* Les gros chiffres/lettres décoratifs des bandeaux ("45", "T") adoptent aussi la typo bidon */
+  .gamme-banner.is-45 .gamme-banner-num {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 800 !important;
+    letter-spacing: -2px !important;
+  }
+  .gamme-banner.is-titane .gamme-banner-num {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
   [data-gamme-section="45"] .gamme-banner-title,
   [data-gamme-section="45"] .gamme-banner-title em,
   [data-gamme-section="45"] .product-name,
@@ -1214,7 +1227,7 @@
 </article>
 </div>
 </section>
- ============ GAMME <span class="brand-titane">TITANE hydro</span> ============ 
+<!-- ============ GAMME TITANE hydro ============ -->
 <section class="gamme-section" data-gamme-section="titane" id="gamme-titane">
 <div class="gamme-banner is-titane has-re2020">
 <div class="gamme-banner-num">T</div>
@@ -1245,7 +1258,7 @@
 </div>
 </div>
 <div class="products-grid" id="grid-titane">
- 1. <span class="brand-titane">TITANE hydro</span> PRIM - IMPRESSION 
+<!-- 1. TITANE hydro PRIM - IMPRESSION -->
 <article class="product-card reveal" data-brillance="1" data-finition="impression" id="p-titane-prim">
 <div class="product-finition-bar"></div>
 <span class="product-finition-tag">Impression</span>
@@ -1279,7 +1292,7 @@
 </div>
 </div>
 </article>
- 2. <span class="brand-titane">TITANE hydro</span> MAT - MAT acrylique biosourcé 
+<!-- 2. TITANE hydro MAT - MAT acrylique biosourcé -->
 <article class="product-card reveal" data-brillance="2" data-finition="mat" id="p-titane-mat">
 <div class="product-finition-bar"></div>
 <span class="product-finition-tag">Mat</span>
@@ -1313,7 +1326,7 @@
 </div>
 </div>
 </article>
- 3. <span class="brand-titane">TITANE hydro</span> MV evo - MAT VELOUTÉ alkyde émulsion 
+<!-- 3. TITANE hydro MV evo - MAT VELOUTÉ alkyde émulsion -->
 <article class="product-card reveal" data-brillance="3" data-finition="mat-veloute" id="p-titane-mv">
 <div class="product-finition-bar"></div>
 <span class="product-finition-tag">Mat velouté</span>
@@ -1349,7 +1362,7 @@
 </div>
 </div>
 </article>
- 4. <span class="brand-titane">TITANE hydro</span> VELOURS 
+<!-- 4. TITANE hydro VELOURS -->
 <article class="product-card reveal" data-brillance="4" data-finition="velours" id="p-titane-velours">
 <div class="product-finition-bar"></div>
 <span class="product-finition-tag">Velours</span>
