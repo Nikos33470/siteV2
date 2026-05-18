@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuanciers — L'Atelier · Marchand de couleurs · Chromatic, Polycrom, RAL, NCS</title>
+<meta name="description" content="Découvrez et téléchargez tous les nuanciers L'Atelier : Chromatic, Polycrom façade, RAL, NCS, nuanciers bois. Marchand de couleurs à Mérignac et La Teste-de-Buch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #1F3A5F;
+    --bleu-fonce: #15273F;
+    --bleu-clair: #2D4E7A;
+    --bleu-pale: #E8EEF5;
+    --orange: #F07F2C;
+    --orange-fonce: #D86618;
+    --orange-clair: #FFA968;
+    --vert-eco: #4A8B5C;
+    --vert-eco-fonce: #2F6940;
+    --vert-eco-pale: #E8F2EB;
+    --beige: #F5F0E8;
+    --blanc: #FFFFFF;
+    --gris-clair: #F8F7F4;
+    --gris: #5F5F5F;
+    --gris-fonce: #2C2C2C;
+    --noir: #0A0A0A;
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
+
+  /* === HEADER (identique au site) === */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(31,58,95,0.08); transition: all 0.4s var(--transition); }
+  .header-inner { max-width: 1440px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; transition: padding 0.4s var(--transition); }
+  /* État rétréci au scroll */
+  .header.is-scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(31, 58, 95, 0.08); }
+  .header.is-scrolled .header-inner { padding: 10px 48px; }
+  .header.is-scrolled .logo-symbol { width: 70px; height: 86px; }
+  .header.is-scrolled .logo-text { font-size: 36px; }
+  .header.is-scrolled .logo-baseline { font-size: 12px; }
+  .header.is-scrolled .logo-since { display: none; }
+  .logo-symbol, .logo-text, .logo-baseline { transition: all 0.4s var(--transition); }
+  .logo { display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--bleu); }
+  .logo-symbol { width: 105px; height: 130px; position: relative; flex-shrink: 0; }
+  .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text { font-family: var(--sans); font-weight: 700; font-size: 48px; color: var(--bleu); letter-spacing: -0.8px; }
+  .logo-baseline { font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--orange); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
+  .logo-since { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 14px; color: var(--bleu); margin-top: 6px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; opacity: 0.85; }
+  .logo-since-dash { display: inline-block; width: 18px; height: 1px; background: var(--orange); flex-shrink: 0; }
+  .nav { display: flex; align-items: center; gap: 22px; }
+  .nav a { font-size: 13.5px; font-weight: 500; color: var(--bleu); text-decoration: none; transition: color 0.3s; position: relative; white-space: nowrap; }
+  .nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s var(--transition); }
+  .nav a:hover::after { width: 100%; }
+  .nav a:hover { color: var(--orange); }
+  .nav a.active { color: var(--orange); }
+  .nav a.active::after { width: 100%; }
+  .nav-cta { background: var(--bleu); color: var(--blanc) !important; padding: 10px 22px; border-radius: 50px; transition: all 0.3s; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--orange); color: var(--blanc) !important; transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(240,127,44,0.5); }
+  .nav-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; margin-left: 48px; }
+  .nav-search { position: relative; display: flex; align-items: center; width: 280px; max-width: 100%; }
+  .nav-search-icon { position: absolute; left: 12px; width: 15px; height: 15px; color: var(--bleu); opacity: 0.55; pointer-events: none; }
+  .nav-search-input { width: 100%; padding: 8px 14px 8px 34px; font-family: var(--sans); font-size: 13px; color: var(--bleu-fonce); background: rgba(31,58,95,0.04); border: 1px solid rgba(31,58,95,0.12); border-radius: 50px; outline: none; transition: all 0.3s var(--transition); }
+  .nav-search-input::placeholder { color: var(--gris); opacity: 0.7; font-weight: 400; }
+  .nav-search-input:focus { background: var(--blanc); border-color: var(--orange); box-shadow: 0 0 0 3px rgba(240,127,44,0.15); }
+  .nav-search:focus-within .nav-search-icon { opacity: 1; color: var(--orange); }
+
+  /* === HERO COLORIMETRIE === */
+  .hero-nuanciers {
+    position: relative;
+    min-height: 92vh;
+    padding: 180px 48px 100px;
+    background: var(--bleu);
+    color: var(--blanc);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  /* Bandes de couleurs en fond, animées, très subtiles */
+  .hero-nuanciers::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: conic-gradient(from 0deg at 80% 30%,
+      rgba(240,127,44,0.18) 0deg,
+      rgba(255,169,104,0.10) 60deg,
+      rgba(74,139,92,0.14) 130deg,
+      rgba(45,78,122,0.10) 200deg,
+      rgba(240,127,44,0.18) 360deg);
+    filter: blur(80px);
+    animation: heroSpin 35s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  @keyframes heroSpin { to { transform: rotate(360deg); } }
+  /* Bandes verticales de nuancier en arrière-plan */
+  .hero-stripes {
+    position: absolute; inset: 0;
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    opacity: 0.07; z-index: 1; pointer-events: none;
+  }
+  .hero-stripes span { display: block; }
+  .hero-nuanciers-inner {
+    position: relative; z-index: 2;
+    max-width: 1440px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 60px; align-items: center;
+  }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; background: rgba(240,127,44,0.18); border: 1px solid rgba(240,127,44,0.35); color: var(--orange-clair); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 50px; margin-bottom: 28px; }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(1.5); opacity:0.6;} }
+  .hero-title { font-family: var(--display); font-weight: 400; font-size: clamp(44px, 5.5vw, 76px); line-height: 0.98; margin-bottom: 24px; letter-spacing: -1.5px; }
+  .hero-title em { color: var(--orange); font-style: italic; font-weight: 300; }
+  .hero-sub { font-size: 18px; line-height: 1.6; opacity: 0.85; max-width: 540px; font-weight: 300; margin-bottom: 36px; }
+  .hero-stats { display: flex; gap: 36px; flex-wrap: wrap; }
+  .hero-stat-num { font-family: var(--display); font-size: 42px; font-weight: 500; color: var(--orange); line-height: 1; }
+  .hero-stat-label { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.75; margin-top: 6px; }
+
+  /* ============================================
+     DISQUE CHROMATIQUE 3D — PALET ÉPAIS
+     ============================================ */
+  .wheel-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 520px;
+    margin: 0 auto;
+    perspective: 1600px;
+    perspective-origin: center 40%;
+  }
+
+  /* Halo sous le disque, pour ancrer l'objet dans l'espace */
+  .wheel-halo {
+    position: absolute;
+    bottom: -2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 40px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 70%);
+    filter: blur(8px);
+    z-index: 0;
+  }
+
+  /* Le palet 3D : conteneur en preserve-3d, incliné, qui tourne */
+  .wheel-3d {
+    position: absolute;
+    inset: 5%;
+    transform-style: preserve-3d;
+    transform: rotateX(62deg) rotateZ(0deg);
+    animation: discSpin 24s linear infinite, discFloat 7s ease-in-out infinite;
+  }
+  @keyframes discSpin {
+    from { transform: rotateX(62deg) rotateZ(0deg);   }
+    to   { transform: rotateX(62deg) rotateZ(360deg); }
+  }
+  @keyframes discFloat {
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -8px; }
+  }
+  .wheel-stage:hover .wheel-3d { animation-play-state: paused; }
+
+  /* Face supérieure (le disque coloré) */
+  .wheel-top {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(22px);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.3),
+      0 0 30px rgba(240,127,44,0.18);
+  }
+  .wheel-top svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Tranche : couches empilées en Z pour faire l'épaisseur du palet */
+  .wheel-edge {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  /* Dégradé conique pour la tranche : ombre/lumière sur les côtés */
+  .wheel-edge-1 { transform: translateZ(19px);  background: conic-gradient(from 0deg, #2a2a2a, #6d5d4a, #2a2a2a, #5a4a3a, #2a2a2a); opacity: 0.95; }
+  .wheel-edge-2 { transform: translateZ(16px);  background: conic-gradient(from 0deg, #1f1f1f, #5d4d3a, #1f1f1f, #4a3a2a, #1f1f1f); opacity: 0.95; }
+  .wheel-edge-3 { transform: translateZ(13px);  background: conic-gradient(from 0deg, #1a1a1a, #4d3d2a, #1a1a1a, #3d2d1a, #1a1a1a); opacity: 0.95; }
+  .wheel-edge-4 { transform: translateZ(10px);  background: conic-gradient(from 0deg, #181818, #3d2d1a, #181818, #2d1d0a, #181818); opacity: 0.95; }
+  .wheel-edge-5 { transform: translateZ(7px);   background: conic-gradient(from 0deg, #151515, #352510, #151515, #251505, #151515); opacity: 0.95; }
+  .wheel-edge-6 { transform: translateZ(4px);   background: conic-gradient(from 0deg, #121212, #2a1d08, #121212, #1d1003, #121212); opacity: 0.95; }
+  .wheel-edge-7 { transform: translateZ(1px);   background: conic-gradient(from 0deg, #0e0e0e, #1f1505, #0e0e0e, #15080a, #0e0e0e); opacity: 0.95; }
+  .wheel-edge-8 { transform: translateZ(-2px);  background: #0a0a0a; opacity: 0.9; }
+
+  /* Face inférieure (foncée, juste pour fermer le volume) */
+  .wheel-bottom {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 80%);
+    transform: translateZ(-4px);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.6);
+  }
+
+  /* ============================================
+     ICÔNE TÉLÉCHARGEMENT (flèche animée + barre fixe)
+     placée JUSTE AU-DESSUS du disque chromatique
+     ============================================ */
+  .wheel-zone {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    /* Décalage vertical : la flèche dépasse au-dessus du disque,
+       on descend l'ensemble pour que le centre visuel flèche+disque
+       s'aligne avec le centre du bloc texte à gauche. */
+    transform: translateY(60px);
+  }
+
+  /* dl-icon : positionnée en ABSOLUTE dans .wheel-stage,
+     ancrée par son BAS au sommet du disque, qui commence à inset: 5% */
+  .dl-icon {
+    position: absolute;
+    left: 50%;
+    /* La base de l'icône doit arriver juste au-dessus du sommet visible du disque.
+       Le disque est en perspective : son sommet visible se trouve vers 18-22% du top.
+       Donc on positionne la base de l'icône à environ 78% du bas (= 22% du top). */
+    bottom: 78%;
+    transform: translateX(-50%);
+    width: 26%;
+    max-width: 130px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .dl-icon:hover { transform: translateX(-50%) scale(1.05); }
+
+  /* Halo orange diffus qui pulse derrière l'icône entière */
+  .dl-glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle,
+      rgba(240,127,44,0.45) 0%,
+      rgba(240,127,44,0.18) 40%,
+      rgba(240,127,44,0) 75%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: dlGlow 3.2s ease-in-out infinite;
+  }
+  @keyframes dlGlow {
+    0%, 100% { opacity: 0.5; transform: scale(0.9); }
+    50%      { opacity: 1;   transform: scale(1.1); }
+  }
+
+  /* La flèche : animée verticalement (monte-descend) */
+  .dl-arrow {
+    width: 75%;
+    height: auto;
+    display: block;
+    animation: arrowBob 3.2s ease-in-out infinite;
+  }
+  @keyframes arrowBob {
+    0%   { transform: translateY(-10px); }
+    50%  { transform: translateY(8px); }
+    100% { transform: translateY(-10px); }
+  }
+
+  /* La barre de réception : IMMOBILE, en bas de l'icône */
+  .dl-tray {
+    width: 95%;
+    height: auto;
+    display: block;
+    margin-top: -2px;
+  }
+
+  /* Responsive : sur petit écran, ajuster les tailles */
+  @media (max-width: 600px) {
+    .dl-icon { max-width: 95px; }
+  }
+
+  /* === SECTION FILTRES / CATEGORIES === */
+  .filters {
+    background: var(--gris-clair);
+    padding: 36px 48px;
+    border-bottom: 1px solid rgba(31,58,95,0.06);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(8px);
+  }
+  .filters-inner { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .filters-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gris); margin-right: 8px; }
+  .filter-btn {
+    padding: 9px 20px; font-size: 13px; font-weight: 500;
+    background: var(--blanc); color: var(--bleu); border: 1px solid rgba(31,58,95,0.15);
+    border-radius: 50px; cursor: pointer; transition: all 0.3s var(--transition);
+    font-family: var(--sans);
+  }
+  .filter-btn:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
+  .filter-btn.is-active { background: var(--bleu); color: var(--blanc); border-color: var(--bleu); }
+  .filter-btn.is-active:hover { background: var(--orange); border-color: var(--orange); color: var(--blanc); }
+
+  /* === GRILLE DE NUANCIERS === */
+  .nuanciers-grid {
+    padding: 80px 48px 100px;
+    background: var(--blanc);
+    position: relative;
+  }
+  .nuanciers-grid::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(240,127,44,0.10) 0%, transparent 28%),
+      radial-gradient(circle at 95% 35%, rgba(240,127,44,0.07) 0%, transparent 25%),
+      radial-gradient(circle at 90% 88%, rgba(74,139,92,0.05) 0%, transparent 30%);
+    pointer-events: none;
+  }
+  .nuanciers-inner { max-width: 1440px; margin: 0 auto; position: relative; }
+  .nuanciers-section-title { font-family: var(--display); font-weight: 400; font-size: 32px; color: var(--bleu); margin-bottom: 8px; letter-spacing: -0.5px; }
+  .nuanciers-section-title em { color: var(--orange); font-style: italic; }
+  .nuanciers-section-sub { font-size: 15px; color: var(--gris); margin-bottom: 36px; max-width: 600px; }
+  .nuanciers-cat {
+    position: relative;
+    margin-bottom: 64px;
+    padding: 40px 36px 32px;
+    border-radius: 24px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .nuanciers-cat::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-repeat: no-repeat;
+    background-position: right -40px center;
+    background-size: contain;
+    opacity: 0.06;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .nuanciers-cat::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--cat-tint, rgba(31,58,95,0.04)) 0%, transparent 70%);
+    z-index: -2;
+    border-radius: 24px;
+    border: 1px solid rgba(31,58,95,0.06);
+    pointer-events: none;
+  }
+  /* INTÉRIEUR : motif d'intérieur / pièce avec cadre, fauteuil stylisé, halos pastel */
+  .nuanciers-cat[data-cat="interieur"] { --cat-tint: rgba(240,127,44,0.06); }
+  .nuanciers-cat[data-cat="interieur"]::before {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><defs><radialGradient id='g1' cx='50%25' cy='50%25'><stop offset='0%25' stop-color='%23F07F2C' stop-opacity='1'/><stop offset='100%25' stop-color='%23F07F2C' stop-opacity='0'/></radialGradient><radialGradient id='g2' cx='50%25' cy='50%25'><stop offset='0%25' stop-color='%231F3A5F' stop-opacity='1'/><stop offset='100%25' stop-color='%231F3A5F' stop-opacity='0'/></radialGradient></defs><circle cx='450' cy='120' r='110' fill='url(%23g1)'/><circle cx='200' cy='280' r='130' fill='url(%23g2)'/><rect x='90' y='90' width='130' height='180' fill='none' stroke='%231F3A5F' stroke-width='3' rx='4'/><rect x='110' y='110' width='90' height='140' fill='none' stroke='%231F3A5F' stroke-width='1.5'/><path d='M 320 320 Q 320 250 360 250 L 460 250 Q 500 250 500 320 L 500 360 L 320 360 Z' fill='none' stroke='%231F3A5F' stroke-width='3'/><path d='M 340 320 L 340 360 M 480 320 L 480 360' stroke='%231F3A5F' stroke-width='3'/><path d='M 50 360 L 550 360' stroke='%231F3A5F' stroke-width='2'/><circle cx='80' cy='340' r='10' fill='%23F07F2C'/><circle cx='560' cy='340' r='14' fill='%231F3A5F'/></svg>");
+  }
+  /* FAÇADE — photo haussmann en fond, voile blanc pour ne pas masquer */
+  .nuanciers-cat[data-cat="facade"] {
+    --cat-tint: rgba(74,139,92,0.06);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
+      url("images/photos/facade.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* INDUSTRIEL — charpente métallique en photo */
+  .nuanciers-cat[data-cat="industriel"] {
+    --cat-tint: rgba(45,78,122,0.06);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
+      url("images/photos/industriel.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* BOIS — planches en photo */
+  .nuanciers-cat[data-cat="bois"] {
+    --cat-tint: rgba(168,126,84,0.08);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
+      url("images/photos/bois.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .cat-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+  .cat-pill { display: inline-block; padding: 5px 14px; background: var(--bleu-pale); color: var(--bleu); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 50px; }
+  .cat-title { font-family: var(--display); font-size: 22px; font-weight: 500; color: var(--bleu); letter-spacing: -0.3px; }
+  .cat-count { font-size: 13px; color: var(--gris); }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px; }
+  .card {
+    position: relative;
+    perspective: 1000px;
+    height: 360px;
+    cursor: pointer;
+  }
+  .card-inner {
+    position: relative; width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s var(--transition);
+    /* Au repos : la face arrière (gradient bleu + titre + CTA) est affichée devant */
+    transform: rotateY(180deg);
+  }
+  /* Au hover : on revient à la face avant (bandeau de teintes) */
+  .card:hover .card-inner { transform: rotateY(0deg); }
+  .card-face {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px -8px rgba(31,58,95,0.18);
+    display: flex; flex-direction: column;
+  }
+  .card-front {
+    background: var(--blanc);
+    border: 1px solid rgba(31,58,95,0.08);
+  }
+  .card-strip {
+    height: 60%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-strip span { flex: 1; }
+  .card-strip::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 0%, transparent 70%, rgba(255,255,255,0.4) 100%);
+  }
+  .card-body { padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  .card-cat { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+  .card-title { font-family: var(--display); font-size: 20px; font-weight: 500; color: var(--bleu); line-height: 1.2; margin-bottom: 8px; }
+  .card-desc { font-size: 13px; color: var(--gris); line-height: 1.5; }
+  .card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; }
+  .card-tag { font-size: 11px; color: var(--gris); display: inline-flex; align-items: center; gap: 4px; }
+  .card-tag svg { width: 12px; height: 12px; }
+  .card-hint { font-size: 11px; color: var(--gris); opacity: 0.6; font-style: italic; }
+  /* Face arrière */
+  .card-back {
+    background: 
+      radial-gradient(circle at top right, rgba(240,127,44,0.55) 0%, transparent 45%),
+      linear-gradient(135deg, var(--bleu) 0%, var(--bleu-fonce) 100%);
+    color: var(--blanc);
+    transform: rotateY(180deg);
+    padding: 28px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  /* "Nuancier" en très gros tout en haut du dos */
+  .card-back-kicker {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--orange-clair);
+    line-height: 1;
+  }
+  .card-back-title { font-family: var(--display); font-size: 22px; font-weight: 500; margin-bottom: 14px; text-align: center; }
+  .card-back-name { font-family: var(--display); font-size: 22px; font-weight: 500; line-height: 1.15; display: block; }
+  .card-back-desc { font-size: 13px; opacity: 0.85; line-height: 1.6; margin-bottom: 22px; font-weight: 300; }
+  .card-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; background: var(--orange); color: var(--blanc);
+    text-decoration: none; border-radius: 50px;
+    font-size: 12px; font-weight: 600;
+    transition: all 0.3s var(--transition);
+  }
+  .card-cta:hover { background: var(--orange-clair); transform: translateY(-2px); box-shadow: 0 10px 20px -6px rgba(240,127,44,0.5); }
+  .card-cta svg { width: 14px; height: 14px; }
+  .card-back-mini-strip {
+    display: flex; height: 6px; width: 80%; border-radius: 3px; overflow: hidden;
+    margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .card-back-mini-strip span { flex: 1; }
+  .card-back-hint {
+    margin-top: 18px; font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--orange-clair); opacity: 0.85;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  /* === BANDEAU CONSEIL === */
+  .conseil {
+    background: linear-gradient(135deg, var(--beige) 0%, #fff 100%);
+    padding: 80px 48px;
+    border-top: 1px solid rgba(31,58,95,0.05);
+  }
+  .conseil-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .conseil h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 48px); font-weight: 400; color: var(--bleu); margin-bottom: 16px; letter-spacing: -0.5px; }
+  .conseil h2 em { color: var(--orange); font-style: italic; }
+  .conseil p { font-size: 17px; color: var(--gris-fonce); max-width: 700px; margin: 0 auto 32px; line-height: 1.7; }
+  .conseil-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 28px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 50px; transition: all 0.3s var(--transition); border: 2px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--bleu); color: var(--blanc); }
+  .btn-primary:hover { background: var(--orange); transform: translateY(-2px); box-shadow: 0 14px 32px -10px rgba(240,127,44,0.5); }
+  .btn-outline { background: transparent; color: var(--bleu); border-color: var(--bleu); }
+  .btn-outline:hover { background: var(--bleu); color: var(--blanc); }
+
+  /* === FOOTER (identique au site) === */
+  footer { background: var(--bleu-fonce); color: var(--blanc); padding: 80px 48px 32px; margin: 0; max-width: none; width: 100%; }
+  .footer-inner { max-width: 1440px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-brand-text { font-family: var(--display); font-size: 32px; line-height: 1.2; margin-bottom: 24px; color: var(--blanc); font-weight: 300; }
+  .footer-brand-text em { color: var(--orange); font-style: italic; }
+  .footer-desc { font-size: 14px; opacity: 0.7; line-height: 1.6; max-width: 380px; font-weight: 300; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom { padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.5); flex-wrap: wrap; gap: 16px; }
+  .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 12px; transition: color 0.3s; }
+  .footer-bottom a:hover { color: var(--blanc); }
+  .footer-theolaur { font-size: 11px; opacity: 0.6; letter-spacing: 1px; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1100px) {
+    .nav-wrap { display: none; }
+    .header-inner { padding: 18px 24px; }
+    .logo-symbol { width: 70px; height: 88px; }
+    .logo-text { font-size: 34px; }
+    .logo-baseline { font-size: 12px; }
+    .logo-since { font-size: 12px; }
+    .hero-nuanciers-inner { grid-template-columns: 1fr; gap: 40px; }
+    .wheel-stage, .wheel-zone { max-width: 380px; }
+    .wheel-zone { transform: none; }
+    .hero-nuanciers { padding: 140px 24px 80px; min-height: auto; }
+    .filters { padding: 24px; }
+    .nuanciers-grid { padding: 60px 24px 80px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .conseil { padding: 60px 24px; }
+  }
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    .card { height: 320px; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-title { font-size: 40px; }
+    .hero-stat-num { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-symbol" viewBox="0 0 100 120">
+        <rect x="20" y="20" width="65" height="80" fill="#1F3A5F" rx="2"/>
+        <path d="M 8 5 L 18 5 L 22 30 L 12 30 Z" fill="#F07F2C"/>
+        <text x="52" y="80" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">a</text>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-text">l'atelier</span>
+        <span class="logo-baseline">MARCHAND DE COULEURS</span>
+        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+      </div>
+    </a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="gammes.html">Nos gammes peintures</a>
+        <a href="nuanciers.html" class="active">Nuanciers</a>
+        <a href="index.html#eco">Engagement éco</a>
+        <a href="revetement-mural.html">Revêtement mural</a>
+        <a href="revetement-sol.html">Revêtement de sol</a>
+        <a href="documents.html">Documents techniques</a>
+        <a href="index.html#equipe">L'équipe L'ATELIER</a>
+        <a href="#" class="nav-cta">Espace pro</a>
+      </nav>
+      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-nuanciers">
+  <div class="hero-stripes" aria-hidden="true">
+    <span style="background:#1F3A5F"></span>
+    <span style="background:#2D4E7A"></span>
+    <span style="background:#4A8B5C"></span>
+    <span style="background:#E8F2EB"></span>
+    <span style="background:#F5F0E8"></span>
+    <span style="background:#FFA968"></span>
+    <span style="background:#F07F2C"></span>
+    <span style="background:#D86618"></span>
+    <span style="background:#15273F"></span>
+    <span style="background:#E8EEF5"></span>
+    <span style="background:#2F6940"></span>
+    <span style="background:#FFFFFF"></span>
+  </div>
+
+  <div class="hero-nuanciers-inner">
+    <div>
+      <div class="hero-eyebrow">Bibliothèque chromatique</div>
+      <h1 class="hero-title">Nos <em>nuanciers</em><br>en téléchargement.</h1>
+      <p class="hero-sub">Toute la matière chromatique de L'Atelier : Chromatic, Polycrom, KEIM, RAL, NCS, nuanciers bois et inspirations. Téléchargez les PDF officiels et venez les manipuler en magasin.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">12</div>
+          <div class="hero-stat-label">Nuanciers PDF</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">2800+</div>
+          <div class="hero-stat-label">Teintes disponibles</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">2</div>
+          <div class="hero-stat-label">Magasins à votre écoute</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZONE : disque chromatique + flèche téléchargement au-dessus -->
+    <div class="wheel-zone" aria-hidden="true">
+
+      <!-- DISQUE CHROMATIQUE 3D + flèche en surimpression au-dessus -->
+      <div class="wheel-stage">
+
+        <!-- Halo sous le disque -->
+        <div class="wheel-halo"></div>
+
+        <!-- ICÔNE TÉLÉCHARGEMENT — cliquable, scroll vers la section nuanciers en cartes -->
+        <a class="dl-icon" href="#nuanciers-cartes" aria-label="Voir les nuanciers disponibles plus bas dans la page">
+          <!-- Halo orange diffus derrière l'icône -->
+          <div class="dl-glow"></div>
+
+          <!-- Flèche animée (monte/descend) -->
+          <svg class="dl-arrow" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FFA968"/>
+                <stop offset="50%" stop-color="#F07F2C"/>
+                <stop offset="100%" stop-color="#D86618"/>
+              </linearGradient>
+              <filter id="arrowShadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#D86618" flood-opacity="0.55"/>
+              </filter>
+            </defs>
+            <path d="M 38 5 L 62 5 L 62 50 L 80 50 L 50 82 L 20 50 L 38 50 Z"
+                  fill="url(#arrowGrad)"
+                  stroke="rgba(255,255,255,0.6)"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                  filter="url(#arrowShadow)"/>
+            <path d="M 40 7 L 48 7 L 48 48 L 40 48 Z" fill="rgba(255,255,255,0.35)"/>
+          </svg>
+
+          <!-- Barre de réception (immobile, forme de U / inbox) -->
+          <svg class="dl-tray" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="trayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FFA968"/>
+                <stop offset="100%" stop-color="#D86618"/>
+              </linearGradient>
+              <filter id="trayShadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#D86618" flood-opacity="0.45"/>
+              </filter>
+            </defs>
+            <path d="M 8 2 L 8 22 L 92 22 L 92 2 L 80 2 L 80 12 L 20 12 L 20 2 Z"
+                  fill="url(#trayGrad)"
+                  stroke="rgba(255,255,255,0.6)"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                  filter="url(#trayShadow)"/>
+          </svg>
+        </a>
+
+        <!-- Le disque chromatique épais (style palet 3D) -->
+        <div class="wheel-3d">
+          <!-- Face supérieure : disque coloré -->
+          <div class="wheel-top">
+            <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="topGloss" cx="35%" cy="30%">
+                  <stop offset="0%" stop-color="rgba(255,255,255,0.55)"/>
+                  <stop offset="35%" stop-color="rgba(255,255,255,0.15)"/>
+                  <stop offset="70%" stop-color="rgba(255,255,255,0)"/>
+                </radialGradient>
+                <radialGradient id="topShadow" cx="65%" cy="80%">
+                  <stop offset="0%" stop-color="rgba(0,0,0,0.25)"/>
+                  <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+                </radialGradient>
+                <radialGradient id="centerFade" cx="50%" cy="50%">
+                  <stop offset="0%"  stop-color="rgba(255,255,255,0.95)"/>
+                  <stop offset="18%" stop-color="rgba(255,255,255,0.75)"/>
+                  <stop offset="40%" stop-color="rgba(255,255,255,0.25)"/>
+                  <stop offset="65%" stop-color="rgba(255,255,255,0.05)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                </radialGradient>
+              </defs>
+              <g id="wheel-disc"></g>
+              <circle cx="0" cy="0" r="98" fill="url(#centerFade)"/>
+              <g fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.25">
+                <circle cx="0" cy="0" r="22"/>
+                <circle cx="0" cy="0" r="32"/>
+                <circle cx="0" cy="0" r="42"/>
+                <circle cx="0" cy="0" r="52"/>
+                <circle cx="0" cy="0" r="62"/>
+                <circle cx="0" cy="0" r="72"/>
+                <circle cx="0" cy="0" r="82"/>
+                <circle cx="0" cy="0" r="90"/>
+              </g>
+              <circle cx="0" cy="0" r="98" fill="url(#topShadow)" opacity="0.6"/>
+              <circle cx="0" cy="0" r="98" fill="url(#topGloss)" opacity="0.7"/>
+              <circle cx="0" cy="0" r="98" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
+              <circle cx="0" cy="0" r="96" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"/>
+              <circle cx="0" cy="0" r="14" fill="rgba(255,255,255,0.98)"/>
+              <circle cx="0" cy="0" r="14" fill="none" stroke="rgba(31,58,95,0.2)" stroke-width="0.6"/>
+              <circle cx="-2" cy="-3" r="10" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="0.5"/>
+              <circle cx="0" cy="0" r="3" fill="rgba(31,58,95,0.35)"/>
+            </svg>
+          </div>
+
+          <!-- Tranche du disque : couches empilées pour faire l'épaisseur -->
+          <div class="wheel-edge wheel-edge-1"></div>
+          <div class="wheel-edge wheel-edge-2"></div>
+          <div class="wheel-edge wheel-edge-3"></div>
+          <div class="wheel-edge wheel-edge-4"></div>
+          <div class="wheel-edge wheel-edge-5"></div>
+          <div class="wheel-edge wheel-edge-6"></div>
+          <div class="wheel-edge wheel-edge-7"></div>
+          <div class="wheel-edge wheel-edge-8"></div>
+
+          <!-- Face inférieure pour fermer le palet -->
+          <div class="wheel-bottom"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FILTRES -->
+<div class="filters">
+  <div class="filters-inner">
+    <span class="filters-label">Filtrer :</span>
+    <button class="filter-btn is-active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="interieur">Intérieur · Décoration</button>
+    <button class="filter-btn" data-filter="facade">Façade · Extérieur</button>
+    <button class="filter-btn" data-filter="industriel">Industriel · RAL · NCS</button>
+    <button class="filter-btn" data-filter="bois">Bois</button>
+  </div>
+</div>
+
+<!-- GRILLE NUANCIERS -->
+<section class="nuanciers-grid" id="nuanciers-cartes" style="scroll-margin-top: 100px;">
+  <div class="nuanciers-inner">
+    <h2 class="nuanciers-section-title">Choisissez votre <em>palette.</em></h2>
+    <p class="nuanciers-section-sub">Survolez chaque carte pour révéler les teintes du nuancier. Le téléchargement PDF s'ouvre dans un nouvel onglet.</p>
+
+    <!-- INTERIEUR / DECORATION -->
+    <div class="nuanciers-cat" data-cat="interieur">
+      <div class="cat-header">
+        <span class="cat-pill">Intérieur</span>
+        <span class="cat-title">Chromatic · Inspirations · Polycrom</span>
+        <span class="cat-count">4 nuanciers</span>
+      </div>
+      <div class="cards">
+
+        <article class="card" data-cat="interieur">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#F4E1C2,#E8B98E,#C97B5E,#7D4A3F,#3E2A21);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Chromatic · CH1</div>
+                  <div class="card-title">Chromatic CH1 — Jonone</div>
+                  <div class="card-desc">Édition signature artistique, palette d'expression.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF
+                  </span>
+                  <a href="nuanciers/Nuancier Chromatic CH1 Jonone .pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#F4E1C2"></span>
+                <span style="background:#E8B98E"></span>
+                <span style="background:#C97B5E"></span>
+                <span style="background:#7D4A3F"></span>
+                <span style="background:#3E2A21"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic CH1 Jonone</span></div>
+              <p class="card-back-desc">Le nuancier signature Chromatic. Une collection riche et harmonisée, idéale pour la décoration intérieure et les projets résidentiels haut de gamme.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="interieur">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#F2EBDA,#D4C7AB,#9DB07F,#5E8A6E,#3A5468);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Chromatic · CH2</div>
+                  <div class="card-title">Chromatic Dorval CH2</div>
+                  <div class="card-desc">Nouvelle édition, teintes contemporaines et nuances apaisées.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Nouveau
+                  </span>
+                  <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#F2EBDA"></span>
+                <span style="background:#D4C7AB"></span>
+                <span style="background:#9DB07F"></span>
+                <span style="background:#5E8A6E"></span>
+                <span style="background:#3A5468"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Dorval CH2 — Nouveau</span></div>
+              <p class="card-back-desc">La toute nouvelle gamme Chromatic Dorval CH2 : des teintes contemporaines, désaturées et faciles à associer pour la décoration intérieure.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="interieur">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#FBE9D2,#F2B98A,#D87B5E,#A24E48,#5A2B33);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Inspirations</div>
+                  <div class="card-title">Chromatic Inspirations · Styles</div>
+                  <div class="card-desc">Ambiances et harmonies clés-en-main par style décoratif.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Tendances
+                  </span>
+                  <a href="nuanciers/Chromatic-Inspirations-STYLES.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#FBE9D2"></span>
+                <span style="background:#F2B98A"></span>
+                <span style="background:#D87B5E"></span>
+                <span style="background:#A24E48"></span>
+                <span style="background:#5A2B33"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Inspirations · Styles</span></div>
+              <p class="card-back-desc">Un guide d'ambiances Chromatic : harmonies thématiques (naturel, méditerranéen, contemporain…) pour s'inspirer avant d'arbitrer ses teintes.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="interieur">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#F5F0E8,#D9C9A8,#A89074,#6F5942,#322826);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Polycrom · 1320T</div>
+                  <div class="card-title">Polycrom 1320 teintes</div>
+                  <div class="card-desc">L'éventail complet : 1320 teintes pour tous usages.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Référence
+                  </span>
+                  <a href="nuanciers/POLYCROM-1320T-version-PDF.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#F5F0E8"></span>
+                <span style="background:#D9C9A8"></span>
+                <span style="background:#A89074"></span>
+                <span style="background:#6F5942"></span>
+                <span style="background:#322826"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Polycrom · Version complète</span></div>
+              <p class="card-back-desc">L'intégralité du nuancier Polycrom : 1320 teintes pour tous les supports et tous les usages, du chantier neuf à la rénovation.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- FACADE / EXTERIEUR -->
+    <div class="nuanciers-cat" data-cat="facade">
+      <div class="cat-header">
+        <span class="cat-pill" style="background:rgba(74,139,92,0.12); color:var(--vert-eco-fonce);">Façade</span>
+        <span class="cat-title">Chromatic · Polycrom · KEIM · Extérieur</span>
+        <span class="cat-count">4 nuanciers</span>
+      </div>
+      <div class="cards">
+
+        <article class="card" data-cat="facade">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#EDEAE1,#D9C29A,#C97B5E,#8E5E36,#3A5468);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Chromatic · Façade</div>
+                  <div class="card-title">Chromatic Façade</div>
+                  <div class="card-desc">250 teintes Chromatic dédiées aux peintures extérieures.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · 250 teintes
+                  </span>
+                  <a href="nuanciers/CHROMATIC_FACADE.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#EDEAE1"></span>
+                <span style="background:#D9C29A"></span>
+                <span style="background:#C97B5E"></span>
+                <span style="background:#8E5E36"></span>
+                <span style="background:#3A5468"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Façade · 250 teintes</span></div>
+              <p class="card-back-desc">Toute la gamme Chromatic adaptée à la façade : blancs, beiges, ocres, bruns, gris, bleus et verts classés par famille chromatique. Idéal pour le ravalement et la rénovation extérieure.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="facade">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#EFE3D0,#D9C29A,#A87E54,#6A4A2F,#3B2A1C);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Polycrom · 170T</div>
+                  <div class="card-title">Polycrom Façade 170T</div>
+                  <div class="card-desc">170 teintes pensées pour la façade et l'extérieur.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Extérieur
+                  </span>
+                  <a href="nuanciers/NUANCIER-POLYCROM-FACADE-170T.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#EFE3D0"></span>
+                <span style="background:#D9C29A"></span>
+                <span style="background:#A87E54"></span>
+                <span style="background:#6A4A2F"></span>
+                <span style="background:#3B2A1C"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Polycrom Façade · 170 teintes</span></div>
+              <p class="card-back-desc">Le nuancier de référence pour les peintures de façade : tons minéraux, terres, ocres et teintes pierre, adaptés aux contraintes climatiques.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- KEIM Lasure Concretal (béton) -->
+        <article class="card" data-cat="facade">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg, rgb(236,226,217), rgb(193,184,166), rgb(134,131,122), rgb(149,95,70), rgb(200,133,88), rgb(218,170,119), rgb(236,226,217));"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">KEIM · Concretal</div>
+                  <div class="card-title">KEIM Lasure Béton</div>
+                  <div class="card-desc">Lasures minérales pour béton, marque historique (1878). Distribué par L'Atelier en Gironde.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Lasure béton
+                  </span>
+                  <a href="nuanciers/KEIM_Lasure_Beton.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:rgb(236,226,217)"></span>
+                <span style="background:rgb(193,184,166)"></span>
+                <span style="background:rgb(134,131,122)"></span>
+                <span style="background:rgb(149,95,70)"></span>
+                <span style="background:rgb(200,133,88)"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">KEIM Lasure Concretal</span></div>
+              <p class="card-back-desc">La référence des lasures minérales pour béton. Aspect mat minéral, garantie des teintes 20 ans même sur teintes foncées. Disponibles en blanc, teintes Exclusiv et 22 teintes métallisées.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- KEIM Spektrum / Palette Exclusiv -->
+        <article class="card" data-cat="facade">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg, rgb(239,233,132), rgb(236,226,217), rgb(228,191,125), rgb(224,195,172), rgb(204,146,115), rgb(149,71,55), rgb(143,109,88), rgb(66,66,67), rgb(92,125,87), rgb(170,194,194));"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">KEIM · Spektrum</div>
+                  <div class="card-title">KEIM Palette Exclusiv</div>
+                  <div class="card-desc">Plus de 280 teintes minérales : Exclusiv, Historisch, Natursteintöne et Avantgarde.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · 280+ teintes
+                  </span>
+                  <a href="nuanciers/KEIM_Spektrum_Palette.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:rgb(239,233,132)"></span>
+                <span style="background:rgb(228,191,125)"></span>
+                <span style="background:rgb(204,146,115)"></span>
+                <span style="background:rgb(149,71,55)"></span>
+                <span style="background:rgb(92,125,87)"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">KEIM Palette Exclusiv</span></div>
+              <p class="card-back-desc">Le spectre complet des teintes KEIM pour façade et béton : plus de 280 nuances minérales classées en sous-palettes (Exclusiv, Historisch pour le patrimoine, Natursteintöne pour les tons pierre, Avantgarde et monochromes Optil/Soldalit).</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- INDUSTRIEL / RAL -->
+    <div class="nuanciers-cat" data-cat="industriel">
+      <div class="cat-header">
+        <span class="cat-pill" style="background:rgba(240,127,44,0.12); color:var(--orange-fonce);">Industriel</span>
+        <span class="cat-title">RAL · NCS · Référence professionnelle</span>
+        <span class="cat-count">2 nuanciers</span>
+      </div>
+      <div class="cards">
+
+        <article class="card" data-cat="industriel">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#FFD400,#FF7F00,#E62E2E,#1E5BAA,#3C8C40);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">RAL · 190T</div>
+                  <div class="card-title">Nuancier RAL 190 teintes</div>
+                  <div class="card-desc">Le standard industriel européen, codes RAL Classic.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Pro
+                  </span>
+                  <a href="nuanciers/NUANCIER RAL 190T.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#FFD400"></span>
+                <span style="background:#FF7F00"></span>
+                <span style="background:#E62E2E"></span>
+                <span style="background:#1E5BAA"></span>
+                <span style="background:#3C8C40"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">RAL Classic · 190 teintes</span></div>
+              <p class="card-back-desc">Le système de codification colorimétrique le plus répandu dans l'industrie et le bâtiment. Indispensable pour les marchés publics et les commandes techniques.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="industriel">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#FFFFFF,#D3D3D3,#7E7E7E,#3F3F3F,#000000);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Universel</div>
+                  <div class="card-title">Nuancier NCS</div>
+                  <div class="card-desc">Le standard international, plus de 1950 teintes codifiées.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Référence
+                  </span>
+                  <a href="nuanciers/nuancier NCS.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#FFD400"></span>
+                <span style="background:#E94E1B"></span>
+                <span style="background:#9B2D5E"></span>
+                <span style="background:#1E5BAA"></span>
+                <span style="background:#3C8C40"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">NCS</span></div>
+              <p class="card-back-desc">Le Natural Color System, standard international de codification colorimétrique. Référence essentielle pour les architectes, designers et professionnels du bâtiment.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- BOIS -->
+    <div class="nuanciers-cat" data-cat="bois">
+      <div class="cat-header">
+        <span class="cat-pill" style="background:rgba(168,126,84,0.18); color:#6A4A2F;">Bois</span>
+        <span class="cat-title">Nuanciers spécifiques bois</span>
+        <span class="cat-count">2 nuanciers</span>
+      </div>
+      <div class="cards">
+
+        <article class="card" data-cat="bois">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#F5DDB6,#D5A571,#A06C40,#6E4423,#3B2614);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Chromatic Bois · CH10</div>
+                  <div class="card-title">Chromatic Bois CH10</div>
+                  <div class="card-desc">Nouvelle édition dédiée aux finitions bois.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Nouveau
+                  </span>
+                  <a href="nuanciers/Chromatic Bois CH10 Nouveau.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#F5DDB6"></span>
+                <span style="background:#D5A571"></span>
+                <span style="background:#A06C40"></span>
+                <span style="background:#6E4423"></span>
+                <span style="background:#3B2614"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Bois CH10 — Nouveau</span></div>
+              <p class="card-back-desc">La nouvelle édition Chromatic dédiée aux supports bois : lasures, vernis, peintures bois extérieures et intérieures, dans une palette repensée.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="bois">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-strip" style="background: linear-gradient(90deg,#E8D2A8,#C29460,#8E5E36,#5B3A22,#2C1A0F);"></div>
+              <div class="card-body">
+                <div>
+                  <div class="card-cat">Chromatic Bois · Archive</div>
+                  <div class="card-title">Nuancier Bois Chromatic</div>
+                  <div class="card-desc">Ancienne édition, conservée pour références chantier.</div>
+                </div>
+                <div class="card-foot">
+                  <span class="card-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    PDF · Archive
+                  </span>
+                  <a href="nuanciers/nuancier_bois_chromatic ancien.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-mini-strip">
+                <span style="background:#E8D2A8"></span>
+                <span style="background:#C29460"></span>
+                <span style="background:#8E5E36"></span>
+                <span style="background:#5B3A22"></span>
+                <span style="background:#2C1A0F"></span>
+              </div>
+              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Bois — Ancienne édition</span></div>
+              <p class="card-back-desc">Conservé pour permettre les correspondances de teintes sur les chantiers anciens. Pour les nouveaux projets, privilégiez la nouvelle édition CH10.</p>
+              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONSEIL -->
+<section class="conseil">
+  <div class="conseil-inner">
+    <h2>Besoin d'un <em>conseil colorimétrique</em> ?</h2>
+    <p>Nos colorimètres en magasin réalisent vos teintes sur mesure à partir de n'importe quelle référence (RAL, NCS, Chromatic, Polycrom ou échantillon physique). Passez-nous voir ou appelez-nous, on adore parler couleurs.</p>
+    <div class="conseil-actions">
+      <a href="index.html#magasins" class="btn btn-primary">
+        Trouver un magasin
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:0556288944" class="btn btn-outline">
+        05 56 28 89 44
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (identique au site) -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
+        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos gammes</h4>
+        <ul>
+          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
+          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
+          <li><a href="nuanciers.html">Colorimétrie</a></li>
+          <li><a href="index.html#eco">Engagement éco</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Le groupe</h4>
+        <ul>
+          <li><a href="index.html">Notre histoire</a></li>
+          <li><a href="index.html#magasins">Nos magasins</a></li>
+          <li><a href="#">L'Établi · location</a></li>
+          <li><a href="#">Espace pro</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Politique de confidentialité</a></div>
+      <div class="footer-theolaur">MEMBRE DU RÉSEAU AGIR · GROUPE THÉOLAUR</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // === Génération du disque chromatique : 60 lamelles de 6° (style éventail Chromatic) ===
+  (function buildColorDisc() {
+    const ns = 'http://www.w3.org/2000/svg';
+    const g = document.querySelector('#wheel-disc');
+    if (!g) return;
+    const SEG = 60;       // 60 lamelles de 6° chacune
+    const innerR = 14;    // tout près du moyeu, comme une vraie reliure d'éventail
+    const outerR = 98;    // rayon extérieur
+
+    for (let i = 0; i < SEG; i++) {
+      const a1 = (i / SEG) * Math.PI * 2 - Math.PI / 2;
+      const a2 = ((i + 1) / SEG) * Math.PI * 2 - Math.PI / 2;
+      // Pas de chevauchement : on veut des lamelles bien séparées comme sur la photo
+      const x1 = Math.cos(a1) * innerR, y1 = Math.sin(a1) * innerR;
+      const x2 = Math.cos(a1) * outerR, y2 = Math.sin(a1) * outerR;
+      const x3 = Math.cos(a2) * outerR, y3 = Math.sin(a2) * outerR;
+      const x4 = Math.cos(a2) * innerR, y4 = Math.sin(a2) * innerR;
+      const path = document.createElementNS(ns, 'path');
+      path.setAttribute('d',
+        `M ${x1.toFixed(3)} ${y1.toFixed(3)} ` +
+        `L ${x2.toFixed(3)} ${y2.toFixed(3)} ` +
+        `A ${outerR} ${outerR} 0 0 1 ${x3.toFixed(3)} ${y3.toFixed(3)} ` +
+        `L ${x4.toFixed(3)} ${y4.toFixed(3)} ` +
+        `A ${innerR} ${innerR} 0 0 0 ${x1.toFixed(3)} ${y1.toFixed(3)} Z`);
+      // Chaque lamelle = une teinte HSL unie, 6° entre chaque, saturation et luminosité
+      // ajustées pour matcher la photo Chromatic : couleurs vives mais légèrement adoucies
+      const hue = (i * 360 / SEG) % 360;
+      path.setAttribute('fill', `hsl(${hue.toFixed(0)}, 72%, 58%)`);
+      // Petit liseré blanc fin entre lamelles pour les séparer (effet papier)
+      path.setAttribute('stroke', 'rgba(255,255,255,0.5)');
+      path.setAttribute('stroke-width', '0.3');
+      g.appendChild(path);
+    }
+  })();
+
+  // === Filtres de catégories ===
+  (function setupFilters() {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card[data-cat]');
+    const cats = document.querySelectorAll('.nuanciers-cat[data-cat]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        cats.forEach(cat => {
+          if (filter === 'all') {
+            cat.style.display = '';
+          } else {
+            cat.style.display = (cat.dataset.cat === filter) ? '' : 'none';
+          }
+        });
+      });
+    });
+  })();
+
+  // === Header au scroll : se rétrécit ===
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>

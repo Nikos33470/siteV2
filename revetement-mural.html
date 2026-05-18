@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revêtements muraux — Papiers peints haut de gamme & revêtements pros | L'Atelier</title>
+<meta name="description" content="L'Atelier distribue les plus belles maisons de papiers peints (Élitis, Pierre Frey, Casamance, Isidore Leroy, Nobilis…) et les revêtements muraux professionnels. 2 showrooms en Gironde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #1F3A5F;
+    --bleu-fonce: #15273F;
+    --bleu-clair: #2D4E7A;
+    --bleu-pale: #E8EEF5;
+    --orange: #F07F2C;
+    --orange-fonce: #D86618;
+    --orange-clair: #FFA968;
+    --vert-eco: #4A8B5C;
+    --beige: #F5F0E8;
+    --blanc: #FFFFFF;
+    --gris-clair: #F8F7F4;
+    --gris: #5F5F5F;
+    --gris-fonce: #2C2C2C;
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
+
+  /* ============ HEADER (identique au site) ============ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(31,58,95,0.08); transition: all 0.4s var(--transition); }
+  .header-inner { max-width: 1440px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; transition: padding 0.4s var(--transition); }
+  .header.is-scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(31,58,95,0.08); }
+  .header.is-scrolled .header-inner { padding: 10px 48px; }
+  .header.is-scrolled .logo-symbol { width: 70px; height: 86px; }
+  .header.is-scrolled .logo-text { font-size: 36px; }
+  .header.is-scrolled .logo-baseline { font-size: 12px; }
+  .header.is-scrolled .logo-since { display: none; }
+  .logo-symbol, .logo-text, .logo-baseline { transition: all 0.4s var(--transition); }
+  .logo { display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--bleu); }
+  .logo-symbol { width: 105px; height: 130px; position: relative; flex-shrink: 0; }
+  .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text { font-family: var(--sans); font-weight: 700; font-size: 48px; color: var(--bleu); letter-spacing: -0.8px; }
+  .logo-baseline { font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--orange); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
+  .logo-since { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 14px; color: var(--bleu); margin-top: 6px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; opacity: 0.85; }
+  .logo-since-dash { display: inline-block; width: 18px; height: 1px; background: var(--orange); flex-shrink: 0; }
+  .nav { display: flex; align-items: center; gap: 22px; }
+  .nav a { font-size: 13.5px; font-weight: 500; color: var(--bleu); text-decoration: none; transition: color 0.3s; position: relative; white-space: nowrap; }
+  .nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s var(--transition); }
+  .nav a:hover::after { width: 100%; }
+  .nav a:hover { color: var(--orange); }
+  .nav a.is-current { color: var(--orange); }
+  .nav a.is-current::after { width: 100%; }
+  .nav-cta { background: var(--bleu); color: var(--blanc) !important; padding: 10px 22px; border-radius: 50px; transition: all 0.3s; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--orange); color: var(--blanc) !important; transform: translateY(-2px); }
+  .nav-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; margin-left: 48px; }
+  .nav-search { position: relative; display: flex; align-items: center; width: 280px; max-width: 100%; }
+  .nav-search-icon { position: absolute; left: 12px; width: 15px; height: 15px; color: var(--bleu); opacity: 0.55; pointer-events: none; }
+  .nav-search-input { width: 100%; padding: 8px 14px 8px 34px; font-family: var(--sans); font-size: 13px; color: var(--bleu-fonce); background: rgba(31,58,95,0.04); border: 1px solid rgba(31,58,95,0.12); border-radius: 50px; outline: none; transition: all 0.3s var(--transition); }
+  .nav-search-input::placeholder { color: var(--gris); opacity: 0.7; font-weight: 400; }
+  .nav-search-input:focus { background: var(--blanc); border-color: var(--orange); box-shadow: 0 0 0 3px rgba(240,127,44,0.15); }
+
+  /* ============ HERO ÉDITORIAL ============ */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    padding: 200px 48px 80px;
+    overflow: hidden;
+    display: flex; align-items: center;
+    background: var(--bleu);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url('images/showroom/showroom-papiers-peints.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    z-index: 0;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(31,58,95,0.85) 0%, rgba(31,58,95,0.3) 50%, rgba(15,39,63,0.85) 100%);
+    z-index: 1;
+  }
+  .hero-inner { max-width: 1440px; margin: 0 auto; position: relative; z-index: 2; color: var(--blanc); width: 100%; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 18px;
+    background: rgba(240,127,44,0.18);
+    border: 1px solid rgba(240,127,44,0.4);
+    color: var(--orange-clair);
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    border-radius: 50px; margin-bottom: 32px;
+  }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+  .hero-title {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(48px, 6vw, 92px); line-height: 0.98;
+    margin-bottom: 32px; letter-spacing: -2px;
+    max-width: 1000px;
+  }
+  .hero-title em { color: var(--orange); font-style: italic; font-weight: 300; }
+  .hero-subtitle { font-size: 20px; line-height: 1.6; opacity: 0.92; font-weight: 300; max-width: 720px; margin-bottom: 48px; }
+  .hero-subtitle strong { font-weight: 600; color: var(--blanc); }
+  .hero-meta { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+  .hero-meta-item { display: flex; align-items: baseline; gap: 14px; }
+  .hero-meta-num { font-family: var(--display); font-size: 60px; font-weight: 300; color: var(--orange); line-height: 1; letter-spacing: -2px; }
+  .hero-meta-label { font-size: 13px; opacity: 0.85; letter-spacing: 1px; text-transform: uppercase; max-width: 140px; line-height: 1.3; }
+
+  /* ============ BREADCRUMB ============ */
+  .breadcrumb-bar { background: var(--gris-clair); padding: 18px 48px; border-bottom: 1px solid rgba(31,58,95,0.06); }
+  .breadcrumb { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--gris); }
+  .breadcrumb a { color: var(--gris); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--orange); }
+  .breadcrumb-sep { opacity: 0.4; }
+  .breadcrumb-current { color: var(--bleu); font-weight: 500; }
+
+  /* ============ INTRO ÉDITO ============ */
+  .intro { padding: 110px 48px 80px; background: var(--blanc); }
+  .intro-inner { max-width: 1100px; margin: 0 auto; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; }
+  .intro-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: var(--bleu-pale); border-radius: 50px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 24px; }
+  .intro-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+  .intro-title { font-family: var(--display); font-weight: 400; font-size: clamp(38px, 4vw, 56px); line-height: 1; color: var(--bleu); letter-spacing: -1.5px; }
+  .intro-title em { font-style: italic; color: var(--orange); font-weight: 400; }
+  .intro-text { font-size: 17px; line-height: 1.75; color: var(--bleu-fonce); font-weight: 300; }
+  .intro-text p + p { margin-top: 18px; }
+  .intro-text strong { font-weight: 600; color: var(--bleu); }
+
+  /* ============ SECTION CATÉGORIE ============ */
+  .cat-section { padding: 100px 48px; position: relative; }
+  .cat-section.alt { background: var(--gris-clair); }
+  .cat-inner { max-width: 1440px; margin: 0 auto; }
+
+  .cat-header { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: end; margin-bottom: 60px; }
+  .cat-num {
+    font-family: var(--display); font-weight: 300;
+    font-size: 160px; line-height: 0.8;
+    color: var(--orange); opacity: 0.5;
+    letter-spacing: -6px;
+  }
+  .cat-info { padding-bottom: 18px; border-bottom: 1px solid rgba(31,58,95,0.15); }
+  .cat-tag { display: inline-block; padding: 5px 14px; background: var(--orange); color: var(--blanc); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 50px; margin-bottom: 16px; }
+  .cat-title { font-family: var(--display); font-weight: 400; font-size: clamp(38px, 4vw, 52px); color: var(--bleu); letter-spacing: -1px; line-height: 1.05; margin-bottom: 12px; }
+  .cat-title em { font-style: italic; color: var(--orange); }
+  .cat-subtitle { font-size: 16px; color: var(--gris); font-weight: 400; max-width: 700px; }
+
+  /* ============ GALERIE D'AMBIANCE ============ */
+  .gallery { display: grid; gap: 16px; margin-bottom: 64px; }
+  /* Layout en mosaïque type Pinterest avec grandes images */
+  .gallery-mural {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-auto-rows: 280px;
+    grid-template-areas:
+      "g1 g2 g3"
+      "g1 g4 g5"
+      "g6 g6 g7";
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--bleu-pale);
+    cursor: pointer;
+    transition: transform 0.5s var(--transition);
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s var(--transition), filter 0.4s;
+  }
+  .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -16px rgba(31,58,95,0.25); }
+  .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-item:nth-child(1) { grid-area: g1; }
+  .gallery-item:nth-child(2) { grid-area: g2; }
+  .gallery-item:nth-child(3) { grid-area: g3; }
+  .gallery-item:nth-child(4) { grid-area: g4; }
+  .gallery-item:nth-child(5) { grid-area: g5; }
+  .gallery-item:nth-child(6) { grid-area: g6; }
+  .gallery-item:nth-child(7) { grid-area: g7; }
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 20px 22px;
+    background: linear-gradient(180deg, transparent 0%, rgba(15,39,63,0.85) 100%);
+    color: var(--blanc);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s var(--transition);
+  }
+  .gallery-item:hover .gallery-caption { opacity: 1; transform: translateY(0); }
+  .gallery-caption-style { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange-clair); margin-bottom: 4px; }
+  .gallery-caption-text { font-family: var(--display); font-size: 18px; font-weight: 400; line-height: 1.2; }
+
+  /* Galerie alternative pour la 2e section (4 colonnes simples) */
+  .gallery-pros {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 340px;
+  }
+  .gallery-pros .gallery-item { grid-area: auto; }
+
+  /* ============ LISTE DES FOURNISSEURS ============ */
+  /* Layout : entête à gauche + liste verticale 1 colonne à droite, dans un bloc avec fond */
+  .brands-list {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    padding: 56px 56px 48px;
+    background: var(--bleu-pale);
+    border-radius: 20px;
+  }
+  .brands-list-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gris); padding-top: 6px;
+    align-self: start;
+  }
+  .brands-list-label-num {
+    display: block;
+    font-family: var(--display); font-size: 96px; font-weight: 300;
+    color: var(--orange); letter-spacing: -4px; line-height: 0.85; margin-top: 14px;
+  }
+  .brands-list-label-detail { display: block; margin-top: 20px; font-weight: 400; letter-spacing: 0.3px; text-transform: none; color: var(--bleu-fonce); font-size: 14px; line-height: 1.55; max-width: 260px; }
+
+  /* Liste verticale, 1 colonne, items les uns sous les autres */
+  .brands-grid-names {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+  }
+  /* Ligne fabricant : nom à gauche, meta à droite, séparateur subtil */
+  .brand-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 4px;
+    border-bottom: 1px solid rgba(31,58,95,0.12);
+    transition: all 0.3s var(--transition);
+    cursor: pointer;
+  }
+  .brand-item:last-child { border-bottom: none; }
+  .brand-item:hover { padding-left: 16px; border-bottom-color: var(--orange); }
+  /* L'initiale n'est plus affichée dans la liste verticale */
+  .brand-item-initial { display: none; }
+  .brand-item-name {
+    font-family: var(--display);
+    font-size: 24px; font-weight: 400;
+    color: var(--bleu);
+    letter-spacing: -0.5px;
+    transition: color 0.3s;
+  }
+  .brand-item:hover .brand-item-name { color: var(--orange); font-style: italic; }
+  .brand-item-meta {
+    font-size: 11px; color: var(--gris);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-left: 16px;
+    white-space: nowrap;
+  }
+
+  /* ============ LIFESTYLE BANNER ============ */
+  .lifestyle-banner {
+    margin: 0 48px 100px;
+    max-width: 1440px;
+    margin-left: auto; margin-right: auto;
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .lifestyle-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: url('images/showroom/showroom-papiers-peints.jpeg');
+    background-size: cover; background-position: center;
+    z-index: 0;
+  }
+  .lifestyle-banner::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(15,39,63,0.92) 100%);
+    z-index: 1;
+  }
+  .lifestyle-content { position: relative; z-index: 2; padding: 60px; color: var(--blanc); max-width: 900px; }
+  .lifestyle-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px; background: rgba(240,127,44,0.18); border: 1px solid rgba(240,127,44,0.4); color: var(--orange-clair); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; border-radius: 50px; margin-bottom: 20px; }
+  .lifestyle-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+  .lifestyle-title { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 24px; }
+  .lifestyle-title em { font-style: italic; color: var(--orange); font-weight: 300; }
+  .lifestyle-text { font-size: 17px; line-height: 1.6; opacity: 0.92; font-weight: 300; max-width: 600px; }
+
+  /* ============ SHOWROOM CARD ============ */
+  .showroom-section { padding: 0 48px 100px; }
+  .showroom-grid { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .showroom-card {
+    background: var(--bleu); color: var(--blanc);
+    padding: 48px;
+    border-radius: 22px;
+    display: flex; flex-direction: column;
+    transition: all 0.4s var(--transition);
+    position: relative; overflow: hidden;
+  }
+  .showroom-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -20px rgba(31,58,95,0.4); }
+  .showroom-card-img {
+    margin: -48px -48px 32px;
+    height: 260px;
+    background-size: cover; background-position: center;
+    position: relative;
+  }
+  .showroom-card-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(31,58,95,0.5) 100%); }
+  .showroom-card-name { font-family: var(--display); font-size: 32px; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .showroom-card-name em { color: var(--orange); font-style: italic; }
+  .showroom-card-sub { font-size: 13px; color: var(--orange-clair); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px; font-weight: 600; }
+  .showroom-card-addr { font-size: 15px; line-height: 1.6; opacity: 0.88; margin-bottom: 20px; flex: 1; }
+  .showroom-card-tel { font-size: 17px; color: var(--orange-clair); font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+  .showroom-card-tel:hover { color: var(--blanc); }
+
+  /* ============ FOOTER ============ */
+  footer { background: var(--bleu-fonce); color: var(--blanc); padding: 80px 48px 40px; }
+  .footer-inner { max-width: 1440px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-brand-text { font-family: var(--display); font-size: 32px; line-height: 1.2; margin-bottom: 24px; color: var(--blanc); font-weight: 300; }
+  .footer-brand-text em { color: var(--orange); font-style: italic; }
+  .footer-desc { font-size: 14px; opacity: 0.7; line-height: 1.6; max-width: 380px; font-weight: 300; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom { padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; opacity: 0.6; }
+  .footer-bottom a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--orange); }
+  .footer-theolaur { font-size: 11px; letter-spacing: 2px; }
+
+  /* ============ REVEAL ============ */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--transition), transform 0.7s var(--transition); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1100px) {
+    .header-inner { flex-wrap: wrap; padding: 16px 24px; }
+    .nav-wrap { margin-left: 0; width: 100%; }
+    .nav { flex-wrap: wrap; gap: 14px; }
+    .hero { padding: 180px 24px 60px; min-height: auto; }
+    .intro, .cat-section, .showroom-section { padding-left: 24px; padding-right: 24px; }
+    .intro-grid { grid-template-columns: 1fr; gap: 24px; }
+    .cat-header { grid-template-columns: 1fr; gap: 16px; }
+    .cat-num { font-size: 100px; }
+    .gallery-mural { grid-template-columns: 1fr 1fr; grid-template-areas:
+      "g1 g1"
+      "g2 g3"
+      "g4 g5"
+      "g6 g6"
+      "g7 g7"; }
+    .gallery-pros { grid-template-columns: 1fr 1fr; }
+    .brands-list { grid-template-columns: 1fr; gap: 32px; padding: 36px 28px; }
+    .brands-list-label { position: static; }
+    .lifestyle-banner { margin-left: 24px; margin-right: 24px; min-height: 480px; }
+    .lifestyle-content { padding: 36px; }
+    .showroom-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+  @media (max-width: 640px) {
+    .hero-title { font-size: 42px; }
+    .hero-meta { gap: 24px; }
+    .gallery-mural { grid-auto-rows: 220px; }
+    .gallery-pros { grid-template-columns: 1fr; grid-auto-rows: 280px; }
+    .brands-list { padding: 32px 20px; }
+    .brand-item { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .brand-item-meta { margin-left: 0; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-symbol" viewBox="0 0 100 120">
+        <rect x="20" y="20" width="65" height="80" fill="#1F3A5F" rx="2"/>
+        <path d="M 8 5 L 18 5 L 22 30 L 12 30 Z" fill="#F07F2C"/>
+        <text x="52" y="80" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">a</text>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-text">l'atelier</span>
+        <span class="logo-baseline">MARCHAND DE COULEURS</span>
+        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+      </div>
+    </a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="gammes.html">Nos gammes peintures</a>
+        <a href="nuanciers.html">Nuanciers</a>
+        <a href="index.html#eco">Engagement éco</a>
+        <a href="revetement-mural.html" class="is-current">Revêtement mural</a>
+        <a href="revetement-sol.html">Revêtement de sol</a>
+        <a href="documents.html">Documents techniques</a>
+        <a href="index.html#equipe">L'équipe L'ATELIER</a>
+        <a href="#" class="nav-cta">Espace pro</a>
+      </nav>
+      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Revêtements muraux</span>
+    <h1 class="hero-title">
+      L'art du mur,<br>
+      <em>matière par matière</em>.
+    </h1>
+    <p class="hero-subtitle">
+      Des <strong>maisons françaises d'exception</strong> aux <strong>revêtements techniques</strong> pour l'hôtellerie et le tertiaire. L'Atelier sélectionne et distribue les meilleures signatures du papier peint et du revêtement mural. Catalogues à consulter, échantillons à manipuler, conseil par nos coloristes.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">20+</span>
+        <span class="hero-meta-label">Maisons distribuées</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">2</span>
+        <span class="hero-meta-label">Showrooms en Gironde</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="breadcrumb-bar">
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-current">Revêtement mural</span>
+  </nav>
+</div>
+
+<!-- ============ INTRO ÉDITORIALE ============ -->
+<section class="intro">
+  <div class="intro-inner reveal">
+    <div class="intro-grid">
+      <div>
+        <span class="intro-eyebrow">Notre sélection</span>
+        <h2 class="intro-title">Le mur est <em>une matière</em>, pas seulement une surface.</h2>
+      </div>
+      <div class="intro-text">
+        <p>Texturé, peint à la main, panoramique, contrecollé, lessivable, anti-feu, acoustique. Le revêtement mural a autant de réponses qu'il y a de projets. Nos coloristes vous accompagnent du choix de la matière au calepinage, pour des intérieurs résidentiels comme pour des chantiers tertiaires.</p>
+        <p><strong>Chaque maison ci-dessous est sélectionnée pour la qualité de ses produits et la solidité de son service technique.</strong> Échantillons disponibles en magasin, catalogues commandables sur place, livraison sur chantier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 01 — PAPIERS PEINTS HDG ============ -->
+<section class="cat-section" id="papiers-peints">
+  <div class="cat-inner">
+    <header class="cat-header reveal">
+      <div class="cat-num">01</div>
+      <div class="cat-info">
+        <span class="cat-tag">Particuliers · Décorateurs · Architectes</span>
+        <h2 class="cat-title">Papiers peints <em>haut de gamme</em></h2>
+        <p class="cat-subtitle">Panoramiques, motifs, unis texturés, peints à la main. Le meilleur des éditeurs français et internationaux.</p>
+      </div>
+    </header>
+
+    <!-- Galerie panoramiques et papiers peints haut de gamme : visuels officiels éditeurs (Isidore Leroy, Pierre Frey) -->
+    <div class="gallery gallery-mural reveal">
+      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_FORET.jpg?v=1770376883" alt="Papier peint panoramique Forêt - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Panoramique Forêt</div><div class="gallery-caption-text">Isidore Leroy — Paris, 1842</div></div></div>
+      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_AUBE_HEURE_DOREE.jpg?v=1777360599" alt="Papier peint panoramique Aube Heure Dorée - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Bord de mer</div><div class="gallery-caption-text">Aube heure dorée, Isidore Leroy</div></div></div>
+      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_AMAZONE_0adff836-cfba-4a7f-85d4-559ddaa4c10d.jpg?v=1743779309" alt="Papier peint panoramique Amazone tropical - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Panoramique tropical</div><div class="gallery-caption-text">Amazone, Isidore Leroy</div></div></div>
+      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/251119_SITUATION_CYPRINS_AMBRE_SDB_FENETRE_14085725_14085775_HouseOfPictures_1251X1799PX.jpg?v=1763972312" alt="Papier peint Art Déco Cyprins ambre - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Art Déco</div><div class="gallery-caption-text">Cyprins ambre, Isidore Leroy</div></div></div>
+      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/251127_SITUTAION_CHAMPS_FLEURIS_BOIS_DE_ROSE_13759344_13759397_HOUSEOFPICTURES_1251X1799PX.jpg?v=1766499747" alt="Papier peint Champs fleuris bois de rose - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Floral</div><div class="gallery-caption-text">Champs fleuris, Isidore Leroy</div></div></div>
+      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_LE_BRESIL_BLEU_PAON.jpg?v=1768558736" alt="Papier peint panoramique Brésil bleu paon - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Forêt panoramique</div><div class="gallery-caption-text">Le Brésil bleu paon, Isidore Leroy</div></div></div>
+    </div>
+
+    <!-- Liste des fournisseurs -->
+    <div class="brands-list reveal">
+      <div class="brands-list-label">
+        Les maisons distribuées
+        <span class="brands-list-label-num">16</span>
+        <span class="brands-list-label-detail">Éditeurs français et internationaux, sélectionnés pour leur exigence créative et la qualité de leurs produits.</span>
+      </div>
+      <div class="brands-grid-names">
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">É</span><span class="brand-item-name">Élitis</span><span class="brand-item-meta">Toulouse · 1988</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">C</span><span class="brand-item-name">Casamance</span><span class="brand-item-meta">Paris · 2000</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Papiers de Paris</span><span class="brand-item-meta">Paris</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Little Cabari</span><span class="brand-item-meta">Bordeaux</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Ananbô</span><span class="brand-item-meta">France · Panoramiques</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Le Grand Siècle</span><span class="brand-item-meta">France</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">I</span><span class="brand-item-name">Isidore Leroy</span><span class="brand-item-meta">Paris · 1842</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">Bien Fait Paris</span><span class="brand-item-meta">Paris · Design</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">N</span><span class="brand-item-name">Nobilis</span><span class="brand-item-meta">Paris · 1928</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Pierre Frey</span><span class="brand-item-meta">Paris · 1935</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Lé Papiers de Ninon</span><span class="brand-item-meta">France</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Atelier d'Offard</span><span class="brand-item-meta">Tours · Artisanat</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Muraem</span><span class="brand-item-meta">Sur mesure</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">W</span><span class="brand-item-name">Wall&decò France</span><span class="brand-item-meta">Italie · Design</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Au fil des Couleurs</span><span class="brand-item-meta">Paris</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Texdecor</span><span class="brand-item-meta">Tourcoing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIFESTYLE BANNER (showroom papiers peints) ============ -->
+<section class="lifestyle-banner reveal">
+  <div class="lifestyle-content">
+    <span class="lifestyle-eyebrow">En showroom</span>
+    <h2 class="lifestyle-title">Les catalogues, <em>en main</em>.</h2>
+    <p class="lifestyle-text">Tous les classeurs des maisons distribuées sont consultables sur place. Texture, mat, brillant, raccord — le papier peint se choisit en touchant. Nos coloristes vous accompagnent dans la sélection et le calepinage de votre projet.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 02 — REVÊTEMENTS PROS ============ -->
+<section class="cat-section alt" id="revetements-pros">
+  <div class="cat-inner">
+    <header class="cat-header reveal">
+      <div class="cat-num">02</div>
+      <div class="cat-info">
+        <span class="cat-tag" style="background: var(--bleu);">Hôtellerie · Tertiaire · CHR</span>
+        <h2 class="cat-title">Revêtements muraux <em>professionnels</em></h2>
+        <p class="cat-subtitle">Vinyles techniques, classement feu, résistance à l'usage intensif. Pour les chantiers contract.</p>
+      </div>
+    </header>
+
+    <!-- Galerie pros — visuels officiels Vescom (revêtements muraux textiles & vinyles techniques contract) -->
+    <div class="gallery gallery-pros reveal">
+      <div class="gallery-item"><img src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/morris/vescom---textile-wallcovering---morris-7.jpg/4160c2b5f4cb495eaceddb9025f16f8b/vescom---textile-wallcovering---morris-7.webp" alt="Revêtement mural textile Morris en situation salon - Vescom" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Textile tissé</div><div class="gallery-caption-text">Morris — Vescom</div></div></div>
+      <div class="gallery-item"><img src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/fraser/vescom---textile-wallcovering---fraser-13.jpg/7422ce1e295b36e4542921b33b4a53c5/vescom---textile-wallcovering---fraser-13.webp" alt="Revêtement mural Fraser opaque tissage architectural - Vescom" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Tissage 3D</div><div class="gallery-caption-text">Fraser — Vescom</div></div></div>
+      <div class="gallery-item"><img src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/vinyl_wallcovering/luxor/vescom---recycled-vinyl-wallcovering---luxor-11.jpg/91aa0e299e9b68776f3f9a8d8511f80a/vescom---recycled-vinyl-wallcovering---luxor-11.webp" alt="Revêtement vinyle recyclé Luxor mat & métallique - Vescom" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Vinyle recyclé</div><div class="gallery-caption-text">Luxor — Vescom</div></div></div>
+      <div class="gallery-item"><img src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/sinkiang/vescom---textile-wallcovering---sinkiang-1.jpg/662443cb806b83976bf6b59930cc6377/vescom---textile-wallcovering---sinkiang-1.webp" alt="Revêtement Sinkiang 100% soie en intérieur - Vescom" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">100% soie</div><div class="gallery-caption-text">Sinkiang — Vescom</div></div></div>
+    </div>
+
+    <!-- Liste fournisseurs pros -->
+    <div class="brands-list reveal">
+      <div class="brands-list-label">
+        Les marques contract
+        <span class="brands-list-label-num">04</span>
+        <span class="brands-list-label-detail">Vinyles techniques pour les projets exigeants : feu M1, lessivable, anti-microbien, acoustique.</span>
+      </div>
+      <div class="brands-grid-names">
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Muraspec</span><span class="brand-item-meta">UK · PVC technique</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">V</span><span class="brand-item-name">Vescom</span><span class="brand-item-meta">Pays-Bas · Hospitality</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Lutèce</span><span class="brand-item-meta">Semi-pro · Résidentiel</span></div>
+        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Texdecor Contract</span><span class="brand-item-meta">Vinacoustic · Polyform</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWROOMS ============ -->
+<section class="showroom-section">
+  <div class="cat-inner">
+    <header class="cat-header reveal" style="margin-bottom: 40px;">
+      <div class="cat-num">03</div>
+      <div class="cat-info">
+        <span class="cat-tag">Voir, toucher, choisir</span>
+        <h2 class="cat-title">Nos <em>showrooms</em></h2>
+        <p class="cat-subtitle">Deux espaces dédiés aux échantillons. Ouvert aux particuliers, architectes et artisans peintres.</p>
+      </div>
+    </header>
+  </div>
+  <div class="showroom-grid reveal">
+    <div class="showroom-card">
+      <div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEURS_ATELIER_CUB_V2.jpeg');"></div>
+      <div class="showroom-card-name">L'Atelier <em>CUB</em></div>
+      <div class="showroom-card-sub">Mérignac</div>
+      <div class="showroom-card-addr">7 av. de la grande semaine<br>Rue Vert Castel<br>33700 Mérignac</div>
+      <a href="tel:0556288944" class="showroom-card-tel">05 56 28 89 44 →</a>
+    </div>
+    <div class="showroom-card">
+      <div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEUR_ATELIER_BASSIN_V2.jpeg');"></div>
+      <div class="showroom-card-name">L'Atelier <em>Bassin</em></div>
+      <div class="showroom-card-sub">La Teste-de-Buch</div>
+      <div class="showroom-card-addr">1111 av. du Parc des Expositions<br>33260 La Teste-de-Buch<br>Bassin d'Arcachon</div>
+      <a href="tel:0557526477" class="showroom-card-tel">05 57 52 64 77 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
+        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos gammes</h4>
+        <ul>
+          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
+          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
+          <li><a href="revetement-mural.html">Revêtement mural</a></li>
+          <li><a href="revetement-sol.html">Revêtement de sol</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Le groupe</h4>
+        <ul>
+          <li><a href="#">Notre histoire</a></li>
+          <li><a href="#">Nos magasins</a></li>
+          <li><a href="#">L'Établi · location</a></li>
+          <li><a href="#">Espace pro</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Politique de confidentialité</a></div>
+      <div class="footer-theolaur">MEMBRE DU RÉSEAU AGIR · GROUPE THÉOLAUR</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  });
+</script>
+
+</body>
+</html>

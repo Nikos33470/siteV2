@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documents techniques — L'Atelier · Fiches techniques, FDES, nuanciers, plaquettes</title>
+<meta name="description" content="Téléchargez tous les documents techniques L'Atelier : fiches techniques (FT), FDES environnementales, nuanciers et plaquettes commerciales pour les gammes L'Atelier 45, Titane Hydro et nos partenaires.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #1F3A5F;
+    --bleu-fonce: #15273F;
+    --bleu-clair: #2D4E7A;
+    --bleu-pale: #E8EEF5;
+    --orange: #F07F2C;
+    --orange-fonce: #D86618;
+    --orange-clair: #FFA968;
+    --vert-eco: #4A8B5C;
+    --vert-eco-fonce: #2F6940;
+    --vert-eco-pale: #E8F2EB;
+    --beige: #F5F0E8;
+    --blanc: #FFFFFF;
+    --gris-clair: #F8F7F4;
+    --gris: #5F5F5F;
+    --gris-fonce: #2C2C2C;
+    --noir: #0A0A0A;
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
+
+  /* === HEADER (identique au site) === */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(31,58,95,0.08); transition: all 0.4s var(--transition); }
+  .header-inner { max-width: 1440px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; transition: padding 0.4s var(--transition); }
+  .header.is-scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(31, 58, 95, 0.08); }
+  .header.is-scrolled .header-inner { padding: 10px 48px; }
+  .header.is-scrolled .logo-symbol { width: 70px; height: 86px; }
+  .header.is-scrolled .logo-text { font-size: 36px; }
+  .header.is-scrolled .logo-baseline { font-size: 12px; }
+  .header.is-scrolled .logo-since { display: none; }
+  .logo-symbol, .logo-text, .logo-baseline { transition: all 0.4s var(--transition); }
+  .logo { display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--bleu); }
+  .logo-symbol { width: 105px; height: 130px; position: relative; flex-shrink: 0; }
+  .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text { font-family: var(--sans); font-weight: 700; font-size: 48px; color: var(--bleu); letter-spacing: -0.8px; }
+  .logo-baseline { font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--orange); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
+  .logo-since { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 14px; color: var(--bleu); margin-top: 6px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; opacity: 0.85; }
+  .logo-since-dash { display: inline-block; width: 18px; height: 1px; background: var(--orange); flex-shrink: 0; }
+  .nav { display: flex; align-items: center; gap: 22px; }
+  .nav a { font-size: 13.5px; font-weight: 500; color: var(--bleu); text-decoration: none; transition: color 0.3s; position: relative; white-space: nowrap; }
+  .nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s var(--transition); }
+  .nav a:hover::after { width: 100%; }
+  .nav a:hover { color: var(--orange); }
+  .nav a.active { color: var(--orange); }
+  .nav a.active::after { width: 100%; }
+  .nav-cta { background: var(--bleu); color: var(--blanc) !important; padding: 10px 22px; border-radius: 50px; transition: all 0.3s; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--orange); color: var(--blanc) !important; transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(240,127,44,0.5); }
+  .nav-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; margin-left: 48px; }
+  .nav-search { position: relative; display: flex; align-items: center; width: 280px; max-width: 100%; }
+  .nav-search-icon { position: absolute; left: 12px; width: 15px; height: 15px; color: var(--bleu); opacity: 0.55; pointer-events: none; }
+  .nav-search-input { width: 100%; padding: 8px 14px 8px 34px; font-family: var(--sans); font-size: 13px; color: var(--bleu-fonce); background: rgba(31,58,95,0.04); border: 1px solid rgba(31,58,95,0.12); border-radius: 50px; outline: none; transition: all 0.3s var(--transition); }
+  .nav-search-input::placeholder { color: var(--gris); opacity: 0.7; font-weight: 400; }
+  .nav-search-input:focus { background: var(--blanc); border-color: var(--orange); box-shadow: 0 0 0 3px rgba(240,127,44,0.15); }
+  .nav-search:focus-within .nav-search-icon { opacity: 1; color: var(--orange); }
+
+  /* === HERO COMPACT === */
+  .hero-docs {
+    position: relative;
+    padding: 170px 48px 60px;
+    background: var(--bleu);
+    color: var(--blanc);
+    overflow: hidden;
+  }
+  .hero-docs::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 15% 25%, rgba(240,127,44,0.20) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 75%, rgba(74,139,92,0.15) 0%, transparent 45%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
+  .hero-docs-inner { max-width: 1440px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
+  .hero-docs-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange-clair); font-weight: 600; margin-bottom: 20px; }
+  .hero-docs-eyebrow::before,
+  .hero-docs-eyebrow::after { content: ''; width: 30px; height: 1px; background: var(--orange-clair); }
+  .hero-docs h1 { font-family: var(--display); font-size: clamp(42px, 5.5vw, 68px); font-weight: 400; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 18px; }
+  .hero-docs h1 em { color: var(--orange-clair); font-style: italic; font-weight: 300; }
+  .hero-docs-intro { font-size: 16px; line-height: 1.7; opacity: 0.85; max-width: 700px; margin: 0 auto; font-weight: 300; }
+
+  /* Fil d'Ariane / ancres rapides directement dans le hero */
+  .hero-docs-anchors {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .hero-docs-anchor {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--blanc);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s var(--transition);
+  }
+  .hero-docs-anchor:hover { background: var(--orange); border-color: var(--orange); color: var(--blanc); transform: translateY(-2px); }
+  .hero-docs-anchor svg { width: 12px; height: 12px; }
+
+  /* === BARRE FILTRES (sticky tout en haut) === */
+  .filters-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(31,58,95,0.08);
+    padding: 18px 48px;
+  }
+  .filters-inner { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .filters-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gris); }
+  .filters-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 7px 16px;
+    background: var(--gris-clair);
+    border: 1px solid rgba(31,58,95,0.08);
+    color: var(--bleu);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .filter-btn:hover { background: var(--bleu-pale); border-color: var(--bleu); }
+  .filter-btn.is-active { background: var(--bleu); color: var(--blanc); border-color: var(--bleu); }
+  .filter-btn.is-active:hover { background: var(--bleu-fonce); }
+  .filter-btn .count { font-size: 11px; opacity: 0.55; font-weight: 600; }
+  .filter-btn.is-active .count { opacity: 0.8; }
+  .filter-search-wrap { position: relative; flex: 1; min-width: 220px; max-width: 340px; margin-left: auto; }
+  .filter-search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--gris); pointer-events: none; }
+  .filter-search-input { width: 100%; padding: 9px 16px 9px 40px; font-family: var(--sans); font-size: 13px; color: var(--bleu-fonce); background: var(--gris-clair); border: 1px solid rgba(31,58,95,0.08); border-radius: 50px; outline: none; transition: all 0.3s var(--transition); }
+  .filter-search-input:focus { background: var(--blanc); border-color: var(--orange); box-shadow: 0 0 0 3px rgba(240,127,44,0.15); }
+
+  /* === SECTIONS DOCUMENTS (style Soframap) === */
+  .docs-main {
+    background: var(--blanc);
+    padding: 60px 48px 80px;
+    position: relative;
+  }
+  .docs-main::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 5% 10%, rgba(240,127,44,0.04) 0%, transparent 25%),
+      radial-gradient(circle at 95% 60%, rgba(31,58,95,0.03) 0%, transparent 30%);
+    pointer-events: none;
+  }
+  .docs-inner { max-width: 1280px; margin: 0 auto; position: relative; }
+
+  /* État vide */
+  .docs-empty { text-align: center; padding: 80px 24px; color: var(--gris); display: none; }
+  .docs-empty.is-visible { display: block; }
+  .docs-empty-icon { font-size: 56px; margin-bottom: 16px; opacity: 0.4; }
+  .docs-empty-text { font-family: var(--display); font-size: 22px; color: var(--bleu); margin-bottom: 8px; }
+  .docs-empty-sub { font-size: 14px; color: var(--gris); }
+
+  /* Section par type de document */
+  .doc-section {
+    margin-bottom: 64px;
+    scroll-margin-top: 100px;
+  }
+  .doc-section[hidden] { display: none; }
+
+  /* Variables d'accent par type, utilisées pour les sous-filtres et filets hover */
+  .doc-section[data-type="ft"] { --section-accent: var(--bleu); }
+  .doc-section[data-type="fdes"] { --section-accent: var(--vert-eco); }
+  .doc-section[data-type="nuancier"] { --section-accent: var(--orange); }
+  .doc-section[data-type="plaquette"] { --section-accent: #8B5CF6; }
+
+  /* En-tête de section avec arrière-plan coloré */
+  .doc-section-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 26px 28px;
+    margin-bottom: 28px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  /* Calque dégradé doux selon le type */
+  .doc-section-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    z-index: -2;
+    opacity: 0.85;
+  }
+  /* Motif décoratif diagonal en surimpression */
+  .doc-section-header::after {
+    content: '';
+    position: absolute; inset: 0;
+    z-index: -1;
+    background-image:
+      radial-gradient(circle at 92% 50%, rgba(255,255,255,0.18) 0%, transparent 35%),
+      linear-gradient(115deg, transparent 60%, rgba(255,255,255,0.08) 60%, rgba(255,255,255,0.08) 62%, transparent 62%),
+      linear-gradient(115deg, transparent 70%, rgba(255,255,255,0.05) 70%, rgba(255,255,255,0.05) 73%, transparent 73%);
+    pointer-events: none;
+  }
+  /* Couleurs de fond par type, inspirées des autres pages du site */
+  .doc-section[data-type="ft"] .doc-section-header::before {
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+  }
+  .doc-section[data-type="fdes"] .doc-section-header::before {
+    background: linear-gradient(135deg, var(--vert-eco) 0%, var(--vert-eco-fonce) 100%);
+  }
+  .doc-section[data-type="nuancier"] .doc-section-header::before {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-fonce) 100%);
+  }
+  .doc-section[data-type="plaquette"] .doc-section-header::before {
+    background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+  }
+
+  /* L'icône passe en variante blanche translucide sur le fond coloré */
+  .doc-section-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--blanc);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: transform 0.4s var(--transition);
+  }
+  .doc-section-icon svg { width: 30px; height: 30px; }
+  .doc-section:hover .doc-section-icon { transform: rotate(-4deg) scale(1.05); }
+
+  /* Textes du header en blanc */
+  .doc-section-title-wrap { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .doc-section-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+  .doc-section-title {
+    font-family: var(--display);
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 400;
+    color: var(--blanc);
+    letter-spacing: -0.8px;
+    line-height: 1.1;
+  }
+  .doc-section-title em { color: var(--blanc); font-style: italic; font-weight: 300; opacity: 0.85; }
+  /* Sauf pour orange (nuanciers) : on garde un em très clair pour le contraste */
+  .doc-section[data-type="nuancier"] .doc-section-title em { color: rgba(255,255,255,0.95); }
+
+  /* Pastille compteur en version "verre" sur le fond coloré */
+  .doc-section-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 50px;
+    font-size: 13px;
+    color: var(--blanc);
+    font-weight: 600;
+  }
+  .doc-section-count strong { color: var(--blanc); font-weight: 700; }
+
+  /* Sous-filtres par gamme à l'intérieur de chaque section */
+  .doc-subfilters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    background: var(--gris-clair);
+    border-radius: 12px;
+  }
+  .doc-subfilters-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gris); margin-right: 4px; }
+  .doc-subfilter {
+    padding: 5px 14px;
+    background: var(--blanc);
+    border: 1px solid rgba(31,58,95,0.08);
+    color: var(--bleu);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s var(--transition);
+  }
+  .doc-subfilter:hover { border-color: var(--section-accent, var(--bleu)); }
+  .doc-subfilter.is-active { background: var(--section-accent, var(--bleu)); color: var(--blanc); border-color: var(--section-accent, var(--bleu)); }
+
+  /* LISTE de documents (style Soframap : liste compacte, 2 colonnes desktop, 1 mobile) */
+  .doc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+    padding: 0;
+  }
+  @media (max-width: 768px) {
+    .doc-list { grid-template-columns: 1fr; }
+  }
+  .doc-item {
+    border-bottom: 1px solid rgba(31,58,95,0.08);
+  }
+  .doc-item[hidden] { display: none; }
+  .doc-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 12px;
+    text-decoration: none;
+    color: var(--bleu);
+    transition: all 0.25s var(--transition);
+    position: relative;
+  }
+  .doc-link:hover { background: var(--bleu-pale); padding-left: 18px; }
+  .doc-link::before {
+    /* Filet coloré à gauche, apparaît au hover */
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    width: 3px;
+    height: 0;
+    background: var(--section-accent, var(--orange));
+    transition: height 0.3s var(--transition);
+    transform: translateY(-50%);
+  }
+  .doc-link:hover::before { height: 70%; }
+
+  .doc-icon {
+    width: 36px;
+    height: 44px;
+    background: var(--blanc);
+    border: 1px solid rgba(31,58,95,0.15);
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 4px;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.25s var(--transition);
+  }
+  .doc-icon::before {
+    /* Coin replié */
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(225deg, var(--bleu-pale) 50%, transparent 50%);
+    border-bottom-left-radius: 4px;
+  }
+  .doc-icon span { font-size: 8px; font-weight: 800; letter-spacing: 0.3px; color: var(--bleu); text-transform: uppercase; }
+  .doc-section[data-type="ft"] .doc-icon span { color: var(--bleu); }
+  .doc-section[data-type="fdes"] .doc-icon span { color: var(--vert-eco-fonce); }
+  .doc-section[data-type="nuancier"] .doc-icon span { color: var(--orange-fonce); }
+  .doc-section[data-type="plaquette"] .doc-icon span { color: #6D28D9; }
+  .doc-link:hover .doc-icon { border-color: var(--section-accent, var(--orange)); transform: translateY(-1px); }
+
+  .doc-content { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .doc-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bleu);
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .doc-meta { font-size: 12px; color: var(--gris); font-weight: 400; display: flex; gap: 10px; }
+  .doc-gamme-pill {
+    display: inline-block;
+    padding: 2px 9px;
+    background: var(--bleu-pale);
+    color: var(--bleu);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    text-transform: uppercase;
+  }
+  .doc-gamme-pill[data-gamme="titane"] { background: rgba(240,127,44,0.12); color: var(--orange-fonce); }
+  .doc-gamme-pill[data-gamme="nuanciers"] { background: var(--vert-eco-pale); color: var(--vert-eco-fonce); }
+  .doc-gamme-pill[data-gamme="partenaires"] { background: rgba(139,92,246,0.12); color: #6D28D9; }
+
+  .doc-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--gris);
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+    transition: color 0.25s var(--transition);
+  }
+  .doc-action svg { width: 14px; height: 14px; }
+  .doc-link:hover .doc-action { color: var(--section-accent, var(--orange)); }
+  .doc-new-tag {
+    display: inline-block;
+    padding: 1px 7px;
+    background: var(--orange);
+    color: var(--blanc);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-left: 6px;
+  }
+
+  /* === BANDEAU CONTACT === */
+  .docs-contact {
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-fonce) 100%);
+    color: var(--blanc);
+    padding: 80px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .docs-contact::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 80% 30%, rgba(240,127,44,0.15) 0%, transparent 45%),
+      radial-gradient(circle at 15% 80%, rgba(74,139,92,0.12) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .docs-contact-inner { max-width: 1100px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+  .docs-contact h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 48px); font-weight: 400; margin-bottom: 18px; letter-spacing: -0.8px; }
+  .docs-contact h2 em { color: var(--orange-clair); font-style: italic; }
+  .docs-contact p { font-size: 16px; opacity: 0.8; max-width: 640px; margin: 0 auto 36px; line-height: 1.7; font-weight: 300; }
+  .docs-contact-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; font-family: var(--sans); font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 50px; transition: all 0.3s var(--transition); cursor: pointer; }
+  .btn-cta-primary { background: var(--orange); color: var(--blanc); }
+  .btn-cta-primary:hover { background: var(--orange-clair); transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(240,127,44,0.5); }
+  .btn-cta-outline { background: transparent; color: var(--blanc); border: 1px solid rgba(255,255,255,0.3); }
+  .btn-cta-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--blanc); }
+
+  /* === FOOTER (identique au site) === */
+  footer { background: var(--bleu-fonce); color: var(--blanc); padding: 80px 48px 32px; margin: 0; max-width: none; width: 100%; }
+  .footer-inner { max-width: 1440px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-brand-text { font-family: var(--display); font-size: 32px; line-height: 1.2; margin-bottom: 24px; color: var(--blanc); font-weight: 300; }
+  .footer-brand-text em { color: var(--orange); font-style: italic; }
+  .footer-desc { font-size: 14px; opacity: 0.7; line-height: 1.6; max-width: 380px; font-weight: 300; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom { padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.5); flex-wrap: wrap; gap: 16px; }
+  .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 12px; transition: color 0.3s; }
+  .footer-bottom a:hover { color: var(--blanc); }
+  .footer-theolaur { font-size: 11px; opacity: 0.6; letter-spacing: 1px; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1100px) {
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .nav-wrap { margin-left: 24px; }
+    .nav { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+  }
+  @media (max-width: 768px) {
+    .hero-docs { padding: 130px 24px 50px; }
+    .filters-bar { padding: 14px 24px; }
+    .filters-inner { gap: 16px; }
+    .filter-search-wrap { margin-left: 0; width: 100%; max-width: none; }
+    .docs-main { padding: 40px 24px 70px; }
+    .doc-section-header { flex-wrap: wrap; gap: 14px; }
+    .doc-section-icon { width: 52px; height: 52px; }
+    .doc-section-icon svg { width: 24px; height: 24px; }
+    .docs-contact { padding: 60px 24px; }
+    .footer-top { grid-template-columns: 1fr; }
+    footer { padding: 60px 24px 32px; }
+    .header-inner { padding: 14px 24px; }
+    .logo-symbol { width: 70px; height: 88px; }
+    .logo-text { font-size: 32px; }
+    .logo-baseline { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-symbol" viewBox="0 0 100 120">
+        <rect x="20" y="20" width="65" height="80" fill="#1F3A5F" rx="2"/>
+        <path d="M 8 5 L 18 5 L 22 30 L 12 30 Z" fill="#F07F2C"/>
+        <text x="52" y="80" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">a</text>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-text">l'atelier</span>
+        <span class="logo-baseline">MARCHAND DE COULEURS</span>
+        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+      </div>
+    </a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="gammes.html">Nos gammes peintures</a>
+        <a href="nuanciers.html">Nuanciers</a>
+        <a href="index.html#eco">Engagement éco</a>
+        <a href="revetement-mural.html">Revêtement mural</a>
+        <a href="revetement-sol.html">Revêtement de sol</a>
+        <a href="documents.html" class="active">Documents techniques</a>
+        <a href="index.html#equipe">L'équipe L'ATELIER</a>
+        <a href="#" class="nav-cta">Espace pro</a>
+      </nav>
+      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- HERO COMPACT (sans illustration) -->
+<section class="hero-docs">
+  <div class="hero-docs-inner">
+    <div class="hero-docs-eyebrow">Centre de ressources</div>
+    <h1>Tous nos documents <em>techniques.</em></h1>
+    <p class="hero-docs-intro">
+      Fiches techniques, FDES environnementales, nuanciers et plaquettes commerciales — tout en téléchargement libre pour les pros, artisans et prescripteurs.
+    </p>
+    <div class="hero-docs-anchors">
+      <a href="#section-ft" class="hero-docs-anchor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        Fiches techniques
+      </a>
+      <a href="#section-fdes" class="hero-docs-anchor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L2 7 L12 12 L22 7 Z"/><path d="M2 17 L12 22 L22 17"/><path d="M2 12 L12 17 L22 12"/></svg>
+        FDES environnement
+      </a>
+      <a href="#section-nuancier" class="hero-docs-anchor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        Nuanciers PDF
+      </a>
+      <a href="#section-plaquette" class="hero-docs-anchor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Plaquettes
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BARRE DE FILTRES STICKY -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <div class="filters-group" role="group" aria-label="Filtrer par gamme">
+      <span class="filters-label">Filtrer par gamme</span>
+      <button class="filter-btn is-active" data-filter="all">Toutes <span class="count"></span></button>
+      <button class="filter-btn" data-filter="atelier45">L'Atelier 45 <span class="count"></span></button>
+      <button class="filter-btn" data-filter="titane">Titane Hydro <span class="count"></span></button>
+      <button class="filter-btn" data-filter="nuanciers">Nuanciers <span class="count"></span></button>
+      <button class="filter-btn" data-filter="partenaires">Partenaires <span class="count"></span></button>
+    </div>
+    <div class="filter-search-wrap">
+      <svg class="filter-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="search" class="filter-search-input" id="docs-search" placeholder="Rechercher un document…" aria-label="Rechercher un document">
+    </div>
+  </div>
+</div>
+
+<!-- SECTIONS DE DOCUMENTS PAR TYPE (style Soframap) -->
+<main class="docs-main">
+  <div class="docs-inner">
+
+    <!-- État vide -->
+    <div class="docs-empty" id="docs-empty">
+      <div class="docs-empty-icon">📂</div>
+      <div class="docs-empty-text">Aucun document ne correspond à votre recherche.</div>
+      <div class="docs-empty-sub">Essayez d'élargir les filtres ou modifiez votre recherche.</div>
+    </div>
+
+    <!-- ================= SECTION FT ================= -->
+    <section class="doc-section" data-type="ft" id="section-ft">
+      <div class="doc-section-header">
+        <div class="doc-section-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <path d="M14 2v6h6"/>
+            <line x1="9" y1="13" x2="15" y2="13"/>
+            <line x1="9" y1="17" x2="15" y2="17"/>
+          </svg>
+        </div>
+        <div class="doc-section-title-wrap">
+          <div class="doc-section-eyebrow">— Documentation produit</div>
+          <h2 class="doc-section-title">Fiches techniques</h2>
+        </div>
+        <span class="doc-section-count"><strong class="js-section-count">—</strong> documents</span>
+      </div>
+
+      <!-- Sous-filtres par gamme dans cette section -->
+      <div class="doc-subfilters" role="group" aria-label="Filtrer FT par gamme">
+        <span class="doc-subfilters-label">Gamme</span>
+        <button class="doc-subfilter is-active" data-sub-filter="all">Toutes</button>
+        <button class="doc-subfilter" data-sub-filter="atelier45">L'Atelier 45</button>
+        <button class="doc-subfilter" data-sub-filter="titane">Titane Hydro</button>
+      </div>
+
+      <ul class="doc-list">
+        <li class="doc-item" data-gamme="atelier45" data-search="impress 45">
+          <a class="doc-link" href="documents/ft/FT_IMPRESS_45_EVO.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Impress 45 EVO</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Impression universelle</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="atelier45" data-search="impress 45 grands travaux">
+          <a class="doc-link" href="documents/ft/FT_45_impress_GRANDS_TRAVAUX_.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Impress 45 Grands Travaux</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Impression chantiers neufs</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="atelier45" data-search="mat 45">
+          <a class="doc-link" href="documents/ft/FT_MAT_45_2en1_v2.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Mat 45</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Finition mate biosourcée</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="atelier45" data-search="velours 45">
+          <a class="doc-link" href="documents/ft/FT_45_VELOURS.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Velours 45</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Finition velours intérieure</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="atelier45" data-search="satin 45">
+          <a class="doc-link" href="documents/ft/FT_45_SATIN_ACRYL.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Satin 45</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Finition satinée lessivable</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="atelier45" data-search="glycero 45">
+          <a class="doc-link" href="documents/ft/FT_45_GLYCERO_SATIN.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Glycéro 45</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Émail glycérophtalique</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="titane" data-search="titane hydro prim">
+          <a class="doc-link" href="documents/ft/FT_TITANE_HYDRO_PRIM.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Titane Hydro Prim</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Impression bas carbone</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="titane" data-search="titane hydro mat">
+          <a class="doc-link" href="documents/ft/FT_TITANE_HYDRO_MAT.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Titane Hydro Mat</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Finition mate haute opacité</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="titane" data-search="titane hydro mv mat veloute">
+          <a class="doc-link" href="documents/ft/FT_TITANE_hydro_MV_.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Titane Hydro MV</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Mat velouté lessivable</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="titane" data-search="titane hydro velours">
+          <a class="doc-link" href="documents/ft/FT_TITANE_HYDRO_VELOURS.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FT</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FT Titane Hydro Velours</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Finition velours premium</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= SECTION FDES ================= -->
+    <section class="doc-section" data-type="fdes" id="section-fdes">
+      <div class="doc-section-header">
+        <div class="doc-section-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="doc-section-title-wrap">
+          <div class="doc-section-eyebrow">— Impact environnemental</div>
+          <h2 class="doc-section-title">Fiches FDES <em>environnement</em></h2>
+        </div>
+        <span class="doc-section-count"><strong class="js-section-count">—</strong> documents</span>
+      </div>
+
+      <div class="doc-subfilters" role="group" aria-label="Filtrer FDES par gamme">
+        <span class="doc-subfilters-label">Gamme</span>
+        <button class="doc-subfilter is-active" data-sub-filter="all">Toutes</button>
+        <button class="doc-subfilter" data-sub-filter="atelier45">L'Atelier 45</button>
+        <button class="doc-subfilter" data-sub-filter="titane">Titane Hydro</button>
+      </div>
+
+      <ul class="doc-list">
+        <!-- FDES mutualisée pour les 3 impressions -->
+        <li class="doc-item" data-gamme="atelier45 titane" data-search="fdes impressions impress prim grands travaux 45 titane hydro">
+          <a class="doc-link" href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FDES</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FDES Impressions L'Atelier 45 & Titane Hydro Prim</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Impress 45 EVO · Impress 45 Grands Travaux · Titane Hydro Prim</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <!-- L'Atelier 45 - finitions individuelles -->
+        <li class="doc-item" data-gamme="atelier45" data-search="fdes mat 45 atelier finition mate">
+          <a class="doc-link" href="documents/fdes/FDES_45_MAT.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FDES</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FDES Mat 45</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Finition mate biosourcée</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="atelier45" data-search="fdes velours 45 atelier finition velours">
+          <a class="doc-link" href="documents/fdes/FDES_45_velours_.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FDES</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FDES Velours 45</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Finition velours intérieure</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="atelier45" data-search="fdes satin 45 atelier finition satinee acrylique">
+          <a class="doc-link" href="documents/fdes/FDES_45_satin.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FDES</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FDES Satin 45</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Finition satinée lessivable</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="atelier45" data-search="fdes glycero 45 satin solvant glycerophtalique">
+          <a class="doc-link" href="documents/fdes/FDES45_glycero_satin.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FDES</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FDES Glycéro 45 Satin</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Glycérophtalique satinée — phase solvant</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <!-- Titane Hydro - finitions individuelles -->
+        <li class="doc-item" data-gamme="titane" data-search="fdes titane hydro mat finition mate">
+          <a class="doc-link" href="documents/fdes/FDES_titane_hydro_mat.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FDES</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FDES Titane Hydro Mat</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Finition mate haute opacité</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="titane" data-search="fdes titane hydro mv mat veloute lessivable">
+          <a class="doc-link" href="documents/fdes/FDES_titane_hydro_Mat_Veloute_MV.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FDES</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FDES Titane Hydro MV</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Mat velouté lessivable</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="titane" data-search="fdes titane hydro velours finition velours premium">
+          <a class="doc-link" href="documents/fdes/FDES_Titane_hydro_Velours.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>FDES</span></div>
+            <div class="doc-content">
+              <div class="doc-title">FDES Titane Hydro Velours</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Finition velours premium</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= SECTION NUANCIERS ================= -->
+    <section class="doc-section" data-type="nuancier" id="section-nuancier">
+      <div class="doc-section-header">
+        <div class="doc-section-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+          </svg>
+        </div>
+        <div class="doc-section-title-wrap">
+          <div class="doc-section-eyebrow">— Couleurs &amp; teintes</div>
+          <h2 class="doc-section-title">Nuanciers <em>PDF</em></h2>
+        </div>
+        <span class="doc-section-count"><strong class="js-section-count">—</strong> documents</span>
+      </div>
+
+      <ul class="doc-list">
+        <li class="doc-item" data-gamme="nuanciers" data-search="chromatic ch1 jonone">
+          <a class="doc-link" href="nuanciers/Nuancier Chromatic CH1 Jonone .pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Chromatic CH1 — Jonone</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Édition signature · 4,9 Mo</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="chromatic ch2 dorval">
+          <a class="doc-link" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Chromatic Dorval CH2 <span class="doc-new-tag">Nouveau</span></div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Teintes contemporaines · 804 Ko</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="chromatic inspirations styles">
+          <a class="doc-link" href="nuanciers/Chromatic-Inspirations-STYLES.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Chromatic Inspirations STYLES</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Cahier tendances · 3,7 Mo</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="polycrom 1320t teintes">
+          <a class="doc-link" href="nuanciers/POLYCROM-1320T-version-PDF.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Polycrom 1320T</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Mise à la teinte universelle</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="polycrom facade 170t exterieur">
+          <a class="doc-link" href="nuanciers/NUANCIER-POLYCROM-FACADE-170T.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Polycrom Façade 170T</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Spécial façade · 9,4 Mo</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="chromatic facade ravalement">
+          <a class="doc-link" href="nuanciers/CHROMATIC_FACADE.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Chromatic Façade</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Teintes ravalement</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="keim spektrum palette exclusiv">
+          <a class="doc-link" href="nuanciers/KEIM_Spektrum_Palette.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">KEIM Palette Exclusiv</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Spectre minéral complet</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="ral 190t industriel">
+          <a class="doc-link" href="nuanciers/NUANCIER RAL 190T.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">RAL 190T</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> 190 teintes industrielles</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="ncs scandinave reference">
+          <a class="doc-link" href="nuanciers/nuancier NCS.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Nuancier NCS</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Référence scandinave</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="chromatic bois ch10 lasure vernis">
+          <a class="doc-link" href="nuanciers/Chromatic Bois CH10 Nouveau.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Chromatic Bois CH10 <span class="doc-new-tag">Nouveau</span></div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Lasures, vernis, peintures bois</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="nuanciers" data-search="chromatic bois ancien archive">
+          <a class="doc-link" href="nuanciers/nuancier_bois_chromatic ancien.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>NUA</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Chromatic Bois (ancien)</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="nuanciers">Nuancier</span> Édition d'archive</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= SECTION PLAQUETTES ================= -->
+    <section class="doc-section" data-type="plaquette" id="section-plaquette">
+      <div class="doc-section-header">
+        <div class="doc-section-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="doc-section-title-wrap">
+          <div class="doc-section-eyebrow">— Documentation commerciale</div>
+          <h2 class="doc-section-title">Plaquettes <em>commerciales</em></h2>
+        </div>
+        <span class="doc-section-count"><strong class="js-section-count">—</strong> documents</span>
+      </div>
+
+      <div class="doc-subfilters" role="group" aria-label="Filtrer plaquettes par gamme">
+        <span class="doc-subfilters-label">Gamme</span>
+        <button class="doc-subfilter is-active" data-sub-filter="all">Toutes</button>
+        <button class="doc-subfilter" data-sub-filter="atelier45">L'Atelier 45</button>
+        <button class="doc-subfilter" data-sub-filter="titane">Titane Hydro</button>
+        <button class="doc-subfilter" data-sub-filter="partenaires">Partenaires</button>
+      </div>
+
+      <ul class="doc-list">
+        <li class="doc-item" data-gamme="atelier45" data-search="plaquette atelier 45 gamme commerciale">
+          <a class="doc-link" href="documents/plaquettes/Plaquette-Atelier-45.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>PLQ</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Plaquette gamme L'Atelier 45</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="atelier45">L'Atelier 45</span> Présentation commerciale complète</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="titane" data-search="plaquette titane hydro bas carbone gamme">
+          <a class="doc-link" href="documents/plaquettes/Plaquette-Titane-Hydro.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>PLQ</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Plaquette gamme Titane Hydro</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="titane">Titane Hydro</span> Argumentaire bas carbone</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="partenaires" data-search="keim mineral facade peinture partenaire">
+          <a class="doc-link" href="documents/partenaires/Plaquette-KEIM.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>PLQ</span></div>
+            <div class="doc-content">
+              <div class="doc-title">KEIM — Peintures minérales</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="partenaires">Partenaire</span> Présentation gamme façade/intérieur</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="partenaires" data-search="keim lasure beton mineral fournisseur">
+          <a class="doc-link" href="documents/partenaires/KEIM_Lasure_Beton.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>PLQ</span></div>
+            <div class="doc-content">
+              <div class="doc-title">KEIM Lasure Béton</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="partenaires">Partenaire</span> Lasures minérales béton</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="partenaires" data-search="chromatic ppg signature colorimetrie">
+          <a class="doc-link" href="documents/partenaires/Plaquette-Chromatic-PPG.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>PLQ</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Chromatic by PPG</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="partenaires">Partenaire</span> 1 170 teintes signatures</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="partenaires" data-search="theolaur fabricant france partenaire">
+          <a class="doc-link" href="documents/partenaires/Plaquette-Theolaur.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>PLQ</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Théolaur</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="partenaires">Partenaire</span> Notre fabricant français</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+        <li class="doc-item" data-gamme="partenaires" data-search="dragopaint catalogue bas carbone atelier partenariat">
+          <a class="doc-link" href="documents/partenaires/DRAGOPAINT_LAtelier__catalogue_bas_carbone.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon" aria-hidden="true"><span>PLQ</span></div>
+            <div class="doc-content">
+              <div class="doc-title">Dragopaint — Catalogue bas carbone</div>
+              <div class="doc-meta"><span class="doc-gamme-pill" data-gamme="partenaires">Partenaire</span> En partenariat avec L'Atelier</div>
+            </div>
+            <span class="doc-action">PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<!-- BANDEAU CONTACT -->
+<section class="docs-contact">
+  <div class="docs-contact-inner">
+    <h2>Un document <em>introuvable</em> ?</h2>
+    <p>Notre équipe peut vous transmettre directement les fiches techniques, FDES ou attestations dont vous avez besoin pour vos chantiers et appels d'offres. Réponse sous 24h ouvrées.</p>
+    <div class="docs-contact-actions">
+      <a href="mailto:contact@latelier33.fr?subject=Demande de document technique" class="btn-cta btn-cta-primary">Demander un document
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </a>
+      <a href="index.html#magasins" class="btn-cta btn-cta-outline">Voir nos magasins
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
+        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos gammes</h4>
+        <ul>
+          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
+          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
+          <li><a href="nuanciers.html">Colorimétrie</a></li>
+          <li><a href="index.html#eco">Engagement éco</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Le groupe</h4>
+        <ul>
+          <li><a href="index.html">Notre histoire</a></li>
+          <li><a href="index.html#magasins">Nos magasins</a></li>
+          <li><a href="#">L'Établi · location</a></li>
+          <li><a href="#">Espace pro</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Politique de confidentialité</a></div>
+      <div class="footer-theolaur">MEMBRE DU RÉSEAU AGIR · GROUPE THÉOLAUR</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // === Header au scroll ===
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  });
+
+  // === Filtres documents (global gamme + recherche + sous-filtres par section) ===
+  (function setupDocFilters() {
+    const items = Array.from(document.querySelectorAll('.doc-item'));
+    const sections = Array.from(document.querySelectorAll('.doc-section'));
+    const globalBtns = document.querySelectorAll('.filter-btn[data-filter]');
+    const subBtns = document.querySelectorAll('.doc-subfilter');
+    const searchInput = document.getElementById('docs-search');
+    const emptyState = document.getElementById('docs-empty');
+
+    // État : filtre global de gamme, recherche, et sous-filtre par section
+    const state = { globalGamme: 'all', query: '' };
+    const subState = {}; // map id_section -> filtre actif
+    sections.forEach(s => { subState[s.id] = 'all'; });
+
+    // Compteur global par gamme dans la barre de filtres
+    function updateGlobalCounts() {
+      const counts = { all: 0, atelier45: 0, titane: 0, nuanciers: 0, partenaires: 0 };
+      items.forEach(it => {
+        counts.all++;
+        // data-gamme peut contenir plusieurs valeurs séparées par espace (ex: "atelier45 titane" pour FDES mutualisées)
+        const gammesItem = (it.dataset.gamme || '').split(/\s+/).filter(Boolean);
+        gammesItem.forEach(g => {
+          if (counts[g] !== undefined) counts[g]++;
+        });
+      });
+      globalBtns.forEach(btn => {
+        const f = btn.dataset.filter;
+        const span = btn.querySelector('.count');
+        if (span) span.textContent = '(' + counts[f] + ')';
+      });
+    }
+
+    // Application des filtres
+    function applyFilters() {
+      let totalVisible = 0;
+      items.forEach(item => {
+        const section = item.closest('.doc-section');
+        const sectionId = section ? section.id : '';
+        const sub = subState[sectionId] || 'all';
+        // Idem : tableau de gammes pour gérer les docs partagés entre plusieurs gammes
+        const gammesItem = (item.dataset.gamme || '').split(/\s+/).filter(Boolean);
+        const matchGlobal = state.globalGamme === 'all' || gammesItem.includes(state.globalGamme);
+        const matchSub = sub === 'all' || gammesItem.includes(sub);
+        const haystack = ((item.dataset.search || '') + ' ' + item.textContent).toLowerCase();
+        const matchQuery = !state.query || haystack.includes(state.query);
+        const visible = matchGlobal && matchSub && matchQuery;
+        item.hidden = !visible;
+        if (visible) totalVisible++;
+      });
+      // Masquer les sections vides + maj compteur par section
+      sections.forEach(s => {
+        const visibleItems = s.querySelectorAll('.doc-item:not([hidden])').length;
+        s.hidden = visibleItems === 0;
+        const cnt = s.querySelector('.js-section-count');
+        if (cnt) cnt.textContent = visibleItems;
+      });
+      emptyState.classList.toggle('is-visible', totalVisible === 0);
+    }
+
+    // Filtres globaux
+    globalBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        globalBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        state.globalGamme = btn.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    // Sous-filtres par section
+    subBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.closest('.doc-section');
+        if (!section) return;
+        // Désactiver les autres sous-filtres de cette section
+        section.querySelectorAll('.doc-subfilter').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        subState[section.id] = btn.dataset.subFilter;
+        applyFilters();
+      });
+    });
+
+    // Recherche texte
+    if (searchInput) {
+      searchInput.addEventListener('input', e => {
+        state.query = e.target.value.trim().toLowerCase();
+        applyFilters();
+      });
+    }
+
+    updateGlobalCounts();
+    applyFilters();
+  })();
+</script>
+
+</body>
+</html>

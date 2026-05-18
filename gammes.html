@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos gammes de peinture — L'Atelier 45 & Titane Hydro · Peintures fabriquées en France</title>
+<meta name="description" content="Découvrez nos gammes de peintures professionnelles fabriquées en France : L'Atelier 45 (acrylique & glycéro) et Titane Hydro biosourcée. Impressions, mats, velours et satins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #1F3A5F;
+    --bleu-fonce: #15273F;
+    --bleu-clair: #2D4E7A;
+    --bleu-pale: #E8EEF5;
+    --orange: #F07F2C;
+    --orange-fonce: #D86618;
+    --orange-clair: #FFA968;
+    --vert-eco: #4A8B5C;
+    --vert-eco-fonce: #2F6940;
+    --vert-eco-pale: #E8F2EB;
+    --beige: #F5F0E8;
+    --blanc: #FFFFFF;
+    --gris-clair: #F8F7F4;
+    --gris: #5F5F5F;
+    --gris-fonce: #2C2C2C;
+    --noir: #0A0A0A;
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--bleu-fonce);
+    background: var(--gris-clair);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  /* Dégradé décoratif en fond de page (bleu pâle → beige) */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 100vh;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(31,58,95,0.06) 0%, transparent 45%),
+      radial-gradient(circle at 90% 80%, rgba(240,127,44,0.05) 0%, transparent 45%),
+      linear-gradient(180deg, var(--bleu-pale) 0%, var(--gris-clair) 60%, var(--beige) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* ============ HEADER (identique au reste du site) ============ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(31,58,95,0.08); transition: all 0.4s var(--transition); }
+  .header-inner { max-width: 1440px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; transition: padding 0.4s var(--transition); }
+  /* État rétréci : déclenché au scroll par la classe .is-scrolled ajoutée en JS */
+  .header.is-scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(31, 58, 95, 0.08); }
+  .header.is-scrolled .header-inner { padding: 10px 48px; }
+  .header.is-scrolled .logo-symbol { width: 70px; height: 86px; transition: all 0.4s var(--transition); }
+  .header.is-scrolled .logo-text { font-size: 36px; transition: all 0.4s var(--transition); }
+  .header.is-scrolled .logo-baseline { font-size: 12px; transition: all 0.4s var(--transition); }
+  .header.is-scrolled .logo-since { display: none; }
+  .logo-symbol, .logo-text, .logo-baseline { transition: all 0.4s var(--transition); }
+  .logo { display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--bleu); }
+  .logo-symbol { width: 105px; height: 130px; position: relative; flex-shrink: 0; }
+  .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text { font-family: var(--sans); font-weight: 700; font-size: 48px; color: var(--bleu); letter-spacing: -0.8px; }
+  .logo-baseline { font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--orange); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
+  .logo-since { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 14px; color: var(--bleu); margin-top: 6px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; opacity: 0.85; }
+  .logo-since-dash { display: inline-block; width: 18px; height: 1px; background: var(--orange); flex-shrink: 0; }
+  .nav { display: flex; align-items: center; gap: 22px; }
+  .nav a { font-size: 13.5px; font-weight: 500; color: var(--bleu); text-decoration: none; transition: color 0.3s; position: relative; white-space: nowrap; }
+  .nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s var(--transition); }
+  .nav a:hover::after { width: 100%; }
+  .nav a:hover { color: var(--orange); }
+  .nav a.active { color: var(--orange); }
+  .nav a.active::after { width: 100%; }
+  .nav-cta { background: var(--bleu); color: var(--blanc) !important; padding: 10px 22px; border-radius: 50px; transition: all 0.3s; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--orange); color: var(--blanc) !important; transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(240,127,44,0.5); }
+
+  /* Wrap nav + barre de recherche : barre placée juste sous l'onglet Espace pro */
+  .nav-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; margin-left: 48px; }
+  .nav-search { position: relative; display: flex; align-items: center; width: 280px; max-width: 100%; }
+  .nav-search-icon { position: absolute; left: 12px; width: 15px; height: 15px; color: var(--bleu); opacity: 0.55; pointer-events: none; }
+  .nav-search-input {
+    width: 100%;
+    padding: 8px 14px 8px 34px;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--bleu-fonce);
+    background: rgba(31,58,95,0.04);
+    border: 1px solid rgba(31,58,95,0.12);
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s var(--transition);
+  }
+  .nav-search-input::placeholder { color: var(--gris); opacity: 0.7; font-weight: 400; }
+  .nav-search-input:focus {
+    background: var(--blanc);
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(240,127,44,0.15);
+  }
+  .nav-search:focus-within .nav-search-icon { opacity: 1; color: var(--orange); }
+
+  /* ============ LAYOUT principal : sidebar + produits ============ */
+  .page-wrap { padding: 150px 48px 60px; max-width: 1600px; margin: 0 auto; }
+  .breadcrumb { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--gris); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--gris); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--orange); }
+  .breadcrumb-sep { opacity: 0.4; }
+
+  .page-layout { display: grid; grid-template-columns: 360px 1fr; gap: 56px; align-items: start; }
+
+  /* ============ SIDEBAR gauche (sticky) ============ */
+  .sidebar { position: sticky; top: 130px; max-height: calc(100vh - 150px); overflow-y: auto; padding-right: 8px; }
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(31,58,95,0.15); border-radius: 50px; }
+
+  .sidebar-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: var(--bleu-pale); border-radius: 50px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 18px; }
+  .sidebar-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+  /* "éco-responsable" en orange dans le H1 */
+  .eco-accent { font-style: italic; color: var(--orange); font-weight: 400; }
+  .sidebar h1 { font-family: var(--display); font-size: 48px; font-weight: 500; line-height: 1; letter-spacing: -1.5px; color: var(--bleu); margin-bottom: 18px; }
+  .sidebar h1 em { font-style: italic; color: var(--orange); font-weight: 400; }
+  .sidebar-lead { font-size: 15px; line-height: 1.65; color: var(--bleu-fonce); font-weight: 300; margin-bottom: 28px; }
+
+  /* Onglets gammes en VERTICAL */
+  .gamme-tabs-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin-bottom: 12px; }
+  .gamme-tabs { display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
+  .gamme-tab { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; border-radius: 14px; border: 1px solid rgba(31,58,95,0.1); background: var(--blanc); font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--bleu-fonce); cursor: pointer; transition: all 0.3s var(--transition); text-align: left; width: 100%; }
+  .gamme-tab:hover { border-color: var(--orange); transform: translateX(4px); }
+  .gamme-tab.is-active { background: var(--bleu); border-color: var(--bleu); color: var(--blanc); box-shadow: 0 8px 20px -8px rgba(31,58,95,0.4); }
+  .gamme-tab[data-gamme="titane"].is-active { background: var(--orange); border-color: var(--orange); }
+  .gamme-tab[data-gamme="partenaires"].is-active { background: var(--gris-fonce); border-color: var(--gris-fonce); }
+  .gamme-tab-info { display: flex; flex-direction: column; gap: 2px; }
+  .gamme-tab-name { font-size: 15px; font-weight: 600; }
+  .gamme-tab-sub { font-size: 11px; font-weight: 400; opacity: 0.7; }
+  .gamme-tab.is-active .gamme-tab-sub { opacity: 0.85; }
+  .gamme-tab-count { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 28px; padding: 0 8px; background: rgba(31,58,95,0.08); color: var(--bleu); border-radius: 50px; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .gamme-tab.is-active .gamme-tab-count { background: rgba(255,255,255,0.2); color: var(--blanc); }
+
+  /* Filtres finition en sidebar */
+  .filters-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin-bottom: 12px; }
+  .filter-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+  .filter-pill { padding: 7px 14px; border: 1px solid rgba(31,58,95,0.15); border-radius: 50px; background: var(--blanc); font-family: var(--sans); font-size: 12px; font-weight: 500; color: var(--bleu-fonce); cursor: pointer; transition: all 0.25s var(--transition); }
+  .filter-pill:hover { border-color: var(--orange); color: var(--orange); }
+  .filter-pill.is-active { background: var(--orange); border-color: var(--orange); color: var(--blanc); }
+
+  /* Tri */
+  .sort-wrap { margin-bottom: 28px; }
+  .sort-wrap label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin-bottom: 10px; }
+  .sort-wrap select { width: 100%; font-family: var(--sans); font-size: 13px; padding: 11px 36px 11px 14px; border: 1px solid rgba(31,58,95,0.15); border-radius: 12px; background: var(--blanc); color: var(--bleu-fonce); cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231F3A5F' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+
+  /* Features (arguments gamme) */
+  .sidebar-features { padding: 20px; background: var(--blanc); border-radius: 16px; border-left: 3px solid var(--orange); box-shadow: 0 4px 16px -8px rgba(31,58,95,0.1); }
+  .sidebar-features-title { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin-bottom: 14px; }
+  .sidebar-features-list { display: flex; flex-direction: column; gap: 14px; }
+  .sidebar-feature { display: flex; align-items: flex-start; gap: 10px; }
+  .sidebar-feature-dot { width: 8px; height: 8px; background: var(--vert-eco); border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .sidebar-feature-body { display: flex; flex-direction: column; gap: 2px; }
+  .sidebar-feature-label { font-size: 13px; color: var(--bleu-fonce); font-weight: 600; line-height: 1.3; }
+  .sidebar-feature-desc { font-size: 11.5px; color: var(--gris); font-weight: 400; line-height: 1.5; }
+
+  /* ============ COLONNE produits (droite) ============ */
+  .products-col { min-width: 0; }
+  .gamme-section { margin-bottom: 60px; scroll-margin-top: 110px; }
+  .gamme-section:last-child { margin-bottom: 0; }
+
+  /* Bandeau identitaire en tête de chaque gamme */
+  .gamme-banner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 28px;
+    align-items: center;
+    padding: 28px 32px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .gamme-banner.is-45 {
+    background: linear-gradient(135deg, #15273F 0%, #2D4E7A 100%);
+    color: var(--blanc);
+  }
+  .gamme-banner.is-titane {
+    background: linear-gradient(135deg, #FFC58A 0%, #F89B5A 100%);
+    color: var(--bleu-fonce);
+  }
+  .gamme-banner.is-partenaires {
+    background: linear-gradient(135deg, #E8EEF5 0%, #F5F0E8 100%);
+    color: var(--bleu-fonce);
+    border: 1px dashed rgba(31,58,95,0.2);
+  }
+  .gamme-banner-num {
+    font-family: var(--display);
+    font-size: 88px;
+    font-weight: 600;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    opacity: 0.85;
+    flex-shrink: 0;
+  }
+  .gamme-banner.is-45 .gamme-banner-num { font-style: italic; font-weight: 300; }
+  .gamme-banner-content { min-width: 0; }
+  .gamme-banner-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255,255,255,0.5);
+    color: var(--bleu);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 8px;
+  }
+  .gamme-banner.is-45 .gamme-banner-tag { background: rgba(240,127,44,0.25); color: var(--orange-clair); }
+  .gamme-banner.is-partenaires .gamme-banner-tag { background: var(--blanc); }
+  .gamme-banner-title {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.8px;
+    margin-bottom: 6px;
+  }
+  .gamme-banner-title em { font-style: italic; color: var(--orange); font-weight: 400; }
+  .gamme-banner.is-45 .gamme-banner-title em { color: var(--orange-clair); }
+  .gamme-banner-desc { font-size: 13.5px; line-height: 1.55; opacity: 0.9; max-width: 540px; font-weight: 300; }
+  .gamme-banner-count {
+    font-size: 12px;
+    background: rgba(255,255,255,0.5);
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .gamme-banner.is-45 .gamme-banner-count { background: rgba(255,255,255,0.12); }
+  .gamme-banner.is-partenaires .gamme-banner-count { background: var(--blanc); }
+  .gamme-banner-count strong { display: block; font-family: var(--display); font-size: 24px; font-weight: 500; color: var(--bleu); line-height: 1; }
+  .gamme-banner.is-45 .gamme-banner-count strong { color: var(--blanc); }
+
+  /* ============ Badge animé "Conforme RE 2020" dans les bandeaux gamme ============ */
+  /* Inspiré du badge hero index : pièce qui tourne en 3D, anneaux animés autour */
+  .banner-re2020-stage {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+    perspective: 800px;
+    z-index: 4;
+    pointer-events: none;
+  }
+  .banner-re2020 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: re2020Coin 12s linear infinite;
+  }
+  @keyframes re2020Coin {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
+  }
+  .banner-re2020-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .banner-re2020-face-back { transform: rotateY(180deg); }
+  .banner-re2020-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(168, 230, 190, 0.7);
+    border-radius: 50%;
+    animation: ringRotate 12s linear infinite;
+  }
+  .banner-re2020-ring::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #A8E6BE;
+    border-radius: 50%;
+    box-shadow: 0 0 14px #A8E6BE;
+    transform: translateX(-50%);
+  }
+  .banner-re2020-ring-2 {
+    inset: 12px;
+    border: 1px dashed rgba(168, 230, 190, 0.8);
+    animation: ringRotate 18s linear infinite reverse;
+  }
+  @keyframes ringRotate {
+    from { transform: rotate(0); }
+    to   { transform: rotate(360deg); }
+  }
+  .banner-re2020-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 82px;
+    height: 82px;
+    background: var(--blanc);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 24px rgba(168, 230, 190, 0.55);
+    padding: 4px;
+  }
+  .banner-re2020-label {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--vert-eco-fonce);
+    margin-bottom: 2px;
+  }
+  .banner-re2020-number {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--bleu);
+  }
+  .banner-re2020-number em {
+    color: #4A8B5C;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* Décale le contenu à gauche pour laisser de la place au badge RE2020 */
+  .gamme-banner.has-re2020 { padding-right: 165px; }
+
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  @media (max-width: 1300px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ============ Carte produit (animation 3D au hover) ============ */
+  .product-card { position: relative; background: var(--blanc); border: 1px solid rgba(31,58,95,0.08); border-radius: 24px; padding: 32px 28px 28px; transition: all 0.5s var(--transition); cursor: pointer; perspective: 1200px; overflow: hidden; scroll-margin-top: 110px; }
+  /* Mise en valeur temporaire d'une carte ciblée par une ancre (#p-xxx) */
+  .product-card:target { box-shadow: 0 0 0 3px var(--orange), 0 30px 60px -20px rgba(31,58,95,0.25); transform: translateY(-4px); }
+  /* ============ Carte produit (compacte, style fiche pro) ============ */
+  .product-card { position: relative; background: var(--blanc); border: 1px solid rgba(31,58,95,0.08); border-radius: 14px; padding: 16px 14px 14px; transition: all 0.4s var(--transition); cursor: pointer; perspective: 1200px; overflow: hidden; }
+  .product-card:hover { transform: translateY(-5px); border-color: var(--orange); box-shadow: 0 18px 36px -18px rgba(31,58,95,0.22); }
+
+  /* Bandeau finition (couleur selon finition) */
+  .product-finition-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; transition: height 0.3s; }
+  .product-card:hover .product-finition-bar { height: 5px; }
+  .product-card[data-finition="impression"] .product-finition-bar { background: linear-gradient(90deg, #6B3FA0, #9B6BC9); }
+  .product-card[data-finition="mat"] .product-finition-bar { background: linear-gradient(90deg, #1F3A5F, #2D4E7A); }
+  .product-card[data-finition="velours"] .product-finition-bar { background: linear-gradient(90deg, #4A8B5C, #6BAA7C); }
+  .product-card[data-finition="satin"] .product-finition-bar { background: linear-gradient(90deg, #F07F2C, #FFA968); }
+
+  /* Étiquette finition (top-right) */
+  .product-finition-tag { position: absolute; top: 14px; right: 14px; padding: 4px 10px; border-radius: 50px; font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--blanc); z-index: 3; }
+  .product-card[data-finition="impression"] .product-finition-tag { background: #6B3FA0; }
+  .product-card[data-finition="mat"] .product-finition-tag { background: var(--bleu); }
+  .product-card[data-finition="velours"] .product-finition-tag { background: var(--vert-eco); }
+  .product-card[data-finition="satin"] .product-finition-tag { background: var(--orange); }
+
+  /* Visuel pot - RÉDUIT, style Soframap */
+  .product-visual { position: relative; height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; transform-style: preserve-3d; }
+  .product-visual-bg {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 180px; height: 26px; background: radial-gradient(ellipse, rgba(31,58,95,0.18) 0%, transparent 70%);
+    border-radius: 50%; transition: all 0.4s var(--transition);
+    filter: blur(6px);
+  }
+  .product-card:hover .product-visual-bg { width: 220px; opacity: 0.7; filter: blur(10px); }
+  .product-image {
+    max-height: 195px; max-width: 100%; object-fit: contain;
+    transition: transform 0.5s var(--transition);
+    transform: translateY(0) rotateY(0deg) rotateX(0deg);
+    filter: drop-shadow(0 12px 20px rgba(31,58,95,0.18));
+    will-change: transform;
+  }
+  /* Exception : glycéro satin garde l'image en taille d'origine (moins grossie),
+     mais le conteneur reste à 220px pour aligner la carte avec les autres. */
+  .product-card[data-no-grow] .product-image { max-height: 182px; }
+  .product-card[data-no-grow] .product-visual-bg { width: 157px; height: 24px; }
+  .product-card[data-no-grow]:hover .product-visual-bg { width: 194px; }
+  .product-card:hover .product-image {
+    transform: translateY(-6px) rotateY(-5deg) rotateX(2deg) scale(1.03);
+    filter: drop-shadow(0 18px 25px rgba(31,58,95,0.25));
+  }
+
+  /* Badge "matériau recyclé" : ultra discret, en coin bas-droit du visuel.
+     Plus petit, n'empiète pas sur le pot, opacité faible au repos. */
+  .product-recycled {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 6px 3px 4px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(74, 139, 92, 0.2);
+    border-radius: 50px;
+    opacity: 0.55;
+    transition: opacity 0.3s var(--transition), transform 0.3s var(--transition);
+    pointer-events: none;
+    z-index: 3;
+  }
+  .product-card:hover .product-recycled {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  .product-recycled-icon {
+    width: 10px; height: 10px;
+    color: var(--vert-eco);
+    flex-shrink: 0;
+  }
+  .product-recycled-icon svg { width: 100%; height: 100%; }
+  .product-recycled-text {
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: var(--vert-eco-fonce);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* Infos texte compactes */
+  .product-info { text-align: left; }
+  .product-gamme { font-size: 9.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); margin-bottom: 2px; }
+  .product-name { font-family: var(--display); font-size: 20px; font-weight: 500; line-height: 1.05; letter-spacing: -0.4px; color: var(--bleu); margin-bottom: 2px; }
+  .product-name em { font-style: italic; color: var(--orange); font-weight: 400; }
+  .product-subtitle { font-size: 11px; font-weight: 600; color: var(--gris); margin-bottom: 8px; letter-spacing: 0.2px; line-height: 1.25; }
+  .product-description { font-size: 12px; line-height: 1.45; color: var(--bleu-fonce); font-weight: 300; margin-bottom: 12px; }
+
+  /* ============ PICTOGRAMMES (ultra-compacts, une seule ligne) ============ */
+  .product-pictos {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    border-top: 1px solid rgba(31,58,95,0.08);
+    border-bottom: 1px solid rgba(31,58,95,0.08);
+  }
+  .picto {
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    gap: 2px;
+    flex: 0 0 auto;
+    text-align: center;
+    transition: transform 0.25s var(--transition);
+  }
+  .product-card:hover .picto { transform: translateY(-1px); }
+  .picto-icon {
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 4px;
+    color: var(--blanc);
+    font-weight: 700;
+  }
+  .picto-icon svg { width: 13px; height: 13px; stroke-width: 2.2; }
+  .picto-label {
+    font-size: 6.5px; font-weight: 600;
+    color: var(--bleu-fonce); line-height: 1.1;
+    text-transform: uppercase; letter-spacing: 0.1px;
+    white-space: nowrap;
+  }
+  /* Variantes colorées des pictos (palette site) */
+  .picto.is-bleu .picto-icon { background: var(--bleu); }
+  .picto.is-bleuclair .picto-icon { background: var(--bleu-clair); }
+  .picto.is-orange .picto-icon { background: var(--orange); }
+  .picto.is-orangefonce .picto-icon { background: var(--orange-fonce); }
+  .picto.is-vert .picto-icon { background: var(--vert-eco); }
+  .picto.is-vertfonce .picto-icon { background: var(--vert-eco-fonce); }
+  .picto.is-bleufonce .picto-icon { background: var(--bleu-fonce); }
+  .picto.is-gris .picto-icon { background: #5F5F5F; }
+  /* Picto France : drapeau tricolore */
+  .picto.is-france .picto-icon { background: transparent; border: 1px solid rgba(31,58,95,0.15); padding: 0; overflow: hidden; }
+  .picto.is-france .picto-icon svg { width: 100%; height: 100%; display: block; }
+  /* Picto FDES : logo officiel "FDES vérifiée Inies", rond, image transparente */
+  .picto.is-fdes .picto-icon {
+    background: transparent;
+    border-radius: 50%;
+    overflow: visible;
+    padding: 0;
+  }
+  .picto.is-fdes .picto-icon img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  /* Picto A+ Émissions : image officielle, ratio panneau (plus large que haut) */
+  .picto.is-aplus .picto-icon {
+    width: 44px; height: 22px;
+    background: transparent;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid rgba(31,58,95,0.12);
+  }
+  .picto.is-aplus .picto-icon img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Picto C Émissions : même format que A+ (panneau ratio large), juste la lettre dominante change */
+  .picto.is-cclass .picto-icon {
+    width: 44px; height: 22px;
+    background: transparent;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid rgba(31,58,95,0.12);
+  }
+  .picto.is-cclass .picto-icon img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Pictos texte (A+, COV, etc.) */
+  .picto-icon.is-text {
+    font-family: var(--sans);
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: -0.3px;
+  }
+  .picto-icon.is-text-sm { font-size: 8px; }
+  .picto-icon.is-text-xs { font-size: 6px; font-weight: 800; letter-spacing: 0; }
+
+  /* Footer carte compacte */
+  .product-footer { display: flex; align-items: center; justify-content: space-between; gap: 6px; flex-wrap: wrap; }
+  .product-format { font-size: 10.5px; color: var(--gris); }
+  .product-format strong { color: var(--bleu); font-weight: 700; font-family: var(--display); font-size: 15px; margin-right: 2px; }
+  .product-ctas { display: flex; gap: 5px; }
+  .product-cta { display: inline-flex; align-items: center; gap: 4px; padding: 6px 10px; border-radius: 50px; font-size: 10.5px; font-weight: 600; text-decoration: none; transition: all 0.3s var(--transition); white-space: nowrap; }
+  .product-cta.is-primary { background: var(--bleu); color: var(--blanc); }
+  .product-cta.is-primary:hover { background: var(--orange); }
+  .product-cta.is-secondary { background: var(--vert-eco-pale); color: var(--vert-eco-fonce); border: 1px solid rgba(74,139,92,0.3); }
+  .product-cta.is-secondary:hover { background: var(--vert-eco); color: var(--blanc); border-color: var(--vert-eco); }
+  .product-cta svg { width: 10px; height: 10px; }
+
+  /* ============ Section "À venir" pour Titane Hydro ============ */
+  .placeholder-section { text-align: center; padding: 80px 32px; background: var(--gris-clair); border-radius: 24px; }
+  .placeholder-icon { width: 80px; height: 80px; margin: 0 auto 24px; background: var(--blanc); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px -12px rgba(31,58,95,0.2); }
+  .placeholder-icon svg { width: 36px; height: 36px; color: var(--orange); }
+  .placeholder-title { font-family: var(--display); font-size: 36px; font-weight: 500; color: var(--bleu); margin-bottom: 12px; }
+  .placeholder-text { font-size: 16px; color: var(--gris); max-width: 480px; margin: 0 auto; }
+
+  /* ============ CTA bandeau bas ============ */
+  .cta-bottom { padding: 100px 48px; background: linear-gradient(135deg, var(--bleu-fonce) 0%, var(--bleu) 100%); color: var(--blanc); text-align: center; position: relative; overflow: hidden; }
+  .cta-bottom::before { content: ''; position: absolute; top: -150px; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(240,127,44,0.2) 0%, transparent 70%); border-radius: 50%; }
+  .cta-bottom-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+  .cta-bottom h2 { font-family: var(--display); font-size: 52px; font-weight: 500; line-height: 1.05; margin-bottom: 20px; letter-spacing: -1px; }
+  .cta-bottom h2 em { font-style: italic; color: var(--orange-clair); }
+  .cta-bottom p { font-size: 18px; opacity: 0.85; margin-bottom: 36px; font-weight: 300; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .cta-bottom-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-cta { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 50px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s var(--transition); }
+  .btn-cta-primary { background: var(--orange); color: var(--blanc); }
+  .btn-cta-primary:hover { background: var(--blanc); color: var(--bleu); transform: translateY(-2px); }
+  .btn-cta-ghost { border: 1px solid rgba(255,255,255,0.3); color: var(--blanc); }
+  .btn-cta-ghost:hover { background: var(--blanc); color: var(--bleu); border-color: var(--blanc); }
+
+  /* ============ FOOTER (identique) ============ */
+  footer { background: var(--bleu-fonce); color: rgba(255,255,255,0.7); padding: 100px 48px 40px; }
+  .footer-inner { max-width: 1440px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+  .footer-brand-text { font-family: var(--display); font-size: 36px; font-weight: 500; color: var(--blanc); line-height: 1; margin-bottom: 20px; }
+  .footer-brand-text em { font-style: italic; color: var(--orange); }
+  .footer-desc { font-size: 14px; line-height: 1.7; max-width: 320px; }
+  .footer-col h4 { font-family: var(--display); font-size: 18px; color: var(--blanc); margin-bottom: 20px; font-weight: 500; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom { padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 16px; }
+  .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-bottom a:hover { color: var(--orange); }
+  .footer-theolaur { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.4); }
+
+  /* ============ Animations reveal ============ */
+  .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--transition); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Animation flottement pots (subtile, calibrée pour cartes compactes) */
+  @keyframes floatProduct {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .product-card:not(:hover) .product-image { animation: floatProduct 4s ease-in-out infinite; }
+  .product-card:nth-child(2):not(:hover) .product-image { animation-delay: 0.5s; }
+  .product-card:nth-child(3):not(:hover) .product-image { animation-delay: 1s; }
+  .product-card:nth-child(4):not(:hover) .product-image { animation-delay: 1.5s; }
+
+  /* ============ Responsive ============ */
+  @media (max-width: 1100px) {
+    .page-layout { grid-template-columns: 1fr; gap: 32px; }
+    .sidebar { position: static; max-height: none; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .nav, .nav-wrap { display: none; }
+    .header-inner, .page-wrap, .cta-bottom, footer { padding-left: 20px; padding-right: 20px; }
+    .page-wrap { padding-top: 130px; }
+    .products-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .sidebar h1 { font-size: 38px; }
+    .cta-bottom h2 { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-symbol" viewBox="0 0 100 120">
+        <rect x="20" y="20" width="65" height="80" fill="#1F3A5F" rx="2"/>
+        <path d="M 8 5 L 18 5 L 22 30 L 12 30 Z" fill="#F07F2C"/>
+        <text x="52" y="80" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">a</text>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-text">l'atelier</span>
+        <span class="logo-baseline">MARCHAND DE COULEURS</span>
+        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+      </div>
+    </a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="gammes.html" class="active">Nos gammes peintures</a>
+        <a href="nuanciers.html">Nuanciers</a>
+        <a href="index.html#eco">Engagement éco</a>
+        <a href="revetement-mural.html">Revêtement mural</a>
+        <a href="revetement-sol.html">Revêtement de sol</a>
+        <a href="documents.html">Documents techniques</a>
+        <a href="index.html#equipe">L'équipe L'ATELIER</a>
+        <a href="#" class="nav-cta">Espace pro</a>
+      </nav>
+      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE WRAP ============ -->
+<div class="page-wrap">
+
+  <div class="breadcrumb">
+    <a href="index.html">Accueil</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Nos gammes de peinture</span>
+  </div>
+
+  <div class="page-layout">
+
+    <!-- ===== SIDEBAR gauche ===== -->
+    <aside class="sidebar">
+      <span class="sidebar-eyebrow">Catalogue produits</span>
+      <h1>Nos gammes de peintures <em class="eco-accent">éco-responsables</em></h1>
+      <p class="sidebar-lead">Deux gammes propres fabriquées en France, pensées pour les professionnels exigeants. Et une sélection rigoureuse de produits partenaires pour compléter chaque chantier.</p>
+
+      <div class="gamme-tabs-label">Choisir une gamme</div>
+      <div class="gamme-tabs" role="tablist">
+        <button class="gamme-tab is-active" data-gamme="45" role="tab" aria-selected="true">
+          <span class="gamme-tab-info">
+            <span class="gamme-tab-name">L'Atelier 45</span>
+            <span class="gamme-tab-sub">Acrylique & glycéro · France</span>
+          </span>
+          <span class="gamme-tab-count">6</span>
+        </button>
+        <button class="gamme-tab" data-gamme="titane" role="tab" aria-selected="false">
+          <span class="gamme-tab-info">
+            <span class="gamme-tab-name">Titane Hydro</span>
+            <span class="gamme-tab-sub">Biosourcée · bas carbone</span>
+          </span>
+          <span class="gamme-tab-count">4</span>
+        </button>
+        <button class="gamme-tab" data-gamme="partenaires" role="tab" aria-selected="false">
+          <span class="gamme-tab-info">
+            <span class="gamme-tab-name">Partenaires</span>
+            <span class="gamme-tab-sub">Keim, Sigma, Comus…</span>
+          </span>
+          <span class="gamme-tab-count">+</span>
+        </button>
+      </div>
+
+      <div class="filters-label">Filtrer par finition</div>
+      <div class="filter-pills">
+        <button class="filter-pill is-active" data-filter="all">Toutes</button>
+        <button class="filter-pill" data-filter="impression">Impression</button>
+        <button class="filter-pill" data-filter="mat">Mat</button>
+        <button class="filter-pill" data-filter="velours">Velours</button>
+        <button class="filter-pill" data-filter="satin">Satin</button>
+      </div>
+
+      <div class="sort-wrap">
+        <label for="sort-global">Trier par</label>
+        <select id="sort-global">
+          <option value="brillance-asc" selected>Brillance croissante (par défaut)</option>
+          <option value="brillance-desc">Brillance décroissante</option>
+          <option value="alpha">Ordre alphabétique</option>
+        </select>
+      </div>
+
+      <div class="sidebar-features" id="sidebar-features">
+        <div class="sidebar-features-title">Pourquoi nos peintures</div>
+        <div class="sidebar-features-list">
+          <div class="sidebar-feature">
+            <span class="sidebar-feature-dot"></span>
+            <span class="sidebar-feature-body">
+              <span class="sidebar-feature-label">Label A+ émissions</span>
+              <span class="sidebar-feature-desc">Le niveau le plus exigeant de qualité de l'air intérieur. Nos formulations émettent moins de 1&nbsp;g/L de COV — bien en dessous du seuil réglementaire.</span>
+            </span>
+          </div>
+          <div class="sidebar-feature">
+            <span class="sidebar-feature-dot"></span>
+            <span class="sidebar-feature-body">
+              <span class="sidebar-feature-label">FDES vérifiée Inies</span>
+              <span class="sidebar-feature-desc">Chaque produit dispose d'une Fiche de Déclaration Environnementale et Sanitaire indépendante, vérifiée par la base Inies. Transparence totale sur l'impact cycle de vie.</span>
+            </span>
+          </div>
+          <div class="sidebar-feature">
+            <span class="sidebar-feature-dot"></span>
+            <span class="sidebar-feature-body">
+              <span class="sidebar-feature-label">Biosourcé & bas carbone</span>
+              <span class="sidebar-feature-desc">La gamme Titane Hydro est formulée à base de résines végétales. Moins d'énergie fossile, bilan carbone réduit, sans compromis sur la tenue et l'adhérence.</span>
+            </span>
+          </div>
+          <div class="sidebar-feature">
+            <span class="sidebar-feature-dot"></span>
+            <span class="sidebar-feature-body">
+              <span class="sidebar-feature-label">Fûts issus du recyclage</span>
+              <span class="sidebar-feature-desc">Nos contenants plastique et métal proviennent de matériaux recyclés. Un choix cohérent sur l'ensemble de la chaîne, du produit à l'emballage.</span>
+            </span>
+          </div>
+          <div class="sidebar-feature">
+            <span class="sidebar-feature-dot"></span>
+            <span class="sidebar-feature-body">
+              <span class="sidebar-feature-label">Conforme RE 2020</span>
+              <span class="sidebar-feature-desc">Nos peintures répondent aux exigences de la réglementation environnementale 2020 sur les bâtiments neufs — un gage de pérennité pour les chantiers d'aujourd'hui et de demain.</span>
+            </span>
+          </div>
+          <div class="sidebar-feature">
+            <span class="sidebar-feature-dot"></span>
+            <span class="sidebar-feature-body">
+              <span class="sidebar-feature-label">Fabriquées en France</span>
+              <span class="sidebar-feature-desc">Production locale avec notre partenaire Théolaur, réduisant le transport et soutenant le savoir-faire industriel français.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== COLONNE produits ===== -->
+    <main class="products-col">
+
+      <!-- GAMME L'ATELIER 45 -->
+      <section class="gamme-section" id="gamme-45" data-gamme-section="45">
+        <div class="gamme-banner is-45 has-re2020">
+          <div class="gamme-banner-num">45</div>
+          <div class="gamme-banner-content">
+            <span class="gamme-banner-tag">Notre gamme historique</span>
+            <h2 class="gamme-banner-title">L'Atelier <em>45</em></h2>
+            <p class="gamme-banner-desc">Peintures professionnelles techniques pour murs, plafonds, boiseries et menuiseries. Acrylique et glycéro, fabriquées en France.</p>
+          </div>
+          <div class="banner-re2020-stage" aria-hidden="true">
+            <div class="banner-re2020">
+              <div class="banner-re2020-face">
+                <div class="banner-re2020-ring"></div>
+                <div class="banner-re2020-ring banner-re2020-ring-2"></div>
+                <div class="banner-re2020-core">
+                  <div class="banner-re2020-label">CONFORME</div>
+                  <div class="banner-re2020-number">RE <em>2020</em></div>
+                </div>
+              </div>
+              <div class="banner-re2020-face banner-re2020-face-back">
+                <div class="banner-re2020-ring"></div>
+                <div class="banner-re2020-ring banner-re2020-ring-2"></div>
+                <div class="banner-re2020-core">
+                  <div class="banner-re2020-label">CONFORME</div>
+                  <div class="banner-re2020-number">RE <em>2020</em></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-grid" id="grid-45">
+
+          <!-- 1. 45 IMPRESS evo - IMPRESSION acrylique -->
+          <article class="product-card reveal" id="p-impress-evo" data-finition="impression" data-brillance="1">
+            <div class="product-finition-bar"></div>
+            <span class="product-finition-tag">Impression</span>
+            <div class="product-visual">
+              <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+              <img class="product-image" src="images/produits/45_impress_.webp" alt="L'Atelier 45 Impress evo - Impression acrylique blanche" loading="lazy">
+        </div>
+        <div class="product-pictos">
+          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+          <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+          <span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"/></svg></span><span class="picto-label">Outils</span></span>
+        </div>
+        <div class="product-info">
+          <div class="product-gamme">L'Atelier 45 · Impression</div>
+          <h3 class="product-name">Impress <em>45</em></h3>
+          <div class="product-subtitle">Impression acrylique blanche · phase aqueuse</div>
+          <p class="product-description">Sous-couche acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong> et classée A+. Fabriquée en France, conditionnée en fût recyclé, FDES vérifiée Inies — compatible RE 2020. Préparation universelle de tous les supports traditionnels du bâtiment, aspect mat en finition, anti-flash rust.</p>
+          <div class="product-footer">
+            <span class="product-format"><strong>16 L</strong></span>
+            <div class="product-ctas">
+              <a href="documents/ft/FT_IMPRESS_45_EVO.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+              <a href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. 45 GRANDS TRAVAUX - IMPRESSION -->
+      <article class="product-card reveal" id="p-grands-travaux" data-finition="impression" data-brillance="2">
+        <div class="product-finition-bar"></div>
+        <span class="product-finition-tag">Impression</span>
+        <div class="product-visual">
+          <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+          <img class="product-image" src="images/produits/45_impress_GT.webp" alt="L'Atelier 45 Grands Travaux - Impression acrylique" loading="lazy">
+        </div>
+        <div class="product-pictos">
+          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+          <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+          <span class="picto is-bleuclair" title="+130 m²"><span class="picto-icon is-text-xs">130m²</span><span class="picto-label">+130m²</span></span>
+        </div>
+        <div class="product-info">
+          <div class="product-gamme">L'Atelier 45 · Impression</div>
+          <h3 class="product-name">Impress 45 <em>Grands Travaux</em></h3>
+          <div class="product-subtitle">Impression acrylique blanche · Grands chantiers</div>
+          <p class="product-description">Sous-couche acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong>, classée A+ et fabriquée en France. <strong>Rendement +130 m² au seau</strong>, fût recyclé, FDES vérifiée Inies, RE 2020. Excellent garnissant et fort pouvoir opacifiant, formulée pour les grands chantiers à fort engagement environnemental.</p>
+          <div class="product-footer">
+            <span class="product-format"><strong>16 L</strong></span>
+            <div class="product-ctas">
+              <a href="documents/ft/FT_45_impress_GRANDS_TRAVAUX_.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+              <a href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. 45 MAT 2en1 - MAT -->
+      <article class="product-card reveal" id="p-mat-45" data-finition="mat" data-brillance="3">
+        <div class="product-finition-bar"></div>
+        <span class="product-finition-tag">Mat</span>
+        <div class="product-visual">
+          <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+          <img class="product-image" src="images/produits/45_Mat_2en1.webp" alt="L'Atelier 45 Mat - Peinture décorative impression et finition" loading="lazy">
+        </div>
+        <div class="product-pictos">
+          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+          <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+          <span class="picto is-orange" title="2 en 1"><span class="picto-icon is-text-sm">2en1</span><span class="picto-label">2 en 1</span></span>
+        </div>
+        <div class="product-info">
+          <div class="product-gamme">L'Atelier 45 · Mat</div>
+          <h3 class="product-name">Mat <em>45</em></h3>
+          <div class="product-subtitle">Impression & finition · 2 en 1</div>
+          <p class="product-description">Peinture acrylique 2 en 1 (impression + finition) en phase aqueuse. <strong>COV &lt; 1 g/L</strong>, classée A+, fabriquée en France, fût recyclé. FDES vérifiée Inies, compatible RE 2020. Aspect mat profond, anti-flash rust : un produit unique pour murs et plafonds.</p>
+          <div class="product-footer">
+            <span class="product-format"><strong>16 L</strong></span>
+            <div class="product-ctas">
+              <a href="documents/ft/FT_MAT_45_2en1_v2.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+              <a href="documents/fdes/FDES_45_MAT.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. 45 VELOURS - VELOURS -->
+      <article class="product-card reveal" id="p-velours-45" data-finition="velours" data-brillance="4">
+        <div class="product-finition-bar"></div>
+        <span class="product-finition-tag">Velours</span>
+        <div class="product-visual">
+          <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+          <img class="product-image" src="images/produits/45_velours.webp" alt="L'Atelier 45 Velours - Peinture acrylique veloutée" loading="lazy">
+        </div>
+        <div class="product-pictos">
+          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+          <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
+        </div>
+        <div class="product-info">
+          <div class="product-gamme">L'Atelier 45 · Velours</div>
+          <h3 class="product-name">Velours <em>45</em></h3>
+          <div class="product-subtitle">Acrylique veloutée garnissante pochée</div>
+          <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Conditionnée en fût recyclé, FDES vérifiée Inies, compatible RE 2020. Aspect mat velouté élégant, très bon pouvoir <strong>garnissant</strong> pour murs et plafonds intérieurs.</p>
+          <div class="product-footer">
+            <span class="product-format"><strong>16 L</strong></span>
+            <div class="product-ctas">
+              <a href="documents/ft/FT_45_VELOURS.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+              <a href="documents/fdes/FDES_45_velours_.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. 45 SATIN - SATIN acrylique -->
+      <article class="product-card reveal" id="p-satin-45" data-finition="satin" data-brillance="5">
+        <div class="product-finition-bar"></div>
+        <span class="product-finition-tag">Satin</span>
+        <div class="product-visual">
+          <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+          <img class="product-image" src="images/produits/45_satin.webp" alt="L'Atelier 45 Satin - Peinture acrylique satinée" loading="lazy">
+        </div>
+        <div class="product-pictos">
+          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+          <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
+          <span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18l-2 14H5L3 6z"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><span class="picto-label">Lessiv.</span></span>
+        </div>
+        <div class="product-info">
+          <div class="product-gamme">L'Atelier 45 · Satin</div>
+          <h3 class="product-name">Satin <em>45</em></h3>
+          <div class="product-subtitle">Acrylique satinée garnissante pochée</div>
+          <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Fût recyclé, FDES vérifiée Inies, compatible RE 2020. Aspect satiné élégant et <strong>lessivable</strong>, taillée pour les pièces de passage et les supports demandant une protection accrue.</p>
+          <div class="product-footer">
+            <span class="product-format"><strong>16 L</strong></span>
+            <div class="product-ctas">
+              <a href="documents/ft/FT_45_SATIN_ACRYL.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+              <a href="documents/fdes/FDES_45_satin.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. 45 GLYCERO SATIN - SATIN glycéro -->
+      <article class="product-card reveal" id="p-glycero-45" data-finition="satin" data-brillance="6" data-no-grow>
+        <div class="product-finition-bar"></div>
+        <span class="product-finition-tag">Satin</span>
+        <div class="product-visual">
+          <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+          <img class="product-image" src="images/produits/45_glycero_satin.webp" alt="L'Atelier 45 Glycéro - Peinture glycérophtalique satinée" loading="lazy">
+        </div>
+        <div class="product-pictos">
+          <span class="picto is-cclass" title="Classe C - Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/cclass-emissions.svg" alt="C"></span><span class="picto-label">C air int.</span></span>
+          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+          <span class="picto is-gris" title="Phase solvant"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6v3H9zM7 5h10l-1 16H8L7 5z"/><path d="M10 12h4"/></svg></span><span class="picto-label">Solvant</span></span>
+          <span class="picto is-bleu" title="Int / Ext"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><circle cx="12" cy="15" r="2"/></svg></span><span class="picto-label">Int/Ext</span></span>
+          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+          <span class="picto is-orange" title="Boiseries"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 8h18M3 14h18M9 3v18M15 3v18"/></svg></span><span class="picto-label">Bois</span></span>
+        </div>
+        <div class="product-info">
+          <div class="product-gamme">L'Atelier 45 · Satin glycéro</div>
+          <h3 class="product-name">Glycéro <em>45</em></h3>
+          <div class="product-subtitle">Glycérophtalique satinée garnissante</div>
+          <p class="product-description">Peinture glycérophtalique en phase solvant, fabriquée en France. FDES vérifiée Inies, compatible RE 2020. Aspect satin velours pour la protection durable et la décoration des boiseries, applicable en intérieur comme en extérieur.</p>
+          <div class="product-footer">
+            <span class="product-format"><strong>15 L</strong></span>
+            <div class="product-ctas">
+              <a href="documents/ft/FT_45_GLYCERO_SATIN.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+              <a href="documents/fdes/FDES45_glycero_satin.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+      <!-- ============ GAMME TITANE HYDRO ============ -->
+      <section class="gamme-section" id="gamme-titane" data-gamme-section="titane">
+        <div class="gamme-banner is-titane has-re2020">
+          <div class="gamme-banner-num">T</div>
+          <div class="gamme-banner-content">
+            <span class="gamme-banner-tag">Gamme biosourcée</span>
+            <h2 class="gamme-banner-title">Titane <em>Hydro</em></h2>
+            <p class="gamme-banner-desc">Formulations à base de résines végétales en phase aqueuse, COV ultra-réduits. Pour les chantiers à fort engagement environnemental.</p>
+          </div>
+          <div class="banner-re2020-stage" aria-hidden="true">
+            <div class="banner-re2020">
+              <div class="banner-re2020-face">
+                <div class="banner-re2020-ring"></div>
+                <div class="banner-re2020-ring banner-re2020-ring-2"></div>
+                <div class="banner-re2020-core">
+                  <div class="banner-re2020-label">CONFORME</div>
+                  <div class="banner-re2020-number">RE <em>2020</em></div>
+                </div>
+              </div>
+              <div class="banner-re2020-face banner-re2020-face-back">
+                <div class="banner-re2020-ring"></div>
+                <div class="banner-re2020-ring banner-re2020-ring-2"></div>
+                <div class="banner-re2020-core">
+                  <div class="banner-re2020-label">CONFORME</div>
+                  <div class="banner-re2020-number">RE <em>2020</em></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-grid" id="grid-titane">
+
+          <!-- 1. TITANE HYDRO PRIM - IMPRESSION -->
+          <article class="product-card reveal" id="p-titane-prim" data-finition="impression" data-brillance="1">
+            <div class="product-finition-bar"></div>
+            <span class="product-finition-tag">Impression</span>
+            <div class="product-visual">
+              <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+              <img class="product-image" src="images/produits/titane_hydro_prim.webp" alt="Titane Hydro Prim - Impression biosourcée" loading="lazy">
+            </div>
+            <div class="product-pictos">
+              <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+              <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+              <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+              <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+              <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+              <span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"/></svg></span><span class="picto-label">Outils</span></span>
+            </div>
+            <div class="product-info">
+              <div class="product-gamme">Titane Hydro · Impression</div>
+              <h3 class="product-name">Titane hydro <em>Prim</em></h3>
+              <div class="product-subtitle">Impression acrylique en phase aqueuse</div>
+              <p class="product-description">Sous-couche d'accrochage en phase aqueuse, classée A+ pour la qualité de l'air intérieur. Faiblement émissive en COV, conditionnée en fût recyclé. FDES vérifiée Inies pour des chantiers RE 2020. Excellente adhérence sur tous supports traditionnels, aspect mat profond, fort pouvoir opacifiant.</p>
+              <div class="product-footer">
+                <span class="product-format"><strong>15 L</strong></span>
+                <div class="product-ctas">
+                  <a href="documents/ft/FT_TITANE_HYDRO_PRIM.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+                  <a href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. TITANE HYDRO MAT - MAT acrylique biosourcé -->
+          <article class="product-card reveal" id="p-titane-mat" data-finition="mat" data-brillance="2">
+            <div class="product-finition-bar"></div>
+            <span class="product-finition-tag">Mat</span>
+            <div class="product-visual">
+              <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+              <img class="product-image" src="images/produits/titane_hydro_mat.webp" alt="Titane Hydro Mat - Peinture acrylique biosourcée mate" loading="lazy">
+            </div>
+            <div class="product-pictos">
+              <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+              <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+              <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+              <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+              <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+              <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
+            </div>
+            <div class="product-info">
+              <div class="product-gamme">Titane Hydro · Mat</div>
+              <h3 class="product-name">Titane hydro <em>Mat</em></h3>
+              <div class="product-subtitle">Acrylique garnissante pochée · phase aqueuse</div>
+              <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Fût recyclé, FDES vérifiée Inies, compatible chantiers RE 2020. Très couvrante avec une grande blancheur, aspect mat profond. Garnissante, idéale pour murs et plafonds des projets à fort engagement environnemental.</p>
+              <div class="product-footer">
+                <span class="product-format"><strong>15 L</strong></span>
+                <div class="product-ctas">
+                  <a href="documents/ft/FT_TITANE_HYDRO_MAT.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+                  <a href="documents/fdes/FDES_titane_hydro_mat.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. TITANE HYDRO MV evo - MAT VELOUTÉ alkyde émulsion -->
+          <article class="product-card reveal" id="p-titane-mv" data-finition="mat-veloute" data-brillance="3">
+            <div class="product-finition-bar"></div>
+            <span class="product-finition-tag">Mat velouté</span>
+            <div class="product-visual">
+              <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+              <img class="product-image" src="images/produits/titane_hydro_mat_veloute.webp" alt="Titane Hydro MV evo - Peinture alkyde mat velouté biosourcée" loading="lazy">
+            </div>
+            <div class="product-pictos">
+              <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+              <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+              <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+              <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+              <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+              <span class="picto is-vertfonce" title="31,5 % biosourcé"><span class="picto-icon is-text-xs">31,5%</span><span class="picto-label">Biosourcé</span></span>
+              <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+              <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
+            </div>
+            <div class="product-info">
+              <div class="product-gamme">Titane Hydro · Mat velouté</div>
+              <h3 class="product-name">Titane hydro <em>MV</em></h3>
+              <div class="product-subtitle">Alkyde biosourcée en émulsion · 2 en 1</div>
+              <p class="product-description">Le fer de lance écoresponsable de la gamme : <strong>31,5 % de matières premières biosourcées</strong>, <strong>COV &lt; 1 g/L</strong> et alkyde en émulsion aqueuse. Classée A+, FDES vérifiée Inies, fût recyclé, fabrication française — taillée pour les chantiers RE 2020 les plus exigeants. Impression et finition réunies, grande blancheur et aspect mat velouté élégant.</p>
+              <div class="product-footer">
+                <span class="product-format"><strong>15 L</strong></span>
+                <div class="product-ctas">
+                  <a href="documents/ft/FT_TITANE_hydro_MV_.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+                  <a href="documents/fdes/FDES_titane_hydro_Mat_Veloute_MV.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. TITANE HYDRO VELOURS -->
+          <article class="product-card reveal" id="p-titane-velours" data-finition="velours" data-brillance="4">
+            <div class="product-finition-bar"></div>
+            <span class="product-finition-tag">Velours</span>
+            <div class="product-visual">
+              <div class="product-visual-bg"></div>
+              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
+                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
+                <span class="product-recycled-text">Fût recyclé</span>
+              </div>
+              <img class="product-image" src="images/produits/titane_hydro_velours.webp" alt="Titane Hydro Velours - Peinture acrylique biosourcée velours" loading="lazy">
+            </div>
+            <div class="product-pictos">
+              <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
+              <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
+              <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
+              <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
+              <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
+              <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+              <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
+              <span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18l-2 14H5L3 6z"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><span class="picto-label">Lessiv.</span></span>
+            </div>
+            <div class="product-info">
+              <div class="product-gamme">Titane Hydro · Velours</div>
+              <h3 class="product-name">Titane hydro <em>Velours</em></h3>
+              <div class="product-subtitle">Acrylique garnissante pochée · phase aqueuse</div>
+              <p class="product-description">Peinture acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong> et classée A+. Conditionnée en fût recyclé, FDES vérifiée Inies, compatible RE 2020. Excellent couvrant, très garnissante et <strong>lessivable</strong>, aspect velours subtil. Le bon compromis esthétique et résistance pour les pièces de vie et de passage.</p>
+              <div class="product-footer">
+                <span class="product-format"><strong>15 L</strong></span>
+                <div class="product-ctas">
+                  <a href="documents/ft/FT_TITANE_HYDRO_VELOURS.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+                  <a href="documents/fdes/FDES_Titane_hydro_Velours.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============ PARTENAIRES ============ -->
+      <section class="gamme-section" id="gamme-partenaires" data-gamme-section="partenaires">
+        <div class="gamme-banner is-partenaires">
+          <div class="gamme-banner-num">+</div>
+          <div class="gamme-banner-content">
+            <span class="gamme-banner-tag">Fabricants partenaires</span>
+            <h2 class="gamme-banner-title">Nos <em>partenaires</em></h2>
+            <p class="gamme-banner-desc">Une sélection rigoureuse de produits chez Keim, Sigma, Comus, Dragopaint, Sofec, Soframap et Théolaur.</p>
+          </div>
+          <div class="gamme-banner-count">à venir</div>
+        </div>
+
+        <div class="placeholder-section reveal">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20"/>
+            </svg>
+          </div>
+          <h3 class="placeholder-title">Bientôt disponible</h3>
+          <p class="placeholder-text">Cet espace accueillera prochainement les produits sélectionnés chez nos fabricants partenaires (Keim, Sigma, Comus, Dragopaint, Sofec, Soframap, Théolaur).</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+<!-- /page-wrap -->
+
+<!-- CTA bas -->
+<section class="cta-bottom">
+  <div class="cta-bottom-inner">
+    <h2>Besoin d'un <em>conseil technique</em> ?</h2>
+    <p>Nos équipes vous accompagnent dans le choix du bon produit pour votre chantier. Devis, échantillons, mise en teinte : passez en magasin ou contactez-nous.</p>
+    <div class="cta-bottom-buttons">
+      <a href="index.html#magasins" class="btn-cta btn-cta-primary">Voir nos magasins →</a>
+      <a href="mailto:contact@latelier33.fr" class="btn-cta btn-cta-ghost">Demander un conseil</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
+        <p>Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos gammes</h4>
+        <ul>
+          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
+          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
+          <li><a href="nuanciers.html">Colorimétrie</a></li>
+          <li><a href="index.html#eco">Engagement éco</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Le groupe</h4>
+        <ul>
+          <li><a href="#">Notre histoire</a></li>
+          <li><a href="index.html#magasins">Nos magasins</a></li>
+          <li><a href="#">L'Établi · location</a></li>
+          <li><a href="#">Espace pro</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Politique de confidentialité</a></div>
+      <div class="footer-theolaur">MEMBRE DU RÉSEAU AGIR · GROUPE THÉOLAUR</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Animation reveal au scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Header rétréci au scroll
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  });
+
+  // Switcher de gamme = scroll vers la section (toutes restent visibles)
+  const tabs = document.querySelectorAll('.gamme-tab');
+  const sections = document.querySelectorAll('.gamme-section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = tab.dataset.gamme;
+      const section = document.getElementById('gamme-' + target);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Mise à jour automatique de l'onglet actif en fonction de la section visible (scroll-spy)
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id.replace('gamme-', '');
+        tabs.forEach(t => {
+          const isMatch = t.dataset.gamme === id;
+          t.classList.toggle('is-active', isMatch);
+          t.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+  sections.forEach(s => spyObserver.observe(s));
+
+  // Filtres finition - GLOBAL (agit sur toutes les sections)
+  const pills = document.querySelectorAll('.filter-pill');
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+      const filter = pill.dataset.filter;
+      // Pour chaque section, filtre ses cartes et met à jour le compteur
+      sections.forEach(section => {
+        const cards = section.querySelectorAll('.product-card');
+        let count = 0;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.finition === filter) {
+            card.style.display = '';
+            count++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        const counter = section.querySelector('[id^="count-"]');
+        if (counter) counter.textContent = count;
+      });
+    });
+  });
+
+  // Tri global - agit sur toutes les grilles
+  const sortGlobal = document.getElementById('sort-global');
+  if (sortGlobal) {
+    sortGlobal.addEventListener('change', () => {
+      document.querySelectorAll('.products-grid').forEach(grid => {
+        const cards = Array.from(grid.querySelectorAll('.product-card'));
+        const mode = sortGlobal.value;
+        cards.sort((a, b) => {
+          if (mode === 'brillance-asc') return parseInt(a.dataset.brillance) - parseInt(b.dataset.brillance);
+          if (mode === 'brillance-desc') return parseInt(b.dataset.brillance) - parseInt(a.dataset.brillance);
+          if (mode === 'alpha') return a.querySelector('.product-name').textContent.localeCompare(b.querySelector('.product-name').textContent);
+          return 0;
+        });
+        cards.forEach(c => grid.appendChild(c));
+      });
+    });
+  }
+
+  // Effet 3D pot suivant la souris
+  document.querySelectorAll('.product-card').forEach(card => {
+    const img = card.querySelector('.product-image');
+    if (!img) return;
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      img.style.transform = `translateY(-8px) rotateY(${x * -12}deg) rotateX(${y * 8}deg) scale(1.04)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      img.style.transform = '';
+    });
+  });
+</script>
+
+</body>
+</html>

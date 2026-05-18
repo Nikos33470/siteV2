@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Atelier — Marchand de couleurs · Peintures fabriquées en France · Mérignac & Bassin d'Arcachon</title>
+<meta name="description" content="L'Atelier, marchand de couleurs en Gironde. Fabricant de peintures professionnelles. Gammes L'Atelier 45 et Titane Hydro biosourcées. 2 magasins : Mérignac et La Teste-de-Buch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #1F3A5F;
+    --bleu-fonce: #15273F;
+    --bleu-clair: #2D4E7A;
+    --bleu-pale: #E8EEF5;
+    --orange: #F07F2C;
+    --orange-fonce: #D86618;
+    --orange-clair: #FFA968;
+    --vert-eco: #4A8B5C;
+    --vert-eco-fonce: #2F6940;
+    --vert-eco-pale: #E8F2EB;
+    --beige: #F5F0E8;
+    --blanc: #FFFFFF;
+    --gris-clair: #F8F7F4;
+    --gris: #5F5F5F;
+    --gris-fonce: #2C2C2C;
+    --noir: #0A0A0A;
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
+  
+  /* HEADER avec LOGO AGRANDI */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(31,58,95,0.08); transition: all 0.4s var(--transition); }
+  .header-inner { max-width: 1440px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; transition: padding 0.4s var(--transition); }
+  /* État rétréci : déclenché au scroll par la classe .is-scrolled ajoutée en JS */
+  .header.is-scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(31, 58, 95, 0.08); }
+  .header.is-scrolled .header-inner { padding: 10px 48px; }
+  .header.is-scrolled .logo-symbol { width: 70px; height: 86px; transition: all 0.4s var(--transition); }
+  .header.is-scrolled .logo-text { font-size: 36px; transition: all 0.4s var(--transition); }
+  .header.is-scrolled .logo-baseline { font-size: 12px; transition: all 0.4s var(--transition); }
+  .header.is-scrolled .logo-since { display: none; }
+  .logo-symbol, .logo-text, .logo-baseline { transition: all 0.4s var(--transition); }
+  .logo { display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--bleu); }
+  .logo-symbol { width: 105px; height: 130px; position: relative; flex-shrink: 0; }
+  .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text { font-family: var(--sans); font-weight: 700; font-size: 48px; color: var(--bleu); letter-spacing: -0.8px; }
+  .logo-baseline { font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--orange); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
+  .logo-since { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 14px; color: var(--bleu); margin-top: 6px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; opacity: 0.85; }
+  .logo-since-dash { display: inline-block; width: 18px; height: 1px; background: var(--orange); flex-shrink: 0; }
+  .nav { display: flex; align-items: center; gap: 22px; }
+  .nav a { font-size: 13.5px; font-weight: 500; color: var(--bleu); text-decoration: none; transition: color 0.3s; position: relative; white-space: nowrap; }
+  .nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s var(--transition); }
+  .nav a:hover::after { width: 100%; }
+  .nav a:hover { color: var(--orange); }
+  .nav-cta { background: var(--bleu); color: var(--blanc) !important; padding: 10px 22px; border-radius: 50px; transition: all 0.3s; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--orange); color: var(--blanc) !important; transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(240,127,44,0.5); }
+
+  /* Wrap nav + barre de recherche : barre placée juste sous l'onglet Espace pro */
+  .nav-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; margin-left: 48px; }
+  .nav-search { position: relative; display: flex; align-items: center; width: 280px; max-width: 100%; }
+  .nav-search-icon { position: absolute; left: 12px; width: 15px; height: 15px; color: var(--bleu); opacity: 0.55; pointer-events: none; }
+  .nav-search-input {
+    width: 100%;
+    padding: 8px 14px 8px 34px;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--bleu-fonce);
+    background: rgba(31,58,95,0.04);
+    border: 1px solid rgba(31,58,95,0.12);
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s var(--transition);
+  }
+  .nav-search-input::placeholder { color: var(--gris); opacity: 0.7; font-weight: 400; }
+  .nav-search-input:focus {
+    background: var(--blanc);
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(240,127,44,0.15);
+  }
+  .nav-search:focus-within .nav-search-icon { opacity: 1; color: var(--orange); }
+  
+  /* HERO */
+  .hero { min-height: 100vh; padding: 180px 48px 80px; background: var(--bleu); color: var(--blanc); position: relative; overflow: hidden; display: flex; align-items: center; }
+  .hero-circle { position: absolute; border-radius: 50%; pointer-events: none; }
+  .circle-1 { width: 600px; height: 600px; top: -200px; right: -150px; background: radial-gradient(circle, rgba(240,127,44,0.18) 0%, transparent 70%); animation: float 12s ease-in-out infinite; }
+  .circle-2 { width: 400px; height: 400px; bottom: -100px; left: -100px; background: radial-gradient(circle, rgba(74,139,92,0.15) 0%, transparent 70%); animation: float 15s ease-in-out infinite reverse; }
+  @keyframes float { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(40px,-30px) scale(1.05);} }
+  .hero-inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; background: rgba(240,127,44,0.15); border: 1px solid rgba(240,127,44,0.3); color: var(--orange-clair); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 50px; margin-bottom: 32px; animation: fadeInUp 0.8s var(--transition); }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(1.5); opacity:0.6;} }
+  .hero-title { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 5vw, 70px); line-height: 0.98; margin-bottom: 28px; letter-spacing: -1.5px; animation: fadeInUp 1s var(--transition) 0.1s both; }
+  .hero-title em { color: var(--orange); font-style: italic; font-weight: 300; }
+  .hero-title-accent { display: inline-block; position: relative; }
+  .hero-title-accent::after { content: ''; position: absolute; bottom: 8px; left: 0; right: 0; height: 12px; background: var(--orange); opacity: 0.3; z-index: -1; animation: scaleX 1.5s var(--transition) 0.8s both; transform-origin: left; }
+  @keyframes scaleX { from{transform:scaleX(0);} to{transform:scaleX(1);} }
+  .hero-subtitle { font-size: 19px; line-height: 1.6; opacity: 0.85; margin-bottom: 40px; max-width: 560px; font-weight: 300; animation: fadeInUp 1s var(--transition) 0.3s both; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeInUp 1s var(--transition) 0.5s both; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 32px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 50px; transition: all 0.3s var(--transition); border: 2px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--orange); color: var(--blanc); }
+  .btn-primary:hover { background: var(--orange-fonce); transform: translateY(-2px); box-shadow: 0 14px 32px -10px rgba(240,127,44,0.6); }
+  .btn-secondary { background: transparent; color: var(--blanc); border-color: rgba(255,255,255,0.3); }
+  .btn-secondary:hover { border-color: var(--blanc); background: rgba(255,255,255,0.1); }
+  .btn-arrow { transition: transform 0.3s; }
+  .btn:hover .btn-arrow { transform: translateX(4px); }
+  
+  .hero-visual { position: relative; height: 580px; animation: fadeIn 1.5s var(--transition) 0.4s both; }
+  @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+  @keyframes fadeInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+  
+  .pots-stack { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .pot-3d { position: absolute; transition: transform 0.6s var(--transition); filter: drop-shadow(0 30px 40px rgba(0,0,0,0.45)) drop-shadow(0 10px 20px rgba(0,0,0,0.3)); }
+  /* Disposition à 4 pots : 45 - Titane MV - Comus (devant Algo) - Algo Pro */
+  /* Pot Algo Pro : extrême gauche, en arrière (plus petit, légèrement plus haut) */
+  .pot-algo { width: 185px; z-index: 2; left: 50%; top: 58%; transform: translate(calc(-50% - 235px), calc(-50% - 15px)); animation: floatPot 6.5s ease-in-out infinite 0.3s; }
+  /* Pot Titane MV : centre-gauche, devant, héros principal */
+  .pot-titane-mv { width: 205px; z-index: 4; left: 50%; top: 58%; transform: translate(calc(-50% - 90px), -50%); animation: floatPot 6s ease-in-out infinite; }
+  /* Pot Comus Izi R : centre-droit, devant (deuxième plan central) */
+  .pot-izi-r { width: 210px; z-index: 4; left: 50%; top: 58%; transform: translate(calc(-50% + 95px), calc(-50% + 5px)); animation: floatPot 8s ease-in-out infinite 0.5s; }
+  /* Pot 45 Mat : extrême droite, en arrière (plus petit, légèrement plus haut) */
+  .pot-45-mat { width: 155px; z-index: 2; left: 50%; top: 58%; transform: translate(calc(-50% + 245px), calc(-50% - 10px)); animation: floatPot 7s ease-in-out infinite 1s; }
+  @keyframes floatPot { 0%,100%{translate:0 0;} 50%{translate:0 -12px;} }
+  
+  /* === BADGE RE2020 MINI dans le HERO ===
+     - Posé en haut à droite, près du pot IZI R (empiétement assumé)
+     - Pas de déplacement : il reste là
+     - Rotation 3D sur axe Y (axe vertical) : comme une pièce de monnaie qui tourne sur sa tranche
+     - La perspective sur le parent donne la profondeur 3D ; à 90° et 270° le badge est "de profil" (très fin)
+     - 12 secondes par tour : suffisamment lent pour qu'on suive le mouvement */
+  .hero-re2020-stage {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 40px;
+    perspective: 800px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .hero-re2020 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: re2020Coin 12s linear infinite;
+  }
+  @keyframes re2020Coin {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
+  }
+  /* Faces avant et arrière du badge : chacune affiche le contenu à l'endroit.
+     L'arrière est tournée de 180° en Y, donc quand on la voit (au 2e demi-tour),
+     son texte apparaît dans le bon sens. backface-visibility cache la face arrière
+     quand on regarde l'avant et inversement → exactement comme une vraie pièce. */
+  .hero-re2020-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .hero-re2020-face-back {
+    transform: rotateY(180deg);
+  }
+  /* Anneaux qui tournent dans le plan du badge (mouvement existant des anneaux verts) */
+  .hero-re2020-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(168, 230, 190, 0.55);
+    border-radius: 50%;
+    animation: ringRotate 12s linear infinite;
+  }
+  .hero-re2020-ring::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #A8E6BE;
+    border-radius: 50%;
+    box-shadow: 0 0 16px #A8E6BE;
+    transform: translateX(-50%);
+  }
+  .hero-re2020-ring-2 {
+    inset: 12px;
+    border: 1px dashed rgba(168, 230, 190, 0.7);
+    animation: ringRotate 18s linear infinite reverse;
+  }
+  .hero-re2020-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 76px;
+    height: 76px;
+    background: var(--blanc);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(168, 230, 190, 0.5);
+    padding: 4px;
+  }
+  .hero-re2020-label {
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--vert-eco-fonce);
+    margin-bottom: 2px;
+  }
+  .hero-re2020-number {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--bleu);
+  }
+  .hero-re2020-number em {
+    color: #4A8B5C;
+    font-weight: 500;
+    font-style: normal;
+  }
+  /* Sur mobile : badge masqué (espace trop réduit) */
+  @media (max-width: 768px) {
+    .hero-re2020-stage { display: none; }
+  }
+  
+  /* Vignettes éco : placées au-dessus des pots, parfaitement visibles, taille adaptée */
+  .pot-badge { position: absolute; width: 130px; height: 130px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--blanc); font-weight: 800; text-align: center; z-index: 1; border: 4px solid rgba(255,255,255,0.15); }
+  .pot-badge-pct { font-size: 30px; font-family: var(--display); line-height: 1; }
+  .pot-badge-pct small { font-size: 16px; }
+  .pot-badge-label { font-size: 9px; letter-spacing: 1.2px; margin-top: 5px; line-height: 1.3; }
+  /* Badge BIOSOURCÉ 98 % : au-dessus du pot Algo Pro (extrême gauche, en arrière) */
+  .badge-algo { top: 22%; left: 50%; transform: translate(calc(-50% - 235px), -50%); background: #1a6e5a; box-shadow: 0 0 60px rgba(26,110,90,0.7); animation: pulseBadgeAlgo 3s ease-in-out infinite 1s; }
+  /* Badge BIOSOURCÉ 31,5 % : au-dessus du pot Titane MV (centre-gauche) */
+  .badge-biosource { top: 14%; left: 50%; transform: translate(calc(-50% - 90px), -50%); background: var(--orange); box-shadow: 0 0 60px rgba(240,127,44,0.7); animation: pulseBadgeBio 3s ease-in-out infinite; }
+  /* Badge RECYCLÉE : au-dessus du pot Comus Izi R (centre-droit, devant) */
+  .badge-recycle { top: 16%; left: 50%; transform: translate(calc(-50% + 95px), -50%); background: var(--vert-eco-fonce); box-shadow: 0 0 60px rgba(47,105,64,0.7); animation: pulseBadgeRecycle 3s ease-in-out infinite 1.5s; }
+  /* Badge COV : au-dessus du pot 45 Mat (extrême droite, en arrière) */
+  .badge-cov { top: 22%; left: 50%; transform: translate(calc(-50% + 245px), -50%); background: var(--bleu-clair); box-shadow: 0 0 60px rgba(45,78,122,0.7); animation: pulseBadgeCov 3s ease-in-out infinite 0.7s; border-color: rgba(255,255,255,0.25); }
+  @keyframes pulseBadgeAlgo { 0%,100%{transform:translate(calc(-50% - 235px), -50%) scale(1);} 50%{transform:translate(calc(-50% - 235px), -50%) scale(1.08);} }
+  @keyframes pulseBadgeBio { 0%,100%{transform:translate(calc(-50% - 90px), -50%) scale(1);} 50%{transform:translate(calc(-50% - 90px), -50%) scale(1.08);} }
+  @keyframes pulseBadgeRecycle { 0%,100%{transform:translate(calc(-50% + 95px), -50%) scale(1);} 50%{transform:translate(calc(-50% + 95px), -50%) scale(1.08);} }
+  @keyframes pulseBadgeCov { 0%,100%{transform:translate(calc(-50% + 245px), -50%) scale(1);} 50%{transform:translate(calc(-50% + 245px), -50%) scale(1.08);} }
+  
+  .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--blanc); opacity: 0.6; animation: fadeIn 2s var(--transition) 1s both, bounce 2s ease-in-out infinite 2s; }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
+  .scroll-indicator span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+  
+  section { padding: 100px 48px; }
+  .section-contained { max-width: 1440px; margin: 0 auto; }
+  .section-eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+  .section-title { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 4vw, 56px); line-height: 1.1; color: var(--bleu); margin-bottom: 24px; letter-spacing: -1px; }
+  .section-title em { color: var(--orange); font-style: italic; font-weight: 300; }
+  .section-intro { font-size: 17px; line-height: 1.7; color: var(--gris); max-width: 680px; margin-bottom: 60px; font-weight: 300; }
+  
+  /* SIGNATURE défilante avec MÉRIGNAC */
+  .signature-section { background: var(--gris-clair); padding: 40px 0; margin: 0; max-width: none; width: 100%; position: relative; overflow: hidden; }
+  .signature-track { display: flex; gap: 80px; align-items: center; animation: scroll 30s linear infinite; white-space: nowrap; }
+  @keyframes scroll { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .signature-item { font-family: var(--display); font-weight: 300; font-size: 36px; color: var(--bleu); letter-spacing: -1px; display: flex; align-items: center; gap: 80px; }
+  .signature-item em { color: var(--orange); font-style: italic; }
+  .signature-dot { width: 12px; height: 12px; background: var(--orange); border-radius: 50%; display: inline-block; }
+  
+  /* GAMMES */
+  .gammes { padding: 140px 48px; background: var(--blanc); max-width: 1440px; margin: 0 auto; position: relative; }
+  .gammes-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 80px; position: relative; }
+  /* RE 2020 placé en arrière-plan du header gammes - n'ajoute aucune hauteur, derrière le texte */
+  .gammes .hero-re2020-stage {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 180px;
+    height: 180px;
+    opacity: 1;
+    z-index: 0;
+    pointer-events: none;
+  }
+  /* Sur fond blanc, on renforce les contrastes du badge pour qu'il reste lisible */
+  .gammes .hero-re2020-ring { border-color: #4A8B5C; }
+  .gammes .hero-re2020-ring-2 { border-color: #4A8B5C; border-style: dashed; }
+  .gammes .hero-re2020-ring::before { background: #4A8B5C; box-shadow: 0 0 16px #4A8B5C; }
+  .gammes .hero-re2020-core { background: var(--blanc); box-shadow: 0 0 30px rgba(74,139,92,0.4); }
+  .gammes-header > *:not(.hero-re2020-stage) { position: relative; z-index: 2; }
+  .gammes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .gamme-card { position: relative; background: var(--gris-clair); border-radius: 32px; padding: 48px; overflow: hidden; transition: all 0.5s var(--transition); min-height: 540px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
+  .gamme-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px -20px rgba(31,58,95,0.25); }
+  .gamme-card.gamme-45 { background: linear-gradient(135deg, #15273F 0%, #2D4E7A 100%); color: var(--blanc); }
+  .gamme-card.gamme-titane { background: linear-gradient(135deg, #FFC58A 0%, #F89B5A 100%); }
+  .gamme-card-bg { position: absolute; inset: 0; pointer-events: none; opacity: 0.08; }
+  .gamme-card-bg .pattern-45 { font-family: var(--display); font-size: 480px; font-weight: 700; position: absolute; bottom: -100px; right: -50px; color: var(--blanc); line-height: 1; }
+  .gamme-card-bg .pattern-titane { font-family: var(--display); font-size: 200px; font-weight: 300; font-style: italic; position: absolute; bottom: 40px; right: 30px; color: var(--bleu); line-height: 1; }
+  .gamme-card-content { position: relative; z-index: 2; }
+  .gamme-tag { display: inline-block; padding: 6px 14px; background: rgba(255,255,255,0.7); color: var(--bleu); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 50px; margin-bottom: 24px; }
+  .gamme-45 .gamme-tag { background: rgba(240,127,44,0.2); color: var(--orange-clair); }
+  .gamme-name { font-family: var(--display); font-size: 56px; font-weight: 500; line-height: 1; margin-bottom: 18px; letter-spacing: -1px; }
+  .gamme-titane .gamme-name { color: var(--bleu); }
+  .gamme-name-accent { color: var(--orange); font-style: italic; font-weight: 300; }
+  .gamme-description { font-size: 16px; line-height: 1.6; margin-bottom: 32px; max-width: 380px; font-weight: 300; }
+  .gamme-titane .gamme-description { color: var(--bleu-fonce); }
+  .gamme-45 .gamme-description { color: rgba(255,255,255,0.85); }
+  .gamme-products { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+  .gamme-product-chip { padding: 6px 14px; background: rgba(255,255,255,0.6); border-radius: 50px; font-size: 12px; font-weight: 500; color: var(--bleu); text-decoration: none; transition: all 0.2s ease; cursor: pointer; }
+  .gamme-product-chip:hover { background: var(--blanc); transform: translateY(-2px); box-shadow: 0 4px 12px -2px rgba(31,58,95,0.2); }
+  .gamme-45 .gamme-product-chip { background: rgba(255,255,255,0.12); color: var(--blanc); }
+  .gamme-45 .gamme-product-chip:hover { background: rgba(255,255,255,0.25); }
+  .gamme-cta { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; text-decoration: none; padding: 14px 24px; background: var(--bleu); color: var(--blanc); border-radius: 50px; transition: all 0.3s var(--transition); width: fit-content; z-index: 5; position: relative; }
+  .gamme-45 .gamme-cta { background: var(--orange); }
+  .gamme-cta:hover { transform: translateX(4px); }
+  .gamme-45 .gamme-cta:hover { background: var(--blanc); color: var(--bleu); }
+  .gamme-card .badge-bio { position: absolute; top: 30px; right: 30px; width: 90px; height: 90px; background: var(--vert-eco); color: var(--blanc); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; text-align: center; box-shadow: 0 12px 30px -8px rgba(74,139,92,0.6); z-index: 3; }
+  .badge-bio-pct { font-size: 24px; font-family: var(--display); line-height: 1; }
+  .badge-bio-label { font-size: 8px; letter-spacing: 1px; margin-top: 4px; }
+  .gamme-card .badge-cov-gamme { position: absolute; top: 30px; right: 30px; width: 90px; height: 90px; background: var(--bleu); color: var(--blanc); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; text-align: center; box-shadow: 0 12px 30px -8px rgba(31,58,95,0.55); z-index: 3; padding: 6px; }
+  .badge-cov-gamme-value { font-size: 20px; font-family: var(--display); line-height: 1; }
+  .badge-cov-gamme-label { font-size: 8px; letter-spacing: 1px; margin-top: 3px; }
+  
+  /* COLORIMÉTRIE - éventail 3D nuancier */
+  /* SECTION NUANCIERS - full width avec contenu centré */
+  .colorimetrie { background: var(--gris-fonce); padding: 80px 48px; max-width: none; margin: 0; color: var(--blanc); position: relative; overflow: hidden; width: 100%; }
+  .colorimetrie-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
+  .colorimetrie-header { display: flex; flex-direction: column; align-items: center; gap: 24px; margin-bottom: 40px; }
+  .colorimetrie .section-eyebrow { color: var(--orange); }
+  .colorimetrie .section-title { color: var(--blanc); max-width: 800px; }
+  .colorimetrie .section-title em { color: var(--orange-clair); }
+  .colorimetrie-intro { color: rgba(255,255,255,0.7); font-size: 16px; line-height: 1.7; font-weight: 300; max-width: 720px; margin: 0 auto; }
+  /* TRIO : photo Chromatic | texte central | éventail dynamique */
+  .colorimetrie-trio { max-width: 1400px; margin: 0 auto 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; align-items: center; }
+  .colorimetrie-trio > * { min-width: 0; }
+  .colorimetrie-trio-text { text-align: center; padding: 0 8px; }
+  
+  /* Nuancier Chromatic - éventail réel sans fond */
+  .chromatic-photo-wrap { display: flex; justify-content: center; align-items: center; margin: 0 auto; padding: 10px; perspective: 1200px; min-height: 320px; }
+  .chromatic-photo {
+    width: 340px;
+    height: 320px;
+    background-image: url('images/chromatic-photo.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: floatChromatic 6s ease-in-out infinite;
+    filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5));
+    position: relative;
+    transform-origin: center top;
+  }
+  @keyframes floatChromatic {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+  }
+  .chromatic-photo:hover { animation-play-state: paused; }
+  .chromatic-photo-glow {
+    position: absolute;
+    inset: -40px;
+    background: radial-gradient(ellipse at center, rgba(240,127,44,0.18) 0%, transparent 60%);
+    pointer-events: none;
+    animation: pulseGlow 4s ease-in-out infinite;
+    z-index: -1;
+  }
+  @keyframes pulseGlow { 0%,100%{opacity:0.6; transform:scale(1);} 50%{opacity:1; transform:scale(1.1);} }
+  
+  .nuancier-stage { position: relative; height: 320px; perspective: 1500px; margin: 0 auto; max-width: 420px; width: 100%; display: block; text-decoration: none; cursor: pointer; }
+  .nuancier-fan { position: relative; width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: center; transform-style: preserve-3d; }
+  .swatch-card { position: absolute; bottom: 30px; left: 50%; margin-left: -38px; width: 76px; height: 200px; border-radius: 6px; box-shadow: 0 14px 36px rgba(0,0,0,0.4); transform-origin: bottom center; transition: transform 0.6s var(--transition), box-shadow 0.4s; cursor: pointer; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; }
+  .swatch-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, transparent 65%, rgba(0,0,0,0.5) 100%); pointer-events: none; }
+  .swatch-name { color: white; font-family: var(--display); font-size: 10px; font-weight: 500; line-height: 1.15; position: relative; z-index: 2; margin-bottom: 2px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+  .swatch-code { color: rgba(255,255,255,0.8); font-size: 8px; font-weight: 600; letter-spacing: 0.5px; position: relative; z-index: 2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+  
+  .swatch-card:nth-child(1) { transform: rotate(-36deg) translateY(-20px); animation: fanFloat 8s ease-in-out infinite 0s; }
+  .swatch-card:nth-child(2) { transform: rotate(-28deg) translateY(-26px); animation: fanFloat 8s ease-in-out infinite 0.2s; }
+  .swatch-card:nth-child(3) { transform: rotate(-20deg) translateY(-30px); animation: fanFloat 8s ease-in-out infinite 0.4s; }
+  .swatch-card:nth-child(4) { transform: rotate(-12deg) translateY(-32px); animation: fanFloat 8s ease-in-out infinite 0.6s; }
+  .swatch-card:nth-child(5) { transform: rotate(-4deg) translateY(-34px); animation: fanFloat 8s ease-in-out infinite 0.8s; }
+  .swatch-card:nth-child(6) { transform: rotate(4deg) translateY(-34px); animation: fanFloat 8s ease-in-out infinite 1s; }
+  .swatch-card:nth-child(7) { transform: rotate(12deg) translateY(-32px); animation: fanFloat 8s ease-in-out infinite 1.2s; }
+  .swatch-card:nth-child(8) { transform: rotate(20deg) translateY(-30px); animation: fanFloat 8s ease-in-out infinite 1.4s; }
+  .swatch-card:nth-child(9) { transform: rotate(28deg) translateY(-26px); animation: fanFloat 8s ease-in-out infinite 1.6s; }
+  .swatch-card:nth-child(10) { transform: rotate(36deg) translateY(-20px); animation: fanFloat 8s ease-in-out infinite 1.8s; }
+  @keyframes fanFloat { 0%,100%{translate:0 0;} 50%{translate:0 -8px;} }
+  
+  .nuancier-stage:hover .swatch-card:nth-child(1) { transform: rotate(-60deg) translateY(-34px) translateX(-26px); }
+  .nuancier-stage:hover .swatch-card:nth-child(2) { transform: rotate(-46deg) translateY(-40px) translateX(-20px); }
+  .nuancier-stage:hover .swatch-card:nth-child(3) { transform: rotate(-32deg) translateY(-44px) translateX(-14px); }
+  .nuancier-stage:hover .swatch-card:nth-child(4) { transform: rotate(-18deg) translateY(-48px) translateX(-6px); }
+  .nuancier-stage:hover .swatch-card:nth-child(5) { transform: rotate(-6deg) translateY(-50px); }
+  .nuancier-stage:hover .swatch-card:nth-child(6) { transform: rotate(6deg) translateY(-50px); }
+  .nuancier-stage:hover .swatch-card:nth-child(7) { transform: rotate(18deg) translateY(-48px) translateX(6px); }
+  .nuancier-stage:hover .swatch-card:nth-child(8) { transform: rotate(32deg) translateY(-44px) translateX(14px); }
+  .nuancier-stage:hover .swatch-card:nth-child(9) { transform: rotate(46deg) translateY(-40px) translateX(20px); }
+  .nuancier-stage:hover .swatch-card:nth-child(10) { transform: rotate(60deg) translateY(-34px) translateX(26px); }
+  
+  .swatches-strip-wrap { overflow: hidden; padding: 24px 0; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); margin: 30px -48px 30px; }
+  .swatches-strip { display: flex; gap: 24px; animation: scrollSwatch 30s linear infinite; white-space: nowrap; }
+  @keyframes scrollSwatch { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .swatch-pill { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.05); padding: 12px 20px 12px 12px; border-radius: 50px; flex-shrink: 0; transition: all 0.3s; text-decoration: none; cursor: pointer; }
+  .swatch-pill:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+  .swatch-dot { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .swatch-pill-text { color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 500; }
+  .swatch-pill-code { color: rgba(255,255,255,0.5); font-size: 11px; margin-top: 2px; }
+  
+  .colorimetrie-stats { display: flex; justify-content: center; gap: 60px; margin-top: 40px; flex-wrap: wrap; }
+  .stat-item { text-align: center; }
+  .stat-number { font-family: var(--display); font-size: 48px; color: var(--orange-clair); font-weight: 500; line-height: 1; }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 8px; text-transform: uppercase; letter-spacing: 1.5px; }
+  
+  /* ENGAGEMENT ÉCO - full width avec contenu centré */
+  .eco { background: var(--vert-eco-fonce); color: var(--blanc); padding: 60px 48px; max-width: none; margin: 0; position: relative; overflow: hidden; width: 100%; }
+  .eco-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
+  .eco-header { text-align: center; margin-bottom: 30px; }
+  .eco .section-eyebrow { color: rgba(255,255,255,0.7); }
+  .eco .section-title { color: var(--blanc); font-size: clamp(28px, 3vw, 40px); max-width: 720px; margin: 0 auto 16px; }
+  .eco .section-title em { color: #A8E6BE; }
+  .eco .section-intro { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; font-size: 15px; }
+  
+  .eco-piliers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+  .pilier-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 24px 20px; text-align: center; transition: all 0.4s var(--transition); cursor: pointer; position: relative; overflow: hidden; }
+  .pilier-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: rgba(168,230,190,0.5); }
+  
+  .pilier-stat-3d { perspective: 800px; height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+  .pilier-stat-rotator { font-family: var(--display); font-size: 50px; font-weight: 500; color: #A8E6BE; line-height: 1; text-shadow: 1px 1px 0 rgba(168,230,190,0.4), 2px 2px 0 rgba(168,230,190,0.3), 3px 3px 0 rgba(168,230,190,0.2), 4px 4px 0 rgba(168,230,190,0.1), 0 8px 20px rgba(168,230,190,0.3); transform-style: preserve-3d; animation: rotate3d 6s ease-in-out infinite; display: inline-block; }
+  .pilier-card:nth-child(2) .pilier-stat-rotator { animation-delay: 0.5s; }
+  .pilier-card:nth-child(3) .pilier-stat-rotator { animation-delay: 1s; }
+  .pilier-card:nth-child(4) .pilier-stat-rotator { animation-delay: 1.5s; }
+  @keyframes rotate3d { 0%,100%{transform:rotateY(0) rotateX(0);} 25%{transform:rotateY(15deg) rotateX(-5deg);} 50%{transform:rotateY(0) rotateX(0);} 75%{transform:rotateY(-15deg) rotateX(-5deg);} }
+  
+  .pilier-icon { width: 44px; height: 44px; margin: 0 auto 12px; background: rgba(168,230,190,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .pilier-name { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--blanc); letter-spacing: 1px; }
+  .pilier-description { font-size: 12px; line-height: 1.5; color: rgba(255,255,255,0.7); font-weight: 300; }
+  .pilier-brands { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 10px; color: rgba(168,230,190,0.8); font-weight: 600; letter-spacing: 1px; }
+  
+  .re2020-mini { display: inline-flex; align-items: center; gap: 14px; background: rgba(168,230,190,0.1); border: 1px solid rgba(168,230,190,0.3); padding: 10px 20px; border-radius: 50px; margin-top: 40px; }
+  .re2020-mini-circle { width: 36px; height: 36px; border-radius: 50%; background: #A8E6BE; color: var(--vert-eco-fonce); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 14px; font-weight: 700; animation: rotateSlow 20s linear infinite; }
+  @keyframes rotateSlow { from{transform:rotate(0);} to{transform:rotate(360deg);} }
+  .re2020-mini-text { color: var(--blanc); font-size: 13px; font-weight: 500; letter-spacing: 1px; }
+  .re2020-mini-text em { color: #A8E6BE; font-style: normal; font-weight: 700; }
+  
+  /* GRAND BADGE RE2020 ANIMÉ (réintégré de la V1) */
+  .re2020-showcase { display: flex; justify-content: center; margin: 20px 0 30px; }
+  .re2020-badge { width: 180px; height: 180px; position: relative; }
+  .re2020-ring { position: absolute; inset: 0; border: 2px solid rgba(168, 230, 190, 0.3); border-radius: 50%; animation: ringRotate 20s linear infinite; }
+  @keyframes ringRotate { from{transform:rotate(0);} to{transform:rotate(360deg);} }
+  .re2020-ring::before { content: ''; position: absolute; top: -6px; left: 50%; width: 12px; height: 12px; background: #A8E6BE; border-radius: 50%; box-shadow: 0 0 20px #A8E6BE; transform: translateX(-50%); }
+  .re2020-ring-2 { inset: 20px; border: 1px dashed rgba(168, 230, 190, 0.5); animation: ringRotate 30s linear infinite reverse; }
+  .re2020-core { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 118px; height: 118px; background: var(--blanc); color: var(--vert-eco-fonce); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 0 60px rgba(168, 230, 190, 0.4); }
+  .re2020-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; color: var(--vert-eco-fonce); margin-bottom: 4px; }
+  .re2020-number { font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1; color: var(--bleu); }
+  .re2020-sub { font-size: 8px; color: var(--gris); letter-spacing: 1.2px; text-transform: uppercase; margin-top: 4px; font-weight: 600; }
+  .re2020-leaves { position: absolute; inset: -14px; pointer-events: none; }
+  .leaf { position: absolute; width: 14px; height: 14px; background: #A8E6BE; border-radius: 0 100% 0 100%; animation: leafFloat 8s ease-in-out infinite; opacity: 0.6; }
+  .leaf:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+  .leaf:nth-child(2) { top: 70%; right: 10%; animation-delay: 1s; transform: rotate(45deg); }
+  .leaf:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 2s; transform: rotate(-30deg); }
+  .leaf:nth-child(4) { top: 20%; right: 5%; animation-delay: 3s; transform: rotate(90deg); }
+  @keyframes leafFloat { 0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(15px,-20px) rotate(45deg);} }
+  
+  /* MARQUES */
+  .marques { padding: 140px 48px; max-width: 1440px; margin: 0 auto; }
+  .marques-header { text-align: center; margin-bottom: 60px; }
+  .marques-header .section-title { max-width: 720px; margin-left: auto; margin-right: auto; }
+  .marques-header .section-intro { margin-left: auto; margin-right: auto; }
+  .marques-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .marque-card { background: var(--blanc); border: 1px solid rgba(31,58,95,0.08); border-radius: 20px; padding: 20px 22px; text-align: center; transition: all 0.4s var(--transition); cursor: pointer; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit; }
+  .marque-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--transition); }
+  .marque-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -16px rgba(31,58,95,0.15); border-color: transparent; }
+  .marque-card:hover::before { transform: scaleX(1); }
+  .marque-logo { height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-family: var(--display); font-size: 28px; font-weight: 600; color: var(--bleu); }
+  /* Variante : carte avec vrai logo image au lieu du logo typographique stylisé.
+     L'espace logo est agrandi puisque la description est supprimée. */
+  .marque-card.has-real-logo .marque-logo { height: 90px; margin-bottom: 10px; }
+  .marque-logo-img { max-height: 75px; max-width: 85%; width: auto; height: auto; object-fit: contain; transition: transform 0.3s var(--transition); }
+  .marque-card.has-real-logo:hover .marque-logo-img { transform: scale(1.05); }
+  /* Variante : logo blanc/clair affiché sur un fond sombre pour rester lisible */
+  .marque-card.has-real-logo .marque-logo.logo-dark-bg { background: var(--bleu); border-radius: 12px; padding: 10px; }
+  .marque-card.has-real-logo .marque-logo.logo-black-bg { background: #0A0A0A; border-radius: 12px; padding: 10px; }
+  /* Logos stylisés des marques partenaires (versions typographiques évocatrices) */
+  .logo-mark { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 6px; transition: transform 0.3s var(--transition); }
+  .marque-card:hover .logo-mark { transform: scale(1.05); }
+  .logo-mark .logo-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-family: var(--display); font-weight: 700; font-size: 16px; color: white; flex-shrink: 0; }
+  .logo-mark .logo-text { font-family: var(--display); font-weight: 700; letter-spacing: 1px; font-size: 22px; line-height: 1; }
+  .logo-mark .logo-sub { font-size: 9px; letter-spacing: 2px; opacity: 0.6; margin-top: 2px; font-weight: 500; }
+  .logo-soframap .logo-icon { background: linear-gradient(135deg, #C8102E 0%, #8B0000 100%); }
+  .logo-soframap .logo-text { color: #1a1a1a; }
+  .logo-soframap .logo-text em { color: #C8102E; font-style: normal; }
+  .logo-sofec .logo-icon { background: linear-gradient(135deg, #0066B3 0%, #003F6B 100%); }
+  .logo-sofec .logo-text { color: #003F6B; }
+  .logo-sigma .logo-icon { background: linear-gradient(135deg, #E30613 0%, #8B0000 100%); border-radius: 4px; }
+  .logo-sigma .logo-text { color: #1a1a1a; letter-spacing: 2px; }
+  .logo-lauragais .logo-icon { background: linear-gradient(135deg, #6A8E3D 0%, #4A6B27 100%); }
+  .logo-lauragais .logo-text { color: #4A6B27; font-size: 19px; }
+  .logo-comus .logo-icon { background: linear-gradient(135deg, #4A8B5C 0%, #2F6940 100%); }
+  .logo-comus .logo-text { color: #2F6940; }
+  .logo-comus .logo-text em { color: var(--orange); font-style: normal; font-size: 14px; margin-left: 4px; vertical-align: super; }
+  .logo-dragopaint .logo-icon { background: linear-gradient(135deg, #FF6B35 0%, #C8102E 100%); border-radius: 4px; transform: rotate(-3deg); }
+  .logo-dragopaint .logo-text { color: #1a1a1a; font-size: 18px; }
+  .logo-argile .logo-icon { background: linear-gradient(135deg, #8B7355 0%, #5C4A38 100%); }
+  .logo-argile .logo-text { color: #5C4A38; font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 24px; letter-spacing: 0.5px; }
+  .marque-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); padding: 4px 10px; background: rgba(240,127,44,0.1); border-radius: 50px; margin-bottom: 0; }
+  .marque-eco .marque-tag { color: var(--vert-eco); background: rgba(74,139,92,0.1); }
+  .marque-premium .marque-tag { color: var(--bleu); background: rgba(31,58,95,0.08); }
+  .marque-description { font-size: 13px; color: var(--gris); line-height: 1.5; font-weight: 300; }
+  
+  /* MAGASINS */
+  .magasins { padding: 140px 48px; background: var(--gris-clair); margin: 0; max-width: none; width: 100%; }
+  .magasins-inner { max-width: 1440px; margin: 0 auto; }
+  .magasins-header { text-align: center; margin-bottom: 60px; }
+  .magasins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .magasin-card { background: var(--blanc); border-radius: 28px; overflow: hidden; transition: all 0.4s var(--transition); }
+  .magasin-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -20px rgba(31,58,95,0.2); }
+  .magasin-image { height: 320px; background-size: cover; background-position: center; position: relative; overflow: hidden; }
+  .magasin-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .magasin-badge { position: absolute; top: 20px; left: 20px; background: var(--blanc); color: var(--bleu); padding: 8px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+  .magasin-body { padding: 36px; }
+  .magasin-name { font-family: var(--display); font-size: 32px; color: var(--bleu); margin-bottom: 8px; font-weight: 500; }
+  .magasin-name em { color: var(--orange); font-style: italic; font-weight: 300; }
+  .magasin-info { display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
+  .magasin-info-item { display: flex; align-items: flex-start; gap: 14px; color: var(--gris); font-size: 14px; line-height: 1.5; }
+  .magasin-icon { width: 32px; height: 32px; background: var(--bleu-pale); color: var(--bleu); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+  .magasin-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--orange); text-decoration: none; margin-top: 8px; transition: gap 0.3s; }
+  .magasin-cta:hover { gap: 14px; }
+  .magasin-horaires { margin: 0 0 20px; border-top: 1px solid rgba(31,58,95,0.08); padding-top: 18px; }
+  .magasin-horaires-title { font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--bleu); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .magasin-horaires-title::before { content: '🕐'; font-size: 13px; }
+  .magasin-horaires-grid { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; font-size: 13px; }
+  .magasin-h-day { color: var(--bleu); font-weight: 500; white-space: nowrap; }
+  .magasin-h-time { color: var(--gris); }
+  .magasin-h-closed { color: var(--gris); opacity: 0.5; font-style: italic; }
+  
+  /* SERVICES */
+  .services { padding: 140px 48px; max-width: 1440px; margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px; }
+  .service-card { padding: 36px 32px; background: var(--blanc); border: 1px solid rgba(31,58,95,0.08); border-radius: 24px; transition: all 0.4s var(--transition); }
+  .service-card:hover { border-color: var(--orange); transform: translateY(-6px); box-shadow: 0 20px 40px -16px rgba(240,127,44,0.2); }
+  .service-icon { width: 56px; height: 56px; background: var(--bleu-pale); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--bleu); margin-bottom: 24px; font-size: 24px; }
+  .service-card:hover .service-icon { background: var(--orange); color: var(--blanc); }
+  .service-name { font-family: var(--display); font-size: 22px; color: var(--bleu); margin-bottom: 12px; font-weight: 500; }
+  .service-description { font-size: 14px; color: var(--gris); line-height: 1.6; font-weight: 300; }
+  
+  /* FOOTER */
+  footer { background: var(--bleu-fonce); color: var(--blanc); padding: 80px 48px 32px; margin: 0; max-width: none; width: 100%; }
+  .footer-inner { max-width: 1440px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-brand-text { font-family: var(--display); font-size: 32px; line-height: 1.2; margin-bottom: 24px; color: var(--blanc); font-weight: 300; }
+  .footer-brand-text em { color: var(--orange); font-style: italic; }
+  .footer-desc { font-size: 14px; opacity: 0.7; line-height: 1.6; max-width: 380px; font-weight: 300; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom { padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.5); flex-wrap: wrap; gap: 16px; }
+  .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 12px; transition: color 0.3s; }
+  .footer-bottom a:hover { color: var(--blanc); }
+  .footer-theolaur { font-size: 11px; opacity: 0.6; letter-spacing: 1px; }
+  
+  /* ===== SECTION AVIS GOOGLE ===== */
+  .avis { background: var(--bleu-pale); padding: 50px 48px; max-width: none; margin: 0; width: 100%; }
+  .avis-inner { max-width: 1440px; margin: 0 auto; }
+  .avis-header { text-align: center; margin-bottom: 30px; }
+  .avis-header .section-title { max-width: 720px; margin: 0 auto 14px; }
+  .avis-google-badge { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: var(--blanc); border-radius: 50px; font-size: 12px; color: var(--gris); margin-top: 8px; }
+  .avis-google-badge svg { width: 18px; height: 18px; }
+  
+  /* Bandeau résumé : 2 magasins côte-à-côte avec leur note */
+  .avis-stores { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 880px; margin: 0 auto 28px; }
+  .avis-store-card { background: var(--blanc); border-radius: 14px; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: transform 0.3s var(--transition); box-shadow: 0 4px 14px -6px rgba(31,58,95,0.1); }
+  .avis-store-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px -16px rgba(31,58,95,0.2); }
+  .avis-store-name { font-family: var(--display); font-size: 18px; color: var(--bleu); font-weight: 500; line-height: 1.15; }
+  .avis-store-name em { color: var(--orange); font-style: italic; }
+  .avis-store-loc { font-size: 11px; color: var(--gris); margin-top: 2px; letter-spacing: 1px; text-transform: uppercase; }
+  .avis-store-rating { text-align: right; flex-shrink: 0; }
+  .avis-store-score { font-family: var(--display); font-size: 30px; color: var(--bleu); font-weight: 600; line-height: 1; }
+  .avis-store-score small { font-size: 16px; opacity: 0.5; font-weight: 400; }
+  .avis-store-stars { color: #FBBC04; font-size: 13px; letter-spacing: 1.5px; margin-top: 3px; }
+  .avis-store-count { font-size: 10px; color: var(--gris); margin-top: 3px; }
+  
+  /* Carrousel des avis textuels */
+  .avis-carousel-wrap { position: relative; max-width: 1200px; margin: 0 auto; overflow: hidden; }
+  .avis-carousel { display: flex; gap: 20px; animation: scrollAvis 50s linear infinite; width: max-content; }
+  .avis-carousel-wrap:hover .avis-carousel { animation-play-state: paused; }
+  @keyframes scrollAvis { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .avis-card { background: var(--blanc); border: 1px solid rgba(31,58,95,0.08); border-radius: 14px; padding: 18px 20px; width: 300px; flex-shrink: 0; display: flex; flex-direction: column; gap: 9px; box-shadow: 0 4px 14px -4px rgba(31,58,95,0.06); }
+  .avis-card-head { display: flex; align-items: center; gap: 10px; }
+  .avis-card-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #4285F4 0%, #34A853 100%); color: var(--blanc); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .avis-card-meta { flex: 1; min-width: 0; }
+  .avis-card-name { font-weight: 600; font-size: 13px; color: var(--bleu); }
+  .avis-card-date { font-size: 10px; color: var(--gris); margin-top: 1px; }
+  .avis-card-stars { color: #FBBC04; font-size: 12px; letter-spacing: 1px; }
+  .avis-card-text { font-size: 12px; line-height: 1.5; color: var(--gris); font-weight: 300; }
+  .avis-card-store { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); font-weight: 600; padding-top: 6px; border-top: 1px solid rgba(31,58,95,0.06); }
+  
+  /* ===== BADGE POPUP PERSISTANT EN BAS À DROITE ===== */
+  .google-floating { position: fixed; bottom: 24px; right: 24px; background: var(--blanc); border: 1px solid rgba(31,58,95,0.1); border-radius: 16px; padding: 20px 20px 20px 18px; display: flex; align-items: center; gap: 14px; box-shadow: 0 12px 32px -8px rgba(31,58,95,0.25); z-index: 9999; max-width: 290px; transition: transform 0.4s var(--transition), opacity 0.4s; cursor: pointer; text-decoration: none; color: inherit; }
+  .google-floating:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -8px rgba(31,58,95,0.3); }
+  .google-floating.hidden { transform: translateY(150%); opacity: 0; pointer-events: none; }
+  .google-floating-icon { width: 42px; height: 42px; flex-shrink: 0; }
+  .google-floating-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+  .google-floating-label { font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gris); font-weight: 600; }
+  .google-floating-score { display: flex; align-items: baseline; gap: 8px; }
+  .google-floating-num { font-family: var(--display); font-size: 26px; color: var(--bleu); font-weight: 600; line-height: 1; }
+  .google-floating-stars { color: #FBBC04; font-size: 14px; letter-spacing: 1px; }
+  .google-floating-sub { font-size: 11px; color: var(--gris); }
+  .google-floating-close { position: absolute; top: -8px; right: -8px; width: 22px; height: 22px; border-radius: 50%; background: var(--bleu); color: var(--blanc); border: 2px solid var(--blanc); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; line-height: 1; font-weight: 600; padding: 0; transition: transform 0.2s; }
+  .google-floating-close:hover { transform: scale(1.15); }
+  @media (max-width: 600px) {
+    .google-floating { bottom: 14px; right: 14px; padding: 14px 16px 14px 14px; max-width: 240px; }
+    .google-floating-num { font-size: 22px; }
+    .google-floating-icon { width: 36px; height: 36px; }
+  }
+  
+  .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--transition); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { height: 400px; }
+    .gammes-grid, .magasins-grid, .gammes-header, .colorimetrie-header { grid-template-columns: 1fr; }
+    .avis-stores { grid-template-columns: 1fr; }
+    .marques-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .eco-piliers { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .nav, .nav-wrap { display: none; }
+    .header-inner, section, .signature-section, .eco, .colorimetrie, .magasins, .avis, footer { padding-left: 24px; padding-right: 24px; }
+    .magasins, .eco, .colorimetrie, .avis, footer, .signature-section { margin-left: -24px; margin-right: -24px; }
+    .logo-symbol { width: 70px; height: 88px; }
+    .logo-text { font-size: 32px; }
+    .logo-baseline { font-size: 12px; }
+    .logo-since { font-size: 11px; gap: 6px; }
+    .logo-since-dash { width: 12px; }
+    .chromatic-photo { width: 240px; height: 220px; }
+    .colorimetrie-trio { grid-template-columns: 1fr; gap: 30px; }
+    .nuancier-stage { max-width: 380px; }
+    .pot-badge { width: 110px; height: 110px; }
+    .pot-badge-pct { font-size: 26px; }
+    .pot-badge-pct small { font-size: 14px; }
+    .pot-badge-label { font-size: 8px; margin-top: 4px; }
+    /* En mobile : on resserre les 4 pots et on réduit leur taille (mêmes proportions de perspective) */
+    .pot-algo { width: 130px; transform: translate(calc(-50% - 150px), calc(-50% - 10px)); }
+    .pot-titane-mv { width: 140px; transform: translate(calc(-50% - 60px), -50%); }
+    .pot-izi-r { width: 145px; transform: translate(calc(-50% + 65px), calc(-50% + 5px)); }
+    .pot-45-mat { width: 110px; transform: translate(calc(-50% + 160px), calc(-50% - 8px)); }
+    /* Recaler les badges en mobile + désactiver l'animation de pulse (les keyframes desktop ne match plus) */
+    .badge-cov, .badge-biosource, .badge-algo, .badge-recycle { animation: none; }
+    .badge-algo { transform: translate(calc(-50% - 150px), -50%); }
+    .badge-biosource { transform: translate(calc(-50% - 60px), -50%); }
+    .badge-recycle { transform: translate(calc(-50% + 65px), -50%); }
+    .badge-cov { transform: translate(calc(-50% + 160px), -50%); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER avec LOGO AGRANDI -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <svg class="logo-symbol" viewBox="0 0 100 120">
+        <rect x="20" y="20" width="65" height="80" fill="#1F3A5F" rx="2"/>
+        <path d="M 8 5 L 18 5 L 22 30 L 12 30 Z" fill="#F07F2C"/>
+        <text x="52" y="80" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">a</text>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-text">l'atelier</span>
+        <span class="logo-baseline">MARCHAND DE COULEURS</span>
+        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+      </div>
+    </a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="gammes.html">Nos gammes peintures</a>
+        <a href="nuanciers.html">Nuanciers</a>
+        <a href="#eco">Engagement éco</a>
+        <a href="revetement-mural.html">Revêtement mural</a>
+        <a href="revetement-sol.html">Revêtement de sol</a>
+        <a href="documents.html">Documents techniques</a>
+        <a href="#equipe">L'équipe L'ATELIER</a>
+        <a href="#" class="nav-cta">Espace pro</a>
+      </nav>
+      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- HERO avec IZI R Velours et 2 badges -->
+<section class="hero">
+  <div class="hero-circle circle-1"></div>
+  <div class="hero-circle circle-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Nos peintures <em>éco-responsables</em>,<br>
+        créées et fabriquées<br>
+        <span class="hero-title-accent">en France.</span>
+      </h1>
+      <p class="hero-subtitle">
+        L'Atelier est marchand de couleurs en Gironde. Nous concevons nos propres gammes — <strong>L'Atelier 45</strong> et <strong>Titane Hydro</strong> — et distribuons les meilleures peintures techniques et bas carbone du marché. Deux magasins, une passion : la couleur qui dure.
+      </p>
+      <div class="hero-actions">
+        <a href="gammes.html" class="btn btn-primary">Découvrir nos gammes<span class="btn-arrow">→</span></a>
+        <a href="#eco" class="btn btn-secondary">🌿 Engagement bas carbone</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="pot-badge badge-cov">
+        <div class="pot-badge-pct">−1<small>g/L</small></div>
+        <div class="pot-badge-label">COV<br>L'ATELIER 45</div>
+      </div>
+      <div class="pot-badge badge-biosource">
+        <div class="pot-badge-pct">31<small>,5%</small></div>
+        <div class="pot-badge-label">BIOSOURCÉE<br>TITANE MV</div>
+      </div>
+      <div class="pot-badge badge-recycle">
+        <div class="pot-badge-pct">56%</div>
+        <div class="pot-badge-label">RECYCLÉE<br>COMUS IZI R</div>
+      </div>
+      <div class="pot-badge badge-algo">
+        <div class="pot-badge-pct">98<small>%</small></div>
+        <div class="pot-badge-label">BIOSOURCÉE<br>ALGO PRO</div>
+      </div>
+      <!-- Badge RE2020 déplacé vers la section "Nos gammes propres" -->
+      <div class="pots-stack">
+        <!-- Vraies photos détourées des pots -->
+        <img class="pot-3d pot-45-mat" src="images/pot-atelier-45-mat.webp" alt="Pot L'Atelier 45 MAT 16L - Peinture acrylique">
+        <img class="pot-3d pot-titane-mv" src="images/pot-titane-hydro-mv.webp" alt="Pot TITANE Hydro MV evo 15L - L'Atelier">
+        <img class="pot-3d pot-izi-r" src="images/pot-comus-izi-r.webp" alt="Pot Comus IZI R Velours - Peinture éco-respectueuse">
+        <img class="pot-3d pot-algo" src="images/pot-algo-pro-velours.webp" alt="Pot Algo Pro Velours 10L - Peinture biosourcée aux algues">
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <svg width="12" height="20" viewBox="0 0 12 20" fill="none"><path d="M6 0V18M6 18L1 13M6 18L11 13" stroke="white" stroke-width="1.5"/></svg>
+  </div>
+</section>
+
+<!-- SIGNATURE défilante avec MÉRIGNAC -->
+<div class="signature-section">
+  <div class="signature-track">
+    <div class="signature-item">
+      <span>Marchand de couleurs</span><span class="signature-dot"></span>
+      <em>Bassin d'Arcachon</em><span class="signature-dot"></span>
+      <span>MÉRIGNAC</span><span class="signature-dot"></span>
+      <em>Fabrication française</em><span class="signature-dot"></span>
+      <span>Bas carbone</span><span class="signature-dot"></span>
+      <em>Depuis 2011</em><span class="signature-dot"></span>
+    </div>
+    <div class="signature-item">
+      <span>Marchand de couleurs</span><span class="signature-dot"></span>
+      <em>Bassin d'Arcachon</em><span class="signature-dot"></span>
+      <span>MÉRIGNAC</span><span class="signature-dot"></span>
+      <em>Fabrication française</em><span class="signature-dot"></span>
+      <span>Bas carbone</span><span class="signature-dot"></span>
+      <em>Depuis 2011</em><span class="signature-dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- NOS GAMMES -->
+<section class="gammes" id="gammes">
+  <div class="gammes-header reveal">
+    <!-- Badge RE2020 en arrière-plan, centré derrière le texte -->
+    <div class="hero-re2020-stage" aria-hidden="true">
+      <div class="hero-re2020">
+        <div class="hero-re2020-face">
+          <div class="hero-re2020-ring"></div>
+          <div class="hero-re2020-ring hero-re2020-ring-2"></div>
+          <div class="hero-re2020-core">
+            <div class="hero-re2020-label">CONFORME</div>
+            <div class="hero-re2020-number">RE <em>2020</em></div>
+          </div>
+        </div>
+        <div class="hero-re2020-face hero-re2020-face-back">
+          <div class="hero-re2020-ring"></div>
+          <div class="hero-re2020-ring hero-re2020-ring-2"></div>
+          <div class="hero-re2020-core">
+            <div class="hero-re2020-label">CONFORME</div>
+            <div class="hero-re2020-number">RE <em>2020</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-eyebrow">— Nos gammes propres</div>
+      <h2 class="section-title">Deux gammes,<br><em>une signature</em></h2>
+    </div>
+    <p class="section-intro">
+      Conçues avec notre partenaire fabricant français Théolaur, nos gammes L'Atelier 45 et Titane Hydro combinent performance professionnelle, respect de l'environnement et identité visuelle forte. Chaque produit pensé pour le quotidien des artisans.
+    </p>
+  </div>
+  <div class="gammes-grid">
+    <article class="gamme-card gamme-45 reveal">
+      <div class="gamme-card-bg"><div class="pattern-45">45</div></div>
+      <div class="badge-cov-gamme">
+        <div class="badge-cov-gamme-value">&minus;1<small>g/L</small></div>
+        <div class="badge-cov-gamme-label">COV</div>
+      </div>
+      <div class="gamme-card-content">
+        <span class="gamme-tag">Gamme essentielle</span>
+        <h3 class="gamme-name">l'atelier <span class="gamme-name-accent">45</span></h3>
+        <p class="gamme-description">La gamme cœur de chantier. Six finitions pour répondre à tous vos travaux : impression, finition, intérieur, extérieur, boiseries.</p>
+        <div class="gamme-products">
+          <a href="gammes.html#p-grands-travaux" class="gamme-product-chip">Impress GT 45</a>
+          <a href="gammes.html#p-impress-evo" class="gamme-product-chip">Impress 45</a>
+          <a href="gammes.html#p-mat-45" class="gamme-product-chip">Mat 45</a>
+          <a href="gammes.html#p-velours-45" class="gamme-product-chip">Velours 45</a>
+          <a href="gammes.html#p-satin-45" class="gamme-product-chip">Satin 45</a>
+          <a href="gammes.html#p-glycero-45" class="gamme-product-chip">Glycéro 45</a>
+        </div>
+      </div>
+      <a href="gammes.html#gamme-45" class="gamme-cta">Voir les 6 produits<span>→</span></a>
+    </article>
+    <article class="gamme-card gamme-titane reveal">
+      <div class="gamme-card-bg"><div class="pattern-titane">titane</div></div>
+      <div class="badge-bio">
+        <div class="badge-bio-pct">31<small>%</small></div>
+        <div class="badge-bio-label">BIOSOURCÉ</div>
+      </div>
+      <div class="gamme-card-content">
+        <span class="gamme-tag">Gamme premium éco</span>
+        <h3 class="gamme-name">titane <span class="gamme-name-accent">hydro</span></h3>
+        <p class="gamme-description">Notre gamme technique haut de gamme, dont la <strong>Titane MV evo biosourcée à 31,5%</strong>. Excellence d'application, faible COV, conformité RE2020.</p>
+        <div class="gamme-products">
+          <a href="gammes.html#p-titane-prim" class="gamme-product-chip">Titane Hydro Prim</a>
+          <a href="gammes.html#p-titane-mat" class="gamme-product-chip">Titane Hydro Mat</a>
+          <a href="gammes.html#p-titane-velours" class="gamme-product-chip">Titane Hydro Velours</a>
+          <a href="gammes.html#p-titane-mv" class="gamme-product-chip">Titane Hydro MV evo</a>
+        </div>
+      </div>
+      <a href="gammes.html#gamme-titane" class="gamme-cta">Voir les 4 produits<span>→</span></a>
+    </article>
+  </div>
+</section>
+
+<!-- SECTION NUANCIERS : 3 colonnes [photo Chromatic | texte | éventail dynamique] + bandeau + stats -->
+<section class="colorimetrie" id="nuanciers">
+  
+  <!-- Trio principal -->
+  <div class="colorimetrie-trio reveal">
+    <!-- Colonne gauche : photo Chromatic circulaire qui flotte -->
+    <div class="chromatic-photo-wrap">
+      <div class="chromatic-photo">
+        <div class="chromatic-photo-glow"></div>
+      </div>
+    </div>
+    
+    <!-- Colonne centre : texte -->
+    <div class="colorimetrie-trio-text">
+      <div class="section-eyebrow">— Service colorimétrie</div>
+      <h2 class="section-title">1 170 teintes,<br><em>une équipe</em> pour vous guider.</h2>
+      <p class="colorimetrie-intro">
+        Notre service colorimétrie vous donne accès au <strong>Chromatic by PPG</strong>, référence professionnelle de 1 170 teintes contemporaines, complété de RAL, NCS, des lasures minérales <strong>KEIM</strong> et nos sélections maison. Mise à la teinte en moins de 5 minutes dans nos deux magasins.
+      </p>
+    </div>
+    
+    <!-- Colonne droite : éventail dynamique 3D (passer la souris pour le déployer) -->
+    <a href="nuanciers.html#nuanciers-cartes" class="nuancier-stage" aria-label="Voir tous les nuanciers">
+      <div class="nuancier-fan">
+        <div class="swatch-card" style="background:#D0CDC6;"><div class="swatch-name">Gris Bamako</div><div class="swatch-code">CH2 1156</div></div>
+        <div class="swatch-card" style="background:#D5B377;"><div class="swatch-name">Beige Tenda</div><div class="swatch-code">CH2 0987</div></div>
+        <div class="swatch-card" style="background:#2F5F70;"><div class="swatch-name">Bleu Hers</div><div class="swatch-code">CH2 0695</div></div>
+        <div class="swatch-card" style="background:#1F5B3D;"><div class="swatch-name">Vert Athamanta</div><div class="swatch-code">CH2 0743</div></div>
+        <div class="swatch-card" style="background:#534A45;"><div class="swatch-name">Gris Erevan</div><div class="swatch-code">CH2 1054</div></div>
+        <div class="swatch-card" style="background:#F2E6D4;"><div class="swatch-name">Rose Pétale</div><div class="swatch-code">CH2 0166</div></div>
+        <div class="swatch-card" style="background:#D8CCDB;"><div class="swatch-name">Violet Raisin</div><div class="swatch-code">CH2 0236</div></div>
+        <div class="swatch-card" style="background:#75695B;"><div class="swatch-name">Gris Rabat</div><div class="swatch-code">CH2 1046</div></div>
+        <div class="swatch-card" style="background:#A95B5B;"><div class="swatch-name">Rose Orphrys</div><div class="swatch-code">CH2 0449</div></div>
+        <div class="swatch-card" style="background:#3D3A4F;"><div class="swatch-name">Bleu Tureia</div><div class="swatch-code">CH2 0555</div></div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Bandeau défilant des pastilles -->
+  <div class="swatches-strip-wrap">
+    <div class="swatches-strip">
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
+      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
+    </div>
+  </div>
+  
+  <div class="colorimetrie-inner">
+    <div class="colorimetrie-stats reveal">
+      <div class="stat-item"><div class="stat-number">1 170</div><div class="stat-label">Teintes Chromatic</div></div>
+      <div class="stat-item"><div class="stat-number">+ 250</div><div class="stat-label">Teintes Façade</div></div>
+      <div class="stat-item"><div class="stat-number">5 min</div><div class="stat-label">Mise à la teinte</div></div>
+      <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Magasins équipés</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT ÉCO réduit + chiffres 3D -->
+<section class="eco" id="eco">
+  <div class="eco-inner">
+    <div class="eco-header reveal">
+      <div class="section-eyebrow">— Engagement environnemental</div>
+      <h2 class="section-title">Des peintures <em>conformes</em> aux exigences de demain.</h2>
+      <p class="section-intro">RE2020, MaPrimeRénov', HQE : trois leviers concrets pour vos chantiers responsables.</p>
+    </div>
+    
+    <!-- BADGE RE2020 EN PREMIER (au-dessus des 3 piliers) -->
+    <div class="re2020-showcase reveal">
+      <div class="re2020-badge">
+        <div class="re2020-ring"></div>
+        <div class="re2020-ring re2020-ring-2"></div>
+        <div class="re2020-leaves">
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+        </div>
+        <div class="re2020-core">
+          <div class="re2020-label">CONFORME</div>
+          <div class="re2020-number">RE<em style="color:#4A8B5C;font-weight:500;font-style:normal;">2020</em></div>
+          <div class="re2020-sub">BAS CARBONE</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- LES 3 PILIERS APRÈS -->
+    <div class="eco-piliers">
+      <div class="pilier-card reveal">
+        <div class="pilier-icon">🌱</div>
+        <div class="pilier-stat-3d"><div class="pilier-stat-rotator">31,5%</div></div>
+        <div class="pilier-name">BIOSOURCÉ</div>
+        <p class="pilier-description">Titane MV evo : 31,5% de résine biosourcée alternative aux résines pétrochimiques.</p>
+        <div class="pilier-brands">TITANE MV evo • SOFRAMAP</div>
+      </div>
+      <div class="pilier-card reveal">
+        <div class="pilier-icon">♻️</div>
+        <div class="pilier-stat-3d"><div class="pilier-stat-rotator">56%</div></div>
+        <div class="pilier-name">RECYCLÉ</div>
+        <p class="pilier-description">COMUS IZI R : 56% de matières recyclées (pare-brise + chutes de marbre).</p>
+        <div class="pilier-brands">COMUS IZI R</div>
+      </div>
+      <div class="pilier-card reveal">
+        <div class="pilier-icon">🪂</div>
+        <div class="pilier-stat-3d"><div class="pilier-stat-rotator">CO₂↓</div></div>
+        <div class="pilier-name">BAS CARBONE</div>
+        <p class="pilier-description">Dragopaint et Sofec : gammes bas carbone pour chantiers HQE et RE2020.</p>
+        <div class="pilier-brands">DRAGOPAINT • SOFEC ÉCOLABEL</div>
+      </div>
+      <div class="pilier-card reveal">
+        <div class="pilier-icon">🌊</div>
+        <div class="pilier-stat-3d"><div class="pilier-stat-rotator">98%</div></div>
+        <div class="pilier-name">BIOSOURCÉ ALGUES</div>
+        <p class="pilier-description">Algo Pro Velours : 98% de matières premières biosourcées à base d'algues, COV ultra-réduits.</p>
+        <div class="pilier-brands">ALGO PRO VELOURS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Les rubriques Revêtement mural et Revêtement de sol sont accessibles via le menu de navigation. Elles pointeront vers des pages dédiées (à créer en phase 2) -->
+
+<!-- MARQUES DISTRIBUÉES -->
+<section class="marques" id="marques">
+  <div class="marques-header reveal">
+    <div class="section-eyebrow">— Notre sélection partenaires</div>
+    <h2 class="section-title">Les meilleures marques<br><em>françaises</em> du marché</h2>
+    <p class="section-intro">En complément de nos gammes propres, nous distribuons une sélection rigoureuse de marques françaises et internationales — chacune choisie pour son expertise spécifique.</p>
+  </div>
+  <div class="marques-grid">
+    <a class="marque-card has-real-logo marque-eco reveal" href="https://www.soframap.com/" target="_blank" rel="noopener">
+      <div class="marque-logo">
+        <img class="marque-logo-img" src="images/marques/logo-soframap.webp" alt="Logo Soframap">
+      </div>
+      <span class="marque-tag">Fabricant français</span>
+    </a>
+    <a class="marque-card has-real-logo marque-eco reveal" href="https://sofec.net/" target="_blank" rel="noopener">
+      <div class="marque-logo">
+        <img class="marque-logo-img" src="images/marques/logo-sofec.webp" alt="Logo Sofec">
+      </div>
+      <span class="marque-tag">Enduits + peintures</span>
+    </a>
+    <a class="marque-card has-real-logo reveal" href="https://sigmacoatings.fr" target="_blank" rel="noopener">
+      <div class="marque-logo">
+        <img class="marque-logo-img" src="images/marques/logo-sigma.webp" alt="Logo Sigma Coatings">
+      </div>
+      <span class="marque-tag">Pro technique</span>
+    </a>
+    <a class="marque-card has-real-logo reveal" href="https://www.theolaur.com/" target="_blank" rel="noopener">
+      <div class="marque-logo">
+        <img class="marque-logo-img" src="images/marques/logo-theolaur.webp" alt="Logo Théolaur">
+      </div>
+      <span class="marque-tag">Fabricant partenaire</span>
+    </a>
+    <a class="marque-card has-real-logo marque-eco reveal" href="https://comus.fr" target="_blank" rel="noopener">
+      <div class="marque-logo logo-black-bg">
+        <img class="marque-logo-img" src="images/marques/logo-comus.webp" alt="Logo Comus">
+      </div>
+      <span class="marque-tag">♻️ IZI R Recyclée 56%</span>
+    </a>
+    <a class="marque-card has-real-logo reveal" href="https://www.keim.com/fr-fr/" target="_blank" rel="noopener">
+      <div class="marque-logo">
+        <img class="marque-logo-img" src="images/marques/logo-keim.webp" alt="Logo Keim">
+      </div>
+      <span class="marque-tag">Peintures minérales</span>
+    </a>
+    <a class="marque-card has-real-logo marque-eco reveal" href="https://www.dragopaint.be" target="_blank" rel="noopener">
+      <div class="marque-logo logo-black-bg">
+        <img class="marque-logo-img" src="images/marques/logo-dragopaint.webp" alt="Logo Dragopaint Belgium">
+      </div>
+      <span class="marque-tag">🌱 Bas carbone</span>
+    </a>
+    <a class="marque-card reveal" href="gammes.html" style="background:linear-gradient(135deg, #1F3A5F 0%, #2D4E7A 100%); color:white; border:none;">
+      <div class="marque-logo" style="color:#FFA968;">+ vos gammes</div>
+      <span class="marque-tag" style="background:rgba(240,127,44,0.2); color:#FFA968;">★ L'Atelier</span>
+      <p class="marque-description" style="color:rgba(255,255,255,0.7);">L'Atelier 45 et Titane Hydro : nos 10 produits de fabrication française, conçus pour les professionnels exigeants.</p>
+    </a>
+  </div>
+</section>
+
+<!-- AVIS GOOGLE -->
+<section class="avis" id="avis">
+  <div class="avis-inner">
+  <div class="avis-header reveal">
+    <div class="section-eyebrow">— Ils nous font confiance</div>
+    <h2 class="section-title">Nos clients en parlent <em>mieux que nous</em>.</h2>
+    <p class="section-intro">Plus de 130 avis sur Google, partagés entre nos deux magasins. Voici ce que nos clients pros et particuliers en disent.</p>
+    <div class="avis-google-badge">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+        <path fill="#FBBC04" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+      </svg>
+      Avis vérifiés Google
+    </div>
+  </div>
+  
+  <!-- Résumé : note par magasin -->
+  <div class="avis-stores reveal">
+    <div class="avis-store-card">
+      <div>
+        <div class="avis-store-name">L'Atelier <em>CUB</em></div>
+        <div class="avis-store-loc">Mérignac</div>
+      </div>
+      <div class="avis-store-rating">
+        <div class="avis-store-score">4.8<small>/5</small></div>
+        <div class="avis-store-stars">★★★★★</div>
+        <div class="avis-store-count">85 avis Google</div>
+      </div>
+    </div>
+    <div class="avis-store-card">
+      <div>
+        <div class="avis-store-name">L'Atelier <em>Bassin</em></div>
+        <div class="avis-store-loc">La Teste-de-Buch</div>
+      </div>
+      <div class="avis-store-rating">
+        <div class="avis-store-score">4.9<small>/5</small></div>
+        <div class="avis-store-stars">★★★★★</div>
+        <div class="avis-store-count">52 avis Google</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Carrousel défilant des avis textuels (placeholders à modifier) -->
+  <div class="avis-carousel-wrap reveal">
+    <div class="avis-carousel">
+      <!-- Bloc 1 : 6 avis -->
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">JM</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Julien M.</div><div class="avis-card-date">il y a 2 semaines</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Conseils techniques au top, équipe vraiment à l'écoute. La mise à la teinte est rapide et précise, on repart avec le bon pot sans se prendre la tête.</p>
+        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">SD</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Sophie D.</div><div class="avis-card-date">il y a 1 mois</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Excellent accueil, large choix de peintures pro et éco. J'ai trouvé exactement ce qu'il me fallait pour mon chantier, avec des explications claires sur chaque produit.</p>
+        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">PB</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Philippe B.</div><div class="avis-card-date">il y a 3 semaines</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Artisan peintre depuis 20 ans, je suis client fidèle. Qualité des produits, conseils techniques, livraisons chantier — rien à redire. Le 45 Mat est top.</p>
+        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">CL</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Claire L.</div><div class="avis-card-date">il y a 2 mois</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Beau showroom, conseils colorimétrie au top. J'ai pu repartir avec mes échantillons et trouver la teinte parfaite pour mon salon. Merci à toute l'équipe !</p>
+        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">MR</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Marc R.</div><div class="avis-card-date">il y a 1 semaine</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Choix énorme de teintes, Chromatic disponible et mise à la teinte vraiment rapide. Le rapport qualité-prix est excellent pour de la peinture pro.</p>
+        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">NT</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Nadia T.</div><div class="avis-card-date">il y a 5 jours</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme Titane Hydro biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
+        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+      </div>
+      <!-- Bloc 2 : duplication pour boucle infinie -->
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">JM</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Julien M.</div><div class="avis-card-date">il y a 2 semaines</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Conseils techniques au top, équipe vraiment à l'écoute. La mise à la teinte est rapide et précise, on repart avec le bon pot sans se prendre la tête.</p>
+        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">SD</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Sophie D.</div><div class="avis-card-date">il y a 1 mois</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Excellent accueil, large choix de peintures pro et éco. J'ai trouvé exactement ce qu'il me fallait pour mon chantier, avec des explications claires sur chaque produit.</p>
+        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">PB</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Philippe B.</div><div class="avis-card-date">il y a 3 semaines</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Artisan peintre depuis 20 ans, je suis client fidèle. Qualité des produits, conseils techniques, livraisons chantier — rien à redire. Le 45 Mat est top.</p>
+        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">CL</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Claire L.</div><div class="avis-card-date">il y a 2 mois</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Beau showroom, conseils colorimétrie au top. J'ai pu repartir avec mes échantillons et trouver la teinte parfaite pour mon salon. Merci à toute l'équipe !</p>
+        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">MR</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Marc R.</div><div class="avis-card-date">il y a 1 semaine</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Choix énorme de teintes, Chromatic disponible et mise à la teinte vraiment rapide. Le rapport qualité-prix est excellent pour de la peinture pro.</p>
+        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-card-head">
+          <div class="avis-card-avatar">NT</div>
+          <div class="avis-card-meta"><div class="avis-card-name">Nadia T.</div><div class="avis-card-date">il y a 5 jours</div></div>
+        </div>
+        <div class="avis-card-stars">★★★★★</div>
+        <p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme Titane Hydro biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
+        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- MAGASINS -->
+<section class="magasins" id="magasins">
+  <div class="magasins-inner">
+    <div class="magasins-header reveal">
+      <div class="section-eyebrow">— Nous trouver</div>
+      <h2 class="section-title">Deux magasins en <em>Gironde</em>,<br>une équipe à votre écoute</h2>
+    </div>
+    <div class="magasins-grid">
+      <article class="magasin-card reveal">
+        <div class="magasin-image">
+          <img src="images/magasin-merignac.jpg" alt="Façade du magasin L'Atelier à Mérignac">
+          <span class="magasin-badge">Mérignac · CUB</span>
+        </div>
+        <div class="magasin-body">
+          <h3 class="magasin-name">L'Atelier <em>CUB</em></h3>
+          <p style="color:var(--gris); font-size:14px;">Notre magasin de la métropole bordelaise. Bureau d'études, livraisons chantier, espace conseil.</p>
+          <div class="magasin-info">
+            <div class="magasin-info-item"><div class="magasin-icon">📍</div><div>7 avenue de la Grande Semaine<br>33700 Mérignac</div></div>
+            <div class="magasin-info-item"><div class="magasin-icon">📞</div><div>05 56 28 89 44</div></div>
+            <div class="magasin-info-item"><div class="magasin-icon">✉️</div><div><a href="mailto:contact@latelier33.fr" style="color:inherit; text-decoration:none;">contact@latelier33.fr</a></div></div>
+          </div>
+          <div class="magasin-horaires">
+            <div class="magasin-horaires-title">Horaires d'ouverture</div>
+            <div class="magasin-horaires-grid">
+              <span class="magasin-h-day">Lun – Ven</span><span class="magasin-h-time">8h00 – 12h00 &nbsp;|&nbsp; 14h00 – 18h00</span>
+              <span class="magasin-h-day">Samedi</span><span class="magasin-h-closed">Fermé</span>
+              <span class="magasin-h-day">Dimanche</span><span class="magasin-h-closed">Fermé</span>
+            </div>
+          </div>
+          <a href="#" class="magasin-cta">Voir l'itinéraire <span>→</span></a>
+        </div>
+      </article>
+      <article class="magasin-card reveal">
+        <div class="magasin-image">
+          <img src="images/magasin-la-teste.jpg" alt="Façade du magasin L'Atelier au Bassin d'Arcachon (La Teste-de-Buch)">
+          <span class="magasin-badge">Bassin d'Arcachon</span>
+        </div>
+        <div class="magasin-body">
+          <h3 class="magasin-name">L'Atelier <em>Bassin</em></h3>
+          <p style="color:var(--gris); font-size:14px;">Notre magasin du Bassin d'Arcachon. Showroom déco, espace Argile, atelier colorimétrie.</p>
+          <div class="magasin-info">
+            <div class="magasin-info-item"><div class="magasin-icon">📍</div><div>1111 avenue du Parc des Expositions<br>33260 La Teste-de-Buch</div></div>
+            <div class="magasin-info-item"><div class="magasin-icon">📞</div><div>05 57 52 64 77</div></div>
+            <div class="magasin-info-item"><div class="magasin-icon">✉️</div><div><a href="mailto:contact@latelier33.fr" style="color:inherit; text-decoration:none;">contact@latelier33.fr</a></div></div>
+          </div>
+          <div class="magasin-horaires">
+            <div class="magasin-horaires-title">Horaires d'ouverture</div>
+            <div class="magasin-horaires-grid">
+              <span class="magasin-h-day">Lun – Ven</span><span class="magasin-h-time">8h00 – 12h00 &nbsp;|&nbsp; 14h00 – 18h00</span>
+              <span class="magasin-h-day">Samedi</span><span class="magasin-h-time">9h00 – 12h00</span>
+              <span class="magasin-h-day">Dimanche</span><span class="magasin-h-closed">Fermé</span>
+            </div>
+          </div>
+          <a href="#" class="magasin-cta">Voir l'itinéraire <span>→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="reveal" style="text-align:center; margin-bottom: 20px;">
+    <div class="section-eyebrow">— Au-delà de la vente</div>
+    <h2 class="section-title">Nos <em>services</em> aux professionnels</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🎨</div>
+      <h3 class="service-name">Mise à la teinte</h3>
+      <p class="service-description">Plus de 80 000 teintes disponibles. Systèmes Polycrom, Colorimix, RAL, NCS et nos nuanciers maison.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🛠️</div>
+      <h3 class="service-name">Conseil technique</h3>
+      <p class="service-description">Notre équipe accompagne chaque chantier. Choix produit, supports, mise en œuvre, fiches techniques.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🚚</div>
+      <h3 class="service-name">Livraison chantier</h3>
+      <p class="service-description">Livraison sur vos chantiers en Gironde. Gain de temps pour vos équipes, fraîcheur des produits garantie.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">💼</div>
+      <h3 class="service-name">Compte pro</h3>
+      <p class="service-description">Conditions négociées, paiement différé, programme de fidélité, suivi commercial dédié.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
+        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos gammes</h4>
+        <ul>
+          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
+          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
+          <li><a href="#">Colorimétrie</a></li>
+          <li><a href="#">Engagement éco</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Le groupe</h4>
+        <ul>
+          <li><a href="#">Notre histoire</a></li>
+          <li><a href="#">Nos magasins</a></li>
+          <li><a href="#">L'Établi · location</a></li>
+          <li><a href="#">Espace pro</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Politique de confidentialité</a></div>
+      <div class="footer-theolaur">MEMBRE DU RÉSEAU AGIR · GROUPE THÉOLAUR</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  });
+  
+  // Parallaxe désactivé sur les pots pour préserver le positionnement stable
+  // et l'animation floatPot (qui utilise la même propriété CSS 'translate').
+  
+  // Badge Google flottant : permettre la fermeture
+  const googleFloating = document.querySelector('.google-floating');
+  const googleClose = document.querySelector('.google-floating-close');
+  if (googleClose && googleFloating) {
+    googleClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      googleFloating.classList.add('hidden');
+    });
+  }
+</script>
+<!-- Badge Google flottant : note moyenne, cliquable vers la section avis, fermable -->
+<a href="#avis" class="google-floating" aria-label="Note moyenne Google : 4,85 sur 5 — voir les avis">
+  <svg class="google-floating-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+    <path fill="#FBBC04" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+  </svg>
+  <div class="google-floating-body">
+    <div class="google-floating-label">Avis Google</div>
+    <div class="google-floating-score">
+      <span class="google-floating-num">4,85</span>
+      <span class="google-floating-stars">★★★★★</span>
+    </div>
+    <div class="google-floating-sub">137 avis · 2 magasins</div>
+  </div>
+  <button type="button" class="google-floating-close" aria-label="Fermer">×</button>
+</a>
+
+</body>
+</html>
