@@ -229,9 +229,9 @@
     font-weight: 500;
     font-style: normal;
   }
-  /* Sur mobile : badge masqué (espace trop réduit) */
+  /* Sur mobile : badge du hero masqué (espace trop réduit), mais celui de la section gammes reste visible */
   @media (max-width: 768px) {
-    .hero-re2020-stage { display: none; }
+    .hero .hero-re2020-stage { display: none; }
   }
   
   /* Vignettes éco : placées au-dessus des pots, parfaitement visibles, taille adaptée */
@@ -604,20 +604,23 @@
   .avis-card-store { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); font-weight: 600; padding-top: 6px; border-top: 1px solid rgba(31,58,95,0.06); }
   
   /* ===== BADGE POPUP PERSISTANT EN BAS À DROITE ===== */
-  .google-floating { position: fixed; bottom: 24px; right: 24px; background: var(--blanc); border: 1px solid rgba(31,58,95,0.1); border-radius: 16px; padding: 20px 20px 20px 18px; display: flex; align-items: center; gap: 14px; box-shadow: 0 12px 32px -8px rgba(31,58,95,0.25); z-index: 9999; max-width: 290px; transition: transform 0.4s var(--transition), opacity 0.4s; cursor: pointer; text-decoration: none; color: inherit; }
-  .google-floating:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -8px rgba(31,58,95,0.3); }
+  .google-floating { position: fixed; bottom: 24px; right: 24px; background: var(--blanc); border: 1px solid rgba(31,58,95,0.1); border-radius: 16px; box-shadow: 0 12px 32px -8px rgba(31,58,95,0.25); z-index: 9999; max-width: 290px; transition: transform 0.4s var(--transition), opacity 0.4s; }
   .google-floating.hidden { transform: translateY(150%); opacity: 0; pointer-events: none; }
+  .google-floating-link { display: flex; align-items: center; gap: 14px; padding: 20px 20px 20px 18px; text-decoration: none; color: inherit; cursor: pointer; border-radius: 16px; transition: transform 0.4s var(--transition); }
+  .google-floating-link:hover { transform: translateY(-4px); }
   .google-floating-icon { width: 42px; height: 42px; flex-shrink: 0; }
   .google-floating-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
   .google-floating-label { font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gris); font-weight: 600; }
   .google-floating-score { display: flex; align-items: baseline; gap: 8px; }
   .google-floating-num { font-family: var(--display); font-size: 26px; color: var(--bleu); font-weight: 600; line-height: 1; }
+  .google-floating-num-max { font-size: 0.62em; color: var(--gris); font-weight: 500; margin-left: 2px; }
   .google-floating-stars { color: #FBBC04; font-size: 14px; letter-spacing: 1px; }
   .google-floating-sub { font-size: 11px; color: var(--gris); }
-  .google-floating-close { position: absolute; top: -8px; right: -8px; width: 22px; height: 22px; border-radius: 50%; background: var(--bleu); color: var(--blanc); border: 2px solid var(--blanc); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; line-height: 1; font-weight: 600; padding: 0; transition: transform 0.2s; }
-  .google-floating-close:hover { transform: scale(1.15); }
+  .google-floating-close { position: absolute; top: -8px; right: -8px; width: 24px; height: 24px; border-radius: 50%; background: var(--bleu); color: var(--blanc); border: 2px solid var(--blanc); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 13px; line-height: 1; font-weight: 600; padding: 0; transition: transform 0.2s, background 0.2s; z-index: 2; }
+  .google-floating-close:hover { transform: scale(1.15); background: var(--orange); }
   @media (max-width: 600px) {
-    .google-floating { bottom: 14px; right: 14px; padding: 14px 16px 14px 14px; max-width: 240px; }
+    .google-floating { bottom: 14px; right: 14px; max-width: 240px; }
+    .google-floating-link { padding: 14px 16px 14px 14px; }
     .google-floating-num { font-size: 22px; }
     .google-floating-icon { width: 36px; height: 36px; }
   }
@@ -629,6 +632,20 @@
     .hero-inner { grid-template-columns: 1fr; gap: 40px; }
     .hero-visual { height: 400px; }
     .gammes-grid, .magasins-grid, .gammes-header, .colorimetrie-header { grid-template-columns: 1fr; }
+    /* Sur mobile/tablette : le RE 2020 de la section gammes passe en flux normal, centré entre les deux textes */
+    .gammes-header { gap: 32px; }
+    .gammes .hero-re2020-stage {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      margin: 8px auto;
+      order: 2;
+      width: 150px;
+      height: 150px;
+    }
+    .gammes-header > div:first-of-type { order: 1; }
+    .gammes-header > .section-intro { order: 3; }
     .avis-stores { grid-template-columns: 1fr; }
     .marques-grid { grid-template-columns: repeat(2, 1fr); }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1370,34 +1387,39 @@
   // et l'animation floatPot (qui utilise la même propriété CSS 'translate').
   
   // Badge Google flottant : permettre la fermeture
-  const googleFloating = document.querySelector('.google-floating');
-  const googleClose = document.querySelector('.google-floating-close');
-  if (googleClose && googleFloating) {
-    googleClose.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      googleFloating.classList.add('hidden');
-    });
-  }
+  // (DOMContentLoaded car le badge est déclaré plus bas dans la page)
+  document.addEventListener('DOMContentLoaded', () => {
+    const googleFloating = document.querySelector('.google-floating');
+    const googleClose = document.querySelector('.google-floating-close');
+    if (googleClose && googleFloating) {
+      googleClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        googleFloating.classList.add('hidden');
+      });
+    }
+  });
 </script>
 <!-- Badge Google flottant : note moyenne, cliquable vers la section avis, fermable -->
-<a href="#avis" class="google-floating" aria-label="Note moyenne Google : 4,85 sur 5 — voir les avis">
-  <svg class="google-floating-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-    <path fill="#FBBC04" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-  </svg>
-  <div class="google-floating-body">
-    <div class="google-floating-label">Avis Google</div>
-    <div class="google-floating-score">
-      <span class="google-floating-num">4,85</span>
-      <span class="google-floating-stars">★★★★★</span>
+<div class="google-floating" role="region" aria-label="Note moyenne Google des magasins">
+  <a href="#avis" class="google-floating-link" aria-label="Note moyenne Google : 4,85 sur 5 — voir les avis">
+    <svg class="google-floating-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+      <path fill="#FBBC04" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+    </svg>
+    <div class="google-floating-body">
+      <div class="google-floating-label">Avis Google</div>
+      <div class="google-floating-score">
+        <span class="google-floating-num">4,85<span class="google-floating-num-max">/5</span></span>
+        <span class="google-floating-stars">★★★★★</span>
+      </div>
+      <div class="google-floating-sub">137 avis · 2 magasins</div>
     </div>
-    <div class="google-floating-sub">137 avis · 2 magasins</div>
-  </div>
+  </a>
   <button type="button" class="google-floating-close" aria-label="Fermer">×</button>
-</a>
+</div>
 
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Début ============ -->
 <style>
