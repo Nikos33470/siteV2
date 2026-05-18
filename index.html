@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L'Atelier — Marchand de couleurs · Peintures fabriquées en France · Mérignac & Bassin d'Arcachon</title>
-<meta name="description" content="L'Atelier, marchand de couleurs en Gironde. Fabricant de peintures professionnelles. Gammes L'Atelier 45 et Titane Hydro biosourcées. 2 magasins : Mérignac et La Teste-de-Buch.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>L'Atelier — Marchand de couleurs · Peintures fabriquées en France · Mérignac &amp; Bassin d'Arcachon</title>
+<meta content="L'Atelier, marchand de couleurs en Gironde. Fabricant de peintures professionnelles. Gammes L'Atelier 45 et Titane Hydro biosourcées. 2 magasins : Mérignac et La Teste-de-Buch." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F;
@@ -776,702 +777,757 @@
   }
   /* ========== FIN MENU BURGER MOBILE ========== */
 
+
+  /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
+  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  .brand-45,
+  .brand-titane {
+    font-style: italic;
+  }
+  .brand-45 {
+    font-family: 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  .brand-titane {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
+     (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
+
+  /* --- INDEX : cartes de gamme grand format --- */
+  .gamme-card.gamme-45 .gamme-name,
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .gamme-card.gamme-titane .gamme-name,
+  .gamme-card.gamme-titane .gamme-name-accent {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+  }
+  /* on garde la couleur d'accent orange/bleu déjà définie */
+
+  /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
+  .badge-cov .pot-badge-label,
+  .badge-biosource .pot-badge-label {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+  }
+
+  /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
+  .pilier-brands {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* --- PAGE GAMMES : bandeaux de section et titres produits --- */
+  [data-gamme-section="45"] .gamme-banner-title,
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name,
+  [data-gamme-section="45"] .product-name em {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+  }
+  [data-gamme-section="titane"] .gamme-banner-title,
+  [data-gamme-section="titane"] .gamme-banner-title em,
+  [data-gamme-section="titane"] .product-name,
+  [data-gamme-section="titane"] .product-name em {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+  }
+  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
+     on neutralise juste son italique déjà présent (héritage cohérent) */
+
+  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
+  /* déjà couverts par les <span class="brand-..."> wrappés */
+
+  /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
 <body>
-
 <!-- HEADER avec LOGO AGRANDI -->
 <header class="header">
-  <div class="header-inner">
-    <a href="#" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
-        <!-- Carre bleu marine principal occupant la majorite de l'espace -->
-        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
-        <!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
-        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
-        <!-- Lettre 'a' minuscule blanche occupant le carre -->
-        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-              font-size="82" font-weight="900" fill="#FFFFFF"
-              text-anchor="middle" letter-spacing="-3">a</text>
-      </svg>
-      <div class="logo-text-wrap">
-        <span class="logo-text">l'atelier</span>
-        <span class="logo-baseline">MARCHAND DE COULEURS</span>
-        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
-      </div>
-    </a>
-    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-    </button>
-    <div class="nav-overlay-backdrop" aria-hidden="true"></div>
-    <div class="nav-wrap">
-      <nav class="nav">
-        <a href="gammes.html">Nos gammes peintures</a>
-        <a href="nuanciers.html">Nuanciers</a>
-        <a href="#eco">Engagement éco</a>
-        <a href="revetement-mural.html">Revêtement mural</a>
-        <a href="revetement-sol.html">Revêtement de sol</a>
-        <a href="documents.html">Documents techniques</a>
-        <a href="#equipe">L'équipe L'ATELIER</a>
-        <a href="#" class="nav-cta">Espace pro</a>
-      </nav>
-      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
-        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
-      </form>
-    </div>
-  </div>
+<div class="header-inner">
+<a class="logo" href="#">
+<svg aria-label="Logo L'Atelier" class="logo-symbol" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Carre bleu marine principal occupant la majorite de l'espace -->
+<rect fill="#1F3A5F" height="92" width="68" x="20" y="18"></rect>
+<!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
+<path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"></path>
+<!-- Lettre 'a' minuscule blanche occupant le carre -->
+<text fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3" text-anchor="middle" x="54" y="94">a</text>
+</svg>
+<div class="logo-text-wrap">
+<span class="logo-text">l'atelier</span>
+<span class="logo-baseline">MARCHAND DE COULEURS</span>
+<span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+</div>
+</a>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Menu" class="nav-burger" type="button">
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+</button>
+<div aria-hidden="true" class="nav-overlay-backdrop"></div>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="gammes.html">Nos gammes peintures</a>
+<a href="nuanciers.html">Nuanciers</a>
+<a href="#eco">Engagement éco</a>
+<a href="revetement-mural.html">Revêtement mural</a>
+<a href="revetement-sol.html">Revêtement de sol</a>
+<a href="documents.html">Documents techniques</a>
+<a href="#equipe">L'équipe L'ATELIER</a>
+<a class="nav-cta" href="#">Espace pro</a>
+</nav>
+<form class="nav-search" onsubmit="event.preventDefault();" role="search">
+<svg aria-hidden="true" class="nav-search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input aria-label="Recherche sur le site" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" type="search"/>
+</form>
+</div>
+</div>
 </header>
-
 <!-- HERO avec IZI R Velours et 2 badges -->
 <section class="hero">
-  <div class="hero-circle circle-1"></div>
-  <div class="hero-circle circle-2"></div>
-  <div class="hero-inner">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        Nos peintures <em>éco-responsables</em>,<br>
-        créées et fabriquées<br>
-        <span class="hero-title-accent">en France.</span>
-      </h1>
-      <p class="hero-subtitle">
-        L'Atelier est marchand de couleurs en Gironde. Nous concevons nos propres gammes — <strong>L'Atelier 45</strong> et <strong>Titane Hydro</strong> — et distribuons les meilleures peintures techniques et bas carbone du marché. Deux magasins, une passion : la couleur qui dure.
+<div class="hero-circle circle-1"></div>
+<div class="hero-circle circle-2"></div>
+<div class="hero-inner">
+<div class="hero-content">
+<h1 class="hero-title">
+        Nos peintures <em>éco-responsables</em>,<br/>
+        créées et fabriquées<br/>
+<span class="hero-title-accent">en France.</span>
+</h1>
+<p class="hero-subtitle">
+        L'Atelier est marchand de couleurs en Gironde. Nous concevons nos propres gammes — <strong><span class="brand-45">L'Atelier 45</span></strong> et <strong><span class="brand-titane">Titane Hydro</span></strong> — et distribuons les meilleures peintures techniques et bas carbone du marché. Deux magasins, une passion : la couleur qui dure.
       </p>
-      <div class="hero-actions">
-        <a href="gammes.html" class="btn btn-primary">Découvrir nos gammes<span class="btn-arrow">→</span></a>
-        <a href="#eco" class="btn btn-secondary">🌿 Engagement bas carbone</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="pot-badge badge-cov">
-        <div class="pot-badge-pct">−1<small>g/L</small></div>
-        <div class="pot-badge-label">COV<br>L'ATELIER 45</div>
-      </div>
-      <div class="pot-badge badge-biosource">
-        <div class="pot-badge-pct">31<small>,5%</small></div>
-        <div class="pot-badge-label">BIOSOURCÉE<br>TITANE MV</div>
-      </div>
-      <div class="pot-badge badge-recycle">
-        <div class="pot-badge-pct">56%</div>
-        <div class="pot-badge-label">RECYCLÉE<br>COMUS IZI R</div>
-      </div>
-      <div class="pot-badge badge-algo">
-        <div class="pot-badge-pct">98<small>%</small></div>
-        <div class="pot-badge-label">BIOSOURCÉE<br>ALGO PRO</div>
-      </div>
-      <!-- Badge RE2020 déplacé vers la section "Nos gammes propres" -->
-      <div class="pots-stack">
-        <!-- Vraies photos détourées des pots -->
-        <img class="pot-3d pot-45-mat" src="images/pot-atelier-45-mat.webp" alt="Pot L'Atelier 45 MAT 16L - Peinture acrylique">
-        <img class="pot-3d pot-titane-mv" src="images/pot-titane-hydro-mv.webp" alt="Pot TITANE Hydro MV evo 15L - L'Atelier">
-        <img class="pot-3d pot-izi-r" src="images/pot-comus-izi-r.webp" alt="Pot Comus IZI R Velours - Peinture éco-respectueuse">
-        <img class="pot-3d pot-algo" src="images/pot-algo-pro-velours.webp" alt="Pot Algo Pro Velours 10L - Peinture biosourcée aux algues">
-      </div>
-    </div>
-  </div>
-  <div class="scroll-indicator">
-    <span>SCROLL</span>
-    <svg width="12" height="20" viewBox="0 0 12 20" fill="none"><path d="M6 0V18M6 18L1 13M6 18L11 13" stroke="white" stroke-width="1.5"/></svg>
-  </div>
+<div class="hero-actions">
+<a class="btn btn-primary" href="gammes.html">Découvrir nos gammes<span class="btn-arrow">→</span></a>
+<a class="btn btn-secondary" href="#eco">🌿 Engagement bas carbone</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="pot-badge badge-cov">
+<div class="pot-badge-pct">−1<small>g/L</small></div>
+<div class="pot-badge-label">COV<br/>L'ATELIER 45</div>
+</div>
+<div class="pot-badge badge-biosource">
+<div class="pot-badge-pct">31<small>,5%</small></div>
+<div class="pot-badge-label">BIOSOURCÉE<br/>TITANE MV</div>
+</div>
+<div class="pot-badge badge-recycle">
+<div class="pot-badge-pct">56%</div>
+<div class="pot-badge-label">RECYCLÉE<br/>COMUS IZI R</div>
+</div>
+<div class="pot-badge badge-algo">
+<div class="pot-badge-pct">98<small>%</small></div>
+<div class="pot-badge-label">BIOSOURCÉE<br/>ALGO PRO</div>
+</div>
+<!-- Badge RE2020 déplacé vers la section "Nos gammes propres" -->
+<div class="pots-stack">
+<!-- Vraies photos détourées des pots -->
+<img alt="Pot L'Atelier 45 MAT 16L - Peinture acrylique" class="pot-3d pot-45-mat" src="images/pot-atelier-45-mat.webp"/>
+<img alt="Pot TITANE Hydro MV evo 15L - L'Atelier" class="pot-3d pot-titane-mv" src="images/pot-titane-hydro-mv.webp"/>
+<img alt="Pot Comus IZI R Velours - Peinture éco-respectueuse" class="pot-3d pot-izi-r" src="images/pot-comus-izi-r.webp"/>
+<img alt="Pot Algo Pro Velours 10L - Peinture biosourcée aux algues" class="pot-3d pot-algo" src="images/pot-algo-pro-velours.webp"/>
+</div>
+</div>
+</div>
+<div class="scroll-indicator">
+<span>SCROLL</span>
+<svg fill="none" height="20" viewbox="0 0 12 20" width="12"><path d="M6 0V18M6 18L1 13M6 18L11 13" stroke="white" stroke-width="1.5"></path></svg>
+</div>
 </section>
-
 <!-- SIGNATURE défilante avec MÉRIGNAC -->
 <div class="signature-section">
-  <div class="signature-track">
-    <div class="signature-item">
-      <span>Marchand de couleurs</span><span class="signature-dot"></span>
-      <em>Bassin d'Arcachon</em><span class="signature-dot"></span>
-      <span>MÉRIGNAC</span><span class="signature-dot"></span>
-      <em>Fabrication française</em><span class="signature-dot"></span>
-      <span>Bas carbone</span><span class="signature-dot"></span>
-      <em>Depuis 2011</em><span class="signature-dot"></span>
-    </div>
-    <div class="signature-item">
-      <span>Marchand de couleurs</span><span class="signature-dot"></span>
-      <em>Bassin d'Arcachon</em><span class="signature-dot"></span>
-      <span>MÉRIGNAC</span><span class="signature-dot"></span>
-      <em>Fabrication française</em><span class="signature-dot"></span>
-      <span>Bas carbone</span><span class="signature-dot"></span>
-      <em>Depuis 2011</em><span class="signature-dot"></span>
-    </div>
-  </div>
+<div class="signature-track">
+<div class="signature-item">
+<span>Marchand de couleurs</span><span class="signature-dot"></span>
+<em>Bassin d'Arcachon</em><span class="signature-dot"></span>
+<span>MÉRIGNAC</span><span class="signature-dot"></span>
+<em>Fabrication française</em><span class="signature-dot"></span>
+<span>Bas carbone</span><span class="signature-dot"></span>
+<em>Depuis 2011</em><span class="signature-dot"></span>
 </div>
-
+<div class="signature-item">
+<span>Marchand de couleurs</span><span class="signature-dot"></span>
+<em>Bassin d'Arcachon</em><span class="signature-dot"></span>
+<span>MÉRIGNAC</span><span class="signature-dot"></span>
+<em>Fabrication française</em><span class="signature-dot"></span>
+<span>Bas carbone</span><span class="signature-dot"></span>
+<em>Depuis 2011</em><span class="signature-dot"></span>
+</div>
+</div>
+</div>
 <!-- NOS GAMMES -->
 <section class="gammes" id="gammes">
-  <div class="gammes-header reveal">
-    <!-- Badge RE2020 en arrière-plan, centré derrière le texte -->
-    <div class="hero-re2020-stage" aria-hidden="true">
-      <div class="hero-re2020">
-        <div class="hero-re2020-face">
-          <div class="hero-re2020-ring"></div>
-          <div class="hero-re2020-ring hero-re2020-ring-2"></div>
-          <div class="hero-re2020-core">
-            <div class="hero-re2020-label">CONFORME</div>
-            <div class="hero-re2020-number">RE <em>2020</em></div>
-          </div>
-        </div>
-        <div class="hero-re2020-face hero-re2020-face-back">
-          <div class="hero-re2020-ring"></div>
-          <div class="hero-re2020-ring hero-re2020-ring-2"></div>
-          <div class="hero-re2020-core">
-            <div class="hero-re2020-label">CONFORME</div>
-            <div class="hero-re2020-number">RE <em>2020</em></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="section-eyebrow">— Nos gammes propres</div>
-      <h2 class="section-title">Deux gammes,<br><em>une signature</em></h2>
-    </div>
-    <p class="section-intro">
-      Conçues avec notre partenaire fabricant français Théolaur, nos gammes L'Atelier 45 et Titane Hydro combinent performance professionnelle, respect de l'environnement et identité visuelle forte. Chaque produit pensé pour le quotidien des artisans.
+<div class="gammes-header reveal">
+<!-- Badge RE2020 en arrière-plan, centré derrière le texte -->
+<div aria-hidden="true" class="hero-re2020-stage">
+<div class="hero-re2020">
+<div class="hero-re2020-face">
+<div class="hero-re2020-ring"></div>
+<div class="hero-re2020-ring hero-re2020-ring-2"></div>
+<div class="hero-re2020-core">
+<div class="hero-re2020-label">CONFORME</div>
+<div class="hero-re2020-number">RE <em>2020</em></div>
+</div>
+</div>
+<div class="hero-re2020-face hero-re2020-face-back">
+<div class="hero-re2020-ring"></div>
+<div class="hero-re2020-ring hero-re2020-ring-2"></div>
+<div class="hero-re2020-core">
+<div class="hero-re2020-label">CONFORME</div>
+<div class="hero-re2020-number">RE <em>2020</em></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="section-eyebrow">— Nos gammes propres</div>
+<h2 class="section-title">Deux gammes,<br/><em>une signature</em></h2>
+</div>
+<p class="section-intro">
+      Conçues avec notre partenaire fabricant français Théolaur, nos gammes <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span> combinent performance professionnelle, respect de l'environnement et identité visuelle forte. Chaque produit pensé pour le quotidien des artisans.
     </p>
-  </div>
-  <div class="gammes-grid">
-    <article class="gamme-card gamme-45 reveal">
-      <div class="gamme-card-bg"><div class="pattern-45">45</div></div>
-      <div class="badge-cov-gamme">
-        <div class="badge-cov-gamme-value">&minus;1<small>g/L</small></div>
-        <div class="badge-cov-gamme-label">COV</div>
-      </div>
-      <div class="gamme-card-content">
-        <span class="gamme-tag">Gamme essentielle</span>
-        <h3 class="gamme-name">l'atelier <span class="gamme-name-accent">45</span></h3>
-        <p class="gamme-description">La gamme cœur de chantier. Six finitions pour répondre à tous vos travaux : impression, finition, intérieur, extérieur, boiseries.</p>
-        <div class="gamme-products">
-          <a href="gammes.html#p-grands-travaux" class="gamme-product-chip">Impress GT 45</a>
-          <a href="gammes.html#p-impress-evo" class="gamme-product-chip">Impress 45</a>
-          <a href="gammes.html#p-mat-45" class="gamme-product-chip">Mat 45</a>
-          <a href="gammes.html#p-velours-45" class="gamme-product-chip">Velours 45</a>
-          <a href="gammes.html#p-satin-45" class="gamme-product-chip">Satin 45</a>
-          <a href="gammes.html#p-glycero-45" class="gamme-product-chip">Glycéro 45</a>
-        </div>
-      </div>
-      <a href="gammes.html#gamme-45" class="gamme-cta">Voir les 6 produits<span>→</span></a>
-    </article>
-    <article class="gamme-card gamme-titane reveal">
-      <div class="gamme-card-bg"><div class="pattern-titane">titane</div></div>
-      <div class="badge-bio">
-        <div class="badge-bio-pct">31<small>%</small></div>
-        <div class="badge-bio-label">BIOSOURCÉ</div>
-      </div>
-      <div class="gamme-card-content">
-        <span class="gamme-tag">Gamme premium éco</span>
-        <h3 class="gamme-name">titane <span class="gamme-name-accent">hydro</span></h3>
-        <p class="gamme-description">Notre gamme technique haut de gamme, dont la <strong>Titane MV evo biosourcée à 31,5%</strong>. Excellence d'application, faible COV, conformité RE2020.</p>
-        <div class="gamme-products">
-          <a href="gammes.html#p-titane-prim" class="gamme-product-chip">Titane Hydro Prim</a>
-          <a href="gammes.html#p-titane-mat" class="gamme-product-chip">Titane Hydro Mat</a>
-          <a href="gammes.html#p-titane-velours" class="gamme-product-chip">Titane Hydro Velours</a>
-          <a href="gammes.html#p-titane-mv" class="gamme-product-chip">Titane Hydro MV evo</a>
-        </div>
-      </div>
-      <a href="gammes.html#gamme-titane" class="gamme-cta">Voir les 4 produits<span>→</span></a>
-    </article>
-  </div>
+</div>
+<div class="gammes-grid">
+<article class="gamme-card gamme-45 reveal">
+<div class="gamme-card-bg"><div class="pattern-45">45</div></div>
+<div class="badge-cov-gamme">
+<div class="badge-cov-gamme-value">−1<small>g/L</small></div>
+<div class="badge-cov-gamme-label">COV</div>
+</div>
+<div class="gamme-card-content">
+<span class="gamme-tag">Gamme essentielle</span>
+<h3 class="gamme-name">l'atelier <span class="gamme-name-accent">45</span></h3>
+<p class="gamme-description">La gamme cœur de chantier. Six finitions pour répondre à tous vos travaux : impression, finition, intérieur, extérieur, boiseries.</p>
+<div class="gamme-products">
+<a class="gamme-product-chip" href="gammes.html#p-grands-travaux">Impress GT 45</a>
+<a class="gamme-product-chip" href="gammes.html#p-impress-evo">Impress 45</a>
+<a class="gamme-product-chip" href="gammes.html#p-mat-45">Mat 45</a>
+<a class="gamme-product-chip" href="gammes.html#p-velours-45">Velours 45</a>
+<a class="gamme-product-chip" href="gammes.html#p-satin-45">Satin 45</a>
+<a class="gamme-product-chip" href="gammes.html#p-glycero-45">Glycéro 45</a>
+</div>
+</div>
+<a class="gamme-cta" href="gammes.html#gamme-45">Voir les 6 produits<span>→</span></a>
+</article>
+<article class="gamme-card gamme-titane reveal">
+<div class="gamme-card-bg"><div class="pattern-titane">titane</div></div>
+<div class="badge-bio">
+<div class="badge-bio-pct">31<small>%</small></div>
+<div class="badge-bio-label">BIOSOURCÉ</div>
+</div>
+<div class="gamme-card-content">
+<span class="gamme-tag">Gamme premium éco</span>
+<h3 class="gamme-name">titane <span class="gamme-name-accent">hydro</span></h3>
+<p class="gamme-description">Notre gamme technique haut de gamme, dont la <strong>Titane MV evo biosourcée à 31,5%</strong>. Excellence d'application, faible COV, conformité RE2020.</p>
+<div class="gamme-products">
+<a class="gamme-product-chip" href="gammes.html#p-titane-prim"><span class="brand-titane">Titane Hydro</span> Prim</a>
+<a class="gamme-product-chip" href="gammes.html#p-titane-mat"><span class="brand-titane">Titane Hydro</span> Mat</a>
+<a class="gamme-product-chip" href="gammes.html#p-titane-velours"><span class="brand-titane">Titane Hydro</span> Velours</a>
+<a class="gamme-product-chip" href="gammes.html#p-titane-mv"><span class="brand-titane">Titane Hydro</span> MV evo</a>
+</div>
+</div>
+<a class="gamme-cta" href="gammes.html#gamme-titane">Voir les 4 produits<span>→</span></a>
+</article>
+</div>
 </section>
-
 <!-- SECTION NUANCIERS : 3 colonnes [photo Chromatic | texte | éventail dynamique] + bandeau + stats -->
 <section class="colorimetrie" id="nuanciers">
-  
-  <!-- Trio principal -->
-  <div class="colorimetrie-trio reveal">
-    <!-- Colonne gauche : photo Chromatic circulaire qui flotte -->
-    <div class="chromatic-photo-wrap">
-      <div class="chromatic-photo">
-        <div class="chromatic-photo-glow"></div>
-      </div>
-    </div>
-    
-    <!-- Colonne centre : texte -->
-    <div class="colorimetrie-trio-text">
-      <div class="section-eyebrow">— Service colorimétrie</div>
-      <h2 class="section-title">1 170 teintes,<br><em>une équipe</em> pour vous guider.</h2>
-      <p class="colorimetrie-intro">
+<!-- Trio principal -->
+<div class="colorimetrie-trio reveal">
+<!-- Colonne gauche : photo Chromatic circulaire qui flotte -->
+<div class="chromatic-photo-wrap">
+<div class="chromatic-photo">
+<div class="chromatic-photo-glow"></div>
+</div>
+</div>
+<!-- Colonne centre : texte -->
+<div class="colorimetrie-trio-text">
+<div class="section-eyebrow">— Service colorimétrie</div>
+<h2 class="section-title">1 170 teintes,<br/><em>une équipe</em> pour vous guider.</h2>
+<p class="colorimetrie-intro">
         Notre service colorimétrie vous donne accès au <strong>Chromatic by PPG</strong>, référence professionnelle de 1 170 teintes contemporaines, complété de RAL, NCS, des lasures minérales <strong>KEIM</strong> et nos sélections maison. Mise à la teinte en moins de 5 minutes dans nos deux magasins.
       </p>
-    </div>
-    
-    <!-- Colonne droite : éventail dynamique 3D (passer la souris pour le déployer) -->
-    <a href="nuanciers.html#nuanciers-cartes" class="nuancier-stage" aria-label="Voir tous les nuanciers">
-      <div class="nuancier-fan">
-        <div class="swatch-card" style="background:#D0CDC6;"><div class="swatch-name">Gris Bamako</div><div class="swatch-code">CH2 1156</div></div>
-        <div class="swatch-card" style="background:#D5B377;"><div class="swatch-name">Beige Tenda</div><div class="swatch-code">CH2 0987</div></div>
-        <div class="swatch-card" style="background:#2F5F70;"><div class="swatch-name">Bleu Hers</div><div class="swatch-code">CH2 0695</div></div>
-        <div class="swatch-card" style="background:#1F5B3D;"><div class="swatch-name">Vert Athamanta</div><div class="swatch-code">CH2 0743</div></div>
-        <div class="swatch-card" style="background:#534A45;"><div class="swatch-name">Gris Erevan</div><div class="swatch-code">CH2 1054</div></div>
-        <div class="swatch-card" style="background:#F2E6D4;"><div class="swatch-name">Rose Pétale</div><div class="swatch-code">CH2 0166</div></div>
-        <div class="swatch-card" style="background:#D8CCDB;"><div class="swatch-name">Violet Raisin</div><div class="swatch-code">CH2 0236</div></div>
-        <div class="swatch-card" style="background:#75695B;"><div class="swatch-name">Gris Rabat</div><div class="swatch-code">CH2 1046</div></div>
-        <div class="swatch-card" style="background:#A95B5B;"><div class="swatch-name">Rose Orphrys</div><div class="swatch-code">CH2 0449</div></div>
-        <div class="swatch-card" style="background:#3D3A4F;"><div class="swatch-name">Bleu Tureia</div><div class="swatch-code">CH2 0555</div></div>
-      </div>
-    </a>
-  </div>
-  
-  <!-- Bandeau défilant des pastilles -->
-  <div class="swatches-strip-wrap">
-    <div class="swatches-strip">
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
-      <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="swatch-pill" aria-label="Ouvrir le nuancier Chromatic Dorval CH2"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
-    </div>
-  </div>
-  
-  <div class="colorimetrie-inner">
-    <div class="colorimetrie-stats reveal">
-      <div class="stat-item"><div class="stat-number">1 170</div><div class="stat-label">Teintes Chromatic</div></div>
-      <div class="stat-item"><div class="stat-number">+ 250</div><div class="stat-label">Teintes Façade</div></div>
-      <div class="stat-item"><div class="stat-number">5 min</div><div class="stat-label">Mise à la teinte</div></div>
-      <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Magasins équipés</div></div>
-    </div>
-  </div>
+</div>
+<!-- Colonne droite : éventail dynamique 3D (passer la souris pour le déployer) -->
+<a aria-label="Voir tous les nuanciers" class="nuancier-stage" href="nuanciers.html#nuanciers-cartes">
+<div class="nuancier-fan">
+<div class="swatch-card" style="background:#D0CDC6;"><div class="swatch-name">Gris Bamako</div><div class="swatch-code">CH2 1156</div></div>
+<div class="swatch-card" style="background:#D5B377;"><div class="swatch-name">Beige Tenda</div><div class="swatch-code">CH2 0987</div></div>
+<div class="swatch-card" style="background:#2F5F70;"><div class="swatch-name">Bleu Hers</div><div class="swatch-code">CH2 0695</div></div>
+<div class="swatch-card" style="background:#1F5B3D;"><div class="swatch-name">Vert Athamanta</div><div class="swatch-code">CH2 0743</div></div>
+<div class="swatch-card" style="background:#534A45;"><div class="swatch-name">Gris Erevan</div><div class="swatch-code">CH2 1054</div></div>
+<div class="swatch-card" style="background:#F2E6D4;"><div class="swatch-name">Rose Pétale</div><div class="swatch-code">CH2 0166</div></div>
+<div class="swatch-card" style="background:#D8CCDB;"><div class="swatch-name">Violet Raisin</div><div class="swatch-code">CH2 0236</div></div>
+<div class="swatch-card" style="background:#75695B;"><div class="swatch-name">Gris Rabat</div><div class="swatch-code">CH2 1046</div></div>
+<div class="swatch-card" style="background:#A95B5B;"><div class="swatch-name">Rose Orphrys</div><div class="swatch-code">CH2 0449</div></div>
+<div class="swatch-card" style="background:#3D3A4F;"><div class="swatch-name">Bleu Tureia</div><div class="swatch-code">CH2 0555</div></div>
+</div>
+</a>
+</div>
+<!-- Bandeau défilant des pastilles -->
+<div class="swatches-strip-wrap">
+<div class="swatches-strip">
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
+<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
+</div>
+</div>
+<div class="colorimetrie-inner">
+<div class="colorimetrie-stats reveal">
+<div class="stat-item"><div class="stat-number">1 170</div><div class="stat-label">Teintes Chromatic</div></div>
+<div class="stat-item"><div class="stat-number">+ 250</div><div class="stat-label">Teintes Façade</div></div>
+<div class="stat-item"><div class="stat-number">5 min</div><div class="stat-label">Mise à la teinte</div></div>
+<div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Magasins équipés</div></div>
+</div>
+</div>
 </section>
-
 <!-- ENGAGEMENT ÉCO réduit + chiffres 3D -->
 <section class="eco" id="eco">
-  <div class="eco-inner">
-    <div class="eco-header reveal">
-      <div class="section-eyebrow">— Engagement environnemental</div>
-      <h2 class="section-title">Des peintures <em>conformes</em> aux exigences de demain.</h2>
-      <p class="section-intro">RE2020, MaPrimeRénov', HQE : trois leviers concrets pour vos chantiers responsables.</p>
-    </div>
-    
-    <!-- BADGE RE2020 EN PREMIER (au-dessus des 3 piliers) -->
-    <div class="re2020-showcase reveal">
-      <div class="re2020-badge">
-        <div class="re2020-ring"></div>
-        <div class="re2020-ring re2020-ring-2"></div>
-        <div class="re2020-leaves">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="re2020-core">
-          <div class="re2020-label">CONFORME</div>
-          <div class="re2020-number">RE<em style="color:#4A8B5C;font-weight:500;font-style:normal;">2020</em></div>
-          <div class="re2020-sub">BAS CARBONE</div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- LES 3 PILIERS APRÈS -->
-    <div class="eco-piliers">
-      <div class="pilier-card reveal">
-        <div class="pilier-icon">🌱</div>
-        <div class="pilier-stat-3d"><div class="pilier-stat-rotator">31,5%</div></div>
-        <div class="pilier-name">BIOSOURCÉ</div>
-        <p class="pilier-description">Titane MV evo : 31,5% de résine biosourcée alternative aux résines pétrochimiques.</p>
-        <div class="pilier-brands">TITANE MV evo • SOFRAMAP</div>
-      </div>
-      <div class="pilier-card reveal">
-        <div class="pilier-icon">♻️</div>
-        <div class="pilier-stat-3d"><div class="pilier-stat-rotator">56%</div></div>
-        <div class="pilier-name">RECYCLÉ</div>
-        <p class="pilier-description">COMUS IZI R : 56% de matières recyclées (pare-brise + chutes de marbre).</p>
-        <div class="pilier-brands">COMUS IZI R</div>
-      </div>
-      <div class="pilier-card reveal">
-        <div class="pilier-icon">🪂</div>
-        <div class="pilier-stat-3d"><div class="pilier-stat-rotator">CO₂↓</div></div>
-        <div class="pilier-name">BAS CARBONE</div>
-        <p class="pilier-description">Dragopaint et Sofec : gammes bas carbone pour chantiers HQE et RE2020.</p>
-        <div class="pilier-brands">DRAGOPAINT • SOFEC ÉCOLABEL</div>
-      </div>
-      <div class="pilier-card reveal">
-        <div class="pilier-icon">🌊</div>
-        <div class="pilier-stat-3d"><div class="pilier-stat-rotator">98%</div></div>
-        <div class="pilier-name">BIOSOURCÉ ALGUES</div>
-        <p class="pilier-description">Algo Pro Velours : 98% de matières premières biosourcées à base d'algues, COV ultra-réduits.</p>
-        <div class="pilier-brands">ALGO PRO VELOURS</div>
-      </div>
-    </div>
-  </div>
+<div class="eco-inner">
+<div class="eco-header reveal">
+<div class="section-eyebrow">— Engagement environnemental</div>
+<h2 class="section-title">Des peintures <em>conformes</em> aux exigences de demain.</h2>
+<p class="section-intro">RE2020, MaPrimeRénov', HQE : trois leviers concrets pour vos chantiers responsables.</p>
+</div>
+<!-- BADGE RE2020 EN PREMIER (au-dessus des 3 piliers) -->
+<div class="re2020-showcase reveal">
+<div class="re2020-badge">
+<div class="re2020-ring"></div>
+<div class="re2020-ring re2020-ring-2"></div>
+<div class="re2020-leaves">
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+</div>
+<div class="re2020-core">
+<div class="re2020-label">CONFORME</div>
+<div class="re2020-number">RE<em style="color:#4A8B5C;font-weight:500;font-style:normal;">2020</em></div>
+<div class="re2020-sub">BAS CARBONE</div>
+</div>
+</div>
+</div>
+<!-- LES 3 PILIERS APRÈS -->
+<div class="eco-piliers">
+<div class="pilier-card reveal">
+<div class="pilier-icon">🌱</div>
+<div class="pilier-stat-3d"><div class="pilier-stat-rotator">31,5%</div></div>
+<div class="pilier-name">BIOSOURCÉ</div>
+<p class="pilier-description">Titane MV evo : 31,5% de résine biosourcée alternative aux résines pétrochimiques.</p>
+<div class="pilier-brands">TITANE MV evo • SOFRAMAP</div>
+</div>
+<div class="pilier-card reveal">
+<div class="pilier-icon">♻️</div>
+<div class="pilier-stat-3d"><div class="pilier-stat-rotator">56%</div></div>
+<div class="pilier-name">RECYCLÉ</div>
+<p class="pilier-description">COMUS IZI R : 56% de matières recyclées (pare-brise + chutes de marbre).</p>
+<div class="pilier-brands">COMUS IZI R</div>
+</div>
+<div class="pilier-card reveal">
+<div class="pilier-icon">🪂</div>
+<div class="pilier-stat-3d"><div class="pilier-stat-rotator">CO₂↓</div></div>
+<div class="pilier-name">BAS CARBONE</div>
+<p class="pilier-description">Dragopaint et Sofec : gammes bas carbone pour chantiers HQE et RE2020.</p>
+<div class="pilier-brands">DRAGOPAINT • SOFEC ÉCOLABEL</div>
+</div>
+<div class="pilier-card reveal">
+<div class="pilier-icon">🌊</div>
+<div class="pilier-stat-3d"><div class="pilier-stat-rotator">98%</div></div>
+<div class="pilier-name">BIOSOURCÉ ALGUES</div>
+<p class="pilier-description">Algo Pro Velours : 98% de matières premières biosourcées à base d'algues, COV ultra-réduits.</p>
+<div class="pilier-brands">ALGO PRO VELOURS</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- Les rubriques Revêtement mural et Revêtement de sol sont accessibles via le menu de navigation. Elles pointeront vers des pages dédiées (à créer en phase 2) -->
-
 <!-- MARQUES DISTRIBUÉES -->
 <section class="marques" id="marques">
-  <div class="marques-header reveal">
-    <div class="section-eyebrow">— Notre sélection partenaires</div>
-    <h2 class="section-title">Les meilleures marques<br><em>françaises</em> du marché</h2>
-    <p class="section-intro">En complément de nos gammes propres, nous distribuons une sélection rigoureuse de marques françaises et internationales — chacune choisie pour son expertise spécifique.</p>
-  </div>
-  <div class="marques-grid">
-    <a class="marque-card has-real-logo marque-eco reveal" href="https://comus.fr" target="_blank" rel="noopener">
-      <div class="marque-logo logo-black-bg">
-        <img class="marque-logo-img" src="images/marques/logo-comus.webp" alt="Logo Comus">
-      </div>
-      <span class="marque-tag">♻️ IZI R Recyclée 56%</span>
-    </a>
-    <a class="marque-card has-real-logo marque-eco reveal" href="https://www.dragopaint.be" target="_blank" rel="noopener">
-      <div class="marque-logo logo-black-bg">
-        <img class="marque-logo-img" src="images/marques/logo-dragopaint.webp" alt="Logo Dragopaint Belgium">
-      </div>
-      <span class="marque-tag">🌱 Bas carbone</span>
-    </a>
-    <a class="marque-card has-real-logo reveal" href="https://www.keim.com/fr-fr/" target="_blank" rel="noopener">
-      <div class="marque-logo">
-        <img class="marque-logo-img" src="images/marques/logo-keim.webp" alt="Logo Keim">
-      </div>
-      <span class="marque-tag">Peintures minérales</span>
-    </a>
-    <a class="marque-card has-real-logo reveal" href="https://sigmacoatings.fr" target="_blank" rel="noopener">
-      <div class="marque-logo">
-        <img class="marque-logo-img" src="images/marques/logo-sigma.webp" alt="Logo Sigma Coatings">
-      </div>
-      <span class="marque-tag">Pro technique</span>
-    </a>
-    <a class="marque-card has-real-logo marque-eco reveal" href="https://sofec.net/" target="_blank" rel="noopener">
-      <div class="marque-logo">
-        <img class="marque-logo-img" src="images/marques/logo-sofec.webp" alt="Logo Sofec">
-      </div>
-      <span class="marque-tag">Enduits + peintures</span>
-    </a>
-    <a class="marque-card has-real-logo marque-eco reveal" href="https://www.soframap.com/" target="_blank" rel="noopener">
-      <div class="marque-logo">
-        <img class="marque-logo-img" src="images/marques/logo-soframap.webp" alt="Logo Soframap">
-      </div>
-      <span class="marque-tag">Fabricant français</span>
-    </a>
-    <a class="marque-card has-real-logo reveal" href="https://www.theolaur.com/" target="_blank" rel="noopener">
-      <div class="marque-logo">
-        <img class="marque-logo-img" src="images/marques/logo-theolaur.webp" alt="Logo Théolaur">
-      </div>
-      <span class="marque-tag">Fabricant partenaire</span>
-    </a>
-    <a class="marque-card reveal" href="gammes.html" style="background:linear-gradient(135deg, #1F3A5F 0%, #2D4E7A 100%); color:white; border:none;">
-      <div class="marque-logo" style="color:#FFA968;">+ vos gammes</div>
-      <span class="marque-tag" style="background:rgba(240,127,44,0.2); color:#FFA968;">★ L'Atelier</span>
-      <p class="marque-description" style="color:rgba(255,255,255,0.7);">L'Atelier 45 et Titane Hydro : nos 10 produits de fabrication française, conçus pour les professionnels exigeants.</p>
-    </a>
-  
-  </div>
+<div class="marques-header reveal">
+<div class="section-eyebrow">— Notre sélection partenaires</div>
+<h2 class="section-title">Les meilleures peintures<br/><em>françaises et européennes</em> du marché</h2>
+<p class="section-intro">En complément de nos gammes propres, nous distribuons une sélection rigoureuse de marques françaises et internationales — chacune choisie pour son expertise spécifique.</p>
+</div>
+<div class="marques-grid">
+<a class="marque-card has-real-logo marque-eco reveal" href="https://comus.fr" rel="noopener" target="_blank">
+<div class="marque-logo logo-black-bg">
+<img alt="Logo Comus" class="marque-logo-img" src="images/marques/logo-comus.webp"/>
+</div>
+<span class="marque-tag">♻️ IZI R Recyclée 56%</span>
+</a>
+<a class="marque-card has-real-logo marque-eco reveal" href="https://www.dragopaint.be" rel="noopener" target="_blank">
+<div class="marque-logo logo-black-bg">
+<img alt="Logo Dragopaint Belgium" class="marque-logo-img" src="images/marques/logo-dragopaint.webp"/>
+</div>
+<span class="marque-tag">🌱 Bas carbone</span>
+</a>
+<a class="marque-card has-real-logo reveal" href="https://www.keim.com/fr-fr/" rel="noopener" target="_blank">
+<div class="marque-logo">
+<img alt="Logo Keim" class="marque-logo-img" src="images/marques/logo-keim.webp"/>
+</div>
+<span class="marque-tag">Peintures minérales</span>
+</a>
+<a class="marque-card has-real-logo reveal" href="https://sigmacoatings.fr" rel="noopener" target="_blank">
+<div class="marque-logo">
+<img alt="Logo Sigma Coatings" class="marque-logo-img" src="images/marques/logo-sigma.webp"/>
+</div>
+<span class="marque-tag">Pro technique</span>
+</a>
+<a class="marque-card has-real-logo marque-eco reveal" href="https://sofec.net/" rel="noopener" target="_blank">
+<div class="marque-logo">
+<img alt="Logo Sofec" class="marque-logo-img" src="images/marques/logo-sofec.webp"/>
+</div>
+<span class="marque-tag">Enduits + peintures</span>
+</a>
+<a class="marque-card has-real-logo marque-eco reveal" href="https://www.soframap.com/" rel="noopener" target="_blank">
+<div class="marque-logo">
+<img alt="Logo Soframap" class="marque-logo-img" src="images/marques/logo-soframap.webp"/>
+</div>
+<span class="marque-tag">Fabricant français</span>
+</a>
+<a class="marque-card has-real-logo reveal" href="https://www.theolaur.com/" rel="noopener" target="_blank">
+<div class="marque-logo">
+<img alt="Logo Théolaur" class="marque-logo-img" src="images/marques/logo-theolaur.webp"/>
+</div>
+<span class="marque-tag">Fabricant partenaire</span>
+</a>
+<a class="marque-card reveal" href="gammes.html" style="background:linear-gradient(135deg, #1F3A5F 0%, #2D4E7A 100%); color:white; border:none;">
+<div class="marque-logo" style="color:#FFA968;">+ vos gammes</div>
+<span class="marque-tag" style="background:rgba(240,127,44,0.2); color:#FFA968;">★ L'Atelier</span>
+<p class="marque-description" style="color:rgba(255,255,255,0.7);"><span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span> : nos 10 produits de fabrication française, conçus pour les professionnels exigeants.</p>
+</a>
+</div>
 </section>
-
 <!-- AVIS GOOGLE -->
 <section class="avis" id="avis">
-  <div class="avis-inner">
-  <div class="avis-header reveal">
-    <div class="section-eyebrow">— Ils nous font confiance</div>
-    <h2 class="section-title">Nos clients en parlent <em>mieux que nous</em>.</h2>
-    <p class="section-intro">Plus de 130 avis sur Google, partagés entre nos deux magasins. Voici ce que nos clients pros et particuliers en disent.</p>
-    <div class="avis-google-badge">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-        <path fill="#FBBC04" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-      </svg>
+<div class="avis-inner">
+<div class="avis-header reveal">
+<div class="section-eyebrow">— Ils nous font confiance</div>
+<h2 class="section-title">Nos clients en parlent <em>mieux que nous</em>.</h2>
+<p class="section-intro">Plus de 130 avis sur Google, partagés entre nos deux magasins. Voici ce que nos clients pros et particuliers en disent.</p>
+<div class="avis-google-badge">
+<svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC04"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
       Avis vérifiés Google
     </div>
-  </div>
-  
-  <!-- Résumé : note par magasin -->
-  <div class="avis-stores reveal">
-    <div class="avis-store-card">
-      <div>
-        <div class="avis-store-name">L'Atelier <em>CUB</em></div>
-        <div class="avis-store-loc">Mérignac</div>
-      </div>
-      <div class="avis-store-rating">
-        <div class="avis-store-score">4.8<small>/5</small></div>
-        <div class="avis-store-stars">★★★★★</div>
-        <div class="avis-store-count">85 avis Google</div>
-      </div>
-    </div>
-    <div class="avis-store-card">
-      <div>
-        <div class="avis-store-name">L'Atelier <em>Bassin</em></div>
-        <div class="avis-store-loc">La Teste-de-Buch</div>
-      </div>
-      <div class="avis-store-rating">
-        <div class="avis-store-score">4.9<small>/5</small></div>
-        <div class="avis-store-stars">★★★★★</div>
-        <div class="avis-store-count">52 avis Google</div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Carrousel défilant des avis textuels (placeholders à modifier) -->
-  <div class="avis-carousel-wrap reveal">
-    <div class="avis-carousel">
-      <!-- Bloc 1 : 6 avis -->
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">JM</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Julien M.</div><div class="avis-card-date">il y a 2 semaines</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Conseils techniques au top, équipe vraiment à l'écoute. La mise à la teinte est rapide et précise, on repart avec le bon pot sans se prendre la tête.</p>
-        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">SD</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Sophie D.</div><div class="avis-card-date">il y a 1 mois</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Excellent accueil, large choix de peintures pro et éco. J'ai trouvé exactement ce qu'il me fallait pour mon chantier, avec des explications claires sur chaque produit.</p>
-        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">PB</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Philippe B.</div><div class="avis-card-date">il y a 3 semaines</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Artisan peintre depuis 20 ans, je suis client fidèle. Qualité des produits, conseils techniques, livraisons chantier — rien à redire. Le 45 Mat est top.</p>
-        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">CL</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Claire L.</div><div class="avis-card-date">il y a 2 mois</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Beau showroom, conseils colorimétrie au top. J'ai pu repartir avec mes échantillons et trouver la teinte parfaite pour mon salon. Merci à toute l'équipe !</p>
-        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">MR</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Marc R.</div><div class="avis-card-date">il y a 1 semaine</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Choix énorme de teintes, Chromatic disponible et mise à la teinte vraiment rapide. Le rapport qualité-prix est excellent pour de la peinture pro.</p>
-        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">NT</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Nadia T.</div><div class="avis-card-date">il y a 5 jours</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme Titane Hydro biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
-        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
-      </div>
-      <!-- Bloc 2 : duplication pour boucle infinie -->
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">JM</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Julien M.</div><div class="avis-card-date">il y a 2 semaines</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Conseils techniques au top, équipe vraiment à l'écoute. La mise à la teinte est rapide et précise, on repart avec le bon pot sans se prendre la tête.</p>
-        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">SD</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Sophie D.</div><div class="avis-card-date">il y a 1 mois</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Excellent accueil, large choix de peintures pro et éco. J'ai trouvé exactement ce qu'il me fallait pour mon chantier, avec des explications claires sur chaque produit.</p>
-        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">PB</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Philippe B.</div><div class="avis-card-date">il y a 3 semaines</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Artisan peintre depuis 20 ans, je suis client fidèle. Qualité des produits, conseils techniques, livraisons chantier — rien à redire. Le 45 Mat est top.</p>
-        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">CL</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Claire L.</div><div class="avis-card-date">il y a 2 mois</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Beau showroom, conseils colorimétrie au top. J'ai pu repartir avec mes échantillons et trouver la teinte parfaite pour mon salon. Merci à toute l'équipe !</p>
-        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">MR</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Marc R.</div><div class="avis-card-date">il y a 1 semaine</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Choix énorme de teintes, Chromatic disponible et mise à la teinte vraiment rapide. Le rapport qualité-prix est excellent pour de la peinture pro.</p>
-        <div class="avis-card-store">L'Atelier CUB · Mérignac</div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-card-head">
-          <div class="avis-card-avatar">NT</div>
-          <div class="avis-card-meta"><div class="avis-card-name">Nadia T.</div><div class="avis-card-date">il y a 5 jours</div></div>
-        </div>
-        <div class="avis-card-stars">★★★★★</div>
-        <p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme Titane Hydro biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
-        <div class="avis-card-store">L'Atelier Bassin · La Teste</div>
-      </div>
-    </div>
-  </div>
-  </div>
+</div>
+<!-- Résumé : note par magasin -->
+<div class="avis-stores reveal">
+<div class="avis-store-card">
+<div>
+<div class="avis-store-name">L'Atelier <em>CUB</em></div>
+<div class="avis-store-loc">Mérignac</div>
+</div>
+<div class="avis-store-rating">
+<div class="avis-store-score">4.8<small>/5</small></div>
+<div class="avis-store-stars">★★★★★</div>
+<div class="avis-store-count">85 avis Google</div>
+</div>
+</div>
+<div class="avis-store-card">
+<div>
+<div class="avis-store-name">L'Atelier <em>Bassin</em></div>
+<div class="avis-store-loc">La Teste-de-Buch</div>
+</div>
+<div class="avis-store-rating">
+<div class="avis-store-score">4.9<small>/5</small></div>
+<div class="avis-store-stars">★★★★★</div>
+<div class="avis-store-count">52 avis Google</div>
+</div>
+</div>
+</div>
+<!-- Carrousel défilant des avis textuels (placeholders à modifier) -->
+<div class="avis-carousel-wrap reveal">
+<div class="avis-carousel">
+<!-- Bloc 1 : 6 avis -->
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">JM</div>
+<div class="avis-card-meta"><div class="avis-card-name">Julien M.</div><div class="avis-card-date">il y a 2 semaines</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Conseils techniques au top, équipe vraiment à l'écoute. La mise à la teinte est rapide et précise, on repart avec le bon pot sans se prendre la tête.</p>
+<div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">SD</div>
+<div class="avis-card-meta"><div class="avis-card-name">Sophie D.</div><div class="avis-card-date">il y a 1 mois</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Excellent accueil, large choix de peintures pro et éco. J'ai trouvé exactement ce qu'il me fallait pour mon chantier, avec des explications claires sur chaque produit.</p>
+<div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">PB</div>
+<div class="avis-card-meta"><div class="avis-card-name">Philippe B.</div><div class="avis-card-date">il y a 3 semaines</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Artisan peintre depuis 20 ans, je suis client fidèle. Qualité des produits, conseils techniques, livraisons chantier — rien à redire. Le 45 Mat est top.</p>
+<div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">CL</div>
+<div class="avis-card-meta"><div class="avis-card-name">Claire L.</div><div class="avis-card-date">il y a 2 mois</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Beau showroom, conseils colorimétrie au top. J'ai pu repartir avec mes échantillons et trouver la teinte parfaite pour mon salon. Merci à toute l'équipe !</p>
+<div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">MR</div>
+<div class="avis-card-meta"><div class="avis-card-name">Marc R.</div><div class="avis-card-date">il y a 1 semaine</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Choix énorme de teintes, Chromatic disponible et mise à la teinte vraiment rapide. Le rapport qualité-prix est excellent pour de la peinture pro.</p>
+<div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">NT</div>
+<div class="avis-card-meta"><div class="avis-card-name">Nadia T.</div><div class="avis-card-date">il y a 5 jours</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme <span class="brand-titane">Titane Hydro</span> biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
+<div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+</div>
+<!-- Bloc 2 : duplication pour boucle infinie -->
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">JM</div>
+<div class="avis-card-meta"><div class="avis-card-name">Julien M.</div><div class="avis-card-date">il y a 2 semaines</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Conseils techniques au top, équipe vraiment à l'écoute. La mise à la teinte est rapide et précise, on repart avec le bon pot sans se prendre la tête.</p>
+<div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">SD</div>
+<div class="avis-card-meta"><div class="avis-card-name">Sophie D.</div><div class="avis-card-date">il y a 1 mois</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Excellent accueil, large choix de peintures pro et éco. J'ai trouvé exactement ce qu'il me fallait pour mon chantier, avec des explications claires sur chaque produit.</p>
+<div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">PB</div>
+<div class="avis-card-meta"><div class="avis-card-name">Philippe B.</div><div class="avis-card-date">il y a 3 semaines</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Artisan peintre depuis 20 ans, je suis client fidèle. Qualité des produits, conseils techniques, livraisons chantier — rien à redire. Le 45 Mat est top.</p>
+<div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">CL</div>
+<div class="avis-card-meta"><div class="avis-card-name">Claire L.</div><div class="avis-card-date">il y a 2 mois</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Beau showroom, conseils colorimétrie au top. J'ai pu repartir avec mes échantillons et trouver la teinte parfaite pour mon salon. Merci à toute l'équipe !</p>
+<div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">MR</div>
+<div class="avis-card-meta"><div class="avis-card-name">Marc R.</div><div class="avis-card-date">il y a 1 semaine</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Choix énorme de teintes, Chromatic disponible et mise à la teinte vraiment rapide. Le rapport qualité-prix est excellent pour de la peinture pro.</p>
+<div class="avis-card-store">L'Atelier CUB · Mérignac</div>
+</div>
+<div class="avis-card">
+<div class="avis-card-head">
+<div class="avis-card-avatar">NT</div>
+<div class="avis-card-meta"><div class="avis-card-name">Nadia T.</div><div class="avis-card-date">il y a 5 jours</div></div>
+</div>
+<div class="avis-card-stars">★★★★★</div>
+<p class="avis-card-text">Magasin agréable, équipe sympa et de bon conseil. La gamme <span class="brand-titane">Titane Hydro</span> biosourcée correspondait pile à mon projet éco-responsable. Top !</p>
+<div class="avis-card-store">L'Atelier Bassin · La Teste</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- MAGASINS -->
 <section class="magasins" id="magasins">
-  <div class="magasins-inner">
-    <div class="magasins-header reveal">
-      <div class="section-eyebrow">— Nous trouver</div>
-      <h2 class="section-title">Deux magasins en <em>Gironde</em>,<br>une équipe à votre écoute</h2>
-    </div>
-    <div class="magasins-grid">
-      <article class="magasin-card reveal">
-        <div class="magasin-image">
-          <img src="images/magasin-merignac.jpg" alt="Façade du magasin L'Atelier à Mérignac">
-          <span class="magasin-badge">Mérignac · CUB</span>
-        </div>
-        <div class="magasin-body">
-          <h3 class="magasin-name">L'Atelier <em>CUB</em></h3>
-          <p style="color:var(--gris); font-size:14px;">Notre magasin de la métropole bordelaise. Bureau d'études, livraisons chantier, espace conseil.</p>
-          <div class="magasin-info">
-            <div class="magasin-info-item"><div class="magasin-icon">📍</div><div>7 avenue de la Grande Semaine<br>33700 Mérignac</div></div>
-            <div class="magasin-info-item"><div class="magasin-icon">📞</div><div>05 56 28 89 44</div></div>
-            <div class="magasin-info-item"><div class="magasin-icon">✉️</div><div><a href="mailto:contact@latelier33.fr" style="color:inherit; text-decoration:none;">contact@latelier33.fr</a></div></div>
-          </div>
-          <div class="magasin-horaires">
-            <div class="magasin-horaires-title">Horaires d'ouverture</div>
-            <div class="magasin-horaires-grid">
-              <span class="magasin-h-day">Lun – Ven</span><span class="magasin-h-time">8h00 – 12h00 &nbsp;|&nbsp; 14h00 – 18h00</span>
-              <span class="magasin-h-day">Samedi</span><span class="magasin-h-closed">Fermé</span>
-              <span class="magasin-h-day">Dimanche</span><span class="magasin-h-closed">Fermé</span>
-            </div>
-          </div>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=7+avenue+de+la+Grande+Semaine%2C+33700+M%C3%A9rignac" target="_blank" rel="noopener" class="magasin-cta">Voir l'itinéraire <span>→</span></a>
-        </div>
-      </article>
-      <article class="magasin-card reveal">
-        <div class="magasin-image">
-          <img src="images/magasin-la-teste.jpg" alt="Façade du magasin L'Atelier au Bassin d'Arcachon (La Teste-de-Buch)">
-          <span class="magasin-badge">Bassin d'Arcachon</span>
-        </div>
-        <div class="magasin-body">
-          <h3 class="magasin-name">L'Atelier <em>Bassin</em></h3>
-          <p style="color:var(--gris); font-size:14px;">Notre magasin du Bassin d'Arcachon. Showroom déco, espace Argile, atelier colorimétrie.</p>
-          <div class="magasin-info">
-            <div class="magasin-info-item"><div class="magasin-icon">📍</div><div>1111 avenue du Parc des Expositions<br>33260 La Teste-de-Buch</div></div>
-            <div class="magasin-info-item"><div class="magasin-icon">📞</div><div>05 57 52 64 77</div></div>
-            <div class="magasin-info-item"><div class="magasin-icon">✉️</div><div><a href="mailto:contact@latelier33.fr" style="color:inherit; text-decoration:none;">contact@latelier33.fr</a></div></div>
-          </div>
-          <div class="magasin-horaires">
-            <div class="magasin-horaires-title">Horaires d'ouverture</div>
-            <div class="magasin-horaires-grid">
-              <span class="magasin-h-day">Lun – Ven</span><span class="magasin-h-time">8h00 – 12h00 &nbsp;|&nbsp; 14h00 – 18h00</span>
-              <span class="magasin-h-day">Samedi</span><span class="magasin-h-time">9h00 – 12h00</span>
-              <span class="magasin-h-day">Dimanche</span><span class="magasin-h-closed">Fermé</span>
-            </div>
-          </div>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=1111+avenue+du+Parc+des+Expositions%2C+33260+La+Teste-de-Buch" target="_blank" rel="noopener" class="magasin-cta">Voir l'itinéraire <span>→</span></a>
-        </div>
-      </article>
-    </div>
-  </div>
+<div class="magasins-inner">
+<div class="magasins-header reveal">
+<div class="section-eyebrow">— Nous trouver</div>
+<h2 class="section-title">Deux magasins en <em>Gironde</em>,<br/>une équipe à votre écoute</h2>
+</div>
+<div class="magasins-grid">
+<article class="magasin-card reveal">
+<div class="magasin-image">
+<img alt="Façade du magasin L'Atelier à Mérignac" src="images/magasin-merignac.jpg"/>
+<span class="magasin-badge">Mérignac · CUB</span>
+</div>
+<div class="magasin-body">
+<h3 class="magasin-name">L'Atelier <em>CUB</em></h3>
+<p style="color:var(--gris); font-size:14px;">Notre magasin de la métropole bordelaise. Bureau d'études, livraisons chantier, espace conseil.</p>
+<div class="magasin-info">
+<div class="magasin-info-item"><div class="magasin-icon">📍</div><div>7 avenue de la Grande Semaine<br/>33700 Mérignac</div></div>
+<div class="magasin-info-item"><div class="magasin-icon">📞</div><div>05 56 28 89 44</div></div>
+<div class="magasin-info-item"><div class="magasin-icon">✉️</div><div><a href="mailto:contact@latelier33.fr" style="color:inherit; text-decoration:none;">contact@latelier33.fr</a></div></div>
+</div>
+<div class="magasin-horaires">
+<div class="magasin-horaires-title">Horaires d'ouverture</div>
+<div class="magasin-horaires-grid">
+<span class="magasin-h-day">Lun – Ven</span><span class="magasin-h-time">8h00 – 12h00  |  14h00 – 18h00</span>
+<span class="magasin-h-day">Samedi</span><span class="magasin-h-closed">Fermé</span>
+<span class="magasin-h-day">Dimanche</span><span class="magasin-h-closed">Fermé</span>
+</div>
+</div>
+<a class="magasin-cta" href="https://www.google.com/maps/dir/?api=1&amp;destination=7+avenue+de+la+Grande+Semaine%2C+33700+M%C3%A9rignac" rel="noopener" target="_blank">Voir l'itinéraire <span>→</span></a>
+</div>
+</article>
+<article class="magasin-card reveal">
+<div class="magasin-image">
+<img alt="Façade du magasin L'Atelier au Bassin d'Arcachon (La Teste-de-Buch)" src="images/magasin-la-teste.jpg"/>
+<span class="magasin-badge">Bassin d'Arcachon</span>
+</div>
+<div class="magasin-body">
+<h3 class="magasin-name">L'Atelier <em>Bassin</em></h3>
+<p style="color:var(--gris); font-size:14px;">Notre magasin du Bassin d'Arcachon. Showroom déco, espace Argile, atelier colorimétrie.</p>
+<div class="magasin-info">
+<div class="magasin-info-item"><div class="magasin-icon">📍</div><div>1111 avenue du Parc des Expositions<br/>33260 La Teste-de-Buch</div></div>
+<div class="magasin-info-item"><div class="magasin-icon">📞</div><div>05 57 52 64 77</div></div>
+<div class="magasin-info-item"><div class="magasin-icon">✉️</div><div><a href="mailto:contact@latelier33.fr" style="color:inherit; text-decoration:none;">contact@latelier33.fr</a></div></div>
+</div>
+<div class="magasin-horaires">
+<div class="magasin-horaires-title">Horaires d'ouverture</div>
+<div class="magasin-horaires-grid">
+<span class="magasin-h-day">Lun – Ven</span><span class="magasin-h-time">8h00 – 12h00  |  14h00 – 18h00</span>
+<span class="magasin-h-day">Samedi</span><span class="magasin-h-time">9h00 – 12h00</span>
+<span class="magasin-h-day">Dimanche</span><span class="magasin-h-closed">Fermé</span>
+</div>
+</div>
+<a class="magasin-cta" href="https://www.google.com/maps/dir/?api=1&amp;destination=1111+avenue+du+Parc+des+Expositions%2C+33260+La+Teste-de-Buch" rel="noopener" target="_blank">Voir l'itinéraire <span>→</span></a>
+</div>
+</article>
+</div>
+</div>
 </section>
-
 <!-- SERVICES -->
 <section class="services" id="services">
-  <div class="reveal" style="text-align:center; margin-bottom: 20px;">
-    <div class="section-eyebrow">— Au-delà de la vente</div>
-    <h2 class="section-title">Nos <em>services</em> aux professionnels</h2>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-icon">🎨</div>
-      <h3 class="service-name">Mise à la teinte</h3>
-      <p class="service-description">Plus de 80 000 teintes disponibles. Systèmes Polycrom, Colorimix, RAL, NCS et nos nuanciers maison.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">🛠️</div>
-      <h3 class="service-name">Conseil technique</h3>
-      <p class="service-description">Notre équipe accompagne chaque chantier. Choix produit, supports, mise en œuvre, fiches techniques.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">🚚</div>
-      <h3 class="service-name">Livraison chantier</h3>
-      <p class="service-description">Livraison sur vos chantiers en Gironde. Gain de temps pour vos équipes, fraîcheur des produits garantie.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">💼</div>
-      <h3 class="service-name">Compte pro</h3>
-      <p class="service-description">Conditions négociées, paiement différé, programme de fidélité, suivi commercial dédié.</p>
-    </div>
-  </div>
+<div class="reveal" style="text-align:center; margin-bottom: 20px;">
+<div class="section-eyebrow">— Au-delà de la vente</div>
+<h2 class="section-title">Nos <em>services</em> aux professionnels</h2>
+</div>
+<div class="services-grid">
+<div class="service-card reveal">
+<div class="service-icon">🎨</div>
+<h3 class="service-name">Mise à la teinte</h3>
+<p class="service-description">Plus de 80 000 teintes disponibles. Systèmes Polycrom, Colorimix, RAL, NCS et nos nuanciers maison.</p>
+</div>
+<div class="service-card reveal">
+<div class="service-icon">🛠️</div>
+<h3 class="service-name">Conseil technique</h3>
+<p class="service-description">Notre équipe accompagne chaque chantier. Choix produit, supports, mise en œuvre, fiches techniques.</p>
+</div>
+<div class="service-card reveal">
+<div class="service-icon">🚚</div>
+<h3 class="service-name">Livraison chantier</h3>
+<p class="service-description">Livraison sur vos chantiers en Gironde. Gain de temps pour vos équipes, fraîcheur des produits garantie.</p>
+</div>
+<div class="service-card reveal">
+<div class="service-icon">💼</div>
+<h3 class="service-name">Compte pro</h3>
+<p class="service-description">Conditions négociées, paiement différé, programme de fidélité, suivi commercial dédié.</p>
+</div>
+</div>
 </section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
-        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Nos gammes</h4>
-        <ul>
-          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
-          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
-          <li><a href="nuanciers.html">Colorimétrie</a></li>
-          <li><a href="#">Engagement éco</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Le groupe</h4>
-        <ul>
-          <li><a href="#">Notre histoire</a></li>
-          <li><a href="#">Nos magasins</a></li>
-          <li><a href="#">L'Établi · location</a></li>
-          <li><a href="#">Espace pro</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
-          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
-          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a href="https://www.agir-peinture.com/" target="_blank" rel="noopener noreferrer" aria-label="Site du réseau Agir Peinture"><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></a></span></div>
-    </div>
-  </div>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+</div>
+<div class="footer-col">
+<h4>Nos gammes</h4>
+<ul>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="nuanciers.html">Colorimétrie</a></li>
+<li><a href="#">Engagement éco</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Le groupe</h4>
+<ul>
+<li><a href="#">Notre histoire</a></li>
+<li><a href="#">Nos magasins</a></li>
+<li><a href="#">L'Établi · location</a></li>
+<li><a href="#">Espace pro</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+<li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+<li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+</div>
+</div>
 </footer>
-
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
@@ -1505,26 +1561,25 @@
   });
 </script>
 <!-- Badge Google flottant : note moyenne, cliquable vers la section avis, fermable -->
-<div class="google-floating" role="region" aria-label="Note moyenne Google des magasins">
-  <a href="#avis" class="google-floating-link" aria-label="Note moyenne Google : 4,85 sur 5 — voir les avis">
-    <svg class="google-floating-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-      <path fill="#FBBC04" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-    </svg>
-    <div class="google-floating-body">
-      <div class="google-floating-label">Avis Google</div>
-      <div class="google-floating-score">
-        <span class="google-floating-num">4,85<span class="google-floating-num-max">/5</span></span>
-        <span class="google-floating-stars">★★★★★</span>
-      </div>
-      <div class="google-floating-sub">137 avis · 2 magasins</div>
-    </div>
-  </a>
-  <button type="button" class="google-floating-close" aria-label="Fermer">×</button>
+<div aria-label="Note moyenne Google des magasins" class="google-floating" role="region">
+<a aria-label="Note moyenne Google : 4,85 sur 5 — voir les avis" class="google-floating-link" href="#avis">
+<svg aria-hidden="true" class="google-floating-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC04"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<div class="google-floating-body">
+<div class="google-floating-label">Avis Google</div>
+<div class="google-floating-score">
+<span class="google-floating-num">4,85<span class="google-floating-num-max">/5</span></span>
+<span class="google-floating-stars">★★★★★</span>
 </div>
-
+<div class="google-floating-sub">137 avis · 2 magasins</div>
+</div>
+</a>
+<button aria-label="Fermer" class="google-floating-close" type="button">×</button>
+</div>
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Début ============ -->
 <style>
   /* Dropdown de résultats sous la barre de recherche */
@@ -1623,7 +1678,6 @@
     .search-results { width: calc(100vw - 32px); right: auto; left: 50%; transform: translateX(-50%); }
   }
 </style>
-
 <script>
 (function() {
   // ============ INDEX DE RECHERCHE COMPLET DU SITE ============
@@ -1918,8 +1972,6 @@
 })();
 </script>
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Fin ============ -->
-
-
 <script>
   // ===== MENU BURGER MOBILE =====
   (function () {
@@ -1946,6 +1998,5 @@
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
 </script>
-
 </body>
 </html>

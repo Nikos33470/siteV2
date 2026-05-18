@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revêtements de sol — Parquets & sols souples LVT | L'Atelier</title>
-<meta name="description" content="L'Atelier distribue les plus belles fabriques de parquets (Panaget, Design Parquet, Kährs, Bauwerk…) et les sols souples LVT (Gerflor Creation, Tarkett iD, Forbo Allura, Amtico, Moduleo, Interface, Polyflor, IVC).">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Revêtements de sol — Parquets &amp; sols souples LVT | L'Atelier</title>
+<meta content="L'Atelier distribue les plus belles fabriques de parquets (Panaget, Design Parquet, Kährs, Bauwerk…) et les sols souples LVT (Gerflor Creation, Tarkett iD, Forbo Allura, Amtico, Moduleo, Interface, Polyflor, IVC)." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F; --bleu-fonce: #15273F; --bleu-clair: #2D4E7A; --bleu-pale: #E8EEF5;
@@ -417,272 +418,336 @@
   }
   /* ========== FIN MENU BURGER MOBILE ========== */
 
+
+  /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
+  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  .brand-45,
+  .brand-titane {
+    font-style: italic;
+  }
+  .brand-45 {
+    font-family: 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  .brand-titane {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
+     (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
+
+  /* --- INDEX : cartes de gamme grand format --- */
+  .gamme-card.gamme-45 .gamme-name,
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .gamme-card.gamme-titane .gamme-name,
+  .gamme-card.gamme-titane .gamme-name-accent {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+  }
+  /* on garde la couleur d'accent orange/bleu déjà définie */
+
+  /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
+  .badge-cov .pot-badge-label,
+  .badge-biosource .pot-badge-label {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+  }
+
+  /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
+  .pilier-brands {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* --- PAGE GAMMES : bandeaux de section et titres produits --- */
+  [data-gamme-section="45"] .gamme-banner-title,
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name,
+  [data-gamme-section="45"] .product-name em {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+  }
+  [data-gamme-section="titane"] .gamme-banner-title,
+  [data-gamme-section="titane"] .gamme-banner-title em,
+  [data-gamme-section="titane"] .product-name,
+  [data-gamme-section="titane"] .product-name em {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+  }
+  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
+     on neutralise juste son italique déjà présent (héritage cohérent) */
+
+  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
+  /* déjà couverts par les <span class="brand-..."> wrappés */
+
+  /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
 <body>
-
 <!-- ============ HEADER ============ -->
 <header class="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
-        <!-- Carre bleu marine principal occupant la majorite de l'espace -->
-        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
-        <!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
-        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
-        <!-- Lettre 'a' minuscule blanche occupant le carre -->
-        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-              font-size="82" font-weight="900" fill="#FFFFFF"
-              text-anchor="middle" letter-spacing="-3">a</text>
-      </svg>
-      <div class="logo-text-wrap">
-        <span class="logo-text">l'atelier</span>
-        <span class="logo-baseline">MARCHAND DE COULEURS</span>
-        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
-      </div>
-    </a>
-    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-    </button>
-    <div class="nav-overlay-backdrop" aria-hidden="true"></div>
-    <div class="nav-wrap">
-      <nav class="nav">
-        <a href="gammes.html">Nos gammes peintures</a>
-        <a href="nuanciers.html">Nuanciers</a>
-        <a href="index.html#eco">Engagement éco</a>
-        <a href="revetement-mural.html">Revêtement mural</a>
-        <a href="revetement-sol.html" class="is-current">Revêtement de sol</a>
-        <a href="documents.html">Documents techniques</a>
-        <a href="index.html#equipe">L'équipe L'ATELIER</a>
-        <a href="#" class="nav-cta">Espace pro</a>
-      </nav>
-      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
-        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
-      </form>
-    </div>
-  </div>
+<div class="header-inner">
+<a class="logo" href="index.html">
+<svg aria-label="Logo L'Atelier" class="logo-symbol" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Carre bleu marine principal occupant la majorite de l'espace -->
+<rect fill="#1F3A5F" height="92" width="68" x="20" y="18"></rect>
+<!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
+<path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"></path>
+<!-- Lettre 'a' minuscule blanche occupant le carre -->
+<text fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3" text-anchor="middle" x="54" y="94">a</text>
+</svg>
+<div class="logo-text-wrap">
+<span class="logo-text">l'atelier</span>
+<span class="logo-baseline">MARCHAND DE COULEURS</span>
+<span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+</div>
+</a>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Menu" class="nav-burger" type="button">
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+</button>
+<div aria-hidden="true" class="nav-overlay-backdrop"></div>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="gammes.html">Nos gammes peintures</a>
+<a href="nuanciers.html">Nuanciers</a>
+<a href="index.html#eco">Engagement éco</a>
+<a href="revetement-mural.html">Revêtement mural</a>
+<a class="is-current" href="revetement-sol.html">Revêtement de sol</a>
+<a href="documents.html">Documents techniques</a>
+<a href="index.html#equipe">L'équipe L'ATELIER</a>
+<a class="nav-cta" href="#">Espace pro</a>
+</nav>
+<form class="nav-search" onsubmit="event.preventDefault();" role="search">
+<svg aria-hidden="true" class="nav-search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input aria-label="Recherche sur le site" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" type="search"/>
+</form>
+</div>
+</div>
 </header>
-
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero-inner">
-    <span class="hero-eyebrow">Revêtements de sol</span>
-    <h1 class="hero-title">
-      Le sol,<br>
-      <em>la cinquième pièce</em>.
+<div class="hero-inner">
+<span class="hero-eyebrow">Revêtements de sol</span>
+<h1 class="hero-title">
+      Le sol,<br/>
+<em>la cinquième pièce</em>.
     </h1>
-    <p class="hero-subtitle">
+<p class="hero-subtitle">
       Du <strong>parquet contrecollé en chêne français</strong> aux <strong>LVT contract</strong> qui résistent à 10 ans de passage intense. L'Atelier sélectionne les fabricants pour leur exigence technique, leur traçabilité et leur design.
     </p>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="hero-meta-num">16</span>
-        <span class="hero-meta-label">Fabricants distribués</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-num">2</span>
-        <span class="hero-meta-label">Showrooms en Gironde</span>
-      </div>
-    </div>
-  </div>
+<div class="hero-meta">
+<div class="hero-meta-item">
+<span class="hero-meta-num">16</span>
+<span class="hero-meta-label">Fabricants distribués</span>
+</div>
+<div class="hero-meta-item">
+<span class="hero-meta-num">2</span>
+<span class="hero-meta-label">Showrooms en Gironde</span>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ BREADCRUMB ============ -->
 <div class="breadcrumb-bar">
-  <nav class="breadcrumb" aria-label="Fil d'Ariane">
-    <a href="index.html">Accueil</a>
-    <span class="breadcrumb-sep">/</span>
-    <span class="breadcrumb-current">Revêtement de sol</span>
-  </nav>
+<nav aria-label="Fil d'Ariane" class="breadcrumb">
+<a href="index.html">Accueil</a>
+<span class="breadcrumb-sep">/</span>
+<span class="breadcrumb-current">Revêtement de sol</span>
+</nav>
 </div>
-
 <!-- ============ INTRO ÉDITORIALE ============ -->
 <section class="intro">
-  <div class="intro-inner reveal">
-    <div class="intro-grid">
-      <div>
-        <span class="intro-eyebrow">Notre sélection</span>
-        <h2 class="intro-title">Bien <em>marcher dessus</em>, avant tout le reste.</h2>
-      </div>
-      <div class="intro-text">
-        <p>Le sol est la surface la plus sollicitée d'un intérieur. Choix de l'essence, classe d'usage, finition, format de lame, mise en œuvre : nous accompagnons particuliers, architectes et entreprises sur l'ensemble de ces points.</p>
-        <p><strong>Parquet ou souple, chaque fabricant ci-dessous est sélectionné pour la longévité de ses produits et la qualité de son service après-vente.</strong> Échantillons en main, livraison chantier, conseil par nos prescripteurs.</p>
-      </div>
-    </div>
-  </div>
+<div class="intro-inner reveal">
+<div class="intro-grid">
+<div>
+<span class="intro-eyebrow">Notre sélection</span>
+<h2 class="intro-title">Bien <em>marcher dessus</em>, avant tout le reste.</h2>
+</div>
+<div class="intro-text">
+<p>Le sol est la surface la plus sollicitée d'un intérieur. Choix de l'essence, classe d'usage, finition, format de lame, mise en œuvre : nous accompagnons particuliers, architectes et entreprises sur l'ensemble de ces points.</p>
+<p><strong>Parquet ou souple, chaque fabricant ci-dessous est sélectionné pour la longévité de ses produits et la qualité de son service après-vente.</strong> Échantillons en main, livraison chantier, conseil par nos prescripteurs.</p>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ SECTION 01 — PARQUETS ============ -->
 <section class="cat-section" id="parquet">
-  <div class="cat-inner">
-    <header class="cat-header reveal">
-      <div class="cat-num">01</div>
-      <div class="cat-info">
-        <span class="cat-tag">Massif · Contrecollé · Stratifié</span>
-        <h2 class="cat-title">Parquets <em>bois</em></h2>
-        <p class="cat-subtitle">Chêne français, essences alpines, designs scandinaves. La noblesse du bois sous tous ses angles.</p>
-      </div>
-    </header>
-
-    <!-- Galerie parquet — visuels officiels fabricants (Panaget, Kährs, Design Parquet) -->
-    <div class="gallery gallery-parquet reveal">
-      <div class="gallery-item"><img src="https://panaget.com/content/uploads/2024/01/chene_zenitude_noisette_diva184-2-e1704817829703.jpg" alt="Parquet chêne Zénitude noisette Diva 184 - Panaget" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Chêne large lame</div><div class="gallery-caption-text">Diva 184 Zénitude — Panaget</div></div></div>
-      <div class="gallery-item"><img src="https://panaget.com/content/uploads/2024/01/chene_classic_topaze_point-de-hongire90_zoom-e1704904546436.jpg" alt="Parquet point de Hongrie chêne classic topaze - Panaget" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Point de Hongrie</div><div class="gallery-caption-text">Classic topaze — Panaget</div></div></div>
-      <div class="gallery-item"><img src="https://info-kahrs.ch/wp-content/uploads/2023/10/kalmar-scaled.jpg" alt="Parquet chêne Kalmar - Kährs" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Contrecollé scandinave</div><div class="gallery-caption-text">Kalmar — Kährs</div></div></div>
-      <div class="gallery-item"><img src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/opera-2-r-3-scaled-e1679480552132.jpg" alt="Parquet chêne massif Opera - Design Parquet" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Massif premium</div><div class="gallery-caption-text">Opera — Design Parquet</div></div></div>
-      <div class="gallery-item"><img src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/dp-chene-expresso-lp-ru-ca-16x180-2ch-teinte-ver-mat.jpg" alt="Parquet chêne Expresso brun fumé thermo - Design Parquet" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Chêne thermo</div><div class="gallery-caption-text">Expresso fumé — Design Parquet</div></div></div>
-      <div class="gallery-item"><img src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/carbone-1-scaled.jpg" alt="Parquet chêne Carbone noir verni - Design Parquet" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Noir verni</div><div class="gallery-caption-text">Carbone — Design Parquet</div></div></div>
-      <div class="gallery-item"><img src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/naturel.jpg" alt="Parquet chêne naturel - Design Parquet" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Chêne naturel</div><div class="gallery-caption-text">Gamme Naturel — Design Parquet</div></div></div>
-    </div>
-
-    <!-- Liste des fabricants -->
-    <div class="brands-list reveal">
-      <div class="brands-list-label">
+<div class="cat-inner">
+<header class="cat-header reveal">
+<div class="cat-num">01</div>
+<div class="cat-info">
+<span class="cat-tag">Massif · Contrecollé · Stratifié</span>
+<h2 class="cat-title">Parquets <em>bois</em></h2>
+<p class="cat-subtitle">Chêne français, essences alpines, designs scandinaves. La noblesse du bois sous tous ses angles.</p>
+</div>
+</header>
+<!-- Galerie parquet — visuels officiels fabricants (Panaget, Kährs, Design Parquet) -->
+<div class="gallery gallery-parquet reveal">
+<div class="gallery-item"><img alt="Parquet chêne Zénitude noisette Diva 184 - Panaget" loading="lazy" src="https://panaget.com/content/uploads/2024/01/chene_zenitude_noisette_diva184-2-e1704817829703.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne large lame</div><div class="gallery-caption-text">Diva 184 Zénitude — Panaget</div></div></div>
+<div class="gallery-item"><img alt="Parquet point de Hongrie chêne classic topaze - Panaget" loading="lazy" src="https://panaget.com/content/uploads/2024/01/chene_classic_topaze_point-de-hongire90_zoom-e1704904546436.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Point de Hongrie</div><div class="gallery-caption-text">Classic topaze — Panaget</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne Kalmar - Kährs" loading="lazy" src="https://info-kahrs.ch/wp-content/uploads/2023/10/kalmar-scaled.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Contrecollé scandinave</div><div class="gallery-caption-text">Kalmar — Kährs</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne massif Opera - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/opera-2-r-3-scaled-e1679480552132.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Massif premium</div><div class="gallery-caption-text">Opera — Design Parquet</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne Expresso brun fumé thermo - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/dp-chene-expresso-lp-ru-ca-16x180-2ch-teinte-ver-mat.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne thermo</div><div class="gallery-caption-text">Expresso fumé — Design Parquet</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne Carbone noir verni - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/carbone-1-scaled.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Noir verni</div><div class="gallery-caption-text">Carbone — Design Parquet</div></div></div>
+<div class="gallery-item"><img alt="Parquet chêne naturel - Design Parquet" loading="lazy" src="https://designparquet-1e0f7.kxcdn.com/wp-content/uploads/naturel.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">Chêne naturel</div><div class="gallery-caption-text">Gamme Naturel — Design Parquet</div></div></div>
+</div>
+<!-- Liste des fabricants -->
+<div class="brands-list reveal">
+<div class="brands-list-label">
         Les fabricants distribués
         <span class="brands-list-label-num">08</span>
-        <span class="brands-list-label-detail">Fabricants français et européens reconnus pour leur traçabilité et la qualité de leur bois sourcé.</span>
-      </div>
-      <div class="brands-grid-names">
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">Bauwerk</span><span class="brand-item-meta">Suisse</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">BerryAlloc</span><span class="brand-item-meta">Belgique-Norvège</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">Boen</span><span class="brand-item-meta">Norvège</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">D</span><span class="brand-item-name">Design Parquet</span><span class="brand-item-meta">France · Chêne</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">H</span><span class="brand-item-name">Haro</span><span class="brand-item-meta">Allemagne · 1866</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">K</span><span class="brand-item-name">Kährs</span><span class="brand-item-meta">Suède · 1857</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Panaget</span><span class="brand-item-meta">France · 1929</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Parqueterie Berrichonne</span><span class="brand-item-meta">France · Berry</span></div>
-      </div>
-    </div>
-  </div>
+<span class="brands-list-label-detail">Fabricants français et européens reconnus pour leur traçabilité et la qualité de leur bois sourcé.</span>
+</div>
+<div class="brands-grid-names">
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Bauwerk</span><span class="brand-item-meta">Suisse</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">BerryAlloc</span><span class="brand-item-meta">Belgique-Norvège</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Boen</span><span class="brand-item-meta">Norvège</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">D</span><span class="brand-item-name">Design Parquet</span><span class="brand-item-meta">France · Chêne</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">H</span><span class="brand-item-name">Haro</span><span class="brand-item-meta">Allemagne · 1866</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">K</span><span class="brand-item-name">Kährs</span><span class="brand-item-meta">Suède · 1857</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Panaget</span><span class="brand-item-meta">France · 1929</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Parqueterie Berrichonne</span><span class="brand-item-meta">France · Berry</span></div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ LIFESTYLE BANNER ============ -->
 <section class="lifestyle-banner reveal">
-  <div class="lifestyle-content">
-    <span class="lifestyle-eyebrow">En showroom</span>
-    <h2 class="lifestyle-title">Échantillons <em>à manipuler</em>.</h2>
-    <p class="lifestyle-text">Format de lame, classement d'usage, ressenti pieds nus, raccord, sous-couche acoustique — le sol se choisit en main. Nos showrooms regroupent les échantillons de tous nos fabricants. Sur rendez-vous pour les projets architectes et entreprises.</p>
-  </div>
+<div class="lifestyle-content">
+<span class="lifestyle-eyebrow">En showroom</span>
+<h2 class="lifestyle-title">Échantillons <em>à manipuler</em>.</h2>
+<p class="lifestyle-text">Format de lame, classement d'usage, ressenti pieds nus, raccord, sous-couche acoustique — le sol se choisit en main. Nos showrooms regroupent les échantillons de tous nos fabricants. Sur rendez-vous pour les projets architectes et entreprises.</p>
+</div>
 </section>
-
 <!-- ============ SECTION 02 — SOLS SOUPLES & LVT ============ -->
 <section class="cat-section alt" id="sols-souples">
-  <div class="cat-inner">
-    <header class="cat-header reveal">
-      <div class="cat-num">02</div>
-      <div class="cat-info">
-        <span class="cat-tag" style="background: var(--bleu);">LVT · Vinyle · Contract</span>
-        <h2 class="cat-title">Sols souples <em>& LVT</em></h2>
-        <p class="cat-subtitle">Pour les pièces humides, le passage intense, l'hôtellerie et le tertiaire. Imitations bois et minéraux haute définition.</p>
-      </div>
-    </header>
-
-    <!-- Galerie LVT — visuels officiels Forbo (Allura LVT) & Gerflor (Creation) en situation -->
-    <div class="gallery gallery-lvt reveal">
-      <div class="gallery-item"><img src="https://forbo.azureedge.net/forboimages/1495632/Allura_60288-light-giant-oak_60284-natural-giant-oak.webp" alt="Sol LVT Allura chêne géant clair en situation - Forbo" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">LVT chêne XXL</div><div class="gallery-caption-text">Allura Dryback — Forbo</div></div></div>
-      <div class="gallery-item"><img src="https://cdn.gerflor.com/media/1642426083/1/62086.jpg" alt="Sol LVT Creation 70 Chips Amber sur rue urbaine - Gerflor" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">LVT urbain</div><div class="gallery-caption-text">Creation 70 — Gerflor</div></div></div>
-      <div class="gallery-item"><img src="https://forbo.azureedge.net/forboimages/1495612/Allura_63666_63749_60084.webp" alt="Sol LVT Allura combinaison bois & matière - Forbo" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Mix bois & matière</div><div class="gallery-caption-text">Allura — Forbo</div></div></div>
-      <div class="gallery-item"><img src="https://cdn.gerflor.com/media/1642426083/1/62082.jpg" alt="Sol LVT Creation 55 Tamo Clear en situation salon - Gerflor" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">LVT clair</div><div class="gallery-caption-text">Creation 55 — Gerflor</div></div></div>
-    </div>
-
-    <!-- Liste des marques LVT -->
-    <div class="brands-list reveal">
-      <div class="brands-list-label">
+<div class="cat-inner">
+<header class="cat-header reveal">
+<div class="cat-num">02</div>
+<div class="cat-info">
+<span class="cat-tag" style="background: var(--bleu);">LVT · Vinyle · Contract</span>
+<h2 class="cat-title">Sols souples <em>&amp; LVT</em></h2>
+<p class="cat-subtitle">Pour les pièces humides, le passage intense, l'hôtellerie et le tertiaire. Imitations bois et minéraux haute définition.</p>
+</div>
+</header>
+<!-- Galerie LVT — visuels officiels Forbo (Allura LVT) & Gerflor (Creation) en situation -->
+<div class="gallery gallery-lvt reveal">
+<div class="gallery-item"><img alt="Sol LVT Allura chêne géant clair en situation - Forbo" loading="lazy" src="https://forbo.azureedge.net/forboimages/1495632/Allura_60288-light-giant-oak_60284-natural-giant-oak.webp"/><div class="gallery-caption"><div class="gallery-caption-style">LVT chêne XXL</div><div class="gallery-caption-text">Allura Dryback — Forbo</div></div></div>
+<div class="gallery-item"><img alt="Sol LVT Creation 70 Chips Amber sur rue urbaine - Gerflor" loading="lazy" src="https://cdn.gerflor.com/media/1642426083/1/62086.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">LVT urbain</div><div class="gallery-caption-text">Creation 70 — Gerflor</div></div></div>
+<div class="gallery-item"><img alt="Sol LVT Allura combinaison bois &amp; matière - Forbo" loading="lazy" src="https://forbo.azureedge.net/forboimages/1495612/Allura_63666_63749_60084.webp"/><div class="gallery-caption"><div class="gallery-caption-style">Mix bois &amp; matière</div><div class="gallery-caption-text">Allura — Forbo</div></div></div>
+<div class="gallery-item"><img alt="Sol LVT Creation 55 Tamo Clear en situation salon - Gerflor" loading="lazy" src="https://cdn.gerflor.com/media/1642426083/1/62082.jpg"/><div class="gallery-caption"><div class="gallery-caption-style">LVT clair</div><div class="gallery-caption-text">Creation 55 — Gerflor</div></div></div>
+</div>
+<!-- Liste des marques LVT -->
+<div class="brands-list reveal">
+<div class="brands-list-label">
         Les marques distribuées
         <span class="brands-list-label-num">08</span>
-        <span class="brands-list-label-detail">Marques de référence du LVT et du sol souple, pour le résidentiel comme pour les chantiers contract.</span>
-      </div>
-      <div class="brands-grid-names">
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Amtico</span><span class="brand-item-meta">UK · Luxe</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">F</span><span class="brand-item-name">Forbo</span><span class="brand-item-meta">Allura · Suisse</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">G</span><span class="brand-item-name">Gerflor</span><span class="brand-item-meta">Creation · Lyon</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">I</span><span class="brand-item-name">Interface</span><span class="brand-item-meta">USA · Dalles moquette</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">I</span><span class="brand-item-name">IVC</span><span class="brand-item-meta">Belgique</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Moduleo</span><span class="brand-item-meta">Pays-Bas</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Polyflor</span><span class="brand-item-meta">UK · Contract</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Tarkett</span><span class="brand-item-meta">iD Inspiration</span></div>
-      </div>
-    </div>
-  </div>
+<span class="brands-list-label-detail">Marques de référence du LVT et du sol souple, pour le résidentiel comme pour les chantiers contract.</span>
+</div>
+<div class="brands-grid-names">
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Amtico</span><span class="brand-item-meta">UK · Luxe</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">F</span><span class="brand-item-name">Forbo</span><span class="brand-item-meta">Allura · Suisse</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">G</span><span class="brand-item-name">Gerflor</span><span class="brand-item-meta">Creation · Lyon</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">Interface</span><span class="brand-item-meta">USA · Dalles moquette</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">IVC</span><span class="brand-item-meta">Belgique</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Moduleo</span><span class="brand-item-meta">Pays-Bas</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Polyflor</span><span class="brand-item-meta">UK · Contract</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Tarkett</span><span class="brand-item-meta">iD Inspiration</span></div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ SHOWROOMS ============ -->
 <section class="showroom-section">
-  <div class="cat-inner">
-    <header class="cat-header reveal" style="margin-bottom: 40px;">
-      <div class="cat-num">03</div>
-      <div class="cat-info">
-        <span class="cat-tag">Voir, toucher, choisir</span>
-        <h2 class="cat-title">Nos <em>showrooms</em></h2>
-        <p class="cat-subtitle">Deux espaces dédiés aux échantillons. Ouvert aux particuliers, architectes et artisans.</p>
-      </div>
-    </header>
-  </div>
-  <div class="showroom-grid reveal">
-    <div class="showroom-card">
-      <div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEURS_ATELIER_CUB_V2.jpeg');"></div>
-      <div class="showroom-card-name">L'Atelier <em>CUB</em></div>
-      <div class="showroom-card-sub">Mérignac</div>
-      <div class="showroom-card-addr">7 av. de la grande semaine<br>33700 Mérignac</div>
-      <a href="tel:0556288944" class="showroom-card-tel">05 56 28 89 44 →</a>
-    </div>
-    <div class="showroom-card">
-      <div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEUR_ATELIER_BASSIN_V2.jpeg');"></div>
-      <div class="showroom-card-name">L'Atelier <em>Bassin</em></div>
-      <div class="showroom-card-sub">La Teste-de-Buch</div>
-      <div class="showroom-card-addr">1111 av. du Parc des Expositions<br>33260 La Teste-de-Buch<br>Bassin d'Arcachon</div>
-      <a href="tel:0557526477" class="showroom-card-tel">05 57 52 64 77 →</a>
-    </div>
-  </div>
+<div class="cat-inner">
+<header class="cat-header reveal" style="margin-bottom: 40px;">
+<div class="cat-num">03</div>
+<div class="cat-info">
+<span class="cat-tag">Voir, toucher, choisir</span>
+<h2 class="cat-title">Nos <em>showrooms</em></h2>
+<p class="cat-subtitle">Deux espaces dédiés aux échantillons. Ouvert aux particuliers, architectes et artisans.</p>
+</div>
+</header>
+</div>
+<div class="showroom-grid reveal">
+<div class="showroom-card">
+<div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEURS_ATELIER_CUB_V2.jpeg');"></div>
+<div class="showroom-card-name">L'Atelier <em>CUB</em></div>
+<div class="showroom-card-sub">Mérignac</div>
+<div class="showroom-card-addr">7 av. de la grande semaine<br/>33700 Mérignac</div>
+<a class="showroom-card-tel" href="tel:0556288944">05 56 28 89 44 →</a>
+</div>
+<div class="showroom-card">
+<div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEUR_ATELIER_BASSIN_V2.jpeg');"></div>
+<div class="showroom-card-name">L'Atelier <em>Bassin</em></div>
+<div class="showroom-card-sub">La Teste-de-Buch</div>
+<div class="showroom-card-addr">1111 av. du Parc des Expositions<br/>33260 La Teste-de-Buch<br/>Bassin d'Arcachon</div>
+<a class="showroom-card-tel" href="tel:0557526477">05 57 52 64 77 →</a>
+</div>
+</div>
 </section>
-
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
-        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Nos gammes</h4>
-        <ul>
-          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
-          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
-          <li><a href="revetement-mural.html">Revêtement mural</a></li>
-          <li><a href="revetement-sol.html">Revêtement de sol</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Le groupe</h4>
-        <ul>
-          <li><a href="#">Notre histoire</a></li>
-          <li><a href="#">Nos magasins</a></li>
-          <li><a href="#">L'Établi · location</a></li>
-          <li><a href="#">Espace pro</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
-          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
-          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a href="https://www.agir-peinture.com/" target="_blank" rel="noopener noreferrer" aria-label="Site du réseau Agir Peinture"><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></a></span></div>
-    </div>
-  </div>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+</div>
+<div class="footer-col">
+<h4>Nos gammes</h4>
+<ul>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="revetement-mural.html">Revêtement mural</a></li>
+<li><a href="revetement-sol.html">Revêtement de sol</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Le groupe</h4>
+<ul>
+<li><a href="#">Notre histoire</a></li>
+<li><a href="#">Nos magasins</a></li>
+<li><a href="#">L'Établi · location</a></li>
+<li><a href="#">Espace pro</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+<li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+<li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+</div>
+</div>
 </footer>
-
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
@@ -695,7 +760,6 @@
     else header.classList.remove('is-scrolled');
   });
 </script>
-
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Début ============ -->
 <style>
   /* Dropdown de résultats sous la barre de recherche */
@@ -794,7 +858,6 @@
     .search-results { width: calc(100vw - 32px); right: auto; left: 50%; transform: translateX(-50%); }
   }
 </style>
-
 <script>
 (function() {
   // ============ INDEX DE RECHERCHE COMPLET DU SITE ============
@@ -1089,8 +1152,6 @@
 })();
 </script>
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Fin ============ -->
-
-
 <script>
   // ===== MENU BURGER MOBILE =====
   (function () {
@@ -1117,6 +1178,5 @@
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
 </script>
-
 </body>
 </html>

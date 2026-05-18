@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nos gammes de peinture — L'Atelier 45 & Titane Hydro · Peintures fabriquées en France</title>
-<meta name="description" content="Découvrez nos gammes de peintures professionnelles fabriquées en France : L'Atelier 45 (acrylique & glycéro) et Titane Hydro biosourcée. Impressions, mats, velours et satins.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nos gammes de peinture — L'Atelier 45 &amp; Titane Hydro · Peintures fabriquées en France</title>
+<meta content="Découvrez nos gammes de peintures professionnelles fabriquées en France : L'Atelier 45 (acrylique &amp; glycéro) et Titane Hydro biosourcée. Impressions, mats, velours et satins." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F;
@@ -724,681 +725,727 @@
   }
   /* ========== FIN MENU BURGER MOBILE ========== */
 
+
+  /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
+  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  .brand-45,
+  .brand-titane {
+    font-style: italic;
+  }
+  .brand-45 {
+    font-family: 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  .brand-titane {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
+     (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
+
+  /* --- INDEX : cartes de gamme grand format --- */
+  .gamme-card.gamme-45 .gamme-name,
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .gamme-card.gamme-titane .gamme-name,
+  .gamme-card.gamme-titane .gamme-name-accent {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+  }
+  /* on garde la couleur d'accent orange/bleu déjà définie */
+
+  /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
+  .badge-cov .pot-badge-label,
+  .badge-biosource .pot-badge-label {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+  }
+
+  /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
+  .pilier-brands {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* --- PAGE GAMMES : bandeaux de section et titres produits --- */
+  [data-gamme-section="45"] .gamme-banner-title,
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name,
+  [data-gamme-section="45"] .product-name em {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+  }
+  [data-gamme-section="titane"] .gamme-banner-title,
+  [data-gamme-section="titane"] .gamme-banner-title em,
+  [data-gamme-section="titane"] .product-name,
+  [data-gamme-section="titane"] .product-name em {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+  }
+  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
+     on neutralise juste son italique déjà présent (héritage cohérent) */
+
+  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
+  /* déjà couverts par les <span class="brand-..."> wrappés */
+
+  /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
 <body>
-
 <!-- HEADER -->
 <header class="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
-        <!-- Carre bleu marine principal occupant la majorite de l'espace -->
-        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
-        <!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
-        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
-        <!-- Lettre 'a' minuscule blanche occupant le carre -->
-        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-              font-size="82" font-weight="900" fill="#FFFFFF"
-              text-anchor="middle" letter-spacing="-3">a</text>
-      </svg>
-      <div class="logo-text-wrap">
-        <span class="logo-text">l'atelier</span>
-        <span class="logo-baseline">MARCHAND DE COULEURS</span>
-        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
-      </div>
-    </a>
-    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-    </button>
-    <div class="nav-overlay-backdrop" aria-hidden="true"></div>
-    <div class="nav-wrap">
-      <nav class="nav">
-        <a href="gammes.html" class="active">Nos gammes peintures</a>
-        <a href="nuanciers.html">Nuanciers</a>
-        <a href="index.html#eco">Engagement éco</a>
-        <a href="revetement-mural.html">Revêtement mural</a>
-        <a href="revetement-sol.html">Revêtement de sol</a>
-        <a href="documents.html">Documents techniques</a>
-        <a href="index.html#equipe">L'équipe L'ATELIER</a>
-        <a href="#" class="nav-cta">Espace pro</a>
-      </nav>
-      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
-        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
-      </form>
-    </div>
-  </div>
+<div class="header-inner">
+<a class="logo" href="index.html">
+<svg aria-label="Logo L'Atelier" class="logo-symbol" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Carre bleu marine principal occupant la majorite de l'espace -->
+<rect fill="#1F3A5F" height="92" width="68" x="20" y="18"></rect>
+<!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
+<path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"></path>
+<!-- Lettre 'a' minuscule blanche occupant le carre -->
+<text fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3" text-anchor="middle" x="54" y="94">a</text>
+</svg>
+<div class="logo-text-wrap">
+<span class="logo-text">l'atelier</span>
+<span class="logo-baseline">MARCHAND DE COULEURS</span>
+<span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+</div>
+</a>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Menu" class="nav-burger" type="button">
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+</button>
+<div aria-hidden="true" class="nav-overlay-backdrop"></div>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="gammes.html">Nos gammes peintures</a>
+<a href="nuanciers.html">Nuanciers</a>
+<a href="index.html#eco">Engagement éco</a>
+<a href="revetement-mural.html">Revêtement mural</a>
+<a href="revetement-sol.html">Revêtement de sol</a>
+<a href="documents.html">Documents techniques</a>
+<a href="index.html#equipe">L'équipe L'ATELIER</a>
+<a class="nav-cta" href="#">Espace pro</a>
+</nav>
+<form class="nav-search" onsubmit="event.preventDefault();" role="search">
+<svg aria-hidden="true" class="nav-search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input aria-label="Recherche sur le site" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" type="search"/>
+</form>
+</div>
+</div>
 </header>
-
 <!-- ============ PAGE WRAP ============ -->
 <div class="page-wrap">
-
-  <div class="breadcrumb">
-    <a href="index.html">Accueil</a>
-    <span class="breadcrumb-sep">›</span>
-    <span>Nos gammes de peinture</span>
-  </div>
-
-  <div class="page-layout">
-
-    <!-- ===== SIDEBAR gauche ===== -->
-    <aside class="sidebar">
-      <span class="sidebar-eyebrow">Catalogue produits</span>
-      <h1>Nos gammes de peintures <em class="eco-accent">éco-responsables</em></h1>
-      <p class="sidebar-lead">Deux gammes propres fabriquées en France, pensées pour les professionnels exigeants. Et une sélection rigoureuse de produits partenaires pour compléter chaque chantier.</p>
-
-      <div class="gamme-tabs-label">Choisir une gamme</div>
-      <div class="gamme-tabs" role="tablist">
-        <button class="gamme-tab is-active" data-gamme="45" role="tab" aria-selected="true">
-          <span class="gamme-tab-info">
-            <span class="gamme-tab-name">L'Atelier 45</span>
-            <span class="gamme-tab-sub">Acrylique & glycéro · France</span>
-          </span>
-          <span class="gamme-tab-count">6</span>
-        </button>
-        <button class="gamme-tab" data-gamme="titane" role="tab" aria-selected="false">
-          <span class="gamme-tab-info">
-            <span class="gamme-tab-name">Titane Hydro</span>
-            <span class="gamme-tab-sub">Biosourcée · bas carbone</span>
-          </span>
-          <span class="gamme-tab-count">4</span>
-        </button>
-        <button class="gamme-tab" data-gamme="partenaires" role="tab" aria-selected="false">
-          <span class="gamme-tab-info">
-            <span class="gamme-tab-name">Partenaires</span>
-            <span class="gamme-tab-sub">Keim, Sigma, Comus…</span>
-          </span>
-          <span class="gamme-tab-count">+</span>
-        </button>
-      </div>
-
-      <div class="filters-label">Filtrer par finition</div>
-      <div class="filter-pills">
-        <button class="filter-pill is-active" data-filter="all">Toutes</button>
-        <button class="filter-pill" data-filter="impression">Impression</button>
-        <button class="filter-pill" data-filter="mat">Mat</button>
-        <button class="filter-pill" data-filter="velours">Velours</button>
-        <button class="filter-pill" data-filter="satin">Satin</button>
-      </div>
-
-      <div class="sort-wrap">
-        <label for="sort-global">Trier par</label>
-        <select id="sort-global">
-          <option value="brillance-asc" selected>Brillance croissante (par défaut)</option>
-          <option value="brillance-desc">Brillance décroissante</option>
-          <option value="alpha">Ordre alphabétique</option>
-        </select>
-      </div>
-
-      <div class="sidebar-features" id="sidebar-features">
-        <div class="sidebar-features-title">Pourquoi nos peintures</div>
-        <div class="sidebar-features-list">
-          <div class="sidebar-feature">
-            <span class="sidebar-feature-dot"></span>
-            <span class="sidebar-feature-body">
-              <span class="sidebar-feature-label">Label A+ émissions</span>
-              <span class="sidebar-feature-desc">Le niveau le plus exigeant de qualité de l'air intérieur. Nos formulations émettent moins de 1&nbsp;g/L de COV — bien en dessous du seuil réglementaire.</span>
-            </span>
-          </div>
-          <div class="sidebar-feature">
-            <span class="sidebar-feature-dot"></span>
-            <span class="sidebar-feature-body">
-              <span class="sidebar-feature-label">FDES vérifiée Inies</span>
-              <span class="sidebar-feature-desc">Chaque produit dispose d'une Fiche de Déclaration Environnementale et Sanitaire indépendante, vérifiée par la base Inies. Transparence totale sur l'impact cycle de vie.</span>
-            </span>
-          </div>
-          <div class="sidebar-feature">
-            <span class="sidebar-feature-dot"></span>
-            <span class="sidebar-feature-body">
-              <span class="sidebar-feature-label">Biosourcé & bas carbone</span>
-              <span class="sidebar-feature-desc">La gamme Titane Hydro est formulée à base de résines végétales. Moins d'énergie fossile, bilan carbone réduit, sans compromis sur la tenue et l'adhérence.</span>
-            </span>
-          </div>
-          <div class="sidebar-feature">
-            <span class="sidebar-feature-dot"></span>
-            <span class="sidebar-feature-body">
-              <span class="sidebar-feature-label">Fûts issus du recyclage</span>
-              <span class="sidebar-feature-desc">Nos contenants plastique et métal proviennent de matériaux recyclés. Un choix cohérent sur l'ensemble de la chaîne, du produit à l'emballage.</span>
-            </span>
-          </div>
-          <div class="sidebar-feature">
-            <span class="sidebar-feature-dot"></span>
-            <span class="sidebar-feature-body">
-              <span class="sidebar-feature-label">Conforme RE 2020</span>
-              <span class="sidebar-feature-desc">Nos peintures répondent aux exigences de la réglementation environnementale 2020 sur les bâtiments neufs — un gage de pérennité pour les chantiers d'aujourd'hui et de demain.</span>
-            </span>
-          </div>
-          <div class="sidebar-feature">
-            <span class="sidebar-feature-dot"></span>
-            <span class="sidebar-feature-body">
-              <span class="sidebar-feature-label">Fabriquées en France</span>
-              <span class="sidebar-feature-desc">Production locale avec notre partenaire Théolaur, réduisant le transport et soutenant le savoir-faire industriel français.</span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </aside>
-
-    <!-- ===== COLONNE produits ===== -->
-    <main class="products-col">
-
-      <!-- GAMME L'ATELIER 45 -->
-      <section class="gamme-section" id="gamme-45" data-gamme-section="45">
-        <div class="gamme-banner is-45 has-re2020">
-          <div class="gamme-banner-num">45</div>
-          <div class="gamme-banner-content">
-            <span class="gamme-banner-tag">Notre gamme historique</span>
-            <h2 class="gamme-banner-title">L'Atelier <em>45</em></h2>
-            <p class="gamme-banner-desc">Peintures professionnelles techniques pour murs, plafonds, boiseries et menuiseries. Acrylique et glycéro, fabriquées en France.</p>
-          </div>
-          <div class="banner-re2020-stage" aria-hidden="true">
-            <div class="banner-re2020">
-              <div class="banner-re2020-face">
-                <div class="banner-re2020-ring"></div>
-                <div class="banner-re2020-ring banner-re2020-ring-2"></div>
-                <div class="banner-re2020-core">
-                  <div class="banner-re2020-label">CONFORME</div>
-                  <div class="banner-re2020-number">RE <em>2020</em></div>
-                </div>
-              </div>
-              <div class="banner-re2020-face banner-re2020-face-back">
-                <div class="banner-re2020-ring"></div>
-                <div class="banner-re2020-ring banner-re2020-ring-2"></div>
-                <div class="banner-re2020-core">
-                  <div class="banner-re2020-label">CONFORME</div>
-                  <div class="banner-re2020-number">RE <em>2020</em></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="products-grid" id="grid-45">
-
-          <!-- 1. 45 IMPRESS evo - IMPRESSION acrylique -->
-          <article class="product-card reveal" id="p-impress-evo" data-finition="impression" data-brillance="1">
-            <div class="product-finition-bar"></div>
-            <span class="product-finition-tag">Impression</span>
-            <div class="product-visual">
-              <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-              <img class="product-image" src="images/produits/45_impress_.webp" alt="L'Atelier 45 Impress evo - Impression acrylique blanche" loading="lazy">
-        </div>
-        <div class="product-pictos">
-          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-          <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
-          <span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"/></svg></span><span class="picto-label">Outils</span></span>
-        </div>
-        <div class="product-info">
-          <div class="product-gamme">L'Atelier 45 · Impression</div>
-          <h3 class="product-name">Impress <em>45</em></h3>
-          <div class="product-subtitle">Impression acrylique blanche · phase aqueuse</div>
-          <p class="product-description">Sous-couche acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong> et classée A+. Fabriquée en France, conditionnée en fût recyclé, FDES vérifiée Inies — compatible RE 2020. Préparation universelle de tous les supports traditionnels du bâtiment, aspect mat en finition, anti-flash rust.</p>
-          <div class="product-footer">
-            <span class="product-format"><strong>16 L</strong></span>
-            <div class="product-ctas">
-              <a href="documents/ft/FT_IMPRESS_45_EVO.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-              <a href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 2. 45 GRANDS TRAVAUX - IMPRESSION -->
-      <article class="product-card reveal" id="p-grands-travaux" data-finition="impression" data-brillance="2">
-        <div class="product-finition-bar"></div>
-        <span class="product-finition-tag">Impression</span>
-        <div class="product-visual">
-          <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-          <img class="product-image" src="images/produits/45_impress_GT.webp" alt="L'Atelier 45 Grands Travaux - Impression acrylique" loading="lazy">
-        </div>
-        <div class="product-pictos">
-          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-          <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
-          <span class="picto is-bleuclair" title="+130 m²"><span class="picto-icon is-text-xs">130m²</span><span class="picto-label">+130m²</span></span>
-        </div>
-        <div class="product-info">
-          <div class="product-gamme">L'Atelier 45 · Impression</div>
-          <h3 class="product-name">Impress 45 <em>Grands Travaux</em></h3>
-          <div class="product-subtitle">Impression acrylique blanche · Grands chantiers</div>
-          <p class="product-description">Sous-couche acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong>, classée A+ et fabriquée en France. <strong>Rendement +130 m² au seau</strong>, fût recyclé, FDES vérifiée Inies, RE 2020. Excellent garnissant et fort pouvoir opacifiant, formulée pour les grands chantiers à fort engagement environnemental.</p>
-          <div class="product-footer">
-            <span class="product-format"><strong>16 L</strong></span>
-            <div class="product-ctas">
-              <a href="documents/ft/FT_45_impress_GRANDS_TRAVAUX_.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-              <a href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 3. 45 MAT 2en1 - MAT -->
-      <article class="product-card reveal" id="p-mat-45" data-finition="mat" data-brillance="3">
-        <div class="product-finition-bar"></div>
-        <span class="product-finition-tag">Mat</span>
-        <div class="product-visual">
-          <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-          <img class="product-image" src="images/produits/45_Mat_2en1.webp" alt="L'Atelier 45 Mat - Peinture décorative impression et finition" loading="lazy">
-        </div>
-        <div class="product-pictos">
-          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-          <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
-          <span class="picto is-orange" title="2 en 1"><span class="picto-icon is-text-sm">2en1</span><span class="picto-label">2 en 1</span></span>
-        </div>
-        <div class="product-info">
-          <div class="product-gamme">L'Atelier 45 · Mat</div>
-          <h3 class="product-name">Mat <em>45</em></h3>
-          <div class="product-subtitle">Impression & finition · 2 en 1</div>
-          <p class="product-description">Peinture acrylique 2 en 1 (impression + finition) en phase aqueuse. <strong>COV &lt; 1 g/L</strong>, classée A+, fabriquée en France, fût recyclé. FDES vérifiée Inies, compatible RE 2020. Aspect mat profond, anti-flash rust : un produit unique pour murs et plafonds.</p>
-          <div class="product-footer">
-            <span class="product-format"><strong>16 L</strong></span>
-            <div class="product-ctas">
-              <a href="documents/ft/FT_MAT_45_2en1_v2.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-              <a href="documents/fdes/FDES_45_MAT.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 4. 45 VELOURS - VELOURS -->
-      <article class="product-card reveal" id="p-velours-45" data-finition="velours" data-brillance="4">
-        <div class="product-finition-bar"></div>
-        <span class="product-finition-tag">Velours</span>
-        <div class="product-visual">
-          <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-          <img class="product-image" src="images/produits/45_velours.webp" alt="L'Atelier 45 Velours - Peinture acrylique veloutée" loading="lazy">
-        </div>
-        <div class="product-pictos">
-          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-          <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
-        </div>
-        <div class="product-info">
-          <div class="product-gamme">L'Atelier 45 · Velours</div>
-          <h3 class="product-name">Velours <em>45</em></h3>
-          <div class="product-subtitle">Acrylique veloutée garnissante pochée</div>
-          <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Conditionnée en fût recyclé, FDES vérifiée Inies, compatible RE 2020. Aspect mat velouté élégant, très bon pouvoir <strong>garnissant</strong> pour murs et plafonds intérieurs.</p>
-          <div class="product-footer">
-            <span class="product-format"><strong>16 L</strong></span>
-            <div class="product-ctas">
-              <a href="documents/ft/FT_45_VELOURS.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-              <a href="documents/fdes/FDES_45_velours_.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 5. 45 SATIN - SATIN acrylique -->
-      <article class="product-card reveal" id="p-satin-45" data-finition="satin" data-brillance="5">
-        <div class="product-finition-bar"></div>
-        <span class="product-finition-tag">Satin</span>
-        <div class="product-visual">
-          <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-          <img class="product-image" src="images/produits/45_satin.webp" alt="L'Atelier 45 Satin - Peinture acrylique satinée" loading="lazy">
-        </div>
-        <div class="product-pictos">
-          <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-          <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-          <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-          <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
-          <span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18l-2 14H5L3 6z"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><span class="picto-label">Lessiv.</span></span>
-        </div>
-        <div class="product-info">
-          <div class="product-gamme">L'Atelier 45 · Satin</div>
-          <h3 class="product-name">Satin <em>45</em></h3>
-          <div class="product-subtitle">Acrylique satinée garnissante pochée</div>
-          <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Fût recyclé, FDES vérifiée Inies, compatible RE 2020. Aspect satiné élégant et <strong>lessivable</strong>, taillée pour les pièces de passage et les supports demandant une protection accrue.</p>
-          <div class="product-footer">
-            <span class="product-format"><strong>16 L</strong></span>
-            <div class="product-ctas">
-              <a href="documents/ft/FT_45_SATIN_ACRYL.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-              <a href="documents/fdes/FDES_45_satin.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 6. 45 GLYCERO SATIN - SATIN glycéro -->
-      <article class="product-card reveal" id="p-glycero-45" data-finition="satin" data-brillance="6" data-no-grow>
-        <div class="product-finition-bar"></div>
-        <span class="product-finition-tag">Satin</span>
-        <div class="product-visual">
-          <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-          <img class="product-image" src="images/produits/45_glycero_satin.webp" alt="L'Atelier 45 Glycéro - Peinture glycérophtalique satinée" loading="lazy">
-        </div>
-        <div class="product-pictos">
-          <span class="picto is-cclass" title="Classe C - Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/cclass-emissions.svg" alt="C"></span><span class="picto-label">C air int.</span></span>
-          <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-          <span class="picto is-gris" title="Phase solvant"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6v3H9zM7 5h10l-1 16H8L7 5z"/><path d="M10 12h4"/></svg></span><span class="picto-label">Solvant</span></span>
-          <span class="picto is-bleu" title="Int / Ext"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><circle cx="12" cy="15" r="2"/></svg></span><span class="picto-label">Int/Ext</span></span>
-          <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-          <span class="picto is-orange" title="Boiseries"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 8h18M3 14h18M9 3v18M15 3v18"/></svg></span><span class="picto-label">Bois</span></span>
-        </div>
-        <div class="product-info">
-          <div class="product-gamme">L'Atelier 45 · Satin glycéro</div>
-          <h3 class="product-name">Glycéro <em>45</em></h3>
-          <div class="product-subtitle">Glycérophtalique satinée garnissante</div>
-          <p class="product-description">Peinture glycérophtalique en phase solvant, fabriquée en France. FDES vérifiée Inies, compatible RE 2020. Aspect satin velours pour la protection durable et la décoration des boiseries, applicable en intérieur comme en extérieur.</p>
-          <div class="product-footer">
-            <span class="product-format"><strong>15 L</strong></span>
-            <div class="product-ctas">
-              <a href="documents/ft/FT_45_GLYCERO_SATIN.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-              <a href="documents/fdes/FDES45_glycero_satin.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-      <!-- ============ GAMME TITANE HYDRO ============ -->
-      <section class="gamme-section" id="gamme-titane" data-gamme-section="titane">
-        <div class="gamme-banner is-titane has-re2020">
-          <div class="gamme-banner-num">T</div>
-          <div class="gamme-banner-content">
-            <span class="gamme-banner-tag">Gamme biosourcée</span>
-            <h2 class="gamme-banner-title">Titane <em>Hydro</em></h2>
-            <p class="gamme-banner-desc">Formulations à base de résines végétales en phase aqueuse, COV ultra-réduits. Pour les chantiers à fort engagement environnemental.</p>
-          </div>
-          <div class="banner-re2020-stage" aria-hidden="true">
-            <div class="banner-re2020">
-              <div class="banner-re2020-face">
-                <div class="banner-re2020-ring"></div>
-                <div class="banner-re2020-ring banner-re2020-ring-2"></div>
-                <div class="banner-re2020-core">
-                  <div class="banner-re2020-label">CONFORME</div>
-                  <div class="banner-re2020-number">RE <em>2020</em></div>
-                </div>
-              </div>
-              <div class="banner-re2020-face banner-re2020-face-back">
-                <div class="banner-re2020-ring"></div>
-                <div class="banner-re2020-ring banner-re2020-ring-2"></div>
-                <div class="banner-re2020-core">
-                  <div class="banner-re2020-label">CONFORME</div>
-                  <div class="banner-re2020-number">RE <em>2020</em></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="products-grid" id="grid-titane">
-
-          <!-- 1. TITANE HYDRO PRIM - IMPRESSION -->
-          <article class="product-card reveal" id="p-titane-prim" data-finition="impression" data-brillance="1">
-            <div class="product-finition-bar"></div>
-            <span class="product-finition-tag">Impression</span>
-            <div class="product-visual">
-              <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-              <img class="product-image" src="images/produits/titane_hydro_prim.webp" alt="Titane Hydro Prim - Impression biosourcée" loading="lazy">
-            </div>
-            <div class="product-pictos">
-              <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-              <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-              <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-              <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-              <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-              <span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"/></svg></span><span class="picto-label">Outils</span></span>
-            </div>
-            <div class="product-info">
-              <div class="product-gamme">Titane Hydro · Impression</div>
-              <h3 class="product-name">Titane hydro <em>Prim</em></h3>
-              <div class="product-subtitle">Impression acrylique en phase aqueuse</div>
-              <p class="product-description">Sous-couche d'accrochage en phase aqueuse, classée A+ pour la qualité de l'air intérieur. Faiblement émissive en COV, conditionnée en fût recyclé. FDES vérifiée Inies pour des chantiers RE 2020. Excellente adhérence sur tous supports traditionnels, aspect mat profond, fort pouvoir opacifiant.</p>
-              <div class="product-footer">
-                <span class="product-format"><strong>15 L</strong></span>
-                <div class="product-ctas">
-                  <a href="documents/ft/FT_TITANE_HYDRO_PRIM.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-                  <a href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. TITANE HYDRO MAT - MAT acrylique biosourcé -->
-          <article class="product-card reveal" id="p-titane-mat" data-finition="mat" data-brillance="2">
-            <div class="product-finition-bar"></div>
-            <span class="product-finition-tag">Mat</span>
-            <div class="product-visual">
-              <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-              <img class="product-image" src="images/produits/titane_hydro_mat.webp" alt="Titane Hydro Mat - Peinture acrylique biosourcée mate" loading="lazy">
-            </div>
-            <div class="product-pictos">
-              <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-              <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-              <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-              <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-              <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-              <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
-            </div>
-            <div class="product-info">
-              <div class="product-gamme">Titane Hydro · Mat</div>
-              <h3 class="product-name">Titane hydro <em>Mat</em></h3>
-              <div class="product-subtitle">Acrylique garnissante pochée · phase aqueuse</div>
-              <p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Fût recyclé, FDES vérifiée Inies, compatible chantiers RE 2020. Très couvrante avec une grande blancheur, aspect mat profond. Garnissante, idéale pour murs et plafonds des projets à fort engagement environnemental.</p>
-              <div class="product-footer">
-                <span class="product-format"><strong>15 L</strong></span>
-                <div class="product-ctas">
-                  <a href="documents/ft/FT_TITANE_HYDRO_MAT.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-                  <a href="documents/fdes/FDES_titane_hydro_mat.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3. TITANE HYDRO MV evo - MAT VELOUTÉ alkyde émulsion -->
-          <article class="product-card reveal" id="p-titane-mv" data-finition="mat-veloute" data-brillance="3">
-            <div class="product-finition-bar"></div>
-            <span class="product-finition-tag">Mat velouté</span>
-            <div class="product-visual">
-              <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-              <img class="product-image" src="images/produits/titane_hydro_mat_veloute.webp" alt="Titane Hydro MV evo - Peinture alkyde mat velouté biosourcée" loading="lazy">
-            </div>
-            <div class="product-pictos">
-              <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-              <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-              <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-              <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-              <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-              <span class="picto is-vertfonce" title="31,5 % biosourcé"><span class="picto-icon is-text-xs">31,5%</span><span class="picto-label">Biosourcé</span></span>
-              <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
-              <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
-            </div>
-            <div class="product-info">
-              <div class="product-gamme">Titane Hydro · Mat velouté</div>
-              <h3 class="product-name">Titane hydro <em>MV</em></h3>
-              <div class="product-subtitle">Alkyde biosourcée en émulsion · 2 en 1</div>
-              <p class="product-description">Le fer de lance écoresponsable de la gamme : <strong>31,5 % de matières premières biosourcées</strong>, <strong>COV &lt; 1 g/L</strong> et alkyde en émulsion aqueuse. Classée A+, FDES vérifiée Inies, fût recyclé, fabrication française — taillée pour les chantiers RE 2020 les plus exigeants. Impression et finition réunies, grande blancheur et aspect mat velouté élégant.</p>
-              <div class="product-footer">
-                <span class="product-format"><strong>15 L</strong></span>
-                <div class="product-ctas">
-                  <a href="documents/ft/FT_TITANE_hydro_MV_.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-                  <a href="documents/fdes/FDES_titane_hydro_Mat_Veloute_MV.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 4. TITANE HYDRO VELOURS -->
-          <article class="product-card reveal" id="p-titane-velours" data-finition="velours" data-brillance="4">
-            <div class="product-finition-bar"></div>
-            <span class="product-finition-tag">Velours</span>
-            <div class="product-visual">
-              <div class="product-visual-bg"></div>
-              <div class="product-recycled" aria-label="Fût issu de matériaux recyclés">
-                <span class="product-recycled-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14 16l-3 3 3 3"/><path d="M8.293 13.596 4.5 9.5 0.5 13.5"/><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"/><path d="M16.71 7.929 21.5 6 18.5 1.5"/></svg></span>
-                <span class="product-recycled-text">Fût recyclé</span>
-              </div>
-              <img class="product-image" src="images/produits/titane_hydro_velours.webp" alt="Titane Hydro Velours - Peinture acrylique biosourcée velours" loading="lazy">
-            </div>
-            <div class="product-pictos">
-              <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img src="images/pictos/aplus-emissions.jpg" alt="A+"></span><span class="picto-label">A+ air int.</span></span>
-              <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg viewBox="0 0 6 4" preserveAspectRatio="none"><rect width="2" height="4" x="0" fill="#0055A4"/><rect width="2" height="4" x="2" fill="#FFFFFF"/><rect width="2" height="4" x="4" fill="#EF4135"/></svg></span><span class="picto-label">France</span></span>
-              <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"/><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></svg></span><span class="picto-label">Aqueux</span></span>
-              <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="picto-label">Intér.</span></span>
-              <span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img src="images/pictos/fdes-verifiee.webp" alt="FDES vérifiée"></span><span class="picto-label">FDES</span></span>
-              <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
-              <span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16"/></svg></span><span class="picto-label">Garniss.</span></span>
-              <span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18l-2 14H5L3 6z"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><span class="picto-label">Lessiv.</span></span>
-            </div>
-            <div class="product-info">
-              <div class="product-gamme">Titane Hydro · Velours</div>
-              <h3 class="product-name">Titane hydro <em>Velours</em></h3>
-              <div class="product-subtitle">Acrylique garnissante pochée · phase aqueuse</div>
-              <p class="product-description">Peinture acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong> et classée A+. Conditionnée en fût recyclé, FDES vérifiée Inies, compatible RE 2020. Excellent couvrant, très garnissante et <strong>lessivable</strong>, aspect velours subtil. Le bon compromis esthétique et résistance pour les pièces de vie et de passage.</p>
-              <div class="product-footer">
-                <span class="product-format"><strong>15 L</strong></span>
-                <div class="product-ctas">
-                  <a href="documents/ft/FT_TITANE_HYDRO_VELOURS.pdf" target="_blank" rel="noopener" class="product-cta is-primary" title="Fiche technique">Fiche technique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-                  <a href="documents/fdes/FDES_Titane_hydro_Velours.pdf" target="_blank" rel="noopener" class="product-cta is-secondary" title="Fiche FDES">FDES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ============ PARTENAIRES ============ -->
-      <section class="gamme-section" id="gamme-partenaires" data-gamme-section="partenaires">
-        <div class="gamme-banner is-partenaires">
-          <div class="gamme-banner-num">+</div>
-          <div class="gamme-banner-content">
-            <span class="gamme-banner-tag">Fabricants partenaires</span>
-            <h2 class="gamme-banner-title">Nos <em>partenaires</em></h2>
-            <p class="gamme-banner-desc">Une sélection rigoureuse de produits chez Keim, Sigma, Comus, Dragopaint, Sofec, Soframap et Théolaur.</p>
-          </div>
-          <div class="gamme-banner-count">à venir</div>
-        </div>
-
-        <div class="placeholder-section reveal">
-          <div class="placeholder-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M2 12h20"/>
-            </svg>
-          </div>
-          <h3 class="placeholder-title">Bientôt disponible</h3>
-          <p class="placeholder-text">Cet espace accueillera prochainement les produits sélectionnés chez nos fabricants partenaires (Keim, Sigma, Comus, Dragopaint, Sofec, Soframap, Théolaur).</p>
-        </div>
-      </section>
-
-    </main>
-  </div>
+<div class="breadcrumb">
+<a href="index.html">Accueil</a>
+<span class="breadcrumb-sep">›</span>
+<span>Nos gammes de peinture</span>
+</div>
+<div class="page-layout">
+<!-- ===== SIDEBAR gauche ===== -->
+<aside class="sidebar">
+<span class="sidebar-eyebrow">Catalogue produits</span>
+<h1>Nos gammes de peintures <em class="eco-accent">éco-responsables</em></h1>
+<p class="sidebar-lead">Deux gammes propres fabriquées en France, pensées pour les professionnels exigeants. Et une sélection rigoureuse de produits partenaires pour compléter chaque chantier.</p>
+<div class="gamme-tabs-label">Choisir une gamme</div>
+<div class="gamme-tabs" role="tablist">
+<button aria-selected="true" class="gamme-tab is-active" data-gamme="45" role="tab">
+<span class="gamme-tab-info">
+<span class="gamme-tab-name"><span class="brand-45">L'Atelier 45</span></span>
+<span class="gamme-tab-sub">Acrylique &amp; glycéro · France</span>
+</span>
+<span class="gamme-tab-count">6</span>
+</button>
+<button aria-selected="false" class="gamme-tab" data-gamme="titane" role="tab">
+<span class="gamme-tab-info">
+<span class="gamme-tab-name"><span class="brand-titane">Titane Hydro</span></span>
+<span class="gamme-tab-sub">Biosourcée · bas carbone</span>
+</span>
+<span class="gamme-tab-count">4</span>
+</button>
+<button aria-selected="false" class="gamme-tab" data-gamme="partenaires" role="tab">
+<span class="gamme-tab-info">
+<span class="gamme-tab-name">Partenaires</span>
+<span class="gamme-tab-sub">Keim, Sigma, Comus…</span>
+</span>
+<span class="gamme-tab-count">+</span>
+</button>
+</div>
+<div class="filters-label">Filtrer par finition</div>
+<div class="filter-pills">
+<button class="filter-pill is-active" data-filter="all">Toutes</button>
+<button class="filter-pill" data-filter="impression">Impression</button>
+<button class="filter-pill" data-filter="mat">Mat</button>
+<button class="filter-pill" data-filter="velours">Velours</button>
+<button class="filter-pill" data-filter="satin">Satin</button>
+</div>
+<div class="sort-wrap">
+<label for="sort-global">Trier par</label>
+<select id="sort-global">
+<option selected="" value="brillance-asc">Brillance croissante (par défaut)</option>
+<option value="brillance-desc">Brillance décroissante</option>
+<option value="alpha">Ordre alphabétique</option>
+</select>
+</div>
+<div class="sidebar-features" id="sidebar-features">
+<div class="sidebar-features-title">Pourquoi nos peintures</div>
+<div class="sidebar-features-list">
+<div class="sidebar-feature">
+<span class="sidebar-feature-dot"></span>
+<span class="sidebar-feature-body">
+<span class="sidebar-feature-label">Label A+ émissions</span>
+<span class="sidebar-feature-desc">Le niveau le plus exigeant de qualité de l'air intérieur. Nos formulations émettent moins de 1 g/L de COV — bien en dessous du seuil réglementaire.</span>
+</span>
+</div>
+<div class="sidebar-feature">
+<span class="sidebar-feature-dot"></span>
+<span class="sidebar-feature-body">
+<span class="sidebar-feature-label">FDES vérifiée Inies</span>
+<span class="sidebar-feature-desc">Chaque produit dispose d'une Fiche de Déclaration Environnementale et Sanitaire indépendante, vérifiée par la base Inies. Transparence totale sur l'impact cycle de vie.</span>
+</span>
+</div>
+<div class="sidebar-feature">
+<span class="sidebar-feature-dot"></span>
+<span class="sidebar-feature-body">
+<span class="sidebar-feature-label">Biosourcé &amp; bas carbone</span>
+<span class="sidebar-feature-desc">La gamme <span class="brand-titane">Titane Hydro</span> est formulée à base de résines végétales. Moins d'énergie fossile, bilan carbone réduit, sans compromis sur la tenue et l'adhérence.</span>
+</span>
+</div>
+<div class="sidebar-feature">
+<span class="sidebar-feature-dot"></span>
+<span class="sidebar-feature-body">
+<span class="sidebar-feature-label">Fûts issus du recyclage</span>
+<span class="sidebar-feature-desc">Nos contenants plastique et métal proviennent de matériaux recyclés. Un choix cohérent sur l'ensemble de la chaîne, du produit à l'emballage.</span>
+</span>
+</div>
+<div class="sidebar-feature">
+<span class="sidebar-feature-dot"></span>
+<span class="sidebar-feature-body">
+<span class="sidebar-feature-label">Conforme RE 2020</span>
+<span class="sidebar-feature-desc">Nos peintures répondent aux exigences de la réglementation environnementale 2020 sur les bâtiments neufs — un gage de pérennité pour les chantiers d'aujourd'hui et de demain.</span>
+</span>
+</div>
+<div class="sidebar-feature">
+<span class="sidebar-feature-dot"></span>
+<span class="sidebar-feature-body">
+<span class="sidebar-feature-label">Fabriquées en France</span>
+<span class="sidebar-feature-desc">Production locale avec notre partenaire Théolaur, réduisant le transport et soutenant le savoir-faire industriel français.</span>
+</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- ===== COLONNE produits ===== -->
+<main class="products-col">
+<!-- GAMME L'ATELIER 45 -->
+<section class="gamme-section" data-gamme-section="45" id="gamme-45">
+<div class="gamme-banner is-45 has-re2020">
+<div class="gamme-banner-num">45</div>
+<div class="gamme-banner-content">
+<span class="gamme-banner-tag">Notre gamme historique</span>
+<h2 class="gamme-banner-title">L'Atelier <em>45</em></h2>
+<p class="gamme-banner-desc">Peintures professionnelles techniques pour murs, plafonds, boiseries et menuiseries. Acrylique et glycéro, fabriquées en France.</p>
+</div>
+<div aria-hidden="true" class="banner-re2020-stage">
+<div class="banner-re2020">
+<div class="banner-re2020-face">
+<div class="banner-re2020-ring"></div>
+<div class="banner-re2020-ring banner-re2020-ring-2"></div>
+<div class="banner-re2020-core">
+<div class="banner-re2020-label">CONFORME</div>
+<div class="banner-re2020-number">RE <em>2020</em></div>
+</div>
+</div>
+<div class="banner-re2020-face banner-re2020-face-back">
+<div class="banner-re2020-ring"></div>
+<div class="banner-re2020-ring banner-re2020-ring-2"></div>
+<div class="banner-re2020-core">
+<div class="banner-re2020-label">CONFORME</div>
+<div class="banner-re2020-number">RE <em>2020</em></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="products-grid" id="grid-45">
+<!-- 1. 45 IMPRESS evo - IMPRESSION acrylique -->
+<article class="product-card reveal" data-brillance="1" data-finition="impression" id="p-impress-evo">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Impression</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="L'Atelier 45 Impress evo - Impression acrylique blanche" class="product-image" loading="lazy" src="images/produits/45_impress_.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+<span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"></path></svg></span><span class="picto-label">Outils</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Impression</div>
+<h3 class="product-name">Impress <em>45</em></h3>
+<div class="product-subtitle">Impression acrylique blanche · phase aqueuse</div>
+<p class="product-description">Sous-couche acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong> et classée A+. Fabriquée en France, conditionnée en fût recyclé, FDES vérifiée Inies — compatible RE 2020. Préparation universelle de tous les supports traditionnels du bâtiment, aspect mat en finition, anti-flash rust.</p>
+<div class="product-footer">
+<span class="product-format"><strong>16 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_IMPRESS_45_EVO.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 2. 45 GRANDS TRAVAUX - IMPRESSION -->
+<article class="product-card reveal" data-brillance="2" data-finition="impression" id="p-grands-travaux">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Impression</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="L'Atelier 45 Grands Travaux - Impression acrylique" class="product-image" loading="lazy" src="images/produits/45_impress_GT.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+<span class="picto is-bleuclair" title="+130 m²"><span class="picto-icon is-text-xs">130m²</span><span class="picto-label">+130m²</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Impression</div>
+<h3 class="product-name">Impress 45 <em>Grands Travaux</em></h3>
+<div class="product-subtitle">Impression acrylique blanche · Grands chantiers</div>
+<p class="product-description">Sous-couche acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong>, classée A+ et fabriquée en France. <strong>Rendement +130 m² au seau</strong>, fût recyclé, FDES vérifiée Inies, RE 2020. Excellent garnissant et fort pouvoir opacifiant, formulée pour les grands chantiers à fort engagement environnemental.</p>
+<div class="product-footer">
+<span class="product-format"><strong>16 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_45_impress_GRANDS_TRAVAUX_.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 3. 45 MAT 2en1 - MAT -->
+<article class="product-card reveal" data-brillance="3" data-finition="mat" id="p-mat-45">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Mat</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="L'Atelier 45 Mat - Peinture décorative impression et finition" class="product-image" loading="lazy" src="images/produits/45_Mat_2en1.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+<span class="picto is-orange" title="2 en 1"><span class="picto-icon is-text-sm">2en1</span><span class="picto-label">2 en 1</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Mat</div>
+<h3 class="product-name">Mat <em>45</em></h3>
+<div class="product-subtitle">Impression &amp; finition · 2 en 1</div>
+<p class="product-description">Peinture acrylique 2 en 1 (impression + finition) en phase aqueuse. <strong>COV &lt; 1 g/L</strong>, classée A+, fabriquée en France, fût recyclé. FDES vérifiée Inies, compatible RE 2020. Aspect mat profond, anti-flash rust : un produit unique pour murs et plafonds.</p>
+<div class="product-footer">
+<span class="product-format"><strong>16 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_MAT_45_2en1_v2.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_45_MAT.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 4. 45 VELOURS - VELOURS -->
+<article class="product-card reveal" data-brillance="4" data-finition="velours" id="p-velours-45">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Velours</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="L'Atelier 45 Velours - Peinture acrylique veloutée" class="product-image" loading="lazy" src="images/produits/45_velours.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Velours</div>
+<h3 class="product-name">Velours <em>45</em></h3>
+<div class="product-subtitle">Acrylique veloutée garnissante pochée</div>
+<p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Conditionnée en fût recyclé, FDES vérifiée Inies, compatible RE 2020. Aspect mat velouté élégant, très bon pouvoir <strong>garnissant</strong> pour murs et plafonds intérieurs.</p>
+<div class="product-footer">
+<span class="product-format"><strong>16 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_45_VELOURS.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_45_velours_.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 5. 45 SATIN - SATIN acrylique -->
+<article class="product-card reveal" data-brillance="5" data-finition="satin" id="p-satin-45">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Satin</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="L'Atelier 45 Satin - Peinture acrylique satinée" class="product-image" loading="lazy" src="images/produits/45_satin.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
+<span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18l-2 14H5L3 6z"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span><span class="picto-label">Lessiv.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Satin</div>
+<h3 class="product-name">Satin <em>45</em></h3>
+<div class="product-subtitle">Acrylique satinée garnissante pochée</div>
+<p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Fût recyclé, FDES vérifiée Inies, compatible RE 2020. Aspect satiné élégant et <strong>lessivable</strong>, taillée pour les pièces de passage et les supports demandant une protection accrue.</p>
+<div class="product-footer">
+<span class="product-format"><strong>16 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_45_SATIN_ACRYL.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_45_satin.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 6. 45 GLYCERO SATIN - SATIN glycéro -->
+<article class="product-card reveal" data-brillance="6" data-finition="satin" data-no-grow="" id="p-glycero-45">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Satin</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="L'Atelier 45 Glycéro - Peinture glycérophtalique satinée" class="product-image" loading="lazy" src="images/produits/45_glycero_satin.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-cclass" title="Classe C - Émissions dans l'air intérieur"><span class="picto-icon"><img alt="C" src="images/pictos/cclass-emissions.svg"/></span><span class="picto-label">C air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-gris" title="Phase solvant"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M9 2h6v3H9zM7 5h10l-1 16H8L7 5z"></path><path d="M10 12h4"></path></svg></span><span class="picto-label">Solvant</span></span>
+<span class="picto is-bleu" title="Int / Ext"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><circle cx="12" cy="15" r="2"></circle></svg></span><span class="picto-label">Int/Ext</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-orange" title="Boiseries"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="1" width="18" x="3" y="3"></rect><path d="M3 8h18M3 14h18M9 3v18M15 3v18"></path></svg></span><span class="picto-label">Bois</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-45">L'Atelier 45</span> · Satin glycéro</div>
+<h3 class="product-name">Glycéro <em>45</em></h3>
+<div class="product-subtitle">Glycérophtalique satinée garnissante</div>
+<p class="product-description">Peinture glycérophtalique en phase solvant, fabriquée en France. FDES vérifiée Inies, compatible RE 2020. Aspect satin velours pour la protection durable et la décoration des boiseries, applicable en intérieur comme en extérieur.</p>
+<div class="product-footer">
+<span class="product-format"><strong>15 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_45_GLYCERO_SATIN.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES45_glycero_satin.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+ ============ GAMME <span class="brand-titane">TITANE HYDRO</span> ============ 
+<section class="gamme-section" data-gamme-section="titane" id="gamme-titane">
+<div class="gamme-banner is-titane has-re2020">
+<div class="gamme-banner-num">T</div>
+<div class="gamme-banner-content">
+<span class="gamme-banner-tag">Gamme biosourcée</span>
+<h2 class="gamme-banner-title">Titane <em>Hydro</em></h2>
+<p class="gamme-banner-desc">Formulations à base de résines végétales en phase aqueuse, COV ultra-réduits. Pour les chantiers à fort engagement environnemental.</p>
+</div>
+<div aria-hidden="true" class="banner-re2020-stage">
+<div class="banner-re2020">
+<div class="banner-re2020-face">
+<div class="banner-re2020-ring"></div>
+<div class="banner-re2020-ring banner-re2020-ring-2"></div>
+<div class="banner-re2020-core">
+<div class="banner-re2020-label">CONFORME</div>
+<div class="banner-re2020-number">RE <em>2020</em></div>
+</div>
+</div>
+<div class="banner-re2020-face banner-re2020-face-back">
+<div class="banner-re2020-ring"></div>
+<div class="banner-re2020-ring banner-re2020-ring-2"></div>
+<div class="banner-re2020-core">
+<div class="banner-re2020-label">CONFORME</div>
+<div class="banner-re2020-number">RE <em>2020</em></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="products-grid" id="grid-titane">
+ 1. <span class="brand-titane">TITANE HYDRO</span> PRIM - IMPRESSION 
+<article class="product-card reveal" data-brillance="1" data-finition="impression" id="p-titane-prim">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Impression</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="Titane Hydro Prim - Impression biosourcée" class="product-image" loading="lazy" src="images/produits/titane_hydro_prim.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-bleu" title="Multi-outils"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 7h10v4H3zM13 9h4M16 5h3v6h-3zM10 11v4M8 15h4v6H8z"></path></svg></span><span class="picto-label">Outils</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-titane">Titane Hydro</span> · Impression</div>
+<h3 class="product-name"><span class="brand-titane">Titane hydro</span> <em>Prim</em></h3>
+<div class="product-subtitle">Impression acrylique en phase aqueuse</div>
+<p class="product-description">Sous-couche d'accrochage en phase aqueuse, classée A+ pour la qualité de l'air intérieur. Faiblement émissive en COV, conditionnée en fût recyclé. FDES vérifiée Inies pour des chantiers RE 2020. Excellente adhérence sur tous supports traditionnels, aspect mat profond, fort pouvoir opacifiant.</p>
+<div class="product-footer">
+<span class="product-format"><strong>15 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_TITANE_HYDRO_PRIM.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_latelier_45_et_Titane_Hydro_Prim_et_impress.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+ 2. <span class="brand-titane">TITANE HYDRO</span> MAT - MAT acrylique biosourcé 
+<article class="product-card reveal" data-brillance="2" data-finition="mat" id="p-titane-mat">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Mat</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="Titane Hydro Mat - Peinture acrylique biosourcée mate" class="product-image" loading="lazy" src="images/produits/titane_hydro_mat.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-titane">Titane Hydro</span> · Mat</div>
+<h3 class="product-name"><span class="brand-titane">Titane hydro</span> <em>Mat</em></h3>
+<div class="product-subtitle">Acrylique garnissante pochée · phase aqueuse</div>
+<p class="product-description">Peinture acrylique en phase aqueuse, classée A+ et fabriquée en France. Fût recyclé, FDES vérifiée Inies, compatible chantiers RE 2020. Très couvrante avec une grande blancheur, aspect mat profond. Garnissante, idéale pour murs et plafonds des projets à fort engagement environnemental.</p>
+<div class="product-footer">
+<span class="product-format"><strong>15 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_TITANE_HYDRO_MAT.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_titane_hydro_mat.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+ 3. <span class="brand-titane">TITANE HYDRO</span> MV evo - MAT VELOUTÉ alkyde émulsion 
+<article class="product-card reveal" data-brillance="3" data-finition="mat-veloute" id="p-titane-mv">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Mat velouté</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="Titane Hydro MV evo - Peinture alkyde mat velouté biosourcée" class="product-image" loading="lazy" src="images/produits/titane_hydro_mat_veloute.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-vertfonce" title="31,5 % biosourcé"><span class="picto-icon is-text-xs">31,5%</span><span class="picto-label">Biosourcé</span></span>
+<span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+<span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-titane">Titane Hydro</span> · Mat velouté</div>
+<h3 class="product-name"><span class="brand-titane">Titane hydro</span> <em>MV</em></h3>
+<div class="product-subtitle">Alkyde biosourcée en émulsion · 2 en 1</div>
+<p class="product-description">Le fer de lance écoresponsable de la gamme : <strong>31,5 % de matières premières biosourcées</strong>, <strong>COV &lt; 1 g/L</strong> et alkyde en émulsion aqueuse. Classée A+, FDES vérifiée Inies, fût recyclé, fabrication française — taillée pour les chantiers RE 2020 les plus exigeants. Impression et finition réunies, grande blancheur et aspect mat velouté élégant.</p>
+<div class="product-footer">
+<span class="product-format"><strong>15 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_TITANE_hydro_MV_.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_titane_hydro_Mat_Veloute_MV.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+ 4. <span class="brand-titane">TITANE HYDRO</span> VELOURS 
+<article class="product-card reveal" data-brillance="4" data-finition="velours" id="p-titane-velours">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Velours</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Fût issu de matériaux recyclés" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Fût recyclé</span>
+</div>
+<img alt="Titane Hydro Velours - Peinture acrylique biosourcée velours" class="product-image" loading="lazy" src="images/produits/titane_hydro_velours.webp"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.jpg"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+<span class="picto is-orange" title="Garnissante"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"></path></svg></span><span class="picto-label">Garniss.</span></span>
+<span class="picto is-bleuclair" title="Lessivable"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18l-2 14H5L3 6z"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span><span class="picto-label">Lessiv.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme"><span class="brand-titane">Titane Hydro</span> · Velours</div>
+<h3 class="product-name"><span class="brand-titane">Titane hydro</span> <em>Velours</em></h3>
+<div class="product-subtitle">Acrylique garnissante pochée · phase aqueuse</div>
+<p class="product-description">Peinture acrylique en phase aqueuse, <strong>COV &lt; 1 g/L</strong> et classée A+. Conditionnée en fût recyclé, FDES vérifiée Inies, compatible RE 2020. Excellent couvrant, très garnissante et <strong>lessivable</strong>, aspect velours subtil. Le bon compromis esthétique et résistance pour les pièces de vie et de passage.</p>
+<div class="product-footer">
+<span class="product-format"><strong>15 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_TITANE_HYDRO_VELOURS.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_Titane_hydro_Velours.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ============ PARTENAIRES ============ -->
+<section class="gamme-section" data-gamme-section="partenaires" id="gamme-partenaires">
+<div class="gamme-banner is-partenaires">
+<div class="gamme-banner-num">+</div>
+<div class="gamme-banner-content">
+<span class="gamme-banner-tag">Fabricants partenaires</span>
+<h2 class="gamme-banner-title">Nos <em>partenaires</em></h2>
+<p class="gamme-banner-desc">Une sélection rigoureuse de produits chez Keim, Sigma, Comus, Dragopaint, Sofec, Soframap et Théolaur.</p>
+</div>
+<div class="gamme-banner-count">à venir</div>
+</div>
+<div class="placeholder-section reveal">
+<div class="placeholder-icon">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 2v20M2 12h20"></path>
+</svg>
+</div>
+<h3 class="placeholder-title">Bientôt disponible</h3>
+<p class="placeholder-text">Cet espace accueillera prochainement les produits sélectionnés chez nos fabricants partenaires (Keim, Sigma, Comus, Dragopaint, Sofec, Soframap, Théolaur).</p>
+</div>
+</section>
+</main>
+</div>
 </div>
 <!-- /page-wrap -->
-
 <!-- CTA bas -->
 <section class="cta-bottom">
-  <div class="cta-bottom-inner">
-    <h2>Besoin d'un <em>conseil technique</em> ?</h2>
-    <p>Nos équipes vous accompagnent dans le choix du bon produit pour votre chantier. Devis, échantillons, mise en teinte : passez en magasin ou contactez-nous.</p>
-    <div class="cta-bottom-buttons">
-      <a href="index.html#magasins" class="btn-cta btn-cta-primary">Voir nos magasins →</a>
-      <a href="mailto:contact@latelier33.fr" class="btn-cta btn-cta-ghost">Demander un conseil</a>
-    </div>
-  </div>
+<div class="cta-bottom-inner">
+<h2>Besoin d'un <em>conseil technique</em> ?</h2>
+<p>Nos équipes vous accompagnent dans le choix du bon produit pour votre chantier. Devis, échantillons, mise en teinte : passez en magasin ou contactez-nous.</p>
+<div class="cta-bottom-buttons">
+<a class="btn-cta btn-cta-primary" href="index.html#magasins">Voir nos magasins →</a>
+<a class="btn-cta btn-cta-ghost" href="mailto:contact@latelier33.fr">Demander un conseil</a>
+</div>
+</div>
 </section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
-        <p>Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Nos gammes</h4>
-        <ul>
-          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
-          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
-          <li><a href="nuanciers.html">Colorimétrie</a></li>
-          <li><a href="index.html#eco">Engagement éco</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Le groupe</h4>
-        <ul>
-          <li><a href="#">Notre histoire</a></li>
-          <li><a href="index.html#magasins">Nos magasins</a></li>
-          <li><a href="#">L'Établi · location</a></li>
-          <li><a href="#">Espace pro</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
-          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
-          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a href="https://www.agir-peinture.com/" target="_blank" rel="noopener noreferrer" aria-label="Site du réseau Agir Peinture"><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></a></span></div>
-    </div>
-  </div>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
+<p>Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+</div>
+<div class="footer-col">
+<h4>Nos gammes</h4>
+<ul>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="nuanciers.html">Colorimétrie</a></li>
+<li><a href="index.html#eco">Engagement éco</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Le groupe</h4>
+<ul>
+<li><a href="#">Notre histoire</a></li>
+<li><a href="index.html#magasins">Nos magasins</a></li>
+<li><a href="#">L'Établi · location</a></li>
+<li><a href="#">Espace pro</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+<li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+<li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+</div>
+</div>
 </footer>
-
 <script>
   // Animation reveal au scroll
   const observer = new IntersectionObserver((entries) => {
@@ -1501,7 +1548,6 @@
     });
   });
 </script>
-
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Début ============ -->
 <style>
   /* Dropdown de résultats sous la barre de recherche */
@@ -1600,7 +1646,6 @@
     .search-results { width: calc(100vw - 32px); right: auto; left: 50%; transform: translateX(-50%); }
   }
 </style>
-
 <script>
 (function() {
   // ============ INDEX DE RECHERCHE COMPLET DU SITE ============
@@ -1895,8 +1940,6 @@
 })();
 </script>
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Fin ============ -->
-
-
 <script>
   // ===== MENU BURGER MOBILE =====
   (function () {
@@ -1923,6 +1966,5 @@
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
 </script>
-
 </body>
 </html>

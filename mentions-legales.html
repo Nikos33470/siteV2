@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Mentions légales — L'Atelier · Marchand de couleurs</title>
-<meta name="description" content="Mentions légales du site www.latelier33.fr — éditeur, hébergeur, propriété intellectuelle et coordonnées de L'Atelier.">
-<meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta content="Mentions légales du site www.latelier33.fr — éditeur, hébergeur, propriété intellectuelle et coordonnées de L'Atelier." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F; --bleu-fonce: #15273F; --bleu-clair: #2D4E7A; --bleu-pale: #E8EEF5;
@@ -231,195 +232,258 @@
   }
   /* ========== FIN MENU BURGER MOBILE ========== */
 
+
+  /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
+  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  .brand-45,
+  .brand-titane {
+    font-style: italic;
+  }
+  .brand-45 {
+    font-family: 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  .brand-titane {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
+     (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
+
+  /* --- INDEX : cartes de gamme grand format --- */
+  .gamme-card.gamme-45 .gamme-name,
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .gamme-card.gamme-titane .gamme-name,
+  .gamme-card.gamme-titane .gamme-name-accent {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+  }
+  /* on garde la couleur d'accent orange/bleu déjà définie */
+
+  /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
+  .badge-cov .pot-badge-label,
+  .badge-biosource .pot-badge-label {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+  }
+
+  /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
+  .pilier-brands {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* --- PAGE GAMMES : bandeaux de section et titres produits --- */
+  [data-gamme-section="45"] .gamme-banner-title,
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name,
+  [data-gamme-section="45"] .product-name em {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+  }
+  [data-gamme-section="titane"] .gamme-banner-title,
+  [data-gamme-section="titane"] .gamme-banner-title em,
+  [data-gamme-section="titane"] .product-name,
+  [data-gamme-section="titane"] .product-name em {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+  }
+  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
+     on neutralise juste son italique déjà présent (héritage cohérent) */
+
+  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
+  /* déjà couverts par les <span class="brand-..."> wrappés */
+
+  /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
 <body>
-
 <!-- ============ HEADER ============ -->
 <header class="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
-        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
-        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
-        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-              font-size="82" font-weight="900" fill="#FFFFFF"
-              text-anchor="middle" letter-spacing="-3">a</text>
-      </svg>
-      <div class="logo-text-wrap">
-        <span class="logo-text">l'atelier</span>
-        <span class="logo-baseline">MARCHAND DE COULEURS</span>
-        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
-      </div>
-    </a>
-    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-    </button>
-    <div class="nav-overlay-backdrop" aria-hidden="true"></div>
-    <div class="nav-wrap">
-      <nav class="nav">
-        <a href="gammes.html">Nos gammes peintures</a>
-        <a href="nuanciers.html">Nuanciers</a>
-        <a href="index.html#eco">Engagement éco</a>
-        <a href="revetement-mural.html">Revêtement mural</a>
-        <a href="revetement-sol.html">Revêtement de sol</a>
-        <a href="documents.html">Documents techniques</a>
-        <a href="index.html#equipe">L'équipe L'ATELIER</a>
-        <a href="#" class="nav-cta">Espace pro</a>
-      </nav>
-      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
-        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
-      </form>
-    </div>
-  </div>
+<div class="header-inner">
+<a class="logo" href="index.html">
+<svg aria-label="Logo L'Atelier" class="logo-symbol" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#1F3A5F" height="92" width="68" x="20" y="18"></rect>
+<path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"></path>
+<text fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3" text-anchor="middle" x="54" y="94">a</text>
+</svg>
+<div class="logo-text-wrap">
+<span class="logo-text">l'atelier</span>
+<span class="logo-baseline">MARCHAND DE COULEURS</span>
+<span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+</div>
+</a>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Menu" class="nav-burger" type="button">
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+</button>
+<div aria-hidden="true" class="nav-overlay-backdrop"></div>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="gammes.html">Nos gammes peintures</a>
+<a href="nuanciers.html">Nuanciers</a>
+<a href="index.html#eco">Engagement éco</a>
+<a href="revetement-mural.html">Revêtement mural</a>
+<a href="revetement-sol.html">Revêtement de sol</a>
+<a href="documents.html">Documents techniques</a>
+<a href="index.html#equipe">L'équipe L'ATELIER</a>
+<a class="nav-cta" href="#">Espace pro</a>
+</nav>
+<form class="nav-search" onsubmit="event.preventDefault();" role="search">
+<svg aria-hidden="true" class="nav-search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input aria-label="Recherche sur le site" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" type="search"/>
+</form>
+</div>
+</div>
 </header>
-
 <!-- ============ HERO ============ -->
 <section class="legal-hero">
-  <div class="legal-hero-inner">
-    <span class="legal-eyebrow">Informations légales</span>
-    <h1 class="legal-title">Mentions <em>légales</em>.</h1>
-    <p class="legal-subtitle">Informations relatives à l'éditeur du site, son hébergement et les conditions d'utilisation de www.latelier33.fr, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN).</p>
-  </div>
+<div class="legal-hero-inner">
+<span class="legal-eyebrow">Informations légales</span>
+<h1 class="legal-title">Mentions <em>légales</em>.</h1>
+<p class="legal-subtitle">Informations relatives à l'éditeur du site, son hébergement et les conditions d'utilisation de www.latelier33.fr, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN).</p>
+</div>
 </section>
-
 <!-- ============ BREADCRUMB ============ -->
 <div class="breadcrumb-bar">
-  <nav class="breadcrumb" aria-label="Fil d'Ariane">
-    <a href="index.html">Accueil</a>
-    <span class="breadcrumb-sep">/</span>
-    <span class="breadcrumb-current">Mentions légales</span>
-  </nav>
+<nav aria-label="Fil d'Ariane" class="breadcrumb">
+<a href="index.html">Accueil</a>
+<span class="breadcrumb-sep">/</span>
+<span class="breadcrumb-current">Mentions légales</span>
+</nav>
 </div>
-
 <!-- ============ CONTENT ============ -->
 <main class="legal-content">
-
-  <section class="legal-section">
-    <h2><span class="num">01</span>Éditeur du <em>site</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Le site <strong>www.latelier33.fr</strong> est édité par&nbsp;:</p>
-    <div class="info-card">
-      <dl>
-        <dt>Dénomination sociale</dt><dd>L'ATELIER</dd>
-        <dt>Forme juridique</dt><dd>Société par actions simplifiée (SAS)</dd>
-        <dt>Capital social</dt><dd>40 000 €</dd>
-        <dt>Siège social</dt><dd>1111 avenue du Parc des Expositions, Résidence du Parc, 33260 La Teste-de-Buch</dd>
-        <dt>SIREN</dt><dd>534 092 721</dd>
-        <dt>RCS</dt><dd>Bordeaux 534 092 721</dd>
-        <dt>Code APE / NAF</dt><dd>4752A — Commerce de détail de quincaillerie, peintures et verres en petites surfaces</dd>
-        <dt>N° TVA intracommunautaire</dt><dd>FR&nbsp;— Communiqué sur demande</dd>
-        <dt>Président</dt><dd>Monsieur Jérôme AUBRY</dd>
-        <dt>Directeur de la publication</dt><dd>Monsieur Jérôme AUBRY</dd>
-        <dt>Téléphone</dt><dd><a href="tel:0556288944">05 56 28 89 44</a> (Mérignac) — <a href="tel:0557526477">05 57 52 64 77</a> (La Teste-de-Buch)</dd>
-        <dt>Courriel</dt><dd><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></dd>
-      </dl>
-    </div>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">02</span>Hébergement <em>du site</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Le site est hébergé par&nbsp;:</p>
-    <div class="info-card">
-      <dl>
-        <dt>Hébergeur</dt><dd>GitHub, Inc. (GitHub Pages)</dd>
-        <dt>Adresse</dt><dd>88 Colin P Kelly Jr Street, San Francisco, CA 94107, États-Unis</dd>
-        <dt>Site web</dt><dd><a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">https://pages.github.com</a></dd>
-      </dl>
-    </div>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">03</span>Propriété <em>intellectuelle</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>L'ensemble des éléments présents sur le site www.latelier33.fr — textes, photographies, illustrations, logos, marques, vidéos, sons, mises en page, chartes graphiques, bases de données et code source — est protégé par le droit de la propriété intellectuelle et reste la propriété exclusive de L'ATELIER ou de ses partenaires.</p>
-    <p>Les marques <strong>L'Atelier 45</strong> et <strong>Titane Hydro</strong> sont des marques de la société L'ATELIER. Les autres marques citées sur le site (Théolaur, KEIM, Chromatic, Polycrom, Panaget, Kährs, Bauwerk, Forbo, Gerflor, Tarkett, Amtico, Moduleo, Interface, Polyflor, IVC, Boen, Haro, BerryAlloc, Design Parquet, Parqueterie Berrichonne…) demeurent la propriété de leurs détenteurs respectifs.</p>
-    <p>Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit, et sur quelque support que ce soit, est interdite sans l'autorisation écrite préalable de L'ATELIER. Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie au titre des articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">04</span>Liens <em>hypertextes</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Le site www.latelier33.fr peut contenir des liens vers d'autres sites internet. L'ATELIER n'exerce aucun contrôle sur le contenu de ces sites tiers et ne saurait en aucun cas être tenue responsable de leur contenu, de leur politique de confidentialité ou de leur utilisation.</p>
-    <p>La création de liens hypertextes pointant vers le site est libre sous réserve de ne pas porter atteinte à l'image de L'ATELIER. L'ATELIER se réserve le droit de demander la suppression d'un lien qu'elle estime non conforme à son éthique.</p>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">05</span>Responsabilité <em>éditoriale</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>L'ATELIER met tout en œuvre pour offrir aux utilisateurs des informations et des outils disponibles et vérifiés, mais ne saurait être tenue responsable des erreurs, d'une absence de disponibilité des fonctionnalités ou de la présence éventuelle de virus sur son site.</p>
-    <p>Les informations fournies sur le site, en particulier celles relatives aux produits (peintures, revêtements, nuanciers, fiches techniques), sont communiquées à titre indicatif. Elles sont susceptibles d'évoluer et ne sauraient engager la responsabilité de L'ATELIER. Pour toute information contractuelle, il convient de se reporter aux fiches techniques officielles, aux fiches de données de sécurité (FDS) et aux conditions générales de vente.</p>
-    <p>Les visuels, nuances et couleurs présentés à l'écran sont donnés à titre indicatif et peuvent varier en fonction du calibrage de l'écran, de la lumière ambiante et des supports d'application. Seuls les nuanciers physiques disponibles en magasin font foi.</p>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">06</span>Données <em>personnelles</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Le traitement des données personnelles collectées via le site est encadré par notre <a href="politique-confidentialite.html">politique de confidentialité</a>, qui détaille la nature des données collectées, leurs finalités, les durées de conservation et les droits dont vous disposez.</p>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">07</span>Droit <em>applicable</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, et après échec de toute tentative de recherche d'une solution amiable, les tribunaux français seront seuls compétents pour connaître de ce litige.</p>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">08</span>Contact</h2>
-    <div class="legal-section-rule"></div>
-    <p>Pour toute question relative aux présentes mentions légales ou au fonctionnement du site, vous pouvez nous écrire à&nbsp;: <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a>.</p>
-  </section>
-
+<section class="legal-section">
+<h2><span class="num">01</span>Éditeur du <em>site</em></h2>
+<div class="legal-section-rule"></div>
+<p>Le site <strong>www.latelier33.fr</strong> est édité par :</p>
+<div class="info-card">
+<dl>
+<dt>Dénomination sociale</dt><dd>L'ATELIER</dd>
+<dt>Forme juridique</dt><dd>Société par actions simplifiée (SAS)</dd>
+<dt>Capital social</dt><dd>40 000 €</dd>
+<dt>Siège social</dt><dd>1111 avenue du Parc des Expositions, Résidence du Parc, 33260 La Teste-de-Buch</dd>
+<dt>SIREN</dt><dd>534 092 721</dd>
+<dt>RCS</dt><dd>Bordeaux 534 092 721</dd>
+<dt>Code APE / NAF</dt><dd>4752A — Commerce de détail de quincaillerie, peintures et verres en petites surfaces</dd>
+<dt>N° TVA intracommunautaire</dt><dd>FR — Communiqué sur demande</dd>
+<dt>Président</dt><dd>Monsieur Jérôme AUBRY</dd>
+<dt>Directeur de la publication</dt><dd>Monsieur Jérôme AUBRY</dd>
+<dt>Téléphone</dt><dd><a href="tel:0556288944">05 56 28 89 44</a> (Mérignac) — <a href="tel:0557526477">05 57 52 64 77</a> (La Teste-de-Buch)</dd>
+<dt>Courriel</dt><dd><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></dd>
+</dl>
+</div>
+</section>
+<section class="legal-section">
+<h2><span class="num">02</span>Hébergement <em>du site</em></h2>
+<div class="legal-section-rule"></div>
+<p>Le site est hébergé par :</p>
+<div class="info-card">
+<dl>
+<dt>Hébergeur</dt><dd>GitHub, Inc. (GitHub Pages)</dd>
+<dt>Adresse</dt><dd>88 Colin P Kelly Jr Street, San Francisco, CA 94107, États-Unis</dd>
+<dt>Site web</dt><dd><a href="https://pages.github.com" rel="noopener noreferrer" target="_blank">https://pages.github.com</a></dd>
+</dl>
+</div>
+</section>
+<section class="legal-section">
+<h2><span class="num">03</span>Propriété <em>intellectuelle</em></h2>
+<div class="legal-section-rule"></div>
+<p>L'ensemble des éléments présents sur le site www.latelier33.fr — textes, photographies, illustrations, logos, marques, vidéos, sons, mises en page, chartes graphiques, bases de données et code source — est protégé par le droit de la propriété intellectuelle et reste la propriété exclusive de L'ATELIER ou de ses partenaires.</p>
+<p>Les marques <strong><span class="brand-45">L'Atelier 45</span></strong> et <strong><span class="brand-titane">Titane Hydro</span></strong> sont des marques de la société L'ATELIER. Les autres marques citées sur le site (Théolaur, KEIM, Chromatic, Polycrom, Panaget, Kährs, Bauwerk, Forbo, Gerflor, Tarkett, Amtico, Moduleo, Interface, Polyflor, IVC, Boen, Haro, BerryAlloc, Design Parquet, Parqueterie Berrichonne…) demeurent la propriété de leurs détenteurs respectifs.</p>
+<p>Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit, et sur quelque support que ce soit, est interdite sans l'autorisation écrite préalable de L'ATELIER. Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie au titre des articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+</section>
+<section class="legal-section">
+<h2><span class="num">04</span>Liens <em>hypertextes</em></h2>
+<div class="legal-section-rule"></div>
+<p>Le site www.latelier33.fr peut contenir des liens vers d'autres sites internet. L'ATELIER n'exerce aucun contrôle sur le contenu de ces sites tiers et ne saurait en aucun cas être tenue responsable de leur contenu, de leur politique de confidentialité ou de leur utilisation.</p>
+<p>La création de liens hypertextes pointant vers le site est libre sous réserve de ne pas porter atteinte à l'image de L'ATELIER. L'ATELIER se réserve le droit de demander la suppression d'un lien qu'elle estime non conforme à son éthique.</p>
+</section>
+<section class="legal-section">
+<h2><span class="num">05</span>Responsabilité <em>éditoriale</em></h2>
+<div class="legal-section-rule"></div>
+<p>L'ATELIER met tout en œuvre pour offrir aux utilisateurs des informations et des outils disponibles et vérifiés, mais ne saurait être tenue responsable des erreurs, d'une absence de disponibilité des fonctionnalités ou de la présence éventuelle de virus sur son site.</p>
+<p>Les informations fournies sur le site, en particulier celles relatives aux produits (peintures, revêtements, nuanciers, fiches techniques), sont communiquées à titre indicatif. Elles sont susceptibles d'évoluer et ne sauraient engager la responsabilité de L'ATELIER. Pour toute information contractuelle, il convient de se reporter aux fiches techniques officielles, aux fiches de données de sécurité (FDS) et aux conditions générales de vente.</p>
+<p>Les visuels, nuances et couleurs présentés à l'écran sont donnés à titre indicatif et peuvent varier en fonction du calibrage de l'écran, de la lumière ambiante et des supports d'application. Seuls les nuanciers physiques disponibles en magasin font foi.</p>
+</section>
+<section class="legal-section">
+<h2><span class="num">06</span>Données <em>personnelles</em></h2>
+<div class="legal-section-rule"></div>
+<p>Le traitement des données personnelles collectées via le site est encadré par notre <a href="politique-confidentialite.html">politique de confidentialité</a>, qui détaille la nature des données collectées, leurs finalités, les durées de conservation et les droits dont vous disposez.</p>
+</section>
+<section class="legal-section">
+<h2><span class="num">07</span>Droit <em>applicable</em></h2>
+<div class="legal-section-rule"></div>
+<p>Les présentes mentions légales sont soumises au droit français. En cas de litige, et après échec de toute tentative de recherche d'une solution amiable, les tribunaux français seront seuls compétents pour connaître de ce litige.</p>
+</section>
+<section class="legal-section">
+<h2><span class="num">08</span>Contact</h2>
+<div class="legal-section-rule"></div>
+<p>Pour toute question relative aux présentes mentions légales ou au fonctionnement du site, vous pouvez nous écrire à : <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a>.</p>
+</section>
 </main>
-
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
-        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Nos gammes</h4>
-        <ul>
-          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
-          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
-          <li><a href="revetement-mural.html">Revêtement mural</a></li>
-          <li><a href="revetement-sol.html">Revêtement de sol</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Le groupe</h4>
-        <ul>
-          <li><a href="#">Notre histoire</a></li>
-          <li><a href="#">Nos magasins</a></li>
-          <li><a href="#">L'Établi · location</a></li>
-          <li><a href="#">Espace pro</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
-          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
-          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a href="https://www.agir-peinture.com/" target="_blank" rel="noopener noreferrer" aria-label="Site du réseau Agir Peinture"><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></a></span></div>
-    </div>
-  </div>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+</div>
+<div class="footer-col">
+<h4>Nos gammes</h4>
+<ul>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="revetement-mural.html">Revêtement mural</a></li>
+<li><a href="revetement-sol.html">Revêtement de sol</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Le groupe</h4>
+<ul>
+<li><a href="#">Notre histoire</a></li>
+<li><a href="#">Nos magasins</a></li>
+<li><a href="#">L'Établi · location</a></li>
+<li><a href="#">Espace pro</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+<li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+<li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+</div>
+</div>
 </footer>
-
 <script>
   const header = document.querySelector('.header');
   window.addEventListener('scroll', () => {
@@ -427,8 +491,6 @@
     else header.classList.remove('is-scrolled');
   });
 </script>
-
-
 <script>
   // ===== MENU BURGER MOBILE =====
   (function () {
@@ -455,6 +517,5 @@
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
 </script>
-
 </body>
 </html>

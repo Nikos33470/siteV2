@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revêtements muraux — Papiers peints haut de gamme & revêtements pros | L'Atelier</title>
-<meta name="description" content="L'Atelier distribue les plus belles maisons de papiers peints (Élitis, Pierre Frey, Casamance, Isidore Leroy, Nobilis…) et les revêtements muraux professionnels. 2 showrooms en Gironde.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Revêtements muraux — Papiers peints haut de gamme &amp; revêtements pros | L'Atelier</title>
+<meta content="L'Atelier distribue les plus belles maisons de papiers peints (Élitis, Pierre Frey, Casamance, Isidore Leroy, Nobilis…) et les revêtements muraux professionnels. 2 showrooms en Gironde." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F;
@@ -478,275 +479,339 @@
   }
   /* ========== FIN MENU BURGER MOBILE ========== */
 
+
+  /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
+  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  .brand-45,
+  .brand-titane {
+    font-style: italic;
+  }
+  .brand-45 {
+    font-family: 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  .brand-titane {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
+     (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
+
+  /* --- INDEX : cartes de gamme grand format --- */
+  .gamme-card.gamme-45 .gamme-name,
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .gamme-card.gamme-titane .gamme-name,
+  .gamme-card.gamme-titane .gamme-name-accent {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+  }
+  /* on garde la couleur d'accent orange/bleu déjà définie */
+
+  /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
+  .badge-cov .pot-badge-label,
+  .badge-biosource .pot-badge-label {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+  }
+
+  /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
+  .pilier-brands {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* --- PAGE GAMMES : bandeaux de section et titres produits --- */
+  [data-gamme-section="45"] .gamme-banner-title,
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name,
+  [data-gamme-section="45"] .product-name em {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+  }
+  [data-gamme-section="titane"] .gamme-banner-title,
+  [data-gamme-section="titane"] .gamme-banner-title em,
+  [data-gamme-section="titane"] .product-name,
+  [data-gamme-section="titane"] .product-name em {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+  }
+  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
+     on neutralise juste son italique déjà présent (héritage cohérent) */
+
+  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
+  /* déjà couverts par les <span class="brand-..."> wrappés */
+
+  /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
 <body>
-
 <!-- ============ HEADER ============ -->
 <header class="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
-        <!-- Carre bleu marine principal occupant la majorite de l'espace -->
-        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
-        <!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
-        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
-        <!-- Lettre 'a' minuscule blanche occupant le carre -->
-        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-              font-size="82" font-weight="900" fill="#FFFFFF"
-              text-anchor="middle" letter-spacing="-3">a</text>
-      </svg>
-      <div class="logo-text-wrap">
-        <span class="logo-text">l'atelier</span>
-        <span class="logo-baseline">MARCHAND DE COULEURS</span>
-        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
-      </div>
-    </a>
-    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-    </button>
-    <div class="nav-overlay-backdrop" aria-hidden="true"></div>
-    <div class="nav-wrap">
-      <nav class="nav">
-        <a href="gammes.html">Nos gammes peintures</a>
-        <a href="nuanciers.html">Nuanciers</a>
-        <a href="index.html#eco">Engagement éco</a>
-        <a href="revetement-mural.html" class="is-current">Revêtement mural</a>
-        <a href="revetement-sol.html">Revêtement de sol</a>
-        <a href="documents.html">Documents techniques</a>
-        <a href="index.html#equipe">L'équipe L'ATELIER</a>
-        <a href="#" class="nav-cta">Espace pro</a>
-      </nav>
-      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
-        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
-      </form>
-    </div>
-  </div>
+<div class="header-inner">
+<a class="logo" href="index.html">
+<svg aria-label="Logo L'Atelier" class="logo-symbol" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Carre bleu marine principal occupant la majorite de l'espace -->
+<rect fill="#1F3A5F" height="92" width="68" x="20" y="18"></rect>
+<!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
+<path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"></path>
+<!-- Lettre 'a' minuscule blanche occupant le carre -->
+<text fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3" text-anchor="middle" x="54" y="94">a</text>
+</svg>
+<div class="logo-text-wrap">
+<span class="logo-text">l'atelier</span>
+<span class="logo-baseline">MARCHAND DE COULEURS</span>
+<span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+</div>
+</a>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Menu" class="nav-burger" type="button">
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+</button>
+<div aria-hidden="true" class="nav-overlay-backdrop"></div>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="gammes.html">Nos gammes peintures</a>
+<a href="nuanciers.html">Nuanciers</a>
+<a href="index.html#eco">Engagement éco</a>
+<a class="is-current" href="revetement-mural.html">Revêtement mural</a>
+<a href="revetement-sol.html">Revêtement de sol</a>
+<a href="documents.html">Documents techniques</a>
+<a href="index.html#equipe">L'équipe L'ATELIER</a>
+<a class="nav-cta" href="#">Espace pro</a>
+</nav>
+<form class="nav-search" onsubmit="event.preventDefault();" role="search">
+<svg aria-hidden="true" class="nav-search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input aria-label="Recherche sur le site" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" type="search"/>
+</form>
+</div>
+</div>
 </header>
-
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero-inner">
-    <span class="hero-eyebrow">Revêtements muraux</span>
-    <h1 class="hero-title">
-      L'art du mur,<br>
-      <em>matière par matière</em>.
+<div class="hero-inner">
+<span class="hero-eyebrow">Revêtements muraux</span>
+<h1 class="hero-title">
+      L'art du mur,<br/>
+<em>matière par matière</em>.
     </h1>
-    <p class="hero-subtitle">
+<p class="hero-subtitle">
       Des <strong>maisons françaises d'exception</strong> aux <strong>revêtements techniques</strong> pour l'hôtellerie et le tertiaire. L'Atelier sélectionne et distribue les meilleures signatures du papier peint et du revêtement mural. Catalogues à consulter, échantillons à manipuler, conseil par nos coloristes.
     </p>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="hero-meta-num">20+</span>
-        <span class="hero-meta-label">Maisons distribuées</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-num">2</span>
-        <span class="hero-meta-label">Showrooms en Gironde</span>
-      </div>
-    </div>
-  </div>
+<div class="hero-meta">
+<div class="hero-meta-item">
+<span class="hero-meta-num">20+</span>
+<span class="hero-meta-label">Maisons distribuées</span>
+</div>
+<div class="hero-meta-item">
+<span class="hero-meta-num">2</span>
+<span class="hero-meta-label">Showrooms en Gironde</span>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ BREADCRUMB ============ -->
 <div class="breadcrumb-bar">
-  <nav class="breadcrumb" aria-label="Fil d'Ariane">
-    <a href="index.html">Accueil</a>
-    <span class="breadcrumb-sep">/</span>
-    <span class="breadcrumb-current">Revêtement mural</span>
-  </nav>
+<nav aria-label="Fil d'Ariane" class="breadcrumb">
+<a href="index.html">Accueil</a>
+<span class="breadcrumb-sep">/</span>
+<span class="breadcrumb-current">Revêtement mural</span>
+</nav>
 </div>
-
 <!-- ============ INTRO ÉDITORIALE ============ -->
 <section class="intro">
-  <div class="intro-inner reveal">
-    <div class="intro-grid">
-      <div>
-        <span class="intro-eyebrow">Notre sélection</span>
-        <h2 class="intro-title">Le mur est <em>une matière</em>, pas seulement une surface.</h2>
-      </div>
-      <div class="intro-text">
-        <p>Texturé, peint à la main, panoramique, contrecollé, lessivable, anti-feu, acoustique. Le revêtement mural a autant de réponses qu'il y a de projets. Nos coloristes vous accompagnent du choix de la matière au calepinage, pour des intérieurs résidentiels comme pour des chantiers tertiaires.</p>
-        <p><strong>Chaque maison ci-dessous est sélectionnée pour la qualité de ses produits et la solidité de son service technique.</strong> Échantillons disponibles en magasin, catalogues commandables sur place, livraison sur chantier.</p>
-      </div>
-    </div>
-  </div>
+<div class="intro-inner reveal">
+<div class="intro-grid">
+<div>
+<span class="intro-eyebrow">Notre sélection</span>
+<h2 class="intro-title">Le mur est <em>une matière</em>, pas seulement une surface.</h2>
+</div>
+<div class="intro-text">
+<p>Texturé, peint à la main, panoramique, contrecollé, lessivable, anti-feu, acoustique. Le revêtement mural a autant de réponses qu'il y a de projets. Nos coloristes vous accompagnent du choix de la matière au calepinage, pour des intérieurs résidentiels comme pour des chantiers tertiaires.</p>
+<p><strong>Chaque maison ci-dessous est sélectionnée pour la qualité de ses produits et la solidité de son service technique.</strong> Échantillons disponibles en magasin, catalogues commandables sur place, livraison sur chantier.</p>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ SECTION 01 — PAPIERS PEINTS HDG ============ -->
 <section class="cat-section" id="papiers-peints">
-  <div class="cat-inner">
-    <header class="cat-header reveal">
-      <div class="cat-num">01</div>
-      <div class="cat-info">
-        <span class="cat-tag">Particuliers · Décorateurs · Architectes</span>
-        <h2 class="cat-title">Papiers peints <em>haut de gamme</em></h2>
-        <p class="cat-subtitle">Panoramiques, motifs, unis texturés, peints à la main. Le meilleur des éditeurs français et internationaux.</p>
-      </div>
-    </header>
-
-    <!-- Galerie panoramiques et papiers peints haut de gamme : visuels officiels éditeurs (Isidore Leroy, Pierre Frey) -->
-    <div class="gallery gallery-mural reveal">
-      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_FORET.jpg?v=1770376883" alt="Papier peint panoramique Forêt - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Panoramique Forêt</div><div class="gallery-caption-text">Isidore Leroy — Paris, 1842</div></div></div>
-      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_AUBE_HEURE_DOREE.jpg?v=1777360599" alt="Papier peint panoramique Aube Heure Dorée - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Bord de mer</div><div class="gallery-caption-text">Aube heure dorée, Isidore Leroy</div></div></div>
-      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_AMAZONE_0adff836-cfba-4a7f-85d4-559ddaa4c10d.jpg?v=1743779309" alt="Papier peint panoramique Amazone tropical - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Panoramique tropical</div><div class="gallery-caption-text">Amazone, Isidore Leroy</div></div></div>
-      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/251119_SITUATION_CYPRINS_AMBRE_SDB_FENETRE_14085725_14085775_HouseOfPictures_1251X1799PX.jpg?v=1763972312" alt="Papier peint Art Déco Cyprins ambre - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Art Déco</div><div class="gallery-caption-text">Cyprins ambre, Isidore Leroy</div></div></div>
-      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/251127_SITUTAION_CHAMPS_FLEURIS_BOIS_DE_ROSE_13759344_13759397_HOUSEOFPICTURES_1251X1799PX.jpg?v=1766499747" alt="Papier peint Champs fleuris bois de rose - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Floral</div><div class="gallery-caption-text">Champs fleuris, Isidore Leroy</div></div></div>
-      <div class="gallery-item"><img src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_LE_BRESIL_BLEU_PAON.jpg?v=1768558736" alt="Papier peint panoramique Brésil bleu paon - Isidore Leroy" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Forêt panoramique</div><div class="gallery-caption-text">Le Brésil bleu paon, Isidore Leroy</div></div></div>
-    </div>
-
-    <!-- Liste des fournisseurs -->
-    <div class="brands-list reveal">
-      <div class="brands-list-label">
+<div class="cat-inner">
+<header class="cat-header reveal">
+<div class="cat-num">01</div>
+<div class="cat-info">
+<span class="cat-tag">Particuliers · Décorateurs · Architectes</span>
+<h2 class="cat-title">Papiers peints <em>haut de gamme</em></h2>
+<p class="cat-subtitle">Panoramiques, motifs, unis texturés, peints à la main. Le meilleur des éditeurs français et internationaux.</p>
+</div>
+</header>
+<!-- Galerie panoramiques et papiers peints haut de gamme : visuels officiels éditeurs (Isidore Leroy, Pierre Frey) -->
+<div class="gallery gallery-mural reveal">
+<div class="gallery-item"><img alt="Papier peint panoramique Forêt - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_FORET.jpg?v=1770376883"/><div class="gallery-caption"><div class="gallery-caption-style">Panoramique Forêt</div><div class="gallery-caption-text">Isidore Leroy — Paris, 1842</div></div></div>
+<div class="gallery-item"><img alt="Papier peint panoramique Aube Heure Dorée - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_AUBE_HEURE_DOREE.jpg?v=1777360599"/><div class="gallery-caption"><div class="gallery-caption-style">Bord de mer</div><div class="gallery-caption-text">Aube heure dorée, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint panoramique Amazone tropical - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/VISUEL_SITE_AMAZONE_0adff836-cfba-4a7f-85d4-559ddaa4c10d.jpg?v=1743779309"/><div class="gallery-caption"><div class="gallery-caption-style">Panoramique tropical</div><div class="gallery-caption-text">Amazone, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint Art Déco Cyprins ambre - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/251119_SITUATION_CYPRINS_AMBRE_SDB_FENETRE_14085725_14085775_HouseOfPictures_1251X1799PX.jpg?v=1763972312"/><div class="gallery-caption"><div class="gallery-caption-style">Art Déco</div><div class="gallery-caption-text">Cyprins ambre, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint Champs fleuris bois de rose - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/251127_SITUTAION_CHAMPS_FLEURIS_BOIS_DE_ROSE_13759344_13759397_HOUSEOFPICTURES_1251X1799PX.jpg?v=1766499747"/><div class="gallery-caption"><div class="gallery-caption-style">Floral</div><div class="gallery-caption-text">Champs fleuris, Isidore Leroy</div></div></div>
+<div class="gallery-item"><img alt="Papier peint panoramique Brésil bleu paon - Isidore Leroy" loading="lazy" src="https://isidoreleroy.com/cdn/shop/files/CROP_1251x1799px_LE_BRESIL_BLEU_PAON.jpg?v=1768558736"/><div class="gallery-caption"><div class="gallery-caption-style">Forêt panoramique</div><div class="gallery-caption-text">Le Brésil bleu paon, Isidore Leroy</div></div></div>
+</div>
+<!-- Liste des fournisseurs -->
+<div class="brands-list reveal">
+<div class="brands-list-label">
         Les maisons distribuées
         <span class="brands-list-label-num">16</span>
-        <span class="brands-list-label-detail">Éditeurs français et internationaux, sélectionnés pour leur exigence créative et la qualité de leurs produits.</span>
-      </div>
-      <div class="brands-grid-names">
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Ananbô</span><span class="brand-item-meta">France · Panoramiques</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Atelier d'Offard</span><span class="brand-item-meta">Tours · Artisanat</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">A</span><span class="brand-item-name">Au fil des Couleurs</span><span class="brand-item-meta">Paris</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">B</span><span class="brand-item-name">Bien Fait Paris</span><span class="brand-item-meta">Paris · Design</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">C</span><span class="brand-item-name">Casamance</span><span class="brand-item-meta">Paris · 2000</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">E</span><span class="brand-item-name">Élitis</span><span class="brand-item-meta">Toulouse · 1988</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">I</span><span class="brand-item-name">Isidore Leroy</span><span class="brand-item-meta">Paris · 1842</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Le Grand Siècle</span><span class="brand-item-meta">France</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Lé Papiers de Ninon</span><span class="brand-item-meta">France</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Little Cabari</span><span class="brand-item-meta">Bordeaux</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Muraem</span><span class="brand-item-meta">Sur mesure</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">N</span><span class="brand-item-name">Nobilis</span><span class="brand-item-meta">Paris · 1928</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Papiers de Paris</span><span class="brand-item-meta">Paris</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">P</span><span class="brand-item-name">Pierre Frey</span><span class="brand-item-meta">Paris · 1935</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Texdecor</span><span class="brand-item-meta">Tourcoing</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">W</span><span class="brand-item-name">Wall&decò France</span><span class="brand-item-meta">Italie · Design</span></div>
-      </div>
-    </div>
-  </div>
+<span class="brands-list-label-detail">Éditeurs français et internationaux, sélectionnés pour leur exigence créative et la qualité de leurs produits.</span>
+</div>
+<div class="brands-grid-names">
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Ananbô</span><span class="brand-item-meta">France · Panoramiques</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Atelier d'Offard</span><span class="brand-item-meta">Tours · Artisanat</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Au fil des Couleurs</span><span class="brand-item-meta">Paris</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Bien Fait Paris</span><span class="brand-item-meta">Paris · Design</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">C</span><span class="brand-item-name">Casamance</span><span class="brand-item-meta">Paris · 2000</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">E</span><span class="brand-item-name">Élitis</span><span class="brand-item-meta">Toulouse · 1988</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">Isidore Leroy</span><span class="brand-item-meta">Paris · 1842</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Le Grand Siècle</span><span class="brand-item-meta">France</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Lé Papiers de Ninon</span><span class="brand-item-meta">France</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Little Cabari</span><span class="brand-item-meta">Bordeaux</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Muraem</span><span class="brand-item-meta">Sur mesure</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">N</span><span class="brand-item-name">Nobilis</span><span class="brand-item-meta">Paris · 1928</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Papiers de Paris</span><span class="brand-item-meta">Paris</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Pierre Frey</span><span class="brand-item-meta">Paris · 1935</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Texdecor</span><span class="brand-item-meta">Tourcoing</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">W</span><span class="brand-item-name">Wall&amp;decò France</span><span class="brand-item-meta">Italie · Design</span></div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ LIFESTYLE BANNER (showroom papiers peints) ============ -->
 <section class="lifestyle-banner reveal">
-  <div class="lifestyle-content">
-    <span class="lifestyle-eyebrow">En showroom</span>
-    <h2 class="lifestyle-title">Les catalogues, <em>en main</em>.</h2>
-    <p class="lifestyle-text">Tous les classeurs des maisons distribuées sont consultables sur place. Texture, mat, brillant, raccord — le papier peint se choisit en touchant. Nos coloristes vous accompagnent dans la sélection et le calepinage de votre projet.</p>
-  </div>
+<div class="lifestyle-content">
+<span class="lifestyle-eyebrow">En showroom</span>
+<h2 class="lifestyle-title">Les catalogues, <em>en main</em>.</h2>
+<p class="lifestyle-text">Tous les classeurs des maisons distribuées sont consultables sur place. Texture, mat, brillant, raccord — le papier peint se choisit en touchant. Nos coloristes vous accompagnent dans la sélection et le calepinage de votre projet.</p>
+</div>
 </section>
-
 <!-- ============ SECTION 02 — REVÊTEMENTS PROS ============ -->
 <section class="cat-section alt" id="revetements-pros">
-  <div class="cat-inner">
-    <header class="cat-header reveal">
-      <div class="cat-num">02</div>
-      <div class="cat-info">
-        <span class="cat-tag" style="background: var(--bleu);">Hôtellerie · Tertiaire · CHR</span>
-        <h2 class="cat-title">Revêtements muraux <em>professionnels</em></h2>
-        <p class="cat-subtitle">Vinyles techniques, classement feu, résistance à l'usage intensif. Pour les chantiers contract.</p>
-      </div>
-    </header>
-
-    <!-- Galerie pros — visuels officiels Vescom (revêtements muraux textiles & vinyles techniques contract) -->
-    <div class="gallery gallery-pros reveal">
-      <div class="gallery-item"><img src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/morris/vescom---textile-wallcovering---morris-7.jpg/4160c2b5f4cb495eaceddb9025f16f8b/vescom---textile-wallcovering---morris-7.webp" alt="Revêtement mural textile Morris en situation salon - Vescom" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Textile tissé</div><div class="gallery-caption-text">Morris — Vescom</div></div></div>
-      <div class="gallery-item"><img src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/fraser/vescom---textile-wallcovering---fraser-13.jpg/7422ce1e295b36e4542921b33b4a53c5/vescom---textile-wallcovering---fraser-13.webp" alt="Revêtement mural Fraser opaque tissage architectural - Vescom" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Tissage 3D</div><div class="gallery-caption-text">Fraser — Vescom</div></div></div>
-      <div class="gallery-item"><img src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/vinyl_wallcovering/luxor/vescom---recycled-vinyl-wallcovering---luxor-11.jpg/91aa0e299e9b68776f3f9a8d8511f80a/vescom---recycled-vinyl-wallcovering---luxor-11.webp" alt="Revêtement vinyle recyclé Luxor mat & métallique - Vescom" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">Vinyle recyclé</div><div class="gallery-caption-text">Luxor — Vescom</div></div></div>
-      <div class="gallery-item"><img src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/sinkiang/vescom---textile-wallcovering---sinkiang-1.jpg/662443cb806b83976bf6b59930cc6377/vescom---textile-wallcovering---sinkiang-1.webp" alt="Revêtement Sinkiang 100% soie en intérieur - Vescom" loading="lazy"><div class="gallery-caption"><div class="gallery-caption-style">100% soie</div><div class="gallery-caption-text">Sinkiang — Vescom</div></div></div>
-    </div>
-
-    <!-- Liste fournisseurs pros -->
-    <div class="brands-list reveal">
-      <div class="brands-list-label">
+<div class="cat-inner">
+<header class="cat-header reveal">
+<div class="cat-num">02</div>
+<div class="cat-info">
+<span class="cat-tag" style="background: var(--bleu);">Hôtellerie · Tertiaire · CHR</span>
+<h2 class="cat-title">Revêtements muraux <em>professionnels</em></h2>
+<p class="cat-subtitle">Vinyles techniques, classement feu, résistance à l'usage intensif. Pour les chantiers contract.</p>
+</div>
+</header>
+<!-- Galerie pros — visuels officiels Vescom (revêtements muraux textiles & vinyles techniques contract) -->
+<div class="gallery gallery-pros reveal">
+<div class="gallery-item"><img alt="Revêtement mural textile Morris en situation salon - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/morris/vescom---textile-wallcovering---morris-7.jpg/4160c2b5f4cb495eaceddb9025f16f8b/vescom---textile-wallcovering---morris-7.webp"/><div class="gallery-caption"><div class="gallery-caption-style">Textile tissé</div><div class="gallery-caption-text">Morris — Vescom</div></div></div>
+<div class="gallery-item"><img alt="Revêtement mural Fraser opaque tissage architectural - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/fraser/vescom---textile-wallcovering---fraser-13.jpg/7422ce1e295b36e4542921b33b4a53c5/vescom---textile-wallcovering---fraser-13.webp"/><div class="gallery-caption"><div class="gallery-caption-style">Tissage 3D</div><div class="gallery-caption-text">Fraser — Vescom</div></div></div>
+<div class="gallery-item"><img alt="Revêtement vinyle recyclé Luxor mat &amp; métallique - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/vinyl_wallcovering/luxor/vescom---recycled-vinyl-wallcovering---luxor-11.jpg/91aa0e299e9b68776f3f9a8d8511f80a/vescom---recycled-vinyl-wallcovering---luxor-11.webp"/><div class="gallery-caption"><div class="gallery-caption-style">Vinyle recyclé</div><div class="gallery-caption-text">Luxor — Vescom</div></div></div>
+<div class="gallery-item"><img alt="Revêtement Sinkiang 100% soie en intérieur - Vescom" loading="lazy" src="https://assets.vescom.prod.verveagency.com/containers/assets/products/wallcovering/textile_wallcovering/sinkiang/vescom---textile-wallcovering---sinkiang-1.jpg/662443cb806b83976bf6b59930cc6377/vescom---textile-wallcovering---sinkiang-1.webp"/><div class="gallery-caption"><div class="gallery-caption-style">100% soie</div><div class="gallery-caption-text">Sinkiang — Vescom</div></div></div>
+</div>
+<!-- Liste fournisseurs pros -->
+<div class="brands-list reveal">
+<div class="brands-list-label">
         Les marques contract
         <span class="brands-list-label-num">04</span>
-        <span class="brands-list-label-detail">Vinyles techniques pour les projets exigeants : feu M1, lessivable, anti-microbien, acoustique.</span>
-      </div>
-      <div class="brands-grid-names">
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">L</span><span class="brand-item-name">Lutèce</span><span class="brand-item-meta">Semi-pro · Résidentiel</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">M</span><span class="brand-item-name">Muraspec</span><span class="brand-item-meta">UK · PVC technique</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">T</span><span class="brand-item-name">Texdecor Contract</span><span class="brand-item-meta">Vinacoustic · Polyform</span></div>
-        <div class="brand-item"><span class="brand-item-initial" aria-hidden="true">V</span><span class="brand-item-name">Vescom</span><span class="brand-item-meta">Pays-Bas · Hospitality</span></div>
-      </div>
-    </div>
-  </div>
+<span class="brands-list-label-detail">Vinyles techniques pour les projets exigeants : feu M1, lessivable, anti-microbien, acoustique.</span>
+</div>
+<div class="brands-grid-names">
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Lutèce</span><span class="brand-item-meta">Semi-pro · Résidentiel</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Muraspec</span><span class="brand-item-meta">UK · PVC technique</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Texdecor Contract</span><span class="brand-item-meta">Vinacoustic · Polyform</span></div>
+<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">V</span><span class="brand-item-name">Vescom</span><span class="brand-item-meta">Pays-Bas · Hospitality</span></div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ SHOWROOMS ============ -->
 <section class="showroom-section">
-  <div class="cat-inner">
-    <header class="cat-header reveal" style="margin-bottom: 40px;">
-      <div class="cat-num">03</div>
-      <div class="cat-info">
-        <span class="cat-tag">Voir, toucher, choisir</span>
-        <h2 class="cat-title">Nos <em>showrooms</em></h2>
-        <p class="cat-subtitle">Deux espaces dédiés aux échantillons. Ouvert aux particuliers, architectes et artisans peintres.</p>
-      </div>
-    </header>
-  </div>
-  <div class="showroom-grid reveal">
-    <div class="showroom-card">
-      <div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEURS_ATELIER_CUB_V2.jpeg');"></div>
-      <div class="showroom-card-name">L'Atelier <em>CUB</em></div>
-      <div class="showroom-card-sub">Mérignac</div>
-      <div class="showroom-card-addr">7 av. de la grande semaine<br>33700 Mérignac</div>
-      <a href="tel:0556288944" class="showroom-card-tel">05 56 28 89 44 →</a>
-    </div>
-    <div class="showroom-card">
-      <div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEUR_ATELIER_BASSIN_V2.jpeg');"></div>
-      <div class="showroom-card-name">L'Atelier <em>Bassin</em></div>
-      <div class="showroom-card-sub">La Teste-de-Buch</div>
-      <div class="showroom-card-addr">1111 av. du Parc des Expositions<br>33260 La Teste-de-Buch<br>Bassin d'Arcachon</div>
-      <a href="tel:0557526477" class="showroom-card-tel">05 57 52 64 77 →</a>
-    </div>
-  </div>
+<div class="cat-inner">
+<header class="cat-header reveal" style="margin-bottom: 40px;">
+<div class="cat-num">03</div>
+<div class="cat-info">
+<span class="cat-tag">Voir, toucher, choisir</span>
+<h2 class="cat-title">Nos <em>showrooms</em></h2>
+<p class="cat-subtitle">Deux espaces dédiés aux échantillons. Ouvert aux particuliers, architectes et artisans peintres.</p>
+</div>
+</header>
+</div>
+<div class="showroom-grid reveal">
+<div class="showroom-card">
+<div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEURS_ATELIER_CUB_V2.jpeg');"></div>
+<div class="showroom-card-name">L'Atelier <em>CUB</em></div>
+<div class="showroom-card-sub">Mérignac</div>
+<div class="showroom-card-addr">7 av. de la grande semaine<br/>33700 Mérignac</div>
+<a class="showroom-card-tel" href="tel:0556288944">05 56 28 89 44 →</a>
+</div>
+<div class="showroom-card">
+<div class="showroom-card-img" style="background-image: url('images/showroom/INTERIEUR_ATELIER_BASSIN_V2.jpeg');"></div>
+<div class="showroom-card-name">L'Atelier <em>Bassin</em></div>
+<div class="showroom-card-sub">La Teste-de-Buch</div>
+<div class="showroom-card-addr">1111 av. du Parc des Expositions<br/>33260 La Teste-de-Buch<br/>Bassin d'Arcachon</div>
+<a class="showroom-card-tel" href="tel:0557526477">05 57 52 64 77 →</a>
+</div>
+</div>
 </section>
-
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
-        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Nos gammes</h4>
-        <ul>
-          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
-          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
-          <li><a href="revetement-mural.html">Revêtement mural</a></li>
-          <li><a href="revetement-sol.html">Revêtement de sol</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Le groupe</h4>
-        <ul>
-          <li><a href="#">Notre histoire</a></li>
-          <li><a href="#">Nos magasins</a></li>
-          <li><a href="#">L'Établi · location</a></li>
-          <li><a href="#">Espace pro</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
-          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
-          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a href="https://www.agir-peinture.com/" target="_blank" rel="noopener noreferrer" aria-label="Site du réseau Agir Peinture"><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></a></span></div>
-    </div>
-  </div>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+</div>
+<div class="footer-col">
+<h4>Nos gammes</h4>
+<ul>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="revetement-mural.html">Revêtement mural</a></li>
+<li><a href="revetement-sol.html">Revêtement de sol</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Le groupe</h4>
+<ul>
+<li><a href="#">Notre histoire</a></li>
+<li><a href="#">Nos magasins</a></li>
+<li><a href="#">L'Établi · location</a></li>
+<li><a href="#">Espace pro</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+<li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+<li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+</div>
+</div>
 </footer>
-
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
@@ -759,7 +824,6 @@
     else header.classList.remove('is-scrolled');
   });
 </script>
-
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Début ============ -->
 <style>
   /* Dropdown de résultats sous la barre de recherche */
@@ -858,7 +922,6 @@
     .search-results { width: calc(100vw - 32px); right: auto; left: 50%; transform: translateX(-50%); }
   }
 </style>
-
 <script>
 (function() {
   // ============ INDEX DE RECHERCHE COMPLET DU SITE ============
@@ -1153,8 +1216,6 @@
 })();
 </script>
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Fin ============ -->
-
-
 <script>
   // ===== MENU BURGER MOBILE =====
   (function () {
@@ -1181,6 +1242,5 @@
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
 </script>
-
 </body>
 </html>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Nuanciers — L'Atelier · Marchand de couleurs · Chromatic, Polycrom, RAL, NCS</title>
-<meta name="description" content="Découvrez et téléchargez tous les nuanciers L'Atelier : Chromatic, Polycrom façade, RAL, NCS, nuanciers bois. Marchand de couleurs à Mérignac et La Teste-de-Buch.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta content="Découvrez et téléchargez tous les nuanciers L'Atelier : Chromatic, Polycrom façade, RAL, NCS, nuanciers bois. Marchand de couleurs à Mérignac et La Teste-de-Buch." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F;
@@ -651,766 +652,794 @@
   }
   /* ========== FIN MENU BURGER MOBILE ========== */
 
+
+  /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
+  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  .brand-45,
+  .brand-titane {
+    font-style: italic;
+  }
+  .brand-45 {
+    font-family: 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  .brand-titane {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
+     (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
+
+  /* --- INDEX : cartes de gamme grand format --- */
+  .gamme-card.gamme-45 .gamme-name,
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .gamme-card.gamme-titane .gamme-name,
+  .gamme-card.gamme-titane .gamme-name-accent {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+  }
+  /* on garde la couleur d'accent orange/bleu déjà définie */
+
+  /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
+  .badge-cov .pot-badge-label,
+  .badge-biosource .pot-badge-label {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+  }
+
+  /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
+  .pilier-brands {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* --- PAGE GAMMES : bandeaux de section et titres produits --- */
+  [data-gamme-section="45"] .gamme-banner-title,
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name,
+  [data-gamme-section="45"] .product-name em {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+  }
+  [data-gamme-section="titane"] .gamme-banner-title,
+  [data-gamme-section="titane"] .gamme-banner-title em,
+  [data-gamme-section="titane"] .product-name,
+  [data-gamme-section="titane"] .product-name em {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+  }
+  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
+     on neutralise juste son italique déjà présent (héritage cohérent) */
+
+  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
+  /* déjà couverts par les <span class="brand-..."> wrappés */
+
+  /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
 <body>
-
 <!-- HEADER -->
 <header class="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
-        <!-- Carre bleu marine principal occupant la majorite de l'espace -->
-        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
-        <!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
-        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
-        <!-- Lettre 'a' minuscule blanche occupant le carre -->
-        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-              font-size="82" font-weight="900" fill="#FFFFFF"
-              text-anchor="middle" letter-spacing="-3">a</text>
-      </svg>
-      <div class="logo-text-wrap">
-        <span class="logo-text">l'atelier</span>
-        <span class="logo-baseline">MARCHAND DE COULEURS</span>
-        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
-      </div>
-    </a>
-    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-    </button>
-    <div class="nav-overlay-backdrop" aria-hidden="true"></div>
-    <div class="nav-wrap">
-      <nav class="nav">
-        <a href="gammes.html">Nos gammes peintures</a>
-        <a href="nuanciers.html" class="active">Nuanciers</a>
-        <a href="index.html#eco">Engagement éco</a>
-        <a href="revetement-mural.html">Revêtement mural</a>
-        <a href="revetement-sol.html">Revêtement de sol</a>
-        <a href="documents.html">Documents techniques</a>
-        <a href="index.html#equipe">L'équipe L'ATELIER</a>
-        <a href="#" class="nav-cta">Espace pro</a>
-      </nav>
-      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
-        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
-      </form>
-    </div>
-  </div>
+<div class="header-inner">
+<a class="logo" href="index.html">
+<svg aria-label="Logo L'Atelier" class="logo-symbol" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Carre bleu marine principal occupant la majorite de l'espace -->
+<rect fill="#1F3A5F" height="92" width="68" x="20" y="18"></rect>
+<!-- Apostrophe orange a gauche du carre, dépasse au-dessus -->
+<path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"></path>
+<!-- Lettre 'a' minuscule blanche occupant le carre -->
+<text fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3" text-anchor="middle" x="54" y="94">a</text>
+</svg>
+<div class="logo-text-wrap">
+<span class="logo-text">l'atelier</span>
+<span class="logo-baseline">MARCHAND DE COULEURS</span>
+<span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+</div>
+</a>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Menu" class="nav-burger" type="button">
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+</button>
+<div aria-hidden="true" class="nav-overlay-backdrop"></div>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="gammes.html">Nos gammes peintures</a>
+<a class="active" href="nuanciers.html">Nuanciers</a>
+<a href="index.html#eco">Engagement éco</a>
+<a href="revetement-mural.html">Revêtement mural</a>
+<a href="revetement-sol.html">Revêtement de sol</a>
+<a href="documents.html">Documents techniques</a>
+<a href="index.html#equipe">L'équipe L'ATELIER</a>
+<a class="nav-cta" href="#">Espace pro</a>
+</nav>
+<form class="nav-search" onsubmit="event.preventDefault();" role="search">
+<svg aria-hidden="true" class="nav-search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input aria-label="Recherche sur le site" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" type="search"/>
+</form>
+</div>
+</div>
 </header>
-
 <!-- HERO -->
 <section class="hero-nuanciers">
-  <div class="hero-stripes" aria-hidden="true">
-    <span style="background:#1F3A5F"></span>
-    <span style="background:#2D4E7A"></span>
-    <span style="background:#4A8B5C"></span>
-    <span style="background:#E8F2EB"></span>
-    <span style="background:#F5F0E8"></span>
-    <span style="background:#FFA968"></span>
-    <span style="background:#F07F2C"></span>
-    <span style="background:#D86618"></span>
-    <span style="background:#15273F"></span>
-    <span style="background:#E8EEF5"></span>
-    <span style="background:#2F6940"></span>
-    <span style="background:#FFFFFF"></span>
-  </div>
-
-  <div class="hero-nuanciers-inner">
-    <div>
-      <div class="hero-eyebrow">Bibliothèque chromatique</div>
-      <h1 class="hero-title">Nos <em>nuanciers</em><br>en téléchargement.</h1>
-      <p class="hero-sub">Toute la matière chromatique de L'Atelier : Chromatic, Polycrom, KEIM, RAL, NCS, nuanciers bois et inspirations. Téléchargez les PDF officiels et venez les manipuler en magasin.</p>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">12</div>
-          <div class="hero-stat-label">Nuanciers PDF</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">2800+</div>
-          <div class="hero-stat-label">Teintes disponibles</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">2</div>
-          <div class="hero-stat-label">Magasins à votre écoute</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ZONE : disque chromatique + flèche téléchargement au-dessus -->
-    <div class="wheel-zone" aria-hidden="true">
-
-      <!-- DISQUE CHROMATIQUE 3D + flèche en surimpression au-dessus -->
-      <div class="wheel-stage">
-
-        <!-- Halo sous le disque -->
-        <div class="wheel-halo"></div>
-
-        <!-- ICÔNE TÉLÉCHARGEMENT — cliquable, scroll vers la section nuanciers en cartes -->
-        <a class="dl-icon" href="#nuanciers-cartes" aria-label="Voir les nuanciers disponibles plus bas dans la page">
-          <!-- Halo orange diffus derrière l'icône -->
-          <div class="dl-glow"></div>
-
-          <!-- Flèche animée (monte/descend) -->
-          <svg class="dl-arrow" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#FFA968"/>
-                <stop offset="50%" stop-color="#F07F2C"/>
-                <stop offset="100%" stop-color="#D86618"/>
-              </linearGradient>
-              <filter id="arrowShadow" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#D86618" flood-opacity="0.55"/>
-              </filter>
-            </defs>
-            <path d="M 38 5 L 62 5 L 62 50 L 80 50 L 50 82 L 20 50 L 38 50 Z"
-                  fill="url(#arrowGrad)"
-                  stroke="rgba(255,255,255,0.6)"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                  filter="url(#arrowShadow)"/>
-            <path d="M 40 7 L 48 7 L 48 48 L 40 48 Z" fill="rgba(255,255,255,0.35)"/>
-          </svg>
-
-          <!-- Barre de réception (immobile, forme de U / inbox) -->
-          <svg class="dl-tray" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="trayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#FFA968"/>
-                <stop offset="100%" stop-color="#D86618"/>
-              </linearGradient>
-              <filter id="trayShadow" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#D86618" flood-opacity="0.45"/>
-              </filter>
-            </defs>
-            <path d="M 8 2 L 8 22 L 92 22 L 92 2 L 80 2 L 80 12 L 20 12 L 20 2 Z"
-                  fill="url(#trayGrad)"
-                  stroke="rgba(255,255,255,0.6)"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                  filter="url(#trayShadow)"/>
-          </svg>
-        </a>
-
-        <!-- Le disque chromatique épais (style palet 3D) -->
-        <div class="wheel-3d">
-          <!-- Face supérieure : disque coloré -->
-          <div class="wheel-top">
-            <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="topGloss" cx="35%" cy="30%">
-                  <stop offset="0%" stop-color="rgba(255,255,255,0.55)"/>
-                  <stop offset="35%" stop-color="rgba(255,255,255,0.15)"/>
-                  <stop offset="70%" stop-color="rgba(255,255,255,0)"/>
-                </radialGradient>
-                <radialGradient id="topShadow" cx="65%" cy="80%">
-                  <stop offset="0%" stop-color="rgba(0,0,0,0.25)"/>
-                  <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
-                </radialGradient>
-                <radialGradient id="centerFade" cx="50%" cy="50%">
-                  <stop offset="0%"  stop-color="rgba(255,255,255,0.95)"/>
-                  <stop offset="18%" stop-color="rgba(255,255,255,0.75)"/>
-                  <stop offset="40%" stop-color="rgba(255,255,255,0.25)"/>
-                  <stop offset="65%" stop-color="rgba(255,255,255,0.05)"/>
-                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-                </radialGradient>
-              </defs>
-              <g id="wheel-disc"></g>
-              <circle cx="0" cy="0" r="98" fill="url(#centerFade)"/>
-              <g fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.25">
-                <circle cx="0" cy="0" r="22"/>
-                <circle cx="0" cy="0" r="32"/>
-                <circle cx="0" cy="0" r="42"/>
-                <circle cx="0" cy="0" r="52"/>
-                <circle cx="0" cy="0" r="62"/>
-                <circle cx="0" cy="0" r="72"/>
-                <circle cx="0" cy="0" r="82"/>
-                <circle cx="0" cy="0" r="90"/>
-              </g>
-              <circle cx="0" cy="0" r="98" fill="url(#topShadow)" opacity="0.6"/>
-              <circle cx="0" cy="0" r="98" fill="url(#topGloss)" opacity="0.7"/>
-              <circle cx="0" cy="0" r="98" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
-              <circle cx="0" cy="0" r="96" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"/>
-              <circle cx="0" cy="0" r="14" fill="rgba(255,255,255,0.98)"/>
-              <circle cx="0" cy="0" r="14" fill="none" stroke="rgba(31,58,95,0.2)" stroke-width="0.6"/>
-              <circle cx="-2" cy="-3" r="10" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="0.5"/>
-              <circle cx="0" cy="0" r="3" fill="rgba(31,58,95,0.35)"/>
-            </svg>
-          </div>
-
-          <!-- Tranche du disque : couches empilées pour faire l'épaisseur -->
-          <div class="wheel-edge wheel-edge-1"></div>
-          <div class="wheel-edge wheel-edge-2"></div>
-          <div class="wheel-edge wheel-edge-3"></div>
-          <div class="wheel-edge wheel-edge-4"></div>
-          <div class="wheel-edge wheel-edge-5"></div>
-          <div class="wheel-edge wheel-edge-6"></div>
-          <div class="wheel-edge wheel-edge-7"></div>
-          <div class="wheel-edge wheel-edge-8"></div>
-
-          <!-- Face inférieure pour fermer le palet -->
-          <div class="wheel-bottom"></div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
+<div aria-hidden="true" class="hero-stripes">
+<span style="background:#1F3A5F"></span>
+<span style="background:#2D4E7A"></span>
+<span style="background:#4A8B5C"></span>
+<span style="background:#E8F2EB"></span>
+<span style="background:#F5F0E8"></span>
+<span style="background:#FFA968"></span>
+<span style="background:#F07F2C"></span>
+<span style="background:#D86618"></span>
+<span style="background:#15273F"></span>
+<span style="background:#E8EEF5"></span>
+<span style="background:#2F6940"></span>
+<span style="background:#FFFFFF"></span>
+</div>
+<div class="hero-nuanciers-inner">
+<div>
+<div class="hero-eyebrow">Bibliothèque chromatique</div>
+<h1 class="hero-title">Nos <em>nuanciers</em><br/>en téléchargement.</h1>
+<p class="hero-sub">Toute la matière chromatique de L'Atelier : Chromatic, Polycrom, KEIM, RAL, NCS, nuanciers bois et inspirations. Téléchargez les PDF officiels et venez les manipuler en magasin.</p>
+<div class="hero-stats">
+<div>
+<div class="hero-stat-num">12</div>
+<div class="hero-stat-label">Nuanciers PDF</div>
+</div>
+<div>
+<div class="hero-stat-num">2800+</div>
+<div class="hero-stat-label">Teintes disponibles</div>
+</div>
+<div>
+<div class="hero-stat-num">2</div>
+<div class="hero-stat-label">Magasins à votre écoute</div>
+</div>
+</div>
+</div>
+<!-- ZONE : disque chromatique + flèche téléchargement au-dessus -->
+<div aria-hidden="true" class="wheel-zone">
+<!-- DISQUE CHROMATIQUE 3D + flèche en surimpression au-dessus -->
+<div class="wheel-stage">
+<!-- Halo sous le disque -->
+<div class="wheel-halo"></div>
+<!-- ICÔNE TÉLÉCHARGEMENT — cliquable, scroll vers la section nuanciers en cartes -->
+<a aria-label="Voir les nuanciers disponibles plus bas dans la page" class="dl-icon" href="#nuanciers-cartes">
+<!-- Halo orange diffus derrière l'icône -->
+<div class="dl-glow"></div>
+<!-- Flèche animée (monte/descend) -->
+<svg class="dl-arrow" viewbox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="arrowGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#FFA968"></stop>
+<stop offset="50%" stop-color="#F07F2C"></stop>
+<stop offset="100%" stop-color="#D86618"></stop>
+</lineargradient>
+<filter height="200%" id="arrowShadow" width="200%" x="-50%" y="-50%">
+<fedropshadow dx="0" dy="4" flood-color="#D86618" flood-opacity="0.55" stddeviation="3"></fedropshadow>
+</filter>
+</defs>
+<path d="M 38 5 L 62 5 L 62 50 L 80 50 L 50 82 L 20 50 L 38 50 Z" fill="url(#arrowGrad)" filter="url(#arrowShadow)" stroke="rgba(255,255,255,0.6)" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M 40 7 L 48 7 L 48 48 L 40 48 Z" fill="rgba(255,255,255,0.35)"></path>
+</svg>
+<!-- Barre de réception (immobile, forme de U / inbox) -->
+<svg class="dl-tray" viewbox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="trayGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#FFA968"></stop>
+<stop offset="100%" stop-color="#D86618"></stop>
+</lineargradient>
+<filter height="200%" id="trayShadow" width="200%" x="-50%" y="-50%">
+<fedropshadow dx="0" dy="3" flood-color="#D86618" flood-opacity="0.45" stddeviation="2.5"></fedropshadow>
+</filter>
+</defs>
+<path d="M 8 2 L 8 22 L 92 22 L 92 2 L 80 2 L 80 12 L 20 12 L 20 2 Z" fill="url(#trayGrad)" filter="url(#trayShadow)" stroke="rgba(255,255,255,0.6)" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+<!-- Le disque chromatique épais (style palet 3D) -->
+<div class="wheel-3d">
+<!-- Face supérieure : disque coloré -->
+<div class="wheel-top">
+<svg viewbox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="35%" cy="30%" id="topGloss">
+<stop offset="0%" stop-color="rgba(255,255,255,0.55)"></stop>
+<stop offset="35%" stop-color="rgba(255,255,255,0.15)"></stop>
+<stop offset="70%" stop-color="rgba(255,255,255,0)"></stop>
+</radialgradient>
+<radialgradient cx="65%" cy="80%" id="topShadow">
+<stop offset="0%" stop-color="rgba(0,0,0,0.25)"></stop>
+<stop offset="100%" stop-color="rgba(0,0,0,0)"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="centerFade">
+<stop offset="0%" stop-color="rgba(255,255,255,0.95)"></stop>
+<stop offset="18%" stop-color="rgba(255,255,255,0.75)"></stop>
+<stop offset="40%" stop-color="rgba(255,255,255,0.25)"></stop>
+<stop offset="65%" stop-color="rgba(255,255,255,0.05)"></stop>
+<stop offset="100%" stop-color="rgba(255,255,255,0)"></stop>
+</radialgradient>
+</defs>
+<g id="wheel-disc"></g>
+<circle cx="0" cy="0" fill="url(#centerFade)" r="98"></circle>
+<g fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.25">
+<circle cx="0" cy="0" r="22"></circle>
+<circle cx="0" cy="0" r="32"></circle>
+<circle cx="0" cy="0" r="42"></circle>
+<circle cx="0" cy="0" r="52"></circle>
+<circle cx="0" cy="0" r="62"></circle>
+<circle cx="0" cy="0" r="72"></circle>
+<circle cx="0" cy="0" r="82"></circle>
+<circle cx="0" cy="0" r="90"></circle>
+</g>
+<circle cx="0" cy="0" fill="url(#topShadow)" opacity="0.6" r="98"></circle>
+<circle cx="0" cy="0" fill="url(#topGloss)" opacity="0.7" r="98"></circle>
+<circle cx="0" cy="0" fill="none" r="98" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"></circle>
+<circle cx="0" cy="0" fill="none" r="96" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"></circle>
+<circle cx="0" cy="0" fill="rgba(255,255,255,0.98)" r="14"></circle>
+<circle cx="0" cy="0" fill="none" r="14" stroke="rgba(31,58,95,0.2)" stroke-width="0.6"></circle>
+<circle cx="-2" cy="-3" fill="none" r="10" stroke="rgba(255,255,255,0.6)" stroke-width="0.5"></circle>
+<circle cx="0" cy="0" fill="rgba(31,58,95,0.35)" r="3"></circle>
+</svg>
+</div>
+<!-- Tranche du disque : couches empilées pour faire l'épaisseur -->
+<div class="wheel-edge wheel-edge-1"></div>
+<div class="wheel-edge wheel-edge-2"></div>
+<div class="wheel-edge wheel-edge-3"></div>
+<div class="wheel-edge wheel-edge-4"></div>
+<div class="wheel-edge wheel-edge-5"></div>
+<div class="wheel-edge wheel-edge-6"></div>
+<div class="wheel-edge wheel-edge-7"></div>
+<div class="wheel-edge wheel-edge-8"></div>
+<!-- Face inférieure pour fermer le palet -->
+<div class="wheel-bottom"></div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- FILTRES -->
 <div class="filters">
-  <div class="filters-inner">
-    <span class="filters-label">Filtrer :</span>
-    <button class="filter-btn is-active" data-filter="all">Tous</button>
-    <button class="filter-btn" data-filter="interieur">Intérieur · Décoration</button>
-    <button class="filter-btn" data-filter="facade">Façade · Extérieur</button>
-    <button class="filter-btn" data-filter="industriel">Industriel · RAL · NCS</button>
-    <button class="filter-btn" data-filter="bois">Bois</button>
-  </div>
+<div class="filters-inner">
+<span class="filters-label">Filtrer :</span>
+<button class="filter-btn is-active" data-filter="all">Tous</button>
+<button class="filter-btn" data-filter="interieur">Intérieur · Décoration</button>
+<button class="filter-btn" data-filter="facade">Façade · Extérieur</button>
+<button class="filter-btn" data-filter="industriel">Industriel · RAL · NCS</button>
+<button class="filter-btn" data-filter="bois">Bois</button>
 </div>
-
+</div>
 <!-- GRILLE NUANCIERS -->
 <section class="nuanciers-grid" id="nuanciers-cartes" style="scroll-margin-top: 100px;">
-  <div class="nuanciers-inner">
-    <h2 class="nuanciers-section-title">Choisissez votre <em>palette.</em></h2>
-    <p class="nuanciers-section-sub">Survolez chaque carte pour révéler les teintes du nuancier. Le téléchargement PDF s'ouvre dans un nouvel onglet.</p>
-
-    <!-- INTERIEUR / DECORATION -->
-    <div class="nuanciers-cat" data-cat="interieur">
-      <div class="cat-header">
-        <span class="cat-pill">Intérieur</span>
-        <span class="cat-title">Chromatic · Inspirations · Polycrom</span>
-        <span class="cat-count">4 nuanciers</span>
-      </div>
-      <div class="cards">
-
-        <article class="card" data-cat="interieur">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#F4E1C2,#E8B98E,#C97B5E,#7D4A3F,#3E2A21);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Chromatic · CH1</div>
-                  <div class="card-title">Chromatic CH1 — Jonone</div>
-                  <div class="card-desc">Édition signature artistique, palette d'expression.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<div class="nuanciers-inner">
+<h2 class="nuanciers-section-title">Choisissez votre <em>palette.</em></h2>
+<p class="nuanciers-section-sub">Survolez chaque carte pour révéler les teintes du nuancier. Le téléchargement PDF s'ouvre dans un nouvel onglet.</p>
+<!-- INTERIEUR / DECORATION -->
+<div class="nuanciers-cat" data-cat="interieur">
+<div class="cat-header">
+<span class="cat-pill">Intérieur</span>
+<span class="cat-title">Chromatic · Inspirations · Polycrom</span>
+<span class="cat-count">4 nuanciers</span>
+</div>
+<div class="cards">
+<article class="card" data-cat="interieur">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#F4E1C2,#E8B98E,#C97B5E,#7D4A3F,#3E2A21);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Chromatic · CH1</div>
+<div class="card-title">Chromatic CH1 — Jonone</div>
+<div class="card-desc">Édition signature artistique, palette d'expression.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF
                   </span>
-                  <a href="nuanciers/Nuancier Chromatic CH1 Jonone .pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#F4E1C2"></span>
-                <span style="background:#E8B98E"></span>
-                <span style="background:#C97B5E"></span>
-                <span style="background:#7D4A3F"></span>
-                <span style="background:#3E2A21"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic CH1 Jonone</span></div>
-              <p class="card-back-desc">Le nuancier signature Chromatic. Une collection riche et harmonisée, idéale pour la décoration intérieure et les projets résidentiels haut de gamme.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" data-cat="interieur">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#F2EBDA,#D4C7AB,#9DB07F,#5E8A6E,#3A5468);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Chromatic · CH2</div>
-                  <div class="card-title">Chromatic Dorval CH2</div>
-                  <div class="card-desc">Nouvelle édition, teintes contemporaines et nuances apaisées.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/Nuancier Chromatic CH1 Jonone .pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#F4E1C2"></span>
+<span style="background:#E8B98E"></span>
+<span style="background:#C97B5E"></span>
+<span style="background:#7D4A3F"></span>
+<span style="background:#3E2A21"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic CH1 Jonone</span></div>
+<p class="card-back-desc">Le nuancier signature Chromatic. Une collection riche et harmonisée, idéale pour la décoration intérieure et les projets résidentiels haut de gamme.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+<article class="card" data-cat="interieur">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#F2EBDA,#D4C7AB,#9DB07F,#5E8A6E,#3A5468);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Chromatic · CH2</div>
+<div class="card-title">Chromatic Dorval CH2</div>
+<div class="card-desc">Nouvelle édition, teintes contemporaines et nuances apaisées.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Nouveau
                   </span>
-                  <a href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#F2EBDA"></span>
-                <span style="background:#D4C7AB"></span>
-                <span style="background:#9DB07F"></span>
-                <span style="background:#5E8A6E"></span>
-                <span style="background:#3A5468"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Dorval CH2 — Nouveau</span></div>
-              <p class="card-back-desc">La toute nouvelle gamme Chromatic Dorval CH2 : des teintes contemporaines, désaturées et faciles à associer pour la décoration intérieure.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" data-cat="interieur">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#FBE9D2,#F2B98A,#D87B5E,#A24E48,#5A2B33);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Inspirations</div>
-                  <div class="card-title">Chromatic Inspirations · Styles</div>
-                  <div class="card-desc">Ambiances et harmonies clés-en-main par style décoratif.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#F2EBDA"></span>
+<span style="background:#D4C7AB"></span>
+<span style="background:#9DB07F"></span>
+<span style="background:#5E8A6E"></span>
+<span style="background:#3A5468"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Dorval CH2 — Nouveau</span></div>
+<p class="card-back-desc">La toute nouvelle gamme Chromatic Dorval CH2 : des teintes contemporaines, désaturées et faciles à associer pour la décoration intérieure.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+<article class="card" data-cat="interieur">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#FBE9D2,#F2B98A,#D87B5E,#A24E48,#5A2B33);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Inspirations</div>
+<div class="card-title">Chromatic Inspirations · Styles</div>
+<div class="card-desc">Ambiances et harmonies clés-en-main par style décoratif.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Tendances
                   </span>
-                  <a href="nuanciers/Chromatic-Inspirations-STYLES.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#FBE9D2"></span>
-                <span style="background:#F2B98A"></span>
-                <span style="background:#D87B5E"></span>
-                <span style="background:#A24E48"></span>
-                <span style="background:#5A2B33"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Inspirations · Styles</span></div>
-              <p class="card-back-desc">Un guide d'ambiances Chromatic : harmonies thématiques (naturel, méditerranéen, contemporain…) pour s'inspirer avant d'arbitrer ses teintes.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" data-cat="interieur">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#F5F0E8,#D9C9A8,#A89074,#6F5942,#322826);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Polycrom · 1320T</div>
-                  <div class="card-title">Polycrom 1320 teintes</div>
-                  <div class="card-desc">L'éventail complet : 1320 teintes pour tous usages.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/Chromatic-Inspirations-STYLES.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#FBE9D2"></span>
+<span style="background:#F2B98A"></span>
+<span style="background:#D87B5E"></span>
+<span style="background:#A24E48"></span>
+<span style="background:#5A2B33"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Inspirations · Styles</span></div>
+<p class="card-back-desc">Un guide d'ambiances Chromatic : harmonies thématiques (naturel, méditerranéen, contemporain…) pour s'inspirer avant d'arbitrer ses teintes.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+<article class="card" data-cat="interieur">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#F5F0E8,#D9C9A8,#A89074,#6F5942,#322826);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Polycrom · 1320T</div>
+<div class="card-title">Polycrom 1320 teintes</div>
+<div class="card-desc">L'éventail complet : 1320 teintes pour tous usages.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Référence
                   </span>
-                  <a href="nuanciers/POLYCROM-1320T-version-PDF.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#F5F0E8"></span>
-                <span style="background:#D9C9A8"></span>
-                <span style="background:#A89074"></span>
-                <span style="background:#6F5942"></span>
-                <span style="background:#322826"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Polycrom · Version complète</span></div>
-              <p class="card-back-desc">L'intégralité du nuancier Polycrom : 1320 teintes pour tous les supports et tous les usages, du chantier neuf à la rénovation.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- FACADE / EXTERIEUR -->
-    <div class="nuanciers-cat" data-cat="facade">
-      <div class="cat-header">
-        <span class="cat-pill" style="background:rgba(74,139,92,0.12); color:var(--vert-eco-fonce);">Façade</span>
-        <span class="cat-title">Chromatic · Polycrom · KEIM · Extérieur</span>
-        <span class="cat-count">4 nuanciers</span>
-      </div>
-      <div class="cards">
-
-        <article class="card" data-cat="facade">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#EDEAE1,#D9C29A,#C97B5E,#8E5E36,#3A5468);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Chromatic · Façade</div>
-                  <div class="card-title">Chromatic Façade</div>
-                  <div class="card-desc">250 teintes Chromatic dédiées aux peintures extérieures.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/POLYCROM-1320T-version-PDF.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#F5F0E8"></span>
+<span style="background:#D9C9A8"></span>
+<span style="background:#A89074"></span>
+<span style="background:#6F5942"></span>
+<span style="background:#322826"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Polycrom · Version complète</span></div>
+<p class="card-back-desc">L'intégralité du nuancier Polycrom : 1320 teintes pour tous les supports et tous les usages, du chantier neuf à la rénovation.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- FACADE / EXTERIEUR -->
+<div class="nuanciers-cat" data-cat="facade">
+<div class="cat-header">
+<span class="cat-pill" style="background:rgba(74,139,92,0.12); color:var(--vert-eco-fonce);">Façade</span>
+<span class="cat-title">Chromatic · Polycrom · KEIM · Extérieur</span>
+<span class="cat-count">4 nuanciers</span>
+</div>
+<div class="cards">
+<article class="card" data-cat="facade">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#EDEAE1,#D9C29A,#C97B5E,#8E5E36,#3A5468);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Chromatic · Façade</div>
+<div class="card-title">Chromatic Façade</div>
+<div class="card-desc">250 teintes Chromatic dédiées aux peintures extérieures.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · 250 teintes
                   </span>
-                  <a href="nuanciers/CHROMATIC_FACADE.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#EDEAE1"></span>
-                <span style="background:#D9C29A"></span>
-                <span style="background:#C97B5E"></span>
-                <span style="background:#8E5E36"></span>
-                <span style="background:#3A5468"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Façade · 250 teintes</span></div>
-              <p class="card-back-desc">Toute la gamme Chromatic adaptée à la façade : blancs, beiges, ocres, bruns, gris, bleus et verts classés par famille chromatique. Idéal pour le ravalement et la rénovation extérieure.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" data-cat="facade">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#EFE3D0,#D9C29A,#A87E54,#6A4A2F,#3B2A1C);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Polycrom · 170T</div>
-                  <div class="card-title">Polycrom Façade 170T</div>
-                  <div class="card-desc">170 teintes pensées pour la façade et l'extérieur.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/CHROMATIC_FACADE.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#EDEAE1"></span>
+<span style="background:#D9C29A"></span>
+<span style="background:#C97B5E"></span>
+<span style="background:#8E5E36"></span>
+<span style="background:#3A5468"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Façade · 250 teintes</span></div>
+<p class="card-back-desc">Toute la gamme Chromatic adaptée à la façade : blancs, beiges, ocres, bruns, gris, bleus et verts classés par famille chromatique. Idéal pour le ravalement et la rénovation extérieure.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+<article class="card" data-cat="facade">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#EFE3D0,#D9C29A,#A87E54,#6A4A2F,#3B2A1C);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Polycrom · 170T</div>
+<div class="card-title">Polycrom Façade 170T</div>
+<div class="card-desc">170 teintes pensées pour la façade et l'extérieur.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Extérieur
                   </span>
-                  <a href="nuanciers/NUANCIER-POLYCROM-FACADE-170T.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#EFE3D0"></span>
-                <span style="background:#D9C29A"></span>
-                <span style="background:#A87E54"></span>
-                <span style="background:#6A4A2F"></span>
-                <span style="background:#3B2A1C"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Polycrom Façade · 170 teintes</span></div>
-              <p class="card-back-desc">Le nuancier de référence pour les peintures de façade : tons minéraux, terres, ocres et teintes pierre, adaptés aux contraintes climatiques.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- KEIM Lasure Concretal (béton) -->
-        <article class="card" data-cat="facade">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg, rgb(236,226,217), rgb(193,184,166), rgb(134,131,122), rgb(149,95,70), rgb(200,133,88), rgb(218,170,119), rgb(236,226,217));"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">KEIM · Concretal</div>
-                  <div class="card-title">KEIM Lasure Béton</div>
-                  <div class="card-desc">Lasures minérales pour béton, marque historique (1878). Distribué par L'Atelier en Gironde.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/NUANCIER-POLYCROM-FACADE-170T.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#EFE3D0"></span>
+<span style="background:#D9C29A"></span>
+<span style="background:#A87E54"></span>
+<span style="background:#6A4A2F"></span>
+<span style="background:#3B2A1C"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Polycrom Façade · 170 teintes</span></div>
+<p class="card-back-desc">Le nuancier de référence pour les peintures de façade : tons minéraux, terres, ocres et teintes pierre, adaptés aux contraintes climatiques.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+<!-- KEIM Lasure Concretal (béton) -->
+<article class="card" data-cat="facade">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg, rgb(236,226,217), rgb(193,184,166), rgb(134,131,122), rgb(149,95,70), rgb(200,133,88), rgb(218,170,119), rgb(236,226,217));"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">KEIM · Concretal</div>
+<div class="card-title">KEIM Lasure Béton</div>
+<div class="card-desc">Lasures minérales pour béton, marque historique (1878). Distribué par L'Atelier en Gironde.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Lasure béton
                   </span>
-                  <a href="nuanciers/Nuancier_Lasure_beton_KEIM_lATELIER.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:rgb(236,226,217)"></span>
-                <span style="background:rgb(193,184,166)"></span>
-                <span style="background:rgb(134,131,122)"></span>
-                <span style="background:rgb(149,95,70)"></span>
-                <span style="background:rgb(200,133,88)"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">KEIM Lasure Concretal</span></div>
-              <p class="card-back-desc">La référence des lasures minérales pour béton. Aspect mat minéral, garantie des teintes 20 ans même sur teintes foncées. Disponibles en blanc, teintes Exclusiv et 22 teintes métallisées.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- KEIM Spektrum / Palette Exclusiv -->
-        <article class="card" data-cat="facade">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg, rgb(239,233,132), rgb(236,226,217), rgb(228,191,125), rgb(224,195,172), rgb(204,146,115), rgb(149,71,55), rgb(143,109,88), rgb(66,66,67), rgb(92,125,87), rgb(170,194,194));"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">KEIM · Spektrum</div>
-                  <div class="card-title">KEIM Palette Exclusiv</div>
-                  <div class="card-desc">Plus de 280 teintes minérales : Exclusiv, Historisch, Natursteintöne et Avantgarde.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/Nuancier_Lasure_beton_KEIM_lATELIER.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:rgb(236,226,217)"></span>
+<span style="background:rgb(193,184,166)"></span>
+<span style="background:rgb(134,131,122)"></span>
+<span style="background:rgb(149,95,70)"></span>
+<span style="background:rgb(200,133,88)"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">KEIM Lasure Concretal</span></div>
+<p class="card-back-desc">La référence des lasures minérales pour béton. Aspect mat minéral, garantie des teintes 20 ans même sur teintes foncées. Disponibles en blanc, teintes Exclusiv et 22 teintes métallisées.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+<!-- KEIM Spektrum / Palette Exclusiv -->
+<article class="card" data-cat="facade">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg, rgb(239,233,132), rgb(236,226,217), rgb(228,191,125), rgb(224,195,172), rgb(204,146,115), rgb(149,71,55), rgb(143,109,88), rgb(66,66,67), rgb(92,125,87), rgb(170,194,194));"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">KEIM · Spektrum</div>
+<div class="card-title">KEIM Palette Exclusiv</div>
+<div class="card-desc">Plus de 280 teintes minérales : Exclusiv, Historisch, Natursteintöne et Avantgarde.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · 280+ teintes
                   </span>
-                  <a href="nuanciers/KEIM_Spektrum_Palette.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:rgb(239,233,132)"></span>
-                <span style="background:rgb(228,191,125)"></span>
-                <span style="background:rgb(204,146,115)"></span>
-                <span style="background:rgb(149,71,55)"></span>
-                <span style="background:rgb(92,125,87)"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">KEIM Palette Exclusiv</span></div>
-              <p class="card-back-desc">Le spectre complet des teintes KEIM pour façade et béton : plus de 280 nuances minérales classées en sous-palettes (Exclusiv, Historisch pour le patrimoine, Natursteintöne pour les tons pierre, Avantgarde et monochromes Optil/Soldalit).</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- INDUSTRIEL / RAL -->
-    <div class="nuanciers-cat" data-cat="industriel">
-      <div class="cat-header">
-        <span class="cat-pill" style="background:rgba(240,127,44,0.12); color:var(--orange-fonce);">Industriel</span>
-        <span class="cat-title">RAL · NCS · Référence professionnelle</span>
-        <span class="cat-count">2 nuanciers</span>
-      </div>
-      <div class="cards">
-
-        <article class="card" data-cat="industriel">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#FFD400,#FF7F00,#E62E2E,#1E5BAA,#3C8C40);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">RAL · 190T</div>
-                  <div class="card-title">Nuancier RAL 190 teintes</div>
-                  <div class="card-desc">Le standard industriel européen, codes RAL Classic.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/KEIM_Spektrum_Palette.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:rgb(239,233,132)"></span>
+<span style="background:rgb(228,191,125)"></span>
+<span style="background:rgb(204,146,115)"></span>
+<span style="background:rgb(149,71,55)"></span>
+<span style="background:rgb(92,125,87)"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">KEIM Palette Exclusiv</span></div>
+<p class="card-back-desc">Le spectre complet des teintes KEIM pour façade et béton : plus de 280 nuances minérales classées en sous-palettes (Exclusiv, Historisch pour le patrimoine, Natursteintöne pour les tons pierre, Avantgarde et monochromes Optil/Soldalit).</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- INDUSTRIEL / RAL -->
+<div class="nuanciers-cat" data-cat="industriel">
+<div class="cat-header">
+<span class="cat-pill" style="background:rgba(240,127,44,0.12); color:var(--orange-fonce);">Industriel</span>
+<span class="cat-title">RAL · NCS · Référence professionnelle</span>
+<span class="cat-count">2 nuanciers</span>
+</div>
+<div class="cards">
+<article class="card" data-cat="industriel">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#FFD400,#FF7F00,#E62E2E,#1E5BAA,#3C8C40);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">RAL · 190T</div>
+<div class="card-title">Nuancier RAL 190 teintes</div>
+<div class="card-desc">Le standard industriel européen, codes RAL Classic.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Pro
                   </span>
-                  <a href="nuanciers/NUANCIER RAL 190T.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#FFD400"></span>
-                <span style="background:#FF7F00"></span>
-                <span style="background:#E62E2E"></span>
-                <span style="background:#1E5BAA"></span>
-                <span style="background:#3C8C40"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">RAL Classic · 190 teintes</span></div>
-              <p class="card-back-desc">Le système de codification colorimétrique le plus répandu dans l'industrie et le bâtiment. Indispensable pour les marchés publics et les commandes techniques.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" data-cat="industriel">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#FFFFFF,#D3D3D3,#7E7E7E,#3F3F3F,#000000);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Universel</div>
-                  <div class="card-title">Nuancier NCS</div>
-                  <div class="card-desc">Le standard international, plus de 1950 teintes codifiées.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/NUANCIER RAL 190T.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#FFD400"></span>
+<span style="background:#FF7F00"></span>
+<span style="background:#E62E2E"></span>
+<span style="background:#1E5BAA"></span>
+<span style="background:#3C8C40"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">RAL Classic · 190 teintes</span></div>
+<p class="card-back-desc">Le système de codification colorimétrique le plus répandu dans l'industrie et le bâtiment. Indispensable pour les marchés publics et les commandes techniques.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+<article class="card" data-cat="industriel">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#FFFFFF,#D3D3D3,#7E7E7E,#3F3F3F,#000000);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Universel</div>
+<div class="card-title">Nuancier NCS</div>
+<div class="card-desc">Le standard international, plus de 1950 teintes codifiées.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Référence
                   </span>
-                  <a href="nuanciers/nuancier NCS.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#FFD400"></span>
-                <span style="background:#E94E1B"></span>
-                <span style="background:#9B2D5E"></span>
-                <span style="background:#1E5BAA"></span>
-                <span style="background:#3C8C40"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">NCS</span></div>
-              <p class="card-back-desc">Le Natural Color System, standard international de codification colorimétrique. Référence essentielle pour les architectes, designers et professionnels du bâtiment.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- BOIS -->
-    <div class="nuanciers-cat" data-cat="bois">
-      <div class="cat-header">
-        <span class="cat-pill" style="background:rgba(168,126,84,0.18); color:#6A4A2F;">Bois</span>
-        <span class="cat-title">Nuanciers spécifiques bois</span>
-        <span class="cat-count">2 nuanciers</span>
-      </div>
-      <div class="cards">
-
-        <article class="card" data-cat="bois">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#F5DDB6,#D5A571,#A06C40,#6E4423,#3B2614);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Chromatic Bois · CH10</div>
-                  <div class="card-title">Chromatic Bois CH10</div>
-                  <div class="card-desc">Nouvelle édition dédiée aux finitions bois.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/nuancier NCS.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#FFD400"></span>
+<span style="background:#E94E1B"></span>
+<span style="background:#9B2D5E"></span>
+<span style="background:#1E5BAA"></span>
+<span style="background:#3C8C40"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">NCS</span></div>
+<p class="card-back-desc">Le Natural Color System, standard international de codification colorimétrique. Référence essentielle pour les architectes, designers et professionnels du bâtiment.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- BOIS -->
+<div class="nuanciers-cat" data-cat="bois">
+<div class="cat-header">
+<span class="cat-pill" style="background:rgba(168,126,84,0.18); color:#6A4A2F;">Bois</span>
+<span class="cat-title">Nuanciers spécifiques bois</span>
+<span class="cat-count">2 nuanciers</span>
+</div>
+<div class="cards">
+<article class="card" data-cat="bois">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#F5DDB6,#D5A571,#A06C40,#6E4423,#3B2614);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Chromatic Bois · CH10</div>
+<div class="card-title">Chromatic Bois CH10</div>
+<div class="card-desc">Nouvelle édition dédiée aux finitions bois.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Nouveau
                   </span>
-                  <a href="nuanciers/Chromatic Bois CH10 Nouveau.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#F5DDB6"></span>
-                <span style="background:#D5A571"></span>
-                <span style="background:#A06C40"></span>
-                <span style="background:#6E4423"></span>
-                <span style="background:#3B2614"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Bois CH10 — Nouveau</span></div>
-              <p class="card-back-desc">La nouvelle édition Chromatic dédiée aux supports bois : lasures, vernis, peintures bois extérieures et intérieures, dans une palette repensée.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" data-cat="bois">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-strip" style="background: linear-gradient(90deg,#E8D2A8,#C29460,#8E5E36,#5B3A22,#2C1A0F);"></div>
-              <div class="card-body">
-                <div>
-                  <div class="card-cat">Chromatic Bois · Archive</div>
-                  <div class="card-title">Nuancier Bois Chromatic</div>
-                  <div class="card-desc">Ancienne édition, conservée pour références chantier.</div>
-                </div>
-                <div class="card-foot">
-                  <span class="card-tag">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+<a class="card-cta" href="nuanciers/Chromatic Bois CH10 Nouveau.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#F5DDB6"></span>
+<span style="background:#D5A571"></span>
+<span style="background:#A06C40"></span>
+<span style="background:#6E4423"></span>
+<span style="background:#3B2614"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Chromatic Bois CH10 — Nouveau</span></div>
+<p class="card-back-desc">La nouvelle édition Chromatic dédiée aux supports bois : lasures, vernis, peintures bois extérieures et intérieures, dans une palette repensée.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+<article class="card" data-cat="bois">
+<div class="card-inner">
+<div class="card-face card-front">
+<div class="card-strip" style="background: linear-gradient(90deg,#E8D2A8,#C29460,#8E5E36,#5B3A22,#2C1A0F);"></div>
+<div class="card-body">
+<div>
+<div class="card-cat">Chromatic Bois · Archive</div>
+<div class="card-title">Nuancier Bois Chromatic</div>
+<div class="card-desc">Ancienne édition, conservée pour références chantier.</div>
+</div>
+<div class="card-foot">
+<span class="card-tag">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
                     PDF · Archive
                   </span>
-                  <a href="nuanciers/nuancier_bois_chromatic ancien.pdf" target="_blank" rel="noopener" class="card-cta">Ouvrir le PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-back-mini-strip">
-                <span style="background:#E8D2A8"></span>
-                <span style="background:#C29460"></span>
-                <span style="background:#8E5E36"></span>
-                <span style="background:#5B3A22"></span>
-                <span style="background:#2C1A0F"></span>
-              </div>
-              <div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Bois — Ancienne édition</span></div>
-              <p class="card-back-desc">Conservé pour permettre les correspondances de teintes sur les chantiers anciens. Pour les nouveaux projets, privilégiez la nouvelle édition CH10.</p>
-              <div class="card-back-hint">↻ Survolez pour voir les teintes</div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-  </div>
+<a class="card-cta" href="nuanciers/nuancier_bois_chromatic ancien.pdf" rel="noopener" target="_blank">Ouvrir le PDF
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M21 14v7H3V3h7"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="card-face card-back">
+<div class="card-back-mini-strip">
+<span style="background:#E8D2A8"></span>
+<span style="background:#C29460"></span>
+<span style="background:#8E5E36"></span>
+<span style="background:#5B3A22"></span>
+<span style="background:#2C1A0F"></span>
+</div>
+<div class="card-back-title"><span class="card-back-kicker">Nuancier</span><span class="card-back-name">Bois — Ancienne édition</span></div>
+<p class="card-back-desc">Conservé pour permettre les correspondances de teintes sur les chantiers anciens. Pour les nouveaux projets, privilégiez la nouvelle édition CH10.</p>
+<div class="card-back-hint">↻ Survolez pour voir les teintes</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
 </section>
-
 <!-- CONSEIL -->
 <section class="conseil">
-  <div class="conseil-inner">
-    <h2>Besoin d'un <em>conseil colorimétrique</em> ?</h2>
-    <p>Nos colorimètres en magasin réalisent vos teintes sur mesure à partir de n'importe quelle référence (RAL, NCS, Chromatic, Polycrom ou échantillon physique). Passez-nous voir ou appelez-nous, on adore parler couleurs.</p>
-    <div class="conseil-actions">
-      <a href="index.html#magasins" class="btn btn-primary">
+<div class="conseil-inner">
+<h2>Besoin d'un <em>conseil colorimétrique</em> ?</h2>
+<p>Nos colorimètres en magasin réalisent vos teintes sur mesure à partir de n'importe quelle référence (RAL, NCS, Chromatic, Polycrom ou échantillon physique). Passez-nous voir ou appelez-nous, on adore parler couleurs.</p>
+<div class="conseil-actions">
+<a class="btn btn-primary" href="index.html#magasins">
         Trouver un magasin
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
-      <a href="tel:0556288944" class="btn btn-outline">
+        <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+</a>
+<a class="btn btn-outline" href="tel:0556288944">
         05 56 28 89 44
       </a>
-    </div>
-  </div>
+</div>
+</div>
 </section>
-
 <!-- FOOTER (identique au site) -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
-        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Nos gammes</h4>
-        <ul>
-          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
-          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
-          <li><a href="nuanciers.html">Colorimétrie</a></li>
-          <li><a href="index.html#eco">Engagement éco</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Le groupe</h4>
-        <ul>
-          <li><a href="index.html">Notre histoire</a></li>
-          <li><a href="index.html#magasins">Nos magasins</a></li>
-          <li><a href="#">L'Établi · location</a></li>
-          <li><a href="#">Espace pro</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
-          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
-          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a href="https://www.agir-peinture.com/" target="_blank" rel="noopener noreferrer" aria-label="Site du réseau Agir Peinture"><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></a></span></div>
-    </div>
-  </div>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+</div>
+<div class="footer-col">
+<h4>Nos gammes</h4>
+<ul>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="nuanciers.html">Colorimétrie</a></li>
+<li><a href="index.html#eco">Engagement éco</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Le groupe</h4>
+<ul>
+<li><a href="index.html">Notre histoire</a></li>
+<li><a href="index.html#magasins">Nos magasins</a></li>
+<li><a href="#">L'Établi · location</a></li>
+<li><a href="#">Espace pro</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+<li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+<li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+</div>
+</div>
 </footer>
-
 <script>
   // === Génération du disque chromatique : 60 lamelles de 6° (style éventail Chromatic) ===
   (function buildColorDisc() {
@@ -1485,7 +1514,6 @@
     }
   });
 </script>
-
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Début ============ -->
 <style>
   /* Dropdown de résultats sous la barre de recherche */
@@ -1584,7 +1612,6 @@
     .search-results { width: calc(100vw - 32px); right: auto; left: 50%; transform: translateX(-50%); }
   }
 </style>
-
 <script>
 (function() {
   // ============ INDEX DE RECHERCHE COMPLET DU SITE ============
@@ -1879,8 +1906,6 @@
 })();
 </script>
 <!-- ============ MOTEUR DE RECHERCHE GLOBAL — Fin ============ -->
-
-
 <script>
   // ===== MENU BURGER MOBILE =====
   (function () {
@@ -1907,6 +1932,5 @@
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
 </script>
-
 </body>
 </html>

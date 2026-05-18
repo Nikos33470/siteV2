@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Politique de confidentialité — L'Atelier · Marchand de couleurs</title>
-<meta name="description" content="Politique de confidentialité et de protection des données personnelles du site www.latelier33.fr — RGPD, cookies, vos droits.">
-<meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta content="Politique de confidentialité et de protection des données personnelles du site www.latelier33.fr — RGPD, cookies, vos droits." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F; --bleu-fonce: #15273F; --bleu-clair: #2D4E7A; --bleu-pale: #E8EEF5;
@@ -244,256 +245,316 @@
   }
   /* ========== FIN MENU BURGER MOBILE ========== */
 
+
+  /* ===== POLICE DES POTS DE PEINTURE (uniformisation gammes propres) ===== */
+  /* Reprend la typo italique condensée des étiquettes physiques des bidons —
+     l'atelier 45 et TITANE Hydro doivent avoir un rendu identique partout. */
+  .brand-45,
+  .brand-titane {
+    font-style: italic;
+  }
+  .brand-45 {
+    font-family: 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  .brand-titane {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  /* Application structurelle aux titres et badges des cartes / bandeaux de gamme
+     (pour les éléments où le texte est fragmenté et ne peut être wrappé en span) */
+
+  /* --- INDEX : cartes de gamme grand format --- */
+  .gamme-card.gamme-45 .gamme-name,
+  .gamme-card.gamme-45 .gamme-name-accent {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .gamme-card.gamme-titane .gamme-name,
+  .gamme-card.gamme-titane .gamme-name-accent {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+  }
+  /* on garde la couleur d'accent orange/bleu déjà définie */
+
+  /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
+  .badge-cov .pot-badge-label,
+  .badge-biosource .pot-badge-label {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+  }
+
+  /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
+  .pilier-brands {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* --- PAGE GAMMES : bandeaux de section et titres produits --- */
+  [data-gamme-section="45"] .gamme-banner-title,
+  [data-gamme-section="45"] .gamme-banner-title em,
+  [data-gamme-section="45"] .product-name,
+  [data-gamme-section="45"] .product-name em {
+    font-family: 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+  }
+  [data-gamme-section="titane"] .gamme-banner-title,
+  [data-gamme-section="titane"] .gamme-banner-title em,
+  [data-gamme-section="titane"] .product-name,
+  [data-gamme-section="titane"] .product-name em {
+    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+  }
+  /* Le `<em>` à l'intérieur garde sa couleur d'accent définie ailleurs ;
+     on neutralise juste son italique déjà présent (héritage cohérent) */
+
+  /* --- DOCUMENTS / NUANCIERS / REVETEMENTS : pills et filtres --- */
+  /* déjà couverts par les <span class="brand-..."> wrappés */
+
+  /* ===== FIN POLICE DES POTS ===== */
 </style>
 </head>
 <body>
-
 <!-- ============ HEADER ============ -->
 <header class="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <svg class="logo-symbol" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo L'Atelier">
-        <rect x="20" y="18" width="68" height="92" fill="#1F3A5F"/>
-        <path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"/>
-        <text x="54" y="94" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-              font-size="82" font-weight="900" fill="#FFFFFF"
-              text-anchor="middle" letter-spacing="-3">a</text>
-      </svg>
-      <div class="logo-text-wrap">
-        <span class="logo-text">l'atelier</span>
-        <span class="logo-baseline">MARCHAND DE COULEURS</span>
-        <span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
-      </div>
-    </a>
-    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-      <span class="nav-burger-bar"></span>
-    </button>
-    <div class="nav-overlay-backdrop" aria-hidden="true"></div>
-    <div class="nav-wrap">
-      <nav class="nav">
-        <a href="gammes.html">Nos gammes peintures</a>
-        <a href="nuanciers.html">Nuanciers</a>
-        <a href="index.html#eco">Engagement éco</a>
-        <a href="revetement-mural.html">Revêtement mural</a>
-        <a href="revetement-sol.html">Revêtement de sol</a>
-        <a href="documents.html">Documents techniques</a>
-        <a href="index.html#equipe">L'équipe L'ATELIER</a>
-        <a href="#" class="nav-cta">Espace pro</a>
-      </nav>
-      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
-        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="search" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" aria-label="Recherche sur le site">
-      </form>
-    </div>
-  </div>
+<div class="header-inner">
+<a class="logo" href="index.html">
+<svg aria-label="Logo L'Atelier" class="logo-symbol" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#1F3A5F" height="92" width="68" x="20" y="18"></rect>
+<path d="M 8 6 L 22 6 L 24 44 L 16 48 L 10 48 Z" fill="#F07F2C"></path>
+<text fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3" text-anchor="middle" x="54" y="94">a</text>
+</svg>
+<div class="logo-text-wrap">
+<span class="logo-text">l'atelier</span>
+<span class="logo-baseline">MARCHAND DE COULEURS</span>
+<span class="logo-since"><span class="logo-since-dash"></span>depuis 2011<span class="logo-since-dash"></span></span>
+</div>
+</a>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Menu" class="nav-burger" type="button">
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+<span class="nav-burger-bar"></span>
+</button>
+<div aria-hidden="true" class="nav-overlay-backdrop"></div>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="gammes.html">Nos gammes peintures</a>
+<a href="nuanciers.html">Nuanciers</a>
+<a href="index.html#eco">Engagement éco</a>
+<a href="revetement-mural.html">Revêtement mural</a>
+<a href="revetement-sol.html">Revêtement de sol</a>
+<a href="documents.html">Documents techniques</a>
+<a href="index.html#equipe">L'équipe L'ATELIER</a>
+<a class="nav-cta" href="#">Espace pro</a>
+</nav>
+<form class="nav-search" onsubmit="event.preventDefault();" role="search">
+<svg aria-hidden="true" class="nav-search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input aria-label="Recherche sur le site" class="nav-search-input" placeholder="Rechercher (peinture, nuancier, magasin…)" type="search"/>
+</form>
+</div>
+</div>
 </header>
-
 <!-- ============ HERO ============ -->
 <section class="legal-hero">
-  <div class="legal-hero-inner">
-    <span class="legal-eyebrow">Vos données &middot; Vos droits</span>
-    <h1 class="legal-title">Politique de <em>confidentialité</em>.</h1>
-    <p class="legal-subtitle">L'Atelier s'engage à protéger vos données personnelles. Cette page explique quelles données nous collectons, pourquoi, combien de temps nous les conservons, et comment vous pouvez exercer vos droits, conformément au RGPD et à la loi Informatique et Libertés.</p>
-  </div>
+<div class="legal-hero-inner">
+<span class="legal-eyebrow">Vos données · Vos droits</span>
+<h1 class="legal-title">Politique de <em>confidentialité</em>.</h1>
+<p class="legal-subtitle">L'Atelier s'engage à protéger vos données personnelles. Cette page explique quelles données nous collectons, pourquoi, combien de temps nous les conservons, et comment vous pouvez exercer vos droits, conformément au RGPD et à la loi Informatique et Libertés.</p>
+</div>
 </section>
-
 <!-- ============ BREADCRUMB ============ -->
 <div class="breadcrumb-bar">
-  <nav class="breadcrumb" aria-label="Fil d'Ariane">
-    <a href="index.html">Accueil</a>
-    <span class="breadcrumb-sep">/</span>
-    <span class="breadcrumb-current">Politique de confidentialité</span>
-  </nav>
+<nav aria-label="Fil d'Ariane" class="breadcrumb">
+<a href="index.html">Accueil</a>
+<span class="breadcrumb-sep">/</span>
+<span class="breadcrumb-current">Politique de confidentialité</span>
+</nav>
 </div>
-
 <!-- ============ CONTENT ============ -->
 <main class="legal-content">
-
-  <section class="legal-section">
-    <h2><span class="num">01</span>Responsable <em>du traitement</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Le responsable du traitement des données personnelles collectées via le site <strong>www.latelier33.fr</strong> est&nbsp;:</p>
-    <div class="info-card">
-      <p><strong>L'ATELIER</strong>, SAS au capital de 40 000 €</p>
-      <p>Siège social&nbsp;: 1111 avenue du Parc des Expositions, Résidence du Parc, 33260 La Teste-de-Buch</p>
-      <p>SIREN 534 092 721 — RCS Bordeaux</p>
-      <p>Contact&nbsp;: <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></p>
-    </div>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">02</span>Données <em>collectées</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Le site www.latelier33.fr est un site vitrine institutionnel. Il ne propose pas de vente en ligne, ne dispose pas d'espace client public et ne nécessite pas la création d'un compte pour être consulté.</p>
-    <p>Des données personnelles peuvent toutefois être collectées dans les cas suivants&nbsp;:</p>
-
-    <h3>2.1 — Lors d'un contact direct</h3>
-    <p>Si vous nous écrivez à <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a> ou nous téléphonez, nous traitons les informations que vous nous communiquez (nom, prénom, coordonnées, contenu du message, éventuelles pièces jointes) afin de répondre à votre demande.</p>
-
-    <h3>2.2 — Lors de la consultation du site</h3>
-    <p>L'hébergement du site sur GitHub Pages peut entraîner la collecte automatique de données techniques par notre hébergeur (adresse IP, type de navigateur, système d'exploitation, pages consultées, dates et heures de connexion), à des fins de sécurité et de bon fonctionnement du service. Ces données sont traitées par GitHub, Inc. dans le cadre de sa propre politique de confidentialité.</p>
-
-    <h3>2.3 — Récapitulatif</h3>
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Finalité</th>
-          <th>Données concernées</th>
-          <th>Base légale</th>
-          <th>Conservation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Finalité">Répondre à une demande de contact ou de devis</td>
-          <td data-label="Données">Nom, prénom, e-mail, téléphone, contenu du message</td>
-          <td data-label="Base légale">Mesures précontractuelles à votre demande (art. 6.1.b RGPD)</td>
-          <td data-label="Conservation">3 ans après le dernier contact</td>
-        </tr>
-        <tr>
-          <td data-label="Finalité">Gestion de la relation commerciale (clients pros)</td>
-          <td data-label="Données">Coordonnées professionnelles, n° SIRET, historique des échanges</td>
-          <td data-label="Base légale">Exécution du contrat (art. 6.1.b RGPD)</td>
-          <td data-label="Conservation">Durée de la relation + 5 ans (prescription commerciale)</td>
-        </tr>
-        <tr>
-          <td data-label="Finalité">Obligations comptables et fiscales</td>
-          <td data-label="Données">Factures et données associées</td>
-          <td data-label="Base légale">Obligation légale (art. 6.1.c RGPD)</td>
-          <td data-label="Conservation">10 ans (art. L.123-22 Code de commerce)</td>
-        </tr>
-        <tr>
-          <td data-label="Finalité">Sécurité technique du site (logs serveur)</td>
-          <td data-label="Données">Adresse IP, user-agent, horodatage</td>
-          <td data-label="Base légale">Intérêt légitime (art. 6.1.f RGPD)</td>
-          <td data-label="Conservation">12 mois maximum</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">03</span>Cookies <em>et traceurs</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Le site www.latelier33.fr <strong>n'utilise pas de cookies publicitaires, de cookies de mesure d'audience tiers ni d'outils de tracking comportemental</strong>. Aucun consentement n'est donc requis à ce titre.</p>
-    <p>Seuls peuvent être déposés des cookies strictement nécessaires au bon fonctionnement du site (par exemple, mémorisation de votre choix de langue ou d'affichage). Ces cookies sont exemptés de consentement en application de l'article 82 de la loi Informatique et Libertés, conformément à la doctrine de la CNIL.</p>
-    <p>Le site charge également des polices de caractères hébergées par <strong>Google Fonts</strong> (Fraunces, Inter), ce qui peut entraîner la communication de votre adresse IP à Google le temps du chargement de la page. Si vous ne souhaitez pas que cette communication ait lieu, vous pouvez bloquer le chargement de ces ressources via les paramètres de votre navigateur ou une extension dédiée.</p>
-    <p>Vous pouvez à tout moment configurer votre navigateur pour bloquer ou supprimer les cookies, notamment&nbsp;:</p>
-    <ul>
-      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
-      <li><a href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-ordinateur" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
-      <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
-      <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
-    </ul>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">04</span>Destinataires <em>des données</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Les données collectées sont destinées exclusivement aux personnels habilités de L'ATELIER (équipe commerciale, comptabilité, direction).</p>
-    <p>Elles peuvent être communiquées à&nbsp;:</p>
-    <ul>
-      <li>nos sous-traitants techniques (hébergeur, fournisseur de messagerie professionnelle), dans le cadre strict de leurs missions et sous contrat de sous-traitance conforme à l'article 28 du RGPD ;</li>
-      <li>les autorités administratives ou judiciaires, en cas d'obligation légale.</li>
-    </ul>
-    <p>Aucune donnée personnelle n'est cédée, louée ou vendue à des tiers à des fins commerciales.</p>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">05</span>Transfert hors <em>Union européenne</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Le site étant hébergé sur GitHub Pages, service fourni par GitHub, Inc. (groupe Microsoft) basé aux États-Unis, certaines données techniques (logs de connexion) peuvent transiter ou être stockées hors de l'Union européenne. Ces transferts sont encadrés par les <strong>clauses contractuelles types</strong> de la Commission européenne et par l'adhésion de Microsoft / GitHub au <strong>Data Privacy Framework (DPF)</strong>, offrant un niveau de protection adéquat au sens de la décision d'adéquation UE-USA du 10 juillet 2023.</p>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">06</span>Vos <em>droits</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi n° 78-17 du 6 janvier 1978 modifiée, vous disposez des droits suivants sur vos données personnelles&nbsp;:</p>
-    <ul>
-      <li><strong>Droit d'accès</strong> — obtenir confirmation que vos données sont ou non traitées, et en recevoir une copie ;</li>
-      <li><strong>Droit de rectification</strong> — corriger des données inexactes ou compléter des données incomplètes ;</li>
-      <li><strong>Droit à l'effacement</strong> (« droit à l'oubli ») — sous certaines conditions, demander la suppression de vos données ;</li>
-      <li><strong>Droit à la limitation</strong> du traitement ;</li>
-      <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré et lisible par machine ;</li>
-      <li><strong>Droit d'opposition</strong> — vous opposer à tout moment à un traitement fondé sur l'intérêt légitime ;</li>
-      <li><strong>Droit de définir des directives</strong> relatives au sort de vos données après votre décès ;</li>
-      <li><strong>Droit de retirer votre consentement</strong> à tout moment lorsque le traitement repose sur celui-ci.</li>
-    </ul>
-    <p>Pour exercer ces droits, écrivez-nous&nbsp;:</p>
-    <div class="info-card">
-      <p>par e-mail&nbsp;: <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></p>
-      <p>par courrier&nbsp;: L'ATELIER — 1111 avenue du Parc des Expositions, Résidence du Parc, 33260 La Teste-de-Buch</p>
-    </div>
-    <p>Nous nous engageons à répondre à toute demande dans un délai d'un mois, qui peut être prolongé de deux mois en cas de demande complexe. Une preuve d'identité pourra vous être demandée en cas de doute raisonnable sur votre identité.</p>
-    <p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés)&nbsp;:</p>
-    <ul>
-      <li>en ligne sur <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">www.cnil.fr/fr/plaintes</a> ;</li>
-      <li>par courrier&nbsp;: CNIL, 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.</li>
-    </ul>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">07</span>Sécurité <em>des données</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>L'ATELIER met en œuvre des mesures techniques et organisationnelles adaptées pour protéger vos données contre la perte, l'accès non autorisé, la divulgation, l'altération ou la destruction&nbsp;: connexions chiffrées (HTTPS / TLS), accès aux outils internes par authentification, sensibilisation des collaborateurs.</p>
-    <p>Aucun système n'étant infaillible à 100 %, en cas de violation de données susceptible d'engendrer un risque pour vos droits et libertés, nous nous engageons à en informer la CNIL dans un délai de 72 heures et, le cas échéant, les personnes concernées.</p>
-  </section>
-
-  <section class="legal-section">
-    <h2><span class="num">08</span>Mise à <em>jour</em></h2>
-    <div class="legal-section-rule"></div>
-    <p>La présente politique de confidentialité peut être amenée à évoluer pour tenir compte des évolutions légales, réglementaires ou techniques. Toute modification sera publiée sur cette page avec une nouvelle date de mise à jour.</p>
-    <p><strong>Dernière mise à jour&nbsp;:</strong> mai 2026.</p>
-  </section>
-
+<section class="legal-section">
+<h2><span class="num">01</span>Responsable <em>du traitement</em></h2>
+<div class="legal-section-rule"></div>
+<p>Le responsable du traitement des données personnelles collectées via le site <strong>www.latelier33.fr</strong> est :</p>
+<div class="info-card">
+<p><strong>L'ATELIER</strong>, SAS au capital de 40 000 €</p>
+<p>Siège social : 1111 avenue du Parc des Expositions, Résidence du Parc, 33260 La Teste-de-Buch</p>
+<p>SIREN 534 092 721 — RCS Bordeaux</p>
+<p>Contact : <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></p>
+</div>
+</section>
+<section class="legal-section">
+<h2><span class="num">02</span>Données <em>collectées</em></h2>
+<div class="legal-section-rule"></div>
+<p>Le site www.latelier33.fr est un site vitrine institutionnel. Il ne propose pas de vente en ligne, ne dispose pas d'espace client public et ne nécessite pas la création d'un compte pour être consulté.</p>
+<p>Des données personnelles peuvent toutefois être collectées dans les cas suivants :</p>
+<h3>2.1 — Lors d'un contact direct</h3>
+<p>Si vous nous écrivez à <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a> ou nous téléphonez, nous traitons les informations que vous nous communiquez (nom, prénom, coordonnées, contenu du message, éventuelles pièces jointes) afin de répondre à votre demande.</p>
+<h3>2.2 — Lors de la consultation du site</h3>
+<p>L'hébergement du site sur GitHub Pages peut entraîner la collecte automatique de données techniques par notre hébergeur (adresse IP, type de navigateur, système d'exploitation, pages consultées, dates et heures de connexion), à des fins de sécurité et de bon fonctionnement du service. Ces données sont traitées par GitHub, Inc. dans le cadre de sa propre politique de confidentialité.</p>
+<h3>2.3 — Récapitulatif</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>Finalité</th>
+<th>Données concernées</th>
+<th>Base légale</th>
+<th>Conservation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Finalité">Répondre à une demande de contact ou de devis</td>
+<td data-label="Données">Nom, prénom, e-mail, téléphone, contenu du message</td>
+<td data-label="Base légale">Mesures précontractuelles à votre demande (art. 6.1.b RGPD)</td>
+<td data-label="Conservation">3 ans après le dernier contact</td>
+</tr>
+<tr>
+<td data-label="Finalité">Gestion de la relation commerciale (clients pros)</td>
+<td data-label="Données">Coordonnées professionnelles, n° SIRET, historique des échanges</td>
+<td data-label="Base légale">Exécution du contrat (art. 6.1.b RGPD)</td>
+<td data-label="Conservation">Durée de la relation + 5 ans (prescription commerciale)</td>
+</tr>
+<tr>
+<td data-label="Finalité">Obligations comptables et fiscales</td>
+<td data-label="Données">Factures et données associées</td>
+<td data-label="Base légale">Obligation légale (art. 6.1.c RGPD)</td>
+<td data-label="Conservation">10 ans (art. L.123-22 Code de commerce)</td>
+</tr>
+<tr>
+<td data-label="Finalité">Sécurité technique du site (logs serveur)</td>
+<td data-label="Données">Adresse IP, user-agent, horodatage</td>
+<td data-label="Base légale">Intérêt légitime (art. 6.1.f RGPD)</td>
+<td data-label="Conservation">12 mois maximum</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="legal-section">
+<h2><span class="num">03</span>Cookies <em>et traceurs</em></h2>
+<div class="legal-section-rule"></div>
+<p>Le site www.latelier33.fr <strong>n'utilise pas de cookies publicitaires, de cookies de mesure d'audience tiers ni d'outils de tracking comportemental</strong>. Aucun consentement n'est donc requis à ce titre.</p>
+<p>Seuls peuvent être déposés des cookies strictement nécessaires au bon fonctionnement du site (par exemple, mémorisation de votre choix de langue ou d'affichage). Ces cookies sont exemptés de consentement en application de l'article 82 de la loi Informatique et Libertés, conformément à la doctrine de la CNIL.</p>
+<p>Le site charge également des polices de caractères hébergées par <strong>Google Fonts</strong> (Fraunces, Inter), ce qui peut entraîner la communication de votre adresse IP à Google le temps du chargement de la page. Si vous ne souhaitez pas que cette communication ait lieu, vous pouvez bloquer le chargement de ces ressources via les paramètres de votre navigateur ou une extension dédiée.</p>
+<p>Vous pouvez à tout moment configurer votre navigateur pour bloquer ou supprimer les cookies, notamment :</p>
+<ul>
+<li><a href="https://support.google.com/chrome/answer/95647" rel="noopener noreferrer" target="_blank">Google Chrome</a></li>
+<li><a href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-ordinateur" rel="noopener noreferrer" target="_blank">Mozilla Firefox</a></li>
+<li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" rel="noopener noreferrer" target="_blank">Safari</a></li>
+<li><a href="https://support.microsoft.com/fr-fr/microsoft-edge" rel="noopener noreferrer" target="_blank">Microsoft Edge</a></li>
+</ul>
+</section>
+<section class="legal-section">
+<h2><span class="num">04</span>Destinataires <em>des données</em></h2>
+<div class="legal-section-rule"></div>
+<p>Les données collectées sont destinées exclusivement aux personnels habilités de L'ATELIER (équipe commerciale, comptabilité, direction).</p>
+<p>Elles peuvent être communiquées à :</p>
+<ul>
+<li>nos sous-traitants techniques (hébergeur, fournisseur de messagerie professionnelle), dans le cadre strict de leurs missions et sous contrat de sous-traitance conforme à l'article 28 du RGPD ;</li>
+<li>les autorités administratives ou judiciaires, en cas d'obligation légale.</li>
+</ul>
+<p>Aucune donnée personnelle n'est cédée, louée ou vendue à des tiers à des fins commerciales.</p>
+</section>
+<section class="legal-section">
+<h2><span class="num">05</span>Transfert hors <em>Union européenne</em></h2>
+<div class="legal-section-rule"></div>
+<p>Le site étant hébergé sur GitHub Pages, service fourni par GitHub, Inc. (groupe Microsoft) basé aux États-Unis, certaines données techniques (logs de connexion) peuvent transiter ou être stockées hors de l'Union européenne. Ces transferts sont encadrés par les <strong>clauses contractuelles types</strong> de la Commission européenne et par l'adhésion de Microsoft / GitHub au <strong>Data Privacy Framework (DPF)</strong>, offrant un niveau de protection adéquat au sens de la décision d'adéquation UE-USA du 10 juillet 2023.</p>
+</section>
+<section class="legal-section">
+<h2><span class="num">06</span>Vos <em>droits</em></h2>
+<div class="legal-section-rule"></div>
+<p>Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi n° 78-17 du 6 janvier 1978 modifiée, vous disposez des droits suivants sur vos données personnelles :</p>
+<ul>
+<li><strong>Droit d'accès</strong> — obtenir confirmation que vos données sont ou non traitées, et en recevoir une copie ;</li>
+<li><strong>Droit de rectification</strong> — corriger des données inexactes ou compléter des données incomplètes ;</li>
+<li><strong>Droit à l'effacement</strong> (« droit à l'oubli ») — sous certaines conditions, demander la suppression de vos données ;</li>
+<li><strong>Droit à la limitation</strong> du traitement ;</li>
+<li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré et lisible par machine ;</li>
+<li><strong>Droit d'opposition</strong> — vous opposer à tout moment à un traitement fondé sur l'intérêt légitime ;</li>
+<li><strong>Droit de définir des directives</strong> relatives au sort de vos données après votre décès ;</li>
+<li><strong>Droit de retirer votre consentement</strong> à tout moment lorsque le traitement repose sur celui-ci.</li>
+</ul>
+<p>Pour exercer ces droits, écrivez-nous :</p>
+<div class="info-card">
+<p>par e-mail : <a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></p>
+<p>par courrier : L'ATELIER — 1111 avenue du Parc des Expositions, Résidence du Parc, 33260 La Teste-de-Buch</p>
+</div>
+<p>Nous nous engageons à répondre à toute demande dans un délai d'un mois, qui peut être prolongé de deux mois en cas de demande complexe. Une preuve d'identité pourra vous être demandée en cas de doute raisonnable sur votre identité.</p>
+<p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) :</p>
+<ul>
+<li>en ligne sur <a href="https://www.cnil.fr/fr/plaintes" rel="noopener noreferrer" target="_blank">www.cnil.fr/fr/plaintes</a> ;</li>
+<li>par courrier : CNIL, 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.</li>
+</ul>
+</section>
+<section class="legal-section">
+<h2><span class="num">07</span>Sécurité <em>des données</em></h2>
+<div class="legal-section-rule"></div>
+<p>L'ATELIER met en œuvre des mesures techniques et organisationnelles adaptées pour protéger vos données contre la perte, l'accès non autorisé, la divulgation, l'altération ou la destruction : connexions chiffrées (HTTPS / TLS), accès aux outils internes par authentification, sensibilisation des collaborateurs.</p>
+<p>Aucun système n'étant infaillible à 100 %, en cas de violation de données susceptible d'engendrer un risque pour vos droits et libertés, nous nous engageons à en informer la CNIL dans un délai de 72 heures et, le cas échéant, les personnes concernées.</p>
+</section>
+<section class="legal-section">
+<h2><span class="num">08</span>Mise à <em>jour</em></h2>
+<div class="legal-section-rule"></div>
+<p>La présente politique de confidentialité peut être amenée à évoluer pour tenir compte des évolutions légales, réglementaires ou techniques. Toute modification sera publiée sur cette page avec une nouvelle date de mise à jour.</p>
+<p><strong>Dernière mise à jour :</strong> mai 2026.</p>
+</section>
 </main>
-
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-text">l'atelier<br><em>marchand de couleurs</em></div>
-        <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres L'Atelier 45 et Titane Hydro, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Nos gammes</h4>
-        <ul>
-          <li><a href="gammes.html#gamme-45">L'Atelier 45</a></li>
-          <li><a href="gammes.html#gamme-titane">Titane Hydro</a></li>
-          <li><a href="revetement-mural.html">Revêtement mural</a></li>
-          <li><a href="revetement-sol.html">Revêtement de sol</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Le groupe</h4>
-        <ul>
-          <li><a href="#">Notre histoire</a></li>
-          <li><a href="#">Nos magasins</a></li>
-          <li><a href="#">L'Établi · location</a></li>
-          <li><a href="#">Espace pro</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
-          <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
-          <li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" target="_blank" rel="noopener">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a href="https://www.agir-peinture.com/" target="_blank" rel="noopener noreferrer" aria-label="Site du réseau Agir Peinture"><img class="footer-theolaur-logo" src="images/logo-agir.png" alt="Logo réseau Agir"></a></span></div>
-    </div>
-  </div>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier 45</span> et <span class="brand-titane">Titane Hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
+</div>
+<div class="footer-col">
+<h4>Nos gammes</h4>
+<ul>
+<li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier 45</span></a></li>
+<li><a href="gammes.html#gamme-titane"><span class="brand-titane">Titane Hydro</span></a></li>
+<li><a href="revetement-mural.html">Revêtement mural</a></li>
+<li><a href="revetement-sol.html">Revêtement de sol</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Le groupe</h4>
+<ul>
+<li><a href="#">Notre histoire</a></li>
+<li><a href="#">Nos magasins</a></li>
+<li><a href="#">L'Établi · location</a></li>
+<li><a href="#">Espace pro</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
+<li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
+<li><a href="tel:0557526477">05 57 52 64 77 · Bassin</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DU RÉSEAU</span><a aria-label="Site du réseau Agir Peinture" href="https://www.agir-peinture.com/" rel="noopener noreferrer" target="_blank"><img alt="Logo réseau Agir" class="footer-theolaur-logo" src="images/logo-agir.png"/></a></span></div>
+</div>
+</div>
 </footer>
-
 <script>
   const header = document.querySelector('.header');
   window.addEventListener('scroll', () => {
@@ -501,8 +562,6 @@
     else header.classList.remove('is-scrolled');
   });
 </script>
-
-
 <script>
   // ===== MENU BURGER MOBILE =====
   (function () {
@@ -529,6 +588,5 @@
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
 </script>
-
 </body>
 </html>
