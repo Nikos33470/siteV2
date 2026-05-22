@@ -964,7 +964,7 @@
     width: 88%; max-width: 460px;
     display: flex; align-items: flex-end; justify-content: space-around;
     gap: 12px;
-    padding: 30px 0 70px;
+    padding: 30px 0 100px;
     position: relative;
     z-index: 2;
   }
@@ -998,7 +998,34 @@
   .co2-bar.algo .co2-bar-value { bottom: 35%; }
   .co2-bar.izir .co2-bar-value { bottom: 30%; }
   .co2-bar.eco .co2-bar-value { bottom: 24%; }
-  .co2-bar-label { position: absolute; bottom: -52px; left: -4px; right: -4px; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; }
+  .co2-bar-label { position: absolute; bottom: -78px; left: -4px; right: -4px; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; }
+  /* petit fût sous chaque barre */
+  .co2-pot {
+    height: 34px; width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.4));
+    margin-bottom: 1px;
+  }
+  /* fût générique (peinture standard) : silhouette neutre dessinée en CSS */
+  .co2-pot-generic {
+    display: block;
+    width: 24px; height: 30px;
+    border-radius: 3px 3px 4px 4px;
+    background: linear-gradient(180deg, #8A8A8A, #5A5A5A);
+    border: 1px solid rgba(255,255,255,0.25);
+    position: relative;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.4));
+  }
+  .co2-pot-generic::before { /* couvercle */
+    content: ''; position: absolute; top: -3px; left: 50%; transform: translateX(-50%);
+    width: 28px; height: 4px; border-radius: 2px;
+    background: #9A9A9A;
+  }
+  .co2-pot-generic::after { /* anse */
+    content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+    width: 16px; height: 8px; border: 1.5px solid #9A9A9A; border-bottom: none;
+    border-radius: 8px 8px 0 0;
+  }
   /* chip de marque bien visible */
   .co2-chip-brand {
     display: inline-block;
@@ -1799,27 +1826,27 @@ Le bâtiment représente <strong>près d'un quart des émissions de CO₂ en Fra
 <div class="co2-bar standard">
 <span class="co2-bar-value">2,1 Kg/co2</span>
 <div class="co2-bar-fill"></div>
-<span class="co2-bar-label"><span class="co2-bar-sub">Peinture standard</span></span>
+<span class="co2-bar-label"><span class="co2-pot co2-pot-generic"></span><span class="co2-bar-sub">Peinture standard</span></span>
 </div>
 <div class="co2-bar notre">
 <span class="co2-bar-value">1,3 Kg/co2</span>
 <div class="co2-bar-fill"></div>
-<span class="co2-bar-label"><span class="co2-chip-brand">L'Atelier 45</span><span class="co2-bar-sub">Gamme propre</span></span>
+<span class="co2-bar-label"><img class="co2-pot" src="images/pot-atelier-45-mat.webp" alt="L'Atelier 45 Mat"/><span class="co2-chip-brand">L'Atelier 45</span><span class="co2-bar-sub">Gamme propre</span></span>
 </div>
 <div class="co2-bar algo">
 <span class="co2-bar-value">0,807Kg/co2</span>
 <div class="co2-bar-fill"></div>
-<span class="co2-bar-label"><span class="co2-chip-brand">Algo Pro</span><span class="co2-bar-sub">Velours</span></span>
+<span class="co2-bar-label"><img class="co2-pot" src="images/pot-algo-pro-velours.webp" alt="Algo Pro Velours"/><span class="co2-chip-brand">Algo Pro</span><span class="co2-bar-sub">Velours</span></span>
 </div>
 <div class="co2-bar izir">
 <span class="co2-bar-value">0,693Kg/co2</span>
 <div class="co2-bar-fill"></div>
-<span class="co2-bar-label"><span class="co2-chip-brand">COMUS Izi R</span><span class="co2-bar-sub">56% recyclée</span></span>
+<span class="co2-bar-label"><img class="co2-pot" src="images/pot-comus-izi-r.webp" alt="COMUS Izi R"/><span class="co2-chip-brand">COMUS Izi R</span><span class="co2-bar-sub">56% recyclée</span></span>
 </div>
 <div class="co2-bar eco">
 <span class="co2-bar-value">0,545Kg/co2</span>
 <div class="co2-bar-fill"></div>
-<span class="co2-bar-label"><span class="co2-chip-brand is-best">Dragopaint</span><span class="co2-bar-sub">Bas carbone</span></span>
+<span class="co2-bar-label"><img class="co2-pot" src="images/pot-dragopaint-bascarbone.webp" alt="Dragopaint Bas Carbone"/><span class="co2-chip-brand is-best">Dragopaint</span><span class="co2-bar-sub">Bas carbone</span></span>
 </div>
 </div>
 <div class="co2-axis"></div>
