@@ -748,25 +748,30 @@
     position: relative;
     width: 480px; height: 480px;
     perspective: 1500px;
+    transform-style: preserve-3d;
   }
   .re-orbit {
     position: absolute; inset: 0;
-    border: 1px dashed rgba(168,230,190,0.3);
+    border: 1px dashed rgba(240,127,44,0.45);
     border-radius: 50%;
+    transform: rotateX(64deg); /* couché en "sol" sous l'orbite 3D des satellites */
     animation: orbit 30s linear infinite;
   }
   .re-orbit::before {
     content: ''; position: absolute; top: -5px; left: 50%;
     width: 10px; height: 10px; border-radius: 50%;
-    background: var(--vert-mousse);
-    box-shadow: 0 0 20px var(--vert-mousse);
+    background: var(--orange);
+    box-shadow: 0 0 20px var(--orange);
     transform: translateX(-50%);
   }
-  .re-orbit-2 { inset: 40px; animation: orbit 22s linear infinite reverse; border-color: rgba(255,169,104,0.3); }
-  .re-orbit-2::before { background: var(--orange-clair); box-shadow: 0 0 20px var(--orange-clair); }
-  .re-orbit-3 { inset: 80px; animation: orbit 16s linear infinite; border-color: rgba(168,230,190,0.4); border-style: solid; }
-  .re-orbit-3::before { background: var(--vert-mousse); box-shadow: 0 0 18px var(--vert-mousse); width: 8px; height: 8px; top: -4px; }
-  @keyframes orbit { from{transform:rotate(0);} to{transform:rotate(360deg);} }
+  .re-orbit-2 { inset: 40px; animation: orbit2 22s linear infinite; border-color: rgba(168,193,230,0.5); }
+  .re-orbit-2::before { background: var(--bleu-clair); box-shadow: 0 0 20px var(--bleu-clair); }
+  .re-orbit-3 { inset: 80px; animation: orbit3 16s linear infinite; border-color: rgba(255,169,104,0.5); border-style: solid; }
+  .re-orbit-3::before { background: var(--orange-clair); box-shadow: 0 0 18px var(--orange-clair); width: 8px; height: 8px; top: -4px; }
+  /* rotation des anneaux autour de leur axe vertical (Z local) tout en restant couchés */
+  @keyframes orbit  { from{transform:rotateX(64deg) rotateZ(0);}   to{transform:rotateX(64deg) rotateZ(360deg);} }
+  @keyframes orbit2 { from{transform:rotateX(64deg) rotateZ(360deg);} to{transform:rotateX(64deg) rotateZ(0);} }
+  @keyframes orbit3 { from{transform:rotateX(64deg) rotateZ(0);}   to{transform:rotateX(64deg) rotateZ(360deg);} }
 
   .re-core {
     position: absolute;
@@ -804,59 +809,72 @@
   .re-leaf:nth-child(4){ bottom: 18%; right: 16%; animation-delay: 3.5s; transform: rotate(120deg); }
   @keyframes leafFloat { 0%,100%{ translate: 0 0; opacity: .5;} 50%{ translate: 10px -16px; opacity: 1;} }
 
-  /* ===== Carrousel 3D : 5 produits orbitent autour du médaillon RE2020 ===== */
+  /* ===== Carrousel VRAIE 3D : 5 produits orbitent en cercle réel autour du médaillon =====
+     Technique :
+     - .re-carousel : conteneur 3D incliné (rotateX) pour donner l'ellipse vue de dessus.
+     - .re-sat : rotation orbitale réelle autour de l'axe Y -> translateZ = profondeur réelle
+       (le navigateur gère l'occlusion via preserve-3d, plus besoin de z-index manuel).
+     - .re-sat-inner : CONTRE-rotation exacte (billboard) -> la vignette reste toujours
+       face caméra, droite et lisible, jamais en miroir ni inclinée. */
   .re-carousel {
     position: absolute;
     top: 50%; left: 50%;
     width: 0; height: 0;
+    transform-style: preserve-3d;
+    transform: rotateX(-14deg); /* incline le plan de l'orbite -> effet elliptique 3D */
   }
   .re-sat {
     position: absolute;
     top: 0; left: 0;
     width: 108px; height: 150px;
     margin: -75px 0 0 -54px;
+    transform-style: preserve-3d;
+    animation: reOrbit3D 26s linear infinite;
   }
-  /* Orbite 2D : chaque satellite décrit un cercle autour du centre.
-     transform-origin au centre de l'orbite ; la vignette interne est contre-tournée
-     d'autant pour rester TOUJOURS droite et lisible (jamais inversée ni en miroir). */
-  .re-sat-1 { animation: reOrbit1 26s linear infinite; }
-  .re-sat-2 { animation: reOrbit2 26s linear infinite; }
-  .re-sat-3 { animation: reOrbit3 26s linear infinite; }
-  .re-sat-4 { animation: reOrbit4 26s linear infinite; }
-  .re-sat-5 { animation: reOrbit5 26s linear infinite; }
+  .re-sat-2 { animation-delay: -5.2s; }
+  .re-sat-3 { animation-delay: -10.4s; }
+  .re-sat-4 { animation-delay: -15.6s; }
+  .re-sat-5 { animation-delay: -20.8s; }
 
-  /* Orbite elliptique en perspective : une seule animation, 5 satellites décalés d'1/5 de cycle.
-     L'ellipse (plus large que haute) + variation de scale/opacité/z-index simule la 3D :
-     en bas = premier plan (grand, net, devant le médaillon) ; en haut = arrière-plan (petit, estompé). */
-  .re-sat-1 { animation: reOrbit 26s linear infinite; }
-  .re-sat-2 { animation: reOrbit 26s linear infinite -5.2s; }
-  .re-sat-3 { animation: reOrbit 26s linear infinite -10.4s; }
-  .re-sat-4 { animation: reOrbit 26s linear infinite -15.6s; }
-  .re-sat-5 { animation: reOrbit 26s linear infinite -20.8s; }
-
-  @keyframes reOrbit {
-    /* 0% = bas (premier plan) */
-    0%   { transform: translate(0, 150px)    scale(1.18); opacity: 1;    z-index: 6; }
-    /* 25% = droite */
-    25%  { transform: translate(255px, 0)    scale(0.92); opacity: 0.92; z-index: 3; }
-    /* 50% = haut (arrière-plan) */
-    50%  { transform: translate(0, -150px)   scale(0.62); opacity: 0.5;  z-index: 1; }
-    /* 75% = gauche */
-    75%  { transform: translate(-255px, 0)   scale(0.92); opacity: 0.92; z-index: 3; }
-    100% { transform: translate(0, 150px)    scale(1.18); opacity: 1;    z-index: 6; }
+  /* rotation orbitale réelle : tourne autour de Y, poussé à 260px de rayon en profondeur */
+  @keyframes reOrbit3D {
+    from { transform: rotateY(0deg)   translateZ(205px); }
+    to   { transform: rotateY(360deg) translateZ(205px); }
   }
 
-  /* léger flottement individuel des pots (le contenu reste droit, jamais incliné) */
   .re-sat-inner {
     width: 100%; height: 100%;
     display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
     gap: 6px;
+    transform-style: preserve-3d;
+    /* billboard : contre-rotation Y inverse + redressement X = toujours face caméra */
+    animation: reBillboard 26s linear infinite;
+  }
+  .re-sat-2 .re-sat-inner { animation-delay: -5.2s; }
+  .re-sat-3 .re-sat-inner { animation-delay: -10.4s; }
+  .re-sat-4 .re-sat-inner { animation-delay: -15.6s; }
+  .re-sat-5 .re-sat-inner { animation-delay: -20.8s; }
+
+  @keyframes reBillboard {
+    from { transform: rotateY(0deg)    rotateX(14deg); }
+    to   { transform: rotateY(-360deg) rotateX(14deg); }
   }
   .re-sat-pot {
-    width: 78px;
+    width: 99px;
     animation: reSatFloat 5s ease-in-out infinite;
     filter: drop-shadow(0 14px 22px rgba(0,0,0,0.45));
   }
+  /* Algo Pro : +20% supplémentaire (ciblé par sa source image) */
+  .re-sat-pot:has(img[src*="algo-pro"]) { width: 124px; }
+  .re-sat-pot.is-algo { width: 124px; }
+  /* Izi R (Comus) : +10% */
+  .re-sat-pot:has(img[src*="comus-izi"]) { width: 109px; }
+  .re-sat-pot.is-izir { width: 109px; }
+  /* Biosourcé uniquement : Algo +20% de plus, Titane MV +10% */
+  .visual-biosource .re-sat-pot:has(img[src*="algo-pro"]) { width: 150px; }
+  .visual-biosource .re-sat-pot.is-algo { width: 150px; }
+  .visual-biosource .re-sat-pot:has(img[src*="titane-hydro-mv"]) { width: 109px; }
+  .visual-biosource .re-sat-pot.is-titane { width: 109px; }
   .re-sat-2 .re-sat-pot { animation-delay: 0.6s; }
   .re-sat-3 .re-sat-pot { animation-delay: 1.2s; }
   .re-sat-4 .re-sat-pot { animation-delay: 1.8s; }
@@ -871,10 +889,10 @@
     border-radius: 50%;
     background: var(--orange);
     color: var(--blanc);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.35), 0 0 0 4px rgba(255,255,255,0.12);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35), 0 0 0 4px rgba(45,78,122,0.45);
     line-height: 1;
   }
-  .re-sat-co2.is-eco { background: var(--vert-eco); }
+  .re-sat-co2.is-eco { background: var(--vert-eco); box-shadow: 0 10px 24px rgba(0,0,0,0.35), 0 0 0 4px rgba(255,255,255,0.18); }
   .re-sat-co2 strong { font-family: var(--display); font-size: 18px; font-weight: 600; }
   .re-sat-co2 span { font-size: 6.5px; letter-spacing: 0.5px; text-transform: uppercase; margin-top: 2px; opacity: 0.95; }
   .re-sat-name {
@@ -887,12 +905,18 @@
     .re-stage { transform: scale(0.82); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .re-sat, .re-sat-pot, .re-sat-mat { animation: none; }
-    .re-sat-1 { transform: translate(0, 150px) scale(1.18); z-index: 6; }
-    .re-sat-2 { transform: translate(255px, 0) scale(0.92); z-index: 3; }
-    .re-sat-3 { transform: translate(140px, -150px) scale(0.62); opacity: 0.6; z-index: 1; }
-    .re-sat-4 { transform: translate(-140px, -150px) scale(0.62); opacity: 0.6; z-index: 1; }
-    .re-sat-5 { transform: translate(-255px, 0) scale(0.92); z-index: 3; }
+    .re-sat, .re-sat-inner, .re-sat-pot, .re-sat-mat { animation: none; }
+    /* positions figées réparties sur l'orbite 3D, vignettes redressées (billboard) */
+    .re-sat-1 { transform: rotateY(0deg)   translateZ(205px); }
+    .re-sat-2 { transform: rotateY(72deg)  translateZ(205px); }
+    .re-sat-3 { transform: rotateY(144deg) translateZ(205px); }
+    .re-sat-4 { transform: rotateY(216deg) translateZ(205px); }
+    .re-sat-5 { transform: rotateY(288deg) translateZ(205px); }
+    .re-sat-1 .re-sat-inner { transform: rotateY(0deg)    rotateX(14deg); }
+    .re-sat-2 .re-sat-inner { transform: rotateY(-72deg)  rotateX(14deg); }
+    .re-sat-3 .re-sat-inner { transform: rotateY(-144deg) rotateX(14deg); }
+    .re-sat-4 .re-sat-inner { transform: rotateY(-216deg) rotateX(14deg); }
+    .re-sat-5 .re-sat-inner { transform: rotateY(-288deg) rotateX(14deg); }
   }
 
   /* ===== Vignette "matière" (icône) pour les satellites sans pot ===== */
@@ -909,16 +933,20 @@
   }
   .re-sat-mat.rec-mat { background: rgba(168,230,190,0.16); border-color: rgba(168,230,190,0.35); }
 
-  /* Médaillon biosourcé / recyclé : mêmes dimensions que RE2020, couleurs adaptées */
-  .bio-core, .rec-core { box-shadow: 0 30px 60px rgba(0,0,0,0.35), 0 0 80px rgba(168,230,190,0.45); }
-  .bio-number, .rec-number { font-family: var(--display); font-weight: 500; line-height: 0.95; color: var(--vert-eco-fonce); letter-spacing: -1px; margin: 6px 0; }
+  /* Médaillon biosourcé / recyclé : fond bleu marine du logo (ressort sur les fonds verts) */
+  .bio-core, .rec-core {
+    background: radial-gradient(circle at 35% 28%, var(--bleu-clair) 0%, var(--bleu) 45%, var(--bleu-fonce) 100%);
+    border: 3px solid rgba(240,127,44,0.9);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35), 0 0 80px rgba(240,127,44,0.45);
+  }
+  .bio-number, .rec-number { font-family: var(--display); font-weight: 500; line-height: 0.95; color: var(--blanc); letter-spacing: -1px; margin: 6px 0; }
   .bio-number { font-size: 30px; }
-  .bio-number em { color: var(--vert-eco); font-weight: 400; font-style: italic; display: block; font-size: 0.74em; }
-  .rec-number { font-size: 40px; color: var(--vert-eco-fonce); }
-  .rec-number em { color: var(--orange); font-weight: 400; font-style: normal; font-size: 0.5em; }
-  .bio-core .re-label-top, .rec-core .re-label-top { color: var(--vert-eco-fonce); }
-  .bio-core .re-label-bottom { color: var(--vert-eco); }
-  .rec-core .re-label-bottom { color: var(--orange-fonce); font-size: 7px; }
+  .bio-number em { color: var(--orange-clair); font-weight: 400; font-style: italic; display: block; font-size: 0.74em; }
+  .rec-number { font-size: 40px; color: var(--blanc); }
+  .rec-number em { color: var(--orange-clair); font-weight: 400; font-style: normal; font-size: 0.5em; }
+  .bio-core .re-label-top, .rec-core .re-label-top { color: var(--orange-clair); }
+  .bio-core .re-label-bottom { color: var(--orange-clair); }
+  .rec-core .re-label-bottom { color: var(--orange-clair); font-size: 7px; }
 
   /* Le visuel biosourcé et recyclé débordent légèrement pour laisser respirer l'orbite */
   .visual-biosource, .visual-recycle { overflow: visible; }
@@ -933,10 +961,10 @@
   }
   .co2-stage { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
   .co2-chart {
-    width: 80%; max-width: 380px;
+    width: 88%; max-width: 460px;
     display: flex; align-items: flex-end; justify-content: space-around;
-    gap: 22px;
-    padding: 30px 0;
+    gap: 12px;
+    padding: 30px 0 70px;
     position: relative;
     z-index: 2;
   }
@@ -959,11 +987,40 @@
   }
   .co2-bar.standard .co2-bar-fill { height: 92%; background: linear-gradient(180deg, #6E5640, #3D2E1F); }
   .co2-bar.notre .co2-bar-fill { height: 57%; background: linear-gradient(180deg, #FFA968, #F07F2C); animation-delay: 0.3s; }
+  .co2-bar.algo .co2-bar-fill { height: 35%; background: linear-gradient(180deg, #FFC79A, #E07A2E); animation-delay: 0.45s; }
+  .co2-bar.izir .co2-bar-fill { height: 30%; background: linear-gradient(180deg, #C9EBA8, #6FA84A); animation-delay: 0.55s; }
   .co2-bar.eco .co2-bar-fill { height: 24%; background: linear-gradient(180deg, #A8E6BE, #4A8B5C); animation-delay: 0.6s; }
   @keyframes barRise { from{transform:scaleY(0);} to{transform:scaleY(1);} }
-  .co2-bar-value { position: absolute; top: -28px; font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--blanc); }
-  .co2-bar-label { margin-top: 14px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-align: center; line-height: 1.4; }
-  .co2-bar-label strong { color: var(--vert-mousse); display: block; font-weight: 700; }
+  .co2-bar-value { position: absolute; left: 0; right: 0; font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--blanc); white-space: nowrap; text-align: center; padding-bottom: 6px; }
+  /* la valeur se cale juste au-dessus du sommet de chaque barre (= hauteur du fill) */
+  .co2-bar.standard .co2-bar-value { bottom: 92%; }
+  .co2-bar.notre .co2-bar-value { bottom: 57%; }
+  .co2-bar.algo .co2-bar-value { bottom: 35%; }
+  .co2-bar.izir .co2-bar-value { bottom: 30%; }
+  .co2-bar.eco .co2-bar-value { bottom: 24%; }
+  .co2-bar-label { position: absolute; bottom: -52px; left: -4px; right: -4px; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; }
+  /* chip de marque bien visible */
+  .co2-chip-brand {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--blanc);
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 4px 10px;
+    border-radius: 50px;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+  }
+  /* meilleure perf carbone : chip mis en avant */
+  .co2-chip-brand.is-best {
+    background: var(--vert-mousse);
+    border-color: var(--vert-mousse);
+    color: var(--vert-eco-fonce);
+    box-shadow: 0 6px 16px -4px rgba(168,230,190,0.5);
+  }
+  .co2-bar-sub { font-size: 8.5px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
   .co2-axis {
     position: absolute; left: 0; right: 0; bottom: 70px;
     height: 1px; background: rgba(255,255,255,0.15);
@@ -1654,7 +1711,7 @@ La <strong>Réglementation Environnementale 2020</strong> impose aux bâtiments 
 <div class="re-carousel">
 <div class="re-sat re-sat-1">
 <div class="re-sat-inner">
-<div class="re-sat-pot"><img alt="Algo Pro Velours" src="images/pot-algo-pro-velours.webp"/></div>
+<div class="re-sat-pot is-algo"><img alt="Algo Pro Velours" src="images/pot-algo-pro-velours.webp"/></div>
 <div class="re-sat-co2"><strong>0,807</strong><span>kg CO₂/UF</span></div>
 <div class="re-sat-name">Algo Pro</div>
 </div>
@@ -1742,17 +1799,27 @@ Le bâtiment représente <strong>près d'un quart des émissions de CO₂ en Fra
 <div class="co2-bar standard">
 <span class="co2-bar-value">2,1 Kg/co2</span>
 <div class="co2-bar-fill"></div>
-<span class="co2-bar-label">Peinture<br/>standard</span>
+<span class="co2-bar-label"><span class="co2-bar-sub">Peinture standard</span></span>
 </div>
 <div class="co2-bar notre">
 <span class="co2-bar-value">1,3 Kg/co2</span>
 <div class="co2-bar-fill"></div>
-<span class="co2-bar-label"><strong>L'Atelier</strong>Gamme 45</span>
+<span class="co2-bar-label"><span class="co2-chip-brand">L'Atelier 45</span><span class="co2-bar-sub">Gamme propre</span></span>
+</div>
+<div class="co2-bar algo">
+<span class="co2-bar-value">0,807Kg/co2</span>
+<div class="co2-bar-fill"></div>
+<span class="co2-bar-label"><span class="co2-chip-brand">Algo Pro</span><span class="co2-bar-sub">Velours</span></span>
+</div>
+<div class="co2-bar izir">
+<span class="co2-bar-value">0,693Kg/co2</span>
+<div class="co2-bar-fill"></div>
+<span class="co2-bar-label"><span class="co2-chip-brand">COMUS Izi R</span><span class="co2-bar-sub">56% recyclée</span></span>
 </div>
 <div class="co2-bar eco">
 <span class="co2-bar-value">0,545Kg/co2</span>
 <div class="co2-bar-fill"></div>
-<span class="co2-bar-label">BAS CARBONE· DRAGOPAINT</span>
+<span class="co2-bar-label"><span class="co2-chip-brand is-best">Dragopaint</span><span class="co2-bar-sub">Bas carbone</span></span>
 </div>
 </div>
 <div class="co2-axis"></div>
@@ -1799,14 +1866,14 @@ Une peinture <strong>biosourcée</strong>, c'est une formulation qui remplace to
 <div class="re-carousel">
 <div class="re-sat re-sat-1">
 <div class="re-sat-inner">
-<div class="re-sat-pot"><img alt="Algo Pro Velours · 98% biosourcée" src="images/pot-algo-pro-velours.webp"/></div>
+<div class="re-sat-pot is-algo"><img alt="Algo Pro Velours · 98% biosourcée" src="images/pot-algo-pro-velours.webp"/></div>
 <div class="re-sat-co2 is-eco"><strong>98<small>%</small></strong><span>biosourcée</span></div>
 <div class="re-sat-name">Algo Pro</div>
 </div>
 </div>
 <div class="re-sat re-sat-2">
 <div class="re-sat-inner">
-<div class="re-sat-pot"><img alt="TITANE hydro MV evo · 31,5% biosourcée" src="images/pot-titane-hydro-mv.webp"/></div>
+<div class="re-sat-pot is-titane"><img alt="TITANE hydro MV evo · 31,5% biosourcée" src="images/pot-titane-hydro-mv.webp"/></div>
 <div class="re-sat-co2 is-eco"><strong>31,5<small>%</small></strong><span>biosourcée</span></div>
 <div class="re-sat-name">Titane MV</div>
 </div>
@@ -1879,7 +1946,7 @@ Saviez-vous qu'on peut peindre un mur avec d'anciens <strong style="color:var(--
 <div class="re-carousel">
 <div class="re-sat re-sat-1">
 <div class="re-sat-inner">
-<div class="re-sat-pot"><img alt="COMUS IZI R · 56% recyclée" src="images/pot-comus-izi-r.webp"/></div>
+<div class="re-sat-pot is-izir"><img alt="COMUS IZI R · 56% recyclée" src="images/pot-comus-izi-r.webp"/></div>
 <div class="re-sat-co2 is-eco"><strong>56<small>%</small></strong><span>recyclée</span></div>
 <div class="re-sat-name">Izi R</div>
 </div>
