@@ -377,6 +377,26 @@
     letter-spacing: 0.3px;
   }
   /* ===== FIN POLICE DES POTS ===== */
+
+  /* ===== Logo header animé : pièce qui tourne + s'inverse à chaque 180° (comme le médaillon RE2020) ===== */
+  .logo-coin { perspective: 800px; display: inline-block; }
+  .logo-coin { position: relative; transform-style: preserve-3d; animation: logoCoinSpin 9s linear infinite; }
+  .logo-coin-face {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  /* La face arrière est pré-retournée de 180° : elle s'affiche donc à l'endroit (lisible) quand elle fait face */
+  .logo-coin-back { transform: rotateY(180deg); }
+  @keyframes logoCoinSpin {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-coin { animation: none; }
+  }
 </style>
 </head>
 <body>
@@ -384,7 +404,7 @@
 <header class="header">
 <div class="header-inner">
 <a class="logo" href="index.html">
-<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png" width="309" height="378" decoding="async">
+<span class="logo-symbol logo-coin" aria-hidden="true"><img alt="Logo L'Atelier" class="logo-coin-face logo-coin-front" src="images/logo.png" width="309" height="378" decoding="async"><img alt="" class="logo-coin-face logo-coin-back" src="images/logo.png" width="309" height="378" decoding="async"></span>
 <div class="logo-text-wrap">
 <span class="logo-text">l'atelier</span>
 <span class="logo-baseline">MARCHAND DE COULEURS</span>
@@ -401,7 +421,7 @@
 <nav class="nav">
 <a href="gammes.html">Nos gammes peintures</a>
 <a href="nuanciers.html">Nuanciers</a>
-<a href="index.html#eco">Engagement éco</a>
+<a href="engagement-eco.html">Engagement éco</a>
 <a href="revetement-mural.html">Revêtement mural</a>
 <a href="revetement-sol.html">Revêtement de sol</a>
 <a href="documents.html">Documents techniques</a>
