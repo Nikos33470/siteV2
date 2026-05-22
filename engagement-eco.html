@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Engagement éco · L'Atelier — Peintures bas carbone, biosourcées, recyclées · Conforme RE2020</title>
+<meta name="description" content="L'Atelier s'engage : peintures conformes RE2020, bas carbone, biosourcées (algues, résines végétales) et recyclées (jusqu'à 56% de matières recyclées). Découvrez nos engagements écologiques concrets."/>
+<link rel="icon" type="image/png" href="images/logo.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bleu: #1F3A5F;
+    --bleu-fonce: #15273F;
+    --bleu-clair: #2D4E7A;
+    --bleu-pale: #E8EEF5;
+    --orange: #F07F2C;
+    --orange-fonce: #D86618;
+    --orange-clair: #FFA968;
+    --vert-eco: #4A8B5C;
+    --vert-eco-fonce: #2F6940;
+    --vert-eco-pale: #E8F2EB;
+    --vert-mousse: #A8E6BE;
+    --beige: #F5F0E8;
+    --blanc: #FFFFFF;
+    --gris-clair: #F8F7F4;
+    --gris: #5F5F5F;
+    --gris-fonce: #2C2C2C;
+    --noir: #0A0A0A;
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  * { margin:0; padding:0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--bleu-fonce); background: var(--blanc); overflow-x: hidden; line-height: 1.6; }
+  img { max-width: 100%; height: auto; }
+
+  /* ========= HEADER (repris du site) ========= */
+  .header { position: fixed; top:0; left:0; right:0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(31,58,95,0.08); transition: all 0.4s var(--transition); }
+  .header.dark { background: rgba(21,39,63,0.6); border-bottom-color: rgba(255,255,255,0.1); }
+  .header.dark .nav a { color: var(--blanc); }
+  .header.dark .logo-text { color: var(--blanc); }
+  .header.dark .logo-baseline { color: var(--vert-mousse); }
+  .header-inner { max-width: 1600px; margin: 0 auto; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; transition: padding 0.4s var(--transition); }
+  .header.is-scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(31, 58, 95, 0.08); }
+  .header.is-scrolled.dark { background: rgba(21,39,63,0.92); }
+  .header.is-scrolled .header-inner { padding: 10px 48px; }
+  .header.is-scrolled .logo-symbol { width: 56px; height: 70px; }
+  .header.is-scrolled .logo-text { font-size: 30px; }
+  .logo-symbol, .logo-text, .logo-baseline { transition: all 0.4s var(--transition); }
+  .logo { display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--bleu); }
+  .logo-symbol { width: 78px; height: 96px; flex-shrink: 0; }
+  .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text { font-family: var(--sans); font-weight: 700; font-size: 36px; color: var(--bleu); letter-spacing: -0.8px; }
+  .logo-baseline { font-family: var(--sans); font-weight: 500; font-size: 11px; color: var(--orange); margin-top: 6px; letter-spacing: 2px; text-transform: uppercase; }
+  .nav { display: flex; align-items: center; gap: 22px; }
+  .nav a { font-size: 13.5px; font-weight: 500; color: var(--bleu); text-decoration: none; transition: color 0.3s; position: relative; white-space: nowrap; }
+  .nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s var(--transition); }
+  .nav a:hover::after { width: 100%; }
+  .nav a:hover { color: var(--orange); }
+  .nav a.is-active { color: var(--orange); }
+  .nav a.is-active::after { width: 100%; }
+  .nav-cta { background: var(--orange); color: var(--blanc) !important; padding: 10px 22px; border-radius: 50px; transition: all 0.3s; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--orange-fonce); transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(240,127,44,0.5); }
+
+  /* ========= HERO 3D PIGMENT EXPLOSION ========= */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 18% 50%, rgba(31,58,95,0.04) 0%, transparent 55%),
+      radial-gradient(ellipse at 70% 50%, rgba(240,127,44,0.05) 0%, transparent 55%),
+      linear-gradient(135deg, #FBF7F0 0%, #F4EEE3 100%);
+    color: var(--bleu-fonce);
+    overflow: hidden;
+    padding: 120px 48px 40px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  /* texture papier subtile pour donner du "grain" au fond clair */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.012) 0, rgba(0,0,0,0.012) 1px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.012) 0, rgba(0,0,0,0.012) 1px, transparent 1px, transparent 3px);
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+  }
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* ========= PLANÈTE ÉCO : image PNG centrale ========= */
+  .hero-planet {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 360px; height: 360px;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    pointer-events: none;
+    /* drop-shadow vert : la planète "irradie" la couleur éco */
+    filter: drop-shadow(0 28px 50px rgba(31,90,44,0.45))
+            drop-shadow(0 0 90px rgba(168,230,110,0.45));
+    will-change: transform, filter;
+    /* flottement vertical doux */
+    animation: planetFloat 7s ease-in-out infinite;
+  }
+  /* wrapper sphère : contient l'image planète et le nuage.
+     Clip-path circulaire serré : pas de bord visible (contrairement à
+     overflow:hidden + border-radius qui crée un ring blanc anti-aliasé). */
+  .planet-sphere {
+    position: relative;
+    width: 100%; height: 100%;
+    clip-path: circle(46% at 50% 50%);
+    -webkit-clip-path: circle(46% at 50% 50%);
+  }
+  .planet-img {
+    width: 100%; height: 100%;
+    display: block;
+    object-fit: contain;
+    /* rotation continue très lente : la planète tourne sur elle-même */
+    animation: planetSpin 80s linear infinite;
+  }
+  /* Nuage blanc dérivant DEVANT la planète, CLIPPÉ dans le cercle.
+     mix-blend-mode: screen ⇒ vapeur lumineuse (pas un rectangle blanc plat) */
+  .planet-cloud {
+    position: absolute;
+    top: 32%; left: -40%;
+    width: 75%; height: 22%;
+    pointer-events: none;
+    opacity: 0.9;
+    mix-blend-mode: screen;
+    filter: blur(2px);
+    animation: cloudDrift 22s linear infinite;
+  }
+  @keyframes cloudDrift {
+    0%   { left: -75%; opacity: 0; transform: translateY(0) rotate(-3deg); }
+    12%  { opacity: 0.85; }
+    50%  { opacity: 0.95; transform: translateY(-2%) rotate(2deg); }
+    85%  { opacity: 0.6; }
+    100% { left: 100%; opacity: 0; transform: translateY(2%) rotate(3deg); }
+  }
+  @keyframes planetFloat {
+    0%,100% { transform: translate(-50%, -50%); }
+    50%     { transform: translate(-50%, -54%); }
+  }
+  @keyframes planetSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* État au moment de l'impact : la planète absorbe l'énergie de l'explosion */
+  .hero-planet.pulse-impact {
+    animation: planetFloat 7s ease-in-out infinite, planetPulse 1.3s var(--transition);
+  }
+  @keyframes planetPulse {
+    0%   { filter: drop-shadow(0 28px 50px rgba(31,90,44,0.45)) drop-shadow(0 0 90px rgba(168,230,110,0.45)); }
+    35%  { filter: drop-shadow(0 28px 60px rgba(31,90,44,0.55)) drop-shadow(0 0 180px rgba(168,230,110,1)) drop-shadow(0 0 260px rgba(168,230,110,0.75)) brightness(1.2); }
+    100% { filter: drop-shadow(0 28px 50px rgba(31,90,44,0.45)) drop-shadow(0 0 100px rgba(168,230,110,0.55)); }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-planet { width: 240px; height: 240px; }
+  }
+
+  /* ========= TEXTE HERO : titre en haut, sous-titre + chips en bas ========= */
+  .hero-inner {
+    position: relative;
+    z-index: 5;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    pointer-events: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0 30px;
+  }
+  .hero-inner > * { pointer-events: auto; }
+
+  .hero-top { display: flex; flex-direction: column; align-items: center; }
+  .hero-bottom { display: flex; flex-direction: column; align-items: center; max-width: 720px; }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 10px 22px;
+    background: rgba(74,139,92,0.10);
+    border: 1px solid rgba(74,139,92,0.35);
+    color: var(--vert-eco-fonce);
+    font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 28px;
+    opacity: 1;
+  }
+  .hero-eyebrow::before { content: ''; width: 8px; height: 8px; background: var(--vert-eco); border-radius: 50%; box-shadow: 0 0 14px var(--vert-eco); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(1.5); opacity:0.5;} }
+
+  .hero-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(36px, 4.5vw, 64px);
+    line-height: 1.0;
+    letter-spacing: -1.5px;
+    color: var(--bleu-fonce);
+    margin-bottom: 0;
+    opacity: 1;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-weight: 600;
+    /* dégradé vert éclatant : du vert tendre au vert profond */
+    background: linear-gradient(120deg, #6FBD42 0%, #4A9F38 50%, #1E5A2C 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+    /* effet de relief : drop-shadow subtil + halo vert lumineux */
+    text-shadow: none;
+    filter: drop-shadow(0 2px 8px rgba(74,159,56,0.35));
+    /* léger agrandissement pour ressortir */
+    transform: scale(1.04);
+    transform-origin: left center;
+  }
+  .hero-title-line { display: inline; }
+
+  .hero-sub {
+    font-size: clamp(15px, 1.2vw, 17px);
+    line-height: 1.55;
+    max-width: 680px;
+    margin: 0 0 24px;
+    color: var(--gris);
+    font-weight: 300;
+    opacity: 1;
+  }
+  .hero-sub strong { color: var(--bleu-fonce); font-weight: 600; }
+
+  .hero-chips {
+    display: flex; flex-wrap: nowrap; gap: 10px; justify-content: center;
+    opacity: 1;
+    max-width: 100%;
+  }
+  @media (max-width: 760px) {
+    /* sur très petits écrans on autorise le wrap pour ne pas écraser le texte */
+    .hero-chips { flex-wrap: wrap; }
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    /* Dégradé brand PUR (pas dilué) : bleu L'Atelier → orange L'Atelier */
+    background: linear-gradient(115deg, var(--bleu) 0%, var(--bleu-clair) 40%, var(--orange-fonce) 70%, var(--orange) 100%);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 6px 16px -4px rgba(31,58,95,0.35);
+    font-size: 12px; font-weight: 500;
+    color: var(--blanc);
+    transition: all 0.3s var(--transition);
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    /* text-shadow léger pour ressortir sur les zones lumineuses du dégradé */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+  }
+  .chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -8px rgba(240,127,44,0.55), 0 6px 16px -4px rgba(31,58,95,0.4);
+    color: var(--blanc);
+  }
+  /* Léger éclat brillant sur le côté gauche au hover (effet "verni") */
+  .chip::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: -20%; width: 30%;
+    background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+    transform: skewX(-20deg);
+    transition: left 0.6s var(--transition);
+    pointer-events: none;
+  }
+  .chip:hover::after { left: 120%; }
+
+  .chip-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px currentColor, 0 0 0 1.5px rgba(255,255,255,0.5);
+  }
+  /* Dots en couleurs vives qui ressortent sur le dégradé */
+  .chip-dot.c-re { background: #A8E66E; color: #A8E66E; }       /* vert éco lumineux */
+  .chip-dot.c-bc { background: #FFD89C; color: #FFD89C; }       /* orange clair */
+  .chip-dot.c-bs { background: #6EE0D5; color: #6EE0D5; }       /* turquoise */
+  .chip-dot.c-rc { background: #E8B8FF; color: #E8B8FF; }       /* lavande */
+
+  .chip strong {
+    font-weight: 700;
+    color: var(--blanc);
+    /* on retire le background-clip text — couleur blanche pure pour ressortir */
+    -webkit-text-fill-color: initial;
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+    z-index: 6;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--gris);
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    opacity: 0.55;
+    animation: bounceArrow 2s ease-in-out infinite;
+  }
+  @keyframes bounceArrow { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
+  .hero-scroll-line { width: 1px; height: 28px; background: linear-gradient(180deg, transparent, var(--bleu)); }
+  @media (max-height: 720px) {
+    .hero-scroll { display: none; }
+  }
+
+  @keyframes fadeInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+
+  @media (max-width: 1024px) {
+    .hero-planet { width: 220px; height: 236px; }
+    .hero { padding: 110px 24px 30px; }
+    .hero-inner { padding: 8px 0 24px; }
+  }
+
+  /* ========= SIGNATURE BAND (défilant, brand identity bleu/orange) ========= */
+  .signature-section {
+    background: var(--bleu);
+    padding: 28px 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-top: 4px solid var(--orange);
+  }
+  .signature-section::before, .signature-section::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .signature-section::before { left: 0; background: linear-gradient(90deg, var(--bleu), transparent); }
+  .signature-section::after  { right: 0; background: linear-gradient(-90deg, var(--bleu), transparent); }
+  .signature-track {
+    display: flex; gap: 60px; align-items: center;
+    animation: scrollSig 38s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+  @keyframes scrollSig { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .signature-item {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--blanc);
+    letter-spacing: -0.5px;
+    display: flex; align-items: center; gap: 60px;
+    flex-shrink: 0;
+  }
+  .signature-item em { color: var(--orange); font-style: italic; font-weight: 400; }
+  .signature-dot {
+    width: 10px; height: 10px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* ========= BRAND PROMISE : carte engagement L'Atelier bleu/orange ========= */
+  .brand-promise {
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(240,127,44,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(45,78,122,0.20) 0%, transparent 50%),
+      var(--bleu-fonce);
+    color: var(--blanc);
+    padding: 120px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .brand-promise::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--orange) 0%, var(--orange-clair) 50%, var(--orange) 100%);
+  }
+  .brand-promise-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 80px; align-items: center;
+  }
+  .brand-promise-mark {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 18px;
+  }
+  .brand-promise-logo {
+    width: 110px; height: auto;
+    filter: drop-shadow(0 14px 30px rgba(0,0,0,0.3));
+  }
+  .brand-promise-signature {
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--orange-clair);
+    border-left: 2px solid var(--orange);
+    padding-left: 16px;
+    margin-top: 6px;
+  }
+  .brand-promise-content { }
+  .brand-promise-eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 22px;
+  }
+  .brand-promise-eyebrow::before {
+    content: ''; width: 32px; height: 1px; background: var(--orange);
+  }
+  .brand-promise-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 3vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: var(--blanc);
+    margin-bottom: 24px;
+  }
+  .brand-promise-title em {
+    color: var(--orange);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .brand-promise-text {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+  .brand-promise-text strong { color: var(--blanc); font-weight: 600; }
+  .brand-promise-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 32px;
+  }
+  .brand-promise-pillar {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .brand-promise-pillar-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--orange);
+    min-width: 32px;
+  }
+  .brand-promise-pillar-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+  }
+  .brand-promise-pillar-text strong {
+    color: var(--blanc); font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 14px;
+  }
+  @media (max-width: 900px) {
+    .brand-promise { padding: 80px 24px; }
+    .brand-promise-inner { grid-template-columns: 1fr; gap: 40px; }
+    .brand-promise-pillars { grid-template-columns: 1fr; }
+    .signature-item { font-size: 22px; gap: 36px; }
+    .signature-track { gap: 36px; }
+  }
+
+  /* Accent orange "dash" sous le titre hero (signature L'Atelier) */
+  .hero-title-dash {
+    display: block;
+    width: 80px; height: 4px;
+    background: linear-gradient(90deg, var(--orange) 0%, var(--orange-clair) 100%);
+    border-radius: 2px;
+    margin: 22px auto 0;
+    box-shadow: 0 4px 14px rgba(240,127,44,0.4);
+  }
+  .stats-band {
+    background: var(--vert-eco-fonce);
+    color: var(--blanc);
+    padding: 50px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats-band::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(168,230,190,0.15), transparent 60%);
+    pointer-events: none;
+  }
+  .stats-band-inner {
+    max-width: 1400px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    text-align: center;
+    position: relative; z-index: 2;
+  }
+  .stat-item { padding: 8px 12px; border-left: 1px solid rgba(255,255,255,0.15); }
+  .stat-item:first-child { border-left: 0; }
+  .stat-num { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 4vw, 60px); line-height: 1; color: var(--vert-mousse); letter-spacing: -1.5px; }
+  .stat-num small { font-size: 0.5em; color: rgba(168,230,190,0.7); margin-left: 2px; }
+  .stat-label { margin-top: 10px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
+  .stat-sub { margin-top: 4px; font-size: 12px; color: rgba(255,255,255,0.55); font-weight: 300; }
+
+  /* ========= ENGAGEMENT SECTIONS ========= */
+  .engagement {
+    padding: 130px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .engagement-inner {
+    max-width: 1400px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center;
+  }
+  .engagement.reverse .engagement-inner { grid-template-areas: "visual content"; }
+  .engagement.reverse .engagement-visual { grid-area: visual; }
+  .engagement.reverse .engagement-content { grid-area: content; }
+
+  .engagement-content { position: relative; z-index: 3; }
+  .engagement-eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 22px;
+  }
+  .engagement-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--orange); }
+  .engagement-num {
+    font-family: var(--display);
+    font-size: 15px; color: var(--gris); font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .engagement-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: var(--bleu);
+    margin-bottom: 24px;
+  }
+  .engagement-title em { color: var(--orange); font-style: italic; font-weight: 300; }
+  .engagement-title .accent-green { color: var(--vert-eco); font-style: italic; font-weight: 300; }
+
+  .engagement-text {
+    font-size: 17px; line-height: 1.7; color: var(--gris);
+    max-width: 540px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+  .engagement-text strong { color: var(--bleu); font-weight: 600; }
+
+  .engagement-list {
+    list-style: none; margin: 28px 0 32px; padding: 0;
+  }
+  .engagement-list li {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 0;
+    font-size: 15px; color: var(--bleu-fonce);
+    border-bottom: 1px solid rgba(31,58,95,0.08);
+  }
+  .engagement-list li:last-child { border-bottom: 0; }
+  .engagement-list .li-icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--vert-eco-pale); color: var(--vert-eco-fonce);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px; font-weight: 700;
+  }
+  .engagement-list strong { color: var(--bleu); font-weight: 600; }
+
+  .engagement-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    background: var(--bleu);
+    color: var(--blanc); text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600; font-size: 14px;
+    transition: all 0.3s var(--transition);
+  }
+  .engagement-cta:hover { background: var(--orange); transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(240,127,44,0.5); }
+  .engagement-cta-arrow { transition: transform 0.3s; }
+  .engagement-cta:hover .engagement-cta-arrow { transform: translateX(4px); }
+
+  .engagement-visual {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 480px;
+  }
+
+  /* ============ Visual 1 : RE2020 ============ */
+  .visual-re2020 {
+    background:
+      radial-gradient(circle at 30% 30%, rgba(74,139,92,0.25), transparent 60%),
+      linear-gradient(135deg, #15273F 0%, #1F3A5F 50%, #2D4E7A 100%);
+    color: var(--blanc);
+  }
+  .re-stage {
+    position: relative;
+    width: 360px; height: 360px;
+    perspective: 1200px;
+  }
+  .re-orbit {
+    position: absolute; inset: 0;
+    border: 1px dashed rgba(168,230,190,0.3);
+    border-radius: 50%;
+    animation: orbit 30s linear infinite;
+  }
+  .re-orbit::before {
+    content: ''; position: absolute; top: -5px; left: 50%;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--vert-mousse);
+    box-shadow: 0 0 20px var(--vert-mousse);
+    transform: translateX(-50%);
+  }
+  .re-orbit-2 { inset: 40px; animation: orbit 22s linear infinite reverse; border-color: rgba(255,169,104,0.3); }
+  .re-orbit-2::before { background: var(--orange-clair); box-shadow: 0 0 20px var(--orange-clair); }
+  .re-orbit-3 { inset: 80px; animation: orbit 16s linear infinite; border-color: rgba(168,230,190,0.4); border-style: solid; }
+  .re-orbit-3::before { background: var(--vert-mousse); box-shadow: 0 0 18px var(--vert-mousse); width: 8px; height: 8px; top: -4px; }
+  @keyframes orbit { from{transform:rotate(0);} to{transform:rotate(360deg);} }
+
+  .re-core {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; height: 200px;
+    background: var(--blanc);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 80px rgba(168,230,190,0.4);
+    animation: corePulse 4s ease-in-out infinite;
+  }
+  @keyframes corePulse { 0%,100%{box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 80px rgba(168,230,190,0.4);} 50%{box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 120px rgba(168,230,190,0.6);} }
+  .re-label-top { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--vert-eco-fonce); }
+  .re-number { font-family: var(--display); font-size: 60px; font-weight: 500; line-height: 0.95; color: var(--bleu); letter-spacing: -2px; margin: 8px 0; }
+  .re-number em { color: var(--vert-eco); font-weight: 400; font-style: normal; }
+  .re-label-bottom { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; color: var(--orange-fonce); }
+
+  /* leaves */
+  .re-leaves { position: absolute; inset: 0; pointer-events: none; }
+  .re-leaf {
+    position: absolute;
+    width: 28px; height: 28px;
+    background: var(--vert-mousse);
+    border-radius: 0 100% 0 100%;
+    opacity: 0.7;
+    box-shadow: 0 0 20px var(--vert-mousse);
+    animation: leafFloat 7s ease-in-out infinite;
+  }
+  .re-leaf:nth-child(1){ top: 8%; left: 12%; animation-delay: 0s; }
+  .re-leaf:nth-child(2){ top: 14%; right: 6%; animation-delay: 1.2s; transform: rotate(70deg); }
+  .re-leaf:nth-child(3){ bottom: 12%; left: 8%; animation-delay: 2.5s; transform: rotate(-40deg); }
+  .re-leaf:nth-child(4){ bottom: 18%; right: 16%; animation-delay: 3.5s; transform: rotate(120deg); }
+  @keyframes leafFloat { 0%,100%{ translate: 0 0; opacity: .5;} 50%{ translate: 10px -16px; opacity: 1;} }
+
+  /* ============ Visual 2 : Bas carbone ============ */
+  .visual-bascarbone {
+    background:
+      linear-gradient(135deg, #0F1A14 0%, #1B2A1F 60%, #0B1410 100%);
+    color: var(--blanc);
+    position: relative;
+  }
+  .co2-stage { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .co2-chart {
+    width: 80%; max-width: 380px;
+    display: flex; align-items: flex-end; justify-content: space-around;
+    gap: 22px;
+    padding: 30px 0;
+    position: relative;
+    z-index: 2;
+  }
+  .co2-bar {
+    flex: 1; height: 320px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-end;
+    position: relative;
+  }
+  .co2-bar-fill {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    position: relative; overflow: hidden;
+    transform-origin: bottom;
+    animation: barRise 1.5s var(--transition) forwards;
+  }
+  .co2-bar-fill::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent 50%);
+  }
+  .co2-bar.standard .co2-bar-fill { height: 92%; background: linear-gradient(180deg, #6E5640, #3D2E1F); }
+  .co2-bar.notre .co2-bar-fill { height: 50%; background: linear-gradient(180deg, #FFA968, #F07F2C); animation-delay: 0.3s; }
+  .co2-bar.eco .co2-bar-fill { height: 28%; background: linear-gradient(180deg, #A8E6BE, #4A8B5C); animation-delay: 0.6s; }
+  @keyframes barRise { from{transform:scaleY(0);} to{transform:scaleY(1);} }
+  .co2-bar-value { position: absolute; top: -28px; font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--blanc); }
+  .co2-bar-label { margin-top: 14px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-align: center; line-height: 1.4; }
+  .co2-bar-label strong { color: var(--vert-mousse); display: block; font-weight: 700; }
+  .co2-axis {
+    position: absolute; left: 0; right: 0; bottom: 70px;
+    height: 1px; background: rgba(255,255,255,0.15);
+    z-index: 1;
+  }
+  .co2-unit {
+    position: absolute; top: 16px; left: 16px;
+    color: rgba(255,255,255,0.5); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    z-index: 3;
+  }
+  /* particules de CO2 qui montent depuis chaque barre */
+  .co2-particles { position: absolute; inset: 0; pointer-events: none; z-index: 4; overflow: hidden; }
+  .co2-particle {
+    position: absolute; bottom: 0;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    animation: rise 6s linear infinite;
+  }
+  @keyframes rise {
+    from { transform: translateY(0) translateX(0); opacity: 0; }
+    20% { opacity: 0.8; }
+    to { transform: translateY(-200px) translateX(20px); opacity: 0; }
+  }
+
+  /* ============ Visual 3 : Biosourcée ============ */
+  .visual-biosource {
+    background: linear-gradient(135deg, #E8F2EB 0%, #C8E0D2 100%);
+    color: var(--vert-eco-fonce);
+  }
+  .bio-pot-stage {
+    position: relative;
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .bio-pot {
+    position: relative;
+    width: 280px;
+    z-index: 3;
+    filter: drop-shadow(0 30px 40px rgba(47,105,64,0.35));
+    animation: floatY 5s ease-in-out infinite;
+  }
+  @keyframes floatY { 0%,100%{translate: 0 0;} 50%{translate: 0 -16px;} }
+  .bio-pot img { width: 100%; display: block; }
+
+  /* éléments organiques flottants : algues, gouttes, feuilles */
+  .bio-element {
+    position: absolute;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-weight: 700;
+    box-shadow: 0 14px 30px rgba(47,105,64,0.3);
+    z-index: 4;
+  }
+  .bio-element.bio-1 { top: 8%; left: 6%; background: var(--vert-eco-fonce); color: var(--blanc); animation: floatOrb 7s ease-in-out infinite; }
+  .bio-element.bio-2 { top: 14%; right: 4%; background: var(--vert-mousse); color: var(--vert-eco-fonce); animation: floatOrb 6s ease-in-out infinite 1s; }
+  .bio-element.bio-3 { bottom: 10%; left: 10%; background: var(--orange); color: var(--blanc); animation: floatOrb 8s ease-in-out infinite 2s; }
+  .bio-element.bio-4 { bottom: 6%; right: 10%; background: var(--vert-eco); color: var(--blanc); animation: floatOrb 7s ease-in-out infinite 0.5s; }
+  @keyframes floatOrb { 0%,100%{transform:translateY(0) rotate(0);} 50%{transform:translateY(-18px) rotate(8deg);} }
+  .bio-element-pct { font-family: var(--display); font-size: 22px; line-height: 1; }
+  .bio-element-pct small { font-size: 12px; }
+  .bio-element-label { font-size: 8px; letter-spacing: 1.5px; margin-top: 2px; text-transform: uppercase; opacity: 0.95; }
+
+  /* feuilles SVG flottantes */
+  .bio-leaf-shape {
+    position: absolute;
+    color: var(--vert-eco);
+    opacity: 0.5;
+    animation: leafSway 8s ease-in-out infinite;
+  }
+  .bio-leaf-shape.l1 { top: 30%; left: 4%; width: 50px; animation-delay: 0s; }
+  .bio-leaf-shape.l2 { bottom: 30%; right: 6%; width: 60px; animation-delay: 2s; }
+  .bio-leaf-shape.l3 { top: 55%; left: 12%; width: 40px; animation-delay: 4s; }
+  @keyframes leafSway { 0%,100%{transform:rotate(-10deg) translateY(0);} 50%{transform:rotate(10deg) translateY(-12px);} }
+
+  /* ============ Visual 4 : Recyclée ============ */
+  .visual-recycle {
+    background: linear-gradient(135deg, #2A2638 0%, #1B1825 100%);
+    color: var(--blanc);
+  }
+  .recycle-stage {
+    position: relative; width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .recycle-loop {
+    position: relative;
+    width: 340px; height: 340px;
+  }
+  .recycle-ring-rot {
+    position: absolute; inset: 0;
+    animation: spin 20s linear infinite;
+  }
+  @keyframes spin { from{transform:rotate(0);} to{transform:rotate(360deg);} }
+  .recycle-ring-svg { width: 100%; height: 100%; }
+
+  .recycle-source {
+    position: absolute;
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(176,152,232,0.3);
+    backdrop-filter: blur(10px);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--blanc);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+    animation: floatSource 5s ease-in-out infinite;
+  }
+  .recycle-source .src-icon { font-size: 24px; margin-bottom: 2px; }
+  .recycle-source.s1 { top: 0; left: 50%; transform: translate(-50%, -30%); animation-delay: 0s; }
+  .recycle-source.s2 { right: 0; top: 50%; transform: translate(30%, -50%); animation-delay: 1s; }
+  .recycle-source.s3 { bottom: 0; left: 50%; transform: translate(-50%, 30%); animation-delay: 2s; }
+  .recycle-source.s4 { left: 0; top: 50%; transform: translate(-30%, -50%); animation-delay: 3s; }
+  @keyframes floatSource { 0%,100%{ scale: 1;} 50%{ scale: 1.1;} }
+
+  .recycle-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #B098E8 0%, #6E55B8 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: var(--blanc);
+    text-align: center;
+    box-shadow: 0 0 60px rgba(176,152,232,0.5), 0 30px 60px rgba(0,0,0,0.4);
+    z-index: 3;
+  }
+  .recycle-center-pct { font-family: var(--display); font-size: 54px; font-weight: 500; line-height: 1; }
+  .recycle-center-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; opacity: 0.9; }
+
+  /* trails */
+  .recycle-trail {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--vert-mousse);
+    box-shadow: 0 0 12px var(--vert-mousse);
+    animation: trailLoop 4s linear infinite;
+    transform-origin: 0 0;
+  }
+  .recycle-trail.t2 { animation-delay: 1s; background: var(--orange-clair); box-shadow: 0 0 12px var(--orange-clair); }
+  .recycle-trail.t3 { animation-delay: 2s; background: #B098E8; box-shadow: 0 0 12px #B098E8; }
+  .recycle-trail.t4 { animation-delay: 3s; background: var(--vert-mousse); box-shadow: 0 0 12px var(--vert-mousse); }
+  @keyframes trailLoop {
+    from { transform: rotate(0) translateX(140px) rotate(0); opacity: 1; }
+    to   { transform: rotate(360deg) translateX(140px) rotate(-360deg); opacity: 1; }
+  }
+
+  /* ========= CERTIFICATIONS GRID ========= */
+  .certifs {
+    background: var(--gris-clair);
+    padding: 120px 48px;
+    position: relative;
+  }
+  .certifs-inner { max-width: 1400px; margin: 0 auto; }
+  .certifs-header { text-align: center; margin-bottom: 70px; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .section-eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+  .section-title { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 4vw, 52px); line-height: 1.1; color: var(--bleu); letter-spacing: -1px; }
+  .section-title em { color: var(--orange); font-style: italic; font-weight: 300; }
+  .section-intro { font-size: 17px; line-height: 1.7; color: var(--gris); margin-top: 20px; font-weight: 300; }
+
+  .certifs-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .certif-card {
+    background: var(--blanc);
+    border-radius: 22px;
+    padding: 32px 26px;
+    text-align: center;
+    border: 1px solid rgba(31,58,95,0.08);
+    transition: all 0.4s var(--transition);
+    display: flex; flex-direction: column; align-items: center;
+    gap: 18px;
+  }
+  .certif-card:hover { transform: translateY(-6px); box-shadow: 0 28px 50px -20px rgba(31,58,95,0.18); border-color: var(--vert-eco); }
+  .certif-visual {
+    width: 110px; height: 110px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--gris-clair);
+    border-radius: 20px;
+    padding: 14px;
+    overflow: hidden;
+  }
+  .certif-visual img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .certif-name { font-family: var(--display); font-size: 20px; color: var(--bleu); font-weight: 500; }
+  .certif-desc { font-size: 13px; color: var(--gris); line-height: 1.5; font-weight: 300; }
+
+  /* badge A+ stylisé */
+  .badge-a-plus { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+  /* ========= BRANDS ROW ========= */
+  .brands {
+    padding: 100px 48px;
+    background: var(--blanc);
+  }
+  .brands-inner { max-width: 1400px; margin: 0 auto; }
+  .brands-header { text-align: center; margin-bottom: 50px; }
+  .brands-row {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
+  }
+  .brand-card {
+    background: var(--gris-clair);
+    border: 1px solid rgba(31,58,95,0.06);
+    border-radius: 18px;
+    padding: 26px 18px;
+    text-align: center;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s var(--transition);
+  }
+  .brand-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -16px rgba(31,58,95,0.15); border-color: var(--vert-eco); background: var(--blanc); }
+  .brand-card.dark-bg { background: var(--bleu-fonce); border-color: transparent; }
+  .brand-card.dark-bg:hover { background: var(--bleu); }
+  .brand-card.dark-bg .brand-card-tag { color: var(--vert-mousse); }
+  .brand-card.dark-bg .brand-card-name { color: var(--blanc); }
+  .brand-logo-wrap { height: 60px; display: flex; align-items: center; justify-content: center; padding: 4px; }
+  .brand-logo-wrap img { max-height: 50px; max-width: 90%; object-fit: contain; }
+  .brand-card-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--vert-eco); }
+  .brand-card-name { font-size: 13px; color: var(--bleu); font-weight: 500; line-height: 1.4; }
+
+  /* ========= CTA FINAL ========= */
+  .final-cta {
+    background:
+      radial-gradient(circle at 20% 50%, rgba(168,230,190,0.2), transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(240,127,44,0.15), transparent 50%),
+      var(--bleu-fonce);
+    color: var(--blanc);
+    padding: 120px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 2; }
+  .final-cta h2 {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(36px, 4vw, 60px);
+    line-height: 1.05; letter-spacing: -1.5px;
+    margin-bottom: 24px;
+  }
+  .final-cta h2 em {
+    color: var(--vert-mousse); font-style: italic;
+  }
+  .final-cta p {
+    font-size: 18px; line-height: 1.7;
+    color: rgba(255,255,255,0.8); font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .final-cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 34px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none; border-radius: 50px;
+    transition: all 0.3s var(--transition);
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--orange); color: var(--blanc); }
+  .btn-primary:hover { background: var(--orange-clair); transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(240,127,44,0.5); }
+  .btn-ghost { background: transparent; color: var(--blanc); border: 1.5px solid rgba(255,255,255,0.35); }
+  .btn-ghost:hover { border-color: var(--vert-mousse); background: rgba(168,230,190,0.1); }
+
+  /* ========= FOOTER ========= */
+  footer { background: var(--noir); color: var(--blanc); padding: 60px 48px 28px; }
+  .footer-inner { max-width: 1600px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-brand-text { font-family: var(--display); font-size: 28px; line-height: 1.2; margin-bottom: 18px; color: var(--blanc); font-weight: 300; }
+  .footer-brand-text em { color: var(--orange); font-style: italic; }
+  .footer-desc { font-size: 14px; opacity: 0.65; line-height: 1.6; max-width: 380px; font-weight: 300; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 22px; color: var(--orange); }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom { padding-top: 30px; font-size: 12px; color: rgba(255,255,255,0.45); text-align: center; }
+  .footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--orange); }
+
+  /* ========= REVEAL ANIMATION ========= */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s var(--transition), transform 0.9s var(--transition); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ========= RESPONSIVE ========= */
+  @media (max-width: 1024px) {
+    .stats-band-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(3) { border-left: 0; }
+    .engagement-inner { grid-template-columns: 1fr !important; gap: 50px; }
+    .engagement.reverse .engagement-inner { grid-template-areas: "content" "visual"; }
+    .certifs-grid { grid-template-columns: repeat(2, 1fr); }
+    .brands-row { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .header-inner { padding: 14px 20px; }
+    .nav { display: none; }
+    .logo-symbol { width: 56px; height: 70px; }
+    .logo-text { font-size: 26px; }
+    .hero { padding: 120px 20px 60px; }
+    .stats-band { padding: 40px 20px; }
+    .stats-band-inner { gap: 14px; }
+    .stat-item { padding: 4px; }
+    .engagement { padding: 80px 20px; }
+    .engagement-visual { min-height: 380px; }
+    .certifs, .brands, .final-cta { padding: 80px 20px; }
+    .certifs-grid, .brands-row { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Splash thumbnail pour le bundler — visible pendant le décompactage des assets -->
+<template id="__bundler_thumbnail" data-bg-color="#FBF7F0">
+<svg viewbox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="thbPlanet" cx="40%" cy="35%" r="65%">
+<stop offset="0%" stop-color="#B8E89C"/>
+<stop offset="60%" stop-color="#5BB048"/>
+<stop offset="100%" stop-color="#1E5A2C"/>
+</radialGradient>
+<linearGradient id="thbBurst" x1="0%" y1="50%" x2="100%" y2="50%">
+<stop offset="0%" stop-color="#0091FF" stop-opacity="0.7"/>
+<stop offset="35%" stop-color="#D63384" stop-opacity="0.9"/>
+<stop offset="65%" stop-color="#F07F2C" stop-opacity="0.9"/>
+<stop offset="100%" stop-color="#5BB048" stop-opacity="0.7"/>
+</linearGradient>
+</defs>
+<!-- explosion de poudre arc-en-ciel -->
+<ellipse cx="600" cy="400" rx="540" ry="180" fill="url(#thbBurst)" opacity="0.7"/>
+<!-- planète éco au centre -->
+<circle cx="600" cy="400" r="160" fill="url(#thbPlanet)"/>
+<!-- titre stylisé -->
+<text x="600" y="250" font-family="Georgia,serif" font-size="56" font-style="italic" fill="#1F3A5F" text-anchor="middle" font-weight="300">la couleur, <tspan fill="#4A9F38" font-weight="600">responsable</tspan>.</text>
+<!-- trait orange signature -->
+<rect x="560" y="610" width="80" height="5" rx="2" fill="#F07F2C"/>
+</svg>
+</template>
+
+<!-- ========= HEADER ========= -->
+<header class="header">
+<div class="header-inner">
+<a class="logo" href="index.html">
+<img alt="Logo L'Atelier" class="logo-symbol" src="images/logo.png"/>
+<div class="logo-text-wrap">
+<span class="logo-text">l'atelier</span>
+<span class="logo-baseline">MARCHAND DE COULEURS</span>
+</div>
+</a>
+<nav class="nav">
+<a href="gammes.html">Nos gammes</a>
+<a href="nuanciers.html">Nuanciers</a>
+<a class="is-active" href="engagement-eco.html">Engagement éco</a>
+<a href="revetement-mural.html">Revêtement mural</a>
+<a href="revetement-sol.html">Revêtement de sol</a>
+<a href="documents.html">Documents</a>
+<a class="nav-cta" href="#">Espace pro</a>
+</nav>
+</div>
+</header>
+
+<!-- ========= HERO ========= -->
+<section class="hero" data-screen-label="01 Hero">
+<canvas class="hero-canvas" id="pigmentCanvas"></canvas>
+
+<!-- PLANÈTE ÉCO au CENTRE : symbole environnemental, point d'impact de l'explosion -->
+<div class="hero-planet" id="heroPlanet" aria-hidden="true">
+<div class="planet-sphere">
+<img class="planet-img" alt="" src="images/planete-eco.png"/>
+<!-- nuage blanc qui dérive devant la planète, contenu dans la sphère -->
+<svg class="planet-cloud" viewbox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="none">
+<defs>
+<radialGradient id="cloudGrad" cx="50%" cy="50%" r="55%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+<stop offset="70%" stop-color="#F8FFF4" stop-opacity="0.5"/>
+<stop offset="100%" stop-color="#F8FFF4" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<ellipse cx="120" cy="60" rx="110" ry="34" fill="url(#cloudGrad)"/>
+<ellipse cx="80" cy="52" rx="32" ry="18" fill="#FFFFFF" opacity="0.6"/>
+<ellipse cx="155" cy="48" rx="38" ry="20" fill="#FFFFFF" opacity="0.7"/>
+<ellipse cx="190" cy="68" rx="28" ry="14" fill="#FFFFFF" opacity="0.5"/>
+<ellipse cx="55" cy="70" rx="22" ry="12" fill="#FFFFFF" opacity="0.5"/>
+</svg>
+</div>
+</div>
+
+<!-- TEXTE : titre en haut, sous-titre + chips en bas du hero -->
+<div class="hero-inner">
+<div class="hero-top">
+<span class="hero-eyebrow">Engagement environnemental</span>
+<h1 class="hero-title" style="height: 41px">
+La couleur, <em>responsable</em>.
+</h1>
+<span class="hero-title-dash" aria-hidden="true"></span>
+</div>
+<div class="hero-bottom">
+<p class="hero-sub">
+Du pigment au pinceau, chaque teinte raconte son histoire. Nos peintures sont
+<strong>conformes RE2020</strong>, <strong>bas carbone</strong>,
+<strong>biosourcées</strong> et <strong>recyclées</strong>.
+</p>
+<div class="hero-chips">
+<a class="chip" href="#re2020"><span class="chip-dot c-re"></span>Conforme <strong>RE2020</strong></a>
+<a class="chip" href="#bas-carbone"><span class="chip-dot c-bc"></span>Peinture <strong>bas carbone</strong></a>
+<a class="chip" href="#biosource"><span class="chip-dot c-bs"></span>Peinture <strong>biosourcée</strong></a>
+<a class="chip" href="#recycle"><span class="chip-dot c-rc"></span>Peinture <strong>recyclée</strong></a>
+</div>
+</div>
+</div>
+
+<div class="hero-scroll">
+<span>découvrir</span>
+<span class="hero-scroll-line"></span>
+</div>
+</section>
+
+<!-- ========= SIGNATURE BAND (brand identity) ========= -->
+<div class="signature-section" aria-hidden="true">
+<div class="signature-track">
+<div class="signature-item">
+<span>Marchand de couleurs</span><span class="signature-dot"></span>
+<em>Engagement éco</em><span class="signature-dot"></span>
+<span>Fabriqué en France</span><span class="signature-dot"></span>
+<em>RE2020</em><span class="signature-dot"></span>
+<span>Bas carbone</span><span class="signature-dot"></span>
+<em>Biosourcée</em><span class="signature-dot"></span>
+<span>Recyclée</span><span class="signature-dot"></span>
+<em>Depuis 2011</em><span class="signature-dot"></span>
+</div>
+<div class="signature-item">
+<span>Marchand de couleurs</span><span class="signature-dot"></span>
+<em>Engagement éco</em><span class="signature-dot"></span>
+<span>Fabriqué en France</span><span class="signature-dot"></span>
+<em>RE2020</em><span class="signature-dot"></span>
+<span>Bas carbone</span><span class="signature-dot"></span>
+<em>Biosourcée</em><span class="signature-dot"></span>
+<span>Recyclée</span><span class="signature-dot"></span>
+<em>Depuis 2011</em><span class="signature-dot"></span>
+</div>
+</div>
+</div>
+
+<!-- ========= STATS BAND ========= -->
+<section class="stats-band">
+<div class="stats-band-inner">
+<div class="stat-item">
+<div class="stat-num">98<small>%</small></div>
+<div class="stat-label">Biosourcée</div>
+<div class="stat-sub">Algo Pro · matières végétales</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">56<small>%</small></div>
+<div class="stat-label">Recyclée</div>
+<div class="stat-sub">Comus IZI R · pare-brise & marbre</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">−1<small>g/L</small></div>
+<div class="stat-label">COV L'Atelier 45</div>
+<div class="stat-sub">Sans solvants nocifs</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">100<small>%</small></div>
+<div class="stat-label">Fabriqué en France</div>
+<div class="stat-sub">Avec notre partenaire Théolaur</div>
+</div>
+</div>
+</section>
+
+<!-- ========= ENGAGEMENT 1 : RE2020 ========= -->
+<section class="engagement" id="re2020" data-screen-label="02 RE2020">
+<div class="engagement-inner reveal">
+<div class="engagement-content">
+<span class="engagement-eyebrow">01 — Conformité réglementaire</span>
+<h2 class="engagement-title">Toutes nos gammes,<br/><em>conformes RE2020</em>.</h2>
+<p class="engagement-text">
+La <strong>Réglementation Environnementale 2020</strong> impose aux bâtiments neufs un bilan carbone strict et une qualité de l'air intérieur irréprochable. Nos gammes propres <strong>L'Atelier 45</strong> et <strong>TITANE hydro</strong> sont conçues pour répondre à ces exigences, dès aujourd'hui.
+</p>
+<ul class="engagement-list">
+<li>
+<span class="li-icon">✓</span>
+<div><strong>Émissions COV maîtrisées</strong> — Classement A+ « émissions dans l'air intérieur ».</div>
+</li>
+<li>
+<span class="li-icon">✓</span>
+<div><strong>FDES vérifiée</strong> — Fiches de Déclaration Environnementale et Sanitaire INIES.</div>
+</li>
+<li>
+<span class="li-icon">✓</span>
+<div><strong>Approche cycle de vie</strong> — Du pigment au pot, chaque étape est tracée et optimisée.</div>
+</li>
+<li>
+<span class="li-icon">✓</span>
+<div><strong>Compatible MaPrimeRénov' / HQE</strong> — Solutions éligibles aux chantiers de rénovation aidés.</div>
+</li>
+</ul>
+<a class="engagement-cta" href="gammes.html">Voir les gammes conformes <span class="engagement-cta-arrow">→</span></a>
+</div>
+
+<div class="engagement-visual visual-re2020">
+<div class="re-stage">
+<div class="re-leaves">
+<div class="re-leaf"></div>
+<div class="re-leaf"></div>
+<div class="re-leaf"></div>
+<div class="re-leaf"></div>
+</div>
+<div class="re-orbit"></div>
+<div class="re-orbit re-orbit-2"></div>
+<div class="re-orbit re-orbit-3"></div>
+<div class="re-core">
+<div class="re-label-top">CONFORME</div>
+<div class="re-number">RE<em>2020</em></div>
+<div class="re-label-bottom">BAS CARBONE</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========= ENGAGEMENT 2 : BAS CARBONE ========= -->
+<section class="engagement reverse" id="bas-carbone" data-screen-label="03 Bas carbone" style="background: var(--gris-clair);">
+<div class="engagement-inner reveal">
+<div class="engagement-content">
+<span class="engagement-eyebrow" style="color: var(--vert-eco);">02 — Empreinte carbone réduite</span>
+<h2 class="engagement-title">Peindre <span class="accent-green">moins lourd</span>,<br/>pour la planète.</h2>
+<p class="engagement-text">
+Le bâtiment représente <strong>près d'un quart des émissions de CO₂ en France</strong>. Nos peintures bas carbone réduisent jusqu'à <strong>−70%</strong> l'empreinte d'une finition par rapport à une formulation conventionnelle. Sélection rigoureuse de partenaires, formulations à base de résines végétales, transport optimisé, fabrication locale.
+</p>
+<ul class="engagement-list">
+<li>
+<span class="li-icon">↓</span>
+<div><strong>SOFEC</strong> — Gamme Écolabel européen, formulations bas COV pour chantiers HQE.</div>
+</li>
+<li>
+<span class="li-icon">↓</span>
+<div><strong>DRAGOPAINT</strong> — Fabricant belge engagé, gamme bas carbone pour façades & intérieurs.</div>
+</li>
+<li>
+<span class="li-icon">↓</span>
+<div>Fabrication française — Production avec Théolaur (Colomiers-31) : circuits courts, énergie maîtrisée.</div>
+</li>
+<li>
+<span class="li-icon">↓</span>
+<div><strong>Pas de surconsommation</strong> — Conseils colorimétriques pour acheter juste, pas trop.</div>
+</li>
+</ul>
+<a class="engagement-cta" href="gammes.html" style="background: var(--vert-eco-fonce);">Découvrir les marques bas carbone <span class="engagement-cta-arrow">→</span></a>
+</div>
+
+<div class="engagement-visual visual-bascarbone">
+<span class="co2-unit">kg CO₂ eq / m²</span>
+<div class="co2-particles">
+<!-- particules ascendantes -->
+</div>
+<div class="co2-chart">
+<div class="co2-bar standard">
+<span class="co2-bar-value">1,8 Kg/co2</span>
+<div class="co2-bar-fill"></div>
+<span class="co2-bar-label">Peinture<br/>standard</span>
+</div>
+<div class="co2-bar notre">
+<span class="co2-bar-value">1,2 Kg/co2</span>
+<div class="co2-bar-fill"></div>
+<span class="co2-bar-label"><strong>L'Atelier</strong>Gamme 45</span>
+</div>
+<div class="co2-bar eco">
+<span class="co2-bar-value">0,545Kg/co2</span>
+<div class="co2-bar-fill"></div>
+<span class="co2-bar-label">BAS CARBONE· DRAGOPAINT</span>
+</div>
+</div>
+<div class="co2-axis"></div>
+</div>
+</div>
+</section>
+
+<!-- ========= ENGAGEMENT 3 : BIOSOURCÉE ========= -->
+<section class="engagement" id="biosource" data-screen-label="04 Biosourcee">
+<div class="engagement-inner reveal">
+<div class="engagement-content">
+<span class="engagement-eyebrow">03 — Matières premières végétales</span>
+<h2 class="engagement-title">Quand les <em>algues</em><br/>remplacent le pétrole.</h2>
+<p class="engagement-text">
+Une peinture <strong>biosourcée</strong>, c'est une formulation qui remplace tout ou partie des résines pétrochimiques par des matières renouvelables : <strong>algues, ricin, lin, amidon de maïs</strong>. Le résultat : une couleur identique, une conscience apaisée.
+</p>
+<ul class="engagement-list">
+<li>
+<span class="li-icon">🌊</span>
+<div><strong>ALGO PRO Velours · 98% biosourcée</strong> — Liant à base d'algues bretonnes. La peinture la plus végétale du marché.</div>
+</li>
+<li>
+<span class="li-icon">🌱</span>
+<div><strong>TITANE Hydro MV evo · 31,5% biosourcée</strong> — Notre gamme premium, fabriquée en France, garnissante et lessivable.</div>
+</li>
+<li>
+<span class="li-icon">🌿</span>
+<div><strong>KEIM minérales</strong> — Lasures et peintures silicates, 100% minérales, sans plastique.</div>
+</li>
+<li>
+<span class="li-icon">⚗️</span>
+<div><strong>Sans co-solvants</strong> — Faibles odeurs, nettoyage à l'eau, application en pièces occupées.</div>
+</li>
+</ul>
+<a class="engagement-cta" href="gammes.html">Voir les peintures biosourcées <span class="engagement-cta-arrow">→</span></a>
+</div>
+
+<div class="engagement-visual visual-biosource">
+<div class="bio-pot-stage">
+<!-- feuilles SVG décoratives -->
+<svg class="bio-leaf-shape l1" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2C7 2 3 6 3 12c0 3 1 5 3 7l1-1c-1-2-2-4-2-6 0-5 3-9 7-9 5 0 8 4 8 9 0 5-3 8-8 8-2 0-4-1-5-2l-1 1c1 2 4 3 6 3 6 0 10-5 10-11 0-6-4-10-10-10z"/></svg>
+<svg class="bio-leaf-shape l2" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2C7 2 3 6 3 12c0 3 1 5 3 7l1-1c-1-2-2-4-2-6 0-5 3-9 7-9 5 0 8 4 8 9 0 5-3 8-8 8-2 0-4-1-5-2l-1 1c1 2 4 3 6 3 6 0 10-5 10-11 0-6-4-10-10-10z"/></svg>
+<svg class="bio-leaf-shape l3" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2C7 2 3 6 3 12c0 3 1 5 3 7l1-1c-1-2-2-4-2-6 0-5 3-9 7-9 5 0 8 4 8 9 0 5-3 8-8 8-2 0-4-1-5-2l-1 1c1 2 4 3 6 3 6 0 10-5 10-11 0-6-4-10-10-10z"/></svg>
+
+<!-- éléments biosourcés flottants -->
+<div class="bio-element bio-1">
+<div class="bio-element-pct">98<small>%</small></div>
+<div class="bio-element-label">Algues</div>
+</div>
+<div class="bio-element bio-2">
+<div class="bio-element-pct">31<small>%</small></div>
+<div class="bio-element-label">Titane MV</div>
+</div>
+<div class="bio-element bio-3">
+<div class="bio-element-pct">A<small>+</small></div>
+<div class="bio-element-label">Air sain</div>
+</div>
+<div class="bio-element bio-4">
+<div class="bio-element-pct">0<small>g/L</small></div>
+<div class="bio-element-label">Solvants</div>
+</div>
+
+<!-- pot Algo Pro central -->
+<div class="bio-pot">
+<img alt="Pot Algo Pro Velours" src="images/pot-algo-pro-velours.webp"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========= ENGAGEMENT 4 : RECYCLÉE ========= -->
+<section class="engagement reverse" id="recycle" data-screen-label="05 Recyclee" style="background: var(--noir); color: var(--blanc);">
+<div class="engagement-inner reveal">
+<div class="engagement-content">
+<span class="engagement-eyebrow" style="color: #B098E8;">04 — Économie circulaire</span>
+<h2 class="engagement-title" style="color: var(--blanc);">Donner une <em style="color:#B098E8;">seconde vie</em><br/>à la matière.</h2>
+<p class="engagement-text" style="color: rgba(255,255,255,0.75);">
+Saviez-vous qu'on peut peindre un mur avec d'anciens <strong style="color:var(--blanc);">pare-brise de voiture</strong> et des <strong style="color:var(--blanc);">chutes de marbre</strong> ? La gamme <strong style="color:var(--blanc);">COMUS IZI R</strong> intègre <strong style="color:var(--blanc);">56% de matières recyclées</strong> dans sa formulation. La peinture devient un acteur de l'économie circulaire.
+</p>
+<ul class="engagement-list" style="border-color: rgba(255,255,255,0.1);">
+<li style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.08);">
+<span class="li-icon" style="background:rgba(176,152,232,0.2); color:#B098E8;">♻</span>
+<div><strong style="color:var(--blanc);">Verre de pare-brise concassé</strong> — Récupéré dans les centres de recyclage auto, broyé en microsphères.</div>
+</li>
+<li style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.08);">
+<span class="li-icon" style="background:rgba(176,152,232,0.2); color:#B098E8;">♻</span>
+<div><strong style="color:var(--blanc);">Chutes de marbre</strong> — Issues de carrières françaises, charges minérales recyclées.</div>
+</li>
+<li style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.08);">
+<span class="li-icon" style="background:rgba(176,152,232,0.2); color:#B098E8;">♻</span>
+<div><strong style="color:var(--blanc);">Eaux industrielles valorisées</strong> — Cycle fermé dans l'usine de fabrication.</div>
+</li>
+<li style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.08);">
+<span class="li-icon" style="background:rgba(176,152,232,0.2); color:#B098E8;">♻</span>
+<div><strong style="color:var(--blanc);">Emballages éco-conçus</strong> — Pots en plastique recyclé, étiquetage minimal.</div>
+</li>
+</ul>
+<a class="engagement-cta" href="gammes.html" style="background: #B098E8; color: var(--bleu-fonce);">Voir COMUS IZI R <span class="engagement-cta-arrow">→</span></a>
+</div>
+
+<div class="engagement-visual visual-recycle">
+<div class="recycle-stage">
+<div class="recycle-loop">
+<!-- sources -->
+<div class="recycle-source s1">
+<span class="src-icon">🚗</span>
+<span>Pare-brise</span>
+</div>
+<div class="recycle-source s2">
+<span class="src-icon">⛰️</span>
+<span>Marbre</span>
+</div>
+<div class="recycle-source s3">
+<span class="src-icon">💧</span>
+<span>Eau</span>
+</div>
+<div class="recycle-source s4">
+<span class="src-icon">📦</span>
+<span>Pots</span>
+</div>
+
+<!-- ring rotation -->
+<div class="recycle-ring-rot">
+<svg class="recycle-ring-svg" viewbox="0 0 340 340">
+<defs>
+<linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#A8E6BE" stop-opacity="0.6"/>
+<stop offset="50%" stop-color="#B098E8" stop-opacity="0.8"/>
+<stop offset="100%" stop-color="#FFA968" stop-opacity="0.6"/>
+</linearGradient>
+</defs>
+<circle cx="170" cy="170" r="140" fill="none" stroke="url(#ringGrad)" stroke-width="2" stroke-dasharray="8 6"/>
+</svg>
+</div>
+
+<!-- trails -->
+<div class="recycle-trail t1"></div>
+<div class="recycle-trail t2"></div>
+<div class="recycle-trail t3"></div>
+<div class="recycle-trail t4"></div>
+
+<!-- center -->
+<div class="recycle-center">
+<div class="recycle-center-pct">56<small style="font-size:0.5em;">%</small></div>
+<div class="recycle-center-label">Recyclée</div>
+<div class="recycle-center-label" style="margin-top:2px; color:rgba(255,255,255,0.7); font-size:9px;">COMUS IZI R</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========= BRAND PROMISE : engagement L'Atelier ========= -->
+<section class="brand-promise" data-screen-label="06 Promesse L'Atelier">
+<div class="brand-promise-inner reveal">
+<div class="brand-promise-mark">
+<img class="brand-promise-logo" alt="L'Atelier" src="images/logo.png"/>
+<div class="brand-promise-signature">
+"La couleur qui dure,<br/>la planète qu'on protège."
+</div>
+</div>
+<div class="brand-promise-content">
+<div class="brand-promise-eyebrow">La promesse L'Atelier</div>
+<h2 class="brand-promise-title">Marchand de couleurs<br/><em>depuis 2011</em>.</h2>
+<p class="brand-promise-text">
+Fabricant et distributeur français de peintures professionnelles, nous concevons nos propres gammes <strong>L'Atelier 45</strong> et <strong>TITANE hydro</strong> avec notre partenaire historique Théolaur. Chaque pot porte une promesse : <strong>performance technique, fabrication française et engagement environnemental</strong>.
+</p>
+<div class="brand-promise-pillars">
+<div class="brand-promise-pillar">
+<span class="brand-promise-pillar-num">01</span>
+<div class="brand-promise-pillar-text">Fabrication française
+Avec Théolaur, partenaire fabricant à Colomiers (31).</div>
+</div>
+<div class="brand-promise-pillar">
+<span class="brand-promise-pillar-num">02</span>
+<div class="brand-promise-pillar-text"><strong>Conseil pro</strong>Coloristes et techniciens, sélection rigoureuse.</div>
+</div>
+<div class="brand-promise-pillar">
+<span class="brand-promise-pillar-num">03</span>
+<div class="brand-promise-pillar-text"><strong>Bas carbone</strong>Sélection responsable et conforme RE2020.</div>
+</div>
+<div class="brand-promise-pillar">
+<span class="brand-promise-pillar-num">04</span>
+<div class="brand-promise-pillar-text"><strong>Deux magasins</strong>Mérignac et La Teste-de-Buch, Gironde.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========= CERTIFICATIONS ========= -->
+<section class="certifs" id="certifications">
+<div class="certifs-inner">
+<div class="certifs-header reveal">
+<span class="section-eyebrow">— Labels & certifications</span>
+<h2 class="section-title">Des engagements <em>vérifiés</em>.</h2>
+<p class="section-intro">Parce que des mots ne suffisent pas, chaque promesse est validée par un organisme indépendant.</p>
+</div>
+<div class="certifs-grid reveal">
+<div class="certif-card">
+<div class="certif-visual">
+<img alt="A+ Émissions dans l'air intérieur" src="images/pictos/aplus-emissions.webp"/>
+</div>
+<h3 class="certif-name">Classe A+</h3>
+<p class="certif-desc">Émissions dans l'air intérieur : la meilleure classe sanitaire pour les peintures murales.</p>
+</div>
+<div class="certif-card">
+<div class="certif-visual">
+<img alt="FDES vérifiée INIES" src="images/pictos/fdes-verifiee.webp"/>
+</div>
+<h3 class="certif-name">FDES vérifiée</h3>
+<p class="certif-desc">Fiche de Déclaration Environnementale et Sanitaire validée par INIES — base RE2020.</p>
+</div>
+<div class="certif-card">
+<div class="certif-visual" style="background: var(--vert-eco-fonce);">
+<img alt="Badge RE2020" src="images/badge-re2020.gif" style="border-radius: 50%;"/>
+</div>
+<h3 class="certif-name">RE2020 compatible</h3>
+<p class="certif-desc">Toutes nos gammes propres répondent aux exigences carbone et air intérieur de la RE2020.</p>
+</div>
+<div class="certif-card">
+<div class="certif-visual" style="background: var(--blanc); padding: 0;">
+<img alt="Réseau AGIR" src="images/logo-agir.png"/>
+</div>
+<h3 class="certif-name">Réseau AGIR</h3>
+<p class="certif-desc">Membre du réseau national des marchands de couleurs indépendants engagés.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========= MARQUES PARTENAIRES ÉCO ========= -->
+<section class="brands">
+<div class="brands-inner">
+<div class="brands-header reveal">
+<span class="section-eyebrow">— Nos partenaires éco</span>
+<h2 class="section-title">Une sélection <em>responsable</em>.</h2>
+<p class="section-intro">Nous ne distribuons que ce que nous appliquerions chez nous. Voici les marques qui partagent nos valeurs.</p>
+</div>
+<div class="brands-row reveal">
+<a class="brand-card dark-bg" href="https://comus.fr" rel="noopener" target="_blank">
+<div class="brand-logo-wrap"><img alt="Comus" src="images/marques/logo-comus.webp"/></div>
+<span class="brand-card-tag">♻ 56% Recyclée</span>
+<span class="brand-card-name">COMUS IZI R</span>
+</a>
+<a class="brand-card dark-bg" href="https://www.dragopaint.be" rel="noopener" target="_blank">
+<div class="brand-logo-wrap"><img alt="Dragopaint" src="images/marques/logo-dragopaint.webp"/></div>
+<span class="brand-card-tag">↓ BAS CARBONE 0.545KG/CO2/UF</span>
+<span class="brand-card-name">DRAGOPAINT</span>
+</a>
+<a class="brand-card" href="https://sofec.net/" rel="noopener" target="_blank">
+<div class="brand-logo-wrap"><img alt="Sofec" src="images/marques/logo-sofec.webp"/></div>
+<span class="brand-card-tag">Écolabel UE</span>
+<span class="brand-card-name">SOFEC</span>
+</a>
+<a class="brand-card" href="https://www.soframap.com/" rel="noopener" target="_blank">
+<div class="brand-logo-wrap"><img alt="Soframap" src="images/marques/logo-soframap.webp"/></div>
+<span class="brand-card-tag">🇫🇷 Français</span>
+<span class="brand-card-name">SOFRAMAP</span>
+</a>
+<a class="brand-card" href="https://www.theolaur.com/" rel="noopener" target="_blank">
+<div class="brand-logo-wrap"><img alt="Théolaur" src="images/marques/logo-theolaur.webp"/></div>
+<span class="brand-card-tag">Notre fabricant</span>
+<span class="brand-card-name">THÉOLAUR</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- ========= CTA FINAL ========= -->
+<section class="final-cta">
+<div class="final-cta-inner reveal">
+<h2>Vos chantiers,<br/><em>nos engagements</em>.</h2>
+<p>Devis bas carbone, conseils RE2020, sélection biosourcée, échantillons : passez en magasin ou contactez-nous. Nos coloristes répondent en moins de 24h.</p>
+<div class="final-cta-actions">
+<a class="btn btn-primary" href="gammes.html">Voir nos gammes éco <span>→</span></a>
+<a class="btn btn-ghost" href="index.html#contact">Demander un conseil</a>
+</div>
+</div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-text">l'atelier<br/><em>marchand de couleurs</em></div>
+<p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes L'Atelier 45 et TITANE hydro, fabriquées en France. Engagement éco, conformité RE2020.</p>
+</div>
+<div class="footer-col">
+<h4>Engagement éco</h4>
+<ul>
+<li><a href="#re2020">Conformité RE2020</a></li>
+<li><a href="#bas-carbone">Bas carbone</a></li>
+<li><a href="#biosource">Biosourcée</a></li>
+<li><a href="#recycle">Recyclée</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Le site</h4>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="gammes.html">Nos gammes</a></li>
+<li><a href="nuanciers.html">Nuanciers</a></li>
+<li><a href="documents.html">Documents techniques</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 L'Atelier — Marchand de couleurs · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a></div>
+</div>
+</footer>
+
+<script>
+  // ============ HERO POUDRE 3D — 4 PHASES EN BOUCLE ============
+  // 1) INCOMING : 2 jets de poudre arrivent des bords (gauche froids, droite chauds)
+  //              et convergent vers le logo au centre
+  // 2) IMPACT   : à la rencontre, explosion radiale arc-en-ciel sur le logo
+  // 3) SETTLE   : le nuage reste suspendu (effet "frozen" comme la photo)
+  // 4) FALL     : la poudre retombe en pluie sous gravité
+  // Puis loop.
+  (function() {
+    const canvas = document.getElementById('pigmentCanvas');
+    const heroSection = document.querySelector('.hero');
+    const planetEl = document.getElementById('heroPlanet');
+    if (!canvas || !heroSection) return;
+    const ctx = canvas.getContext('2d');
+
+    let W = 0, H = 0;
+    let origin = { x: 0, y: 0 };
+    let particles = [];
+    let mouse = { x: -9999, y: -9999, active: false };
+
+    // Durée des phases (ms)
+    const DUR = {
+      INCOMING: 1600,
+      IMPACT: 900,
+      SETTLE: 3000,
+      FALL: 2500,
+    };
+    let phase = 'INCOMING';
+    let phaseStart = performance.now();
+
+    // PALETTE arc-en-ciel ULTRA SATURÉE (pure-hue, comme la photo de référence)
+    const STOPS = [
+      { t: 0.00, c: [0, 145, 255] },    // bleu pur
+      { t: 0.16, c: [100, 80, 255] },   // bleu-violet
+      { t: 0.30, c: [180, 50, 255] },   // violet vif
+      { t: 0.45, c: [255, 30, 200] },   // magenta éclatant
+      { t: 0.55, c: [255, 40, 110] },   // rose-rouge
+      { t: 0.68, c: [255, 130, 30] },   // orange L'Atelier saturé
+      { t: 0.80, c: [255, 210, 40] },   // jaune doré
+      { t: 0.90, c: [140, 230, 60] },   // vert lime
+      { t: 1.00, c: [40, 200, 90] },    // vert éco
+    ];
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function rgbAt(t) {
+      t = Math.max(0, Math.min(0.9999, t));
+      for (let i = 0; i < STOPS.length - 1; i++) {
+        if (t <= STOPS[i + 1].t) {
+          const local = (t - STOPS[i].t) / (STOPS[i + 1].t - STOPS[i].t);
+          return {
+            r: Math.round(lerp(STOPS[i].c[0], STOPS[i + 1].c[0], local)),
+            g: Math.round(lerp(STOPS[i].c[1], STOPS[i + 1].c[1], local)),
+            b: Math.round(lerp(STOPS[i].c[2], STOPS[i + 1].c[2], local)),
+          };
+        }
+      }
+      const last = STOPS[STOPS.length - 1].c;
+      return { r: last[0], g: last[1], b: last[2] };
+    }
+
+    function recomputeOrigin() {
+      // Centre la planète DYNAMIQUEMENT entre hero-top et hero-bottom
+      const heroRect = heroSection.getBoundingClientRect();
+      const topEl = heroSection.querySelector('.hero-top');
+      const bottomEl = heroSection.querySelector('.hero-bottom');
+      if (planetEl && topEl && bottomEl) {
+        const topRect = topEl.getBoundingClientRect();
+        const botRect = bottomEl.getBoundingClientRect();
+        // milieu entre le bas du titre et le haut du sous-texte
+        const midY = (topRect.bottom + botRect.top) / 2 - heroRect.top;
+        // applique la position au div planète (transform en pixels relatifs)
+        planetEl.style.top = midY + 'px';
+        // les coordonnées canvas suivent
+        const r = planetEl.getBoundingClientRect();
+        origin.x = r.left - heroRect.left + r.width / 2;
+        origin.y = r.top - heroRect.top + r.height / 2;
+      } else if (planetEl) {
+        const r = planetEl.getBoundingClientRect();
+        origin.x = r.left - heroRect.left + r.width / 2;
+        origin.y = r.top - heroRect.top + r.height / 2;
+      } else {
+        origin.x = W / 2;
+        origin.y = H / 2;
+      }
+    }
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const rect = heroSection.getBoundingClientRect();
+      W = rect.width; H = rect.height;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      recomputeOrigin();
+    }
+
+    // Projection pseudo-3D : caméra à z = -CAM_DIST, origine = logo
+    const CAM_DIST = 700;
+    function project(p) {
+      const scale = CAM_DIST / (CAM_DIST + p.z);
+      return {
+        sx: origin.x + p.x * scale,
+        sy: origin.y + p.y * scale,
+        scale: scale,
+      };
+    }
+
+    // ============ Particule de poudre ============
+    class P {
+      constructor() { this.respawn(true); }
+      // respawn = remet la particule au point de départ pour la phase INCOMING
+      respawn(initial) {
+        // 50/50 : côté gauche froid OU côté droit chaud
+        this.fromLeft = Math.random() < 0.5;
+
+        // position en coords locales (origine = logo centre)
+        // début : loin sur le côté, hauteur centrée avec dispersion verticale modérée
+        const sideOff = (this.fromLeft ? -1 : 1) * (W * 0.6 + Math.random() * 200);
+        this.x = sideOff;
+        // dispersion verticale : faible (jet concentré horizontalement comme la photo)
+        this.y = (Math.random() - 0.5) * H * 0.45;
+        this.z = (Math.random() - 0.5) * 260;
+
+        // vitesse : vers le centre (vers origine = (0,0))
+        // calcule un vecteur vers origine avec léger jitter d'angle
+        const dx = -this.x + (Math.random() - 0.5) * 60;
+        const dy = -this.y + (Math.random() - 0.5) * 60;
+        const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+        const speed = 7 + Math.random() * 7;
+        this.vx = (dx / dist) * speed;
+        this.vy = (dy / dist) * speed;
+        this.vz = (Math.random() - 0.5) * 0.6;
+
+        // taille : large palette pour effet "poudre" (beaucoup de fins + qq gros)
+        const r = Math.random();
+        if (r < 0.65) this.size = 0.4 + Math.random() * 1.1; // fine poussière (65%)
+        else if (r < 0.95) this.size = 1.2 + Math.random() * 1.8; // grains moyens (30%)
+        else this.size = 2.5 + Math.random() * 2.5; // gros grains (5%)
+
+        // Couleur : fixée par côté + position verticale (gradient comme photo)
+        // gauche : 0 → 0.45 (bleu → magenta)
+        // droite : 0.55 → 1 (rouge → vert)
+        let colorT;
+        if (this.fromLeft) {
+          colorT = 0.45 * (0.4 + 0.6 * Math.random());
+        } else {
+          colorT = 0.55 + 0.45 * Math.random();
+        }
+        // léger ajustement par y : haut = teinte plus chaude/claire
+        colorT += (0.5 - (this.y / H + 0.5)) * 0.06;
+        const c = rgbAt(colorT);
+        this.r = c.r; this.g = c.g; this.b = c.b;
+        this.colorT = colorT;
+
+        this.life = 1;
+        this.spawnDelay = initial ? 0 : Math.random() * 200; // étale les spawns
+        this.bornAt = performance.now();
+        this.exploded = false;
+        // après IMPACT : direction radiale enregistrée
+        this.radDir = { x: 0, y: 0, z: 0 };
+        // turbulence individuelle
+        this.phaseSh = Math.random() * Math.PI * 2;
+      }
+      update(now, currentPhase, phaseT) {
+        // pas de mouvement si pas encore "né"
+        if (now < this.bornAt + this.spawnDelay) return;
+
+        if (currentPhase === 'INCOMING') {
+          // mouvement quasi-rectiligne vers le centre, léger jitter
+          this.x += this.vx;
+          this.y += this.vy;
+          this.z += this.vz;
+          // bruit dans la direction perpendiculaire (vent)
+          this.vy += Math.sin(this.phaseSh + now * 0.003) * 0.04;
+          // friction très faible
+          this.vx *= 0.998;
+          this.vy *= 0.998;
+          // si on dépasse l'origine, on s'arrête (en attendant IMPACT)
+          if (this.fromLeft && this.x > -10) {
+            this.vx = 0; this.x = -10 - Math.random() * 20;
+          } else if (!this.fromLeft && this.x < 10) {
+            this.vx = 0; this.x = 10 + Math.random() * 20;
+          }
+        }
+        else if (currentPhase === 'IMPACT') {
+          if (!this.exploded) {
+            const angle = Math.atan2(this.y, this.x) + (Math.random() - 0.5) * 0.9;
+            const speed = 2.5 + Math.pow(Math.random(), 0.4) * 4;
+            this.vx = Math.cos(angle) * speed;
+            this.vy = Math.sin(angle) * speed - 1.2;
+            this.vz = (Math.random() - 0.5) * 3;
+            // PAS de mélange : on garde la couleur d'origine pour éviter le brun
+            this.exploded = true;
+          }
+          // friction forte pour décélérer rapidement (look "explosion arrêtée")
+          this.vx *= 0.85;
+          this.vy *= 0.85;
+          this.vz *= 0.85;
+          this.x += this.vx;
+          this.y += this.vy;
+          this.z += this.vz;
+        }
+        else if (currentPhase === 'SETTLE') {
+          // suspendu dans l'air : presque immobile, juste une légère respiration
+          this.vx *= 0.82;
+          this.vy *= 0.82;
+          this.vz *= 0.82;
+          // turbulence très faible (le nuage "respire")
+          this.vx += Math.sin(this.phaseSh + now * 0.0008) * 0.025;
+          this.vy += Math.cos(this.phaseSh * 1.3 + now * 0.001) * 0.025;
+          // léger flottement vers le haut pour la "fumée" la plus fine
+          if (this.size < 1.2) this.vy -= 0.008;
+          this.x += this.vx;
+          this.y += this.vy;
+          this.z += this.vz;
+        }
+        else if (currentPhase === 'FALL') {
+          // gravité progressive, plus marquée pour les grains plus lourds (gros)
+          const gravity = 0.06 + this.size * 0.04;
+          this.vy += gravity;
+          this.vx *= 0.992;
+          this.vy *= 0.995;
+          this.vz *= 0.99;
+          // dérive horizontale légère
+          this.vx += Math.sin(this.phaseSh + now * 0.001) * 0.03;
+          this.x += this.vx;
+          this.y += this.vy;
+          this.z += this.vz;
+          // la vie s'estompe doucement pendant la chute
+          this.life -= 0.0035;
+        }
+
+        // souris : léger push 2D
+        if (mouse.active) {
+          const proj = project(this);
+          const dx = proj.sx - mouse.x;
+          const dy = proj.sy - mouse.y;
+          const d2 = dx*dx + dy*dy;
+          if (d2 < 8000) {
+            const f = (8000 - d2) / 8000 * 0.6;
+            this.vx += (dx / Math.sqrt(d2 + 1)) * f;
+            this.vy += (dy / Math.sqrt(d2 + 1)) * f;
+          }
+        }
+      }
+      draw(now) {
+        if (this.life <= 0) return;
+        if (now < this.bornAt + this.spawnDelay) return;
+        const proj = project(this);
+        if (proj.scale < 0.05) return;
+        if (proj.sx < -80 || proj.sx > W + 80 || proj.sy < -80 || proj.sy > H + 80) return;
+
+        const size = this.size * proj.scale;
+        const a = Math.min(1, this.life) * Math.min(1, proj.scale * 1.4);
+
+        // === RENDU OPTIMISÉ ===
+        // Petites particules (<1.2) : juste un point — pas de gradient
+        // Grosses particules : halo + core (effet poudre visible)
+        ctx.globalCompositeOperation = 'source-over';
+
+        if (this.size < 1.2) {
+          // particule fine : un seul fill, pas de gradient (perf)
+          ctx.fillStyle = `rgba(${this.r},${this.g},${this.b},${a * 0.85})`;
+          ctx.beginPath();
+          ctx.arc(proj.sx, proj.sy, Math.max(size, 0.6), 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          // particule moyenne/grosse : halo + core
+          const haloR = size * 6;
+          const grad = ctx.createRadialGradient(proj.sx, proj.sy, 0, proj.sx, proj.sy, haloR);
+          grad.addColorStop(0,    `rgba(${this.r},${this.g},${this.b},${a * 0.55})`);
+          grad.addColorStop(0.45, `rgba(${this.r},${this.g},${this.b},${a * 0.18})`);
+          grad.addColorStop(1,    `rgba(${this.r},${this.g},${this.b},0)`);
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(proj.sx, proj.sy, haloR, 0, Math.PI * 2);
+          ctx.fill();
+
+          // core net
+          ctx.fillStyle = `rgba(${this.r},${this.g},${this.b},${a})`;
+          ctx.beginPath();
+          ctx.arc(proj.sx, proj.sy, Math.max(size * 0.55, 0.8), 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+
+    function init() {
+      resize();
+      // densité adaptée à la perf (compromis fluide / dense)
+      const count = Math.min(3000, Math.floor((W * H) / 450));
+      particles = [];
+      for (let i = 0; i < count; i++) particles.push(new P());
+    }
+
+    function loop(now) {
+      // ---- phase manager ----
+      const elapsed = now - phaseStart;
+      if (elapsed > DUR[phase]) {
+        if (phase === 'INCOMING') {
+          phase = 'IMPACT';
+          // pulse de la planète : elle absorbe l'énergie de l'explosion
+          if (planetEl) {
+            planetEl.classList.remove('pulse-impact');
+            // reflow pour rejouer l'animation
+            void planetEl.offsetWidth;
+            planetEl.classList.add('pulse-impact');
+            setTimeout(() => planetEl && planetEl.classList.remove('pulse-impact'), 1300);
+          }
+        }
+        else if (phase === 'IMPACT') phase = 'SETTLE';
+        else if (phase === 'SETTLE') phase = 'FALL';
+        else if (phase === 'FALL') {
+          phase = 'INCOMING';
+          for (const p of particles) p.respawn(false);
+        }
+        phaseStart = now;
+      }
+      const phaseT = Math.min(1, (now - phaseStart) / DUR[phase]);
+
+      // ---- background : clear soft (laisse densité s'accumuler) ----
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.globalAlpha = 1;
+      let clearAlpha = 0.08;
+      if (phase === 'INCOMING') clearAlpha = 0.10;
+      else if (phase === 'IMPACT') clearAlpha = 0.06;
+      else if (phase === 'SETTLE') clearAlpha = 0.05;
+      else if (phase === 'FALL') clearAlpha = 0.15;
+      ctx.fillStyle = `rgba(251, 247, 240, ${clearAlpha})`;
+      ctx.fillRect(0, 0, W, H);
+
+      // tri z décroissant : SEULEMENT à l'init des phases ou rarement
+      // (sort à chaque frame coûte cher en perf — on s'en passe avec source-over)
+      // particles.sort((a, b) => b.z - a.z);
+
+      for (const p of particles) {
+        p.update(now, phase, phaseT);
+        p.draw(now);
+      }
+
+      ctx.globalAlpha = 1;
+      ctx.globalCompositeOperation = 'source-over';
+      requestAnimationFrame(loop);
+    }
+
+    heroSection.addEventListener('mousemove', (e) => {
+      const r = heroSection.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+      mouse.active = true;
+    });
+    heroSection.addEventListener('mouseleave', () => { mouse.active = false; });
+
+    window.addEventListener('resize', () => { resize(); });
+    window.addEventListener('load', () => { setTimeout(resize, 100); });
+
+    init();
+    phaseStart = performance.now();
+    requestAnimationFrame(loop);
+  })();
+
+  // ============ CO2 PARTICLES (vapeur) ============
+  (function() {
+    const container = document.querySelector('.co2-particles');
+    if (!container) return;
+    const colors = ['rgba(255,255,255,0.4)', 'rgba(168,230,190,0.5)', 'rgba(255,169,104,0.4)'];
+    function spawn() {
+      const p = document.createElement('div');
+      p.className = 'co2-particle';
+      const positions = [12, 50, 85]; // % de chaque barre approximativement
+      const pos = positions[Math.floor(Math.random() * positions.length)];
+      p.style.left = pos + '%';
+      p.style.background = colors[Math.floor(Math.random() * colors.length)];
+      p.style.animationDuration = (4 + Math.random() * 4) + 's';
+      p.style.width = (3 + Math.random() * 4) + 'px';
+      p.style.height = p.style.width;
+      container.appendChild(p);
+      setTimeout(() => p.remove(), 8000);
+    }
+    setInterval(spawn, 400);
+  })();
+
+  // ============ REVEAL ON SCROLL ============
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ============ HEADER STATE ============
+  const header = document.querySelector('.header');
+  function syncHeader() {
+    const scrolled = window.scrollY > 50;
+    if (scrolled) header.classList.add('is-scrolled'); else header.classList.remove('is-scrolled');
+    // Header restera clair sur ce hero (fond clair) — on retire toute classe dark
+  }
+  window.addEventListener('scroll', syncHeader, { passive: true });
+  syncHeader();
+</script>
+
+</body>
+</html>
