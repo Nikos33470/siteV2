@@ -293,6 +293,8 @@
     border-bottom: 1px solid rgba(31,58,95,0.12);
     transition: all 0.3s var(--transition);
     cursor: pointer;
+    text-decoration: none; /* .brand-item est désormais un <a> */
+    color: inherit;
   }
   .brand-item:last-child { border-bottom: none; }
   .brand-item:hover { padding-left: 16px; border-bottom-color: var(--orange); }
@@ -760,22 +762,22 @@
 <span class="brands-list-label-detail">Éditeurs français et internationaux, sélectionnés pour leur exigence créative et la qualité de leurs produits.</span>
 </div>
 <div class="brands-grid-names">
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Ananbô</span><span class="brand-item-meta">France · Panoramiques</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Atelier d'Offard</span><span class="brand-item-meta">Tours · Artisanat</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Au fil des Couleurs</span><span class="brand-item-meta">Paris</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Bien Fait Paris</span><span class="brand-item-meta">Paris · Design</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">C</span><span class="brand-item-name">Casamance</span><span class="brand-item-meta">Paris · 2000</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">E</span><span class="brand-item-name">Élitis</span><span class="brand-item-meta">Toulouse · 1988</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">Isidore Leroy</span><span class="brand-item-meta">Paris · 1842</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Le Grand Siècle</span><span class="brand-item-meta">France</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Lé Papiers de Ninon</span><span class="brand-item-meta">France</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Little Cabari</span><span class="brand-item-meta">Bordeaux</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Muraem</span><span class="brand-item-meta">Sur mesure</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">N</span><span class="brand-item-name">Nobilis</span><span class="brand-item-meta">Paris · 1928</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Papiers de Paris</span><span class="brand-item-meta">Paris</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Pierre Frey</span><span class="brand-item-meta">Paris · 1935</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Texdecor</span><span class="brand-item-meta">Tourcoing</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">W</span><span class="brand-item-name">Wall&amp;decò France</span><span class="brand-item-meta">Italie · Design</span></div>
+<a class="brand-item" href="https://www.ananbo.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Ananbô</span><span class="brand-item-meta">France · Panoramiques</span></a>
+<a class="brand-item" href="https://www.atelierdoffard.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Atelier d'Offard</span><span class="brand-item-meta">Tours · Artisanat</span></a>
+<a class="brand-item" href="https://www.aufildescouleurs.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Au fil des Couleurs</span><span class="brand-item-meta">Paris</span></a>
+<a class="brand-item" href="https://www.bienfait-paris.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Bien Fait Paris</span><span class="brand-item-meta">Paris · Design</span></a>
+<a class="brand-item" href="https://www.casamance.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">C</span><span class="brand-item-name">Casamance</span><span class="brand-item-meta">Paris · 2000</span></a>
+<a class="brand-item" href="https://www.elitis.fr" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">E</span><span class="brand-item-name">Élitis</span><span class="brand-item-meta">Toulouse · 1988</span></a>
+<a class="brand-item" href="https://www.isidoreleroy.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">Isidore Leroy</span><span class="brand-item-meta">Paris · 1842</span></a>
+<a class="brand-item" href="https://www.legrandsiecle.fr" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Le Grand Siècle</span><span class="brand-item-meta">France</span></a>
+<a class="brand-item" href="https://www.lespapiersdeninon.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Lé Papiers de Ninon</span><span class="brand-item-meta">France</span></a>
+<a class="brand-item" href="https://www.littlecabari.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Little Cabari</span><span class="brand-item-meta">Bordeaux</span></a>
+<a class="brand-item" href="https://www.muraem.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Muraem</span><span class="brand-item-meta">Sur mesure</span></a>
+<a class="brand-item" href="https://www.nobilis.fr" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">N</span><span class="brand-item-name">Nobilis</span><span class="brand-item-meta">Paris · 1928</span></a>
+<a class="brand-item" href="https://www.papiersdeparis.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Papiers de Paris</span><span class="brand-item-meta">Paris</span></a>
+<a class="brand-item" href="https://www.pierrefrey.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Pierre Frey</span><span class="brand-item-meta">Paris · 1935</span></a>
+<a class="brand-item" href="https://www.texdecor.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Texdecor</span><span class="brand-item-meta">Tourcoing</span></a>
+<a class="brand-item" href="https://www.wallanddeco.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">W</span><span class="brand-item-name">Wall&amp;decò France</span><span class="brand-item-meta">Italie · Design</span></a>
 </div>
 </div>
 </div>
@@ -814,10 +816,10 @@
 <span class="brands-list-label-detail">Vinyles techniques pour les projets exigeants : feu M1, lessivable, anti-microbien, acoustique.</span>
 </div>
 <div class="brands-grid-names">
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Lutèce</span><span class="brand-item-meta">Semi-pro · Résidentiel</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Muraspec</span><span class="brand-item-meta">UK · PVC technique</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Texdecor Contract</span><span class="brand-item-meta">Vinacoustic · Polyform</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">V</span><span class="brand-item-name">Vescom</span><span class="brand-item-meta">Pays-Bas · Hospitality</span></div>
+<a class="brand-item" href="https://www.lutece.fr" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">L</span><span class="brand-item-name">Lutèce</span><span class="brand-item-meta">Semi-pro · Résidentiel</span></a>
+<a class="brand-item" href="https://www.muraspec.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Muraspec</span><span class="brand-item-meta">UK · PVC technique</span></a>
+<a class="brand-item" href="https://www.texdecor.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Texdecor Contract</span><span class="brand-item-meta">Vinacoustic · Polyform</span></a>
+<a class="brand-item" href="https://www.vescom.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">V</span><span class="brand-item-name">Vescom</span><span class="brand-item-meta">Pays-Bas · Hospitality</span></a>
 </div>
 </div>
 </div>

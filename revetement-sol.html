@@ -243,6 +243,8 @@
     border-bottom: 1px solid rgba(31,58,95,0.12);
     transition: all 0.3s var(--transition);
     cursor: pointer;
+    text-decoration: none; /* .brand-item est désormais un <a> */
+    color: inherit;
   }
   .brand-item:last-child { border-bottom: none; }
   .brand-item:hover { padding-left: 16px; border-bottom-color: var(--orange); }
@@ -700,14 +702,14 @@
 <span class="brands-list-label-detail">Fabricants français et européens reconnus pour leur traçabilité et la qualité de leur bois sourcé.</span>
 </div>
 <div class="brands-grid-names">
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Bauwerk</span><span class="brand-item-meta">Suisse</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">BerryAlloc</span><span class="brand-item-meta">Belgique-Norvège</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Boen</span><span class="brand-item-meta">Norvège</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">D</span><span class="brand-item-name">Design Parquet</span><span class="brand-item-meta">France · Chêne</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">H</span><span class="brand-item-name">Haro</span><span class="brand-item-meta">Allemagne · 1866</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">K</span><span class="brand-item-name">Kährs</span><span class="brand-item-meta">Suède · 1857</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Panaget</span><span class="brand-item-meta">France · 1929</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Parqueterie Berrichonne</span><span class="brand-item-meta">France · Berry</span></div>
+<a class="brand-item" href="https://www.bauwerk-parkett.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Bauwerk</span><span class="brand-item-meta">Suisse</span></a>
+<a class="brand-item" href="https://www.berryalloc.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">BerryAlloc</span><span class="brand-item-meta">Belgique-Norvège</span></a>
+<a class="brand-item" href="https://www.boen.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">B</span><span class="brand-item-name">Boen</span><span class="brand-item-meta">Norvège</span></a>
+<a class="brand-item" href="https://www.design-parquet.fr" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">D</span><span class="brand-item-name">Design Parquet</span><span class="brand-item-meta">France · Chêne</span></a>
+<a class="brand-item" href="https://www.haro.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">H</span><span class="brand-item-name">Haro</span><span class="brand-item-meta">Allemagne · 1866</span></a>
+<a class="brand-item" href="https://www.kahrs.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">K</span><span class="brand-item-name">Kährs</span><span class="brand-item-meta">Suède · 1857</span></a>
+<a class="brand-item" href="https://www.panaget.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Panaget</span><span class="brand-item-meta">France · 1929</span></a>
+<a class="brand-item" href="https://www.parqueterie-berrichonne.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Parqueterie Berrichonne</span><span class="brand-item-meta">France · Berry</span></a>
 </div>
 </div>
 </div>
@@ -746,14 +748,14 @@
 <span class="brands-list-label-detail">Marques de référence du LVT et du sol souple, pour le résidentiel comme pour les chantiers contract.</span>
 </div>
 <div class="brands-grid-names">
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Amtico</span><span class="brand-item-meta">UK · Luxe</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">F</span><span class="brand-item-name">Forbo</span><span class="brand-item-meta">Allura · Suisse</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">G</span><span class="brand-item-name">Gerflor</span><span class="brand-item-meta">Creation · Lyon</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">Interface</span><span class="brand-item-meta">USA · Dalles moquette</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">IVC</span><span class="brand-item-meta">Belgique</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Moduleo</span><span class="brand-item-meta">Pays-Bas</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Polyflor</span><span class="brand-item-meta">UK · Contract</span></div>
-<div class="brand-item"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Tarkett</span><span class="brand-item-meta">iD Inspiration</span></div>
+<a class="brand-item" href="https://www.amtico.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">A</span><span class="brand-item-name">Amtico</span><span class="brand-item-meta">UK · Luxe</span></a>
+<a class="brand-item" href="https://www.forbo.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">F</span><span class="brand-item-name">Forbo</span><span class="brand-item-meta">Allura · Suisse</span></a>
+<a class="brand-item" href="https://www.gerflor.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">G</span><span class="brand-item-name">Gerflor</span><span class="brand-item-meta">Creation · Lyon</span></a>
+<a class="brand-item" href="https://www.interface.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">Interface</span><span class="brand-item-meta">USA · Dalles moquette</span></a>
+<a class="brand-item" href="https://www.ivc-commercial.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">I</span><span class="brand-item-name">IVC</span><span class="brand-item-meta">Belgique</span></a>
+<a class="brand-item" href="https://www.moduleo.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">M</span><span class="brand-item-name">Moduleo</span><span class="brand-item-meta">Pays-Bas</span></a>
+<a class="brand-item" href="https://www.polyflor.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">P</span><span class="brand-item-name">Polyflor</span><span class="brand-item-meta">UK · Contract</span></a>
+<a class="brand-item" href="https://www.tarkett.fr" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="brand-item-initial">T</span><span class="brand-item-name">Tarkett</span><span class="brand-item-meta">iD Inspiration</span></a>
 </div>
 </div>
 </div>
