@@ -132,6 +132,58 @@
   .hero-meta-num { font-family: var(--display); font-size: 60px; font-weight: 300; color: var(--orange); line-height: 1; letter-spacing: -2px; }
   .hero-meta-label { font-size: 13px; opacity: 0.85; letter-spacing: 1px; text-transform: uppercase; max-width: 140px; line-height: 1.3; }
 
+  /* HERO : grille 2 colonnes — contenu à gauche, liste fournisseurs à droite */
+  .hero-grid { display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: center; }
+  .hero-content { min-width: 0; }
+
+  /* Colonne fournisseurs à droite du hero */
+  .hero-brands { align-self: center; }
+  .hero-brands-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--orange-clair); margin-bottom: 18px; padding-left: 4px;
+  }
+  .hero-brands-list { display: flex; flex-direction: column; }
+  /* Chaque fournisseur : ligne cliquable, séparateur subtil */
+  .hero-brand {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    padding: 13px 14px;
+    text-decoration: none; color: var(--blanc);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    transition: background 0.3s var(--transition), padding-left 0.3s var(--transition);
+    /* État initial de l'animation : en haut de l'écran, invisible */
+    opacity: 0;
+    transform: translateY(-120vh);
+  }
+  .hero-brand:last-child { border-bottom: none; }
+  .hero-brand:hover { background: rgba(240,127,44,0.16); padding-left: 22px; }
+  .hero-brand-name {
+    font-family: var(--display); font-size: 19px; font-weight: 400;
+    letter-spacing: -0.4px; line-height: 1.1;
+    transition: color 0.3s;
+  }
+  .hero-brand:hover .hero-brand-name { color: var(--orange-clair); font-style: italic; }
+  .hero-brand-meta {
+    font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase;
+    font-weight: 500; color: rgba(255,255,255,0.6); white-space: nowrap;
+  }
+
+  /* Animation : chaque item tombe du haut et rebondit légèrement à l'arrivée */
+  @keyframes brand-drop {
+    0%   { opacity: 0; transform: translateY(-120vh); }
+    70%  { opacity: 1; transform: translateY(14px); }
+    85%  { transform: translateY(-6px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .hero-brand.is-dropped {
+    animation: brand-drop 0.85s cubic-bezier(0.34, 1.4, 0.5, 1) forwards;
+  }
+  /* Respect des préférences d'accessibilité */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-brand { opacity: 1; transform: none; }
+    .hero-brand.is-dropped { animation: none; }
+  }
+
   /* BREADCRUMB */
   .breadcrumb-bar { background: var(--gris-clair); padding: 18px 48px; border-bottom: 1px solid rgba(31,58,95,0.06); }
   .breadcrumb { max-width: 1600px; margin: 0 auto; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--gris); }
@@ -342,6 +394,8 @@
     .nav-wrap { margin-left: 0; width: 100%; }
     .nav { flex-wrap: wrap; gap: 14px; }
     .hero { padding: 180px 24px 60px; min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-brands { max-width: 480px; }
     .intro, .cat-section, .showroom-section { padding-left: 24px; padding-right: 24px; }
     .intro-grid { grid-template-columns: 1fr; gap: 24px; }
     .cat-header { grid-template-columns: 1fr; gap: 16px; }
@@ -630,6 +684,8 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
 <div class="hero-inner">
+<div class="hero-grid">
+<div class="hero-content">
 <span class="hero-eyebrow">Revêtements de sol</span>
 <h1 class="hero-title">
       Le sol,<br/>
@@ -646,6 +702,29 @@
 <div class="hero-meta-item">
 <span class="hero-meta-num">2</span>
 <span class="hero-meta-label">Showrooms en Gironde</span>
+</div>
+</div>
+</div>
+<div class="hero-brands">
+<div class="hero-brands-label">Nos fabricants</div>
+<div class="hero-brands-list">
+<a class="hero-brand" href="https://www.amtico.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Amtico</span><span class="hero-brand-meta">UK · Luxe</span></a>
+<a class="hero-brand" href="https://www.bauwerk-parkett.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Bauwerk</span><span class="hero-brand-meta">Suisse</span></a>
+<a class="hero-brand" href="https://www.berryalloc.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">BerryAlloc</span><span class="hero-brand-meta">Belgique-Norvège</span></a>
+<a class="hero-brand" href="https://www.boen.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Boen</span><span class="hero-brand-meta">Norvège</span></a>
+<a class="hero-brand" href="https://www.design-parquet.fr" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Design Parquet</span><span class="hero-brand-meta">France · Chêne</span></a>
+<a class="hero-brand" href="https://www.forbo.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Forbo</span><span class="hero-brand-meta">Allura · Suisse</span></a>
+<a class="hero-brand" href="https://www.gerflor.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Gerflor</span><span class="hero-brand-meta">Creation · Lyon</span></a>
+<a class="hero-brand" href="https://www.haro.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Haro</span><span class="hero-brand-meta">Allemagne · 1866</span></a>
+<a class="hero-brand" href="https://www.interface.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Interface</span><span class="hero-brand-meta">USA · Dalles moquette</span></a>
+<a class="hero-brand" href="https://www.ivc-commercial.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">IVC</span><span class="hero-brand-meta">Belgique</span></a>
+<a class="hero-brand" href="https://www.kahrs.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Kährs</span><span class="hero-brand-meta">Suède · 1857</span></a>
+<a class="hero-brand" href="https://www.moduleo.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Moduleo</span><span class="hero-brand-meta">Pays-Bas</span></a>
+<a class="hero-brand" href="https://www.panaget.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Panaget</span><span class="hero-brand-meta">France · 1929</span></a>
+<a class="hero-brand" href="https://www.parqueterie-berrichonne.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Parqueterie Berrichonne</span><span class="hero-brand-meta">France · Berry</span></a>
+<a class="hero-brand" href="https://www.polyflor.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Polyflor</span><span class="hero-brand-meta">UK · Contract</span></a>
+<a class="hero-brand" href="https://www.tarkett.fr" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Tarkett</span><span class="hero-brand-meta">iD Inspiration</span></a>
+</div>
 </div>
 </div>
 </div>
@@ -1257,6 +1336,39 @@
     });
     const mq = window.matchMedia('(min-width: 1025px)');
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
+  })();
+</script>
+<script>
+  // ===== ANIMATION : les fournisseurs tombent du ciel en cascade =====
+  (function () {
+    const items = document.querySelectorAll('.hero-brand');
+    if (!items.length) return;
+
+    // Respecte la préférence "réduire les animations"
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      items.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      return;
+    }
+
+    // Déclenche chaque chute avec un décalage progressif (effet cascade)
+    function drop() {
+      items.forEach((el, i) => {
+        setTimeout(() => el.classList.add('is-dropped'), i * 110);
+      });
+    }
+
+    // Lance dès que le hero entre dans le viewport
+    const hero = document.querySelector('.hero-brands');
+    if ('IntersectionObserver' in window && hero) {
+      const obs = new IntersectionObserver((entries, o) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { drop(); o.disconnect(); }
+        });
+      }, { threshold: 0.2 });
+      obs.observe(hero);
+    } else {
+      drop();
+    }
   })();
 </script>
 </body>

@@ -164,6 +164,58 @@
   .hero-meta-num { font-family: var(--display); font-size: 60px; font-weight: 300; color: var(--orange); line-height: 1; letter-spacing: -2px; }
   .hero-meta-label { font-size: 13px; opacity: 0.85; letter-spacing: 1px; text-transform: uppercase; max-width: 140px; line-height: 1.3; }
 
+  /* HERO : grille 2 colonnes — contenu à gauche, liste fournisseurs à droite */
+  .hero-grid { display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: center; }
+  .hero-content { min-width: 0; }
+
+  /* Colonne fournisseurs à droite du hero */
+  .hero-brands { align-self: center; }
+  .hero-brands-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--orange-clair); margin-bottom: 18px; padding-left: 4px;
+  }
+  .hero-brands-list { display: flex; flex-direction: column; }
+  /* Chaque fournisseur : ligne cliquable, séparateur subtil */
+  .hero-brand {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    padding: 11px 14px;
+    text-decoration: none; color: var(--blanc);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    transition: background 0.3s var(--transition), padding-left 0.3s var(--transition);
+    /* État initial de l'animation : en haut de l'écran, invisible */
+    opacity: 0;
+    transform: translateY(-120vh);
+  }
+  .hero-brand:last-child { border-bottom: none; }
+  .hero-brand:hover { background: rgba(240,127,44,0.16); padding-left: 22px; }
+  .hero-brand-name {
+    font-family: var(--display); font-size: 18px; font-weight: 400;
+    letter-spacing: -0.4px; line-height: 1.1;
+    transition: color 0.3s;
+  }
+  .hero-brand:hover .hero-brand-name { color: var(--orange-clair); font-style: italic; }
+  .hero-brand-meta {
+    font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase;
+    font-weight: 500; color: rgba(255,255,255,0.6); white-space: nowrap;
+  }
+
+  /* Animation : chaque item tombe du haut et rebondit légèrement à l'arrivée */
+  @keyframes brand-drop {
+    0%   { opacity: 0; transform: translateY(-120vh); }
+    70%  { opacity: 1; transform: translateY(14px); }
+    85%  { transform: translateY(-6px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .hero-brand.is-dropped {
+    animation: brand-drop 0.85s cubic-bezier(0.34, 1.4, 0.5, 1) forwards;
+  }
+  /* Respect des préférences d'accessibilité */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-brand { opacity: 1; transform: none; }
+    .hero-brand.is-dropped { animation: none; }
+  }
+
   /* ============ BREADCRUMB ============ */
   .breadcrumb-bar { background: var(--gris-clair); padding: 18px 48px; border-bottom: 1px solid rgba(31,58,95,0.06); }
   .breadcrumb { max-width: 1600px; margin: 0 auto; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--gris); }
@@ -403,6 +455,8 @@
     .nav-wrap { margin-left: 0; width: 100%; }
     .nav { flex-wrap: wrap; gap: 14px; }
     .hero { padding: 180px 24px 60px; min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-brands { max-width: 480px; }
     .intro, .cat-section, .showroom-section { padding-left: 24px; padding-right: 24px; }
     .intro-grid { grid-template-columns: 1fr; gap: 24px; }
     .cat-header { grid-template-columns: 1fr; gap: 16px; }
@@ -691,6 +745,8 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
 <div class="hero-inner">
+<div class="hero-grid">
+<div class="hero-content">
 <span class="hero-eyebrow">Revêtements muraux</span>
 <h1 class="hero-title">
       L'art du mur,<br/>
@@ -707,6 +763,33 @@
 <div class="hero-meta-item">
 <span class="hero-meta-num">2</span>
 <span class="hero-meta-label">Showrooms en Gironde</span>
+</div>
+</div>
+</div>
+<div class="hero-brands">
+<div class="hero-brands-label">Nos maisons</div>
+<div class="hero-brands-list">
+<a class="hero-brand" href="https://www.ananbo.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Ananbô</span><span class="hero-brand-meta">France · Panoramiques</span></a>
+<a class="hero-brand" href="https://www.atelierdoffard.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Atelier d'Offard</span><span class="hero-brand-meta">Tours · Artisanat</span></a>
+<a class="hero-brand" href="https://www.aufildescouleurs.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Au fil des Couleurs</span><span class="hero-brand-meta">Paris</span></a>
+<a class="hero-brand" href="https://www.bienfait-paris.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Bien Fait Paris</span><span class="hero-brand-meta">Paris · Design</span></a>
+<a class="hero-brand" href="https://www.casamance.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Casamance</span><span class="hero-brand-meta">Paris · 2000</span></a>
+<a class="hero-brand" href="https://www.elitis.fr" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Élitis</span><span class="hero-brand-meta">Toulouse · 1988</span></a>
+<a class="hero-brand" href="https://www.isidoreleroy.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Isidore Leroy</span><span class="hero-brand-meta">Paris · 1842</span></a>
+<a class="hero-brand" href="https://www.legrandsiecle.fr" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Le Grand Siècle</span><span class="hero-brand-meta">France</span></a>
+<a class="hero-brand" href="https://www.lespapiersdeninon.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Lé Papiers de Ninon</span><span class="hero-brand-meta">France</span></a>
+<a class="hero-brand" href="https://www.littlecabari.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Little Cabari</span><span class="hero-brand-meta">Bordeaux</span></a>
+<a class="hero-brand" href="https://www.lutece.fr" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Lutèce</span><span class="hero-brand-meta">Semi-pro · Résidentiel</span></a>
+<a class="hero-brand" href="https://www.muraem.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Muraem</span><span class="hero-brand-meta">Sur mesure</span></a>
+<a class="hero-brand" href="https://www.muraspec.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Muraspec</span><span class="hero-brand-meta">UK · PVC technique</span></a>
+<a class="hero-brand" href="https://www.nobilis.fr" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Nobilis</span><span class="hero-brand-meta">Paris · 1928</span></a>
+<a class="hero-brand" href="https://www.papiersdeparis.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Papiers de Paris</span><span class="hero-brand-meta">Paris</span></a>
+<a class="hero-brand" href="https://www.pierrefrey.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Pierre Frey</span><span class="hero-brand-meta">Paris · 1935</span></a>
+<a class="hero-brand" href="https://www.texdecor.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Texdecor</span><span class="hero-brand-meta">Tourcoing</span></a>
+<a class="hero-brand" href="https://www.texdecor.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Texdecor Contract</span><span class="hero-brand-meta">Vinacoustic · Polyform</span></a>
+<a class="hero-brand" href="https://www.vescom.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Vescom</span><span class="hero-brand-meta">Pays-Bas · Hospitality</span></a>
+<a class="hero-brand" href="https://www.wallanddeco.com" target="_blank" rel="noopener noreferrer"><span class="hero-brand-name">Wall&amp;decò France</span><span class="hero-brand-meta">Italie · Design</span></a>
+</div>
 </div>
 </div>
 </div>
@@ -1321,6 +1404,39 @@
     });
     const mq = window.matchMedia('(min-width: 1025px)');
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
+  })();
+</script>
+<script>
+  // ===== ANIMATION : les fournisseurs tombent du ciel en cascade =====
+  (function () {
+    const items = document.querySelectorAll('.hero-brand');
+    if (!items.length) return;
+
+    // Respecte la préférence "réduire les animations"
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      items.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      return;
+    }
+
+    // Déclenche chaque chute avec un décalage progressif (effet cascade)
+    function drop() {
+      items.forEach((el, i) => {
+        setTimeout(() => el.classList.add('is-dropped'), i * 90);
+      });
+    }
+
+    // Lance dès que le hero entre dans le viewport
+    const hero = document.querySelector('.hero-brands');
+    if ('IntersectionObserver' in window && hero) {
+      const obs = new IntersectionObserver((entries, o) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { drop(); o.disconnect(); }
+        });
+      }, { threshold: 0.2 });
+      obs.observe(hero);
+    } else {
+      drop();
+    }
   })();
 </script>
 </body>
