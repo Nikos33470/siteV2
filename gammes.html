@@ -304,6 +304,7 @@
   .gamme-tab[data-gamme="partenaires"].is-active { background: var(--gris-fonce); border-color: var(--gris-fonce); }
   .gamme-tab[data-gamme="dragopaint"].is-active { background: #B5322E; border-color: #B5322E; }
   .gamme-tab[data-gamme="comus"].is-active { background: #2F6B43; border-color: #2F6B43; }
+  .gamme-tab[data-gamme="algo"].is-active { background: #1a6e5a; border-color: #1a6e5a; }
   .gamme-tab-info { display: flex; flex-direction: column; gap: 2px; }
   .gamme-tab-name { font-size: 15px; font-weight: 600; }
   .gamme-tab-sub { font-size: 11px; font-weight: 400; opacity: 0.7; }
@@ -1106,6 +1107,13 @@
 </span>
 <span class="gamme-tab-count">3</span>
 </button>
+<button aria-selected="false" class="gamme-tab" data-gamme="algo" role="tab">
+<span class="gamme-tab-info">
+<span class="gamme-tab-name">Algo Pro</span>
+<span class="gamme-tab-sub">Partenaire · biosourcée aux algues</span>
+</span>
+<span class="gamme-tab-count">3</span>
+</button>
 </div>
 <div class="filters-label">Filtrer par finition</div>
 <div class="filter-pills">
@@ -1778,6 +1786,112 @@
 </article>
 </div>
 </section>
+<!-- ============ PARTENAIRE · ALGO PRO ============ -->
+<section class="gamme-section" data-gamme-section="algo" id="gamme-algo">
+<div class="gamme-banner is-partenaires">
+<div class="gamme-banner-num">A</div>
+<div class="gamme-banner-content">
+<span class="gamme-banner-tag">Fabricant partenaire</span>
+<h2 class="gamme-banner-title">Algo Pro</h2>
+<p class="gamme-banner-desc">Peintures biosourcées à base d'algues et de composants naturels marins, labellisées « Produit biosourcé » Karibati. Fabrication française, COV ultra-réduits.</p>
+</div>
+<div class="gamme-banner-count"><strong>3</strong>produits</div>
+</div>
+<div class="products-grid" id="grid-algo">
+<!-- 1. ALGO PRO PRIMAIRE - impression biosourcée -->
+<article class="product-card reveal" data-brillance="1" data-finition="impression" id="p-algo-primaire">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Impression</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<img alt="Algo Pro Primaire - Impression biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_prim.webp" width="448" height="476" decoding="async"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-vertfonce" title="Peinture biosourcée à base d'algues"><span class="picto-icon is-text-xs">ALGUES</span><span class="picto-label">Biosourcée</span></span>
+<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme">Algo Pro · Impression</div>
+<h3 class="product-name">Algo Pro <em>Primaire</em></h3>
+<div class="product-subtitle">Impression biosourcée aux algues · microporeuse</div>
+<p class="product-description">Primaire d'impression biosourcé certifié Karibati, en phase aqueuse, formulé à partir de <strong>résine végétale biosourcée à 98%</strong> et de composants naturels marins (algues et produits coquillés). Microporeux, très haut pouvoir couvrant, <strong>COV &lt; 1 g/L</strong>, classé A+. Destiné à recevoir une finition Algo. Rendement 10 à 12 m²/L.</p>
+<div class="product-footer">
+<span class="product-format"><strong>10 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_ALGO_PRO_PRIMAIRE.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_Algo_Pro_tous_produits.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 2. ALGO PRO MAT - finition mate biosourcée -->
+<article class="product-card reveal" data-brillance="2" data-finition="mat" id="p-algo-mat">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Mat</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<img alt="Algo Pro Mat - Peinture mate biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_mat.webp" width="364" height="420" decoding="async"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-vertfonce" title="80 % biosourcée (ASTM D6866)"><span class="picto-icon is-text-xs">80%</span><span class="picto-label">Biosourcée</span></span>
+<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-orange" title="Lessivable classe 1"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Lessiv.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme">Algo Pro · Mat</div>
+<h3 class="product-name">Algo Pro <em>Mat</em></h3>
+<div class="product-subtitle">Finition mate · 80% biosourcée aux algues</div>
+<p class="product-description">Peinture de finition mate <strong>80% biosourcée</strong> (norme ASTM D6866), certifiée Karibati, formulée à base de résine végétale et de composants marins (algues). Microporeuse, très haut pouvoir couvrant, <strong>lessivable classe 1</strong>, <strong>COV &lt; 1 g/L</strong>, classée A+. Fabrication française. À appliquer sur primaire Algo. Rendement 10 à 12 m²/L.</p>
+<div class="product-footer">
+<span class="product-format"><strong>10 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_ALGO_PRO_MAT.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_Algo_Pro_tous_produits.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 3. ALGO PRO VELOURS - finition velours biosourcée -->
+<article class="product-card reveal" data-brillance="3" data-finition="velours" id="p-algo-velours">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Velours</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<img alt="Algo Pro Velours - Peinture velours biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_velours.webp" width="560" height="644" decoding="async"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-vertfonce" title="80 % biosourcée (ASTM D6866)"><span class="picto-icon is-text-xs">80%</span><span class="picto-label">Biosourcée</span></span>
+<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-orange" title="Lessivable classe 1"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Lessiv.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme">Algo Pro · Velours</div>
+<h3 class="product-name">Algo Pro <em>Velours</em></h3>
+<div class="product-subtitle">Finition velours · 80% biosourcée aux algues</div>
+<p class="product-description">Peinture de finition velours <strong>80% biosourcée</strong> (norme ASTM D6866), certifiée Karibati, formulée à base de résine végétale et de composants marins (algues). Microporeuse, très haut pouvoir couvrant, <strong>lessivable classe 1</strong>, <strong>COV &lt; 1 g/L</strong>, classée A+. Fabrication française. À appliquer sur primaire Algo. Rendement 10 à 12 m²/L.</p>
+<div class="product-footer">
+<span class="product-format"><strong>10 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_ALGO_PRO_VELOURS.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_Algo_Pro_tous_produits.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
 </main>
 </div>
 </div>
@@ -2066,6 +2180,9 @@
     { t: "COMUS IZI R Prim", d: "Impression recyclée 60% — homogénéise le support", u: "gammes.html#p-comus-izi-prim", k: "comus izi r prim impression recyclée 60 partenaire éco aqueuse", g: "Peintures · Partenaires" },
     { t: "COMUS IZI R Mat", d: "Finition mate recyclée 56% — lessivable, HQE bas carbone", u: "gammes.html#p-comus-izi-mat", k: "comus izi r mat mate recyclée 56 lessivable hqe bas carbone partenaire", g: "Peintures · Partenaires" },
     { t: "COMUS IZI R Velours", d: "Finition velours recyclée 56% — lessivable classe 1, HQE", u: "gammes.html#p-comus-izi-velours", k: "comus izi r velours recyclée 56 lessivable hqe bas carbone partenaire", g: "Peintures · Partenaires" },
+    { t: "Algo Pro Primaire", d: "Impression biosourcée aux algues — microporeuse, certifiée Karibati", u: "gammes.html#p-algo-primaire", k: "algo pro primaire impression biosourcée algues karibati partenaire", g: "Peintures · Partenaires" },
+    { t: "Algo Pro Mat", d: "Finition mate 80% biosourcée aux algues — lessivable classe 1", u: "gammes.html#p-algo-mat", k: "algo pro mat mate biosourcée 80 algues lessivable partenaire", g: "Peintures · Partenaires" },
+    { t: "Algo Pro Velours", d: "Finition velours 80% biosourcée aux algues — lessivable classe 1", u: "gammes.html#p-algo-velours", k: "algo pro velours biosourcée 80 algues lessivable partenaire", g: "Peintures · Partenaires" },
 
     // ---- NUANCIERS ----
     { t: "Chromatic CH1 — Jonone", d: "Édition signature artistique — palette d'expression", u: "nuanciers.html#nuanciers-cartes", k: "chromatic ch1 jonone artiste signature pdf", g: "Nuanciers" },
