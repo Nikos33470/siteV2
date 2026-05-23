@@ -431,12 +431,51 @@
   .section-intro { font-size: 17px; line-height: 1.7; color: var(--gris); max-width: 680px; margin-bottom: 60px; font-weight: 300; }
   
   /* SIGNATURE défilante avec MÉRIGNAC */
-  .signature-section { background: linear-gradient(135deg, #FFD9B0 0%, #FFC58A 100%); padding: 40px 0; margin: 0; max-width: none; width: 100%; position: relative; overflow: hidden; }
-  .signature-track { display: flex; gap: 80px; align-items: center; animation: scroll 30s linear infinite; white-space: nowrap; }
-  @keyframes scroll { from{transform:translateX(0);} to{transform:translateX(-50%);} }
-  .signature-item { font-family: var(--display); font-weight: 300; font-size: 36px; color: var(--bleu); letter-spacing: -1px; display: flex; align-items: center; gap: 80px; }
-  .signature-item em { color: var(--orange-fonce); font-style: italic; }
-  .signature-dot { width: 12px; height: 12px; background: var(--orange-fonce); border-radius: 50%; display: inline-block; }
+  .signature-section {
+    background: linear-gradient(135deg, #FFC58A 0%, #F89B5A 100%);
+    padding: 28px 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-top: 4px solid var(--bleu);
+  }
+  .signature-section::before, .signature-section::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .signature-section::before { left: 0; background: linear-gradient(90deg, #FFC58A, transparent); }
+  .signature-section::after  { right: 0; background: linear-gradient(-90deg, #F89B5A, transparent); }
+  .signature-track {
+    display: flex; gap: 60px; align-items: center;
+    animation: scrollSig 38s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+  @keyframes scrollSig { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .signature-item {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--bleu);
+    letter-spacing: -0.5px;
+    display: flex; align-items: center; gap: 60px;
+    flex-shrink: 0;
+  }
+  .signature-item em { color: var(--blanc); font-style: italic; font-weight: 400; }
+  .signature-dot {
+    width: 10px; height: 10px;
+    background: var(--bleu);
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  @media (max-width: 900px) {
+    .signature-item { font-size: 22px; gap: 36px; }
+    .signature-track { gap: 36px; }
+  }
   
   /* GAMMES */
   .gammes { padding: 140px 48px; background: var(--blanc); max-width: 1600px; margin: 0 auto; position: relative; }
