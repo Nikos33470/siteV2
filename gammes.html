@@ -302,6 +302,8 @@
   .gamme-tab.is-active { background: var(--bleu); border-color: var(--bleu); color: var(--blanc); box-shadow: 0 8px 20px -8px rgba(31,58,95,0.4); }
   .gamme-tab[data-gamme="titane"].is-active { background: var(--orange); border-color: var(--orange); }
   .gamme-tab[data-gamme="partenaires"].is-active { background: var(--gris-fonce); border-color: var(--gris-fonce); }
+  .gamme-tab[data-gamme="dragopaint"].is-active { background: #B5322E; border-color: #B5322E; }
+  .gamme-tab[data-gamme="comus"].is-active { background: #2F6B43; border-color: #2F6B43; }
   .gamme-tab-info { display: flex; flex-direction: column; gap: 2px; }
   .gamme-tab-name { font-size: 15px; font-weight: 600; }
   .gamme-tab-sub { font-size: 11px; font-weight: 400; opacity: 0.7; }
@@ -1090,12 +1092,19 @@
 </span>
 <span class="gamme-tab-count">4</span>
 </button>
-<button aria-selected="false" class="gamme-tab" data-gamme="partenaires" role="tab">
+<button aria-selected="false" class="gamme-tab" data-gamme="dragopaint" role="tab">
 <span class="gamme-tab-info">
-<span class="gamme-tab-name">Partenaires</span>
-<span class="gamme-tab-sub">Dragopaint · bas carbone</span>
+<span class="gamme-tab-name">Dragopaint</span>
+<span class="gamme-tab-sub">Partenaire · bas carbone</span>
 </span>
 <span class="gamme-tab-count">2</span>
+</button>
+<button aria-selected="false" class="gamme-tab" data-gamme="comus" role="tab">
+<span class="gamme-tab-info">
+<span class="gamme-tab-name">COMUS</span>
+<span class="gamme-tab-sub">Partenaire · IZI R recyclée</span>
+</span>
+<span class="gamme-tab-count">3</span>
 </button>
 </div>
 <div class="filters-label">Filtrer par finition</div>
@@ -1578,18 +1587,18 @@
 </article>
 </div>
 </section>
-<!-- ============ PARTENAIRES ============ -->
-<section class="gamme-section" data-gamme-section="partenaires" id="gamme-partenaires">
+<!-- ============ PARTENAIRE · DRAGOPAINT ============ -->
+<section class="gamme-section" data-gamme-section="dragopaint" id="gamme-dragopaint">
 <div class="gamme-banner is-partenaires">
-<div class="gamme-banner-num">+</div>
+<div class="gamme-banner-num">D</div>
 <div class="gamme-banner-content">
-<span class="gamme-banner-tag">Fabricants partenaires</span>
-<h2 class="gamme-banner-title">Nos <em>partenaires</em></h2>
-<p class="gamme-banner-desc">Une sélection rigoureuse de produits chez Keim, Sigma, Comus, Dragopaint, Sofec, Soframap et Théolaur.</p>
+<span class="gamme-banner-tag">Fabricant partenaire</span>
+<h2 class="gamme-banner-title">Dragopaint</h2>
+<p class="gamme-banner-desc">Fabricant belge engagé. Gamme Dragocryl bas carbone pour intérieurs, en phase aqueuse et application mécanisée.</p>
 </div>
 <div class="gamme-banner-count"><strong>2</strong>produits</div>
 </div>
-<div class="products-grid" id="grid-partenaires">
+<div class="products-grid" id="grid-dragopaint">
 <!-- 1. DRAGOCRYL MAT AIRLESS BAS CARBONE - sous-couche / finition mate mécanisée -->
 <article class="product-card reveal" data-brillance="1" data-finition="mat" id="p-dragocryl-mat-airless">
 <div class="product-finition-bar"></div>
@@ -1646,6 +1655,123 @@
 <div class="product-ctas">
 <a class="product-cta is-primary" href="documents/ft/FT_DRAGOCRYL_MS_SOYEUX_BAS_CARBONE.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
 <a class="product-cta is-secondary" href="documents/fdes/FDES_Dragocryl_MS_Soyeux_Bas_Carbone_20240611.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ============ PARTENAIRE · COMUS ============ -->
+<section class="gamme-section" data-gamme-section="comus" id="gamme-comus">
+<div class="gamme-banner is-partenaires">
+<div class="gamme-banner-num">C</div>
+<div class="gamme-banner-content">
+<span class="gamme-banner-tag">Fabricant partenaire</span>
+<h2 class="gamme-banner-title">COMUS</h2>
+<p class="gamme-banner-desc">Gamme IZI R éco-responsable à base de matières recyclées (poudre de marbre et résine de pare-brise), pour chantiers HQE et bas carbone.</p>
+</div>
+<div class="gamme-banner-count"><strong>3</strong>produits</div>
+</div>
+<div class="products-grid" id="grid-comus">
+<!-- 3. COMUS IZI R PRIM - impression recyclée -->
+<article class="product-card reveal" data-brillance="1" data-finition="impression" id="p-comus-izi-prim">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Impression</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Formule à base de matières recyclées" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Recyclée 60%</span>
+</div>
+<img alt="COMUS IZI R Prim - Impression recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_prim.webp" width="392" height="364" decoding="async"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-vertfonce" title="60 % de matières recyclées sur film sec"><span class="picto-icon is-text-xs">60%</span><span class="picto-label">Recyclée</span></span>
+<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme">COMUS · IZI R · Impression</div>
+<h3 class="product-name">IZI R <em>Prim</em></h3>
+<div class="product-subtitle">Impression polyvalente · recyclée 60% · phase aqueuse</div>
+<p class="product-description">Impression polyvalente pour murs et plafonds intérieurs, en phase aqueuse, <strong>à base de matières recyclées à 60%</strong> (poudre de marbre et résine de pare-brise recyclée à 100%). Idéale pour homogénéiser le support, séchage rapide, <strong>COV &lt; 1 g/L</strong>, classée A+. Rendement 12 m²/L.</p>
+<div class="product-footer">
+<span class="product-format"><strong>1 · 3 · 10 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_IZI_R_PRIM.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_IZI_R_PRIM_COMUS_15804_A2.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 4. COMUS IZI R MAT - finition mate recyclée -->
+<article class="product-card reveal" data-brillance="2" data-finition="mat" id="p-comus-izi-mat">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Mat</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Formule à base de matières recyclées" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Recyclée 56%</span>
+</div>
+<img alt="COMUS IZI R Mat - Peinture mate recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_mat.webp" width="392" height="364" decoding="async"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-vertfonce" title="56 % de matières recyclées sur film sec"><span class="picto-icon is-text-xs">56%</span><span class="picto-label">Recyclée</span></span>
+<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-orange" title="Lessivable classe 2"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Lessiv.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme">COMUS · IZI R · Mat</div>
+<h3 class="product-name">IZI R <em>Mat</em></h3>
+<div class="product-subtitle">Finition mate · recyclée 56% · HQE bas carbone</div>
+<p class="product-description">Peinture mate en phase aqueuse <strong>à base de matières recyclées à 56%</strong>, pour finitions courantes ou soignées. Forte opacité (95% en 1 couche, 99% en 2), <strong>lessivable classe 2</strong>, <strong>COV &lt; 1 g/L</strong>, classée A+. Apte aux chantiers HQE et démarche bas carbone. Rendement 9 à 10 m²/L.</p>
+<div class="product-footer">
+<span class="product-format"><strong>1 · 3 · 10 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_IZI_R_MAT.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_ECO_IZI_R_MAT_et_Velours.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 5. COMUS IZI R VELOURS - finition velours recyclée -->
+<article class="product-card reveal" data-brillance="3" data-finition="velours" id="p-comus-izi-velours">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Velours</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div aria-label="Formule à base de matières recyclées" class="product-recycled">
+<span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
+<span class="product-recycled-text">Recyclée 56%</span>
+</div>
+<img alt="COMUS IZI R Velours - Peinture velours recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_velours.webp" width="392" height="364" decoding="async"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-vertfonce" title="56 % de matières recyclées sur film sec"><span class="picto-icon is-text-xs">56%</span><span class="picto-label">Recyclée</span></span>
+<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-fdes" title="FDES vérifiée Inies"><span class="picto-icon"><img alt="FDES vérifiée" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
+<span class="picto is-orange" title="Lessivable classe 1"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Lessiv.</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme">COMUS · IZI R · Velours</div>
+<h3 class="product-name">IZI R <em>Velours</em></h3>
+<div class="product-subtitle">Finition velours · recyclée 56% · HQE bas carbone</div>
+<p class="product-description">Peinture velours en phase aqueuse <strong>à base de matières recyclées à 56%</strong>, pour finitions courantes ou soignées. Forte opacité (95% en 1 couche, 99% en 2), <strong>lessivable classe 1</strong>, <strong>COV &lt; 1 g/L</strong>, classée A+. Apte aux chantiers HQE et démarche bas carbone. Rendement 10 à 12 m²/L.</p>
+<div class="product-footer">
+<span class="product-format"><strong>1 · 3 · 10 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_IZI_R_VELOURS.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_ECO_IZI_R_MAT_et_Velours.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
 </div>
 </div>
 </div>
@@ -1937,6 +2063,9 @@
     // ---- PARTENAIRES (Dragopaint) ----
     { t: "Dragocryl Mat Airless Bas Carbone", d: "Peinture mate airless bas carbone — sous-couche ou finition", u: "gammes.html#p-dragocryl-mat-airless", k: "dragopaint dragocryl mat airless bas carbone partenaire mécanisée aqueuse", g: "Peintures · Partenaires" },
     { t: "Dragocryl MS Soyeux Bas Carbone", d: "Finition mat velouté soyeuse — 69% renouvelable dont 39% biosourcé", u: "gammes.html#p-dragocryl-ms-soyeux", k: "dragopaint dragocryl ms soyeux bas carbone velouté renouvelable biosourcé partenaire", g: "Peintures · Partenaires" },
+    { t: "COMUS IZI R Prim", d: "Impression recyclée 60% — homogénéise le support", u: "gammes.html#p-comus-izi-prim", k: "comus izi r prim impression recyclée 60 partenaire éco aqueuse", g: "Peintures · Partenaires" },
+    { t: "COMUS IZI R Mat", d: "Finition mate recyclée 56% — lessivable, HQE bas carbone", u: "gammes.html#p-comus-izi-mat", k: "comus izi r mat mate recyclée 56 lessivable hqe bas carbone partenaire", g: "Peintures · Partenaires" },
+    { t: "COMUS IZI R Velours", d: "Finition velours recyclée 56% — lessivable classe 1, HQE", u: "gammes.html#p-comus-izi-velours", k: "comus izi r velours recyclée 56 lessivable hqe bas carbone partenaire", g: "Peintures · Partenaires" },
 
     // ---- NUANCIERS ----
     { t: "Chromatic CH1 — Jonone", d: "Édition signature artistique — palette d'expression", u: "nuanciers.html#nuanciers-cartes", k: "chromatic ch1 jonone artiste signature pdf", g: "Nuanciers" },
