@@ -302,9 +302,12 @@
   .gamme-tab.is-active { background: var(--bleu); border-color: var(--bleu); color: var(--blanc); box-shadow: 0 8px 20px -8px rgba(31,58,95,0.4); }
   .gamme-tab[data-gamme="titane"].is-active { background: var(--orange); border-color: var(--orange); }
   .gamme-tab[data-gamme="partenaires"].is-active { background: var(--gris-fonce); border-color: var(--gris-fonce); }
-  .gamme-tab[data-gamme="dragopaint"].is-active { background: #B5322E; border-color: #B5322E; }
-  .gamme-tab[data-gamme="comus"].is-active { background: #2F6B43; border-color: #2F6B43; }
-  .gamme-tab[data-gamme="algo"].is-active { background: #1a6e5a; border-color: #1a6e5a; }
+  .gamme-tab[data-gamme="dragopaint"].is-active { background: #6FB7DA; border-color: #6FB7DA; color: var(--bleu-fonce); }
+  .gamme-tab[data-gamme="comus"].is-active { background: #7FC99A; border-color: #7FC99A; color: var(--bleu-fonce); }
+  .gamme-tab[data-gamme="algo"].is-active { background: #14564A; border-color: #14564A; }
+  /* Onglets clairs : count et sous-titre lisibles sur fond clair */
+  .gamme-tab[data-gamme="dragopaint"].is-active .gamme-tab-count,
+  .gamme-tab[data-gamme="comus"].is-active .gamme-tab-count { background: rgba(31,58,95,0.15); color: var(--bleu-fonce); }
   .gamme-tab-info { display: flex; flex-direction: column; gap: 2px; }
   .gamme-tab-name { font-size: 15px; font-weight: 600; }
   .gamme-tab-sub { font-size: 11px; font-weight: 400; opacity: 0.7; }
@@ -364,6 +367,28 @@
     color: var(--bleu-fonce);
     border: 1px dashed rgba(31,58,95,0.2);
   }
+  /* Bandeaux fabricants partenaires — fonds colorés */
+  .gamme-banner.is-dragopaint {
+    background: linear-gradient(135deg, #6FB7DA 0%, #A5D6EC 100%); /* bleu clair */
+    color: var(--bleu-fonce);
+  }
+  .gamme-banner.is-comus {
+    background: linear-gradient(135deg, #7FC99A 0%, #B2E0C2 100%); /* vert clair */
+    color: var(--bleu-fonce);
+  }
+  .gamme-banner.is-algo {
+    background: linear-gradient(135deg, #14564A 0%, #1F7A66 100%); /* vert foncé */
+    color: var(--blanc);
+  }
+  /* Tags / counts adaptés aux fonds clairs (drago, comus) */
+  .gamme-banner.is-dragopaint .gamme-banner-tag,
+  .gamme-banner.is-comus .gamme-banner-tag { background: rgba(255,255,255,0.6); color: var(--bleu-fonce); }
+  .gamme-banner.is-dragopaint .gamme-banner-count,
+  .gamme-banner.is-comus .gamme-banner-count { background: rgba(255,255,255,0.5); }
+  /* Tag / count adaptés au fond foncé (algo) */
+  .gamme-banner.is-algo .gamme-banner-tag { background: rgba(255,255,255,0.2); color: var(--blanc); }
+  .gamme-banner.is-algo .gamme-banner-count { background: rgba(255,255,255,0.12); }
+  .gamme-banner.is-algo .gamme-banner-count strong { color: var(--blanc); }
   .gamme-banner-num {
     font-family: var(--display);
     font-size: 88px;
@@ -1597,7 +1622,7 @@
 </section>
 <!-- ============ PARTENAIRE · DRAGOPAINT ============ -->
 <section class="gamme-section" data-gamme-section="dragopaint" id="gamme-dragopaint">
-<div class="gamme-banner is-partenaires">
+<div class="gamme-banner is-dragopaint">
 <div class="gamme-banner-num">D</div>
 <div class="gamme-banner-content">
 <span class="gamme-banner-tag">Fabricant partenaire</span>
@@ -1613,7 +1638,7 @@
 <span class="product-finition-tag">Mat airless</span>
 <div class="product-visual">
 <div class="product-visual-bg"></div>
-<img alt="Dragocryl Mat Airless Bas Carbone - Peinture mate airless bas carbone Dragopaint" class="product-image" loading="lazy" src="images/produits/dragocryl_mat_airless.webp" width="616" height="616" decoding="async"/>
+<img alt="Dragocryl Mat Airless Bas Carbone - Peinture mate airless bas carbone Dragopaint" class="product-image" loading="lazy" src="images/produits/dragocryl_mat_airless.webp" width="614" height="768" decoding="async"/>
 </div>
 <div class="product-pictos">
 <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
@@ -1643,7 +1668,7 @@
 <span class="product-finition-tag">Mat velouté</span>
 <div class="product-visual">
 <div class="product-visual-bg"></div>
-<img alt="Dragocryl MS Soyeux Bas Carbone - Finition mat velouté soyeuse biosourcée Dragopaint" class="product-image" loading="lazy" src="images/produits/dragocryl_ms_soyeux.webp" width="582" height="550" decoding="async"/>
+<img alt="Dragocryl MS Soyeux Bas Carbone - Finition mat velouté soyeuse biosourcée Dragopaint" class="product-image" loading="lazy" src="images/produits/dragocryl_ms_soyeux.webp" width="626" height="782" decoding="async"/>
 </div>
 <div class="product-pictos">
 <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
@@ -1671,7 +1696,7 @@
 </section>
 <!-- ============ PARTENAIRE · COMUS ============ -->
 <section class="gamme-section" data-gamme-section="comus" id="gamme-comus">
-<div class="gamme-banner is-partenaires">
+<div class="gamme-banner is-comus">
 <div class="gamme-banner-num">C</div>
 <div class="gamme-banner-content">
 <span class="gamme-banner-tag">Fabricant partenaire</span>
@@ -1691,7 +1716,7 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Recyclée 60%</span>
 </div>
-<img alt="COMUS IZI R Prim - Impression recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_prim.webp" width="392" height="364" decoding="async"/>
+<img alt="COMUS IZI R Prim - Impression recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_prim.webp" width="383" height="479" decoding="async"/>
 </div>
 <div class="product-pictos">
 <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
@@ -1724,7 +1749,7 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Recyclée 56%</span>
 </div>
-<img alt="COMUS IZI R Mat - Peinture mate recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_mat.webp" width="392" height="364" decoding="async"/>
+<img alt="COMUS IZI R Mat - Peinture mate recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_mat.webp" width="383" height="479" decoding="async"/>
 </div>
 <div class="product-pictos">
 <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
@@ -1759,7 +1784,7 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Recyclée 56%</span>
 </div>
-<img alt="COMUS IZI R Velours - Peinture velours recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_velours.webp" width="392" height="364" decoding="async"/>
+<img alt="COMUS IZI R Velours - Peinture velours recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_velours.webp" width="383" height="479" decoding="async"/>
 </div>
 <div class="product-pictos">
 <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
@@ -1788,7 +1813,7 @@
 </section>
 <!-- ============ PARTENAIRE · ALGO PRO ============ -->
 <section class="gamme-section" data-gamme-section="algo" id="gamme-algo">
-<div class="gamme-banner is-partenaires">
+<div class="gamme-banner is-algo">
 <div class="gamme-banner-num">A</div>
 <div class="gamme-banner-content">
 <span class="gamme-banner-tag">Fabricant partenaire</span>
@@ -1804,7 +1829,7 @@
 <span class="product-finition-tag">Impression</span>
 <div class="product-visual">
 <div class="product-visual-bg"></div>
-<img alt="Algo Pro Primaire - Impression biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_prim.webp" width="448" height="476" decoding="async"/>
+<img alt="Algo Pro Primaire - Impression biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_prim.webp" width="399" height="499" decoding="async"/>
 </div>
 <div class="product-pictos">
 <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
@@ -1834,7 +1859,7 @@
 <span class="product-finition-tag">Mat</span>
 <div class="product-visual">
 <div class="product-visual-bg"></div>
-<img alt="Algo Pro Mat - Peinture mate biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_mat.webp" width="364" height="420" decoding="async"/>
+<img alt="Algo Pro Mat - Peinture mate biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_mat.webp" width="347" height="434" decoding="async"/>
 </div>
 <div class="product-pictos">
 <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
@@ -1865,7 +1890,7 @@
 <span class="product-finition-tag">Velours</span>
 <div class="product-visual">
 <div class="product-visual-bg"></div>
-<img alt="Algo Pro Velours - Peinture velours biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_velours.webp" width="560" height="644" decoding="async"/>
+<img alt="Algo Pro Velours - Peinture velours biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_velours.webp" width="550" height="688" decoding="async"/>
 </div>
 <div class="product-pictos">
 <span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
