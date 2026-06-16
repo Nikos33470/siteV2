@@ -438,11 +438,19 @@
   }
   .pot-anno small { font-weight: 500; opacity: 0.65; font-size: 11px; margin-left: 1px; }
   .pot-anno .anno-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 9px var(--acc); flex-shrink: 0; }
-  /* fin trait vertical qui relie la pastille au bidon */
+  /* trait blanc qui relie la pastille au fût concerné */
   .pot-anno::after {
-    content: ''; position: absolute; left: 50%; top: -20px;
-    width: 1.5px; height: 18px; transform: translateX(-50%);
-    background: linear-gradient(to top, var(--acc), transparent); opacity: 0.55;
+    content: ''; position: absolute; left: 50%; top: -30px;
+    width: 2px; height: 30px; transform: translateX(-50%);
+    background: linear-gradient(to top, rgba(255,255,255,0.95), rgba(255,255,255,0.35));
+    border-radius: 2px;
+  }
+  /* petit point blanc à l'extrémité du trait, posé sur le fût */
+  .pot-anno::before {
+    content: ''; position: absolute; left: 50%; top: -34px;
+    width: 6px; height: 6px; transform: translateX(-50%);
+    background: #fff; border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255,255,255,0.9);
   }
   .anno-drago  { --dx: -232px; --acc: #1a6e5a;            animation-delay: 2.2s;  }
   .anno-titane { --dx: -90px;  --acc: var(--orange);      animation-delay: 5.2s;  }
