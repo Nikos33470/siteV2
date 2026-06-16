@@ -422,9 +422,9 @@
   /* ===== Annotations dynamiques sous les bidons (apparition séquentielle, en boucle) ===== */
   .pot-annos { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
   .pot-anno {
-    position: absolute; top: 80%; left: 50%;
+    position: absolute; top: calc(58% + var(--ty)); left: 50%;
     transform: translateX(-50%);
-    translate: var(--dx) 16px;            /* dx = décalage horizontal sous chaque bidon */
+    translate: var(--dx) 10px;            /* dx = décalage horizontal sous chaque bidon */
     display: inline-flex; align-items: center; gap: 9px;
     padding: 8px 16px; border-radius: 50px;
     background: rgba(255,255,255,0.92);
@@ -452,16 +452,16 @@
     background: #fff; border-radius: 50%;
     box-shadow: 0 0 8px rgba(255,255,255,0.9);
   }
-  .anno-drago  { --dx: -232px; --acc: #1a6e5a;            animation-delay: 2.2s;  }
-  .anno-titane { --dx: -90px;  --acc: var(--orange);      animation-delay: 5.2s;  }
-  .anno-izir   { --dx: 95px;   --acc: var(--vert-eco-fonce); animation-delay: 8.2s; }
-  .anno-mat45  { --dx: 232px;  --acc: var(--bleu-clair);  animation-delay: 11.2s; }
+  .anno-drago  { --dx: -232px; --ty: 106px; --acc: #1a6e5a;            animation-delay: 2.2s;  }
+  .anno-titane { --dx: -90px;  --ty: 159px; --acc: var(--orange);      animation-delay: 5.2s;  }
+  .anno-izir   { --dx: 95px;   --ty: 137px; --acc: var(--vert-eco-fonce); animation-delay: 8.2s; }
+  .anno-mat45  { --dx: 232px;  --ty: 118px; --acc: var(--bleu-clair);  animation-delay: 11.2s; }
   @keyframes annoCycle {
-    0%   { opacity: 0; translate: var(--dx) 16px; }
-    4%   { opacity: 1; translate: var(--dx) 0; }
-    21%  { opacity: 1; translate: var(--dx) 0; }
-    25%  { opacity: 0; translate: var(--dx) -10px; }
-    100% { opacity: 0; translate: var(--dx) 16px; }
+    0%   { opacity: 0; translate: var(--dx) 10px; }
+    6%   { opacity: 1; translate: var(--dx) 0; }
+    20%  { opacity: 1; translate: var(--dx) 0; }
+    26%  { opacity: 0; translate: var(--dx) -6px; }
+    100% { opacity: 0; translate: var(--dx) 10px; }
   }
 
   .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--blanc); opacity: 0.6; animation: fadeIn 2s var(--transition) 1s both, bounce 2s ease-in-out infinite 2s; }
@@ -928,11 +928,11 @@
     .badge-biosource { transform: translate(calc(-50% - 60px), -50%); }
     .badge-recycle { transform: translate(calc(-50% + 65px), -50%); }
     .badge-cov { transform: translate(calc(-50% + 160px), -50%); }
-    .pot-anno { font-size: 11px; padding: 7px 13px; top: 88%; }
-    .anno-drago  { --dx: -150px; }
-    .anno-titane { --dx: -60px; }
-    .anno-izir   { --dx: 65px; }
-    .anno-mat45  { --dx: 160px; }
+    .pot-anno { font-size: 11px; padding: 7px 13px; }
+    .anno-drago  { --dx: -150px; --ty: 85px; }
+    .anno-titane { --dx: -60px;  --ty: 119px; }
+    .anno-izir   { --dx: 65px;   --ty: 107px; }
+    .anno-mat45  { --dx: 160px;  --ty: 93px; }
   }
 
   /* ========== MENU BURGER MOBILE (ajout : n'affecte pas le PC) ========== */
