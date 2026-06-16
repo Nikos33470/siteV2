@@ -452,16 +452,21 @@
     background: #fff; border-radius: 50%;
     box-shadow: 0 0 8px rgba(255,255,255,0.9);
   }
-  .anno-drago  { --dx: -232px; --ty: 106px; --acc: #1a6e5a;            animation-delay: 2.2s;  }
-  .anno-titane { --dx: -90px;  --ty: 159px; --acc: var(--orange);      animation-delay: 5.2s;  }
-  .anno-izir   { --dx: 95px;   --ty: 137px; --acc: var(--vert-eco-fonce); animation-delay: 8.2s; }
-  .anno-mat45  { --dx: 232px;  --ty: 118px; --acc: var(--bleu-clair);  animation-delay: 11.2s; }
+  .anno-drago  { --dx: -232px; --ty: 76px;  --acc: #1a6e5a;            animation-delay: 2.2s;  }
+  .anno-titane { --dx: -90px;  --ty: 129px; --acc: var(--orange);      animation-delay: 5.2s;  }
+  .anno-izir   { --dx: 95px;   --ty: 107px; --acc: var(--vert-eco-fonce); animation-delay: 8.2s; }
+  .anno-mat45  { --dx: 232px;  --ty: 88px;  --acc: var(--bleu-clair);  animation-delay: 11.2s; }
   @keyframes annoCycle {
     0%   { opacity: 0; translate: var(--dx) 10px; }
     6%   { opacity: 1; translate: var(--dx) 0; }
     20%  { opacity: 1; translate: var(--dx) 0; }
     26%  { opacity: 0; translate: var(--dx) -6px; }
     100% { opacity: 0; translate: var(--dx) 10px; }
+  }
+  /* Desktop étroit : on rapproche les annotations extrêmes pour qu'elles restent dans le cadre */
+  @media (min-width: 1025px) and (max-width: 1366px) {
+    .anno-drago { --dx: -200px; }
+    .anno-mat45 { --dx: 200px; }
   }
 
   .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--blanc); opacity: 0.6; animation: fadeIn 2s var(--transition) 1s both, bounce 2s ease-in-out infinite 2s; }
@@ -929,10 +934,10 @@
     .badge-recycle { transform: translate(calc(-50% + 65px), -50%); }
     .badge-cov { transform: translate(calc(-50% + 160px), -50%); }
     .pot-anno { font-size: 11px; padding: 7px 13px; }
-    .anno-drago  { --dx: -150px; --ty: 85px; }
-    .anno-titane { --dx: -60px;  --ty: 119px; }
-    .anno-izir   { --dx: 65px;   --ty: 107px; }
-    .anno-mat45  { --dx: 160px;  --ty: 93px; }
+    .anno-drago  { --dx: -150px; --ty: 58px; }
+    .anno-titane { --dx: -60px;  --ty: 96px; }
+    .anno-izir   { --dx: 65px;   --ty: 82px; }
+    .anno-mat45  { --dx: 160px;  --ty: 68px; }
   }
 
   /* ========== MENU BURGER MOBILE (ajout : n'affecte pas le PC) ========== */
