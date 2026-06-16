@@ -419,6 +419,43 @@
   @keyframes pulseBadgeRecycle { 0%,100%{transform:translate(calc(-50% + 95px), -50%) scale(1);} 50%{transform:translate(calc(-50% + 95px), -50%) scale(1.08);} }
   @keyframes pulseBadgeCov { 0%,100%{transform:translate(calc(-50% + 245px), -50%) scale(1);} 50%{transform:translate(calc(-50% + 245px), -50%) scale(1.08);} }
   
+  /* ===== Annotations dynamiques sous les bidons (apparition séquentielle, en boucle) ===== */
+  .pot-annos { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
+  .pot-anno {
+    position: absolute; top: 80%; left: 50%;
+    transform: translateX(-50%);
+    translate: var(--dx) 16px;            /* dx = décalage horizontal sous chaque bidon */
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 8px 16px; border-radius: 50px;
+    background: rgba(255,255,255,0.92);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border: 1px solid rgba(31,58,95,0.10);
+    box-shadow: 0 14px 34px -12px rgba(31,58,95,0.45);
+    font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing: 0.2px;
+    color: var(--bleu-fonce); white-space: nowrap;
+    opacity: 0;
+    animation: annoCycle 12s var(--transition) infinite;
+  }
+  .pot-anno small { font-weight: 500; opacity: 0.65; font-size: 11px; margin-left: 1px; }
+  .pot-anno .anno-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 9px var(--acc); flex-shrink: 0; }
+  /* fin trait vertical qui relie la pastille au bidon */
+  .pot-anno::after {
+    content: ''; position: absolute; left: 50%; top: -20px;
+    width: 1.5px; height: 18px; transform: translateX(-50%);
+    background: linear-gradient(to top, var(--acc), transparent); opacity: 0.55;
+  }
+  .anno-drago  { --dx: -232px; --acc: #1a6e5a;            animation-delay: 2.2s;  }
+  .anno-titane { --dx: -90px;  --acc: var(--orange);      animation-delay: 5.2s;  }
+  .anno-izir   { --dx: 95px;   --acc: var(--vert-eco-fonce); animation-delay: 8.2s; }
+  .anno-mat45  { --dx: 232px;  --acc: var(--bleu-clair);  animation-delay: 11.2s; }
+  @keyframes annoCycle {
+    0%   { opacity: 0; translate: var(--dx) 16px; }
+    4%   { opacity: 1; translate: var(--dx) 0; }
+    21%  { opacity: 1; translate: var(--dx) 0; }
+    25%  { opacity: 0; translate: var(--dx) -10px; }
+    100% { opacity: 0; translate: var(--dx) 16px; }
+  }
+
   .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--blanc); opacity: 0.6; animation: fadeIn 2s var(--transition) 1s both, bounce 2s ease-in-out infinite 2s; }
   @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
   .scroll-indicator span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
@@ -829,6 +866,7 @@
     .google-floating-link { padding: 14px 16px 14px 14px; }
     .google-floating-num { font-size: 22px; }
     .google-floating-icon { width: 36px; height: 36px; }
+    .pot-annos { display: none; }
   }
   
   .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--transition); }
@@ -882,6 +920,11 @@
     .badge-biosource { transform: translate(calc(-50% - 60px), -50%); }
     .badge-recycle { transform: translate(calc(-50% + 65px), -50%); }
     .badge-cov { transform: translate(calc(-50% + 160px), -50%); }
+    .pot-anno { font-size: 11px; padding: 7px 13px; top: 88%; }
+    .anno-drago  { --dx: -150px; }
+    .anno-titane { --dx: -60px; }
+    .anno-izir   { --dx: 65px; }
+    .anno-mat45  { --dx: 160px; }
   }
 
   /* ========== MENU BURGER MOBILE (ajout : n'affecte pas le PC) ========== */
@@ -1099,6 +1142,7 @@
     .logo-coin { animation: none; }
     /* Pas d'animation d'entrée : pots et badges visibles d'emblée */
     .pot-3d, .pot-badge { opacity: 1 !important; animation: none !important; }
+    .pot-annos { display: none; }
   }
 </style>
 </head>
@@ -1184,6 +1228,13 @@
 <img alt="Pot TITANE Hydro MV evo 15L - L'Atelier" class="pot-3d pot-titane-mv" src="images/pot-titane-hydro-mv.webp" width="332" height="406" loading="lazy" decoding="async"/>
 <img alt="Pot Comus IZI R Velours - Peinture éco-respectueuse" class="pot-3d pot-izi-r" src="images/pot-comus-izi-r.webp" width="370" height="345" loading="lazy" decoding="async"/>
 <img alt="Pot Dragopaint MS Soyeux Bas Carbone - 0,200 kg CO₂/UF" class="pot-3d pot-algo" src="images/pot-dragopaint-bascarbone.webp" width="582" height="550" loading="lazy" decoding="async"/>
+</div>
+<!-- Annotations dynamiques : apparaissent une par une sous chaque bidon -->
+<div class="pot-annos" aria-hidden="true">
+<div class="pot-anno anno-drago"><span class="anno-dot"></span>Ultra bas carbone</div>
+<div class="pot-anno anno-titane"><span class="anno-dot"></span>85&nbsp;% biosourcé · 78&nbsp;% de matière naturelle <small>(produit fini)</small></div>
+<div class="pot-anno anno-izir"><span class="anno-dot"></span>56&nbsp;% recyclé <small>(produit fini)</small></div>
+<div class="pot-anno anno-mat45"><span class="anno-dot"></span>COV inférieur à 1&nbsp;g/L</div>
 </div>
 </div>
 </div>
