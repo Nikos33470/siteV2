@@ -2591,10 +2591,7 @@
   overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 
-  // pause au survol de la scène
-  var stage = document.getElementById('bsStage');
-  stage.addEventListener('mouseenter', stop);
-  stage.addEventListener('mouseleave', function () { if (overlay.classList.contains('is-open')) play(); });
+  // (le carrousel tourne en continu — pas de pause au survol pour ne pas rester bloqué)
 
   // affichage à l'ouverture de la page — une fois par session
   function trigger() {
