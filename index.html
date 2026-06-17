@@ -2649,6 +2649,19 @@
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     stop();
+    replayHeroPots();   // relance l'apparition en cascade des fûts du hero
+  }
+
+  // réinitialise l'animation d'entrée des fûts du hero pour qu'ils réapparaissent un par un
+  function replayHeroPots() {
+    var pots = document.querySelectorAll('.hero-visual .pot-3d');
+    pots.forEach(function (el) {
+      var anim = getComputedStyle(el).animation;   // chaîne complète (potIn + floatPot)
+      if (!anim || anim === 'none' || anim.indexOf('none ') === 0) return; // reduced-motion : on ne force rien
+      el.style.animation = 'none';   // coupe l'animation en cours
+      void el.offsetWidth;           // force un reflow pour réinitialiser
+      el.style.animation = anim;     // ré-applique -> redémarre depuis le début (cascade)
+    });
   }
 
   closeBtn.addEventListener('click', close);
