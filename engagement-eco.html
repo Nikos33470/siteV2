@@ -735,6 +735,16 @@
     display: flex; align-items: center; justify-content: center;
     min-height: 480px;
   }
+  /* Légende méthodologique intégrée EN BAS du carré animé */
+  .viz-caption {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 30;
+    padding: 12px 22px 14px; text-align: center;
+    font-size: 12.5px; line-height: 1.4; font-style: italic; font-weight: 500;
+    color: #fff;
+    background: linear-gradient(to top, rgba(10,20,38,0.82) 0%, rgba(10,20,38,0.62) 55%, rgba(10,20,38,0) 100%);
+    -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  }
+  @media (max-width: 600px) { .viz-caption { font-size: 11px; padding: 10px 14px 12px; } }
 
   /* ============ Visual 1 : RE2020 ============ */
   .visual-re2020 {
@@ -1515,6 +1525,160 @@
   @media (prefers-reduced-motion: reduce) {
     .logo-coin { animation: none; }
   }
+
+  /* ============================================================
+     RAFFINEMENT DES 4 CARRÉS ANIMÉS (surcharge esthétique)
+     ============================================================ */
+  /* Carte : profondeur, liseré lumineux, ombre portée travaillée */
+  .engagement-visual {
+    box-shadow:
+      0 44px 90px -34px rgba(8,16,30,0.62),
+      0 8px 24px -12px rgba(8,16,30,0.45),
+      inset 0 1px 0 rgba(255,255,255,0.16),
+      inset 0 0 0 1px rgba(255,255,255,0.07);
+  }
+  /* Grain fin + halo de lumière haut + vignette basse, fondus dans le fond (toujours derrière le contenu) */
+  .visual-re2020 {
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+      radial-gradient(130% 90% at 50% -15%, rgba(255,255,255,0.18), transparent 55%),
+      radial-gradient(120% 80% at 30% 28%, rgba(74,139,92,0.30), transparent 60%),
+      radial-gradient(140% 120% at 50% 125%, rgba(0,0,0,0.45), transparent 55%),
+      linear-gradient(135deg, #122036 0%, #1F3A5F 52%, #2D4E7A 100%);
+  }
+  .visual-biosource {
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+      radial-gradient(130% 90% at 50% -15%, rgba(220,255,225,0.16), transparent 55%),
+      radial-gradient(120% 90% at 72% 32%, rgba(120,200,140,0.28), transparent 62%),
+      radial-gradient(140% 120% at 50% 125%, rgba(0,40,18,0.5), transparent 55%),
+      linear-gradient(140deg, #1E5A32 0%, #2F7444 55%, #225B36 100%);
+  }
+  .visual-recycle {
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+      radial-gradient(130% 90% at 50% -15%, rgba(220,255,225,0.15), transparent 55%),
+      radial-gradient(120% 90% at 28% 30%, rgba(120,200,140,0.22), transparent 62%),
+      radial-gradient(140% 120% at 50% 125%, rgba(0,30,14,0.55), transparent 55%),
+      linear-gradient(150deg, #163E27 0%, #245736 55%, #1B4429 100%) !important;
+  }
+  .visual-bascarbone {
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+      radial-gradient(130% 90% at 50% -15%, rgba(220,255,225,0.16), transparent 55%),
+      radial-gradient(140% 120% at 50% 125%, rgba(0,30,14,0.45), transparent 55%),
+      linear-gradient(135deg, #2C6A40 0%, #3D7A4F 55%, #275836 100%) !important;
+  }
+
+  /* Médaillon central : verre + double anneau lumineux affiné */
+  .re-core {
+    background:
+      radial-gradient(circle at 38% 26%, #ffffff 0%, #f3f7fb 60%, #e6edf5 100%);
+    box-shadow:
+      0 30px 60px rgba(0,0,0,0.45),
+      0 0 70px rgba(168,230,190,0.4),
+      inset 0 2px 5px rgba(255,255,255,0.9),
+      inset 0 -8px 18px rgba(31,58,95,0.10),
+      0 0 0 1px rgba(255,255,255,0.6),
+      0 0 0 7px rgba(255,255,255,0.10);
+  }
+  .bio-core, .rec-core {
+    background:
+      radial-gradient(circle at 35% 26%, #2D4E7A 0%, #1F3A5F 46%, #122036 100%) !important;
+    box-shadow:
+      0 30px 60px rgba(0,0,0,0.45),
+      0 0 70px rgba(240,127,44,0.40),
+      inset 0 2px 6px rgba(255,255,255,0.18),
+      inset 0 -10px 22px rgba(0,0,0,0.35),
+      0 0 0 1px rgba(255,255,255,0.10),
+      0 0 0 7px rgba(240,127,44,0.16) !important;
+    border: 2px solid rgba(240,127,44,0.85) !important;
+  }
+
+  /* Chips "matière" : verre raffiné + icône SVG nette (remplace les emojis) */
+  .re-sat-mat {
+    width: 84px; height: 84px;
+    background:
+      radial-gradient(circle at 34% 26%, rgba(255,255,255,0.30), rgba(255,255,255,0.05) 70%),
+      rgba(20,40,30,0.18);
+    border: 1px solid rgba(255,255,255,0.42);
+    box-shadow:
+      0 16px 34px -10px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.55),
+      inset 0 0 18px rgba(255,255,255,0.10);
+    -webkit-backdrop-filter: blur(12px) saturate(1.3); backdrop-filter: blur(12px) saturate(1.3);
+    color: #EAFBEF; font-size: 0;
+  }
+  .re-sat-mat.rec-mat {
+    background:
+      radial-gradient(circle at 34% 26%, rgba(220,255,228,0.32), rgba(168,230,190,0.05) 70%),
+      rgba(20,46,30,0.20);
+    border-color: rgba(184,240,200,0.5); color: #EAFBEF;
+  }
+  .re-sat-mat svg { width: 42px; height: 42px; display: block; }
+  .re-sat-mat svg [stroke] { stroke: currentColor; }
+  .re-sat-mat svg [fill]:not([fill="none"]) { fill: currentColor; }
+
+  /* Anneaux d'orbite affinés : trait plus fin + lueur douce */
+  .re-orbit   { border-width: 1px; box-shadow: 0 0 24px rgba(240,127,44,0.10); }
+  .re-orbit-2 { box-shadow: 0 0 24px rgba(168,193,230,0.12); }
+  .re-orbit-3 { box-shadow: 0 0 22px rgba(255,169,104,0.12); }
+
+  /* Pastilles % / CO₂ : dégradé + liseré, moins plat */
+  .re-sat-co2 {
+    background: linear-gradient(150deg, #FFA968, #F07F2C 60%, #D86618);
+    box-shadow: 0 12px 26px -6px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.45), 0 0 0 4px rgba(45,78,122,0.40);
+  }
+  .re-sat-co2.is-eco {
+    background: linear-gradient(150deg, #6FD08C, #4A8B5C 60%, #2F6940);
+    box-shadow: 0 12px 26px -6px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.45), 0 0 0 4px rgba(255,255,255,0.16);
+  }
+
+  /* ---- Graphique CO₂ : raffinements ---- */
+  /* lignes de repère discrètes derrière les barres */
+  .co2-chart::before {
+    content: ''; position: absolute; left: -4%; right: -4%; top: 30px; bottom: 100px; z-index: 0;
+    background-image: repeating-linear-gradient(to top, rgba(255,255,255,0.07) 0 1px, transparent 1px 64px);
+    pointer-events: none;
+  }
+  .co2-bar { z-index: 1; }
+  /* sommet de barre légèrement biseauté + reflet vertical */
+  .co2-bar-fill { border-radius: 14px 14px 4px 4px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 -2px 14px rgba(255,255,255,0.06); }
+  .co2-bar-fill::before {
+    content:''; position:absolute; top:0; bottom:0; left:18%; width:24%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  }
+  /* valeur en pastille verre */
+  .co2-bar-value {
+    font-size: 13px; padding: 4px 10px 5px; width: max-content; left: 50%; transform: translateX(-50%);
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 50px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+    text-align: center;
+  }
+  .co2-bar.standard .co2-bar-value { bottom: calc(92% + 4px); }
+  .co2-bar.notre .co2-bar-value    { bottom: calc(57% + 4px); }
+  .co2-bar.algo .co2-bar-value     { bottom: calc(35% + 4px); }
+  .co2-bar.izir .co2-bar-value     { bottom: calc(30% + 4px); }
+  .co2-bar.eco .co2-bar-value      { bottom: calc(24% + 4px); }
+  /* Badge signature : réduction max */
+  .co2-delta {
+    position: absolute; top: 18px; right: 18px; z-index: 5;
+    display: flex; flex-direction: column; align-items: flex-end; text-align: right;
+    padding: 12px 16px; border-radius: 18px;
+    background: linear-gradient(150deg, rgba(168,230,190,0.22), rgba(74,139,92,0.10));
+    border: 1px solid rgba(168,230,190,0.45);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    box-shadow: 0 16px 34px -14px rgba(0,0,0,0.5);
+  }
+  .co2-delta .d-kick { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .co2-delta .d-num { font-family: var(--display); font-weight: 600; font-size: 38px; line-height: 1; color: var(--vert-mousse); letter-spacing: -1px; }
+  .co2-delta .d-num small { font-size: 0.5em; }
+  .co2-delta .d-sub { font-size: 9.5px; color: rgba(255,255,255,0.78); margin-top: 4px; max-width: 130px; line-height: 1.3; }
+  @media (max-width: 600px) {
+    .co2-delta { padding: 9px 12px; top: 12px; right: 12px; }
+    .co2-delta .d-num { font-size: 28px; }
+    .re-sat-mat { width: 70px; height: 70px; } .re-sat-mat svg { width: 34px; height: 34px; }
+  }
 </style>
 </head>
 <body>
@@ -1729,6 +1893,7 @@ Le bâtiment représente <strong>près d'un quart des émissions de CO₂ en Fra
 
 <div class="engagement-visual visual-bascarbone">
 <span class="co2-unit">kg CO₂ eq / m²</span>
+<div class="co2-delta"><span class="d-kick">jusqu'à</span><span class="d-num">−74<small>%</small></span><span class="d-sub">de CO₂ vs une peinture standard</span></div>
 <div class="co2-particles">
 <!-- particules ascendantes -->
 </div>
@@ -1760,6 +1925,7 @@ Le bâtiment représente <strong>près d'un quart des émissions de CO₂ en Fra
 </div>
 </div>
 <div class="co2-axis"></div>
+<div class="viz-caption">Données calculées pour un système complet, avec 1 couche d'impression et 2 couches de finitions.</div>
 </div>
 </div>
 </section>
@@ -1851,6 +2017,7 @@ La <strong>Réglementation Environnementale 2020</strong> impose aux bâtiments 
 <div class="re-label-bottom">BAS CARBONE</div>
 </div>
 </div>
+<div class="viz-caption">Données calculées pour un système complet, avec 1 couche d'impression et 2 couches de finitions.</div>
 </div>
 </div>
 </section>
@@ -1908,19 +2075,19 @@ Une peinture <strong>biosourcée</strong>, c'est une formulation qui remplace to
 </div>
 <div class="re-sat re-sat-3">
 <div class="re-sat-inner">
-<div class="re-sat-mat">🌊</div>
+<div class="re-sat-mat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21c0-5-3.2-7-3.2-11a3.2 3.2 0 0 1 6.4 0C12.2 14 9 16 9 21Z"/><path d="M15.5 21c0-4 3.5-6 3.5-9.5a2.4 2.4 0 0 0-4.8 0c0 3.5 1.3 5.5 1.3 9.5Z"/></svg></div>
 <div class="re-sat-name">Algues</div>
 </div>
 </div>
 <div class="re-sat re-sat-4">
 <div class="re-sat-inner">
-<div class="re-sat-mat">🌱</div>
+<div class="re-sat-mat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10"/><path d="M12 13c0-4-3-7-7-7 0 4 3 7 7 7Z"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7Z"/></svg></div>
 <div class="re-sat-name">Ricin</div>
 </div>
 </div>
 <div class="re-sat re-sat-5">
 <div class="re-sat-inner">
-<div class="re-sat-mat">🌾</div>
+<div class="re-sat-mat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V5"/><path d="M12 9.5C10 9.5 8.6 8 8.6 6 10.6 6 12 7.5 12 9.5Z"/><path d="M12 9.5c2 0 3.4-1.5 3.4-3.5C13.4 6 12 7.5 12 9.5Z"/><path d="M12 14.5c-2 0-3.4-1.5-3.4-3.5 2 0 3.4 1.5 3.4 3.5Z"/><path d="M12 14.5c2 0 3.4-1.5 3.4-3.5-2 0-3.4 1.5-3.4 3.5Z"/></svg></div>
 <div class="re-sat-name">Lin</div>
 </div>
 </div>
@@ -1981,25 +2148,25 @@ Saviez-vous qu'on peut peindre un mur avec d'anciens <strong style="color:var(--
 </div>
 <div class="re-sat re-sat-2">
 <div class="re-sat-inner">
-<div class="re-sat-mat rec-mat">🚗</div>
+<div class="re-sat-mat rec-mat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.6-4.6A2 2 0 0 1 6.5 7h11a2 2 0 0 1 1.9 1.4L21 13"/><path d="M3 13h18v3.5a1 1 0 0 1-1 1h-1.2a1 1 0 0 1-1-1V16H6.2v.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/><circle cx="7.2" cy="13.6" r="0.7" fill="currentColor" stroke="none"/><circle cx="16.8" cy="13.6" r="0.7" fill="currentColor" stroke="none"/></svg></div>
 <div class="re-sat-name">Pare-brise</div>
 </div>
 </div>
 <div class="re-sat re-sat-3">
 <div class="re-sat-inner">
-<div class="re-sat-mat rec-mat">⛰️</div>
+<div class="re-sat-mat rec-mat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l5.5-9.5 4 6.5 2.2-3.2L21 19Z"/><path d="M8.5 9.5l4 6.5"/></svg></div>
 <div class="re-sat-name">Marbre</div>
 </div>
 </div>
 <div class="re-sat re-sat-4">
 <div class="re-sat-inner">
-<div class="re-sat-mat rec-mat">💧</div>
+<div class="re-sat-mat rec-mat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c3 4 5.6 6.7 5.6 9.6a5.6 5.6 0 0 1-11.2 0c0-2.9 2.6-5.6 5.6-9.6Z"/></svg></div>
 <div class="re-sat-name">Eau</div>
 </div>
 </div>
 <div class="re-sat re-sat-5">
 <div class="re-sat-inner">
-<div class="re-sat-mat rec-mat">📦</div>
+<div class="re-sat-mat rec-mat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1 11.2a2 2 0 0 1-2 1.8H8.5a2 2 0 0 1-2-1.8Z"/><path d="M5.5 8c0-1.7 13-1.7 13 0"/><path d="M9 5.4c0-1.3 6-1.3 6 0"/></svg></div>
 <div class="re-sat-name">Pots</div>
 </div>
 </div>
