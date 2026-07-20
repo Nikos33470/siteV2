@@ -1166,58 +1166,58 @@
      POP-UP « MEILLEURES VENTES DU MOIS » — carrousel 3D
      ============================================================ -->
 <style id="bs-css">
-  .bs-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(9,20,15,0.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .5s var(--transition),visibility .5s var(--transition);}
+  .bs-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(10,20,38,0.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .45s var(--transition),visibility .45s var(--transition);}
   .bs-overlay.is-open{opacity:1;visibility:visible;}
-  .bs-modal{position:relative;width:min(980px,96vw);max-height:94vh;overflow-x:hidden;overflow-y:auto;border-radius:26px;background:radial-gradient(150% 120% at 88% -10%,rgba(74,139,92,0.16),transparent 55%),linear-gradient(168deg,#FFFFFF 0%,#F5F7F4 62%,#EAF1EA 100%);box-shadow:0 50px 120px -30px rgba(9,30,18,0.6),0 0 0 1px rgba(31,58,95,0.05);transform:translateY(32px) scale(.965);opacity:0;transition:transform .65s var(--transition),opacity .55s var(--transition);}
+  .bs-modal{position:relative;width:min(860px,95vw);max-height:92vh;overflow-x:hidden;overflow-y:auto;border-radius:24px;background:radial-gradient(120% 90% at 96% 2%,rgba(240,127,44,0.22),transparent 46%),radial-gradient(120% 90% at 2% 100%,rgba(31,58,95,0.12),transparent 50%),linear-gradient(168deg,#FFFFFF 0%,#F8F7F4 62%,#EEF2F7 100%);box-shadow:0 46px 110px -30px rgba(10,20,38,0.62),0 0 0 1px rgba(31,58,95,0.05);transform:translateY(28px) scale(.965);opacity:0;transition:transform .6s var(--transition),opacity .5s var(--transition);}
   .bs-overlay.is-open .bs-modal{transform:none;opacity:1;}
-  .bs-modal::before{content:'';position:absolute;top:-120px;right:-90px;width:420px;height:420px;background:radial-gradient(circle,rgba(74,139,92,0.28),transparent 70%);pointer-events:none;}
-  .bs-modal::after{content:'';position:absolute;bottom:-150px;left:-120px;width:380px;height:380px;background:radial-gradient(circle,rgba(31,58,95,0.12),transparent 70%);pointer-events:none;}
-  .bs-close{position:absolute;top:16px;right:16px;z-index:6;width:42px;height:42px;border:none;border-radius:50%;background:rgba(31,58,95,0.06);color:var(--bleu);cursor:pointer;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .3s var(--transition),transform .3s var(--transition);}
-  .bs-close:hover{background:var(--vert-eco);color:#fff;transform:rotate(90deg);}
+  .bs-close{position:absolute;top:14px;right:14px;z-index:6;width:38px;height:38px;border:none;border-radius:50%;background:rgba(31,58,95,0.06);color:var(--bleu);cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .3s var(--transition),transform .3s var(--transition);}
+  .bs-close:hover{background:var(--orange);color:#fff;transform:rotate(90deg);}
 
-  .im-wrap{position:relative;z-index:2;padding:34px clamp(24px,4vw,46px) 30px;}
-  .im-eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:50px;background:rgba(74,139,92,0.12);border:1px solid rgba(74,139,92,0.32);color:var(--vert-eco-fonce);font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;}
+  .im-wrap{position:relative;z-index:2;padding:26px clamp(22px,4vw,40px) 24px;}
+  /* pastille eyebrow — point vert conservé (accent bas carbone 1/2) */
+  .im-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 15px;border-radius:50px;background:rgba(240,127,44,0.12);border:1px solid rgba(240,127,44,0.32);color:var(--orange-fonce);font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
   .im-eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--vert-eco);animation:pulse 2s infinite;}
-  .im-title{font-family:var(--display);font-weight:400;font-size:clamp(27px,3.6vw,40px);color:var(--bleu);letter-spacing:-.5px;line-height:1.05;margin:14px 0 8px;}
-  .im-title em{font-style:italic;color:var(--vert-eco-fonce);}
-  .im-claim{font-family:var(--display);font-style:italic;font-size:clamp(16px,2vw,20px);color:var(--orange-fonce);margin-bottom:22px;}
+  .im-title{font-family:var(--display);font-weight:400;font-size:clamp(24px,3.2vw,35px);color:var(--bleu);letter-spacing:-.5px;line-height:1.05;margin:12px 0 6px;}
+  .im-title em{font-style:italic;color:var(--orange);}
+  .im-claim{display:inline-block;font-family:var(--display);font-weight:600;font-style:italic;font-size:clamp(18px,2.5vw,25px);line-height:1.15;color:var(--orange);letter-spacing:-.3px;margin:2px 0 18px;padding:8px 16px;border-radius:12px;background:rgba(240,127,44,0.10);border-left:4px solid var(--orange);}
 
-  .im-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;}
-  .im-figure{background:linear-gradient(155deg,#1E5A32 0%,#2F7444 60%,#225B36 100%);border-radius:22px;padding:26px 28px;color:#fff;position:relative;overflow:hidden;box-shadow:0 26px 54px -22px rgba(20,60,34,0.6);}
-  .im-figure::after{content:'';position:absolute;top:-70px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(168,230,190,0.28),transparent 70%);pointer-events:none;}
-  .im-fig-kick{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,0.72);font-weight:700;}
-  .im-fig-num{font-family:var(--display);font-weight:500;font-size:clamp(46px,7vw,68px);line-height:1;letter-spacing:-2px;margin:6px 0 2px;background:linear-gradient(120deg,#EAFBEF,#A8E6BE);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-  .im-fig-num small{font-size:.34em;letter-spacing:0;-webkit-text-fill-color:#EAFBEF;color:#EAFBEF;font-family:var(--sans);font-weight:600;}
-  .im-fig-scope{font-size:13px;color:#EAFBEF;font-weight:600;}
-  .im-fig-30{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.18);font-size:12.5px;line-height:1.5;color:rgba(255,255,255,0.82);}
-  .im-fig-30 b{color:#fff;}
-  .im-inies{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:6px 12px;border-radius:40px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);font-size:10.5px;letter-spacing:.4px;color:#EAFBEF;font-weight:600;}
-  .im-inies::before{content:'';width:8px;height:8px;border-radius:50%;background:#A8E6BE;box-shadow:0 0 8px #A8E6BE;}
+  .im-hero{display:grid;grid-template-columns:1.12fr .88fr;gap:20px;align-items:center;}
+  .im-figure{background:linear-gradient(155deg,#15273F 0%,#1F3A5F 58%,#2D4E7A 100%);border-radius:20px;padding:22px 24px;color:#fff;position:relative;overflow:hidden;box-shadow:0 22px 46px -20px rgba(21,39,63,0.6);}
+  .im-figure::after{content:'';position:absolute;top:-60px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(240,127,44,0.28),transparent 70%);pointer-events:none;}
+  .im-fig-kick{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.68);font-weight:700;}
+  .im-fig-num{font-family:var(--display);font-weight:500;font-size:clamp(42px,6vw,58px);line-height:1;letter-spacing:-2px;margin:5px 0 2px;background:linear-gradient(120deg,#FFC48F,#F07F2C);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .im-fig-num small{font-size:.36em;letter-spacing:0;-webkit-text-fill-color:#fff;color:#fff;font-family:var(--sans);font-weight:600;}
+  .im-fig-scope{font-size:12.5px;color:#fff;font-weight:600;}
+  .im-fig-30{margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.16);font-size:12px;line-height:1.45;color:rgba(255,255,255,0.8);}
+  .im-fig-30 b{color:#FFC48F;}
+  /* badge FDES — point vert conservé (accent 2/2) */
+  .im-inies{display:inline-flex;align-items:center;gap:7px;margin-top:11px;padding:6px 11px;border-radius:40px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.2);font-size:10px;letter-spacing:.3px;color:#fff;font-weight:600;}
+  .im-inies::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--vert-eco);box-shadow:0 0 8px rgba(74,139,92,0.9);}
 
   .im-potwrap{text-align:center;}
-  .im-pot{width:auto;height:clamp(230px,30vw,320px);filter:drop-shadow(0 34px 40px rgba(9,30,18,0.4));animation:imFloat 5.5s ease-in-out infinite;}
-  @keyframes imFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .im-pot{width:auto;height:clamp(200px,26vw,270px);filter:drop-shadow(0 28px 34px rgba(10,20,38,0.4));animation:imFloat 5.5s ease-in-out infinite;}
+  @keyframes imFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
-  .im-argtitle{margin:26px 0 14px;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--orange-fonce);}
-  .im-args{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-  .im-arg{background:#fff;border:1px solid rgba(31,58,95,0.08);border-radius:14px;padding:13px 12px;box-shadow:0 8px 20px -14px rgba(31,58,95,0.3);}
-  .im-arg b{display:block;font-size:15px;color:var(--bleu);font-weight:700;line-height:1.15;}
-  .im-arg span{display:block;margin-top:3px;font-size:11.5px;color:var(--gris);line-height:1.3;}
+  .im-argtitle{margin:22px 0 11px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange-fonce);}
+  .im-args{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;}
+  .im-arg{background:#fff;border:1px solid rgba(31,58,95,0.09);border-radius:12px;padding:11px 11px;box-shadow:0 6px 16px -12px rgba(31,58,95,0.3);border-top:2px solid var(--orange);}
+  .im-arg b{display:block;font-size:14px;color:var(--bleu);font-weight:700;line-height:1.12;}
+  .im-arg span{display:block;margin-top:2px;font-size:11px;color:var(--gris);line-height:1.25;}
 
-  .im-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:26px;}
-  .im-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:transform .3s var(--transition),box-shadow .3s var(--transition);}
+  .im-cta{display:flex;gap:11px;flex-wrap:wrap;justify-content:center;margin-top:22px;}
+  .im-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:50px;font-size:13.5px;font-weight:700;text-decoration:none;transition:transform .3s var(--transition),box-shadow .3s var(--transition);}
   .im-btn svg{width:16px;height:16px;}
-  .im-btn.primary{background:linear-gradient(120deg,#4A8B5C,#2F6940);color:#fff;box-shadow:0 14px 30px -12px rgba(47,105,64,0.6);}
-  .im-btn.primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(47,105,64,0.7);}
+  .im-btn.primary{background:linear-gradient(120deg,#FFA968,#F07F2C 60%,#D86618);color:#fff;box-shadow:0 12px 26px -12px rgba(216,102,24,0.6);}
+  .im-btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 32px -12px rgba(216,102,24,0.7);}
   .im-btn.ghost{background:#fff;color:var(--bleu);border:2px solid var(--bleu);}
   .im-btn.ghost:hover{transform:translateY(-2px);background:var(--bleu);color:#fff;}
 
   @media (max-width:720px){
-    .im-hero{grid-template-columns:1fr;gap:16px;}
+    .im-hero{grid-template-columns:1fr;gap:14px;}
     .im-potwrap{order:-1;}
-    .im-pot{height:210px;animation:none;}
+    .im-pot{height:180px;animation:none;}
     .im-args{grid-template-columns:repeat(2,1fr);}
-    .im-wrap{padding:30px 20px 26px;}
+    .im-wrap{padding:24px 18px 22px;}
   }
   @media (prefers-reduced-motion:reduce){
     .bs-modal,.bs-overlay{transition-duration:.2s;}
@@ -1239,7 +1239,7 @@
           <div class="im-fig-kick">Empreinte carbone &middot; sur 10 ans</div>
           <div class="im-fig-num">0,043<small> kg CO&#8322;/UF</small></div>
           <div class="im-fig-scope">Le meilleur r&eacute;sultat du march&eacute; pour une impression.</div>
-          <div class="im-fig-30">Soit <b>0,128 kg CO&#8322; eq/UF sur 30 ans</b>, chiffre d&eacute;clar&eacute; et v&eacute;rifi&eacute; &mdash; pas une all&eacute;gation, une donn&eacute;e opposable.</div>
+          <div class="im-fig-30">Soit <b>0,128 kg CO&#8322; eq/UF sur 30 ans</b>, chiffre d&eacute;clar&eacute; et v&eacute;rifi&eacute;.</div>
           <span class="im-inies">FDES v&eacute;rifi&eacute;e INIES &middot; n&deg; 20231035427 &middot; NF EN 15804+A2</span>
         </div>
         <div class="im-potwrap">
