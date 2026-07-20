@@ -635,6 +635,37 @@
     white-space: nowrap;
   }
 
+  /* Badge médaille bas carbone (surimpression seau) */
+  .product-carbone-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 26%, var(--vert-eco) 0%, var(--vert-eco-fonce) 100%);
+    color: var(--blanc);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    box-shadow: 0 8px 20px -8px rgba(47, 105, 64, 0.6), inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+    transform: rotate(-9deg);
+    transition: transform 0.35s var(--transition), box-shadow 0.35s var(--transition);
+    z-index: 4;
+    pointer-events: none;
+  }
+  .product-card:hover .product-carbone-badge {
+    transform: rotate(-9deg) scale(1.07);
+    box-shadow: 0 12px 26px -8px rgba(47, 105, 64, 0.72), inset 0 0 0 2px rgba(255, 255, 255, 0.95);
+  }
+  .product-carbone-badge svg { width: 14px; height: 14px; margin-bottom: 1px; opacity: 0.95; }
+  .product-carbone-badge .cb-top { font-family: var(--sans); font-size: 7px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
+  .product-carbone-badge .cb-val { font-family: var(--display); font-weight: 600; font-size: 21px; margin: 1px 0; }
+  .product-carbone-badge .cb-unit { font-family: var(--sans); font-size: 6.5px; font-weight: 600; letter-spacing: 0.3px; opacity: 0.92; }
+
   /* Infos texte compactes */
   .product-info { text-align: left; }
   .product-gamme { font-size: 9.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); margin-bottom: 2px; }
@@ -1283,6 +1314,12 @@
 <span class="product-recycled-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path d="M14 16l-3 3 3 3"></path><path d="M8.293 13.596 4.5 9.5 0.5 13.5"></path><path d="M9.32 6.5 12.93.93a1.82 1.82 0 0 1 1.553-.929c.633 0 1.219.357 1.522.929l4.171 6.873"></path><path d="M16.71 7.929 21.5 6 18.5 1.5"></path></svg></span>
 <span class="product-recycled-text">Fût recyclé</span>
 </div>
+<div class="product-carbone-badge" aria-label="Bas carbone : 0,043 kg CO2 par UF">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg>
+<span class="cb-top">Bas carbone</span>
+<span class="cb-val">0,043</span>
+<span class="cb-unit">kg CO₂/UF</span>
+</div>
 <img alt="L'Atelier 45 Grands Travaux - Impression acrylique" class="product-image" loading="lazy" src="images/produits/45_impress_GT.webp" width="752" height="913" decoding="async"/>
 </div>
 <div class="product-pictos">
@@ -1639,6 +1676,12 @@
 <span class="product-finition-tag">Mat airless</span>
 <div class="product-visual">
 <div class="product-visual-bg"></div>
+<div class="product-carbone-badge" aria-label="Bas carbone : 0,145 kg CO2 par UF">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg>
+<span class="cb-top">Bas carbone</span>
+<span class="cb-val">0,145</span>
+<span class="cb-unit">kg CO₂/UF</span>
+</div>
 <img alt="Dragocryl Mat Airless Bas Carbone - Peinture mate airless bas carbone Dragopaint" class="product-image" loading="lazy" src="images/produits/dragocryl_mat_airless.webp" width="614" height="768" decoding="async"/>
 </div>
 <div class="product-pictos">
@@ -1669,6 +1712,12 @@
 <span class="product-finition-tag">Mat velouté</span>
 <div class="product-visual">
 <div class="product-visual-bg"></div>
+<div class="product-carbone-badge" aria-label="Bas carbone : 0,200 kg CO2 par m2">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg>
+<span class="cb-top">Bas carbone</span>
+<span class="cb-val">0,200</span>
+<span class="cb-unit">kg CO₂/m²</span>
+</div>
 <img alt="Dragocryl MS Soyeux Bas Carbone - Finition mat velouté soyeuse biosourcée Dragopaint" class="product-image" loading="lazy" src="images/produits/dragocryl_ms_soyeux.webp" width="626" height="782" decoding="async"/>
 </div>
 <div class="product-pictos">
