@@ -304,7 +304,7 @@
   .gamme-tab[data-gamme="partenaires"].is-active { background: var(--gris-fonce); border-color: var(--gris-fonce); }
   .gamme-tab[data-gamme="dragopaint"].is-active { background: #6FB7DA; border-color: #6FB7DA; color: var(--bleu-fonce); }
   .gamme-tab[data-gamme="comus"].is-active { background: #7FC99A; border-color: #7FC99A; color: var(--bleu-fonce); }
-  .gamme-tab[data-gamme="algo"].is-active { background: #14564A; border-color: #14564A; }
+  .gamme-tab[data-gamme="sofec"].is-active { background: #0095D6; border-color: #0095D6; }
   /* Onglets clairs : count et sous-titre lisibles sur fond clair */
   .gamme-tab[data-gamme="dragopaint"].is-active .gamme-tab-count,
   .gamme-tab[data-gamme="comus"].is-active .gamme-tab-count { background: rgba(31,58,95,0.15); color: var(--bleu-fonce); }
@@ -376,8 +376,8 @@
     background: linear-gradient(135deg, #7FC99A 0%, #B2E0C2 100%); /* vert clair */
     color: var(--bleu-fonce);
   }
-  .gamme-banner.is-algo {
-    background: linear-gradient(135deg, #14564A 0%, #1F7A66 100%); /* vert foncé */
+  .gamme-banner.is-sofec {
+    background: linear-gradient(135deg, #0077B6 0%, #0095D6 100%); /* bleu Sofec */
     color: var(--blanc);
   }
   /* Tags / counts adaptés aux fonds clairs (drago, comus) */
@@ -385,10 +385,10 @@
   .gamme-banner.is-comus .gamme-banner-tag { background: rgba(255,255,255,0.6); color: var(--bleu-fonce); }
   .gamme-banner.is-dragopaint .gamme-banner-count,
   .gamme-banner.is-comus .gamme-banner-count { background: rgba(255,255,255,0.5); }
-  /* Tag / count adaptés au fond foncé (algo) */
-  .gamme-banner.is-algo .gamme-banner-tag { background: rgba(255,255,255,0.2); color: var(--blanc); }
-  .gamme-banner.is-algo .gamme-banner-count { background: rgba(255,255,255,0.12); }
-  .gamme-banner.is-algo .gamme-banner-count strong { color: var(--blanc); }
+  /* Tag / count adaptés au fond foncé (sofec) */
+  .gamme-banner.is-sofec .gamme-banner-tag { background: rgba(255,255,255,0.2); color: var(--blanc); }
+  .gamme-banner.is-sofec .gamme-banner-count { background: rgba(255,255,255,0.12); }
+  .gamme-banner.is-sofec .gamme-banner-count strong { color: var(--blanc); }
   .gamme-banner-num {
     font-family: var(--display);
     font-size: 88px;
@@ -1151,6 +1151,13 @@
 </span>
 <span class="gamme-tab-count">4</span>
 </button>
+<button aria-selected="false" class="gamme-tab" data-gamme="sofec" role="tab">
+<span class="gamme-tab-info">
+<span class="gamme-tab-name">Sofec</span>
+<span class="gamme-tab-sub">Partenaire · fabricant français</span>
+</span>
+<span class="gamme-tab-count">2</span>
+</button>
 <button aria-selected="false" class="gamme-tab" data-gamme="dragopaint" role="tab">
 <span class="gamme-tab-info">
 <span class="gamme-tab-name">Dragopaint</span>
@@ -1162,13 +1169,6 @@
 <span class="gamme-tab-info">
 <span class="gamme-tab-name">COMUS</span>
 <span class="gamme-tab-sub">Partenaire · IZI R recyclée</span>
-</span>
-<span class="gamme-tab-count">3</span>
-</button>
-<button aria-selected="false" class="gamme-tab" data-gamme="algo" role="tab">
-<span class="gamme-tab-info">
-<span class="gamme-tab-name">Algo Pro</span>
-<span class="gamme-tab-sub">Partenaire · biosourcée aux algues</span>
 </span>
 <span class="gamme-tab-count">3</span>
 </button>
@@ -1681,6 +1681,96 @@
 </article>
 </div>
 </section>
+<!-- ============ PARTENAIRE · SOFEC ============ -->
+<section class="gamme-section" data-gamme-section="sofec" id="gamme-sofec">
+<div class="gamme-banner is-sofec">
+<div class="gamme-banner-num">S</div>
+<div class="gamme-banner-content">
+<span class="gamme-banner-tag">Fabricant partenaire</span>
+<h2 class="gamme-banner-title">Sofec</h2>
+<p class="gamme-banner-desc">Fabricant français implanté à Roquemaure (Gard), partenaire historique de L'Atelier. Peintures acryliques professionnelles en phase aqueuse, sans odeur, bas carbone et fabriquées en France.</p>
+</div>
+<div class="gamme-banner-count"><strong>2</strong>produits</div>
+</div>
+<div class="products-grid" id="grid-sofec">
+<!-- 1. SOFEC MULTIMAT PLUS - finition mate lavable int./ext. -->
+<article class="product-card reveal" data-brillance="1" data-finition="mat" id="p-sofec-multimat-plus">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Mat</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div class="product-carbone-badge" aria-label="Bas carbone : 0,234 kg CO2 par UF sur 10 ans">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg>
+<span class="cb-top">Bas carbone</span>
+<span class="cb-val">0,234</span>
+<span class="cb-unit">kg CO₂/UF</span>
+<span class="cb-dur">sur 10 ans</span>
+</div>
+<img alt="Sofec Multimat Plus - Peinture acrylique mate lavable intérieur et extérieur" class="product-image" loading="lazy" src="images/produits/sofec_multimat_plus.webp" width="478" height="509" decoding="async"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-vertfonce" title="Faibles émissions de CO₂"><span class="picto-icon is-text-xs">CO₂↓</span><span class="picto-label">Bas carbone</span></span>
+<span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur et extérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Int./Ext.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-fdes" title="FDES disponible"><span class="picto-icon"><img alt="FDES" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme">Sofec · Mat</div>
+<h3 class="product-name">Multimat <em>Plus</em></h3>
+<div class="product-subtitle">Bas carbone · intérieur &amp; extérieur · lavable</div>
+<p class="product-description">Peinture acrylique mate lavable en phase aqueuse, pour l'intérieur et l'extérieur. Qualité supérieure, sans odeur et <strong>haut pouvoir couvrant</strong> : beau résultat en 2 couches sur plaque de plâtre neuve. <strong>Lavable classe 2</strong> (NF EN 13300), <strong>COV &lt; 1 g/L</strong>, classée A+. Rendement 9 m²/L, disponible en base TR et en noir teinté usine.</p>
+<div class="product-footer">
+<span class="product-format"><strong>4 à 15 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_SOFEC_MULTIMAT_PLUS.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_SOFEC_MULTIMAT_PLUS.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+<!-- 2. SOFEC MULTIMAT VELOUTE SOYEUX - finition mat velouté garnissante -->
+<article class="product-card reveal" data-brillance="2" data-finition="velours" id="p-sofec-multimat-veloute-soyeux">
+<div class="product-finition-bar"></div>
+<span class="product-finition-tag">Mat velouté</span>
+<div class="product-visual">
+<div class="product-visual-bg"></div>
+<div class="product-carbone-badge" aria-label="Bas carbone : 0,245 kg CO2 par UF sur 10 ans">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg>
+<span class="cb-top">Bas carbone</span>
+<span class="cb-val">0,245</span>
+<span class="cb-unit">kg CO₂/UF</span>
+<span class="cb-dur">sur 10 ans</span>
+</div>
+<img alt="Sofec Multimat Velouté Soyeux - Peinture acrylique garnissante mat velouté intérieure" class="product-image" loading="lazy" src="images/produits/sofec_multimat_veloute_soyeux.webp" width="518" height="551" decoding="async"/>
+</div>
+<div class="product-pictos">
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-vertfonce" title="Faibles émissions de CO₂"><span class="picto-icon is-text-xs">CO₂↓</span><span class="picto-label">Bas carbone</span></span>
+<span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
+<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
+<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
+<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
+<span class="picto is-fdes" title="FDES disponible"><span class="picto-icon"><img alt="FDES" src="images/pictos/fdes-verifiee.webp" width="190" height="170" loading="lazy" decoding="async"/></span><span class="picto-label">FDES</span></span>
+</div>
+<div class="product-info">
+<div class="product-gamme">Sofec · Mat velouté</div>
+<h3 class="product-name">Multimat <em>Velouté Soyeux</em></h3>
+<div class="product-subtitle">Bas carbone · aspect soyeux · garnissante</div>
+<p class="product-description">Peinture acrylique garnissante pour murs et plafonds intérieurs, en phase aqueuse. <strong>Aspect mat velouté soyeux</strong>, sans odeur et <strong>haut pouvoir couvrant</strong>. <strong>Lavable classe 2</strong> (NF EN 13300), <strong>COV &lt; 1 g/L</strong>, classée A+. Rendement 8 m²/L.</p>
+<div class="product-footer">
+<span class="product-format"><strong>15 L</strong></span>
+<div class="product-ctas">
+<a class="product-cta is-primary" href="documents/ft/FT_SOFEC_MULTIMAT_VELOUTE_SOYEUX.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+<a class="product-cta is-secondary" href="documents/fdes/FDES_SOFEC_MULTIMAT_VELOUTE_SOYEUX.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
 <!-- ============ PARTENAIRE · DRAGOPAINT ============ -->
 <section class="gamme-section" data-gamme-section="dragopaint" id="gamme-dragopaint">
 <div class="gamme-banner is-dragopaint">
@@ -1901,112 +1991,6 @@
 <div class="product-ctas">
 <a class="product-cta is-primary" href="documents/ft/FT_IZI_R_VELOURS.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
 <a class="product-cta is-secondary" href="documents/fdes/FDES_ECO_IZI_R_MAT_et_Velours.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-</div>
-</div>
-</div>
-</article>
-</div>
-</section>
-<!-- ============ PARTENAIRE · ALGO PRO ============ -->
-<section class="gamme-section" data-gamme-section="algo" id="gamme-algo">
-<div class="gamme-banner is-algo">
-<div class="gamme-banner-num">A</div>
-<div class="gamme-banner-content">
-<span class="gamme-banner-tag">Fabricant partenaire</span>
-<h2 class="gamme-banner-title">Algo Pro</h2>
-<p class="gamme-banner-desc">Peintures biosourcées à base d'algues et de composants naturels marins, labellisées « Produit biosourcé » Karibati. Fabrication française, COV ultra-réduits.</p>
-</div>
-<div class="gamme-banner-count"><strong>3</strong>produits</div>
-</div>
-<div class="products-grid" id="grid-algo">
-<!-- 1. ALGO PRO PRIMAIRE - impression biosourcée -->
-<article class="product-card reveal" data-brillance="1" data-finition="impression" id="p-algo-primaire">
-<div class="product-finition-bar"></div>
-<span class="product-finition-tag">Impression</span>
-<div class="product-visual">
-<div class="product-visual-bg"></div>
-<img alt="Algo Pro Primaire - Impression biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_prim.webp" width="399" height="499" decoding="async"/>
-</div>
-<div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
-<span class="picto is-vertfonce" title="Peinture biosourcée à base d'algues"><span class="picto-icon is-text-xs">ALGUES</span><span class="picto-label">Biosourcée</span></span>
-<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
-<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
-<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
-<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-</div>
-<div class="product-info">
-<div class="product-gamme">Algo Pro · Impression</div>
-<h3 class="product-name">Algo Pro <em>Primaire</em></h3>
-<div class="product-subtitle">Impression biosourcée aux algues · microporeuse</div>
-<p class="product-description">Primaire d'impression biosourcé certifié Karibati, en phase aqueuse, formulé à partir de <strong>résine végétale biosourcée à 98%</strong> et de composants naturels marins (algues et produits coquillés). Microporeux, très haut pouvoir couvrant, <strong>COV &lt; 1 g/L</strong>, classé A+. Destiné à recevoir une finition Algo. Rendement 10 à 12 m²/L.</p>
-<div class="product-footer">
-<span class="product-format"><strong>10 L</strong></span>
-<div class="product-ctas">
-<a class="product-cta is-primary" href="documents/ft/FT_ALGO_PRO_PRIMAIRE.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-<a class="product-cta is-secondary" href="documents/fdes/FDES_Algo_Pro_tous_produits.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-</div>
-</div>
-</div>
-</article>
-<!-- 2. ALGO PRO MAT - finition mate biosourcée -->
-<article class="product-card reveal" data-brillance="2" data-finition="mat" id="p-algo-mat">
-<div class="product-finition-bar"></div>
-<span class="product-finition-tag">Mat</span>
-<div class="product-visual">
-<div class="product-visual-bg"></div>
-<img alt="Algo Pro Mat - Peinture mate biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_mat.webp" width="347" height="434" decoding="async"/>
-</div>
-<div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
-<span class="picto is-vertfonce" title="80 % biosourcée (ASTM D6866)"><span class="picto-icon is-text-xs">80%</span><span class="picto-label">Biosourcée</span></span>
-<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
-<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
-<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
-<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-orange" title="Lessivable classe 1"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Lessiv.</span></span>
-</div>
-<div class="product-info">
-<div class="product-gamme">Algo Pro · Mat</div>
-<h3 class="product-name">Algo Pro <em>Mat</em></h3>
-<div class="product-subtitle">Finition mate · 80% biosourcée aux algues</div>
-<p class="product-description">Peinture de finition mate <strong>80% biosourcée</strong> (norme ASTM D6866), certifiée Karibati, formulée à base de résine végétale et de composants marins (algues). Microporeuse, très haut pouvoir couvrant, <strong>lessivable classe 1</strong>, <strong>COV &lt; 1 g/L</strong>, classée A+. Fabrication française. À appliquer sur primaire Algo. Rendement 10 à 12 m²/L.</p>
-<div class="product-footer">
-<span class="product-format"><strong>10 L</strong></span>
-<div class="product-ctas">
-<a class="product-cta is-primary" href="documents/ft/FT_ALGO_PRO_MAT.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-<a class="product-cta is-secondary" href="documents/fdes/FDES_Algo_Pro_tous_produits.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-</div>
-</div>
-</div>
-</article>
-<!-- 3. ALGO PRO VELOURS - finition velours biosourcée -->
-<article class="product-card reveal" data-brillance="3" data-finition="velours" id="p-algo-velours">
-<div class="product-finition-bar"></div>
-<span class="product-finition-tag">Velours</span>
-<div class="product-visual">
-<div class="product-visual-bg"></div>
-<img alt="Algo Pro Velours - Peinture velours biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_velours.webp" width="550" height="688" decoding="async"/>
-</div>
-<div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
-<span class="picto is-vertfonce" title="80 % biosourcée (ASTM D6866)"><span class="picto-icon is-text-xs">80%</span><span class="picto-label">Biosourcée</span></span>
-<span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
-<span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
-<span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
-<span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
-<span class="picto is-orange" title="Lessivable classe 1"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Lessiv.</span></span>
-</div>
-<div class="product-info">
-<div class="product-gamme">Algo Pro · Velours</div>
-<h3 class="product-name">Algo Pro <em>Velours</em></h3>
-<div class="product-subtitle">Finition velours · 80% biosourcée aux algues</div>
-<p class="product-description">Peinture de finition velours <strong>80% biosourcée</strong> (norme ASTM D6866), certifiée Karibati, formulée à base de résine végétale et de composants marins (algues). Microporeuse, très haut pouvoir couvrant, <strong>lessivable classe 1</strong>, <strong>COV &lt; 1 g/L</strong>, classée A+. Fabrication française. À appliquer sur primaire Algo. Rendement 10 à 12 m²/L.</p>
-<div class="product-footer">
-<span class="product-format"><strong>10 L</strong></span>
-<div class="product-ctas">
-<a class="product-cta is-primary" href="documents/ft/FT_ALGO_PRO_VELOURS.pdf" rel="noopener" target="_blank" title="Fiche technique">Fiche technique<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-<a class="product-cta is-secondary" href="documents/fdes/FDES_Algo_Pro_tous_produits.pdf" rel="noopener" target="_blank" title="Fiche FDES">FDES<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
 </div>
 </div>
 </div>
@@ -2341,9 +2325,8 @@
     { t: "COMUS IZI R Prim", d: "Impression recyclée 60% — homogénéise le support", u: "gammes.html#p-comus-izi-prim", k: "comus izi r prim impression recyclée 60 partenaire éco aqueuse", g: "Peintures · Partenaires" },
     { t: "COMUS IZI R Mat", d: "Finition mate recyclée 56% — lessivable, HQE bas carbone", u: "gammes.html#p-comus-izi-mat", k: "comus izi r mat mate recyclée 56 lessivable hqe bas carbone partenaire", g: "Peintures · Partenaires" },
     { t: "COMUS IZI R Velours", d: "Finition velours recyclée 56% — lessivable classe 1, HQE", u: "gammes.html#p-comus-izi-velours", k: "comus izi r velours recyclée 56 lessivable hqe bas carbone partenaire", g: "Peintures · Partenaires" },
-    { t: "Algo Pro Primaire", d: "Impression biosourcée aux algues — microporeuse, certifiée Karibati", u: "gammes.html#p-algo-primaire", k: "algo pro primaire impression biosourcée algues karibati partenaire", g: "Peintures · Partenaires" },
-    { t: "Algo Pro Mat", d: "Finition mate 80% biosourcée aux algues — lessivable classe 1", u: "gammes.html#p-algo-mat", k: "algo pro mat mate biosourcée 80 algues lessivable partenaire", g: "Peintures · Partenaires" },
-    { t: "Algo Pro Velours", d: "Finition velours 80% biosourcée aux algues — lessivable classe 1", u: "gammes.html#p-algo-velours", k: "algo pro velours biosourcée 80 algues lessivable partenaire", g: "Peintures · Partenaires" },
+    { t: "Sofec Multimat Plus", d: "Peinture mate lavable intérieur et extérieur — bas carbone 0,234 kg CO₂/UF", u: "gammes.html#p-sofec-multimat-plus", k: "sofec multimat plus + mate mat lavable intérieur extérieur bas carbone partenaire", g: "Peintures · Partenaires" },
+    { t: "Sofec Multimat Velouté Soyeux", d: "Peinture garnissante mat velouté soyeux — bas carbone 0,245 kg CO₂/UF", u: "gammes.html#p-sofec-multimat-veloute-soyeux", k: "sofec multimat velouté soyeux garnissante mat lavable intérieur bas carbone partenaire", g: "Peintures · Partenaires" },
 
     // ---- NUANCIERS ----
     { t: "Chromatic CH1 — Jonone", d: "Édition signature artistique — palette d'expression", u: "nuanciers.html#nuanciers-cartes", k: "chromatic ch1 jonone artiste signature pdf", g: "Nuanciers" },
