@@ -238,6 +238,11 @@
   @keyframes pulse { 0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(1.5); opacity:0.6;} }
   .hero-title { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 5vw, 70px); line-height: 0.98; margin-bottom: 28px; letter-spacing: -1.5px; animation: fadeInUp 1s var(--transition) 0.1s both; }
   .hero-title em { color: var(--orange); font-style: italic; font-weight: 300; }
+  /* « BAS » descend, « HAUTE » monte : le slogan se lit aussi visuellement */
+  .hero-title .t-bas { color: #A8E6BE; font-weight: 600; white-space: nowrap; }
+  .hero-title .t-kicker { display: block; font-family: var(--sans); font-size: 0.32em; letter-spacing: 0.5px; line-height: 1.2; margin-bottom: 0.55em; opacity: 0.95; }
+  .hero-title em.t-pro { color: var(--orange); font-style: italic; font-weight: 300; }
+  .hero-subtitle strong.co2 { color: #A8E6BE; font-weight: 600; white-space: nowrap; }
   .hero-title-accent { display: inline-block; position: relative; }
   .hero-title-accent::after { content: ''; position: absolute; bottom: 8px; left: 0; right: 0; height: 12px; background: var(--orange); opacity: 0.3; z-index: -1; animation: scaleX 1.5s var(--transition) 0.8s both; transform-origin: left; }
   @keyframes scaleX { from{transform:scaleX(0);} to{transform:scaleX(1);} }
@@ -255,38 +260,81 @@
   @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
   @keyframes fadeInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
   
-  .pots-stack { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-  .pot-3d { position: absolute; transition: transform 0.6s var(--transition); filter: drop-shadow(0 30px 40px rgba(0,0,0,0.45)) drop-shadow(0 10px 20px rgba(0,0,0,0.3)); }
-
-  /* === ANIMATION D'ENTRÉE EN CASCADE ===
-     Ordre : Algo → Titane MV → Comus → L'Atelier 45.
-     Astuce technique : chaque pot porte 2 animations.
-     1) potIn : jouée 1 seule fois (forwards), gère opacity + scale + translate pour l'apparition.
-        Elle anime « scale » et « translate » (propriétés individuelles), donc N'ENTRE PAS en conflit
-        avec le « transform: translate(...) » qui fixe la position du pot.
-     2) floatPot : flottement en boucle, démarré APRÈS l'entrée via un delay = fin de l'entrée. */
-  .pot-3d { opacity: 0; }
-  @keyframes potIn {
-    0%   { opacity: 0; scale: 0.55; translate: 0 45px; }
-    60%  { opacity: 1; scale: 1.06; translate: 0 -6px; } /* léger overshoot, effet rebond doux */
-    100% { opacity: 1; scale: 1;    translate: 0 0; }
+  /* ===== HERO « PLUIE BAS CARBONE » =====
+     4 fûts L'Atelier 45 / TITANE hydro, placés comme l'ancienne composition (2 en arrière, 2 devant) :
+     Impress GT (arrière gauche) → Impress evo (devant) → 45 Mat 2en1 (devant) → TITANE MV (arrière droite).
+     Chaque fût tombe du haut, s'écrase légèrement à l'impact puis se pose ; son rond carbone tombe ensuite.
+     Profondeur : fûts arrière plus petits, plus hauts, légèrement assombris + parallaxe à la souris
+     (les fûts avant bougent plus que ceux de l'arrière). La scène fait 640×580 et est mise à l'échelle en responsive. */
+  .rain-stage { position: absolute; left: 50%; bottom: 0; width: 640px; height: 580px; translate: -50% 0; transform-origin: 50% 100%; }
+  .rain-col { --t: calc(0.35s + var(--i) * 0.38s); position: absolute; left: 50%; bottom: var(--by); width: var(--w);
+    transform: translateX(calc(-50% + var(--dx)));
+    translate: calc(var(--mx, 0) * var(--pz) * 1px) calc(var(--my, 0) * var(--pz) * 0.5px);
+    transition: translate 0.5s cubic-bezier(.2,.7,.3,1);
+    display: flex; flex-direction: column; align-items: center; }
+  /* Positions (dx = décalage horizontal depuis le centre, by = hauteur du pied du fût, pz = intensité parallaxe) */
+  .rc-gt  { --dx: -235px; --by: 168px; --w: 175px; --pz: 6;  z-index: 2; }
+  .rc-imp { --dx: -90px;  --by: 112px; --w: 205px; --pz: 14; z-index: 4; }
+  .rc-mat { --dx: 95px;   --by: 126px; --w: 205px; --pz: 14; z-index: 4; }
+  .rc-mv  { --dx: 245px;  --by: 160px; --w: 172px; --pz: 6;  z-index: 2; }
+  .rain-fut { width: 100%; height: auto; display: block; opacity: 0; transform-origin: 50% 100%;
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.45)) drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    animation: futDrop 1.15s var(--t) both; }
+  /* Plans arrière : un peu plus sombres et doux → effet de profondeur */
+  .rc-gt .rain-fut, .rc-mv .rain-fut { filter: brightness(0.86) saturate(0.92) drop-shadow(0 22px 28px rgba(0,0,0,0.4)); }
+  @keyframes futDrop {
+    0%   { opacity: 0; transform: translateY(-115vh) scale(1, 1.06); animation-timing-function: cubic-bezier(.55,0,.9,.45); }
+    8%   { opacity: 1; }
+    58%  { transform: translateY(0) scale(1.05, 0.9); animation-timing-function: cubic-bezier(.2,.7,.3,1); }   /* impact */
+    74%  { transform: translateY(-14px) scale(0.98, 1.03); }                                                     /* rebond */
+    88%  { transform: translateY(0) scale(1.01, 0.99); }
+    100% { opacity: 1; transform: translateY(0) scale(1, 1); }
   }
+  /* Ombre au sol + onde d'impact */
+  .rain-floor { position: absolute; left: 50%; bottom: -10px; width: 96%; height: 22px; translate: -50% 0; border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 70%); z-index: -1; opacity: 0;
+    animation: floorIn 0.5s calc(var(--t) + 0.62s) both; }
+  @keyframes floorIn { from { opacity: 0; scale: 0.2 1; } to { opacity: 1; scale: 1 1; } }
+  .rain-col::after { content: ''; position: absolute; left: 50%; bottom: -12px; width: 100%; height: 26px; translate: -50% 0; border-radius: 50%;
+    border: 1.5px solid rgba(168,230,190,0.75); opacity: 0; pointer-events: none;
+    animation: splash 0.9s ease-out calc(var(--t) + 0.64s) forwards; }
+  @keyframes splash { 0% { opacity: 0.9; scale: 0.3; } 100% { opacity: 0; scale: 1.6; } }
 
-  /* Disposition à 4 pots : 45 - Titane MV - Comus (devant Algo) - Algo Pro */
-  /* Pot Algo Pro : extrême gauche, en arrière — APPARAÎT EN 1er (delay 0.2s) */
-  .pot-algo { width: 185px; z-index: 2; left: 50%; top: 58%; transform: translate(calc(-50% - 235px), calc(-50% - 15px));
-    animation: potIn 0.9s var(--transition) 0.2s forwards, floatPot 6.5s ease-in-out infinite 1.1s; }
-  /* Pot Titane MV : centre-gauche, devant, héros principal — APPARAÎT EN 2e (delay 0.65s) */
-  .pot-titane-mv { width: 205px; z-index: 4; left: 50%; top: 58%; transform: translate(calc(-50% - 90px), -50%);
-    animation: potIn 0.9s var(--transition) 0.65s forwards, floatPot 6s ease-in-out infinite 1.55s; }
-  /* Pot Comus Izi R : centre-droit, devant — APPARAÎT EN 3e (delay 1.1s) */
-  .pot-izi-r { width: 210px; z-index: 4; left: 50%; top: 58%; transform: translate(calc(-50% + 95px), calc(-50% + 5px));
-    animation: potIn 0.9s var(--transition) 1.1s forwards, floatPot 8s ease-in-out infinite 2s; }
-  /* Pot 45 Mat : extrême droite, en arrière — APPARAÎT EN 4e (delay 1.55s) */
-  .pot-45-mat { width: 155px; z-index: 2; left: 50%; top: 58%; transform: translate(calc(-50% + 245px), calc(-50% - 10px));
-    animation: potIn 0.9s var(--transition) 1.55s forwards, floatPot 7s ease-in-out infinite 2.45s; }
-  @keyframes floatPot { 0%,100%{translate:0 0;} 50%{translate:0 -12px;} }
-  
+  /* Rond bas carbone au-dessus de chaque fût (plus petit pour les fûts arrière) */
+  .rain-badge { position: relative; width: var(--bs, 104px); aspect-ratio: 1; margin-bottom: 20px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff;
+    background: radial-gradient(circle at 32% 28%, #5FA571 0%, var(--vert-eco) 45%, var(--vert-eco-fonce) 100%);
+    border: 2px solid rgba(255,255,255,0.22); box-shadow: 0 0 0 5px rgba(74,139,92,0.18), 0 0 50px rgba(74,139,92,0.45), 0 14px 30px -8px rgba(0,0,0,0.5);
+    opacity: 0; animation: badgeDrop 0.8s calc(var(--t) + 0.75s) both, badgeFloat 5s ease-in-out calc(var(--t) + 1.6s) infinite; }
+  .rc-gt, .rc-mv { --bs: 92px; }
+  @keyframes badgeDrop {
+    0%   { opacity: 0; translate: 0 -60px; scale: 0.6; animation-timing-function: cubic-bezier(.55,0,.9,.45); }
+    55%  { opacity: 1; translate: 0 0; scale: 1.08; animation-timing-function: cubic-bezier(.2,.7,.3,1); }
+    100% { opacity: 1; translate: 0 0; scale: 1; }
+  }
+  @keyframes badgeFloat { 0%,100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+  .rain-badge::after { content: ''; position: absolute; top: 100%; left: 50%; width: 1.5px; height: 20px; translate: -50% 0;
+    background: linear-gradient(to bottom, rgba(168,230,190,0.8), transparent); }
+  .rb-top { font-size: 7.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; opacity: 0.9; }
+  .rb-val { font-family: var(--display); font-weight: 600; font-size: 24px; line-height: 1; margin: 2px 0 1px; }
+  .rc-gt .rb-val, .rc-mv .rb-val { font-size: 21px; }
+  .rb-unit { font-size: 7.5px; font-weight: 600; letter-spacing: 0.2px; opacity: 0.95; }
+  .rb-dur { font-size: 6.5px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; opacity: 0.85; margin-top: 2px; padding-top: 2px; border-top: 1px solid rgba(255,255,255,0.4); }
+
+  /* Responsive : on réduit toute la scène d'un bloc (proportions et profondeur conservées) */
+  @media (min-width: 1025px) and (max-width: 1366px) { .rain-stage { scale: 0.8; translate: -54% 0; } }
+  @media (max-width: 1024px) { .rain-stage { scale: 0.72; } }
+  @media (max-width: 600px)  { .rain-stage { scale: 0.56; } .hero .hero-visual { height: 320px; } }
+
+  /* Pluie d'ambiance : fines gouttes très discrètes derrière les fûts */
+  .rain-drops { position: absolute; inset: -40px 0 60px; overflow: hidden; pointer-events: none; z-index: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 70%, transparent);
+            mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 70%, transparent); }
+  .rain-drops i { position: absolute; top: -20%; left: var(--x); width: 1.5px; height: var(--h, 60px); border-radius: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(168,230,190,0.35)); opacity: 0;
+    animation: drop var(--d, 2.4s) linear var(--w, 0s) infinite; }
+  @keyframes drop { 0% { opacity: 0; translate: 0 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; translate: 0 760px; } }
+
   /* === BADGE RE2020 MINI dans le HERO ===
      - Posé en haut à droite, près du pot IZI R (empiétement assumé)
      - Pas de déplacement : il reste là
@@ -394,80 +442,6 @@
     .hero .hero-re2020-stage { display: none; }
   }
   
-  /* Vignettes éco : placées au-dessus des pots, parfaitement visibles, taille adaptée */
-  .pot-badge { position: absolute; width: 130px; height: 130px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--blanc); font-weight: 800; text-align: center; z-index: 1; border: 4px solid rgba(255,255,255,0.15); opacity: 0; }
-  .pot-badge-pct { font-size: 30px; font-family: var(--display); line-height: 1; }
-  .pot-badge-pct small { font-size: 16px; }
-  .pot-badge-label { font-size: 9px; letter-spacing: 1.2px; margin-top: 5px; line-height: 1.3; }
-  /* Entrée des badges : fondu + léger zoom via « scale » (propriété individuelle, ne touche pas au transform de position).
-     Chaque badge apparaît ~0.35s après le début de l'entrée de son pot. */
-  @keyframes badgeIn { from { opacity: 0; scale: 0.4; } to { opacity: 1; scale: 1; } }
-  /* Badge BIOSOURCÉ 80 % : au-dessus du pot Algo Pro (1er) */
-  .badge-algo { top: 22%; left: 50%; transform: translate(calc(-50% - 235px), -50%); background: #1a6e5a; box-shadow: 0 0 60px rgba(26,110,90,0.7);
-    animation: badgeIn 0.6s var(--transition) 0.55s forwards, pulseBadgeAlgo 3s ease-in-out infinite 1.15s; }
-  /* Badge BIOSOURCÉ 85 % résine : au-dessus du pot Titane MV (2e) */
-  .badge-biosource { top: 14%; left: 50%; transform: translate(calc(-50% - 90px), -50%); background: var(--orange); box-shadow: 0 0 60px rgba(240,127,44,0.7);
-    animation: badgeIn 0.6s var(--transition) 1s forwards, pulseBadgeBio 3s ease-in-out infinite 1.6s; }
-  /* Badge RECYCLÉE : au-dessus du pot Comus Izi R (3e) */
-  .badge-recycle { top: 16%; left: 50%; transform: translate(calc(-50% + 95px), -50%); background: var(--vert-eco-fonce); box-shadow: 0 0 60px rgba(47,105,64,0.7);
-    animation: badgeIn 0.6s var(--transition) 1.45s forwards, pulseBadgeRecycle 3s ease-in-out infinite 2.05s; }
-  /* Badge COV : au-dessus du pot 45 Mat (4e) */
-  .badge-cov { top: 22%; left: 50%; transform: translate(calc(-50% + 245px), -50%); background: var(--bleu-clair); box-shadow: 0 0 60px rgba(45,78,122,0.7); border-color: rgba(255,255,255,0.25);
-    animation: badgeIn 0.6s var(--transition) 1.9s forwards, pulseBadgeCov 3s ease-in-out infinite 2.5s; }
-  @keyframes pulseBadgeAlgo { 0%,100%{transform:translate(calc(-50% - 235px), -50%) scale(1);} 50%{transform:translate(calc(-50% - 235px), -50%) scale(1.08);} }
-  @keyframes pulseBadgeBio { 0%,100%{transform:translate(calc(-50% - 90px), -50%) scale(1);} 50%{transform:translate(calc(-50% - 90px), -50%) scale(1.08);} }
-  @keyframes pulseBadgeRecycle { 0%,100%{transform:translate(calc(-50% + 95px), -50%) scale(1);} 50%{transform:translate(calc(-50% + 95px), -50%) scale(1.08);} }
-  @keyframes pulseBadgeCov { 0%,100%{transform:translate(calc(-50% + 245px), -50%) scale(1);} 50%{transform:translate(calc(-50% + 245px), -50%) scale(1.08);} }
-  
-  /* ===== Annotations dynamiques sous les bidons (apparition séquentielle, en boucle) ===== */
-  .pot-annos { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
-  .pot-anno {
-    position: absolute; top: calc(58% + var(--ty)); left: 50%;
-    transform: translateX(-50%);
-    translate: var(--dx) 10px;            /* dx = décalage horizontal sous chaque bidon */
-    display: inline-flex; align-items: center; gap: 9px;
-    padding: 8px 16px; border-radius: 50px;
-    background: rgba(255,255,255,0.92);
-    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-    border: 1px solid rgba(31,58,95,0.10);
-    box-shadow: 0 14px 34px -12px rgba(31,58,95,0.45);
-    font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing: 0.2px;
-    color: var(--bleu-fonce); white-space: nowrap;
-    opacity: 0;
-    animation: annoCycle 12s var(--transition) infinite;
-  }
-  .pot-anno small { font-weight: 500; opacity: 0.65; font-size: 11px; margin-left: 1px; }
-  .pot-anno .anno-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 9px var(--acc); flex-shrink: 0; }
-  /* trait blanc qui relie la pastille au fût concerné */
-  .pot-anno::after {
-    content: ''; position: absolute; left: 50%; top: -30px;
-    width: 2px; height: 30px; transform: translateX(-50%);
-    background: linear-gradient(to top, rgba(255,255,255,0.95), rgba(255,255,255,0.35));
-    border-radius: 2px;
-  }
-  /* petit point blanc à l'extrémité du trait, posé sur le fût */
-  .pot-anno::before {
-    content: ''; position: absolute; left: 50%; top: -34px;
-    width: 6px; height: 6px; transform: translateX(-50%);
-    background: #fff; border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255,255,255,0.9);
-  }
-  .anno-drago  { --dx: -232px; --ty: 76px;  --acc: #1a6e5a;            animation-delay: 2.2s;  }
-  .anno-titane { --dx: -90px;  --ty: 129px; --acc: var(--orange);      animation-delay: 5.2s;  }
-  .anno-izir   { --dx: 95px;   --ty: 107px; --acc: var(--vert-eco-fonce); animation-delay: 8.2s; }
-  .anno-mat45  { --dx: 232px;  --ty: 88px;  --acc: var(--bleu-clair);  animation-delay: 11.2s; }
-  @keyframes annoCycle {
-    0%   { opacity: 0; translate: var(--dx) 10px; }
-    6%   { opacity: 1; translate: var(--dx) 0; }
-    20%  { opacity: 1; translate: var(--dx) 0; }
-    26%  { opacity: 0; translate: var(--dx) -6px; }
-    100% { opacity: 0; translate: var(--dx) 10px; }
-  }
-  /* Desktop étroit : on rapproche les annotations extrêmes pour qu'elles restent dans le cadre */
-  @media (min-width: 1025px) and (max-width: 1366px) {
-    .anno-drago { --dx: -200px; }
-    .anno-mat45 { --dx: 200px; }
-  }
 
   .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--blanc); opacity: 0.6; animation: fadeIn 2s var(--transition) 1s both, bounce 2s ease-in-out infinite 2s; }
   @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
@@ -880,7 +854,6 @@
     .google-floating-link { padding: 14px 16px 14px 14px; }
     .google-floating-num { font-size: 22px; }
     .google-floating-icon { width: 36px; height: 36px; }
-    .pot-annos { display: none; }
   }
   
   .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--transition); }
@@ -919,26 +892,7 @@
     .chromatic-photo { width: 240px; height: 220px; }
     .colorimetrie-trio { grid-template-columns: 1fr; gap: 30px; }
     .nuancier-stage { max-width: 380px; }
-    .pot-badge { width: 110px; height: 110px; }
-    .pot-badge-pct { font-size: 26px; }
-    .pot-badge-pct small { font-size: 14px; }
-    .pot-badge-label { font-size: 8px; margin-top: 4px; }
-    /* En mobile : on resserre les 4 pots et on réduit leur taille (mêmes proportions de perspective) */
-    .pot-algo { width: 130px; transform: translate(calc(-50% - 150px), calc(-50% - 10px)); }
-    .pot-titane-mv { width: 140px; transform: translate(calc(-50% - 60px), -50%); }
-    .pot-izi-r { width: 145px; transform: translate(calc(-50% + 65px), calc(-50% + 5px)); }
-    .pot-45-mat { width: 110px; transform: translate(calc(-50% + 160px), calc(-50% - 8px)); }
-    /* Recaler les badges en mobile + désactiver l'animation de pulse (les keyframes desktop ne match plus) */
-    .badge-cov, .badge-biosource, .badge-algo, .badge-recycle { animation: none; opacity: 1; }
-    .badge-algo { transform: translate(calc(-50% - 150px), -50%); }
-    .badge-biosource { transform: translate(calc(-50% - 60px), -50%); }
-    .badge-recycle { transform: translate(calc(-50% + 65px), -50%); }
-    .badge-cov { transform: translate(calc(-50% + 160px), -50%); }
-    .pot-anno { font-size: 11px; padding: 7px 13px; }
-    .anno-drago  { --dx: -150px; --ty: 58px; }
-    .anno-titane { --dx: -60px;  --ty: 96px; }
-    .anno-izir   { --dx: 65px;   --ty: 82px; }
-    .anno-mat45  { --dx: 160px;  --ty: 68px; }
+    .hero-visual { max-width: 560px; width: 100%; margin: 0 auto; }
   }
 
   /* ========== MENU BURGER MOBILE (ajout : n'affecte pas le PC) ========== */
@@ -1093,13 +1047,6 @@
     /* PAS d'uppercase forcé : le HTML écrit déjà "TITANE" et "hydro" avec les bonnes casses */
   }
 
-  /* --- INDEX : badges flottants au-dessus des pots (uniquement L'Atelier 45 et Titane MV) --- */
-  .badge-cov .pot-badge-label,
-  .badge-biosource .pot-badge-label {
-    font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
-    font-style: italic;
-  }
-
   /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
   .pilier-brands {
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
@@ -1155,8 +1102,9 @@
   @media (prefers-reduced-motion: reduce) {
     .logo-coin { animation: none; }
     /* Pas d'animation d'entrée : pots et badges visibles d'emblée */
-    .pot-3d, .pot-badge { opacity: 1 !important; animation: none !important; }
-    .pot-annos { display: none; }
+    .rain-fut, .rain-badge, .rain-floor { opacity: 1 !important; animation: none !important; }
+    .rain-col { translate: none !important; }
+    .rain-col::after, .rain-drops { display: none; }
   }
 </style>
 </head>
@@ -1297,19 +1245,20 @@
 </div>
 </div>
 </header>
-<!-- HERO avec IZI R Velours et 2 badges -->
+<!-- HERO : produits bas carbone L'Atelier 45 / TITANE hydro -->
 <section class="hero">
 <div class="hero-circle circle-1"></div>
 <div class="hero-circle circle-2"></div>
 <div class="hero-inner">
 <div class="hero-content">
+<span class="hero-eyebrow">Bas carbone · Fabriqué en France</span>
 <h1 class="hero-title">
-        Nos peintures <em>éco-responsables</em>,<br/>
-        créées et fabriquées<br/>
-<span class="hero-title-accent">en France.</span>
+<span class="t-kicker"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> &amp; <span class="brand-titane">TITANE hydro</span></span>
+        La performance <em class="t-pro">pro</em>,<br/>
+        l'empreinte <span class="t-bas">bas carbone</span>.
 </h1>
 <p class="hero-subtitle">
-        L'Atelier est marchand de couleurs en Gironde. Nous concevons nos propres gammes — <strong><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></strong> et <strong><span class="brand-titane">TITANE hydro</span></strong> — et distribuons les meilleures peintures techniques et bas carbone du marché. Deux magasins, une passion : la couleur qui dure.
+        Nos impressions, mats et mats veloutés affichent leur empreinte carbone : de <strong class="co2">0,043</strong> à <strong class="co2">0,210 kg CO₂/UF</strong> sur 10 ans. Garnissants, opacifiants, faciles à appliquer : conçus en Gironde, fabriqués en France.
       </p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="gammes.html">Découvrir nos gammes<span class="btn-arrow">→</span></a>
@@ -1317,36 +1266,29 @@
 </div>
 </div>
 <div class="hero-visual">
-<div class="pot-badge badge-cov">
-<div class="pot-badge-pct">−1<small>g/L</small></div>
-<div class="pot-badge-label">COV<br/>L'ATELIER 45</div>
+<div class="rain-drops" aria-hidden="true"><i style="--x:4%;--d:2.6s;--w:0.2s;--h:70px"></i><i style="--x:11%;--d:2.1s;--w:1.4s;--h:50px"></i><i style="--x:19%;--d:2.9s;--w:0.7s;--h:80px"></i><i style="--x:27%;--d:2.3s;--w:2.0s;--h:55px"></i><i style="--x:35%;--d:2.7s;--w:0.4s;--h:65px"></i><i style="--x:43%;--d:2.0s;--w:1.7s;--h:45px"></i><i style="--x:51%;--d:2.8s;--w:1.0s;--h:75px"></i><i style="--x:59%;--d:2.2s;--w:2.4s;--h:50px"></i><i style="--x:67%;--d:2.6s;--w:0.1s;--h:60px"></i><i style="--x:75%;--d:2.1s;--w:1.2s;--h:70px"></i><i style="--x:83%;--d:2.9s;--w:2.1s;--h:55px"></i><i style="--x:91%;--d:2.4s;--w:0.6s;--h:65px"></i><i style="--x:97%;--d:2.2s;--w:1.6s;--h:50px"></i></div>
+<!-- Fûts classés par gamme : Impression (GT, evo) → Mat (45 2en1) → Mat velouté (TITANE MV), en profondeur -->
+<div class="rain-stage">
+<div class="rain-col rc-gt" style="--i:0">
+<div class="rain-badge rain-anim" aria-label="Bas carbone : 0,043 kg CO2 par UF sur 10 ans"><span class="rb-top">Bas carbone</span><span class="rb-val">0,043</span><span class="rb-unit">kg CO₂/UF</span><span class="rb-dur">sur 10 ans</span></div>
+<img alt="Fût L'Atelier Impress 45 Grands Travaux 16L — bas carbone 0,043 kg CO₂/UF" class="rain-fut rain-anim" src="images/produits/45_impress_GT.webp" width="752" height="913" fetchpriority="high"/>
+<span class="rain-floor rain-anim"></span>
 </div>
-<div class="pot-badge badge-biosource">
-<div class="pot-badge-pct">85<small>%</small></div>
-<div class="pot-badge-label">RÉSINE BIOSOURCÉE<br/>TITANE MV</div>
+<div class="rain-col rc-imp" style="--i:1">
+<div class="rain-badge rain-anim" aria-label="Bas carbone : 0,164 kg CO2 par UF sur 10 ans"><span class="rb-top">Bas carbone</span><span class="rb-val">0,164</span><span class="rb-unit">kg CO₂/UF</span><span class="rb-dur">sur 10 ans</span></div>
+<img alt="Fût L'Atelier Impress 45 evo 16L — bas carbone 0,164 kg CO₂/UF" class="rain-fut rain-anim" src="images/produits/45_impress_.webp" width="379" height="454" decoding="async"/>
+<span class="rain-floor rain-anim"></span>
 </div>
-<div class="pot-badge badge-recycle">
-<div class="pot-badge-pct">56%</div>
-<div class="pot-badge-label">RECYCLÉE<br/>COMUS IZI R</div>
+<div class="rain-col rc-mat" style="--i:2">
+<div class="rain-badge rain-anim" aria-label="Bas carbone : 0,125 kg CO2 par UF sur 10 ans"><span class="rb-top">Bas carbone</span><span class="rb-val">0,125</span><span class="rb-unit">kg CO₂/UF</span><span class="rb-dur">sur 10 ans</span></div>
+<img alt="Fût L'Atelier 45 Mat 2en1 16L — bas carbone 0,125 kg CO₂/UF" class="rain-fut rain-anim" src="images/produits/45_Mat_2en1.webp" width="360" height="454" decoding="async"/>
+<span class="rain-floor rain-anim"></span>
 </div>
-<div class="pot-badge badge-algo">
-<div class="pot-badge-pct">0,200<small style="display:block;font-size:13px;letter-spacing:0.5px">kg CO₂/UF</small></div>
-<div class="pot-badge-label">BAS CARBONE<br/>DRAGOPAINT MS SOYEUX</div>
+<div class="rain-col rc-mv" style="--i:3">
+<div class="rain-badge rain-anim" aria-label="Bas carbone : 0,210 kg CO2 par UF sur 10 ans"><span class="rb-top">Bas carbone</span><span class="rb-val">0,210</span><span class="rb-unit">kg CO₂/UF</span><span class="rb-dur">sur 10 ans</span></div>
+<img alt="Fût TITANE hydro MV evo 15L — bas carbone 0,210 kg CO₂/UF" class="rain-fut rain-anim" src="images/produits/titane_hydro_mat_veloute.webp" width="338" height="436" decoding="async"/>
+<span class="rain-floor rain-anim"></span>
 </div>
-<!-- Badge RE2020 déplacé vers la section "Nos gammes propres" -->
-<div class="pots-stack">
-<!-- Vraies photos détourées des pots -->
-<img alt="Pot L'Atelier 45 MAT 16L - Peinture acrylique" class="pot-3d pot-45-mat" src="images/pot-atelier-45-mat.webp" width="334" height="405" fetchpriority="high"/>
-<img alt="Pot TITANE Hydro MV evo 15L - L'Atelier" class="pot-3d pot-titane-mv" src="images/pot-titane-hydro-mv.webp" width="332" height="406" loading="lazy" decoding="async"/>
-<img alt="Pot Comus IZI R Velours - Peinture éco-respectueuse" class="pot-3d pot-izi-r" src="images/pot-comus-izi-r.webp" width="370" height="345" loading="lazy" decoding="async"/>
-<img alt="Pot Dragopaint MS Soyeux Bas Carbone - 0,200 kg CO₂/UF" class="pot-3d pot-algo" src="images/pot-dragopaint-bascarbone.webp" width="582" height="550" loading="lazy" decoding="async"/>
-</div>
-<!-- Annotations dynamiques : apparaissent une par une sous chaque bidon -->
-<div class="pot-annos" aria-hidden="true">
-<div class="pot-anno anno-drago"><span class="anno-dot"></span>Ultra bas carbone</div>
-<div class="pot-anno anno-titane"><span class="anno-dot"></span>85&nbsp;% biosourcé · 78&nbsp;% de matière naturelle <small>(produit fini)</small></div>
-<div class="pot-anno anno-izir"><span class="anno-dot"></span>56&nbsp;% recyclé <small>(produit fini)</small></div>
-<div class="pot-anno anno-mat45"><span class="anno-dot"></span>COV inférieur à 1&nbsp;g/L</div>
 </div>
 </div>
 </div>
@@ -2520,7 +2462,7 @@
   }
   // relance la cascade des fûts du hero à la fermeture
   function replayHeroPots() {
-    document.querySelectorAll('.hero-visual .pot-3d').forEach(function (el) {
+    document.querySelectorAll('.hero-visual .rain-anim').forEach(function (el) {
       var anim = getComputedStyle(el).animation;
       if (!anim || anim === 'none' || anim.indexOf('none ') === 0) return;
       el.style.animation = 'none';
@@ -2543,6 +2485,22 @@
   }
   if (document.readyState === 'complete') trigger();
   else window.addEventListener('load', trigger);
+})();
+</script>
+<script>
+/* Parallaxe du hero : les fûts avant suivent davantage la souris que les fûts arrière */
+(function () {
+  var v = document.querySelector('.hero-visual');
+  if (!v || !window.matchMedia('(pointer: fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var hero = v.closest('.hero'), raf = 0;
+  hero.addEventListener('mousemove', function (e) {
+    var r = v.getBoundingClientRect();
+    var x = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width / 2)));
+    var y = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height / 2)));
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function () { v.style.setProperty('--mx', x.toFixed(3)); v.style.setProperty('--my', y.toFixed(3)); });
+  });
+  hero.addEventListener('mouseleave', function () { v.style.setProperty('--mx', 0); v.style.setProperty('--my', 0); });
 })();
 </script>
 </body>
