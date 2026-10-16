@@ -326,14 +326,6 @@
   @media (max-width: 1024px) { .rain-stage { scale: 0.72; } }
   @media (max-width: 600px)  { .rain-stage { scale: 0.56; } .hero .hero-visual { height: 320px; } }
 
-  /* Pluie d'ambiance : fines gouttes très discrètes derrière les fûts */
-  .rain-drops { position: absolute; inset: -40px 0 60px; overflow: hidden; pointer-events: none; z-index: 0;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 70%, transparent);
-            mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 70%, transparent); }
-  .rain-drops i { position: absolute; top: -20%; left: var(--x); width: 1.5px; height: var(--h, 60px); border-radius: 2px;
-    background: linear-gradient(to bottom, transparent, rgba(168,230,190,0.35)); opacity: 0;
-    animation: drop var(--d, 2.4s) linear var(--w, 0s) infinite; }
-  @keyframes drop { 0% { opacity: 0; translate: 0 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; translate: 0 760px; } }
 
   /* === BADGE RE2020 MINI dans le HERO ===
      - Posé en haut à droite, près du pot IZI R (empiétement assumé)
@@ -1104,7 +1096,7 @@
     /* Pas d'animation d'entrée : pots et badges visibles d'emblée */
     .rain-fut, .rain-badge, .rain-floor { opacity: 1 !important; animation: none !important; }
     .rain-col { translate: none !important; }
-    .rain-col::after, .rain-drops { display: none; }
+    .rain-col::after { display: none; }
   }
 </style>
 </head>
@@ -1266,7 +1258,6 @@
 </div>
 </div>
 <div class="hero-visual">
-<div class="rain-drops" aria-hidden="true"><i style="--x:4%;--d:2.6s;--w:0.2s;--h:70px"></i><i style="--x:11%;--d:2.1s;--w:1.4s;--h:50px"></i><i style="--x:19%;--d:2.9s;--w:0.7s;--h:80px"></i><i style="--x:27%;--d:2.3s;--w:2.0s;--h:55px"></i><i style="--x:35%;--d:2.7s;--w:0.4s;--h:65px"></i><i style="--x:43%;--d:2.0s;--w:1.7s;--h:45px"></i><i style="--x:51%;--d:2.8s;--w:1.0s;--h:75px"></i><i style="--x:59%;--d:2.2s;--w:2.4s;--h:50px"></i><i style="--x:67%;--d:2.6s;--w:0.1s;--h:60px"></i><i style="--x:75%;--d:2.1s;--w:1.2s;--h:70px"></i><i style="--x:83%;--d:2.9s;--w:2.1s;--h:55px"></i><i style="--x:91%;--d:2.4s;--w:0.6s;--h:65px"></i><i style="--x:97%;--d:2.2s;--w:1.6s;--h:50px"></i></div>
 <!-- Fûts classés par gamme : Impression (GT, evo) → Mat (45 2en1) → Mat velouté (TITANE MV), en profondeur -->
 <div class="rain-stage">
 <div class="rain-col rc-gt" style="--i:0">
