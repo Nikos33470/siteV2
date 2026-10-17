@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "peinture-bas-carbone-re2020",
+    "date": "2026-10-17",
+    "tag": "RE2020 · Bas carbone",
+    "titre": "Peinture et RE2020 : comment choisir une peinture bas carbone | L'Atelier",
+    "titre_court": "Peinture et RE2020 : comment choisir une peinture bas carbone",
+    "h1": "Peinture et RE2020 : choisir une peinture <em>bas carbone</em>.",
+    "chapo": "La peinture pèse peu dans le bilan carbone d'un bâtiment… sauf quand on choisit mal. Méthode simple pour comparer les produits et fournir les bonnes FDES au bureau d'études.",
+    "description": "RE2020 et peinture : pourquoi la FDES compte, comment comparer l'empreinte carbone des peintures et quels produits choisir en impression et en finition.",
+    "lecture": 6,
+    "images": ["images/produits/45_impress_GT.webp", "images/produits/45_Mat_2en1.webp", "images/produits/titane_hydro_mat_veloute.webp"],
+    "mots_cles": "re2020 bas carbone fdes peinture choisir impression finition bureau etudes acv inies"
+  },
+  {
+    "slug": "lire-fdes-peinture",
+    "date": "2026-10-17",
+    "tag": "FDES · Méthode",
+    "titre": "Comment lire la FDES d'une peinture : les chiffres qui comptent | L'Atelier",
+    "titre_court": "Comment lire la FDES d'une peinture : les chiffres qui comptent",
+    "h1": "Lire la FDES d'une peinture : <em>les chiffres</em> qui comptent.",
+    "chapo": "Une FDES fait souvent plus de vingt pages. Pour comparer deux peintures, quatre informations suffisent. Voici où les trouver et comment éviter les pièges.",
+    "description": "Unité fonctionnelle, durée de vie, indicateur changement climatique, type de FDES : le guide pour lire et comparer les FDES de peinture sans se tromper.",
+    "lecture": 5,
+    "images": ["images/produits/45_impress_.webp", "images/produits/titane_hydro_prim.webp", "images/produits/dragocryl_mat_airless.webp"],
+    "mots_cles": "fdes lire comprendre unite fonctionnelle duree vie changement climatique a1 c4 verifiee provisoire collective inies"
+  }
+]

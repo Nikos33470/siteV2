@@ -7,7 +7,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Security headers (meta) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.matomo.cloud; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://latelier33.matomo.cloud https://formsubmit.co; frame-ancestors 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()">
@@ -470,6 +470,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 }
 </style>
 
+<style id="legal-title-xs">@media (max-width: 480px) { .legal-section h2 { display: block; font-size: 26px; } .legal-section h2 .num { display: block; margin-bottom: 6px; } }</style>
 </head>
 <body>
 <!-- ============ HEADER ============ -->
@@ -498,7 +499,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <a href="revetement-sol.html">Revêtement de sol</a>
 <a href="documents.html">Documents techniques</a>
 <a href="index.html#magasins">L'équipe L'ATELIER</a>
-<a class="nav-cta" href="index.html#contact">Espace pro</a>
+<a class="nav-cta" href="espace-pro.html">Espace pro</a>
 </nav>
 <form class="nav-search" onsubmit="event.preventDefault();" role="search">
 <svg aria-hidden="true" class="nav-search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
@@ -620,7 +621,8 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <li><a href="index.html">Notre histoire</a></li>
 <li><a href="index.html#magasins">Nos magasins</a></li>
 <li><a href="index.html">L'Établi · location</a></li>
-<li><a href="index.html#contact">Espace pro</a></li>
+<li><a href="espace-pro.html">Espace pro</a></li>
+<li><a href="conseils.html">Conseils &amp; guides</a></li>
 </ul>
 </div>
 <div class="footer-col">
@@ -670,5 +672,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
 </script>
+<script src="js/recherche.js" defer></script>
+<script src="js/site.js" defer></script>
 </body>
 </html>
