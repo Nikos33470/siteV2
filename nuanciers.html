@@ -866,6 +866,22 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 .nz-btn-ghost { background: transparent; border: 1.5px solid rgba(255,255,255,.4); }
 .nz-btn-pdf { background: #A8E6BE; color: #15273F; }
 .nz-btn-pdf:hover { background: #fff; }
+.nz-btn-pdf.is-locked { background: rgba(255,255,255,.12); color: rgba(255,255,255,.6); cursor: not-allowed; transform: none; }
+.nz-quiz { margin-top: 22px; padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); }
+.nz-quiz[hidden] { display: none; }
+.nz-quiz-kicker { font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--orange-clair); }
+.nz-modal p.nz-quiz-q { font-size: 16px; font-weight: 600; color: #fff; margin: 8px 0 12px; }
+.nz-quiz-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.nz-quiz-opt { font: inherit; font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 50px; border: 1.5px solid rgba(255,255,255,.35); background: transparent; color: #fff; cursor: pointer; transition: background .2s, border-color .2s; }
+.nz-quiz-opt:hover:not(:disabled) { background: rgba(255,255,255,.12); border-color: #fff; }
+.nz-quiz-opt:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.nz-quiz-opt.is-ok { background: #A8E6BE; border-color: #A8E6BE; color: #15273F; }
+.nz-quiz-opt.is-ko { border-color: #E57373; color: #F4B4B4; text-decoration: line-through; cursor: default; }
+.nz-quiz-opt:disabled:not(.is-ok):not(.is-ko) { opacity: .5; cursor: default; }
+.nz-modal p.nz-quiz-msg { min-height: 20px; margin: 10px 0 4px; font-size: 13.5px; font-weight: 500; }
+.nz-modal p.nz-quiz-msg.is-ok { color: #A8E6BE; }
+.nz-modal p.nz-quiz-msg.is-ko { color: #F4B4B4; }
+.nz-quiz-help { font-size: 13px; color: var(--orange-clair); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .nz-btn-ghost:hover { background: rgba(255,255,255,.1); }
 .nz-futs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .nz-fut, .nz-mfut { position: relative; display: flex; flex-direction: column; align-items: center; text-decoration: none; padding: 30px 6px 14px; border-radius: 20px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); transition: transform .35s var(--transition), background .35s; }
@@ -2176,31 +2192,72 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <span class="nz-modal-ok">Nuancier : <b id="nzName"></b></span>
 <h2 id="nzModalTitle">Vous avez trouvé votre teinte ? <em>On la réalise en 5 minutes.</em></h2>
 <p>Dans nos peintures fabriquées en France, à l'empreinte carbone mesurée par FDES. Mise à la teinte dans nos magasins de Mérignac et La Teste-de-Buch.</p>
+<div class="nz-quiz" id="nzQuiz">
+<span class="nz-quiz-kicker">Une petite question avant votre nuancier</span>
+<p class="nz-quiz-q" id="nzQ"></p>
+<div class="nz-quiz-opts" id="nzOpts" role="group" aria-labelledby="nzQ"></div>
+<p class="nz-quiz-msg" id="nzMsg" aria-live="polite"></p>
+<a class="nz-quiz-help" href="index.html" target="_blank" rel="noopener">La réponse est sur notre page d'accueil ↗</a>
+</div>
 <div class="nz-modal-futs"><a class="nz-mfut" href="gammes.html#p-grands-travaux" style="--bc:#1B7A3D"><img src="images/produits/45_impress_GT.webp" alt="Impress 45 GT" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,043</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Impress 45 GT</span></a><a class="nz-mfut" href="gammes.html#p-mat-45" style="--bc:#3F9B4C"><img src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,125</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Mat 45 2en1</span></a><a class="nz-mfut" href="gammes.html#p-impress-evo" style="--bc:#7DB653"><img src="images/produits/45_impress_.webp" alt="Impress 45 evo" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,164</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Impress 45 evo</span></a><a class="nz-mfut" href="gammes.html#p-titane-mv" style="--bc:#B4C94F"><img src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,210</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">TITANE hydro MV evo</span></a></div>
-<div class="nz-modal-cta"><a class="nz-btn nz-btn-pdf" id="nzPdf" href="#" target="_blank" rel="noopener">⬇ Ouvrir le nuancier PDF</a><a class="nz-btn nz-btn-ghost" href="gammes.html">Découvrir nos peintures →</a><a class="nz-btn nz-btn-ghost" href="tel:0556288944">05 56 28 89 44</a></div>
+<div class="nz-modal-cta"><a class="nz-btn nz-btn-pdf" id="nzPdf" href="#" target="_blank" rel="noopener" aria-disabled="true">🔒 Répondez à la question pour ouvrir le PDF</a><a class="nz-btn nz-btn-ghost" href="gammes.html">Découvrir nos peintures →</a><a class="nz-btn nz-btn-ghost" href="tel:0556288944">05 56 28 89 44</a></div>
 </div>
 </div>
 <script>
-/* Nuanciers : au clic sur « Ouvrir le PDF », on affiche d'abord une fenêtre produits sur la page,
-   avec le bouton qui ouvre réellement le PDF (nouvel onglet). Fermeture : ×, Échap ou clic hors de la boîte.
-   Si le JavaScript est désactivé, le lien ouvre directement le PDF. */
+/* Nuanciers : au clic sur « Ouvrir le PDF », une fenêtre produits s'affiche avec une question sur la page d'accueil.
+   Le bouton du PDF ne se débloque qu'avec la bonne réponse (une seule fois par visite : ensuite accès direct).
+   Mauvaise réponse : message + nouvel essai possible. Fermeture : ×, Échap ou clic hors de la boîte. */
 (function () {
   var m = document.getElementById('nzModal'); if (!m) return;
   var pdf = document.getElementById('nzPdf'), nameEl = document.getElementById('nzName');
-  function open(href, name) {
-    pdf.href = href; nameEl.textContent = name;
-    m.hidden = false; requestAnimationFrame(function () { m.classList.add('is-open'); }); pdf.focus();
+  var quiz = document.getElementById('nzQuiz'), qEl = document.getElementById('nzQ'), opts = document.getElementById('nzOpts'), msg = document.getElementById('nzMsg');
+  /* Réponses visibles uniquement sur la page d'accueil (pas dans cette fenêtre) */
+  var QUESTIONS = [
+    { q: "Sur notre page d'accueil, à quel pourcentage la résine du TITANE hydro MV evo est-elle biosourcée ?", a: ["25 %", "50 %", "85 %"], ok: 2 },
+    { q: "Combien de teintes compte le nuancier Chromatic présenté sur notre page d'accueil ?", a: ["350 teintes", "1 170 teintes", "5 000 teintes"], ok: 1 },
+    { q: "Complétez le slogan de notre page d'accueil : « La performance pro, l'empreinte… »", a: ["…bas carbone.", "…responsable.", "…locale."], ok: 0 },
+    { q: "Sur notre page d'accueil, de quelle couleur est la carte de la gamme TITANE hydro ?", a: ["Verte", "Orange", "Bleue"], ok: 1 }
+  ];
+  var unlocked = false; try { unlocked = sessionStorage.getItem('nzOk') === '1'; } catch (e) {}
+  var href = '#', current = null;
+  function lock(on) {
+    if (on) { pdf.setAttribute('aria-disabled', 'true'); pdf.removeAttribute('href'); pdf.classList.add('is-locked'); pdf.textContent = '🔒 Répondez à la question pour ouvrir le PDF'; }
+    else { pdf.removeAttribute('aria-disabled'); pdf.href = href; pdf.classList.remove('is-locked'); pdf.textContent = '⬇ Ouvrir le nuancier PDF'; }
+  }
+  function ask() {
+    var i; do { i = Math.floor(Math.random() * QUESTIONS.length); } while (QUESTIONS.length > 1 && QUESTIONS[i] === current);
+    current = QUESTIONS[i]; qEl.textContent = current.q; msg.textContent = ''; msg.className = 'nz-quiz-msg'; opts.innerHTML = '';
+    current.a.forEach(function (txt, k) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'nz-quiz-opt'; b.textContent = txt;
+      b.addEventListener('click', function () { answer(k, b); }); opts.appendChild(b);
+    });
+  }
+  function answer(k, b) {
+    if (k === current.ok) {
+      unlocked = true; try { sessionStorage.setItem('nzOk', '1'); } catch (e) {}
+      b.classList.add('is-ok'); msg.textContent = 'Bonne réponse ! Votre nuancier est débloqué.'; msg.className = 'nz-quiz-msg is-ok';
+      opts.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+      lock(false); pdf.focus();
+    } else {
+      b.classList.add('is-ko'); b.disabled = true;
+      msg.textContent = 'Ce n\'est pas ça… La réponse se trouve sur notre page d\'accueil. Réessayez !'; msg.className = 'nz-quiz-msg is-ko';
+    }
+  }
+  function open(h, name) {
+    href = h; nameEl.textContent = name;
+    if (unlocked) { quiz.hidden = true; lock(false); } else { quiz.hidden = false; lock(true); ask(); }
+    m.hidden = false; requestAnimationFrame(function () { m.classList.add('is-open'); });
+    (unlocked ? pdf : opts.querySelector('button')).focus();
   }
   function close() { m.classList.remove('is-open'); setTimeout(function () { m.hidden = true; }, 300); }
   document.querySelectorAll('a[href^="nuanciers/"][href$=".pdf"]').forEach(function (a) {
-    if (a.id === 'nzPdf') return;
     a.addEventListener('click', function (e) {
       e.preventDefault();
       var card = a.closest('.card'), t = card && card.querySelector('.card-title');
       open(a.getAttribute('href'), t ? t.textContent.trim() : 'PDF');
     });
   });
-  pdf.addEventListener('click', function () { setTimeout(close, 200); });
+  pdf.addEventListener('click', function (e) { if (pdf.classList.contains('is-locked')) { e.preventDefault(); return; } setTimeout(close, 200); });
   m.querySelector('.nz-modal-close').addEventListener('click', close);
   m.addEventListener('click', function (e) { if (e.target === m) close(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) close(); });
