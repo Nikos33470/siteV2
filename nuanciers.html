@@ -2,6 +2,8 @@
 
 <html lang="fr">
 <head>
+<script>/* Redirige les visites en http:// vers https:// (doublon signalé par Search Console) */
+if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') !== -1) location.replace('https://' + location.host + location.pathname + location.search + location.hash);</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Security headers (meta) -->
@@ -10,8 +12,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()">
 
-<title>Nuanciers — L'Atelier · Marchand de couleurs · Chromatic, Polycrom, RAL, NCS</title>
-<meta content="Découvrez et téléchargez tous les nuanciers L'Atelier : Chromatic, Polycrom façade, RAL, NCS, nuanciers bois. Marchand de couleurs à Mérignac et La Teste-de-Buch." name="description"/>
+<title>Télécharger nuancier Chromatic PDF gratuit — Polycrom, RAL, NCS | L'Atelier</title>
+<meta content="Téléchargez gratuitement les nuanciers PDF Chromatic (CH1, Dorval CH2, Façade, Bois), Polycrom, RAL et NCS. Votre teinte réalisée en 5 min à Mérignac et La Teste-de-Buch, en peinture bas carbone fabriquée en France." name="description"/>
 <meta name="author" content="L'Atelier — Marchand de couleurs"/>
 <meta name="geo.region" content="FR-33"/>
 <meta name="geo.placename" content="Mérignac, La Teste-de-Buch"/>
@@ -27,7 +29,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://www.latelier33.fr/nuanciers.html"/>
-<meta property="og:title" content="Nuanciers — Chromatic, Polycrom, RAL, NCS | L'Atelier"/>
+<meta property="og:title" content="Nuanciers PDF gratuits — Chromatic, Polycrom, RAL, NCS | L'Atelier"/>
 <meta property="og:description" content="Découvrez et téléchargez tous les nuanciers L'Atelier : Chromatic, Polycrom façade, RAL, NCS, nuanciers bois."/>
 <meta property="og:image" content="https://www.latelier33.fr/images/chromatic-photo.webp"/>
 <meta property="og:locale" content="fr_FR"/>
@@ -849,6 +851,71 @@
 }
 </style>
 
+<style id="nuanciers-produits">
+/* ===== Nuanciers → produits : bandeau, suggestions par famille, fenêtre au téléchargement ===== */
+.nz-band { background: linear-gradient(150deg, #15273F 0%, #1F3A5F 60%, #2D4E7A 100%); color: #fff; padding: 70px 48px; }
+.nz-band-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.nz-kicker { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-clair); }
+.nz-band h2 { font-family: var(--display); font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.12; margin: 12px 0 16px; letter-spacing: -.5px; }
+.nz-band h2 em { color: #A8E6BE; font-style: italic; font-weight: 300; }
+.nz-band p { font-size: 15.5px; line-height: 1.65; color: rgba(255,255,255,.8); font-weight: 300; }
+.nz-band p strong { color: #fff; font-weight: 600; }
+.nz-band-cta, .nz-modal-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+.nz-btn { display: inline-flex; align-items: center; padding: 13px 24px; border-radius: 50px; background: var(--orange); color: #fff; font-weight: 600; font-size: 14px; text-decoration: none; transition: transform .25s, background .25s; }
+.nz-btn:hover { background: var(--orange-fonce); transform: translateY(-2px); }
+.nz-btn-ghost { background: transparent; border: 1.5px solid rgba(255,255,255,.4); }
+.nz-btn-ghost:hover { background: rgba(255,255,255,.1); }
+.nz-futs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.nz-fut, .nz-mfut { position: relative; display: flex; flex-direction: column; align-items: center; text-decoration: none; padding: 30px 6px 14px; border-radius: 20px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); transition: transform .35s var(--transition), background .35s; }
+.nz-fut:hover, .nz-mfut:hover { transform: translateY(-6px); background: rgba(255,255,255,.12); }
+.nz-fut img, .nz-mfut img { width: 90%; max-width: 110px; height: auto; filter: drop-shadow(0 12px 14px rgba(0,0,0,.35)); }
+.nz-fut-badge, .nz-mfut-badge { position: absolute; top: -14px; left: 50%; translate: -50% 0; min-width: 62px; padding: 5px 8px; border-radius: 30px; text-align: center; color: #fff; line-height: 1;
+  background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--bc) 70%, #fff) 0%, var(--bc) 60%, color-mix(in srgb, var(--bc) 75%, #000) 100%); box-shadow: 0 6px 14px -6px rgba(0,0,0,.5); }
+.nz-fut-badge b, .nz-mfut-badge b { display: block; font-family: var(--display); font-size: 17px; font-weight: 600; }
+.nz-fut-badge small, .nz-mfut-badge small { font-size: 7.5px; font-weight: 600; letter-spacing: .3px; }
+.nz-fut-name, .nz-mfut-name { margin-top: 10px; font-size: 12px; font-weight: 600; color: #fff; text-align: center; line-height: 1.25; }
+.nz-sugg { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: -6px 0 22px; font-size: 13px; }
+.nz-sugg-lab { color: var(--gris); font-weight: 500; margin-right: 4px; }
+.nz-sugg a { padding: 5px 13px; border-radius: 50px; background: var(--vert-eco-pale); color: var(--vert-eco-fonce); font-weight: 600; font-size: 12px; text-decoration: none; transition: background .2s, color .2s; }
+.nz-sugg a:hover { background: var(--vert-eco); color: #fff; }
+.nz-intro { max-width: 900px; margin: 0 auto 40px; text-align: center; font-size: 15px; line-height: 1.7; color: var(--gris); font-weight: 300; }
+.nz-intro strong { color: var(--bleu); font-weight: 600; }
+.nz-modal { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(10,20,35,.6); backdrop-filter: blur(4px); opacity: 0; transition: opacity .3s; }
+.nz-modal.is-open { opacity: 1; }
+.nz-modal[hidden] { display: none; }
+.nz-modal-box { position: relative; width: 100%; max-width: 760px; max-height: calc(100vh - 40px); overflow-y: auto; background: linear-gradient(150deg, #15273F 0%, #1F3A5F 100%); color: #fff; border-radius: 28px; padding: 36px 36px 30px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.6); translate: 0 20px; transition: translate .3s; }
+.nz-modal.is-open .nz-modal-box { translate: 0 0; }
+.nz-modal-close { position: absolute; top: 14px; right: 16px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255,255,255,.12); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
+.nz-modal-close:hover { background: var(--orange); }
+.nz-modal-ok { display: inline-block; margin-right: 44px; font-size: 12px; font-weight: 600; color: #A8E6BE; background: rgba(168,230,190,.12); padding: 6px 12px; border-radius: 30px; }
+.nz-modal h2 { font-family: var(--display); font-weight: 400; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; margin: 14px 0 10px; }
+.nz-modal h2 em { color: var(--orange-clair); font-style: italic; font-weight: 300; }
+.nz-modal p { font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,.8); font-weight: 300; }
+.nz-modal-futs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 30px; }
+@media (max-width: 1024px) { .nz-band-inner { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 760px) { .nz-band { padding: 56px 20px; } }
+@media (max-width: 560px) {
+  .nz-futs, .nz-modal-futs { grid-template-columns: repeat(2, 1fr); row-gap: 26px; }
+  .nz-modal-box { padding: 30px 20px 24px; border-radius: 22px; }
+  .nz-mfut img { max-width: 76px; }
+  .nz-mfut { padding-top: 26px; }
+}
+@media (prefers-reduced-motion: reduce) { .nz-modal, .nz-modal-box, .nz-fut, .nz-mfut { transition: none; } }
+</style>
+<style id="nuanciers-faq">
+.nz-faq { padding: 80px 48px; background: var(--gris-clair); }
+.nz-faq-inner { max-width: 860px; margin: 0 auto; }
+.nz-faq h2 { font-family: var(--display); font-weight: 400; font-size: clamp(26px, 3vw, 38px); color: var(--bleu); text-align: center; margin-bottom: 30px; }
+.nz-faq h2 em { color: var(--orange); font-style: italic; font-weight: 300; }
+.nz-faq-item { background: #fff; border: 1px solid rgba(31,58,95,.08); border-radius: 16px; padding: 18px 22px; margin-bottom: 12px; }
+.nz-faq-item summary { cursor: pointer; font-weight: 600; color: var(--bleu); font-size: 15.5px; list-style: none; position: relative; padding-right: 28px; }
+.nz-faq-item summary::-webkit-details-marker { display: none; }
+.nz-faq-item summary::after { content: '+'; position: absolute; right: 0; top: -2px; font-size: 22px; color: var(--orange); }
+.nz-faq-item[open] summary::after { content: '–'; }
+.nz-faq-item p { margin-top: 10px; font-size: 14.5px; line-height: 1.65; color: var(--gris); font-weight: 300; }
+@media (max-width: 760px) { .nz-faq { padding: 60px 20px; } }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment télécharger gratuitement le nuancier Chromatic en PDF ?", "acceptedAnswer": {"@type": "Answer", "text": "Choisissez votre nuancier (Chromatic CH1, Chromatic Dorval CH2, Chromatic Façade, Chromatic Bois…) et cliquez sur « Ouvrir le PDF » : le nuancier s'ouvre gratuitement, sans inscription, et peut être enregistré ou imprimé."}}, {"@type": "Question", "name": "Les couleurs du nuancier PDF sont-elles fidèles ?", "acceptedAnswer": {"@type": "Answer", "text": "Un écran ou une imprimante ne restitue jamais exactement une teinte. Pour valider votre couleur, consultez le nuancier physique dans nos magasins de Mérignac ou de La Teste-de-Buch, ou demandez un échantillon."}}, {"@type": "Question", "name": "Pouvez-vous réaliser une teinte Chromatic, RAL ou NCS ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nos magasins réalisent la mise à la teinte en moins de 5 minutes à partir d'une référence Chromatic, Polycrom, RAL, NCS ou d'un échantillon, dans nos peintures fabriquées en France L'Atelier 45 et TITANE hydro."}}]}</script>
 </head>
 <body>
 <!-- HEADER -->
@@ -908,8 +975,8 @@
 <div class="hero-nuanciers-inner">
 <div>
 <div class="hero-eyebrow">Bibliothèque chromatique</div>
-<h1 class="hero-title">Nos <em>nuanciers</em><br/>en téléchargement.</h1>
-<p class="hero-sub">Toute la matière chromatique de L'Atelier : Chromatic, Polycrom, KEIM, RAL, NCS, nuanciers bois et inspirations. Téléchargez les PDF officiels et venez les manipuler en magasin.</p>
+<h1 class="hero-title">Nuanciers <em>Chromatic</em>, Polycrom, RAL<br/>en PDF gratuit.</h1>
+<p class="hero-sub">Téléchargez gratuitement, sans inscription, les nuanciers PDF officiels : Chromatic, Polycrom, KEIM, RAL, NCS, nuanciers bois et inspirations. Puis faites réaliser votre teinte en 5 minutes dans nos magasins, en peinture bas carbone fabriquée en France.</p>
 <div class="hero-stats">
 <div>
 <div class="hero-stat-num">12</div>
@@ -1037,10 +1104,23 @@
 </div>
 </div>
 <!-- GRILLE NUANCIERS -->
+<!-- ===== Bandeau produits : vos teintes en peinture bas carbone ===== -->
+<section class="nz-band" aria-labelledby="nz-band-title">
+<div class="nz-band-inner">
+<div class="nz-band-text">
+<span class="nz-kicker">Vos teintes, notre peinture</span>
+<h2 id="nz-band-title">Chromatic, Polycrom, RAL, NCS : <em>toutes nos teintes en peinture bas carbone.</em></h2>
+<p>Choisissez votre couleur dans le nuancier, nous la réalisons en <strong>moins de 5 minutes</strong> dans nos magasins de <strong>Mérignac</strong> et <strong>La Teste-de-Buch</strong>, dans nos gammes fabriquées en France <strong>L'Atelier 45</strong> et <strong>TITANE hydro</strong> : COV &lt; 1 g/L, classées A+, empreinte carbone dès <strong>0,043 kg CO₂/UF</strong> sur 10 ans.</p>
+<div class="nz-band-cta"><a class="nz-btn" href="gammes.html">Voir nos peintures →</a><a class="nz-btn nz-btn-ghost" href="index.html#magasins">Faire teinter en magasin</a></div>
+</div>
+<div class="nz-futs"><a class="nz-fut" href="gammes.html#p-grands-travaux" style="--bc:#1B7A3D"><img src="images/produits/45_impress_GT.webp" alt="Impress 45 GT" width="90" height="108" loading="lazy" decoding="async"><span class="nz-fut-badge"><b>0,043</b><small>kg CO₂/UF</small></span><span class="nz-fut-name">Impress 45 GT</span></a><a class="nz-fut" href="gammes.html#p-mat-45" style="--bc:#3F9B4C"><img src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1" width="90" height="108" loading="lazy" decoding="async"><span class="nz-fut-badge"><b>0,125</b><small>kg CO₂/UF</small></span><span class="nz-fut-name">Mat 45 2en1</span></a><a class="nz-fut" href="gammes.html#p-impress-evo" style="--bc:#7DB653"><img src="images/produits/45_impress_.webp" alt="Impress 45 evo" width="90" height="108" loading="lazy" decoding="async"><span class="nz-fut-badge"><b>0,164</b><small>kg CO₂/UF</small></span><span class="nz-fut-name">Impress 45 evo</span></a><a class="nz-fut" href="gammes.html#p-titane-mv" style="--bc:#B4C94F"><img src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo" width="90" height="108" loading="lazy" decoding="async"><span class="nz-fut-badge"><b>0,210</b><small>kg CO₂/UF</small></span><span class="nz-fut-name">TITANE hydro MV evo</span></a></div>
+</div>
+</section>
 <section class="nuanciers-grid" id="nuanciers-cartes" style="scroll-margin-top: 100px;">
 <div class="nuanciers-inner">
 <h2 class="nuanciers-section-title">Choisissez votre <em>palette.</em></h2>
 <p class="nuanciers-section-sub">Survolez chaque carte pour révéler les teintes du nuancier. Le téléchargement PDF s'ouvre dans un nouvel onglet.</p>
+<p class="nz-intro">Tous nos <strong>nuanciers sont à télécharger gratuitement en PDF</strong> : le nuancier <strong>Chromatic</strong> by PPG (CH1 Jonone, Dorval CH2, Façade, Bois CH10), les nuanciers <strong>Polycrom</strong> intérieur et façade, les références <strong>RAL</strong> et <strong>NCS</strong> et les lasures minérales <strong>KEIM</strong>. Chaque teinte peut être réalisée dans nos peintures L'Atelier 45 et TITANE hydro.</p>
 <!-- INTERIEUR / DECORATION -->
 <div class="nuanciers-cat" data-cat="interieur">
 <div class="cat-header">
@@ -1048,6 +1128,7 @@
 <span class="cat-title">Chromatic · Inspirations · Polycrom</span>
 <span class="cat-count">4 nuanciers</span>
 </div>
+<div class="nz-sugg"><span class="nz-sugg-lab">À teinter dans nos peintures · Murs et plafonds intérieurs :</span><a href="gammes.html#p-mat-45">Mat 45 2en1</a><a href="gammes.html#p-titane-mv">TITANE hydro MV evo</a><a href="gammes.html#p-velours-45">Velours 45</a><a href="gammes.html#p-satin-45">Satin 45</a></div>
 <div class="cards">
 <article class="card" data-cat="interieur">
 <div class="card-inner">
@@ -1194,6 +1275,7 @@
 <span class="cat-title">Chromatic · Polycrom · KEIM · Extérieur</span>
 <span class="cat-count">4 nuanciers</span>
 </div>
+<div class="nz-sugg"><span class="nz-sugg-lab">À teinter dans nos peintures · Intérieur & extérieur :</span><a href="gammes.html#p-sofec-multimat-plus">Sofec Multimat Plus</a><a href="gammes.html#p-grands-travaux">Impress 45 GT</a></div>
 <div class="cards">
 <article class="card" data-cat="facade">
 <div class="card-inner">
@@ -1342,6 +1424,7 @@
 <span class="cat-title">RAL · NCS · Référence professionnelle</span>
 <span class="cat-count">2 nuanciers</span>
 </div>
+<div class="nz-sugg"><span class="nz-sugg-lab">À teinter dans nos peintures · Toutes finitions :</span><a href="gammes.html#p-grands-travaux">Impress 45 GT</a><a href="gammes.html#p-mat-45">Mat 45 2en1</a><a href="gammes.html#p-titane-mv">TITANE hydro MV evo</a><a href="gammes.html#p-glycero-45">Glycéro 45</a></div>
 <div class="cards">
 <article class="card" data-cat="industriel">
 <div class="card-inner">
@@ -1420,6 +1503,7 @@
 <span class="cat-title">Nuanciers spécifiques bois</span>
 <span class="cat-count">2 nuanciers</span>
 </div>
+<div class="nz-sugg"><span class="nz-sugg-lab">À teinter dans nos peintures · Boiseries & menuiseries :</span><a href="gammes.html#p-glycero-45">Glycéro 45</a><a href="gammes.html#p-satin-45">Satin 45</a></div>
 <div class="cards">
 <article class="card" data-cat="bois">
 <div class="card-inner">
@@ -1493,6 +1577,8 @@
 </div>
 </div>
 </section>
+<!-- ===== FAQ nuanciers (données structurées FAQPage) ===== -->
+<section class="nz-faq"><div class="nz-faq-inner"><h2>Questions fréquentes sur les <em>nuanciers</em></h2><details class="nz-faq-item"><summary>Comment télécharger gratuitement le nuancier Chromatic en PDF ?</summary><p>Choisissez votre nuancier (Chromatic CH1, Chromatic Dorval CH2, Chromatic Façade, Chromatic Bois…) et cliquez sur « Ouvrir le PDF » : le nuancier s'ouvre gratuitement, sans inscription, et peut être enregistré ou imprimé.</p></details><details class="nz-faq-item"><summary>Les couleurs du nuancier PDF sont-elles fidèles ?</summary><p>Un écran ou une imprimante ne restitue jamais exactement une teinte. Pour valider votre couleur, consultez le nuancier physique dans nos magasins de Mérignac ou de La Teste-de-Buch, ou demandez un échantillon.</p></details><details class="nz-faq-item"><summary>Pouvez-vous réaliser une teinte Chromatic, RAL ou NCS ?</summary><p>Oui. Nos magasins réalisent la mise à la teinte en moins de 5 minutes à partir d'une référence Chromatic, Polycrom, RAL, NCS ou d'un échantillon, dans nos peintures fabriquées en France L'Atelier 45 et TITANE hydro.</p></details></div></section>
 <!-- CONSEIL -->
 <section class="conseil">
 <div class="conseil-inner">
@@ -2080,6 +2166,34 @@
     const mq = window.matchMedia('(min-width: 1025px)');
     mq.addEventListener('change', (ev) => { if (ev.matches) setOpen(false); });
   })();
+</script>
+<!-- ===== Fenêtre affichée au téléchargement d'un nuancier (le PDF s'ouvre normalement dans un nouvel onglet) ===== -->
+<div class="nz-modal" id="nzModal" role="dialog" aria-modal="true" aria-labelledby="nzModalTitle" hidden>
+<div class="nz-modal-box">
+<button class="nz-modal-close" type="button" aria-label="Fermer">×</button>
+<span class="nz-modal-ok">✓ Votre nuancier s'ouvre dans un nouvel onglet</span>
+<h2 id="nzModalTitle">Vous avez trouvé votre teinte ? <em>On la réalise en 5 minutes.</em></h2>
+<p>Dans nos peintures fabriquées en France, à l'empreinte carbone mesurée par FDES. Mise à la teinte dans nos magasins de Mérignac et La Teste-de-Buch.</p>
+<div class="nz-modal-futs"><a class="nz-mfut" href="gammes.html#p-grands-travaux" style="--bc:#1B7A3D"><img src="images/produits/45_impress_GT.webp" alt="Impress 45 GT" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,043</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Impress 45 GT</span></a><a class="nz-mfut" href="gammes.html#p-mat-45" style="--bc:#3F9B4C"><img src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,125</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Mat 45 2en1</span></a><a class="nz-mfut" href="gammes.html#p-impress-evo" style="--bc:#7DB653"><img src="images/produits/45_impress_.webp" alt="Impress 45 evo" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,164</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Impress 45 evo</span></a><a class="nz-mfut" href="gammes.html#p-titane-mv" style="--bc:#B4C94F"><img src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,210</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">TITANE hydro MV evo</span></a></div>
+<div class="nz-modal-cta"><a class="nz-btn" href="gammes.html">Découvrir nos peintures →</a><a class="nz-btn nz-btn-ghost" href="tel:0556288944">05 56 28 89 44</a></div>
+</div>
+</div>
+<script>
+/* Nuanciers : au clic sur « Ouvrir le PDF », le PDF s'ouvre (nouvel onglet) et une fenêtre produits s'affiche sur la page.
+   Affichée une seule fois par session ; se ferme avec ×, Échap ou clic hors de la boîte. */
+(function () {
+  var m = document.getElementById('nzModal'); if (!m) return;
+  var shown = false; try { shown = sessionStorage.getItem('nzSeen') === '1'; } catch (e) {}
+  function open() { if (shown) return; shown = true; try { sessionStorage.setItem('nzSeen', '1'); } catch (e) {}
+    m.hidden = false; requestAnimationFrame(function () { m.classList.add('is-open'); }); m.querySelector('.nz-modal-close').focus(); }
+  function close() { m.classList.remove('is-open'); setTimeout(function () { m.hidden = true; }, 300); }
+  document.querySelectorAll('a[href^="nuanciers/"][href$=".pdf"]').forEach(function (a) {
+    a.addEventListener('click', function () { setTimeout(open, 400); });
+  });
+  m.querySelector('.nz-modal-close').addEventListener('click', close);
+  m.addEventListener('click', function (e) { if (e.target === m) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) close(); });
+})();
 </script>
 </body>
 </html>
