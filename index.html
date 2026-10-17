@@ -242,7 +242,9 @@
   .hero-title .t-bas { color: #A8E6BE; font-weight: 600; white-space: nowrap; }
   .hero-title .t-kicker { display: block; font-family: var(--sans); font-size: 0.32em; letter-spacing: 0.5px; line-height: 1.2; margin-bottom: 0.55em; opacity: 0.95; }
   .hero-title em.t-pro { color: var(--orange); font-style: italic; font-weight: 300; }
-  .hero-subtitle strong.co2 { color: #A8E6BE; font-weight: 600; white-space: nowrap; }
+  .hero-subtitle strong.co2 { color: #A8E6BE; font-weight: 600; }
+  .hero-inner > * { min-width: 0; } /* évite qu'un mot long élargisse la grille */
+  @media (max-width: 600px) { .hero-title .t-bas { white-space: normal; } }
   .hero-title-accent { display: inline-block; position: relative; }
   .hero-title-accent::after { content: ''; position: absolute; bottom: 8px; left: 0; right: 0; height: 12px; background: var(--orange); opacity: 0.3; z-index: -1; animation: scaleX 1.5s var(--transition) 0.8s both; transform-origin: left; }
   @keyframes scaleX { from{transform:scaleX(0);} to{transform:scaleX(1);} }
@@ -303,10 +305,20 @@
   /* Rond bas carbone au-dessus de chaque fût (plus petit pour les fûts arrière) */
   .rain-badge { position: relative; width: var(--bs, 104px); aspect-ratio: 1; margin-bottom: 20px; border-radius: 50%;
     display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff;
-    background: radial-gradient(circle at 32% 28%, #5FA571 0%, var(--vert-eco) 45%, var(--vert-eco-fonce) 100%);
-    border: 2px solid rgba(255,255,255,0.22); box-shadow: 0 0 0 5px rgba(74,139,92,0.18), 0 0 50px rgba(74,139,92,0.45), 0 14px 30px -8px rgba(0,0,0,0.5);
+    /* Couleur selon le taux (échelle type étiquette énergie : vert foncé = le plus bas carbone) */
+    background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--bc) 70%, #fff) 0%, var(--bc) 55%, color-mix(in srgb, var(--bc) 75%, #000) 100%);
+    border: 2px solid rgba(255,255,255,0.22);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--bc) 30%, transparent), 0 0 50px color-mix(in srgb, var(--bc) 55%, transparent), 0 14px 30px -8px rgba(0,0,0,0.5);
     opacity: 0; animation: badgeDrop 0.8s calc(var(--t) + 0.75s) both, badgeFloat 5s ease-in-out calc(var(--t) + 1.6s) infinite; }
   .rc-gt, .rc-mv { --bs: 92px; }
+  .rc-gt  { --bc: #1B7A3D; }   /* 0,043 */
+  .rc-mat { --bc: #3F9B4C; }   /* 0,125 */
+  .rc-imp { --bc: #7DB653; }   /* 0,164 */
+  .rc-mv  { --bc: #B4C94F; }   /* 0,210 */
+  /* verts clairs : texte foncé pour rester lisible */
+  .rc-imp .rain-badge, .rc-mv .rain-badge { color: #133A22; }
+  .rc-imp .rb-dur, .rc-mv .rb-dur { border-top-color: rgba(19,58,34,0.35); }
+  .rc-imp .rain-badge::after, .rc-mv .rain-badge::after { background: linear-gradient(to bottom, color-mix(in srgb, var(--bc) 85%, #fff), transparent); }
   @keyframes badgeDrop {
     0%   { opacity: 0; translate: 0 -60px; scale: 0.6; animation-timing-function: cubic-bezier(.55,0,.9,.45); }
     55%  { opacity: 1; translate: 0 0; scale: 1.08; animation-timing-function: cubic-bezier(.2,.7,.3,1); }
@@ -1039,7 +1051,7 @@
     /* PAS d'uppercase forcé : le HTML écrit déjà "TITANE" et "hydro" avec les bonnes casses */
   }
 
-  /* --- INDEX : ligne "TITANE MV evo • SOFRAMAP" sous le pilier éco --- */
+  /* --- INDEX : ligne "TITANE MV evo • SOFEC" sous le pilier éco --- */
   .pilier-brands {
     font-family: 'Barlow Condensed', 'Barlow', 'Inter', sans-serif;
     font-style: italic;
@@ -1250,7 +1262,7 @@
         l'empreinte <span class="t-bas">bas carbone</span>.
 </h1>
 <p class="hero-subtitle">
-        Nos impressions, mats et mats veloutés affichent leur empreinte carbone : de <strong class="co2">0,043</strong> à <strong class="co2">0,210 kg CO₂/UF</strong> sur 10 ans. Garnissants, opacifiants, faciles à appliquer : conçus en Gironde, fabriqués en France.
+        Nos impressions, mats et mats veloutés affichent leur empreinte carbone : de <strong class="co2">0,043</strong> à <strong class="co2">0,210&nbsp;kg&nbsp;CO₂/UF</strong> sur 10 ans. Le <strong><span class="brand-titane">TITANE hydro</span> MV evo</strong> va plus loin : sa résine est <strong class="co2">biosourcée à 85&nbsp;%</strong> et le produit fini contient <strong class="co2">78&nbsp;% de matières premières d'origine naturelle</strong>. Conçus en Gironde, fabriqués en France.
       </p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="gammes.html">Découvrir nos gammes<span class="btn-arrow">→</span></a>
@@ -1384,6 +1396,65 @@
 </article>
 </div>
 </section>
+<!-- ENGAGEMENT ÉCO réduit + chiffres 3D -->
+<section class="eco" id="eco">
+<div class="eco-inner">
+<div class="eco-header reveal">
+<div class="section-eyebrow">— Engagement environnemental</div>
+<h2 class="section-title">Le bas carbone, <em>chiffré</em> produit par produit.</h2>
+<p class="section-intro">Des empreintes carbone déclarées par FDES, exploitables dans l'ACV de vos bâtiments. RE2020, MaPrimeRénov', HQE : trois leviers concrets pour vos chantiers responsables.</p>
+</div>
+<!-- BADGE RE2020 EN PREMIER (au-dessus des 3 piliers) -->
+<div class="re2020-showcase reveal">
+<div class="re2020-badge">
+<div class="re2020-ring"></div>
+<div class="re2020-ring re2020-ring-2"></div>
+<div class="re2020-leaves">
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+</div>
+<div class="re2020-core">
+<div class="re2020-label">CONFORME</div>
+<div class="re2020-number">RE<em style="color:#4A8B5C;font-weight:500;font-style:normal;">2020</em></div>
+<div class="re2020-sub">BAS CARBONE</div>
+</div>
+</div>
+</div>
+<!-- LES 3 PILIERS APRÈS -->
+<div class="eco-piliers">
+<div class="pilier-card reveal">
+<div class="pilier-icon">🪂</div>
+<div class="pilier-stat-3d"><div class="pilier-stat-rotator">0,043</div></div>
+<div class="pilier-name">BAS CARBONE</div>
+<p class="pilier-description"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> : Impress 45 GT 0,043 · Mat 45 2en1 0,125 · Impress 45 0,164 kg CO₂/UF sur 10&nbsp;ans. Avec Dragopaint et Sofec pour vos chantiers HQE et RE2020.</p>
+<div class="pilier-brands">L'ATELIER 45 • DRAGOPAINT • SOFEC ÉCOLABEL</div>
+</div>
+<div class="pilier-card reveal">
+<div class="pilier-icon">🌱</div>
+<div class="pilier-stat-3d"><div class="pilier-stat-rotator">85%</div></div>
+<div class="pilier-name">BIOSOURCÉ</div>
+<p class="pilier-description">Titane MV evo : résine biosourcée à 85%, alternative aux résines pétrochimiques. 78% de matières premières naturelles sur le produit fini, 0,210 kg CO₂/UF sur 10 ans.</p>
+<div class="pilier-brands">TITANE MV evo • SOFEC</div>
+</div>
+<div class="pilier-card reveal">
+<div class="pilier-icon">♻️</div>
+<div class="pilier-stat-3d"><div class="pilier-stat-rotator">56%</div></div>
+<div class="pilier-name">RECYCLÉ</div>
+<p class="pilier-description">COMUS IZI R : 56% de matières recyclées (pare-brise + chutes de marbre).</p>
+<div class="pilier-brands">COMUS IZI R</div>
+</div>
+<div class="pilier-card reveal">
+<div class="pilier-icon">🌊</div>
+<div class="pilier-stat-3d"><div class="pilier-stat-rotator">80%</div></div>
+<div class="pilier-name">BIOSOURCÉ ALGUES</div>
+<p class="pilier-description">Algo Pro Velours : 80% de matières premières biosourcées à base d'algues, COV ultra-réduits.</p>
+<div class="pilier-brands">ALGO PRO VELOURS</div>
+</div>
+</div>
+</div>
+</section>
 <!-- SECTION NUANCIERS : 3 colonnes [photo Chromatic | texte | éventail dynamique] + bandeau + stats -->
 <section class="colorimetrie" id="nuanciers">
 <!-- Trio principal -->
@@ -1453,65 +1524,6 @@
 <div class="stat-item"><div class="stat-number">+ 250</div><div class="stat-label">Teintes Façade</div></div>
 <div class="stat-item"><div class="stat-number">5 min</div><div class="stat-label">Mise à la teinte</div></div>
 <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Magasins équipés</div></div>
-</div>
-</div>
-</section>
-<!-- ENGAGEMENT ÉCO réduit + chiffres 3D -->
-<section class="eco" id="eco">
-<div class="eco-inner">
-<div class="eco-header reveal">
-<div class="section-eyebrow">— Engagement environnemental</div>
-<h2 class="section-title">Le bas carbone, <em>chiffré</em> produit par produit.</h2>
-<p class="section-intro">Des empreintes carbone déclarées par FDES, exploitables dans l'ACV de vos bâtiments. RE2020, MaPrimeRénov', HQE : trois leviers concrets pour vos chantiers responsables.</p>
-</div>
-<!-- BADGE RE2020 EN PREMIER (au-dessus des 3 piliers) -->
-<div class="re2020-showcase reveal">
-<div class="re2020-badge">
-<div class="re2020-ring"></div>
-<div class="re2020-ring re2020-ring-2"></div>
-<div class="re2020-leaves">
-<div class="leaf"></div>
-<div class="leaf"></div>
-<div class="leaf"></div>
-<div class="leaf"></div>
-</div>
-<div class="re2020-core">
-<div class="re2020-label">CONFORME</div>
-<div class="re2020-number">RE<em style="color:#4A8B5C;font-weight:500;font-style:normal;">2020</em></div>
-<div class="re2020-sub">BAS CARBONE</div>
-</div>
-</div>
-</div>
-<!-- LES 3 PILIERS APRÈS -->
-<div class="eco-piliers">
-<div class="pilier-card reveal">
-<div class="pilier-icon">🪂</div>
-<div class="pilier-stat-3d"><div class="pilier-stat-rotator">0,043</div></div>
-<div class="pilier-name">BAS CARBONE</div>
-<p class="pilier-description"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> : Impress 45 GT 0,043 · Mat 45 2en1 0,125 · Impress 45 0,164 kg CO₂/UF sur 10&nbsp;ans. Avec Dragopaint et Sofec pour vos chantiers HQE et RE2020.</p>
-<div class="pilier-brands">L'ATELIER 45 • DRAGOPAINT • SOFEC ÉCOLABEL</div>
-</div>
-<div class="pilier-card reveal">
-<div class="pilier-icon">🌱</div>
-<div class="pilier-stat-3d"><div class="pilier-stat-rotator">85%</div></div>
-<div class="pilier-name">BIOSOURCÉ</div>
-<p class="pilier-description">Titane MV evo : résine biosourcée à 85%, alternative aux résines pétrochimiques. 78% de matières premières naturelles sur le produit fini, 0,210 kg CO₂/UF sur 10 ans.</p>
-<div class="pilier-brands">TITANE MV evo • SOFRAMAP</div>
-</div>
-<div class="pilier-card reveal">
-<div class="pilier-icon">♻️</div>
-<div class="pilier-stat-3d"><div class="pilier-stat-rotator">56%</div></div>
-<div class="pilier-name">RECYCLÉ</div>
-<p class="pilier-description">COMUS IZI R : 56% de matières recyclées (pare-brise + chutes de marbre).</p>
-<div class="pilier-brands">COMUS IZI R</div>
-</div>
-<div class="pilier-card reveal">
-<div class="pilier-icon">🌊</div>
-<div class="pilier-stat-3d"><div class="pilier-stat-rotator">80%</div></div>
-<div class="pilier-name">BIOSOURCÉ ALGUES</div>
-<p class="pilier-description">Algo Pro Velours : 80% de matières premières biosourcées à base d'algues, COV ultra-réduits.</p>
-<div class="pilier-brands">ALGO PRO VELOURS</div>
-</div>
 </div>
 </div>
 </section>
