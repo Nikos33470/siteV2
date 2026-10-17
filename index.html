@@ -1110,6 +1110,66 @@
     .rain-col { translate: none !important; }
     .rain-col::after { display: none; }
   }
+
+  /* ===== Pots des gammes sous les cartes L'Atelier 45 / TITANE hydro =====
+     Chaque pot est positionné via --x (centre en %), --b (pied en px), --w (largeur).
+     Le pot le plus bas carbone (is-hero) est devant et plus grand.
+     Survol : même mouvement que les fiches produits (soulèvement + légère rotation 3D),
+     les autres pots s'estompent pour mettre le pot survolé en valeur. */
+  .gammes-pots { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+  .gp-stage { position: relative; width: 620px; max-width: none; height: 300px; margin: 0 auto; perspective: 900px; }
+  .gp-floor { position: absolute; left: 6%; right: 6%; bottom: -14px; height: 70px; border-radius: 50%;
+    background: radial-gradient(ellipse at center, var(--gp-glow) 0%, transparent 70%); pointer-events: none; }
+  .gp-45 { --gp-glow: rgba(31,58,95,0.20); }
+  .gp-titane { --gp-glow: rgba(248,155,90,0.30); }
+  .gp-item { position: absolute; left: var(--x); bottom: var(--b); width: var(--w); translate: -50% 0;
+    display: block; text-decoration: none; transition: opacity .4s var(--transition), filter .4s var(--transition); }
+  .gp-item img { width: 100%; height: auto; display: block; transform-style: preserve-3d;
+    transition: transform .5s var(--transition), filter .5s var(--transition);
+    filter: drop-shadow(0 16px 22px rgba(31,58,95,0.22)); }
+  .gp-item:not(.is-hero) img { filter: drop-shadow(0 12px 16px rgba(31,58,95,0.18)) brightness(0.96); }
+  .gp-item:hover { z-index: 20 !important; } /* le pot survolé passe devant */
+  .gp-item:hover img { transform: translateY(-10px) rotateY(-6deg) rotateX(2deg) scale(1.04); filter: drop-shadow(0 26px 30px rgba(31,58,95,0.30)); }
+  .gp-stage:has(.gp-item:hover) .gp-item:not(:hover) { opacity: .55; filter: saturate(.7); }
+  /* Ombre au sol de chaque pot */
+  .gp-item::after { content: ''; position: absolute; left: 10%; right: 10%; bottom: -8px; height: 16px; border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(31,58,95,0.28) 0%, transparent 70%); z-index: -1; transition: all .4s var(--transition); }
+  .gp-item:hover::after { left: 0; right: 0; opacity: .6; }
+  /* Nom du produit : apparaît au survol (toujours visible pour le héros) */
+  .gp-name { position: absolute; left: 50%; top: calc(100% + 14px); translate: -50% 4px; white-space: nowrap;
+    padding: 6px 14px; border-radius: 50px; background: var(--bleu); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: .3px;
+    opacity: 0; transition: all .35s var(--transition); pointer-events: none; z-index: 10; }
+  .gp-item:hover .gp-name { opacity: 1; translate: -50% 0; }
+  /* Rond bas carbone (même charte que le hero : vert selon le taux) */
+  .gp-badge { position: absolute; left: -6%; top: -14px; z-index: 6; width: 70px; aspect-ratio: 1; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff;
+    background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--bc) 70%, #fff) 0%, var(--bc) 55%, color-mix(in srgb, var(--bc) 75%, #000) 100%);
+    border: 2px solid rgba(255,255,255,0.85);
+    box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--bc) 80%, #000), 0 0 0 4px color-mix(in srgb, var(--bc) 18%, transparent);
+    rotate: -9deg; transition: scale .35s var(--transition); }
+  .gp-badge.is-light { color: #133A22; }
+  .gp-badge.is-right { left: auto; right: -6%; rotate: 9deg; }
+  .gp-item:hover .gp-badge { scale: 1.08; }
+  .gp-b-top { font-size: 5.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
+  .gp-b-val { font-family: var(--display); font-weight: 600; font-size: 16px; line-height: 1; margin: 2px 0 1px; }
+  .gp-b-unit { font-size: 5px; font-weight: 600; letter-spacing: .2px; }
+  .is-hero .gp-badge { width: 92px; left: -12%; top: -22px; }
+  .is-hero .gp-b-top { font-size: 7px; }
+  .is-hero .gp-b-val { font-size: 22px; }
+  .is-hero .gp-b-unit { font-size: 6.5px; }
+
+  /* Scène fixe de 620 px, réduite d'un bloc selon la largeur disponible (proportions conservées) */
+  @media (min-width: 1200px) and (max-width: 1375px) { .gp-stage { zoom: .85; } }
+  @media (min-width: 1025px) and (max-width: 1199px) { .gp-stage { zoom: .72; } }
+  @media (max-width: 1024px) { .gammes-pots { grid-template-columns: 1fr; gap: 24px; } }
+  /* zoom = (largeur mini de la plage − 48 px de marges) / 620 */
+  @media (max-width: 680px) { .gp-stage { zoom: .88; } }
+  @media (max-width: 600px) { .gp-stage { zoom: .76; } }
+  @media (max-width: 520px) { .gp-stage { zoom: .66; } }
+  @media (max-width: 460px) { .gp-stage { zoom: .58; } }
+  @media (max-width: 410px) { .gp-stage { zoom: .52; } }
+  @media (max-width: 370px) { .gp-stage { zoom: .44; } }
+  @media (hover: none) { .gp-name { display: none; } }
 </style>
 </head>
 <body>
@@ -1395,6 +1455,8 @@
 <a class="gamme-cta" href="gammes.html#gamme-titane">Voir les 4 produits<span>→</span></a>
 </article>
 </div>
+<!-- Pots des gammes : le plus bas carbone au centre, les autres reculent vers les côtés -->
+<div class="gammes-pots" aria-label="Produits de nos gammes"><div class="gp-stage gp-45"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-glycero-45" style="--x:8%;--b:128px;--w:100px;z-index:1"><img src="images/produits/45_glycero_satin.webp" alt="Glycéro 45" loading="lazy" decoding="async"/><span class="gp-name">Glycéro 45</span></a><a class="gp-item" href="gammes.html#p-velours-45" style="--x:22%;--b:92px;--w:118px;z-index:2"><img src="images/produits/45_velours.webp" alt="Velours 45" loading="lazy" decoding="async"/><span class="gp-name">Velours 45</span></a><a class="gp-item" href="gammes.html#p-mat-45" style="--x:37%;--b:46px;--w:148px;z-index:3"><span class="gp-badge" style="--bc:#3F9B4C"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,125</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1 — bas carbone 0,125 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Mat 45 2en1</span></a><a class="gp-item is-hero" href="gammes.html#p-grands-travaux" style="--x:54%;--b:0px;--w:200px;z-index:5"><span class="gp-badge" style="--bc:#1B7A3D"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,043</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_impress_GT.webp" alt="Impress 45 Grands Travaux — bas carbone 0,043 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45 Grands Travaux</span></a><a class="gp-item" href="gammes.html#p-impress-evo" style="--x:72%;--b:46px;--w:148px;z-index:3"><span class="gp-badge is-light is-right" style="--bc:#7DB653"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,164</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_impress_.webp" alt="Impress 45 — bas carbone 0,164 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45</span></a><a class="gp-item" href="gammes.html#p-satin-45" style="--x:88%;--b:92px;--w:118px;z-index:2"><img src="images/produits/45_satin.webp" alt="Satin 45" loading="lazy" decoding="async"/><span class="gp-name">Satin 45</span></a></div><div class="gp-stage gp-titane"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-titane-velours" style="--x:13%;--b:104px;--w:122px;z-index:2"><img src="images/produits/titane_hydro_velours.webp" alt="TITANE hydro Velours" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Velours</span></a><a class="gp-item" href="gammes.html#p-titane-prim" style="--x:31%;--b:52px;--w:148px;z-index:3"><img src="images/produits/titane_hydro_prim.webp" alt="TITANE hydro Prim" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Prim</span></a><a class="gp-item is-hero" href="gammes.html#p-titane-mv" style="--x:53%;--b:0px;--w:206px;z-index:5"><span class="gp-badge is-light" style="--bc:#B4C94F"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,210</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo — bas carbone 0,210 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro MV evo</span></a><a class="gp-item" href="gammes.html#p-titane-mat" style="--x:77%;--b:52px;--w:148px;z-index:3"><img src="images/produits/titane_hydro_mat.webp" alt="TITANE hydro Mat" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Mat</span></a></div></div>
 </section>
 <!-- ENGAGEMENT ÉCO réduit + chiffres 3D -->
 <section class="eco" id="eco">
