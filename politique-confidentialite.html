@@ -452,6 +452,35 @@
 .nav-search:focus-within .nav-search-icon { opacity: 1; color: var(--orange); }
 }
 </style>
+<style id="header-fit">
+/* ===== En-tête : ajustement écrans 1025–1599 px (portables) =====
+   Sans ce bloc, le menu (≈1 470 px de large) sortait de l'écran à droite sous 1 600 px. */
+@media (min-width: 1025px) and (max-width: 1599px) {
+  .header .header-inner, .header.is-scrolled .header-inner { padding-left: 32px !important; padding-right: 32px !important; }
+  .header .nav-wrap { margin-left: 24px !important; min-width: 0; flex: 1 1 auto; }
+  .header .nav { gap: 16px !important; flex-wrap: wrap; justify-content: flex-end; row-gap: 6px; }
+  .header .nav a { font-size: 13px !important; }
+  .header .nav-cta { padding: 9px 18px !important; }
+}
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .header .logo { gap: 12px !important; }
+  .header .logo-symbol, .header.is-scrolled .logo-symbol { width: 58px !important; height: 72px !important; }
+  .header .logo-text, .header.is-scrolled .logo-text { font-size: 30px !important; }
+  .header .logo-baseline { font-size: 10.5px !important; letter-spacing: 1.4px !important; }
+  .header .nav { gap: 12px !important; }
+  .header .nav a { font-size: 12.5px !important; }
+  .header .nav-cta { padding: 8px 15px !important; }
+}
+/* Très petits téléphones : logo réduit pour que le bouton menu reste dans l'écran */
+@media (max-width: 480px) {
+  .header .header-inner { padding-left: 16px !important; padding-right: 16px !important; }
+  .header .logo { gap: 10px !important; }
+  .header .logo-symbol, .header.is-scrolled .logo-symbol { width: 52px !important; height: 66px !important; }
+  .header .logo-text, .header.is-scrolled .logo-text { font-size: 26px !important; }
+  .header .logo-baseline { font-size: 9.5px !important; letter-spacing: 1.2px !important; }
+}
+</style>
+
 </head>
 <body>
 <!-- ============ HEADER ============ -->

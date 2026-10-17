@@ -1116,7 +1116,6 @@
      Le pot le plus bas carbone (is-hero) est devant et plus grand.
      Survol : même mouvement que les fiches produits (soulèvement + légère rotation 3D),
      les autres pots s'estompent pour mettre le pot survolé en valeur. */
-  .gammes-pots { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
   .gp-stage { position: relative; width: 620px; max-width: none; height: 300px; margin: 0 auto; perspective: 900px; }
   .gp-floor { position: absolute; left: 6%; right: 6%; bottom: -14px; height: 70px; border-radius: 50%;
     background: radial-gradient(ellipse at center, var(--gp-glow) 0%, transparent 70%); pointer-events: none; }
@@ -1153,24 +1152,81 @@
   .gp-b-top { font-size: 5.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
   .gp-b-val { font-family: var(--display); font-weight: 600; font-size: 16px; line-height: 1; margin: 2px 0 1px; }
   .gp-b-unit { font-size: 5px; font-weight: 600; letter-spacing: .2px; }
-  .is-hero .gp-badge { width: 92px; left: -12%; top: -22px; }
+  .is-hero .gp-badge { width: 92px; left: -3%; top: -26px; }
   .is-hero .gp-b-top { font-size: 7px; }
   .is-hero .gp-b-val { font-size: 22px; }
   .is-hero .gp-b-unit { font-size: 6.5px; }
 
-  /* Scène fixe de 620 px, réduite d'un bloc selon la largeur disponible (proportions conservées) */
-  @media (min-width: 1200px) and (max-width: 1375px) { .gp-stage { zoom: .85; } }
-  @media (min-width: 1025px) and (max-width: 1199px) { .gp-stage { zoom: .72; } }
-  @media (max-width: 1024px) { .gammes-pots { grid-template-columns: 1fr; gap: 24px; } }
-  /* zoom = (largeur mini de la plage − 48 px de marges) / 620 */
-  @media (max-width: 680px) { .gp-stage { zoom: .88; } }
-  @media (max-width: 600px) { .gp-stage { zoom: .76; } }
-  @media (max-width: 520px) { .gp-stage { zoom: .66; } }
-  @media (max-width: 460px) { .gp-stage { zoom: .58; } }
-  @media (max-width: 410px) { .gp-stage { zoom: .52; } }
-  @media (max-width: 370px) { .gp-stage { zoom: .44; } }
+  /* ===== Cartes de gammes compactes =====
+     2 colonnes (texte à gauche, pots à droite) quand la carte est assez large : ≥ 1572 px et 860–1024 px.
+     Sinon les pots passent sous le texte. La scène des pots (620×300 px) est réduite d'un bloc (zoom). */
+  .gammes-grid .gamme-card { min-height: 0; padding: 34px 40px; }
+  .gammes-grid .gamme-tag { margin-bottom: 14px; }
+  .gammes-grid .gamme-name { font-size: 46px; margin-bottom: 12px; }
+  .gammes-grid .gamme-description { max-width: 560px; margin-bottom: 22px; font-size: 14.5px; }
+  .gamme-card .gp-stage { position: relative; margin: 6px auto 18px; zoom: .62; z-index: 3; }
+  .gamme-card .gp-floor { background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, transparent 70%); }
+  .gamme-card .badge-cov-gamme, .gamme-card .badge-bio { z-index: 4; }
+  /* nom du produit au survol : affiché sur le bas du pot (la carte coupe ce qui dépasse) */
+  .gamme-card .gp-name { top: auto; bottom: 18px; font-size: 14px; }
+  .gamme-45 .gp-name { background: #fff; color: var(--bleu); }
+  /* 2 colonnes */
+  @media (min-width: 1572px), (min-width: 860px) and (max-width: 1024px) {
+    .gamme-card .gp-stage { position: absolute; right: 6px; bottom: 8px; margin: 0; zoom: .6; }
+    .gammes-grid .gamme-description { max-width: 300px; }
+  }
+  /* pots sous le texte : zoom = (largeur mini de la plage − marges) / 620 */
+  @media (min-width: 1200px) and (max-width: 1375px) { .gamme-card .gp-stage { zoom: .6; } }
+  @media (min-width: 1025px) and (max-width: 1199px) { .gamme-card .gp-stage { zoom: .56; } }
+  @media (max-width: 859px) { .gamme-card .gp-stage { zoom: .85; } }
+  @media (max-width: 680px) { .gamme-card .gp-stage { zoom: .75; } }
+  @media (max-width: 600px) {
+    .gammes-grid .gamme-card { padding: 26px 22px; border-radius: 26px; }
+    .gammes-grid .gamme-name { font-size: 36px; }
+    .gammes-grid .gamme-tag { margin-right: 70px; }
+    /* ronds COV / biosourcé réduits pour ne plus recouvrir l'étiquette et le titre */
+    .gamme-card .badge-cov-gamme, .gamme-card .badge-bio { top: 10px; right: 10px; transform: scale(.6); transform-origin: top right; }
+    .gamme-card .gp-stage { zoom: .69; }
+  }
+  @media (max-width: 520px) { .gamme-card .gp-stage { zoom: .59; } }
+  @media (max-width: 460px) { .gamme-card .gp-stage { zoom: .51; } }
+  @media (max-width: 410px) { .gamme-card .gp-stage { zoom: .45; } }
+  @media (max-width: 370px) { .gamme-card .gp-stage { zoom: .4; } }
+  @media (max-width: 340px) { .gamme-card .gp-stage { zoom: .36; } }
+  /* services : 1 colonne sur petit téléphone */
+  @media (max-width: 480px) { .services-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 400px) { .footer-top { grid-template-columns: 1fr !important; } }
   @media (hover: none) { .gp-name { display: none; } }
 </style>
+<style id="header-fit">
+/* ===== En-tête : ajustement écrans 1025–1599 px (portables) =====
+   Sans ce bloc, le menu (≈1 470 px de large) sortait de l'écran à droite sous 1 600 px. */
+@media (min-width: 1025px) and (max-width: 1599px) {
+  .header .header-inner, .header.is-scrolled .header-inner { padding-left: 32px !important; padding-right: 32px !important; }
+  .header .nav-wrap { margin-left: 24px !important; min-width: 0; flex: 1 1 auto; }
+  .header .nav { gap: 16px !important; flex-wrap: wrap; justify-content: flex-end; row-gap: 6px; }
+  .header .nav a { font-size: 13px !important; }
+  .header .nav-cta { padding: 9px 18px !important; }
+}
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .header .logo { gap: 12px !important; }
+  .header .logo-symbol, .header.is-scrolled .logo-symbol { width: 58px !important; height: 72px !important; }
+  .header .logo-text, .header.is-scrolled .logo-text { font-size: 30px !important; }
+  .header .logo-baseline { font-size: 10.5px !important; letter-spacing: 1.4px !important; }
+  .header .nav { gap: 12px !important; }
+  .header .nav a { font-size: 12.5px !important; }
+  .header .nav-cta { padding: 8px 15px !important; }
+}
+/* Très petits téléphones : logo réduit pour que le bouton menu reste dans l'écran */
+@media (max-width: 480px) {
+  .header .header-inner { padding-left: 16px !important; padding-right: 16px !important; }
+  .header .logo { gap: 10px !important; }
+  .header .logo-symbol, .header.is-scrolled .logo-symbol { width: 52px !important; height: 66px !important; }
+  .header .logo-text, .header.is-scrolled .logo-text { font-size: 26px !important; }
+  .header .logo-baseline { font-size: 9.5px !important; letter-spacing: 1.2px !important; }
+}
+</style>
+
 </head>
 <body>
 
@@ -1424,15 +1480,9 @@
 <span class="gamme-tag">Gamme essentielle · bas carbone</span>
 <h3 class="gamme-name">l'atelier <span class="gamme-name-accent">45</span></h3>
 <p class="gamme-description">La gamme cœur de chantier, bas carbone : <strong>Impress 45 GT 0,043</strong>, <strong>Mat 45 2en1 0,125</strong> et <strong>Impress 45 0,164 kg CO₂/UF</strong> sur 10&nbsp;ans. COV &lt;&nbsp;1&nbsp;g/L, classée A+. Six finitions pour tous vos travaux&nbsp;: impression, finition, intérieur, extérieur, boiseries.</p>
-<div class="gamme-products">
-<a class="gamme-product-chip" href="gammes.html#p-grands-travaux">Impress GT 45</a>
-<a class="gamme-product-chip" href="gammes.html#p-impress-evo">Impress 45</a>
-<a class="gamme-product-chip" href="gammes.html#p-mat-45">Mat 45</a>
-<a class="gamme-product-chip" href="gammes.html#p-velours-45">Velours 45</a>
-<a class="gamme-product-chip" href="gammes.html#p-satin-45">Satin 45</a>
-<a class="gamme-product-chip" href="gammes.html#p-glycero-45">Glycéro 45</a>
 </div>
-</div>
+<!-- Pots de la gamme : le plus bas carbone au centre, les autres reculent vers les côtés -->
+<div class="gp-stage gp-45"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-glycero-45" style="--x:8%;--b:128px;--w:100px;z-index:1"><img src="images/produits/45_glycero_satin.webp" alt="Glycéro 45" loading="lazy" decoding="async"/><span class="gp-name">Glycéro 45</span></a><a class="gp-item" href="gammes.html#p-velours-45" style="--x:22%;--b:92px;--w:118px;z-index:2"><img src="images/produits/45_velours.webp" alt="Velours 45" loading="lazy" decoding="async"/><span class="gp-name">Velours 45</span></a><a class="gp-item" href="gammes.html#p-mat-45" style="--x:37%;--b:46px;--w:148px;z-index:3"><span class="gp-badge" style="--bc:#3F9B4C"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,125</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1 — bas carbone 0,125 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Mat 45 2en1</span></a><a class="gp-item is-hero" href="gammes.html#p-grands-travaux" style="--x:54%;--b:0px;--w:200px;z-index:5"><span class="gp-badge" style="--bc:#1B7A3D"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,043</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_impress_GT.webp" alt="Impress 45 Grands Travaux — bas carbone 0,043 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45 Grands Travaux</span></a><a class="gp-item" href="gammes.html#p-impress-evo" style="--x:72%;--b:46px;--w:148px;z-index:3"><span class="gp-badge is-light is-right" style="--bc:#7DB653"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,164</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_impress_.webp" alt="Impress 45 — bas carbone 0,164 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45</span></a><a class="gp-item" href="gammes.html#p-satin-45" style="--x:88%;--b:92px;--w:118px;z-index:2"><img src="images/produits/45_satin.webp" alt="Satin 45" loading="lazy" decoding="async"/><span class="gp-name">Satin 45</span></a></div>
 <a class="gamme-cta" href="gammes.html#gamme-45">Voir les 6 produits<span>→</span></a>
 </article>
 <article class="gamme-card gamme-titane reveal">
@@ -1445,18 +1495,12 @@
 <span class="gamme-tag">Gamme premium éco</span>
 <h3 class="gamme-name">TITANE <span class="gamme-name-accent">hydro</span></h3>
 <p class="gamme-description">Notre gamme technique haut de gamme. Son fer de lance, le <strong>Titane MV evo</strong> : résine <strong>biosourcée à 85%</strong> (78% de matières premières naturelles sur le produit fini) et <strong>0,210 kg CO₂/UF</strong> sur 10 ans. Excellence d'application, faible COV, compatible RE2020.</p>
-<div class="gamme-products">
-<a class="gamme-product-chip" href="gammes.html#p-titane-prim"><span class="brand-titane">TITANE hydro</span> Prim</a>
-<a class="gamme-product-chip" href="gammes.html#p-titane-mat"><span class="brand-titane">TITANE hydro</span> Mat</a>
-<a class="gamme-product-chip" href="gammes.html#p-titane-velours"><span class="brand-titane">TITANE hydro</span> Velours</a>
-<a class="gamme-product-chip" href="gammes.html#p-titane-mv"><span class="brand-titane">TITANE hydro</span> MV evo</a>
 </div>
-</div>
+<!-- Pots de la gamme : le plus bas carbone au centre, les autres reculent vers les côtés -->
+<div class="gp-stage gp-titane"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-titane-velours" style="--x:13%;--b:104px;--w:122px;z-index:2"><img src="images/produits/titane_hydro_velours.webp" alt="TITANE hydro Velours" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Velours</span></a><a class="gp-item" href="gammes.html#p-titane-prim" style="--x:31%;--b:52px;--w:148px;z-index:3"><img src="images/produits/titane_hydro_prim.webp" alt="TITANE hydro Prim" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Prim</span></a><a class="gp-item is-hero" href="gammes.html#p-titane-mv" style="--x:53%;--b:0px;--w:206px;z-index:5"><span class="gp-badge is-light" style="--bc:#B4C94F"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,210</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo — bas carbone 0,210 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro MV evo</span></a><a class="gp-item" href="gammes.html#p-titane-mat" style="--x:77%;--b:52px;--w:148px;z-index:3"><img src="images/produits/titane_hydro_mat.webp" alt="TITANE hydro Mat" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Mat</span></a></div>
 <a class="gamme-cta" href="gammes.html#gamme-titane">Voir les 4 produits<span>→</span></a>
 </article>
 </div>
-<!-- Pots des gammes : le plus bas carbone au centre, les autres reculent vers les côtés -->
-<div class="gammes-pots" aria-label="Produits de nos gammes"><div class="gp-stage gp-45"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-glycero-45" style="--x:8%;--b:128px;--w:100px;z-index:1"><img src="images/produits/45_glycero_satin.webp" alt="Glycéro 45" loading="lazy" decoding="async"/><span class="gp-name">Glycéro 45</span></a><a class="gp-item" href="gammes.html#p-velours-45" style="--x:22%;--b:92px;--w:118px;z-index:2"><img src="images/produits/45_velours.webp" alt="Velours 45" loading="lazy" decoding="async"/><span class="gp-name">Velours 45</span></a><a class="gp-item" href="gammes.html#p-mat-45" style="--x:37%;--b:46px;--w:148px;z-index:3"><span class="gp-badge" style="--bc:#3F9B4C"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,125</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1 — bas carbone 0,125 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Mat 45 2en1</span></a><a class="gp-item is-hero" href="gammes.html#p-grands-travaux" style="--x:54%;--b:0px;--w:200px;z-index:5"><span class="gp-badge" style="--bc:#1B7A3D"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,043</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_impress_GT.webp" alt="Impress 45 Grands Travaux — bas carbone 0,043 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45 Grands Travaux</span></a><a class="gp-item" href="gammes.html#p-impress-evo" style="--x:72%;--b:46px;--w:148px;z-index:3"><span class="gp-badge is-light is-right" style="--bc:#7DB653"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,164</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/45_impress_.webp" alt="Impress 45 — bas carbone 0,164 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45</span></a><a class="gp-item" href="gammes.html#p-satin-45" style="--x:88%;--b:92px;--w:118px;z-index:2"><img src="images/produits/45_satin.webp" alt="Satin 45" loading="lazy" decoding="async"/><span class="gp-name">Satin 45</span></a></div><div class="gp-stage gp-titane"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-titane-velours" style="--x:13%;--b:104px;--w:122px;z-index:2"><img src="images/produits/titane_hydro_velours.webp" alt="TITANE hydro Velours" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Velours</span></a><a class="gp-item" href="gammes.html#p-titane-prim" style="--x:31%;--b:52px;--w:148px;z-index:3"><img src="images/produits/titane_hydro_prim.webp" alt="TITANE hydro Prim" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Prim</span></a><a class="gp-item is-hero" href="gammes.html#p-titane-mv" style="--x:53%;--b:0px;--w:206px;z-index:5"><span class="gp-badge is-light" style="--bc:#B4C94F"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,210</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo — bas carbone 0,210 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro MV evo</span></a><a class="gp-item" href="gammes.html#p-titane-mat" style="--x:77%;--b:52px;--w:148px;z-index:3"><img src="images/produits/titane_hydro_mat.webp" alt="TITANE hydro Mat" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Mat</span></a></div></div>
 </section>
 <!-- ENGAGEMENT ÉCO réduit + chiffres 3D -->
 <section class="eco" id="eco">
