@@ -83,9 +83,13 @@ CSS = r"""
 }
 """
 
+def dim(p):
+    from PIL import Image
+    return Image.open(gen.RACINE + p).size
+
 def carte(a, h="h2"):
     return (f'<a class="blog-card" href="conseil-{a["slug"]}.html">'
-            f'<div class="blog-card-img"><img src="{a["images"][0]}" alt="" loading="lazy" decoding="async"/></div>'
+            f'<div class="blog-card-img"><img src="{a["images"][0]}" alt="" width="{dim(a["images"][0])[0]}" height="{dim(a["images"][0])[1]}" loading="lazy" decoding="async"/></div>'
             f'<div class="blog-card-body"><span class="blog-card-tag">{a["tag"]}</span>'
             f'<{h}>{a["titre_court"]}</{h}><p>{a["description"]}</p>'
             f'<span class="blog-card-date">{date_fr(a["date"])} · {a["lecture"]} min de lecture</span></div></a>')
@@ -100,7 +104,7 @@ def main():
         plus = ""
         if autres:
             plus = '<section class="art-more"><h2>À lire <em>aussi</em></h2><div class="blog-grid">' + "".join(carte(b, "h3") for b in autres) + "</div></section>"
-        cover = '<div class="art-cover"><div class="art-cover-in">' + "".join(f'<img src="{i}" alt="" width="400" height="400"/>' for i in a["images"][:3]) + "</div></div>"
+        cover = '<div class="art-cover"><div class="art-cover-in">' + "".join(f'<img src="{i}" alt="" width="{dim(i)[0]}" height="{dim(i)[1]}"/>' for i in a["images"][:3]) + "</div></div>"
         fichier = f'conseil-{a["slug"]}.html'
         contenu = cover + '<main class="art"><article>' + corps + "</article>" + plus + "</main>"
         ld = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["titre_court"], "description": a["description"],

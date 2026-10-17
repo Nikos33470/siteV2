@@ -23,8 +23,9 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <link rel="canonical" href="https://www.latelier33.fr/politique-confidentialite.html"/>
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="/images/logo.png"/>
-<link rel="apple-touch-icon" href="/images/logo.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png"/>
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
@@ -484,6 +485,12 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </style>
 
 <style id="legal-title-xs">@media (max-width: 480px) { .legal-section h2 { display: block; font-size: 26px; } .legal-section h2 .num { display: block; margin-bottom: 6px; } }</style>
+<style id="a11y">
+/* Liens distinguables autrement que par la couleur (accessibilité) */
+.footer-bottom a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.35); }
+.footer-bottom a:has(img) { text-decoration: none; }
+.breadcrumb a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(31,58,95,.3); }
+</style>
 </head>
 <body>
 <!-- ============ HEADER ============ -->

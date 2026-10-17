@@ -205,7 +205,7 @@
     Object.keys(groups).forEach(g => {
       html += '<div class="search-results-group">' + g + '</div>';
       groups[g].forEach(r => {
-        html += '<a href="' + r.u + '" class="search-result">';
+        html += '<a href="' + (document.body.getAttribute('data-base') || '') + r.u + '" class="search-result">';
         html += '<div class="search-result-title">' + highlight(r.t, query) + '</div>';
         html += '<div class="search-result-desc">' + highlight(r.d, query) + '</div>';
         html += '</a>';
@@ -225,6 +225,7 @@
     const results = document.createElement('div');
     results.className = 'search-results';
     results.setAttribute('role', 'listbox');
+    results.setAttribute('aria-label', 'Résultats de recherche');
     form.appendChild(results);
 
     // S'assurer que le form est positionné en relatif pour le dropdown absolu
