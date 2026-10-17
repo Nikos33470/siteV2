@@ -864,6 +864,8 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 .nz-btn { display: inline-flex; align-items: center; padding: 13px 24px; border-radius: 50px; background: var(--orange); color: #fff; font-weight: 600; font-size: 14px; text-decoration: none; transition: transform .25s, background .25s; }
 .nz-btn:hover { background: var(--orange-fonce); transform: translateY(-2px); }
 .nz-btn-ghost { background: transparent; border: 1.5px solid rgba(255,255,255,.4); }
+.nz-btn-pdf { background: #A8E6BE; color: #15273F; }
+.nz-btn-pdf:hover { background: #fff; }
 .nz-btn-ghost:hover { background: rgba(255,255,255,.1); }
 .nz-futs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .nz-fut, .nz-mfut { position: relative; display: flex; flex-direction: column; align-items: center; text-decoration: none; padding: 30px 6px 14px; border-radius: 20px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); transition: transform .35s var(--transition), background .35s; }
@@ -887,7 +889,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 .nz-modal.is-open .nz-modal-box { translate: 0 0; }
 .nz-modal-close { position: absolute; top: 14px; right: 16px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255,255,255,.12); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
 .nz-modal-close:hover { background: var(--orange); }
-.nz-modal-ok { display: inline-block; margin-right: 44px; font-size: 12px; font-weight: 600; color: #A8E6BE; background: rgba(168,230,190,.12); padding: 6px 12px; border-radius: 30px; }
+.nz-modal-ok { display: inline-block; margin-right: 44px; color: #fff !important; font-size: 12px; font-weight: 600; color: #A8E6BE; background: rgba(168,230,190,.12); padding: 6px 12px; border-radius: 30px; }
 .nz-modal h2 { font-family: var(--display); font-weight: 400; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; margin: 14px 0 10px; }
 .nz-modal h2 em { color: var(--orange-clair); font-style: italic; font-weight: 300; }
 .nz-modal p { font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,.8); font-weight: 300; }
@@ -2171,25 +2173,34 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <div class="nz-modal" id="nzModal" role="dialog" aria-modal="true" aria-labelledby="nzModalTitle" hidden>
 <div class="nz-modal-box">
 <button class="nz-modal-close" type="button" aria-label="Fermer">×</button>
-<span class="nz-modal-ok">✓ Votre nuancier s'ouvre dans un nouvel onglet</span>
+<span class="nz-modal-ok">Nuancier : <b id="nzName"></b></span>
 <h2 id="nzModalTitle">Vous avez trouvé votre teinte ? <em>On la réalise en 5 minutes.</em></h2>
 <p>Dans nos peintures fabriquées en France, à l'empreinte carbone mesurée par FDES. Mise à la teinte dans nos magasins de Mérignac et La Teste-de-Buch.</p>
 <div class="nz-modal-futs"><a class="nz-mfut" href="gammes.html#p-grands-travaux" style="--bc:#1B7A3D"><img src="images/produits/45_impress_GT.webp" alt="Impress 45 GT" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,043</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Impress 45 GT</span></a><a class="nz-mfut" href="gammes.html#p-mat-45" style="--bc:#3F9B4C"><img src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,125</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Mat 45 2en1</span></a><a class="nz-mfut" href="gammes.html#p-impress-evo" style="--bc:#7DB653"><img src="images/produits/45_impress_.webp" alt="Impress 45 evo" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,164</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">Impress 45 evo</span></a><a class="nz-mfut" href="gammes.html#p-titane-mv" style="--bc:#B4C94F"><img src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo" width="90" height="108" loading="lazy" decoding="async"><span class="nz-mfut-badge"><b>0,210</b><small>kg CO₂/UF</small></span><span class="nz-mfut-name">TITANE hydro MV evo</span></a></div>
-<div class="nz-modal-cta"><a class="nz-btn" href="gammes.html">Découvrir nos peintures →</a><a class="nz-btn nz-btn-ghost" href="tel:0556288944">05 56 28 89 44</a></div>
+<div class="nz-modal-cta"><a class="nz-btn nz-btn-pdf" id="nzPdf" href="#" target="_blank" rel="noopener">⬇ Ouvrir le nuancier PDF</a><a class="nz-btn nz-btn-ghost" href="gammes.html">Découvrir nos peintures →</a><a class="nz-btn nz-btn-ghost" href="tel:0556288944">05 56 28 89 44</a></div>
 </div>
 </div>
 <script>
-/* Nuanciers : au clic sur « Ouvrir le PDF », le PDF s'ouvre (nouvel onglet) et une fenêtre produits s'affiche sur la page.
-   Affichée une seule fois par session ; se ferme avec ×, Échap ou clic hors de la boîte. */
+/* Nuanciers : au clic sur « Ouvrir le PDF », on affiche d'abord une fenêtre produits sur la page,
+   avec le bouton qui ouvre réellement le PDF (nouvel onglet). Fermeture : ×, Échap ou clic hors de la boîte.
+   Si le JavaScript est désactivé, le lien ouvre directement le PDF. */
 (function () {
   var m = document.getElementById('nzModal'); if (!m) return;
-  var shown = false; try { shown = sessionStorage.getItem('nzSeen') === '1'; } catch (e) {}
-  function open() { if (shown) return; shown = true; try { sessionStorage.setItem('nzSeen', '1'); } catch (e) {}
-    m.hidden = false; requestAnimationFrame(function () { m.classList.add('is-open'); }); m.querySelector('.nz-modal-close').focus(); }
+  var pdf = document.getElementById('nzPdf'), nameEl = document.getElementById('nzName');
+  function open(href, name) {
+    pdf.href = href; nameEl.textContent = name;
+    m.hidden = false; requestAnimationFrame(function () { m.classList.add('is-open'); }); pdf.focus();
+  }
   function close() { m.classList.remove('is-open'); setTimeout(function () { m.hidden = true; }, 300); }
   document.querySelectorAll('a[href^="nuanciers/"][href$=".pdf"]').forEach(function (a) {
-    a.addEventListener('click', function () { setTimeout(open, 400); });
+    if (a.id === 'nzPdf') return;
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var card = a.closest('.card'), t = card && card.querySelector('.card-title');
+      open(a.getAttribute('href'), t ? t.textContent.trim() : 'PDF');
+    });
   });
+  pdf.addEventListener('click', function () { setTimeout(close, 200); });
   m.querySelector('.nz-modal-close').addEventListener('click', close);
   m.addEventListener('click', function (e) { if (e.target === m) close(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) close(); });
