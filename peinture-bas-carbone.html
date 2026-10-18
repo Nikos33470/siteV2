@@ -1828,6 +1828,42 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
   .cc-btn { justify-content: center; }
 }
 </style>
+<style id="economie-locale-css">
+/* ===== 04 — Économie locale (carte de la Gironde) ===== */
+.el { background: linear-gradient(160deg, #1E4D33 0%, #1F3A5F 100%); }
+.el::before { background: radial-gradient(circle, rgba(168,230,190,.25), transparent 70%); left: auto; right: -120px; bottom: auto; top: -140px; }
+.lv-t { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,.75); margin-bottom: 14px; }
+
+
+
+.lva { display: grid; grid-template-columns: 1.35fr 1fr; gap: 22px; align-items: stretch; }
+.lva-map { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 24px; padding: 18px; }
+.lva-map svg { width: 100%; height: auto; display: block; }
+.lva-side { display: flex; flex-direction: column; gap: 14px; }
+.lva-stat { background: #fff; color: var(--bleu); border-radius: 20px; padding: 20px 22px; display: grid; grid-template-columns: 74px 1fr; gap: 14px; align-items: center; }
+.lva-stat b { font-family: var(--display); font-size: 46px; line-height: 1; color: var(--orange); font-weight: 500; text-align: center; }
+.lva-stat h4 { font-size: 16px; }
+.lva-stat p { font-size: 13px; color: var(--gris); line-height: 1.5; margin-top: 2px; }
+.lva-fleet { background: rgba(168,230,190,.12); border: 1px solid rgba(168,230,190,.3); border-radius: 20px; padding: 18px 20px; display: grid; gap: 12px; }
+.lva-fleet div { display: grid; grid-template-columns: 70px 1fr; gap: 12px; align-items: center; font-size: 13.5px; color: #fff; line-height: 1.4; }
+.lva-fleet svg { width: 70px; height: 35px; }
+.lva-fleet .g { color: #A8E6BE; } .lva-fleet .e { color: #FFA968; }
+.lva-fleet small { display: block; color: rgba(255,255,255,.65); font-size: 12px; }
+
+.el-foot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+.el-foot div { border-top: 3px solid var(--vert-mousse); padding-top: 12px; }
+.el-foot b { display: block; font-family: var(--display); font-weight: 400; font-size: 21px; color: #fff; }
+.el-foot span { font-size: 13.5px; color: rgba(255,255,255,.75); }
+@media (max-width: 1100px) { .lva { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .el-foot { grid-template-columns: 1fr; }
+  .lva-map { padding: 8px; border-radius: 18px; overflow-x: auto; overscroll-behavior-x: contain; }
+  .lva-map svg { width: 540px; max-width: none; }
+  .lva-hint { display: block !important; }
+  .lva-stat { grid-template-columns: 56px 1fr; padding: 16px; }
+  .lva-stat b { font-size: 38px; }
+}
+</style>
 </head>
 <body>
 
@@ -2084,23 +2120,62 @@ Du pigment au pinceau, chaque teinte raconte son histoire. Nos peintures sont
 <div class="cc-arg"><h3>Le carbone, transport compris</h3><p>Une usine voisine ne rend pas une peinture bas carbone. Ce qui compte, c'est le <b>total A1 à C4</b> de la FDES, transport inclus : dès <b>0,043 kg CO₂/m²</b> pour l'Impress 45 Grands Travaux, contre environ 1,30 pour la moyenne de la profession en finition.</p></div>
 </div>
 
-<div class="cc-proofs">
-<div><h3>Les preuves à joindre <em>à votre dossier</em></h3><p>Pour un appel d'offres ou un donneur d'ordre, nous fournissons sur demande l'ensemble de ces justificatifs.</p></div>
-<ol>
-<li>Certificats de dépôt INPI<span>Marques L'Atelier 45 et TITANE</span></li>
-<li>FDES individuelles<span>Établies au nom de L'Atelier</span></li>
-<li>FDES collectives SIPEV<span>Nos références listées sous notre nom</span></li>
-<li>Fiches techniques à notre marque<span>Formules L'Atelier 45 et TITANE hydro</span></li>
-<li>Adresse du stock et des magasins<span>Mérignac et La Teste-de-Buch, en Gironde</span></li>
-<li>Distance stock → chantier<span>Calculée pour votre adresse de chantier</span></li>
-</ol>
-</div>
-
 <div class="cc-foot">
-<p>Circuit court par l'absence d'intermédiaires, proximité par le stock en Gironde, bas carbone prouvé par les FDES : trois critères distincts, trois preuves.</p>
+<p>Circuit court par l'absence d'intermédiaires, proximité par le stock et les transporteurs girondins, bas carbone prouvé par les FDES.</p>
 <a class="cc-btn" href="espace-pro.html?demande=FDES%20%2F%20fiche%20technique#devis">Demander le dossier justificatif →</a>
 </div>
 </section>
+<!-- ===== 04 — Économie locale en Gironde ===== -->
+<section class="cc el reveal" id="economie-locale" aria-labelledby="el-titre">
+<div class="cc-head">
+<span class="engagement-eyebrow">04 — Économie locale</span>
+<h2 class="cc-title" id="el-titre">L'économie locale : <em>vos peintures font travailler la Gironde</em>.</h2>
+<p class="cc-intro">Choisir L'Atelier, c'est garder la valeur de votre chantier <b>en Gironde</b> : une équipe locale, un stock à Mérignac et des livraisons confiées à des <b>transporteurs girondins</b>, équipés de véhicules au gaz et électriques.</p>
+</div>
+<p class="lv-t" style="margin-top:38px">Du stock au chantier, tout se passe en Gironde</p>
+
+<div class="lva">
+<div class="lva-map" role="region" aria-label="Carte : nos sites et transporteurs en Gironde" tabindex="0"><svg viewBox="0 0 560 380" role="img" aria-label="Schéma : stock L'Atelier à Mérignac, magasin de La Teste-de-Buch, transporteurs à Cestas et Mérignac, livraisons vers les chantiers de Gironde">
+<defs><radialGradient id="lvg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#A8E6BE" stop-opacity=".35"/><stop offset="1" stop-color="#A8E6BE" stop-opacity="0"/></radialGradient></defs>
+<path d="M70 40 L250 18 L420 40 L520 120 L530 250 L470 345 L300 368 L140 350 L60 280 L40 160 Z" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.25)" stroke-dasharray="5 6"/>
+<text x="470" y="62" fill="rgba(255,255,255,.45)" font-size="13" font-family="Inter" letter-spacing="2">GIRONDE</text>
+<ellipse cx="95" cy="230" rx="38" ry="26" fill="rgba(110,170,220,.35)"/><text x="58" y="276" fill="rgba(255,255,255,.55)" font-size="11" font-family="Inter">Bassin d'Arcachon</text>
+<circle cx="300" cy="170" r="120" fill="url(#lvg)"/>
+<g stroke="#F07F2C" stroke-width="2" stroke-dasharray="4 5" fill="none" opacity=".9">
+<path d="M290 160 Q200 190 112 222"/><path d="M290 160 Q330 110 405 95"/><path d="M290 160 Q360 210 430 260"/><path d="M290 160 Q250 260 230 310"/><path d="M290 160 Q400 160 480 175"/>
+</g>
+<g stroke="#A8E6BE" stroke-width="3" fill="none"><path d="M290 160 L300 214" /><path d="M290 160 L268 150"/></g>
+<g font-family="Inter" font-size="11.5" fill="#fff">
+<circle cx="405" cy="95" r="5" fill="#fff"/><text x="414" y="99">chantier</text>
+<circle cx="430" cy="260" r="5" fill="#fff"/><text x="439" y="264">chantier</text>
+<circle cx="230" cy="310" r="5" fill="#fff"/><text x="239" y="314">chantier</text>
+<circle cx="480" cy="175" r="5" fill="#fff"/><text x="462" y="196">chantier</text>
+</g>
+<g font-family="Inter" font-weight="700">
+<circle cx="290" cy="160" r="15" fill="#F07F2C" stroke="#fff" stroke-width="3"/><text x="312" y="146" fill="#fff" font-size="15">L'Atelier · Mérignac</text><text x="312" y="163" fill="rgba(255,255,255,.7)" font-size="11.5" font-weight="500">stock et magasin</text>
+<circle cx="112" cy="222" r="11" fill="#F07F2C" stroke="#fff" stroke-width="3"/><text x="40" y="200" fill="#fff" font-size="13.5">L'Atelier · La Teste</text>
+<circle cx="300" cy="214" r="10" fill="#A8E6BE" stroke="#15273F" stroke-width="3"/><text x="318" y="230" fill="#A8E6BE" font-size="13">Trans Express · Cestas</text>
+<circle cx="268" cy="150" r="10" fill="#A8E6BE" stroke="#15273F" stroke-width="3"/><text x="140" y="128" fill="#A8E6BE" font-size="13">TR Express · Mérignac</text>
+</g>
+</svg></div>
+<p class="lva-hint" style="display:none;font-size:12px;color:rgba(255,255,255,.65);text-align:center;margin:-6px 0 0">← Faites glisser la carte →</p>
+<div class="lva-side">
+<div class="lva-stat"><b>10</b><div><h4>personnes employées en agence</h4><p>Une équipe en Gironde, du conseil technique à la livraison.</p></div></div>
+<div class="lva-stat"><b>2</b><div><h4>transporteurs locaux</h4><p>Trans Express (Cestas) et TR Express (Mérignac) : nos livraisons font travailler des entreprises girondines.</p></div></div>
+<div class="lva-fleet">
+<div><span class="g"><svg viewBox="0 0 64 32" aria-hidden="true"><rect x="2" y="6" width="38" height="18" rx="3" fill="currentColor"/><path d="M40 12h12l8 8v4H40z" fill="currentColor" opacity=".85"/><circle cx="14" cy="26" r="4" fill="#15273F" stroke="#fff" stroke-width="2"/><circle cx="50" cy="26" r="4" fill="#15273F" stroke="#fff" stroke-width="2"/></svg></span><span>Gros porteurs au gaz<small>flotte de nos transporteurs</small></span></div>
+<div><span class="e"><svg viewBox="0 0 64 32" aria-hidden="true"><path d="M6 10h30l10 6h10v8H6z" fill="currentColor"/><circle cx="16" cy="26" r="4" fill="#15273F" stroke="#fff" stroke-width="2"/><circle cx="46" cy="26" r="4" fill="#15273F" stroke="#fff" stroke-width="2"/><path d="M22 12l-4 6h4l-2 5 6-7h-4l2-4z" fill="#15273F"/></svg></span><span>Petits porteurs électriques<small>sur une partie des livraisons</small></span></div>
+</div>
+</div>
+</div>
+
+<div class="el-foot">
+<div><b>Emplois locaux</b><span>10 personnes à Mérignac et La Teste-de-Buch</span></div>
+<div><b>Entreprises locales</b><span>2 transporteurs girondins, à Cestas et Mérignac</span></div>
+<div><b>Livraisons plus propres</b><span>Gros porteurs au gaz, petits porteurs électriques</span></div>
+</div>
+</section>
+
 <div class="cmp-brands-head reveal" id="fabricants">
 <h2 class="cmp-title cmp-title-sm">Nos fabricants, <em>engagés</em>.</h2>
 <p class="cmp-intro">Bas carbone, biosourcé, recyclé : chaque partenaire a été choisi pour une démarche environnementale concrète et mesurée.</p>
@@ -2807,5 +2882,7 @@ Avec Théolaur (Colomiers, 31) et SOFEC (Roquemaure, 30), nos partenaires fabric
 
 <script src="js/recherche.js" defer></script>
 <script src="js/site.js" defer></script>
+<script>/* Carte économie locale : centrée sur Mérignac quand elle défile (mobile) */
+document.querySelectorAll(".lva-map").forEach(function(m){ m.scrollLeft = (m.scrollWidth - m.clientWidth) * 0.55; });</script>
 </body>
 </html>
