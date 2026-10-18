@@ -1786,8 +1786,9 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 .cc-node.me li::before { content: '✓'; position: absolute; left: 0; top: 0; color: #fff; background: var(--vert-eco); width: 16px; height: 16px; border-radius: 50%; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
 .cc-arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 12px; color: var(--vert-mousse); font-size: 11px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; text-align: center; gap: 4px; min-width: 92px; }
 .cc-arrow i { font-style: normal; font-size: 26px; line-height: 1; color: var(--orange); }
-.cc-zero { margin-top: 16px; display: inline-flex; align-items: center; gap: 12px; background: var(--vert-mousse); color: #1E4D33; border-radius: 50px; padding: 10px 22px 10px 12px; font-weight: 600; font-size: 14.5px; }
-.cc-zero b { background: #1E4D33; color: #fff; border-radius: 50%; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 17px; }
+.cc-zero-wrap { display: flex; justify-content: center; margin-top: 26px; }
+.cc-zero { display: inline-flex; align-items: center; gap: 16px; background: var(--vert-mousse); color: #15273F; border-radius: 60px; padding: 10px 30px 10px 10px; font-weight: 700; font-size: 17px; letter-spacing: -.1px; box-shadow: 0 14px 30px -16px rgba(0,0,0,.5); }
+.cc-zero b { background: #15273F; color: #fff; border-radius: 50%; width: 52px; height: 52px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; font-family: Inter, sans-serif; font-weight: 800; font-size: 28px; line-height: 1; }
 
 /* Arguments */
 .cc-args { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
@@ -1823,9 +1824,9 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
   .cc-def, .cc-args, .cc-proofs ol { grid-template-columns: 1fr; }
   .cc-arg:last-child { grid-column: auto; }
   .cc-proofs { padding: 24px 20px; }
-  .cc-zero { border-radius: 18px; align-items: flex-start; }
+  .cc-zero { font-size: 15px; padding: 8px 20px 8px 8px; gap: 12px; text-align: left; }
+  .cc-zero b { width: 44px; height: 44px; font-size: 24px; }
   .cc-foot { flex-direction: column; align-items: stretch; }
-  .cc-btn { justify-content: center; }
 }
 </style>
 <style id="economie-locale-css">
@@ -1863,6 +1864,24 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
   .lva-stat { grid-template-columns: 56px 1fr; padding: 16px; }
   .lva-stat b { font-size: 38px; }
 }
+</style>
+<style id="cc-brand-css">
+/* ===== Logo L'Atelier + fûts en V (chapitre 03) ===== */
+.cc-brand { position: absolute; top: 30px; right: 40px; width: 480px; display: flex; flex-direction: column; align-items: center; z-index: 2; }
+.cc-brand .lg { width: 190px; height: auto; display: block; margin-bottom: -6px; position: relative; z-index: 30; filter: drop-shadow(0 8px 18px rgba(0,0,0,.35)); }
+.ccv { position: relative; width: 480px; height: 132px; }
+.ccv img { position: absolute; translate: -50% 0; height: auto; filter: drop-shadow(0 10px 12px rgba(0,0,0,.4)); }
+#circuit-court .cc-head { max-width: 640px; }
+.cc-dl { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 12px 22px 12px 16px; border-radius: 50px; background: #fff; color: var(--bleu); font-weight: 700; font-size: 14px; text-decoration: none; box-shadow: 0 12px 28px -16px rgba(0,0,0,.6); transition: transform .25s, background .25s; }
+.cc-dl:hover { background: var(--vert-mousse); transform: translateY(-2px); }
+.cc-dl span { display: inline-flex; width: 30px; height: 30px; border-radius: 50%; background: var(--orange); color: #fff; align-items: center; justify-content: center; font-size: 15px; }
+.cc-dl small { font-weight: 500; color: var(--gris); font-size: 12px; margin-left: 2px; }
+@media (max-width: 1280px) {
+  .cc-brand { position: static; margin: 4px auto 0; }
+  #circuit-court .cc-head { max-width: none; }
+}
+@media (max-width: 760px) { .cc-brand { zoom: .68; } }
+@media (max-width: 360px) { .cc-brand { zoom: .5; } }
 </style>
 </head>
 <body>
@@ -2088,10 +2107,12 @@ Du pigment au pinceau, chaque teinte raconte son histoire. Nos peintures sont
 </section>
 <!-- ===== 03 — Circuit court : définition et argumentaire ===== -->
 <section class="cc reveal" id="circuit-court" aria-labelledby="cc-titre">
+<div class="cc-brand"><img class="lg" src="images/logo-atelier.png" alt="L'Atelier — Marchand de couleurs" width="907" height="917"/><div class="ccv" aria-label="Nos peintures L'Atelier 45 et TITANE hydro"><img src="images/produits/45_glycero_satin.webp" alt="Glycéro 45" style="left:6.4%;bottom:45px;width:44px;z-index:11" loading="lazy" decoding="async"/><img src="images/produits/45_satin.webp" alt="Satin 45" style="left:16.1%;bottom:35px;width:52px;z-index:13" loading="lazy" decoding="async"/><img src="images/produits/45_velours.webp" alt="Velours 45" style="left:25.8%;bottom:25px;width:58px;z-index:15" loading="lazy" decoding="async"/><img src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1" style="left:35.5%;bottom:15px;width:66px;z-index:17" loading="lazy" decoding="async"/><img src="images/produits/45_impress_GT.webp" alt="Impress 45 Grands Travaux" style="left:45.1%;bottom:5px;width:72px;z-index:19" loading="lazy" decoding="async"/><img src="images/produits/45_impress_.webp" alt="Impress 45 evo" style="left:54.9%;bottom:5px;width:72px;z-index:19" loading="lazy" decoding="async"/><img src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo" style="left:64.5%;bottom:15px;width:66px;z-index:17" loading="lazy" decoding="async"/><img src="images/produits/titane_hydro_prim.webp" alt="TITANE hydro Prim" style="left:74.2%;bottom:25px;width:58px;z-index:15" loading="lazy" decoding="async"/><img src="images/produits/titane_hydro_mat.webp" alt="TITANE hydro Mat" style="left:83.9%;bottom:35px;width:52px;z-index:13" loading="lazy" decoding="async"/><img src="images/produits/titane_hydro_velours.webp" alt="TITANE hydro Velours" style="left:93.7%;bottom:45px;width:44px;z-index:11" loading="lazy" decoding="async"/></div></div>
 <div class="cc-head">
 <span class="engagement-eyebrow">03 — Circuit court</span>
 <h2 class="cc-title" id="cc-titre">Circuit court : <em>aucun intermédiaire</em> entre nos formules et votre chantier.</h2>
 <p class="cc-intro">Un circuit court ne se mesure pas à l'adresse d'une usine, mais au <b>nombre d'intermédiaires</b> entre celui qui conçoit le produit et celui qui l'applique. Chez L'Atelier, il n'y en a aucun.</p>
+<a class="cc-dl" href="documents/plaquettes/L-Atelier-circuit-court-economie-locale.pdf" download><span aria-hidden="true">⬇</span>Télécharger en PDF <small>· pour vos appels d'offres</small></a>
 </div>
 
 <div class="cc-def">
@@ -2112,7 +2133,7 @@ Du pigment au pinceau, chaque teinte raconte son histoire. Nos peintures sont
 <div class="cc-arrow" aria-hidden="true"><i>→</i>en direct</div>
 <div class="cc-node"><span class="ico" aria-hidden="true">🏗️</span><h4>Votre chantier en Gironde</h4><p>Retrait en magasin ou livraison sur chantier en Gironde.</p></div>
 </div>
-<span class="cc-zero"><b>0</b> intermédiaire entre la marque et l'applicateur</span>
+<div class="cc-zero-wrap"><span class="cc-zero"><b>0</b> intermédiaire entre la marque et l'applicateur</span></div>
 
 <div class="cc-args">
 <div class="cc-arg"><h3>Nous sommes le producteur de nos gammes</h3><p>Nous créons les formules, nous possédons les marques et nous mettons les produits sur le marché sous notre nom. Nos FDES individuelles sont établies <b>à notre nom</b>, et nos références figurent en nom propre dans les <b>FDES collectives du SIPEV</b>, le syndicat des fabricants de peintures.</p></div>
@@ -2122,7 +2143,6 @@ Du pigment au pinceau, chaque teinte raconte son histoire. Nos peintures sont
 
 <div class="cc-foot">
 <p>Circuit court par l'absence d'intermédiaires, proximité par le stock et les transporteurs girondins, bas carbone prouvé par les FDES.</p>
-<a class="cc-btn" href="espace-pro.html?demande=FDES%20%2F%20fiche%20technique#devis">Demander le dossier justificatif →</a>
 </div>
 </section>
 <!-- ===== 04 — Économie locale en Gironde ===== -->
@@ -2841,7 +2861,7 @@ Avec Théolaur (Colomiers, 31) et SOFEC (Roquemaure, 30), nos partenaires fabric
   // ============ REVEAL ON SCROLL ============
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // ============ HEADER STATE ============
