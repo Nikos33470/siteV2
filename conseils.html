@@ -807,5 +807,54 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </script>
 <script src="js/recherche.js" defer></script>
 <script src="js/site.js" defer></script>
+<style id="logo-xl">
+/* ===== Logo + « l'atelier marchand de couleurs » agrandis dans la barre du haut =====
+   La barre garde exactement sa hauteur : le surplus du logo est absorbé par des marges
+   négatives égales au gain de hauteur (le logo empiète sur le rembourrage de la barre). */
+@media (min-width: 1440px) {
+  .header .logo { gap: 18px !important; margin: -12px 0 !important; }
+  .header .logo-symbol { width: 98px !important; height: 120px !important; }
+  .header .logo-text { font-size: 45px !important; }
+  .header .logo-baseline { font-size: 13.5px !important; margin-top: 7px !important; }
+  .header .logo-since { font-size: 11px !important; }
+  .header.is-scrolled .logo { margin: -6px 0 !important; }
+  .header.is-scrolled .logo-symbol { width: 66px !important; height: 82px !important; }
+  .header.is-scrolled .logo-text { font-size: 35px !important; }
+  .header.is-scrolled .logo-baseline { font-size: 12px !important; }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  .header .logo { gap: 14px !important; margin: -12px 0 !important; }
+  .header .logo-symbol { width: 78px !important; height: 96px !important; }
+  .header .logo-text { font-size: 36px !important; }
+  .header .logo-baseline { font-size: 11.5px !important; letter-spacing: 1.5px !important; }
+  .header.is-scrolled .logo { margin: -6px 0 !important; }
+  .header.is-scrolled .logo-symbol { width: 68px !important; height: 84px !important; }
+  .header.is-scrolled .logo-text { font-size: 33px !important; }
+}
+/* 1025–1359 px : peu de place pour le menu, on n'agrandit que le symbole (texte inchangé) */
+@media (min-width: 1025px) and (max-width: 1245px), (min-width: 1268px) and (max-width: 1359px) {
+  .header .logo { margin: -10px 0 !important; }
+  .header .logo-symbol { width: 75px !important; height: 92px !important; }
+  .header.is-scrolled .logo { margin: -6px 0 !important; }
+  .header.is-scrolled .logo-symbol { width: 68px !important; height: 84px !important; }
+}
+@media (max-width: 480px) {
+  .header .logo { margin: -8px 0 !important; }
+  .header .logo-symbol { width: 65px !important; height: 82px !important; }
+  .header .logo-text { font-size: 30px !important; }
+  .header .logo-baseline { font-size: 10.5px !important; letter-spacing: 1.2px !important; }
+  .header.is-scrolled .logo { margin: -5px 0 !important; }
+  .header.is-scrolled .logo-symbol { width: 60px !important; height: 76px !important; }
+  .header.is-scrolled .logo-text { font-size: 29px !important; }
+}
+/* Très petits écrans (≤ 340 px) : agrandissement réduit pour garder le bouton menu sur la même ligne */
+@media (max-width: 340px) {
+  .header .logo { margin: -4px 0 !important; }
+  .header .logo-symbol, .header.is-scrolled .logo-symbol { width: 58px !important; height: 74px !important; }
+  .header .logo-text, .header.is-scrolled .logo-text { font-size: 27px !important; }
+  .header .logo-baseline { font-size: 9.5px !important; }
+  .header.is-scrolled .logo { margin: -4px 0 !important; }
+}
+</style>
 </body>
 </html>
