@@ -2309,8 +2309,26 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <script src="js/recherche.js" defer></script>
 <script src="js/site.js" defer></script>
 <style id="hero-charte">
-/* Accueil : textes verts du haut de page ramenés à la charte (orange L'Atelier) */
+/* ===== Accueil : plus aucun texte vert, couleurs de texte de la charte =====
+   fond bleu ou vert → blanc + orange ; fond orange → blanc + bleu ; fond clair → bleu + orange */
 .hero-title .t-bas, .hero-subtitle strong.co2 { color: var(--orange); }
+/* Pastilles carbone claires (héros + cartes gammes) : texte vert foncé → bleu */
+.rc-imp .rain-badge, .rc-mv .rain-badge, .gp-badge.is-light { color: var(--bleu-fonce); }
+.rc-imp .rb-dur, .rc-mv .rb-dur { border-top-color: rgba(21,39,63,0.35); }
+/* Badge RE2020 des gammes : seuls les textes changent */
+.hero-re2020-label, .re2020-label { color: var(--bleu); }
+.hero-re2020-number em, .re2020-number em { color: var(--orange) !important; }
+/* Étiquettes des marques « éco » sur fond blanc */
+.marque-eco .marque-tag { color: var(--orange); background: rgba(240,127,44,0.1); }
+/* Centrale CMEM (fond bleu) : textes verts → orange */
+.cmem-eyebrow { color: var(--orange-clair); background: rgba(240,127,44,0.14); border-color: rgba(240,127,44,0.4); }
+.cmem-eyebrow::before, .cmem-rse::before { background: var(--orange); box-shadow: 0 0 10px rgba(240,127,44,0.6); }
+.cmem-lead strong, .cmem-rse strong { color: var(--orange-clair); }
+.cmem-num { background: none; -webkit-text-fill-color: var(--orange); color: var(--orange); }
+.cmem-cta { background: var(--orange); color: #fff; }
+/* Section engagement (fond vert) : textes en blanc + orange */
+.ev-title em, .ev-x { color: var(--orange); }
+.ev-proofs span::before { color: #fff; }
 </style>
 <style id="logo-xl">
 /* ===== Logo + « l'atelier marchand de couleurs » agrandis dans la barre du haut =====
@@ -2336,12 +2354,23 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
   .header.is-scrolled .logo-symbol { width: 68px !important; height: 84px !important; }
   .header.is-scrolled .logo-text { font-size: 33px !important; }
 }
-/* 1025–1359 px : peu de place pour le menu, on n'agrandit que le symbole (texte inchangé) */
-@media (min-width: 1025px) and (max-width: 1245px), (min-width: 1268px) and (max-width: 1359px) {
-  .header .logo { margin: -10px 0 !important; }
+/* 1025–1359 px : logo + texte agrandis ; entre 1246 et 1359 px le menu est resserré pour garder sa ligne */
+@media (min-width: 1248px) and (max-width: 1359px) {
+  .header .nav-wrap { margin-left: 14px !important; }
+  .header .nav { column-gap: 8px !important; }
+}
+@media (min-width: 1025px) and (max-width: 1359px) {
+  .header .logo { gap: 12px !important; margin: -10px 0 !important; }
   .header .logo-symbol { width: 75px !important; height: 92px !important; }
+  .header .logo-text { font-size: 36px !important; }
+  .header .logo-baseline { font-size: 11.5px !important; letter-spacing: 1.3px !important; }
   .header.is-scrolled .logo { margin: -6px 0 !important; }
   .header.is-scrolled .logo-symbol { width: 68px !important; height: 84px !important; }
+  .header.is-scrolled .logo-text { font-size: 34px !important; }
+}
+/* Tablettes 768–1024 px : logo agrandi de 20 % sans toucher à la mise en page */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header .logo { transform: scale(1.2); transform-origin: left center; }
 }
 @media (max-width: 480px) {
   .header .logo { margin: -8px 0 !important; }

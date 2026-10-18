@@ -831,12 +831,23 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
   .header.is-scrolled .logo-symbol { width: 68px !important; height: 84px !important; }
   .header.is-scrolled .logo-text { font-size: 33px !important; }
 }
-/* 1025–1359 px : peu de place pour le menu, on n'agrandit que le symbole (texte inchangé) */
-@media (min-width: 1025px) and (max-width: 1245px), (min-width: 1268px) and (max-width: 1359px) {
-  .header .logo { margin: -10px 0 !important; }
+/* 1025–1359 px : logo + texte agrandis ; entre 1246 et 1359 px le menu est resserré pour garder sa ligne */
+@media (min-width: 1248px) and (max-width: 1359px) {
+  .header .nav-wrap { margin-left: 14px !important; }
+  .header .nav { column-gap: 8px !important; }
+}
+@media (min-width: 1025px) and (max-width: 1359px) {
+  .header .logo { gap: 12px !important; margin: -10px 0 !important; }
   .header .logo-symbol { width: 75px !important; height: 92px !important; }
+  .header .logo-text { font-size: 36px !important; }
+  .header .logo-baseline { font-size: 11.5px !important; letter-spacing: 1.3px !important; }
   .header.is-scrolled .logo { margin: -6px 0 !important; }
   .header.is-scrolled .logo-symbol { width: 68px !important; height: 84px !important; }
+  .header.is-scrolled .logo-text { font-size: 34px !important; }
+}
+/* Tablettes 768–1024 px : logo agrandi de 20 % sans toucher à la mise en page */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header .logo { transform: scale(1.2); transform-origin: left center; }
 }
 @media (max-width: 480px) {
   .header .logo { margin: -8px 0 !important; }
