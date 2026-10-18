@@ -1128,6 +1128,8 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 .footer-bottom a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.35); }
 .footer-bottom a:has(img) { text-decoration: none; }
 .breadcrumb a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(31,58,95,.3); }
+/* Menu mobile : résultats de recherche à la largeur du champ */
+@media (max-width: 1024px) { .nav-search .search-results { left: 0; right: 0; width: auto; max-width: none; transform: none; } }
 </style>
 </head>
 <body>
