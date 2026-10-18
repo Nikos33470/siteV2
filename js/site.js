@@ -1,55 +1,13 @@
 /* =====================================================================
    L'Atelier — script commun à toutes les pages
-   1) Mesure d'audience Matomo (sans cookie, exemptée de consentement CNIL)
-   2) Suivi des actions utiles : appels, e-mails, itinéraires, PDF, devis
-   3) Barre d'actions fixe en bas d'écran sur téléphone
+   Barre d'actions fixe en bas d'écran sur téléphone
    ===================================================================== */
 (function () {
-  /* ---------- 1) MATOMO ----------
-     Compte Matomo Cloud « latelier33 » → https://latelier33.matomo.cloud/
-     Si l'adresse du compte change : modifier MATOMO_URL et MATOMO_JS
-     (et la ligne Content-Security-Policy en tête de chaque page). */
-  var MATOMO_URL = 'https://latelier33.matomo.cloud/';
-  var MATOMO_JS = 'https://cdn.matomo.cloud/latelier33.matomo.cloud/matomo.js';
-  var MATOMO_SITE = '1';
+  /* Pas d'outil de mesure d'audience (suivi via Google Search Console).
+     Fonction conservée vide : les appels existants (quiz nuanciers, devis) restent sans effet. */
+  window.atelierTrack = function () {};
 
-  var _paq = window._paq = window._paq || [];
-  var enLigne = /(^|\.)latelier33\.fr$/.test(location.hostname); // pas de mesure en local
-  if (enLigne) {
-    _paq.push(['disableCookies']);            // aucun cookie déposé
-    _paq.push(['setDownloadExtensions', 'pdf']);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);         // compte les téléchargements PDF et liens sortants
-    _paq.push(['setTrackerUrl', MATOMO_URL + 'matomo.php']);
-    _paq.push(['setSiteId', MATOMO_SITE]);
-    var g = document.createElement('script');
-    g.async = true; g.src = MATOMO_JS;
-    document.head.appendChild(g);
-  }
-
-  /* Fonction partagée : atelierTrack('Catégorie', 'Action', 'Nom') */
-  window.atelierTrack = function (cat, act, name) {
-    _paq.push(['trackEvent', cat, act, name || '']);
-  };
-
-  /* ---------- 2) ÉVÉNEMENTS ---------- */
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a');
-    if (!a) return;
-    var h = a.getAttribute('href') || '';
-    if (h.indexOf('tel:') === 0) {
-      atelierTrack('Contact', 'Appel', h.indexOf('0557') > -1 ? 'Bassin' : 'Mérignac');
-    } else if (h.indexOf('mailto:') === 0) {
-      atelierTrack('Contact', 'E-mail', location.pathname);
-    } else if (h.indexOf('google.com/maps') > -1) {
-      atelierTrack('Contact', 'Itinéraire', h.indexOf('Teste') > -1 ? 'Bassin' : 'Mérignac');
-    } else if (a.classList.contains('search-result')) {
-      var inp = document.querySelector('.nav-search-input');
-      if (inp && inp.value.trim()) _paq.push(['trackSiteSearch', inp.value.trim(), false, false]);
-    }
-  }, true);
-
-  /* ---------- 3) BARRE MOBILE (≤ 760 px) ---------- */
+  /* ---------- BARRE MOBILE (≤ 760 px) ---------- */
   function barre() {
     if (document.querySelector('.mbar')) return;
     var css = document.createElement('style');

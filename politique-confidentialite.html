@@ -7,7 +7,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Security headers (meta) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.matomo.cloud; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://latelier33.matomo.cloud https://formsubmit.co; frame-ancestors 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-ancestors 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()">
@@ -571,9 +571,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <p>L'hébergement du site sur GitHub Pages peut entraîner la collecte automatique de données techniques par notre hébergeur (adresse IP, type de navigateur, système d'exploitation, pages consultées, dates et heures de connexion), à des fins de sécurité et de bon fonctionnement du service. Ces données sont traitées par GitHub, Inc. dans le cadre de sa propre politique de confidentialité.</p>
 <h3>2.3 — Via le formulaire de devis</h3>
 <p>Le formulaire de la page <a href="espace-pro.html">Espace pro</a> recueille les informations que vous saisissez (nom, entreprise, e-mail, téléphone, chantier, message) afin de répondre à votre demande. Elles nous sont transmises par e-mail via le service <strong>FormSubmit</strong>, qui ne les utilise pas à d'autres fins.</p>
-<h3>2.4 — Mesure d'audience</h3>
-<p>Nous utilisons <strong>Matomo</strong> pour connaître la fréquentation du site (pages vues, téléchargements de documents, clics sur nos numéros de téléphone, demandes de devis). Matomo est configuré <strong>sans cookie</strong>, avec des adresses IP anonymisées, et les statistiques ne sont ni croisées avec d'autres traitements ni transmises à des tiers. Cette configuration bénéficie de l'exemption de consentement prévue par la CNIL pour les outils de mesure d'audience.</p>
-<h3>2.5 — Récapitulatif</h3>
+<h3>2.4 — Récapitulatif</h3>
 <table class="data-table">
 <thead>
 <tr>
@@ -603,12 +601,6 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <td data-label="Conservation">10 ans (art. L.123-22 Code de commerce)</td>
 </tr>
 <tr>
-<td data-label="Finalité">Mesure d'audience (Matomo, sans cookie)</td>
-<td data-label="Données">Pages consultées, adresse IP anonymisée, type d'appareil</td>
-<td data-label="Base légale">Intérêt légitime (art. 6.1.f RGPD)</td>
-<td data-label="Conservation">25 mois maximum</td>
-</tr>
-<tr>
 <td data-label="Finalité">Sécurité technique du site (logs serveur)</td>
 <td data-label="Données">Adresse IP, user-agent, horodatage</td>
 <td data-label="Base légale">Intérêt légitime (art. 6.1.f RGPD)</td>
@@ -620,7 +612,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <section class="legal-section">
 <h2><span class="num">03</span>Cookies <em>et traceurs</em></h2>
 <div class="legal-section-rule"></div>
-<p>Le site www.latelier33.fr <strong>n'utilise pas de cookies publicitaires ni d'outils de tracking comportemental</strong>. La mesure d'audience (Matomo) fonctionne sans cookie. Aucun consentement n'est donc requis à ce titre.</p>
+<p>Le site www.latelier33.fr <strong>n'utilise pas de cookies publicitaires, de cookies de mesure d'audience ni d'outils de tracking comportemental</strong>. Aucun consentement n'est donc requis à ce titre.</p>
 <p>Seuls peuvent être déposés des cookies strictement nécessaires au bon fonctionnement du site (par exemple, mémorisation de votre choix de langue ou d'affichage). Ces cookies sont exemptés de consentement en application de l'article 82 de la loi Informatique et Libertés, conformément à la doctrine de la CNIL.</p>
 <p>Le site charge également des polices de caractères hébergées par <strong>Google Fonts</strong> (Fraunces, Inter), ce qui peut entraîner la communication de votre adresse IP à Google le temps du chargement de la page. Si vous ne souhaitez pas que cette communication ait lieu, vous pouvez bloquer le chargement de ces ressources via les paramètres de votre navigateur ou une extension dédiée.</p>
 <p>Vous pouvez à tout moment configurer votre navigateur pour bloquer ou supprimer les cookies, notamment :</p>
