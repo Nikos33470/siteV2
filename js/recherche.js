@@ -5,6 +5,7 @@
   const INDEX = [
     // ---- CONSEILS (généré par _outils/publier.py) ----
     { t: "Conseils", d: "Guides peinture bas carbone, FDES et RE2020", u: "conseils.html", k: "blog article guide conseil actualité", g: "Pages" },
+    { t: "Peinture biosourcée : que veulent vraiment dire les pourcentages ?", d: "Résine biosourcée, matières naturelles, norme ASTM D6866, label Karibati : comment lire le", u: "conseil-peinture-biosourcee.html", k: "biosourcé biosourcée résine végétale algues astm d6866 karibati renouvelable naturel titane mv algo pro dragocryl", g: "Conseils" },
     { t: "Peinture et RE2020 : comment choisir une peinture bas carbone", d: "RE2020 et peinture : pourquoi la FDES compte, comment comparer l'empreinte carbone des pei", u: "conseil-peinture-bas-carbone-re2020.html", k: "re2020 bas carbone fdes peinture choisir impression finition bureau etudes acv inies", g: "Conseils" },
     { t: "Comment lire la FDES d'une peinture : les chiffres qui comptent", d: "Unité fonctionnelle, durée de vie, indicateur changement climatique, type de FDES : le gui", u: "conseil-lire-fdes-peinture.html", k: "fdes lire comprendre unite fonctionnelle duree vie changement climatique a1 c4 verifiee provisoire collective inies", g: "Conseils" },
     // ---- FIN CONSEILS ----

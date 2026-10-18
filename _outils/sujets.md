@@ -4,7 +4,7 @@ Cocher [x] quand l'article est publié. Ajouter de nouveaux sujets en bas si bes
 
 - [x] Peinture et RE2020 : comment choisir une peinture bas carbone (peinture-bas-carbone-re2020)
 - [x] Comment lire la FDES d'une peinture (lire-fdes-peinture)
-- [ ] Peinture biosourcée : ce que veut dire « 85 % de résine biosourcée » (TITANE hydro MV evo, Algo Pro)
+- [x] Peinture biosourcée : ce que veut dire « 85 % de résine biosourcée » (TITANE hydro MV evo, Algo Pro) (peinture-biosourcee)
 - [ ] Peinture 2 en 1 impression + finition : quand l'utiliser, quels gains de temps et de carbone (Mat 45 2en1, TITANE MV evo)
 - [ ] Choisir sa sous-couche d'impression selon le support (plâtre, plaque, béton, ancienne peinture) — Impress 45 evo / Grands Travaux / TITANE Prim
 - [ ] Mat, mat velouté, velours, satin : quelle finition pour quelle pièce

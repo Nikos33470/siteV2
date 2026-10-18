@@ -1663,6 +1663,96 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 /* Menu mobile : résultats de recherche à la largeur du champ */
 @media (max-width: 1024px) { .nav-search .search-results { left: 0; right: 0; width: auto; max-width: none; transform: none; } }
 </style>
+<style id="lire-fdes-css">
+/* ===== Méthode : lire une FDES (sous le graphique comparatif) ===== */
+.fg { margin-top: 90px; background: #fff; border-radius: 32px; padding: 64px 60px 56px; box-shadow: 0 40px 80px -50px rgba(31,58,95,.45); position: relative; overflow: hidden; scroll-margin-top: 130px; }
+.fg::before { content: ''; position: absolute; top: -120px; right: -120px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(168,230,190,.45), transparent 70%); pointer-events: none; }
+.fg-head { max-width: 760px; position: relative; }
+.fg-title { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.08; color: var(--bleu); margin: 14px 0 14px; letter-spacing: -.8px; }
+.fg-title em { color: var(--vert-eco); font-style: italic; font-weight: 300; }
+.fg-intro { font-size: 16.5px; line-height: 1.65; color: var(--gris); font-weight: 300; }
+.fg-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; counter-reset: fg; }
+.fg-step { position: relative; background: var(--gris-clair); border-radius: 22px; padding: 26px 22px 24px; border-top: 4px solid var(--vert-eco); }
+.fg-step::before { counter-increment: fg; content: counter(fg); position: absolute; top: -20px; left: 22px; width: 38px; height: 38px; border-radius: 50%; background: var(--vert-eco-fonce); color: #fff; font-family: var(--display); font-size: 19px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 16px -8px rgba(47,105,64,.8); }
+.fg-step h3 { font-family: var(--display); font-weight: 500; font-size: 20px; line-height: 1.2; color: var(--bleu); margin: 10px 0 6px; }
+.fg-step .fg-key { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .4px; color: var(--vert-eco-fonce); background: rgba(168,230,190,.45); border-radius: 30px; padding: 3px 10px; margin-bottom: 10px; }
+.fg-step p { font-size: 14px; line-height: 1.6; color: var(--gris); }
+.fg-step p b { color: var(--bleu); font-weight: 600; }
+
+/* Frise du cycle de vie */
+.fg-cycle { margin-top: 44px; }
+.fg-cycle-t { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: var(--bleu); margin-bottom: 14px; }
+.fg-mods { display: grid; grid-template-columns: 1.2fr 1.1fr 1fr 1fr .8fr; gap: 8px; }
+.fg-mod { border-radius: 14px; padding: 14px 14px 12px; color: #fff; min-height: 86px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; }
+.fg-mod b { font-family: var(--display); font-size: 21px; font-weight: 500; line-height: 1; }
+.fg-mod span { font-size: 12.5px; line-height: 1.35; opacity: .92; }
+.fg-mod.m1 { background: #1E4D33; } .fg-mod.m2 { background: #2F6940; } .fg-mod.m3 { background: #3F8752; } .fg-mod.m4 { background: #4A8B5C; }
+.fg-mod.m5 { background: repeating-linear-gradient(135deg, #E9ECEF 0 8px, #F4F6F8 8px 16px); color: var(--gris); border: 1px dashed #B9C0C8; }
+.fg-brace { display: grid; grid-template-columns: 4.3fr .8fr; gap: 8px; margin-top: 10px; font-size: 13px; font-weight: 600; }
+.fg-brace div { text-align: center; padding-top: 10px; position: relative; }
+.fg-brace div::before { content: ''; position: absolute; top: 0; left: 6px; right: 6px; height: 8px; border: 2px solid var(--vert-eco); border-top: 0; border-radius: 0 0 10px 10px; }
+.fg-brace .tot { color: var(--vert-eco-fonce); }
+.fg-brace .hors { color: #8A9099; font-weight: 500; }
+.fg-brace .hors::before { border-color: #B9C0C8; border-style: dashed; }
+
+/* Exemple + types de FDES */
+.fg-duo { display: grid; grid-template-columns: 1fr 1.25fr; gap: 22px; margin-top: 44px; }
+.fg-ex { background: linear-gradient(160deg, #1E4D33, #2F6940); color: #fff; border-radius: 24px; padding: 28px 30px; display: flex; flex-direction: column; gap: 14px; }
+.fg-ex .lab { font-size: 11.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--vert-mousse); font-weight: 700; }
+.fg-ex-row { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: center; }
+.fg-ex-row img { width: 56px; height: auto; filter: drop-shadow(0 8px 10px rgba(0,0,0,.35)); }
+.fg-ex-row strong { font-size: 14.5px; font-weight: 600; }
+.fg-ex-row small { display: block; font-size: 12px; opacity: .75; font-weight: 400; }
+.fg-ex-row .v { font-family: var(--display); font-size: 26px; font-weight: 500; color: var(--vert-mousse); white-space: nowrap; }
+.fg-ex p { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.85); border-top: 1px solid rgba(255,255,255,.18); padding-top: 14px; }
+.fg-ex p b { color: #fff; }
+.fg-types { display: flex; flex-direction: column; gap: 10px; }
+.fg-type { display: grid; grid-template-columns: 26px 1fr; gap: 14px; align-items: start; background: var(--gris-clair); border-radius: 18px; padding: 16px 20px; }
+.fg-type i { width: 26px; height: 26px; border-radius: 8px; margin-top: 2px; }
+.fg-type .t-v { background: #3F9B4C; }
+.fg-type .t-p { background: repeating-linear-gradient(135deg, #6DAE4F 0 4px, #A9D18E 4px 8px); }
+.fg-type .t-c { background: repeating-linear-gradient(135deg, #9AA6B2 0 4px, #8794A1 4px 8px); }
+.fg-type h4 { font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+.fg-type p { font-size: 13.5px; line-height: 1.55; color: var(--gris); }
+
+/* Pièges */
+.fg-traps { margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.fg-trap { border: 1px solid rgba(240,127,44,.28); background: #FFF7F1; border-radius: 18px; padding: 18px 18px 16px; font-size: 13.5px; line-height: 1.55; color: var(--bleu); }
+.fg-trap::before { content: '✕'; display: flex; width: 24px; height: 24px; border-radius: 50%; background: var(--orange); color: #fff; font-size: 12px; font-weight: 700; align-items: center; justify-content: center; margin-bottom: 10px; }
+.fg-traps-t { grid-column: 1 / -1; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: var(--orange); margin-bottom: -2px; }
+.fg-foot { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; border-top: 1px solid rgba(31,58,95,.08); padding-top: 26px; }
+.fg-foot p { font-size: 14px; color: var(--gris); }
+.fg-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.fg-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; background: var(--vert-eco-fonce); color: #fff; transition: transform .25s, background .25s; }
+.fg-btn:hover { background: var(--bleu); transform: translateY(-2px); }
+.fg-btn.ghost { background: transparent; color: var(--bleu); border: 1.5px solid rgba(31,58,95,.25); }
+.fg-btn.ghost:hover { background: var(--gris-clair); }
+
+@media (max-width: 1100px) {
+  .fg-steps { grid-template-columns: repeat(2, 1fr); row-gap: 34px; }
+  .fg-traps { grid-template-columns: repeat(2, 1fr); }
+  .fg-duo { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .fg { margin-top: 60px; padding: 40px 20px 32px; border-radius: 24px; }
+  .fg-steps { grid-template-columns: 1fr; }
+  .fg-mods { grid-template-columns: 1fr 1fr; }
+  .fg-mod.m5 { grid-column: 1 / -1; min-height: 0; }
+  .fg-brace { display: none; }
+  .fg-cycle-note { display: block !important; }
+  .fg-traps { grid-template-columns: 1fr; }
+  .fg-ex { padding: 22px 20px; }
+  .fg-ex-row { grid-template-columns: 44px 1fr auto; gap: 10px; }
+  .fg-ex-row img { width: 44px; }
+  .fg-ex-row .v { font-size: 22px; }
+  .fg-foot { flex-direction: column; align-items: stretch; }
+  .fg-btn { justify-content: center; }
+}
+@media (max-width: 440px) {
+  .fg-mods { grid-template-columns: 1fr; }
+  .fg-mod { min-height: 0; gap: 6px; }
+}
+</style>
 </head>
 <body>
 
@@ -1857,6 +1947,60 @@ Du pigment au pinceau, chaque teinte raconte son histoire. Nos peintures sont
 </div>
 <p class="cmp-hint" aria-hidden="true">← Faites glisser le graphique pour voir tous les produits →</p>
 <p class="cmp-metho">Valeurs : indicateur « changement climatique – total » (modules A1 à C4) de chaque FDES, en kg CO₂ éq. pour 1 m² peint, ramené à une durée de vie de 10 ans (FDES établies sur 30 ans : valeur ÷ 3). FDES collective : valeur moyenne de la profession (SIPEV), non spécifique au produit.</p>
+<!-- ===== Méthode : lire une FDES (repris du guide « Lire la FDES d'une peinture ») ===== -->
+<section class="fg reveal" id="lire-fdes" aria-labelledby="fg-titre">
+<div class="fg-head">
+<span class="engagement-eyebrow" style="color: var(--vert-eco);">02 — Méthode</span>
+<h2 class="fg-title" id="fg-titre">Lire une FDES : <em>4 repères</em> pour comparer.</h2>
+<p class="fg-intro">Une FDES compte souvent plus de vingt pages. Pour comparer deux peintures comme dans le graphique ci-dessus, quatre informations suffisent. Voici où les trouver.</p>
+</div>
+<div class="fg-steps">
+<div class="fg-step"><h3>L'unité fonctionnelle</h3><span class="fg-key">1 m² couvert</span><p>Ce que la FDES mesure : en général <b>« couvrir 1 m² de surface »</b>. Toutes les valeurs s'y rapportent. Deux FDES ne se comparent qu'à unité équivalente.</p></div>
+<div class="fg-step"><h3>La durée de vie</h3><span class="fg-key">10 ans ou 30 ans</span><p>Indiquée à côté de l'unité fonctionnelle. Une valeur sur 30 ans ne se compare pas telle quelle à une valeur sur 10 ans : nous la <b>divisons par trois</b>.</p></div>
+<div class="fg-step"><h3>Le changement climatique</h3><span class="fg-key">kg CO₂ éq. · total A1→C4</span><p>Dans le tableau des impacts, la ligne <b>« changement climatique – total »</b>. On retient la somme des modules A1 à C4, détaillés ci-dessous.</p></div>
+<div class="fg-step"><h3>Le type de FDES</h3><span class="fg-key">vérifiée · provisoire · collective</span><p>Une FDES <b>propre au produit</b> et vérifiée fait foi. Une FDES collective ne donne qu'une moyenne de la profession.</p></div>
+</div>
+
+<div class="fg-cycle">
+<p class="fg-cycle-t">Les étapes du cycle de vie dans une FDES</p>
+<div class="fg-mods">
+<div class="fg-mod m1"><b>A1 – A3</b><span>Production : matières premières, transport vers l'usine, fabrication</span></div>
+<div class="fg-mod m2"><b>A4 – A5</b><span>Transport jusqu'au chantier et mise en œuvre</span></div>
+<div class="fg-mod m3"><b>B1 – B7</b><span>Vie en œuvre du revêtement</span></div>
+<div class="fg-mod m4"><b>C1 – C4</b><span>Fin de vie</span></div>
+<div class="fg-mod m5"><b>D</b><span>Bénéfices au-delà du cycle de vie, présentés à part</span></div>
+</div>
+<div class="fg-brace" aria-hidden="true"><div class="tot">Total à comparer : A1 → C4</div><div class="hors">Ne s'additionne pas</div></div>
+<p class="fg-cycle-note" style="display:none;font-size:13px;color:var(--vert-eco-fonce);font-weight:600;margin-top:10px">Total à comparer : A1 → C4. Le module D ne s'additionne pas.</p>
+</div>
+
+<div class="fg-duo">
+<div class="fg-ex">
+<span class="lab">Exemple · même surface, même durée</span>
+<div class="fg-ex-row"><img src="images/produits/45_impress_.webp" alt="" width="379" height="454" loading="lazy" decoding="async"/><strong>Impress 45 evo<small>FDES vérifiée INIES</small></strong><span class="v">0,164</span></div>
+<div class="fg-ex-row"><img src="images/produits/45_impress_GT.webp" alt="" width="752" height="913" loading="lazy" decoding="async"/><strong>Impress 45 Grands Travaux<small>FDES vérifiée INIES</small></strong><span class="v">0,043</span></div>
+<p>En kg CO₂ éq. par m² sur 10 ans : pour la même surface, la seconde impression émet <b>près de quatre fois moins</b>.</p>
+</div>
+<div class="fg-types">
+<div class="fg-type"><i class="t-v"></i><div><h4>FDES vérifiée</h4><p>Propre au produit, contrôlée par un vérificateur indépendant et publiée sur la base INIES. La référence pour comparer.</p></div></div>
+<div class="fg-type"><i class="t-p"></i><div><h4>FDES provisoire</h4><p>Calculée pour le produit, vérification en cours : une bonne indication, à confirmer.</p></div></div>
+<div class="fg-type"><i class="t-c"></i><div><h4>FDES collective</h4><p>Valeur moyenne d'une famille de produits de la profession (SIPEV), souvent élevée : environ 1,30 kg CO₂ éq./m² pour un mat ou un velours.</p></div></div>
+</div>
+</div>
+
+<div class="fg-traps">
+<p class="fg-traps-t">Les pièges à éviter</p>
+<div class="fg-trap">Comparer une valeur sur 10 ans avec une valeur sur 30 ans sans les ramener à la même durée.</div>
+<div class="fg-trap">Ne regarder que la production (A1–A3) au lieu du total A1 à C4.</div>
+<div class="fg-trap">Additionner le module D au total : il se lit à part.</div>
+<div class="fg-trap">Prendre une FDES collective pour la valeur réelle d'un produit.</div>
+</div>
+
+<div class="fg-foot">
+<p>Toutes nos FDES sont en libre accès, prêtes pour vos calculs RE2020.</p>
+<div class="fg-btns"><a class="fg-btn" href="documents.html">Voir les FDES →</a><a class="fg-btn ghost" href="conseil-lire-fdes-peinture.html">Le guide complet</a></div>
+</div>
+</section>
 <div class="cmp-brands-head reveal" id="fabricants">
 <h2 class="cmp-title cmp-title-sm">Nos fabricants, <em>engagés</em>.</h2>
 <p class="cmp-intro">Bas carbone, biosourcé, recyclé : chaque partenaire a été choisi pour une démarche environnementale concrète et mesurée.</p>
@@ -1866,7 +2010,7 @@ Du pigment au pinceau, chaque teinte raconte son histoire. Nos peintures sont
 </section>
 
 <!-- ===== FAQ peinture bas carbone (données structurées FAQPage) ===== -->
-<section class="bc-faq" id="faq"><div class="bc-faq-inner"><h2>Peinture bas carbone : <em>vos questions</em></h2><details class="bc-faq-item"><summary>Qu'est-ce qu'une peinture bas carbone ?</summary><p>C'est une peinture dont l'empreinte carbone sur l'ensemble de son cycle de vie (fabrication, transport, mise en œuvre, fin de vie) est réduite. Elle se mesure dans la FDES du produit, en kg CO₂ équivalent par m² peint : nos peintures vont de 0,043 à 0,269 kg CO₂/UF sur 10 ans pour les plus vertueuses.</p></details><details class="bc-faq-item"><summary>Comment lire l'empreinte carbone dans une FDES ?</summary><p>Regardez l'indicateur « changement climatique – total » (modules A1 à C4), exprimé en kg CO₂ éq. par unité fonctionnelle (UF), c'est-à-dire 1 m² peint. Vérifiez aussi la durée de vie de référence (10 ou 30 ans) pour comparer des valeurs équivalentes : notre comparatif ramène toutes les valeurs à 10 ans.</p></details><details class="bc-faq-item"><summary>Quelle peinture choisir pour un chantier RE2020 ?</summary><p>La RE2020 impose un calcul de l'empreinte carbone du bâtiment à partir des FDES de ses produits. Choisissez une peinture dont la FDES est disponible et dont la valeur est faible : par exemple l'Impress 45 Grands Travaux (0,043 kg CO₂/UF) en impression ou le Mat 45 2en1 (0,125) en finition.</p></details><details class="bc-faq-item"><summary>Quelle différence entre FDES vérifiée, provisoire et collective ?</summary><p>Une FDES vérifiée est propre au produit et contrôlée par un tiers indépendant (base INIES). Une FDES provisoire est calculée mais encore en cours de vérification. Une FDES collective donne une valeur moyenne pour toute une famille de produits de la profession, et non la valeur réelle du produit.</p></details><p class="bc-faq-more">Pour aller plus loin : <a href="conseil-peinture-bas-carbone-re2020.html">Peinture et RE2020 : comment choisir</a> · <a href="conseil-lire-fdes-peinture.html">Comment lire la FDES d'une peinture</a></p></div></section>
+<section class="bc-faq" id="faq"><div class="bc-faq-inner"><h2>Peinture bas carbone : <em>vos questions</em></h2><details class="bc-faq-item"><summary>Qu'est-ce qu'une peinture bas carbone ?</summary><p>C'est une peinture dont l'empreinte carbone sur l'ensemble de son cycle de vie (fabrication, transport, mise en œuvre, fin de vie) est réduite. Elle se mesure dans la FDES du produit, en kg CO₂ équivalent par m² peint : nos peintures vont de 0,043 à 0,269 kg CO₂/UF sur 10 ans pour les plus vertueuses.</p></details><details class="bc-faq-item"><summary>Comment lire l'empreinte carbone dans une FDES ?</summary><p>Regardez l'indicateur « changement climatique – total » (modules A1 à C4), exprimé en kg CO₂ éq. par unité fonctionnelle (UF), c'est-à-dire 1 m² peint. Vérifiez aussi la durée de vie de référence (10 ou 30 ans) pour comparer des valeurs équivalentes : notre comparatif ramène toutes les valeurs à 10 ans.</p></details><details class="bc-faq-item"><summary>Quelle peinture choisir pour un chantier RE2020 ?</summary><p>La RE2020 impose un calcul de l'empreinte carbone du bâtiment à partir des FDES de ses produits. Choisissez une peinture dont la FDES est disponible et dont la valeur est faible : par exemple l'Impress 45 Grands Travaux (0,043 kg CO₂/UF) en impression ou le Mat 45 2en1 (0,125) en finition.</p></details><details class="bc-faq-item"><summary>Quelle différence entre FDES vérifiée, provisoire et collective ?</summary><p>Une FDES vérifiée est propre au produit et contrôlée par un tiers indépendant (base INIES). Une FDES provisoire est calculée mais encore en cours de vérification. Une FDES collective donne une valeur moyenne pour toute une famille de produits de la profession, et non la valeur réelle du produit.</p></details><p class="bc-faq-more">Pour aller plus loin : <a href="conseil-peinture-bas-carbone-re2020.html">Peinture et RE2020 : comment choisir</a> · <a href="conseil-peinture-biosourcee.html">Peinture biosourcée : que veulent dire les pourcentages ?</a></p></div></section>
 <!-- ========= BRAND PROMISE : engagement L'Atelier ========= -->
 <section class="brand-promise" data-screen-label="06 Promesse L'Atelier">
 <div class="brand-promise-inner reveal">

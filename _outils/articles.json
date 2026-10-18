@@ -9,7 +9,11 @@
     "chapo": "La peinture pèse peu dans le bilan carbone d'un bâtiment… sauf quand on choisit mal. Méthode simple pour comparer les produits et fournir les bonnes FDES au bureau d'études.",
     "description": "RE2020 et peinture : pourquoi la FDES compte, comment comparer l'empreinte carbone des peintures et quels produits choisir en impression et en finition.",
     "lecture": 6,
-    "images": ["images/produits/45_impress_GT.webp", "images/produits/45_Mat_2en1.webp", "images/produits/titane_hydro_mat_veloute.webp"],
+    "images": [
+      "images/produits/45_impress_GT.webp",
+      "images/produits/45_Mat_2en1.webp",
+      "images/produits/titane_hydro_mat_veloute.webp"
+    ],
     "mots_cles": "re2020 bas carbone fdes peinture choisir impression finition bureau etudes acv inies"
   },
   {
@@ -22,7 +26,28 @@
     "chapo": "Une FDES fait souvent plus de vingt pages. Pour comparer deux peintures, quatre informations suffisent. Voici où les trouver et comment éviter les pièges.",
     "description": "Unité fonctionnelle, durée de vie, indicateur changement climatique, type de FDES : le guide pour lire et comparer les FDES de peinture sans se tromper.",
     "lecture": 5,
-    "images": ["images/produits/45_impress_.webp", "images/produits/titane_hydro_prim.webp", "images/produits/dragocryl_mat_airless.webp"],
+    "images": [
+      "images/produits/45_impress_.webp",
+      "images/produits/titane_hydro_prim.webp",
+      "images/produits/dragocryl_mat_airless.webp"
+    ],
     "mots_cles": "fdes lire comprendre unite fonctionnelle duree vie changement climatique a1 c4 verifiee provisoire collective inies"
+  },
+  {
+    "slug": "peinture-biosourcee",
+    "date": "2026-10-18",
+    "tag": "Biosourcé · Matières",
+    "titre": "Peinture biosourcée : que veulent dire les % ? | L'Atelier",
+    "titre_court": "Peinture biosourcée : que veulent vraiment dire les pourcentages ?",
+    "h1": "Peinture biosourcée : que veulent dire <em>les pourcentages</em> ?",
+    "chapo": "Résine à 85 %, matières naturelles à 78 %, biosourcé à 80 % selon ASTM D6866 : ces chiffres ne mesurent pas la même chose. Le guide pour comparer sans se tromper.",
+    "description": "Résine biosourcée, matières naturelles, norme ASTM D6866, label Karibati : comment lire les pourcentages d'une peinture biosourcée et la comparer.",
+    "lecture": 5,
+    "images": [
+      "images/produits/titane_hydro_mat_veloute.webp",
+      "images/produits/algo_pro_velours.webp",
+      "images/produits/dragocryl_ms_soyeux.webp"
+    ],
+    "mots_cles": "biosourcé biosourcée résine végétale algues astm d6866 karibati renouvelable naturel titane mv algo pro dragocryl"
   }
 ]
