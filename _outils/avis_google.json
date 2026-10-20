@@ -1,0 +1,103 @@
+{
+ "_source": "Avis Google publics relevés le 20/10/2026 sur les fiches Google Maps (textes recopiés tels quels). Mettre à jour notes et nombres d'avis ici puis relancer _outils/avis.py.",
+ "magasins": {
+  "cub": {
+   "nom": "L'Atelier CUB",
+   "ville": "Mérignac",
+   "note": "4,8",
+   "nb": 27,
+   "maps_recherche": "https://www.google.com/maps/search/?api=1&query=L%27Atelier+CUB+7+avenue+de+la+Grande+Semaine+33700+M%C3%A9rignac",
+   "maps_avis": "https://www.google.com/maps/place/L%27Atelier+CUB/@44.8543284,-0.6844364,17z/data=!4m8!3m7!1s0xd54d753ef7a091b:0x6e212de5ddfdaf9a!8m2!3d44.8543284!4d-0.6844364!9m1!1b1!16s%2Fg%2F11b6dprgbs",
+   "geo": [
+    44.8543284,
+    -0.6844364
+   ]
+  },
+  "bassin": {
+   "nom": "L'Atelier Bassin",
+   "ville": "La Teste-de-Buch",
+   "note": "4,8",
+   "nb": 42,
+   "maps_recherche": "https://www.google.com/maps/search/?api=1&query=L%27Atelier+Bassin+1111+avenue+du+Parc+des+Expositions+33260+La+Teste-de-Buch",
+   "maps_avis": "https://www.google.com/maps/place/L%27ATELIER+BASSIN/@44.6076698,-1.1203566,17z/data=!4m8!3m7!1s0xd549be94cb97f69:0xce78e952262d6f95!8m2!3d44.6076698!4d-1.1203566!9m1!1b1!16s%2Fg%2F11b6dgr6cy",
+   "geo": [
+    44.6076698,
+    -1.1203566
+   ]
+  }
+ },
+ "avis": [
+  {
+   "m": "cub",
+   "auteur": "MA RENOV",
+   "note": 5,
+   "texte": "Un super accompagnement de l’équipe atelier dans tout nos projets : disponibilité, conseils et réactivité…"
+  },
+  {
+   "m": "bassin",
+   "auteur": "David D.",
+   "note": 5,
+   "texte": "Le top de la peinture sur le bassin ! Équipe dynamique sympathique de d'excellents conseils. J'ai suivi leurs conseils et le rendu est parfait. Peinture professionnelle qui n'a rien à voir avec ce que l'on trouve dans les grandes surfaces."
+  },
+  {
+   "m": "cub",
+   "auteur": "Costeno33",
+   "note": 5,
+   "texte": "Qualité prix au top. Très gros point fort ils ont leur propre service de SAV."
+  },
+  {
+   "m": "bassin",
+   "auteur": "Isabelle T.",
+   "note": 5,
+   "texte": "Une équipe de très bon conseil, et super sympa qui prend le temps de s'occuper de vous et trouver une solution pour répondre à votre besoin et tout ça dans la bonne humeur !!"
+  },
+  {
+   "m": "cub",
+   "auteur": "Poirot N.",
+   "note": 5,
+   "texte": "Équipe vraiment disponible et peinture de très bonne qualité."
+  },
+  {
+   "m": "bassin",
+   "auteur": "Vincent D.",
+   "note": 5,
+   "texte": "Un accueil convivial, un conseil pertinent, des prix très compétitifs. Je ne regarde jamais plus ailleurs, je ne peux pas dire mieux."
+  },
+  {
+   "m": "cub",
+   "auteur": "Valy",
+   "note": 5,
+   "texte": "Équipe agréable et compétente. Produits de grandes qualités."
+  },
+  {
+   "m": "bassin",
+   "auteur": "Sebastien R.",
+   "note": 5,
+   "texte": "Équipe au top, sympathique et conviviale. Des super conseils, de l'écoute et des produits de qualité. Je recommande vivement pour ceux qui cherchent de la peinture sur le Bassin !!"
+  },
+  {
+   "m": "cub",
+   "auteur": "Pouliquen D.",
+   "note": 5,
+   "texte": "Sympathique, disponible même pour les particuliers. Au top."
+  },
+  {
+   "m": "bassin",
+   "auteur": "Patrick C.",
+   "note": 5,
+   "texte": "On y trouve tout ce qui se fait en peinture et en papiers peints avec de très bons conseils en plus."
+  },
+  {
+   "m": "cub",
+   "auteur": "Philippe B.",
+   "note": 5,
+   "texte": "Très bon accueil pas des professionnels, toujours de bons conseils."
+  },
+  {
+   "m": "bassin",
+   "auteur": "Alain P.",
+   "note": 5,
+   "texte": "Accueil sympa, produits de qualité avec des conseils de pro, je recommande 👍"
+  }
+ ]
+}

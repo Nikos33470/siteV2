@@ -111,13 +111,13 @@
     // ---- SECTIONS INDEX ----
     { t: "Peinture bas carbone — comparatif", d: "Empreinte CO₂ de 20 peintures d'après leur FDES", u: "peinture-bas-carbone.html", k: "bio biosourcé écologique éco environnement carbone fdes", g: "À propos" },
     { t: "Nos marques distribuées", d: "Théolaur, Dragopaint, Sigma, Soframap, Sofec, Comus, KEIM…", u: "index.html#marques", k: "marque théolaur dragopaint sigma soframap sofec comus keim distribué", g: "À propos" },
-    { t: "Avis Google", d: "4,85/5 — 137 avis sur 2 magasins", u: "index.html#avis", k: "avis google note témoignage client", g: "À propos" },
+    { t: "Avis Google", d: "4,8/5 — 69 avis Google sur nos 2 magasins", u: "index.html#avis", k: "avis google note témoignage client", g: "À propos" },
     { t: "Services aux professionnels", d: "Mise à la teinte, conseil technique, livraison chantier, compte pro", u: "index.html#services", k: "service pro teinte conseil livraison compte", g: "À propos" },
     { t: "Colorimétrie & nuanciers en magasin", d: "Plus de 80 000 teintes — Polycrom, Colorimix, RAL, NCS", u: "index.html#nuanciers", k: "colorimétrie teinte mise machine polycrom colorimix", g: "À propos" },
 
     // ---- MAGASINS ----
-    { t: "L'Atelier CUB — Mérignac", d: "7 av. de la grande semaine, 33700 Mérignac · 05 56 28 89 44", u: "index.html#magasins", k: "magasin merignac mérignac cub bordeaux 33700 adresse", g: "Magasins" },
-    { t: "L'Atelier Bassin — La Teste-de-Buch", d: "1111 av. du Parc des Expositions, 33260 La Teste-de-Buch · 05 57 52 64 77", u: "index.html#magasins", k: "magasin teste bassin arcachon 33260 la-teste adresse", g: "Magasins" },
+    { t: "L'Atelier CUB — Mérignac", d: "7 av. de la grande semaine, 33700 Mérignac · 05 56 28 89 44", u: "magasin-peinture-merignac.html", k: "magasin merignac mérignac cub bordeaux 33700 adresse horaires", g: "Magasins" },
+    { t: "L'Atelier Bassin — La Teste-de-Buch", d: "1111 av. du Parc des Expositions, 33260 La Teste-de-Buch · 05 57 52 64 77", u: "magasin-peinture-la-teste-de-buch.html", k: "magasin teste bassin arcachon 33260 la-teste adresse horaires peinture marine", g: "Magasins" },
 
     // ---- CONTACT ----
     { t: "Contact", d: "contact@latelier33.fr — formulaire, devis, demande d'info", u: "index.html#magasins", k: "contact email mail téléphone devis", g: "Contact" },

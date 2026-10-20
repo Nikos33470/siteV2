@@ -85,4 +85,16 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://www.latelier33.fr/magasin-peinture-merignac.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.latelier33.fr/magasin-peinture-la-teste-de-buch.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
