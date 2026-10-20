@@ -7,7 +7,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Security headers (meta) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-ancestors 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()">
@@ -171,7 +171,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@700;800&amp;family=Barlow+Condensed:wght@700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F;
@@ -822,7 +822,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
   .footer-brand-text { font-family: var(--display); font-size: 36px; font-weight: 500; color: var(--blanc); line-height: 1; margin-bottom: 20px; }
   .footer-brand-text em { font-style: italic; color: var(--orange); }
   .footer-desc { font-size: 14px; line-height: 1.7; max-width: 320px; }
-  .footer-col h4 { font-family: var(--display); font-size: 18px; color: var(--blanc); margin-bottom: 20px; font-weight: 500; }
+  .footer-col h4, .footer-col .fh { font-family: var(--display); font-size: 18px; color: var(--blanc); margin-bottom: 20px; font-weight: 500; }
   .footer-col ul { list-style: none; }
   .footer-col li { margin-bottom: 10px; }
   .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.2s; }
@@ -1346,7 +1346,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="L'Atelier 45 Impress evo - Impression acrylique blanche" class="product-image" src="images/produits/45_impress_.webp" width="379" height="454" fetchpriority="high"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1388,7 +1388,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="L'Atelier 45 Grands Travaux - Impression acrylique" class="product-image" loading="lazy" src="images/produits/45_impress_GT.webp" width="752" height="913" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1430,7 +1430,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="L'Atelier 45 Mat - Peinture décorative impression et finition" class="product-image" loading="lazy" src="images/produits/45_Mat_2en1.webp" width="360" height="454" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1465,7 +1465,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="L'Atelier 45 Velours - Peinture acrylique veloutée" class="product-image" loading="lazy" src="images/produits/45_velours.webp" width="767" height="962" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1499,7 +1499,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="L'Atelier 45 Satin - Peinture acrylique satinée" class="product-image" loading="lazy" src="images/produits/45_satin.webp" width="746" height="925" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1601,7 +1601,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Titane Hydro Prim - Impression biosourcée" class="product-image" loading="lazy" src="images/produits/titane_hydro_prim.webp" width="734" height="902" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1635,7 +1635,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Titane Hydro Mat - Peinture acrylique biosourcée mate" class="product-image" loading="lazy" src="images/produits/titane_hydro_mat.webp" width="734" height="902" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1676,7 +1676,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Titane Hydro MV evo - Peinture alkyde mat velouté biosourcée" class="product-image" loading="lazy" src="images/produits/titane_hydro_mat_veloute.webp" width="338" height="436" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1712,7 +1712,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Titane Hydro Velours - Peinture acrylique biosourcée velours" class="product-image" loading="lazy" src="images/produits/titane_hydro_velours.webp" width="738" height="922" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-france" title="Fabriqué en France"><span class="picto-icon"><svg preserveaspectratio="none" viewbox="0 0 6 4"><rect fill="#0055A4" height="4" width="2" x="0"></rect><rect fill="#FFFFFF" height="4" width="2" x="2"></rect><rect fill="#EF4135" height="4" width="2" x="4"></rect></svg></span><span class="picto-label">France</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
 <span class="picto is-bleu" title="Intérieur"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span><span class="picto-label">Intér.</span></span>
@@ -1765,7 +1765,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Sofec Multimat Plus - Peinture acrylique mate lavable intérieur et extérieur" class="product-image" loading="lazy" src="images/produits/sofec_multimat_plus.webp" width="478" height="509" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="Faibles émissions de CO₂"><span class="picto-icon is-text-xs">CO₂↓</span><span class="picto-label">Bas carbone</span></span>
 <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -1803,7 +1803,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Sofec Multimat Velouté Soyeux - Peinture acrylique garnissante mat velouté intérieure" class="product-image" loading="lazy" src="images/produits/sofec_multimat_veloute_soyeux.webp" width="518" height="551" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="Faibles émissions de CO₂"><span class="picto-icon is-text-xs">CO₂↓</span><span class="picto-label">Bas carbone</span></span>
 <span class="picto is-vert" title="COV &lt; 1g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">1g/L COV</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -1855,7 +1855,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Dragocryl Mat Airless Bas Carbone - Peinture mate airless bas carbone Dragopaint" class="product-image" loading="lazy" src="images/produits/dragocryl_mat_airless.webp" width="614" height="768" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="Faibles émissions de CO₂"><span class="picto-icon is-text-xs">CO₂↓</span><span class="picto-label">Bas carbone</span></span>
 <span class="picto is-vert" title="COV &lt; 0,05 g/L"><span class="picto-icon is-text-xs">0,05</span><span class="picto-label">COV g/L</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -1892,7 +1892,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Dragocryl MS Soyeux Bas Carbone - Finition mat velouté soyeuse biosourcée Dragopaint" class="product-image" loading="lazy" src="images/produits/dragocryl_ms_soyeux.webp" width="626" height="782" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="69 % de matières renouvelables dont 39 % biosourcé"><span class="picto-icon is-text-xs">39%</span><span class="picto-label">Biosourcé</span></span>
 <span class="picto is-vert" title="69 % de matières renouvelables"><span class="picto-icon is-text-xs">69%</span><span class="picto-label">Renouv.</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -1947,7 +1947,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="COMUS IZI R Prim - Impression recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_prim.webp" width="383" height="479" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="60 % de matières recyclées sur film sec"><span class="picto-icon is-text-xs">60%</span><span class="picto-label">Recyclée</span></span>
 <span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -1987,7 +1987,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="COMUS IZI R Mat - Peinture mate recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_mat.webp" width="383" height="479" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="56 % de matières recyclées sur film sec"><span class="picto-icon is-text-xs">56%</span><span class="picto-label">Recyclée</span></span>
 <span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -2029,7 +2029,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="COMUS IZI R Velours - Peinture velours recyclée éco-responsable" class="product-image" loading="lazy" src="images/produits/comus_izi_r_velours.webp" width="383" height="479" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="56 % de matières recyclées sur film sec"><span class="picto-icon is-text-xs">56%</span><span class="picto-label">Recyclée</span></span>
 <span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -2081,7 +2081,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Algo Pro Primaire - Impression biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_prim.webp" width="399" height="499" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="Peinture biosourcée à base d'algues"><span class="picto-icon is-text-xs">ALGUES</span><span class="picto-label">Biosourcée</span></span>
 <span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -2118,7 +2118,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Algo Pro Mat - Peinture mate biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_mat.webp" width="347" height="434" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="80 % biosourcée (ASTM D6866)"><span class="picto-icon is-text-xs">80%</span><span class="picto-label">Biosourcée</span></span>
 <span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -2156,7 +2156,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <img alt="Algo Pro Velours - Peinture velours biosourcée à base d'algues" class="product-image" loading="lazy" src="images/produits/algo_pro_velours.webp" width="550" height="688" decoding="async"/>
 </div>
 <div class="product-pictos">
-<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/pictos/aplus-emissions.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
+<span class="picto is-aplus" title="A+ Émissions dans l'air intérieur"><span class="picto-icon"><img alt="A+" src="images/opt/aplus-emissions-120.webp" width="690" height="362" loading="lazy" decoding="async"/></span><span class="picto-label">A+ air int.</span></span>
 <span class="picto is-vertfonce" title="80 % biosourcée (ASTM D6866)"><span class="picto-icon is-text-xs">80%</span><span class="picto-label">Biosourcée</span></span>
 <span class="picto is-vert" title="COV &lt; 1 g/L"><span class="picto-icon is-text-xs">1g/L</span><span class="picto-label">COV</span></span>
 <span class="picto is-bleuclair" title="Phase aqueuse"><span class="picto-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z" fill="currentColor" fill-opacity="0.25"></path><path d="M12 2.5s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"></path></svg></span><span class="picto-label">Aqueux</span></span>
@@ -2204,7 +2204,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <p>Fabricant-distributeur de peintures professionnelles bas carbone en Gironde. Nos gammes propres <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
 </div>
 <div class="footer-col">
-<h4>Nos gammes</h4>
+<p class="fh">Nos gammes</p>
 <ul>
 <li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></a></li>
 <li><a href="gammes.html#gamme-titane"><span class="brand-titane">TITANE hydro</span></a></li>
@@ -2213,7 +2213,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </ul>
 </div>
 <div class="footer-col">
-<h4>Le groupe</h4>
+<p class="fh">Le groupe</p>
 <ul>
 <li><a href="index.html">Notre histoire</a></li>
 <li><a href="index.html#magasins">Nos magasins</a></li>
@@ -2223,7 +2223,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </ul>
 </div>
 <div class="footer-col">
-<h4>Contact</h4>
+<p class="fh">Contact</p>
 <ul>
 <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
 <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
@@ -2232,7 +2232,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </div>
 </div>
 <div class="footer-bottom">
-<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DE LA CENTRALE</span><a aria-label="Site de la centrale CMEM" href="https://www.cmem.fr/" rel="noopener noreferrer" target="_blank"><img alt="Logo CMEM — Centrale Multi-Enseignes Matériaux" class="footer-cmem-logo" src="images/logo-cmem.webp" width="567" height="200" loading="lazy" decoding="async"/></a></span></div>
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DE LA CENTRALE</span><a aria-label="Site de la centrale CMEM" href="https://www.cmem.fr/" rel="noopener noreferrer" target="_blank"><img alt="Logo CMEM — Centrale Multi-Enseignes Matériaux" class="footer-cmem-logo" src="images/opt/logo-cmem-200.webp" width="567" height="200" loading="lazy" decoding="async"/></a></span></div>
 </div>
 </div>
 </footer>

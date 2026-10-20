@@ -7,7 +7,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Security headers (meta) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-ancestors 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()">
@@ -55,7 +55,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@700;800&amp;family=Barlow+Condensed:wght@700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F; --bleu-fonce: #15273F; --bleu-clair: #2D4E7A; --bleu-pale: #E8EEF5;
@@ -151,7 +151,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
   .footer-brand-text { font-family: var(--display); font-size: 32px; line-height: 1.2; margin-bottom: 24px; color: var(--blanc); font-weight: 300; }
   .footer-brand-text em { color: var(--orange); font-style: italic; }
   .footer-desc { font-size: 14px; opacity: 0.7; line-height: 1.6; max-width: 380px; font-weight: 300; }
-  .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
+  .footer-col h4, .footer-col .fh { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
   .footer-col ul { list-style: none; }
   .footer-col li { margin-bottom: 12px; }
   .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
@@ -753,7 +753,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <p class="footer-desc">Fabricant-distributeur de peintures professionnelles en Gironde. Nos gammes propres <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
 </div>
 <div class="footer-col">
-<h4>Nos gammes</h4>
+<p class="fh">Nos gammes</p>
 <ul>
 <li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></a></li>
 <li><a href="gammes.html#gamme-titane"><span class="brand-titane">TITANE hydro</span></a></li>
@@ -762,7 +762,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </ul>
 </div>
 <div class="footer-col">
-<h4>Le groupe</h4>
+<p class="fh">Le groupe</p>
 <ul>
 <li><a href="index.html">Notre histoire</a></li>
 <li><a href="index.html#magasins">Nos magasins</a></li>
@@ -772,7 +772,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </ul>
 </div>
 <div class="footer-col">
-<h4>Contact</h4>
+<p class="fh">Contact</p>
 <ul>
 <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
 <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
@@ -781,7 +781,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </div>
 </div>
 <div class="footer-bottom">
-<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DE LA CENTRALE</span><a aria-label="Site de la centrale CMEM" href="https://www.cmem.fr/" rel="noopener noreferrer" target="_blank"><img alt="Logo CMEM — Centrale Multi-Enseignes Matériaux" class="footer-cmem-logo" src="images/logo-cmem.webp" width="567" height="200" loading="lazy" decoding="async"/></a></span></div>
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DE LA CENTRALE</span><a aria-label="Site de la centrale CMEM" href="https://www.cmem.fr/" rel="noopener noreferrer" target="_blank"><img alt="Logo CMEM — Centrale Multi-Enseignes Matériaux" class="footer-cmem-logo" src="images/opt/logo-cmem-200.webp" width="567" height="200" loading="lazy" decoding="async"/></a></span></div>
 </div>
 </div>
 </footer>

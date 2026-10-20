@@ -7,7 +7,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Security headers (meta) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-ancestors 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()">
@@ -146,7 +146,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600;700;800;900&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Barlow:wght@700;800&amp;family=Barlow+Condensed:wght@700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bleu: #1F3A5F;
@@ -789,7 +789,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
   .footer-brand-text { font-family: var(--display); font-size: 32px; line-height: 1.2; margin-bottom: 24px; color: var(--blanc); font-weight: 300; }
   .footer-brand-text em { color: var(--orange); font-style: italic; }
   .footer-desc { font-size: 14px; opacity: 0.7; line-height: 1.6; max-width: 380px; font-weight: 300; }
-  .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
+  .footer-col h4, .footer-col .fh { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; color: var(--orange); }
   .footer-col ul { list-style: none; }
   .footer-col li { margin-bottom: 12px; }
   .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
@@ -1265,6 +1265,27 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 .ev-x small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.75);text-align:center;font-weight:600;margin-top:4px}
 @media(max-width:960px){.ev3 .eco-inner{grid-template-columns:1fr;gap:30px}.ev-cols{height:260px}.ev-col{width:96px}.ev-x{left:calc(50% - 65px);top:50px;font-size:54px}}
 </style>
+<style id="home-blog-css">
+/* Accueil : bloc des 3 derniers conseils (mis à jour par _outils/publier.py) */
+.home-blog { padding: 0 48px 120px; }
+.home-blog-inner { max-width: 1200px; margin: 0 auto; }
+.home-blog-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 34px; }
+.home-blog-head .section-title { margin-bottom: 0; }
+.home-blog-all { font-size: 15px; font-weight: 600; color: var(--bleu); text-decoration: none; border-bottom: 2px solid var(--orange); padding-bottom: 3px; white-space: nowrap; }
+.home-blog-all:hover { color: var(--orange); }
+.home-blog .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.home-blog .blog-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--blanc); border: 1px solid rgba(31,58,95,.1); border-radius: 22px; overflow: hidden; transition: transform .3s var(--transition), box-shadow .3s; }
+.home-blog .blog-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -28px rgba(31,58,95,.45); }
+.home-blog .blog-card-img { background: linear-gradient(135deg, #E8EEF5, #F5F0E8); height: 190px; display: flex; align-items: flex-end; justify-content: center; padding-top: 18px; }
+.home-blog .blog-card-img img { height: 165px; width: auto; object-fit: contain; filter: drop-shadow(0 10px 14px rgba(31,58,95,.22)); }
+.home-blog .blog-card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.home-blog .blog-card-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); font-weight: 700; }
+.home-blog .blog-card h3 { font-family: var(--display); font-weight: 400; font-size: 22px; line-height: 1.25; color: var(--bleu); }
+.home-blog .blog-card p { font-size: 14.5px; line-height: 1.6; color: var(--gris); }
+.home-blog .blog-card-date { margin-top: auto; font-size: 12.5px; color: var(--gris); opacity: .8; }
+@media (max-width: 900px) { .home-blog .blog-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .home-blog { padding: 0 20px 80px; } }
+</style>
 </head>
 <body>
 
@@ -1369,7 +1390,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <header class="header">
 <div class="header-inner">
 <a class="logo" href="index.html">
-<span class="logo-symbol logo-coin" aria-hidden="true"><img alt="Logo L'Atelier" class="logo-coin-face logo-coin-front" src="images/logo.png" width="309" height="378" decoding="async"><img alt="" class="logo-coin-face logo-coin-back" src="images/logo.png" width="309" height="378" decoding="async"></span>
+<span class="logo-symbol logo-coin" aria-hidden="true"><img alt="Logo L'Atelier" class="logo-coin-face logo-coin-front" src="images/opt/logo-200.webp" width="309" height="378" decoding="async"><img alt="" class="logo-coin-face logo-coin-back" src="images/opt/logo-200.webp" width="309" height="378" decoding="async"></span>
 <div class="logo-text-wrap">
 <span class="logo-text">l'atelier</span>
 <span class="logo-baseline">MARCHAND DE COULEURS</span>
@@ -1428,7 +1449,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <div class="rain-stage">
 <div class="rain-col rc-gt" style="--i:0">
 <div class="rain-badge rain-anim" aria-label="Bas carbone : 0,043 kg CO2 par UF sur 10 ans"><span class="rb-top">Bas carbone</span><span class="rb-val">0,043</span><span class="rb-unit">kg CO₂/UF</span><span class="rb-dur">sur 10 ans</span></div>
-<img alt="Fût L'Atelier Impress 45 Grands Travaux 16L — bas carbone 0,043 kg CO₂/UF" class="rain-fut rain-anim" src="images/produits/45_impress_GT.webp" width="752" height="913" fetchpriority="high"/>
+<img alt="Fût L'Atelier Impress 45 Grands Travaux 16L — bas carbone 0,043 kg CO₂/UF" class="rain-fut rain-anim" src="images/opt/45_impress_GT-400.webp" width="752" height="913" fetchpriority="high"/>
 <span class="rain-floor rain-anim"></span>
 </div>
 <div class="rain-col rc-imp" style="--i:1">
@@ -1520,7 +1541,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <p class="gamme-description">La gamme cœur de chantier, bas carbone : <strong>Impress 45 GT 0,043</strong>, <strong>Mat 45 2en1 0,125</strong> et <strong>Impress 45 0,164 kg CO₂/UF</strong> sur 10&nbsp;ans. COV &lt;&nbsp;1&nbsp;g/L, classée A+. Six finitions pour tous vos travaux&nbsp;: impression, finition, intérieur, extérieur, boiseries.</p>
 </div>
 <!-- Pots de la gamme : le plus bas carbone au centre, les autres reculent vers les côtés -->
-<div class="gp-stage gp-45"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-glycero-45" style="--x:8%;--b:128px;--w:100px;z-index:1"><img width="795" height="782" src="images/produits/45_glycero_satin.webp" alt="Glycéro 45" loading="lazy" decoding="async"/><span class="gp-name">Glycéro 45</span></a><a class="gp-item" href="gammes.html#p-velours-45" style="--x:22%;--b:92px;--w:118px;z-index:2"><img width="767" height="962" src="images/produits/45_velours.webp" alt="Velours 45" loading="lazy" decoding="async"/><span class="gp-name">Velours 45</span></a><a class="gp-item" href="gammes.html#p-mat-45" style="--x:37%;--b:46px;--w:148px;z-index:3"><span class="gp-badge" style="--bc:#3F9B4C"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,125</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img width="360" height="454" src="images/produits/45_Mat_2en1.webp" alt="Mat 45 2en1 — bas carbone 0,125 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Mat 45 2en1</span></a><a class="gp-item is-hero" href="gammes.html#p-grands-travaux" style="--x:54%;--b:0px;--w:200px;z-index:5"><span class="gp-badge" style="--bc:#1B7A3D"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,043</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img width="752" height="913" src="images/produits/45_impress_GT.webp" alt="Impress 45 Grands Travaux — bas carbone 0,043 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45 Grands Travaux</span></a><a class="gp-item" href="gammes.html#p-impress-evo" style="--x:72%;--b:46px;--w:148px;z-index:3"><span class="gp-badge is-light is-right" style="--bc:#7DB653"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,164</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img width="379" height="454" src="images/produits/45_impress_.webp" alt="Impress 45 — bas carbone 0,164 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45</span></a><a class="gp-item" href="gammes.html#p-satin-45" style="--x:88%;--b:92px;--w:118px;z-index:2"><img width="746" height="925" src="images/produits/45_satin.webp" alt="Satin 45" loading="lazy" decoding="async"/><span class="gp-name">Satin 45</span></a></div>
+<div class="gp-stage gp-45"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-glycero-45" style="--x:8%;--b:128px;--w:100px;z-index:1"><img width="795" height="782" src="images/opt/45_glycero_satin-160.webp" alt="Glycéro 45" loading="lazy" decoding="async"/><span class="gp-name">Glycéro 45</span></a><a class="gp-item" href="gammes.html#p-velours-45" style="--x:22%;--b:92px;--w:118px;z-index:2"><img width="767" height="962" src="images/opt/45_velours-160.webp" alt="Velours 45" loading="lazy" decoding="async"/><span class="gp-name">Velours 45</span></a><a class="gp-item" href="gammes.html#p-mat-45" style="--x:37%;--b:46px;--w:148px;z-index:3"><span class="gp-badge" style="--bc:#3F9B4C"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,125</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img width="360" height="454" src="images/opt/45_Mat_2en1-200.webp" alt="Mat 45 2en1 — bas carbone 0,125 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Mat 45 2en1</span></a><a class="gp-item is-hero" href="gammes.html#p-grands-travaux" style="--x:54%;--b:0px;--w:200px;z-index:5"><span class="gp-badge" style="--bc:#1B7A3D"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,043</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img width="752" height="913" src="images/opt/45_impress_GT-260.webp" alt="Impress 45 Grands Travaux — bas carbone 0,043 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45 Grands Travaux</span></a><a class="gp-item" href="gammes.html#p-impress-evo" style="--x:72%;--b:46px;--w:148px;z-index:3"><span class="gp-badge is-light is-right" style="--bc:#7DB653"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,164</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img width="379" height="454" src="images/opt/45_impress_-200.webp" alt="Impress 45 — bas carbone 0,164 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">Impress 45</span></a><a class="gp-item" href="gammes.html#p-satin-45" style="--x:88%;--b:92px;--w:118px;z-index:2"><img width="746" height="925" src="images/opt/45_satin-160.webp" alt="Satin 45" loading="lazy" decoding="async"/><span class="gp-name">Satin 45</span></a></div>
 <a class="gamme-cta" href="gammes.html#gamme-45">Voir les 6 produits<span>→</span></a>
 </article>
 <article class="gamme-card gamme-titane reveal">
@@ -1535,7 +1556,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <p class="gamme-description">Notre gamme technique haut de gamme. Son fer de lance, le <strong>Titane MV evo</strong> : résine <strong>biosourcée à 85%</strong> (78% de matières premières naturelles sur le produit fini) et <strong>0,210 kg CO₂/UF</strong> sur 10 ans. Excellence d'application, faible COV, compatible RE2020.</p>
 </div>
 <!-- Pots de la gamme : le plus bas carbone au centre, les autres reculent vers les côtés -->
-<div class="gp-stage gp-titane"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-titane-velours" style="--x:13%;--b:104px;--w:122px;z-index:2"><img width="738" height="922" src="images/produits/titane_hydro_velours.webp" alt="TITANE hydro Velours" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Velours</span></a><a class="gp-item" href="gammes.html#p-titane-prim" style="--x:31%;--b:52px;--w:148px;z-index:3"><img width="734" height="902" src="images/produits/titane_hydro_prim.webp" alt="TITANE hydro Prim" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Prim</span></a><a class="gp-item is-hero" href="gammes.html#p-titane-mv" style="--x:53%;--b:0px;--w:206px;z-index:5"><span class="gp-badge is-light" style="--bc:#B4C94F"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,210</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img width="338" height="436" src="images/produits/titane_hydro_mat_veloute.webp" alt="TITANE hydro MV evo — bas carbone 0,210 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro MV evo</span></a><a class="gp-item" href="gammes.html#p-titane-mat" style="--x:77%;--b:52px;--w:148px;z-index:3"><img width="734" height="902" src="images/produits/titane_hydro_mat.webp" alt="TITANE hydro Mat" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Mat</span></a></div>
+<div class="gp-stage gp-titane"><div class="gp-floor"></div><a class="gp-item" href="gammes.html#p-titane-velours" style="--x:13%;--b:104px;--w:122px;z-index:2"><img width="738" height="922" src="images/opt/titane_hydro_velours-160.webp" alt="TITANE hydro Velours" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Velours</span></a><a class="gp-item" href="gammes.html#p-titane-prim" style="--x:31%;--b:52px;--w:148px;z-index:3"><img width="734" height="902" src="images/opt/titane_hydro_prim-200.webp" alt="TITANE hydro Prim" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Prim</span></a><a class="gp-item is-hero" href="gammes.html#p-titane-mv" style="--x:53%;--b:0px;--w:206px;z-index:5"><span class="gp-badge is-light" style="--bc:#B4C94F"><span class="gp-b-top">Bas carbone</span><span class="gp-b-val">0,210</span><span class="gp-b-unit">kg CO₂/UF · 10 ans</span></span><img width="338" height="436" src="images/opt/titane_hydro_mat_veloute-260.webp" alt="TITANE hydro MV evo — bas carbone 0,210 kg CO₂/UF sur 10 ans" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro MV evo</span></a><a class="gp-item" href="gammes.html#p-titane-mat" style="--x:77%;--b:52px;--w:148px;z-index:3"><img width="734" height="902" src="images/opt/titane_hydro_mat-200.webp" alt="TITANE hydro Mat" loading="lazy" decoding="async"/><span class="gp-name">TITANE hydro Mat</span></a></div>
 <a class="gamme-cta" href="gammes.html#gamme-titane">Voir les 4 produits<span>→</span></a>
 </article>
 </div>
@@ -1584,30 +1605,30 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <!-- Bandeau défilant des pastilles -->
 <div class="swatches-strip-wrap">
 <div class="swatches-strip">
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
-<a aria-label="Ouvrir le nuancier Chromatic Dorval CH2" class="swatch-pill" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D0CDC6;"></div><div><div class="swatch-pill-text">Gris Bamako</div><div class="swatch-pill-code">CH2 1156</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D5B377;"></div><div><div class="swatch-pill-text">Beige Tenda</div><div class="swatch-pill-code">CH2 0987</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#2F5F70;"></div><div><div class="swatch-pill-text">Bleu Hers</div><div class="swatch-pill-code">CH2 0695</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#1F5B3D;"></div><div><div class="swatch-pill-text">Vert Athamanta</div><div class="swatch-pill-code">CH2 0743</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#534A45;"></div><div><div class="swatch-pill-text">Gris Erevan</div><div class="swatch-pill-code">CH2 1054</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#F2E6D4;"></div><div><div class="swatch-pill-text">Rose Pétale</div><div class="swatch-pill-code">CH2 0166</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D8CCDB;"></div><div><div class="swatch-pill-text">Violet Raisin</div><div class="swatch-pill-code">CH2 0236</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#75695B;"></div><div><div class="swatch-pill-text">Gris Rabat</div><div class="swatch-pill-code">CH2 1046</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#A95B5B;"></div><div><div class="swatch-pill-text">Rose Orphrys</div><div class="swatch-pill-code">CH2 0449</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#3D3A4F;"></div><div><div class="swatch-pill-text">Bleu Tureia</div><div class="swatch-pill-code">CH2 0555</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#B2683F;"></div><div><div class="swatch-pill-text">Ocre Koum</div><div class="swatch-pill-code">CH2 0873</div></div></a>
+<a class="swatch-pill" title="Ouvrir le nuancier Chromatic Dorval CH2" href="nuanciers/CHROMATIC_DORVAL_CH2 Nouveau.pdf" rel="noopener" target="_blank"><div class="swatch-dot" style="background:#D9C9A0;"></div><div><div class="swatch-pill-text">Beige Feldspath</div><div class="swatch-pill-code">CH2 0976</div></div></a>
 </div>
 </div>
 <div class="colorimetrie-inner">
@@ -1725,7 +1746,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <div class="cmem-glow-2"></div>
 <div class="cmem-head">
 <span class="cmem-eyebrow">Notre centrale d'achat</span>
-<img class="cmem-logo" src="images/logo-cmem.webp" alt="CMEM — Centrale Multi-Enseignes Matériaux" width="567" height="200" loading="lazy" decoding="async"/>
+<img class="cmem-logo" src="images/opt/logo-cmem-400.webp" alt="CMEM — Centrale Multi-Enseignes Matériaux" width="567" height="200" loading="lazy" decoding="async"/>
 <p class="cmem-lead">Depuis le 1ᵉʳ janvier 2026, notre groupement <strong>AGIR</strong> a rejoint <strong>CMEM</strong>, la super-centrale d'achat du négoce de matériaux indépendant. Une force collective qui nous permet de mieux référencer, négocier et innover — au bénéfice direct de nos clients professionnels, sans rien céder de notre indépendance.</p>
 </div>
 <div class="cmem-stats">
@@ -1988,6 +2009,9 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </div>
 </section>
 <!-- FOOTER -->
+<!--CONSEILS-ACCUEIL-->
+<section class="home-blog" id="conseils"><div class="home-blog-inner"><div class="home-blog-head"><div><div class="section-eyebrow">— Nos conseils</div><h2 class="section-title">Guides pour vos <em>chantiers bas carbone</em>.</h2></div><a class="home-blog-all" href="conseils.html">Tous nos conseils →</a></div><div class="blog-grid"><a class="blog-card" href="conseil-peinture-biosourcee.html"><div class="blog-card-img"><img src="images/opt/titane_hydro_mat_veloute-h330.webp" alt="" width="256" height="330" loading="lazy" decoding="async"/></div><div class="blog-card-body"><span class="blog-card-tag">Biosourcé · Matières</span><h3>Peinture biosourcée : que veulent vraiment dire les pourcentages ?</h3><p>Résine biosourcée, matières naturelles, norme ASTM D6866, label Karibati : comment lire les pourcentages d'une peinture biosourcée et la comparer.</p><span class="blog-card-date">18 octobre 2026 · 5 min de lecture</span></div></a><a class="blog-card" href="conseil-peinture-bas-carbone-re2020.html"><div class="blog-card-img"><img src="images/opt/45_impress_GT-h330.webp" alt="" width="272" height="330" loading="lazy" decoding="async"/></div><div class="blog-card-body"><span class="blog-card-tag">RE2020 · Bas carbone</span><h3>Peinture et RE2020 : comment choisir une peinture bas carbone</h3><p>RE2020 et peinture : pourquoi la FDES compte, comment comparer l'empreinte carbone des peintures et quels produits choisir en impression et en finition.</p><span class="blog-card-date">17 octobre 2026 · 6 min de lecture</span></div></a><a class="blog-card" href="conseil-lire-fdes-peinture.html"><div class="blog-card-img"><img src="images/opt/45_impress_-h330.webp" alt="" width="275" height="330" loading="lazy" decoding="async"/></div><div class="blog-card-body"><span class="blog-card-tag">FDES · Méthode</span><h3>Comment lire la FDES d'une peinture : les chiffres qui comptent</h3><p>Unité fonctionnelle, durée de vie, indicateur changement climatique, type de FDES : le guide pour lire et comparer les FDES de peinture sans se tromper.</p><span class="blog-card-date">17 octobre 2026 · 5 min de lecture</span></div></a></div></div></section>
+<!--/CONSEILS-ACCUEIL-->
 <footer>
 <div class="footer-inner">
 <div class="footer-top">
@@ -1996,7 +2020,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <p class="footer-desc">Fabricant-distributeur de peintures professionnelles bas carbone en Gironde. Nos gammes propres <span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span> et <span class="brand-titane">TITANE hydro</span>, fabriquées en France. Deux magasins à Mérignac et La Teste-de-Buch.</p>
 </div>
 <div class="footer-col">
-<h4>Nos gammes</h4>
+<p class="fh">Nos gammes</p>
 <ul>
 <li><a href="gammes.html#gamme-45"><span class="brand-45">L'Atelier <span class="brand-45-fig">45</span></span></a></li>
 <li><a href="gammes.html#gamme-titane"><span class="brand-titane">TITANE hydro</span></a></li>
@@ -2005,7 +2029,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </ul>
 </div>
 <div class="footer-col">
-<h4>Le groupe</h4>
+<p class="fh">Le groupe</p>
 <ul>
 <li><a href="index.html">Notre histoire</a></li>
 <li><a href="index.html#magasins">Nos magasins</a></li>
@@ -2015,7 +2039,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </ul>
 </div>
 <div class="footer-col">
-<h4>Contact</h4>
+<p class="fh">Contact</p>
 <ul>
 <li><a href="mailto:contact@latelier33.fr">contact@latelier33.fr</a></li>
 <li><a href="tel:0556288944">05 56 28 89 44 · Mérignac</a></li>
@@ -2024,7 +2048,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </div>
 </div>
 <div class="footer-bottom">
-<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DE LA CENTRALE</span><a aria-label="Site de la centrale CMEM" href="https://www.cmem.fr/" rel="noopener noreferrer" target="_blank"><img alt="Logo CMEM — Centrale Multi-Enseignes Matériaux" class="footer-cmem-logo" src="images/logo-cmem.webp" width="567" height="200" loading="lazy" decoding="async"/></a><a aria-label="Site batiment.eu" href="http://batiment.eu" rel="noopener noreferrer" target="_blank"><img width="200" height="57" alt="Sélectionné par batiment.eu" class="footer-theolaur-logo" src="images/logo-batiment.jpg" loading="lazy" decoding="async"/></a></span></div>
+<div>© 2026 L'Atelier — SIREN 534 092 721 · <a href="mentions-legales.html">Mentions légales</a> · <a href="documents/CGV.pdf" rel="noopener" target="_blank">CGV</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a> · <span class="footer-theolaur"><span>MEMBRE DE LA CENTRALE</span><a aria-label="Site de la centrale CMEM" href="https://www.cmem.fr/" rel="noopener noreferrer" target="_blank"><img alt="Logo CMEM — Centrale Multi-Enseignes Matériaux" class="footer-cmem-logo" src="images/opt/logo-cmem-200.webp" width="567" height="200" loading="lazy" decoding="async"/></a><a aria-label="Site batiment.eu" href="http://batiment.eu" rel="noopener noreferrer" target="_blank"><img width="200" height="57" alt="Sélectionné par batiment.eu" class="footer-theolaur-logo" src="images/logo-batiment.jpg" loading="lazy" decoding="async"/></a></span></div>
 </div>
 </div>
 </footer>
@@ -2062,7 +2086,7 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </script>
 <!-- Badge Google flottant : note moyenne, cliquable vers la section avis, fermable -->
 <div aria-label="Note moyenne Google des magasins" class="google-floating" role="region">
-<a aria-label="Note moyenne Google : 4,85 sur 5 — voir les avis" class="google-floating-link" href="#avis">
+<a class="google-floating-link" href="#avis">
 <svg aria-hidden="true" class="google-floating-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
@@ -2311,7 +2335,8 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 <style id="hero-charte">
 /* ===== Accueil : plus aucun texte vert, couleurs de texte de la charte =====
    fond bleu ou vert → blanc + orange ; fond orange → blanc + bleu ; fond clair → bleu + orange */
-.hero-title .t-bas, .hero-subtitle strong.co2 { color: var(--orange); }
+.hero-title .t-bas { color: var(--orange); }
+.hero-subtitle strong.co2 { color: var(--orange-clair); }  /* orange clair : contraste suffisant sur le bleu */
 /* Pastilles carbone claires (héros + cartes gammes) : texte vert foncé → bleu */
 .rc-imp .rain-badge, .rc-mv .rain-badge, .gp-badge.is-light { color: var(--bleu-fonce); }
 .rc-imp .rb-dur, .rc-mv .rb-dur { border-top-color: rgba(21,39,63,0.35); }

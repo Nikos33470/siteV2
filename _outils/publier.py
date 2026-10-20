@@ -87,12 +87,67 @@ def dim(p):
     from PIL import Image
     return Image.open(gen.RACINE + p).size
 
+def vignette(p, haut=330):
+    """Copie WebP réduite (hauteur 330 px = 2× l'affichage) dans images/opt/ ; renvoie son chemin."""
+    from PIL import Image
+    im = Image.open(gen.RACINE + p)
+    if im.size[1] <= haut * 1.3:
+        return p
+    w = round(im.size[0] * haut / im.size[1])
+    out = "images/opt/" + os.path.splitext(os.path.basename(p))[0] + f"-h{haut}.webp"
+    if not os.path.exists(gen.RACINE + out):
+        os.makedirs(gen.RACINE + "images/opt", exist_ok=True)
+        im.convert("RGBA").resize((w, haut), Image.LANCZOS).save(gen.RACINE + out, "WEBP", quality=86, method=6)
+    return out
+
 def carte(a, h="h2"):
+    v = vignette(a["images"][0])
     return (f'<a class="blog-card" href="conseil-{a["slug"]}.html">'
-            f'<div class="blog-card-img"><img src="{a["images"][0]}" alt="" width="{dim(a["images"][0])[0]}" height="{dim(a["images"][0])[1]}" loading="lazy" decoding="async"/></div>'
+            f'<div class="blog-card-img"><img src="{v}" alt="" width="{dim(v)[0]}" height="{dim(v)[1]}" loading="lazy" decoding="async"/></div>'
             f'<div class="blog-card-body"><span class="blog-card-tag">{a["tag"]}</span>'
             f'<{h}>{a["titre_court"]}</{h}><p>{a["description"]}</p>'
             f'<span class="blog-card-date">{date_fr(a["date"])} · {a["lecture"]} min de lecture</span></div></a>')
+
+# ---------- Bloc « Nos derniers conseils » de la page d'accueil ----------
+ACCUEIL_CSS = """<style id="home-blog-css">
+/* Accueil : bloc des 3 derniers conseils (mis à jour par _outils/publier.py) */
+.home-blog { padding: 0 48px 120px; }
+.home-blog-inner { max-width: 1200px; margin: 0 auto; }
+.home-blog-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 34px; }
+.home-blog-head .section-title { margin-bottom: 0; }
+.home-blog-all { font-size: 15px; font-weight: 600; color: var(--bleu); text-decoration: none; border-bottom: 2px solid var(--orange); padding-bottom: 3px; white-space: nowrap; }
+.home-blog-all:hover { color: var(--orange); }
+.home-blog .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.home-blog .blog-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--blanc); border: 1px solid rgba(31,58,95,.1); border-radius: 22px; overflow: hidden; transition: transform .3s var(--transition), box-shadow .3s; }
+.home-blog .blog-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -28px rgba(31,58,95,.45); }
+.home-blog .blog-card-img { background: linear-gradient(135deg, #E8EEF5, #F5F0E8); height: 190px; display: flex; align-items: flex-end; justify-content: center; padding-top: 18px; }
+.home-blog .blog-card-img img { height: 165px; width: auto; object-fit: contain; filter: drop-shadow(0 10px 14px rgba(31,58,95,.22)); }
+.home-blog .blog-card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.home-blog .blog-card-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); font-weight: 700; }
+.home-blog .blog-card h3 { font-family: var(--display); font-weight: 400; font-size: 22px; line-height: 1.25; color: var(--bleu); }
+.home-blog .blog-card p { font-size: 14.5px; line-height: 1.6; color: var(--gris); }
+.home-blog .blog-card-date { margin-top: auto; font-size: 12.5px; color: var(--gris); opacity: .8; }
+@media (max-width: 900px) { .home-blog .blog-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .home-blog { padding: 0 20px 80px; } }
+</style>
+"""
+
+def bloc_accueil(arts):
+    """Réécrit le bloc entre <!--CONSEILS-ACCUEIL--> et <!--/CONSEILS-ACCUEIL--> de index.html."""
+    f = gen.RACINE + "index.html"; t = open(f, encoding="utf-8").read()
+    bloc = ('<!--CONSEILS-ACCUEIL-->\n<section class="home-blog" id="conseils"><div class="home-blog-inner">'
+            '<div class="home-blog-head"><div><div class="section-eyebrow">— Nos conseils</div>'
+            '<h2 class="section-title">Guides pour vos <em>chantiers bas carbone</em>.</h2></div>'
+            '<a class="home-blog-all" href="conseils.html">Tous nos conseils →</a></div>'
+            '<div class="blog-grid">' + "".join(carte(a, "h3") for a in arts[:3]) + '</div></div></section>\n<!--/CONSEILS-ACCUEIL-->')
+    a, b = "<!--CONSEILS-ACCUEIL-->", "<!--/CONSEILS-ACCUEIL-->"
+    if a in t:
+        t = t[:t.index(a)] + bloc + t[t.index(b) + len(b):]
+    else:  # première fois : juste avant le pied de page
+        i = t.index("<footer"); t = t[:i] + bloc + "\n" + t[i:]
+    if 'id="home-blog-css"' not in t:
+        t = t.replace("</head>", ACCUEIL_CSS + "</head>", 1)
+    open(f, "w", encoding="utf-8").write(t)
 
 def main():
     arts = json.load(open(O + "articles.json", encoding="utf-8"))
@@ -127,6 +182,7 @@ def main():
                  "Nos <em>conseils</em>.", "Guides pratiques", "Peinture bas carbone, FDES, RE2020, mise en œuvre : les réponses de notre équipe aux questions de nos clients professionnels.",
                  [("Conseils", None)], contenu, CSS, ld)
     gen.ecrire("conseils.html", p)
+    bloc_accueil(arts)
 
     # Sitemap
     sm = gen.RACINE + "sitemap.xml"; t = open(sm, encoding="utf-8").read()
