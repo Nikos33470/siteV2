@@ -1886,6 +1886,104 @@ if (location.protocol === 'http:' && location.hostname.indexOf('latelier33.fr') 
 </head>
 <body>
 
+<!-- ============================================================
+     POP-UP Impress 45 Grands Travaux — bas carbone
+     ============================================================ -->
+<style id="bs-css">
+  .bs-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(10,20,38,0.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .45s var(--transition),visibility .45s var(--transition);}
+  .bs-overlay.is-open{opacity:1;visibility:visible;}
+  .bs-modal{position:relative;width:min(860px,95vw);max-height:92vh;overflow-x:hidden;overflow-y:auto;border-radius:24px;background:radial-gradient(120% 90% at 96% 2%,rgba(240,127,44,0.22),transparent 46%),radial-gradient(120% 90% at 2% 100%,rgba(31,58,95,0.12),transparent 50%),linear-gradient(168deg,#FFFFFF 0%,#F8F7F4 62%,#EEF2F7 100%);box-shadow:0 46px 110px -30px rgba(10,20,38,0.62),0 0 0 1px rgba(31,58,95,0.05);transform:translateY(28px) scale(.965);opacity:0;transition:transform .6s var(--transition),opacity .5s var(--transition);}
+  .bs-overlay.is-open .bs-modal{transform:none;opacity:1;}
+  .bs-close{position:absolute;top:14px;right:14px;z-index:6;width:38px;height:38px;border:none;border-radius:50%;background:rgba(31,58,95,0.06);color:var(--bleu);cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .3s var(--transition),transform .3s var(--transition);}
+  .bs-close:hover{background:var(--orange);color:#fff;transform:rotate(90deg);}
+
+  .im-wrap{position:relative;z-index:2;padding:26px clamp(22px,4vw,40px) 24px;}
+  /* pastille eyebrow — point vert conservé (accent bas carbone 1/2) */
+  .im-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 15px;border-radius:50px;background:rgba(240,127,44,0.12);border:1px solid rgba(240,127,44,0.32);color:var(--orange-fonce);font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+  .im-eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--vert-eco);animation:pulse 2s infinite;}
+  .im-title{font-family:var(--display);font-weight:400;font-size:clamp(24px,3.2vw,35px);color:var(--bleu);letter-spacing:-.5px;line-height:1.05;margin:12px 0 6px;}
+  .im-title em{font-style:italic;color:var(--orange);}
+  .im-claim{display:inline-block;font-family:var(--display);font-weight:600;font-style:italic;font-size:clamp(18px,2.5vw,25px);line-height:1.15;color:var(--orange);letter-spacing:-.3px;margin:2px 0 18px;padding:8px 16px;border-radius:12px;background:rgba(240,127,44,0.10);border-left:4px solid var(--orange);}
+
+  .im-hero{display:grid;grid-template-columns:1.12fr .88fr;gap:20px;align-items:center;}
+  .im-figure{background:linear-gradient(155deg,#15273F 0%,#1F3A5F 58%,#2D4E7A 100%);border-radius:20px;padding:22px 24px;color:#fff;position:relative;overflow:hidden;box-shadow:0 22px 46px -20px rgba(21,39,63,0.6);}
+  .im-figure::after{content:'';position:absolute;top:-60px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(240,127,44,0.28),transparent 70%);pointer-events:none;}
+  .im-fig-kick{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.68);font-weight:700;}
+  .im-fig-num{font-family:var(--display);font-weight:500;font-size:clamp(42px,6vw,58px);line-height:1;letter-spacing:-2px;margin:5px 0 2px;background:linear-gradient(120deg,#FFC48F,#F07F2C);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .im-fig-num small{font-size:.36em;letter-spacing:0;-webkit-text-fill-color:#fff;color:#fff;font-family:var(--sans);font-weight:600;}
+  .im-fig-scope{font-size:12.5px;color:#fff;font-weight:600;}
+  .im-fig-30{margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.16);font-size:12px;line-height:1.45;color:rgba(255,255,255,0.8);}
+  .im-fig-30 b{color:#FFC48F;}
+  /* badge FDES — point vert conservé (accent 2/2) */
+  .im-inies{display:inline-flex;align-items:center;gap:7px;margin-top:11px;padding:6px 11px;border-radius:40px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.2);font-size:10px;letter-spacing:.3px;color:#fff;font-weight:600;}
+  .im-inies::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--vert-eco);box-shadow:0 0 8px rgba(74,139,92,0.9);}
+
+  .im-potwrap{text-align:center;}
+  .im-pot{width:auto;height:clamp(200px,26vw,270px);filter:drop-shadow(0 28px 34px rgba(10,20,38,0.4));animation:imFloat 5.5s ease-in-out infinite;}
+  @keyframes imFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+  .im-argtitle{margin:22px 0 11px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange-fonce);}
+  .im-args{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;}
+  .im-arg{background:#fff;border:1px solid rgba(31,58,95,0.09);border-radius:12px;padding:11px 11px;box-shadow:0 6px 16px -12px rgba(31,58,95,0.3);border-top:2px solid var(--orange);}
+  .im-arg b{display:block;font-size:14px;color:var(--bleu);font-weight:700;line-height:1.12;}
+  .im-arg span{display:block;margin-top:2px;font-size:11px;color:var(--gris);line-height:1.25;}
+
+  .im-cta{display:flex;gap:11px;flex-wrap:wrap;justify-content:center;margin-top:22px;}
+  .im-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:50px;font-size:13.5px;font-weight:700;text-decoration:none;transition:transform .3s var(--transition),box-shadow .3s var(--transition);}
+  .im-btn svg{width:16px;height:16px;}
+  .im-btn.primary{background:linear-gradient(120deg,#FFA968,#F07F2C 60%,#D86618);color:#fff;box-shadow:0 12px 26px -12px rgba(216,102,24,0.6);}
+  .im-btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 32px -12px rgba(216,102,24,0.7);}
+  .im-btn.ghost{background:#fff;color:var(--bleu);border:2px solid var(--bleu);}
+  .im-btn.ghost:hover{transform:translateY(-2px);background:var(--bleu);color:#fff;}
+
+  @media (max-width:720px){
+    .im-hero{grid-template-columns:1fr;gap:14px;}
+    .im-potwrap{order:-1;}
+    .im-pot{height:180px;animation:none;}
+    .im-args{grid-template-columns:repeat(2,1fr);}
+    .im-wrap{padding:24px 18px 22px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .bs-modal,.bs-overlay{transition-duration:.2s;}
+    .im-pot,.im-eyebrow::before{animation:none;}
+  }
+</style>
+
+<div class="bs-overlay" id="bsOverlay" role="dialog" aria-modal="true" aria-labelledby="bsTitle" aria-hidden="true">
+  <div class="bs-modal">
+    <button class="bs-close" id="bsClose" type="button" aria-label="Fermer">&times;</button>
+    <div class="im-wrap">
+
+      <span class="im-eyebrow">Impression bas carbone</span>
+      <p class="im-title" id="bsTitle">Impress 45 <em>Grands Travaux</em></p>
+      <p class="im-claim">L&rsquo;impression la plus bas carbone du march&eacute;.</p>
+
+      <div class="im-hero">
+        <div class="im-figure">
+          <div class="im-fig-kick">Empreinte carbone &middot; sur 10 ans</div>
+          <div class="im-fig-num">0,043<small> kg CO&#8322;/UF</small></div>
+          <div class="im-fig-scope">Le meilleur r&eacute;sultat du march&eacute; pour une impression.</div>
+          <div class="im-fig-30">Soit <b>0,128 kg CO&#8322; eq/UF sur 30 ans</b>, chiffre d&eacute;clar&eacute; et v&eacute;rifi&eacute;.</div>
+          <span class="im-inies">FDES v&eacute;rifi&eacute;e INIES &middot; n&deg; 20231035427 &middot; NF EN 15804+A2</span>
+        </div>
+        <div class="im-potwrap">
+          <img class="im-pot" src="images/produits/45_impress_GTv2.webp" alt="Seau Impress 45 Grands Travaux, 16 litres" width="464" height="560" decoding="async">
+        </div>
+      </div>
+
+      <div class="im-argtitle">Les points forts du produit</div>
+      <div class="im-args"><div class="im-arg"><b>COV &lt; 1 g/L</b><span>Teneur quasi nulle</span></div><div class="im-arg"><b>A+</b><span>&Eacute;missions air int&eacute;rieur</span></div><div class="im-arg"><b>+130 m²</b><span>par seau de 16 L</span></div><div class="im-arg"><b>Fort opacifiant</b><span>Excellent garnissant</span></div><div class="im-arg"><b>Fût 50% recyclé</b><span>Polypropyl&egrave;ne recycl&eacute;</span></div><div class="im-arg"><b>Compatible RE2020</b><span>FDES exploitable en ACV</span></div><div class="im-arg"><b>Aspect mat</b><span>Finition mate garnissante</span></div><div class="im-arg"><b>Fabriqué en France</b><span>Circuit court</span></div></div>
+
+      <div class="im-cta">
+        <a class="im-btn primary" href="documents/fdes/FDES_45_Impress_Grands_Travaux.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 5 6 10 6 18"/><path d="M20 4c1 8-4 13-12 13"/></svg>Consulter la FDES</a>
+        <a class="im-btn ghost" href="documents/ft/FT_45_impress_GRANDS_TRAVAUX_.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/></svg>Fiche technique</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <!-- Splash thumbnail pour le bundler — visible pendant le décompactage des assets -->
 <template id="__bundler_thumbnail" data-bg-color="#FBF7F0">
 <svg viewbox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -2964,5 +3062,51 @@ document.querySelectorAll(".lva-map").forEach(function(m){ m.scrollLeft = (m.scr
   .header.is-scrolled .logo { margin: -4px 0 !important; }
 }
 </style>
+
+<script>
+/* ===== Pop-up Impress 45 Grands Travaux — bas carbone ===== */
+(function () {
+  var overlay = document.getElementById('bsOverlay');
+  if (!overlay) return;
+  var closeBtn = document.getElementById('bsClose');
+
+  function open() {
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    replayHeroPots();
+  }
+  // relance la cascade des fûts du hero à la fermeture
+  function replayHeroPots() {
+    document.querySelectorAll('.hero-visual .rain-anim').forEach(function (el) {
+      var anim = getComputedStyle(el).animation;
+      if (!anim || anim === 'none' || anim.indexOf('none ') === 0) return;
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = anim;
+    });
+  }
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+  // ouverture une fois par session
+  function trigger() {
+    var seen = false;
+    try { seen = sessionStorage.getItem('bsSeen') === '1'; } catch (e) {}
+    if (seen) return;
+    try { sessionStorage.setItem('bsSeen', '1'); } catch (e) {}
+    setTimeout(open, 900);
+  }
+  if (document.readyState === 'complete') trigger();
+  else window.addEventListener('load', trigger);
+})();
+</script>
 </body>
 </html>
